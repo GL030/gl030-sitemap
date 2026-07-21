@@ -1,0 +1,34 @@
+name: Event-Sitemap taeglich aktualisieren
+
+on:
+  schedule:
+    - cron: "30 4 * * *"    # 06:30 Berlin (Sommerzeit)
+    - cron: "30 10 * * *"   # 12:30 Berlin – faengt Vormittags-Freischaltungen
+  workflow_dispatch:         # manueller Start ueber den Actions-Tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generator ausfuehren
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
+        run: python generate_events_sitemap.py
+
+      - name: Commit nur bei Aenderung
+        run: |
+          git config user.name "gl030-sitemap-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add sitemap-events.xml
+          git diff --cached --quiet || git commit -m "Event-Sitemap Update $(date -u +%F_%H:%M)"
+          git push
