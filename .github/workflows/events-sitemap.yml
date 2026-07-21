@@ -25,10 +25,12 @@ jobs:
           GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
         run: python generate_events_sitemap.py
 
-      - name: Commit nur bei Aenderung
+   - name: Commit nur bei Aenderung
         run: |
           git config user.name "gl030-sitemap-bot"
           git config user.email "actions@users.noreply.github.com"
+          git fetch origin main
+          git reset --soft origin/main
           git add sitemap-events.xml
           git diff --cached --quiet || git commit -m "Event-Sitemap Update $(date -u +%F_%H:%M)"
-          git push
+          git push origin HEAD:main
