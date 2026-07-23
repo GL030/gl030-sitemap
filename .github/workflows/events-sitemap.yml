@@ -26,11 +26,57 @@ jobs:
         run: python generate_events_sitemap.py
 
       - name: Commit nur bei Aenderung
+        id: commit
         run: |
           git config user.name "gl030-sitemap-bot"
           git config user.email "actions@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
           git add sitemap-events.xml
-          git diff --cached --quiet || git commit -m "Event-Sitemap Update $(date -u +%F_%H:%M)"
-          git push origin HEAD:main
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "Keine Aenderung an sitemap-events.xml"
+          else
+            git commit -m "Event-Sitemap Update $(date -u +%F_%H:%M)"
+            git push origin HEAD:main
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Auslieferung ueber GitHub Pages verifizieren
+        run: |
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
+          SOLL_BERLIN=$(grep -c '<loc>' sitemap-berlin.xml)
+          SOLL_EVENTS=$(grep -c '<loc>' sitemap-events.xml)
+          echo "Soll: berlin=$SOLL_BERLIN events=$SOLL_EVENTS"
+
+          IST_BERLIN=0
+          IST_EVENTS=0
+          for i in $(seq 1 10); do
+            sleep 30
+            IST_BERLIN=$(curl -s -A "$UA" https://gl030.github.io/gl030-sitemap/sitemap-berlin.xml | grep -c '<loc>' || echo 0)
+            IST_EVENTS=$(curl -s -A "$UA" https://gl030.github.io/gl030-sitemap/sitemap-events.xml | grep -c '<loc>' || echo 0)
+            echo "Versuch $i: Pages berlin=$IST_BERLIN events=$IST_EVENTS"
+            if [ "$IST_BERLIN" = "$SOLL_BERLIN" ] && [ "$IST_EVENTS" = "$SOLL_EVENTS" ]; then
+              echo "::notice::Pages aktuell (berlin=$IST_BERLIN, events=$IST_EVENTS)"
+              exit 0
+            fi
+          done
+
+          echo "::error::Pages liefert nach 5 Minuten noch alte Staende aus."
+          echo "::error::Soll berlin=$SOLL_BERLIN events=$SOLL_EVENTS - Ist berlin=$IST_BERLIN events=$IST_EVENTS"
+          echo "::error::Pruefen: Actions -> pages build and deployment"
+          exit 1
+
+      - name: Live-Auslieferung ueber gaesteliste030.de pruefen
+        if: success()
+        run: |
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
+          SOLL_BERLIN=$(grep -c '<loc>' sitemap-berlin.xml)
+          sleep 60
+          LIVE=$(curl -s -A "$UA" https://www.gaesteliste030.de/sitemap.xml | grep -c '<loc>' || echo 0)
+          echo "Live /sitemap.xml: $LIVE (Soll $SOLL_BERLIN)"
+          if [ "$LIVE" != "$SOLL_BERLIN" ]; then
+            echo "::warning::Cloudflare-Snippet liefert noch $LIVE statt $SOLL_BERLIN - Snippet-Cache laeuft max. 30 Min."
+          else
+            echo "::notice::Live-Sitemap aktuell ($LIVE URLs)"
+          fi
