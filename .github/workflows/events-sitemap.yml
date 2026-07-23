@@ -44,6 +44,7 @@ jobs:
 
       - name: Auslieferung ueber GitHub Pages verifizieren
         run: |
+          set +e
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
           SOLL_BERLIN=$(grep -c '<loc>' sitemap-berlin.xml)
           SOLL_EVENTS=$(grep -c '<loc>' sitemap-events.xml)
@@ -53,8 +54,10 @@ jobs:
           IST_EVENTS=0
           for i in $(seq 1 10); do
             sleep 30
-            IST_BERLIN=$(curl -s -A "$UA" https://gl030.github.io/gl030-sitemap/sitemap-berlin.xml | grep -c '<loc>' || echo 0)
-            IST_EVENTS=$(curl -s -A "$UA" https://gl030.github.io/gl030-sitemap/sitemap-events.xml | grep -c '<loc>' || echo 0)
+            IST_BERLIN=$(curl -s -A "$UA" https://gl030.github.io/gl030-sitemap/sitemap-berlin.xml | grep -c '<loc>')
+            IST_EVENTS=$(curl -s -A "$UA" https://gl030.github.io/gl030-sitemap/sitemap-events.xml | grep -c '<loc>')
+            [ -z "$IST_BERLIN" ] && IST_BERLIN=0
+            [ -z "$IST_EVENTS" ] && IST_EVENTS=0
             echo "Versuch $i: Pages berlin=$IST_BERLIN events=$IST_EVENTS"
             if [ "$IST_BERLIN" = "$SOLL_BERLIN" ] && [ "$IST_EVENTS" = "$SOLL_EVENTS" ]; then
               echo "::notice::Pages aktuell (berlin=$IST_BERLIN, events=$IST_EVENTS)"
@@ -67,11 +70,12 @@ jobs:
           echo "::error::Pruefen: Actions -> pages build and deployment"
           exit 1
 
-    - name: Live-Auslieferung ueber gaesteliste030.de pruefen
+      - name: Live-Auslieferung ueber gaesteliste030.de pruefen
         if: success()
         env:
           GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
         run: |
+          set +e
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
           SOLL_BERLIN=$(grep -c '<loc>' sitemap-berlin.xml)
           sleep 60
@@ -79,8 +83,11 @@ jobs:
           RESP=$(curl -s -w "\n__CODE__%{http_code}" -A "$UA" \
                  -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" \
                  https://www.gaesteliste030.de/sitemap.xml)
+
           CODE=$(echo "$RESP" | grep -o '__CODE__[0-9]*' | grep -o '[0-9]*')
+          [ -z "$CODE" ] && CODE=0
           LIVE=$(echo "$RESP" | grep -c '<loc>')
+          [ -z "$LIVE" ] && LIVE=0
 
           echo "HTTP $CODE - Live /sitemap.xml: $LIVE (Soll $SOLL_BERLIN)"
 
@@ -91,3 +98,5 @@ jobs:
           else
             echo "::notice::Live-Sitemap aktuell ($LIVE URLs)"
           fi
+
+          exit 0
