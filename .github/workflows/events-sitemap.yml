@@ -67,16 +67,27 @@ jobs:
           echo "::error::Pruefen: Actions -> pages build and deployment"
           exit 1
 
-      - name: Live-Auslieferung ueber gaesteliste030.de pruefen
+    - name: Live-Auslieferung ueber gaesteliste030.de pruefen
         if: success()
+        env:
+          GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
         run: |
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
           SOLL_BERLIN=$(grep -c '<loc>' sitemap-berlin.xml)
           sleep 60
-          LIVE=$(curl -s -A "$UA" https://www.gaesteliste030.de/sitemap.xml | grep -c '<loc>' || echo 0)
-          echo "Live /sitemap.xml: $LIVE (Soll $SOLL_BERLIN)"
-          if [ "$LIVE" != "$SOLL_BERLIN" ]; then
-            echo "::warning::Cloudflare-Snippet liefert noch $LIVE statt $SOLL_BERLIN - Snippet-Cache laeuft max. 30 Min."
+
+          RESP=$(curl -s -w "\n__CODE__%{http_code}" -A "$UA" \
+                 -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" \
+                 https://www.gaesteliste030.de/sitemap.xml)
+          CODE=$(echo "$RESP" | grep -o '__CODE__[0-9]*' | grep -o '[0-9]*')
+          LIVE=$(echo "$RESP" | grep -c '<loc>')
+
+          echo "HTTP $CODE - Live /sitemap.xml: $LIVE (Soll $SOLL_BERLIN)"
+
+          if [ "$CODE" != "200" ]; then
+            echo "::warning::Live-Sitemap nicht abrufbar (HTTP $CODE) - Bot-Schutz oder Origin-Problem"
+          elif [ "$LIVE" != "$SOLL_BERLIN" ]; then
+            echo "::warning::Cloudflare-Snippet liefert $LIVE statt $SOLL_BERLIN - Snippet-Cache laeuft max. 30 Min."
           else
             echo "::notice::Live-Sitemap aktuell ($LIVE URLs)"
           fi
