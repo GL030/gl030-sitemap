@@ -638,4 +638,10 @@
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/oktoberfest</loc></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/halloween</loc></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/nochevieja</loc></url>
+  <url><loc>https://www.gaesteliste030.de/de/berlin/events/latin</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gaesteliste030.de/en/berlin/events/latin</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/latin</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gaesteliste030.de/de/berlin/locations/rooftop-oder-panoramablick</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.gaesteliste030.de/en/berlin/locations/rooftop-or-panoramic-view</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.gaesteliste030.de/es/berlin/locations/vista-desde-la-azotea-o-panoramica</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
