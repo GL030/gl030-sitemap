@@ -32,7 +32,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add sitemap-events.xml
+          git add sitemap-events.xml hreflang-es-map.json first-seen.json
           if git diff --cached --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "Keine Aenderung an sitemap-events.xml"
