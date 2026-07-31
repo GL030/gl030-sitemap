@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
 """
-GL030 Event-Sitemap-Generator (Phase 2)
-Liest die serverseitig gerenderten Tages-Seiten, extrahiert alle Event-Detail-URLs
-der naechsten 14 Tage (DE + EN), schreibt sitemap-events.xml und pingt neue URLs
-per IndexNow an Bing & Co.
+GL030 Event-Sitemap-Generator (Phase 2, ueberarbeitet 31.07.2026 / C5)
 
-Laeuft taeglich als GitHub Action. Keine Abhaengigkeiten ausser requests.
+Liest die serverseitig gerenderten Tages-Seiten, extrahiert alle Event-Detail-URLs
+der naechsten 14 Tage (DE + EN), ermittelt die ES-URLs ueber die hreflang-Links der
+DE-Detailseiten (ES-Slugs sind uebersetzt - Muster-Konstruktion wuerde tote URLs
+erzeugen; die ES-TAGESLISTEN leiten um, die ES-DETAILSEITEN existieren mit
+Self-Canonical), schreibt sitemap-events.xml mit <lastmod> (= Datum des ersten
+Auftauchens der URL, persistiert in first-seen.json) und pingt neue URLs per
+IndexNow an Bing & Co.
+
+Persistente Zustandsdateien im Repo:
+  - hreflang-es-map.json : {de_pfad: es_pfad} - einmal ermittelt, nie neu gecrawlt
+  - first-seen.json      : {pfad: JJJJ-MM-TT} - Basis fuer ehrliches lastmod
+
+Laeuft taeglich als GitHub Action. Keine Abhaengigkeiten ausser stdlib.
 """
 import os
 import re
@@ -16,9 +25,12 @@ import urllib.request
 from datetime import date, timedelta
 
 BASE = "https://www.gaesteliste030.de"
-LANGS = ["de", "en"]  # ES leitet bei Events um -> auslassen
+LANGS = ["de", "en"]  # ES-Tageslisten leiten um; ES-Details kommen ueber hreflang
 DAYS_AHEAD = 14
 SITEMAP_FILE = "sitemap-events.xml"
+ES_MAP_FILE = "hreflang-es-map.json"
+FIRST_SEEN_FILE = "first-seen.json"
+MAX_DETAIL_FETCHES = 500  # Schutz gegen Amok-Laeufe; Erstlauf ~400 DE-Seiten
 UA = ("Mozilla/5.0 (compatible; GL030-SitemapBot/1.0; "
       "+https://www.gaesteliste030.de)")
 INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
@@ -27,6 +39,10 @@ BYPASS_TOKEN = os.environ.get("GL030_BYPASS_TOKEN", "").strip()
 
 DETAIL_RE = re.compile(
     r'href="(/(?:de|en)/berlin/events/[a-z0-9-]+/\d{2}-\d{2}-\d{2}/[a-z0-9-]+)"'
+)
+HREFLANG_ES_RE = re.compile(
+    r'hreflang="es"\s+href="(?:https?://www\.gaesteliste030\.de)?'
+    r'(/es/berlin/eventos/[a-z0-9-]+/\d{2}-\d{2}-\d{2}/[a-z0-9-]+)"'
 )
 
 
@@ -44,6 +60,23 @@ def fetch(url: str) -> str:
         return ""
 
 
+def load_json(path: str) -> dict:
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"  WARN {path} unlesbar ({e}) - starte leer.", file=sys.stderr)
+        return {}
+
+
+def save_json(path: str, data: dict):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=0, sort_keys=True)
+        f.write("\n")
+
+
 def collect_event_paths() -> set:
     paths = set()
     today = date.today()
@@ -54,26 +87,47 @@ def collect_event_paths() -> set:
             url = f"{BASE}/{lang}/berlin/events/party/{dstr}"
             html = fetch(url)
             found = set(DETAIL_RE.findall(html))
-            # Nur Detail-Seiten, keine Unterseiten (kommen ohnehin nicht im Muster vor)
             paths |= found
             print(f"  {url}: {len(found)} Events")
             time.sleep(1.5)  # hoeflich bleiben
     return paths
 
 
-def write_sitemap(paths: set) -> str:
+def resolve_es_paths(de_paths: set, es_map: dict) -> set:
+    """ES-Pfade ueber hreflang der DE-Detailseiten; Ergebnisse werden gecacht.
+    Fehlschlaege werden NICHT gecacht (naechster Lauf versucht es erneut)."""
+    missing = sorted(p for p in de_paths if p not in es_map)
+    if missing:
+        todo = missing[:MAX_DETAIL_FETCHES]
+        print(f"hreflang-Aufloesung: {len(todo)} neue DE-Details "
+              f"({len(missing) - len(todo)} zurueckgestellt)")
+        for p in todo:
+            html = fetch(BASE + p)
+            m = HREFLANG_ES_RE.search(html)
+            if m:
+                es_map[p] = m.group(1)
+            else:
+                print(f"  WARN kein hreflang-es: {p}", file=sys.stderr)
+            time.sleep(0.7)
+    # Nur ES-Pfade zurueckgeben, deren DE-Quelle aktuell in der Sitemap ist
+    return {es_map[p] for p in de_paths if p in es_map}
+
+
+def write_sitemap(paths: set, first_seen: dict) -> None:
+    today_str = date.today().isoformat()
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for p in sorted(paths):
+        if p not in first_seen:
+            first_seen[p] = today_str
         loc = (BASE + p).replace("&", "&amp;")
-        lines.append(f"  <url><loc>{loc}</loc></url>")
+        lines.append(f"  <url><loc>{loc}</loc>"
+                     f"<lastmod>{first_seen[p]}</lastmod></url>")
     lines.append("</urlset>")
-    content = "\n".join(lines) + "\n"
     with open(SITEMAP_FILE, "w", encoding="utf-8") as f:
-        f.write(content)
-    return content
+        f.write("\n".join(lines) + "\n")
 
 
 def read_previous_paths() -> set:
@@ -122,8 +176,24 @@ def main():
         print("FEHLER: 0 Events gefunden - Sitemap wird NICHT ueberschrieben "
               "(vermutlich Blockierung oder Strukturaenderung).", file=sys.stderr)
         sys.exit(1)
+
+    es_map = load_json(ES_MAP_FILE)
+    de_paths = {p for p in current if p.startswith("/de/")}
+    es_paths = resolve_es_paths(de_paths, es_map)
+    print(f"ES-Klasse: {len(es_paths)} URLs "
+          f"(Map-Bestand: {len(es_map)} Zuordnungen)")
+    current |= es_paths
+
+    first_seen = load_json(FIRST_SEEN_FILE)
     new_paths = current - previous
-    write_sitemap(current)
+    write_sitemap(current, first_seen)
+    # first_seen auf aktuellen Bestand beschneiden (haelt die Datei klein)
+    first_seen = {p: d for p, d in first_seen.items() if p in current}
+    save_json(FIRST_SEEN_FILE, first_seen)
+    # es_map ebenfalls beschneiden: nur DE-Pfade der letzten Sitemap behalten
+    es_map = {p: v for p, v in es_map.items() if p in current}
+    save_json(ES_MAP_FILE, es_map)
+
     print(f"Sitemap geschrieben: {len(current)} URLs "
           f"({len(new_paths)} neu gegenueber Vorlauf)")
     ping_indexnow(new_paths)
