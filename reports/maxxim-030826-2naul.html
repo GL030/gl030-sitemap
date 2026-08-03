@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Maxxim × Gästeliste030 – Auswertung Juni/Juli 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --hero:linear-gradient(-225deg,#473b7b 0%,#3584a7 51%,#30d2be 100%);
+  --brand:linear-gradient(90deg,#00aa82,#00b4dc);
+  --green:#00aa82; --cyan:#00b4dc; --purple:#473b7b;
+  --bg:#fafafa; --card:#fff; --line:#e0e0e0; --ink:#212121; --muted:#6b7785;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Roboto',system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+.hero{background:var(--hero);color:#fff;padding:56px 0 68px;position:relative;overflow:hidden}
+.hero .logo{height:26px;margin-bottom:26px;opacity:.95}
+.hero h1{font-size:clamp(26px,4.4vw,40px);font-weight:900;line-height:1.12;letter-spacing:-.5px}
+.hero p{margin-top:14px;font-size:clamp(15px,2vw,18px);opacity:.92;max-width:660px;font-weight:300}
+.hero .stamp{margin-top:22px;display:inline-block;background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:500}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:-38px;position:relative;z-index:2}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.kpi .lab{font-size:13px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.6px}
+.kpi .val{font-size:38px;font-weight:900;line-height:1.1;margin-top:8px;
+  background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi .sub{font-size:14px;color:var(--muted);margin-top:6px}
+.up{color:var(--green);font-weight:700}
+
+section{padding:52px 0 0}
+h2{font-size:clamp(20px,3vw,27px);font-weight:900;letter-spacing:-.3px;margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:24px;max-width:760px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.chart-box{position:relative;height:340px}
+.chart-box.tall{height:420px}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font-size:14px;
+  font-weight:500;cursor:pointer;font-family:inherit;color:var(--ink);transition:.15s}
+.tab:hover{border-color:var(--cyan)}
+.tab.active{background:var(--brand);color:#fff;border-color:transparent;font-weight:700}
+
+/* Tabelle */
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{text-align:left;font-weight:700;color:var(--muted);font-size:12.5px;text-transform:uppercase;
+  letter-spacing:.5px;padding:10px 8px;border-bottom:2px solid var(--line)}
+td{padding:10px 8px;border-bottom:1px solid #f0f0f0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.top td{background:#f2fbf9;font-weight:500}
+tfoot td{font-weight:900;border-top:2px solid var(--line);border-bottom:none}
+
+/* Szenario */
+.scenario{background:linear-gradient(135deg,#fff 0%,#f4fbfa 100%);border:1px solid var(--line);
+  border-left:5px solid var(--green);border-radius:14px;padding:28px}
+.slider-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:20px 0 8px}
+input[type=range]{flex:1;min-width:220px;accent-color:#00aa82;height:6px}
+.slider-val{font-size:30px;font-weight:900;min-width:96px;
+  background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:22px}
+.result{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.result .l{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:500}
+.result .v{font-size:27px;font-weight:900;margin-top:5px}
+.result .v.loss{color:#c62828}
+.result .v.ok{color:var(--green)}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:8px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.fact b{display:block;font-size:16px;margin-bottom:6px}
+.fact span{color:var(--muted);font-size:14.5px}
+
+.note{font-size:13px;color:var(--muted);line-height:1.65;border-top:1px solid var(--line);
+  padding:22px 0 56px;margin-top:48px}
+.cta{background:var(--hero);color:#fff;border-radius:16px;padding:36px;margin-top:52px;text-align:center}
+.cta h2{margin-bottom:10px}
+.cta p{opacity:.93;max-width:620px;margin:0 auto;font-weight:300}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <svg class="logo" viewBox="0 0 510 68" xmlns="http://www.w3.org/2000/svg" aria-label="Gästeliste030">
+      <text x="0" y="50" font-family="Roboto" font-size="46" font-weight="900" fill="#ffffff">GÄSTELISTE</text>
+      <text x="322" y="50" font-family="Roboto" font-size="46" font-weight="900" fill="#30d2be">030</text>
+    </svg>
+    <h1>Maxxim auf Gästeliste030</h1>
+    <p>Auswertung Juni und Juli 2026 — Reichweite, Gästelisten und was die Zahlen für die kommenden Monate bedeuten.</p>
+    <div class="stamp">50 Events · 1.071 Gäste · Datenstand 03.08.2026</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="lab">Gäste im Juni</div>
+      <div class="val">455</div>
+      <div class="sub">25 Events · Ø 18,2 je Event</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Gäste im Juli</div>
+      <div class="val">616</div>
+      <div class="sub">25 Events · Ø 24,6 je Event</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Entwicklung</div>
+      <div class="val">+35 %</div>
+      <div class="sub"><span class="up">+161 Gäste</span> bei gleicher Eventzahl</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Gäste je 100 Aufrufe</div>
+      <div class="val">39</div>
+      <div class="sub">Juni 34 → Juli 39 <span class="up">(+17 %)</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Gäste je Event im Zeitverlauf</h2>
+    <p class="lead">Jeder Balken ist ein Abend. Die Julikurve liegt sichtbar über der des Vormonats — bei identischer Anzahl an Events und praktisch unveränderter Reichweite.</p>
+    <div class="panel">
+      <div class="tabs">
+        <button class="tab active" data-view="both">Beide Monate</button>
+        <button class="tab" data-view="jun">Nur Juni</button>
+        <button class="tab" data-view="jul">Nur Juli</button>
+      </div>
+      <div class="chart-box tall"><canvas id="timeline"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reichweite und Ergebnis im Vergleich</h2>
+    <p class="lead">Die Seitenaufrufe blieben nahezu konstant. Der Zuwachs bei den Gästen entstand also nicht durch mehr Publikum, sondern durch bessere Umwandlung.</p>
+    <div class="panel">
+      <div class="chart-box"><canvas id="compare"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Die Serien im Direktvergleich</h2>
+    <p class="lead">Alle wiederkehrenden Formate haben zugelegt. Am deutlichsten der Sunday Club, der sich von Juni auf Juli praktisch verdoppelt hat.</p>
+    <div class="panel">
+      <div class="chart-box"><canvas id="series"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Die stärksten Abende</h2>
+    <p class="lead">Events mit eigenem Namen und klarem Thema erreichen das Zwei- bis Dreifache des Monatsschnitts. Generisches Wochenendprogramm bleibt darunter.</p>
+    <div class="panel">
+      <table>
+        <thead>
+          <tr><th>Datum</th><th>Event</th><th class="num">Aufrufe</th><th class="num">Gäste</th><th class="num">je 100 Aufrufe</th></tr>
+        </thead>
+        <tbody id="topRows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Was passiert ohne Top- und Premium-Platzierung?</h2>
+    <p class="lead">Alle 50 ausgewerteten Events liefen mit Top- oder Premium-Kennzeichnung. Ohne diese Platzierung erscheinen Events deutlich weiter unten in Listen, Kategorie- und Tagesseiten — die Aufrufe brechen entsprechend ein. Der Regler zeigt, was das in Gästen bedeutet.</p>
+    <div class="scenario">
+      <div class="slider-row">
+        <div>
+          <div class="lab" style="font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:500">Angenommener Sichtbarkeitsverlust</div>
+          <div class="slider-val" id="lossVal">−75 %</div>
+        </div>
+        <input type="range" id="loss" min="0" max="90" step="5" value="75">
+      </div>
+      <div class="result-grid">
+        <div class="result"><div class="l">Aufrufe je Monat</div><div class="v" id="rViews">339</div></div>
+        <div class="result"><div class="l">Gäste je Monat</div><div class="v loss" id="rGuests">154</div></div>
+        <div class="result"><div class="l">Verlust gegenüber Juli</div><div class="v loss" id="rDelta">−462</div></div>
+        <div class="result"><div class="l">Ø Gäste je Event</div><div class="v" id="rAvg">6,2</div></div>
+      </div>
+      <div class="chart-box" style="margin-top:26px"><canvas id="scenarioChart"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Vier Punkte für die Entscheidung</h2>
+    <div class="facts">
+      <div class="fact"><b>Reichweite ist der Engpass, nicht die Umwandlung</b><span>Bei 39 Gästen je 100 Aufrufen bringt jede zusätzliche Sichtbarkeit direkt Gäste. 100 Aufrufe mehr je Event entsprechen rund 39 zusätzlichen Gästen.</span></div>
+      <div class="fact"><b>Der Trend zeigt nach oben</b><span>+35 % Gäste von Juni auf Juli bei gleicher Eventzahl. Eine Unterbrechung setzt genau in dem Moment aus, in dem die Kurve steigt.</span></div>
+      <div class="fact"><b>Sichtbarkeit baut sich nicht sofort wieder auf</b><span>Suchmaschinen und Nutzerverhalten brauchen Wochen, bis eine Location wieder im gewohnten Umfang gefunden wird. Ein Aussetzen wirkt über den Pausenmonat hinaus.</span></div>
+      <div class="fact"><b>September ist der Startmonat der Saison</b><span>Nach dem Sommerloch zieht die Nachfrage im Nachtleben deutlich an. Wer im September nicht sichtbar ist, verliert den Anschluss an den stärksten Quartalsverlauf des Jahres.</span></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Empfehlung</h2>
+    <p>Falls der August pausieren soll, ist das vertretbar — es ist der schwächste Monat des Jahres. Für September raten wir klar zur Fortsetzung mit Top-Platzierung: Dort beginnt die Saison, und die Julizahlen zeigen, wie schnell Sichtbarkeit in Gäste umschlägt.</p>
+  </div>
+
+  <p class="note">
+    <b>Quellen und Lesart.</b> Gästezahlen aus dem Anmeldesystem von Gästeliste030 (Stand 03.08.2026), Seitenaufrufe aus der Plattform-Statistik. Für die Events vom 29. bis 31. Juli liegen keine Aufrufzahlen vor; Vergleichsrechnungen mit Aufrufen beziehen sich daher auf den Zeitraum bis 27. Juli, die Gästezahlen sind für alle 50 Events vollständig.<br><br>
+    „Gäste" bezeichnet eingetragene Personen auf Gästelisten. Wie viele davon tatsächlich an der Tür erschienen sind, wird ohne Einlass-Scan nicht erfasst und hier nicht behauptet. Das Szenario zum Sichtbarkeitsverlust ist eine Modellrechnung auf Basis der gemessenen Umwandlungsrate, keine Prognose — der tatsächliche Effekt kann darüber oder darunter liegen.
+  </p>
+
+</div>
+
+<script>
+const JUN = [
+  ["01.06.","Monday Nite Club",24,7],["03.06.","Queens Night",47,32],["04.06.","Thursdate – Studance",34,12],
+  ["05.06.","RePlay – 90s/2000s/2010s",137,28],["06.06.","Peace Love House by Goldkind",91,33],
+  ["07.06.","The Sunday Club",41,15],["08.06.","Monday Nite Club",16,5],["10.06.","Queens Night – Afrodelic",35,16],
+  ["11.06.","Thursdate – WM Disco Opening",31,2],["12.06.","Wild Wild West!",123,40],["13.06.","Back To The Future",90,34],
+  ["14.06.","Sunday Club – Kudamm Party",50,12],["15.06.","Monday Nite Club",13,7],["17.06.","Queens Night – WM Club",53,35],
+  ["18.06.","Thursdate – Studance",25,8],["19.06.","We love Disco",56,16],["20.06.","Germany Calling",76,21],
+  ["21.06.","The Sunday Club",30,14],["22.06.","Monday Nite Club",19,4],["24.06.","Queens Night Summer Vibes",47,22],
+  ["25.06.","Thursdate – Game Night",33,13],["26.06.","Disco Legends",75,24],["27.06.","Kiss Me Berlin!",105,27],
+  ["28.06.","24K After Dark",52,10],["29.06.","Kudamm WM Club & Bruno Mars",49,18]
+];
+const JUL = [
+  ["01.07.","Queens Night Oldschool",33,18],["03.07.","Summer Break",89,24],["04.07.","Disco Nation",105,59],
+  ["05.07.","The Sunday Club",19,9],["06.07.","Monday Nite Club",25,5],["08.07.","Queens Night – Endless Summer",63,34],
+  ["09.07.","Thursdate – Studance",30,5],["10.07.","Friday I'm In Love",81,27],["11.07.","Forever Young – 80s/90s",139,28],
+  ["12.07.","The Sunday Club",51,27],["13.07.","Monday Nite Club",27,8],["15.07.","Queens Night – Good Times",67,25],
+  ["16.07.","Thursdate – Studance",23,10],["17.07.","Berlin Love",68,9],["18.07.","Flower Bloom Berlin",104,41],
+  ["19.07.","The Sunday Club – WM Finale",44,25],["20.07.","Monday Nite Club",41,14],["23.07.","Thursdate – Studance",45,27],
+  ["24.07.","We Love Disco",95,34],["25.07.","Goldkind Wonderland – Pride",119,58],["26.07.","The Sunday Club",44,27],
+  ["27.07.","Monday Nite Club",43,19],["29.07.","Queens Night We Got the Juice",null,46],
+  ["30.07.","Thursdate – Studance",null,10],["31.07.","Dancing Queen",null,27]
+];
+
+const GREEN='#00aa82', CYAN='#00b4dc', PURPLE='#473b7b';
+Chart.defaults.font.family="'Roboto',sans-serif";
+Chart.defaults.color='#6b7785';
+
+/* --- Zeitverlauf --- */
+const tlCtx=document.getElementById('timeline');
+let timeline=new Chart(tlCtx,{type:'bar',data:buildTL('both'),options:{
+  responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:9,padding:16}},
+    tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y} Gäste`}}},
+  scales:{y:{beginAtZero:true,title:{display:true,text:'Gäste je Event'},grid:{color:'#eee'}},
+    x:{grid:{display:false},ticks:{maxRotation:70,minRotation:45,font:{size:10}}}}
+}});
+function buildTL(view){
+  if(view==='jun') return {labels:JUN.map(r=>r[0]),datasets:[ds('Juni',JUN,GREEN)]};
+  if(view==='jul') return {labels:JUL.map(r=>r[0]),datasets:[ds('Juli',JUL,CYAN)]};
+  const n=Math.max(JUN.length,JUL.length);
+  return {labels:Array.from({length:n},(_,i)=>`Event ${i+1}`),
+    datasets:[ds('Juni',JUN,GREEN),ds('Juli',JUL,CYAN)]};
+}
+function ds(label,data,color){return{label:label,data:data.map(r=>r[3]),backgroundColor:color+'cc',
+  borderColor:color,borderWidth:1,borderRadius:4};}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  timeline.data=buildTL(b.dataset.view); timeline.update();
+}));
+
+/* --- Monatsvergleich --- */
+const sumV=a=>a.reduce((s,r)=>s+(r[2]||0),0), sumG=a=>a.reduce((s,r)=>s+r[3],0);
+const junV=sumV(JUN), julV=sumV(JUL.filter(r=>r[2]!==null));
+new Chart(document.getElementById('compare'),{type:'bar',
+ data:{labels:['Seitenaufrufe','Gäste','Ø Gäste je Event'],
+  datasets:[
+   {label:'Juni',data:[junV,455,18.2],backgroundColor:GREEN+'cc',borderRadius:6},
+   {label:'Juli',data:[julV,616,24.6],backgroundColor:CYAN+'cc',borderRadius:6}]},
+ options:{responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:9,padding:16}}},
+  scales:{y:{type:'logarithmic',title:{display:true,text:'Wert (logarithmisch)'},grid:{color:'#eee'}},
+   x:{grid:{display:false}}}}});
+
+/* --- Serien --- */
+const serie=(arr,key)=>arr.filter(r=>r[1].toLowerCase().includes(key)).reduce((s,r)=>s+r[3],0);
+new Chart(document.getElementById('series'),{type:'bar',
+ data:{labels:['Queens Night','The Sunday Club','Monday Nite Club','Thursdate'],
+  datasets:[
+   {label:'Juni',data:[serie(JUN,'queens'),serie(JUN,'sunday'),serie(JUN,'monday'),serie(JUN,'thursdate')],
+    backgroundColor:GREEN+'cc',borderRadius:6},
+   {label:'Juli',data:[serie(JUL,'queens'),serie(JUL,'sunday'),serie(JUL,'monday'),serie(JUL,'thursdate')],
+    backgroundColor:CYAN+'cc',borderRadius:6}]},
+ options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:9,padding:16}},
+   tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.x} Gäste`}}},
+  scales:{x:{beginAtZero:true,title:{display:true,text:'Gäste gesamt'},grid:{color:'#eee'}},
+   y:{grid:{display:false}}}}});
+
+/* --- Top-Events --- */
+const all=[...JUN.map(r=>[...r,'Juni']),...JUL.map(r=>[...r,'Juli'])]
+  .sort((a,b)=>b[3]-a[3]).slice(0,10);
+document.getElementById('topRows').innerHTML=all.map((r,i)=>{
+  const per=r[2]?(r[3]/r[2]*100).toFixed(0):'–';
+  return `<tr class="${i<3?'top':''}"><td>${r[0]}</td><td>${r[1]}</td>
+    <td class="num">${r[2]??'–'}</td><td class="num"><b>${r[3]}</b></td><td class="num">${per}</td></tr>`;
+}).join('');
+
+/* --- Szenario --- */
+const BASE_VIEWS=1355, BASE_GUESTS=616, EVENTS=25, RATE=616/1355;
+const slider=document.getElementById('loss');
+let scen=new Chart(document.getElementById('scenarioChart'),{type:'bar',
+ data:{labels:['Juni','Juli','Szenario ohne Platzierung'],
+  datasets:[{label:'Gäste je Monat',data:[455,616,154],
+   backgroundColor:[GREEN+'cc',CYAN+'cc','#c62828cc'],borderRadius:6}]},
+ options:{responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${Math.round(c.parsed.y)} Gäste`}}},
+  scales:{y:{beginAtZero:true,title:{display:true,text:'Gäste je Monat'},grid:{color:'#eee'}},
+   x:{grid:{display:false}}}}});
+
+function renderScenario(){
+  const loss=+slider.value;
+  const views=Math.round(BASE_VIEWS*(1-loss/100));
+  const guests=Math.round(views*RATE);
+  document.getElementById('lossVal').textContent='−'+loss+' %';
+  document.getElementById('rViews').textContent=views.toLocaleString('de-DE');
+  document.getElementById('rGuests').textContent=guests.toLocaleString('de-DE');
+  document.getElementById('rDelta').textContent=(guests-BASE_GUESTS).toLocaleString('de-DE');
+  document.getElementById('rAvg').textContent=(guests/EVENTS).toFixed(1).replace('.',',');
+  scen.data.datasets[0].data[2]=guests;
+  scen.update();
+}
+slider.addEventListener('input',renderScenario);
+renderScenario();
+</script>
+</body>
+</html>
