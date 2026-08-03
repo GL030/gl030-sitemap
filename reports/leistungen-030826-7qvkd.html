@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gästeliste030 – Was sich seit Juli verändert hat</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --hero:linear-gradient(-225deg,#473b7b 0%,#3584a7 51%,#30d2be 100%);
+  --brand:linear-gradient(90deg,#00aa82,#00b4dc);
+  --green:#00aa82; --cyan:#00b4dc;
+  --bg:#fafafa; --card:#fff; --line:#e0e0e0; --ink:#212121; --muted:#6b7785;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Roboto',system-ui,sans-serif;line-height:1.65}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.hero{background:var(--hero);color:#fff;padding:54px 0 66px}
+.hero .logo{height:26px;margin-bottom:24px}
+.hero h1{font-size:clamp(26px,4.4vw,40px);font-weight:900;line-height:1.12;letter-spacing:-.5px}
+.hero p{margin-top:14px;font-size:clamp(15px,2vw,18px);opacity:.92;max-width:680px;font-weight:300}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:-38px;position:relative;z-index:2}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.kpi .lab{font-size:12.5px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.6px}
+.kpi .val{font-size:34px;font-weight:900;line-height:1.1;margin-top:6px;
+  background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi .sub{font-size:13.5px;color:var(--muted);margin-top:4px}
+
+section{padding:52px 0 0}
+h2{font-size:clamp(20px,3vw,27px);font-weight:900;letter-spacing:-.3px;margin-bottom:8px}
+h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.lead{color:var(--muted);margin-bottom:24px;max-width:780px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.chart-box{position:relative;height:330px}
+
+/* Feature-Liste */
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.f{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;position:relative;padding-left:26px}
+.f::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4px;border-radius:14px 0 0 14px;background:var(--brand)}
+.f b{display:block;font-size:16px;margin-bottom:5px}
+.f span{color:var(--muted);font-size:14.5px}
+.f .why{display:block;margin-top:9px;font-size:14px;color:var(--green);font-weight:500}
+
+.group-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;
+  letter-spacing:1.4px;margin:34px 0 14px}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-weight:700;color:var(--muted);font-size:12.5px;text-transform:uppercase;
+  letter-spacing:.5px;padding:11px 8px;border-bottom:2px solid var(--line)}
+td{padding:12px 8px;border-bottom:1px solid #f0f0f0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.hi td{background:#f2fbf9;font-weight:500}
+td b{font-weight:900}
+
+.callout{background:linear-gradient(135deg,#fff 0%,#f4fbfa 100%);border:1px solid var(--line);
+  border-left:5px solid var(--green);border-radius:14px;padding:26px;margin-top:22px}
+.callout b{font-size:17px;display:block;margin-bottom:6px}
+
+.note{font-size:13px;color:var(--muted);line-height:1.65;border-top:1px solid var(--line);
+  padding:22px 0 56px;margin-top:46px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <svg class="logo" viewBox="0 0 510 68" xmlns="http://www.w3.org/2000/svg" aria-label="Gästeliste030">
+      <text x="0" y="50" font-family="Roboto" font-size="46" font-weight="900" fill="#fff">GÄSTELISTE</text>
+      <text x="322" y="50" font-family="Roboto" font-size="46" font-weight="900" fill="#30d2be">030</text>
+    </svg>
+    <h1>Was sich seit Juli verändert hat</h1>
+    <p>Wir haben die Plattform in den vergangenen Wochen grundlegend überarbeitet — technisch, inhaltlich und in der Messung. Hier steht, was gemacht wurde, was es bringt und was das in Zahlen bedeutet.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi"><div class="lab">Suchimpressionen</div><div class="val">1 Mio.</div><div class="sub">pro Monat bei Google</div></div>
+    <div class="kpi"><div class="lab">Besucher</div><div class="val">27.500</div><div class="sub">pro Monat auf der Plattform</div></div>
+    <div class="kpi"><div class="lab">Umwandlung</div><div class="val">10 %</div><div class="sub">≈ 100 Anmeldungen je 1.000 Besucher</div></div>
+    <div class="kpi"><div class="lab">Gäste</div><div class="val">4.400</div><div class="sub">auf Gästelisten, je Monat</div></div>
+  </div>
+
+  <section>
+    <h2>Die zentrale Kennzahl</h2>
+    <p class="lead">Von tausend Besuchern der Plattform tragen sich rund hundert in eine Gästeliste ein. Weil im Schnitt 1,5 Personen je Eintrag kommen, entstehen daraus etwa 150 Gäste. Das ist keine Schätzung, sondern der gemessene Durchschnitt über alle Locations.</p>
+    <div class="callout">
+      <b>Bei Maxxim liegt der Wert deutlich höher.</b>
+      Maxxim-Eventseiten wandeln 100 Seitenaufrufe in rund 39 Gäste um — ein Vielfaches des Plattformschnitts. Wer auf einer Maxxim-Seite landet, trägt sich mit hoher Wahrscheinlichkeit ein. Der Engpass ist also nicht die Umwandlung, sondern wie viele Menschen die Seite überhaupt sehen.
+    </div>
+  </section>
+
+  <section>
+    <h2>Platzierung: Was Sichtbarkeit konkret ausmacht</h2>
+    <p class="lead">Events ohne Top- oder Premium-Kennzeichnung erscheinen in Listen, Kategorie- und Tagesseiten deutlich weiter unten. Nach unserer Einschätzung bleiben davon nur rund 20 bis 25 Prozent der bisherigen Aufrufe übrig — mit entsprechender Wirkung auf die Gästezahl.</p>
+    <div class="panel">
+      <div class="chart-box"><canvas id="placement"></canvas></div>
+    </div>
+    <div class="callout">
+      <b>Was das für Maxxim bedeutet</b>
+      Im Juli erreichten 25 Events zusammen 616 Gäste. Bleiben nur 20–25 % der Sichtbarkeit, landet dieselbe Eventzahl rechnerisch bei etwa 125–155 Gästen im Monat — ein Rückgang von rund 460 bis 490 Gästen.
+    </div>
+  </section>
+
+  <section>
+    <h2>Meta Ads: Was zusätzliches Budget bewirkt</h2>
+    <p class="lead">Zusätzlich zur organischen Sichtbarkeit können wir Anzeigen auf Instagram und Facebook schalten — ausgespielt an Menschen, die nachweislich nach Berliner Nachtleben gesucht haben. Diese Zielgruppen entstehen aus dem Traffic von Gästeliste030 und lassen sich nicht einkaufen.</p>
+    <div class="panel">
+      <table>
+        <thead>
+          <tr><th>Werbebudget / Monat</th><th class="num">Zusätzliche Anmeldungen</th><th class="num">Zusätzliche Gäste</th><th class="num">Kosten je Gast</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>100 €</td><td class="num">10–20</td><td class="num"><b>15–30</b></td><td class="num">3,30–6,70 €</td></tr>
+          <tr class="hi"><td>200 €</td><td class="num">20–40</td><td class="num"><b>30–60</b></td><td class="num">3,30–6,70 €</td></tr>
+          <tr><td>400 €</td><td class="num">40–80</td><td class="num"><b>60–120</b></td><td class="num">3,30–6,70 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <b>Einordnung</b>
+      400 € Werbebudget entsprechen bei Maxxim rund 60 bis 120 zusätzlichen Gästen im Monat — also etwa 10 bis 20 Prozent auf die Julizahl obendrauf. Die Spanne ist bewusst breit: Sie hängt vom Event, vom Motiv und vom Zeitpunkt ab. Belastbare eigene Werte liefern wir nach der ersten Kampagne.
+    </div>
+  </section>
+
+  <section>
+    <h2>Was wir seit Juli umgesetzt haben</h2>
+    <p class="lead">Rund vierzig Einzelmaßnahmen in sechs Wochen. Hier die, die für Locations unmittelbar spürbar sind.</p>
+
+    <div class="group-title">Gefunden werden</div>
+    <div class="feat">
+      <div class="f"><b>Sitemap wieder aktiv</b><span>Zwei Jahre lang konnte Google unsere Seitenstruktur nicht vollständig erfassen. Seit Juli ist sie wieder registriert — inzwischen mit über 2.000 hinterlegten Adressen.</span><span class="why">→ Neue Events werden schneller gefunden</span></div>
+      <div class="f"><b>Sofortmeldung an Suchmaschinen</b><span>Neue Events werden bei Bing und Copilot aktiv angemeldet, statt auf den nächsten Besuch des Suchroboters zu warten.</span><span class="why">→ Neue Termine binnen Stunden auffindbar</span></div>
+      <div class="f"><b>Serverfehler behoben</b><span>Fehlerhafte Seitenauslieferungen und unnötiger Suchmaschinen-Verkehr wurden abgestellt — rund drei Viertel des verschwendeten Aufwands.</span><span class="why">→ Suchmaschinen erfassen die wichtigen Seiten</span></div>
+      <div class="f"><b>Alte Adressen umgeleitet</b><span>Frühere Seitenadressen zeigen jetzt sauber auf die aktuellen Profile, statt ins Leere zu laufen.</span><span class="why">→ Kein Besucherverlust durch tote Links</span></div>
+    </div>
+
+    <div class="group-title">Besser dargestellt werden</div>
+    <div class="feat">
+      <div class="f"><b>Eventtitel neu aufgebaut</b><span>In den Suchergebnissen steht jetzt der Eventname zuerst, dann Datum und Location — rund 865 Seiten wurden umgestellt.</span><span class="why">→ Mehr Klicks bei gleicher Platzierung</span></div>
+      <div class="f"><b>Locationprofile mit Nutzentext</b><span>Rund 250 Profile haben neue Titel und Beschreibungen erhalten, 22 davon zusätzlich ausführliche Texte mit Antworten auf typische Fragen.</span><span class="why">→ Höhere Sichtbarkeit bei Suchen nach dem Clubnamen</span></div>
+      <div class="f"><b>Strukturierte Eventdaten</b><span>Termine, Orte und Preise werden Suchmaschinen jetzt maschinenlesbar mitgeliefert.</span><span class="why">→ Chance auf hervorgehobene Darstellung</span></div>
+      <div class="f"><b>Werbefreie Clubprofile</b><span>Auf Locationprofilen läuft keine Fremdwerbung mehr.</span><span class="why">→ Ruhigere Darstellung der Location</span></div>
+    </div>
+
+    <div class="group-title">Mehr Anmeldungen erzielen</div>
+    <div class="feat">
+      <div class="f"><b>Tagesaktueller Antworttext</b><span>Auf der Startseite steht, wie viele Partys heute stattfinden und wie viele davon eine vergünstigte Gästeliste haben — automatisch aktualisiert.</span><span class="why">→ Direkter Einstieg ins Angebot</span></div>
+      <div class="f"><b>Frist am Anmeldebutton</b><span>Am Button steht jetzt, bis wann die Eintragung möglich ist.</span><span class="why">→ Weniger Zögern, mehr Abschlüsse</span></div>
+      <div class="f"><b>Teasertexte auf Eventreihen</b><span>Wiederkehrende Formate haben eigene Beschreibungen erhalten statt austauschbarer Standardtexte.</span><span class="why">→ Bessere Auffindbarkeit von Serien</span></div>
+      <div class="f"><b>Drei Sprachen durchgängig</b><span>Deutsch, Englisch und Spanisch sind vollständig gepflegt — wichtig für internationale Gäste.</span><span class="why">→ Zugang zum Touristenpublikum</span></div>
+    </div>
+
+    <div class="group-title">Messen und nachweisen</div>
+    <div class="feat">
+      <div class="f"><b>Anmeldungen je Club nachvollziehbar</b><span>Jede Gästelisten-Anmeldung und jede Tischanfrage wird erfasst und der Location zugeordnet — doppelt abgesichert über Browser und Server.</span><span class="why">→ Nachvollziehbare Ergebnisse statt Schätzwerte</span></div>
+      <div class="f"><b>Werbeplattformen angebunden</b><span>Instagram, Facebook und TikTok sind messtechnisch angeschlossen — mit Einwilligungsprüfung nach europäischem Standard.</span><span class="why">→ Kampagnen sind bis zur Anmeldung messbar</span></div>
+      <div class="f"><b>Ticketklicks sichtbar</b><span>Wir sehen jetzt, wie viele Besucher von einer Location aus zu Ticketplattformen weitergehen.</span><span class="why">→ Zusätzlicher Nachweis von Kaufinteresse</span></div>
+      <div class="f"><b>Eigene Reports</b><span>Auswertungen wie diese entstehen direkt aus unseren Daten und werden auf Wunsch monatlich geliefert.</span><span class="why">→ Transparenz statt Behauptung</span></div>
+    </div>
+  </section>
+
+  <p class="note">
+    <b>Quellen und Lesart.</b> Reichweiten- und Umwandlungszahlen aus Google Search Console, Google Analytics und dem Anmeldesystem von Gästeliste030, Zeitraum Juli 2026. „Anmeldungen" sind Eintragungen auf Gästelisten; im Schnitt kommen 1,5 Personen je Eintragung. Wie viele Gäste tatsächlich an der Tür erscheinen, wird ohne Einlass-Scan nicht erfasst und hier nicht behauptet.<br><br>
+    Die Angaben zum Sichtbarkeitsverlust ohne Platzierung sowie zur Wirkung von Werbebudget sind Modellrechnungen auf Basis gemessener Umwandlungsraten — keine Zusagen. Belastbare eigene Werte zu Anzeigenkosten liefern wir nach Abschluss der ersten Kampagne.
+  </p>
+
+</div>
+
+<script>
+Chart.defaults.font.family="'Roboto',sans-serif";
+Chart.defaults.color='#6b7785';
+new Chart(document.getElementById('placement'),{type:'bar',
+ data:{labels:['Mit Top-/Premium-Platzierung (Juli)','Ohne Platzierung (Schätzung)'],
+  datasets:[
+   {label:'Seitenaufrufe',data:[1355,305],backgroundColor:'#00b4dccc',borderRadius:6},
+   {label:'Gäste',data:[616,140],backgroundColor:'#00aa82cc',borderRadius:6}]},
+ options:{responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:9,padding:16}},
+   tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y.toLocaleString('de-DE')}`}}},
+  scales:{y:{beginAtZero:true,grid:{color:'#eee'},title:{display:true,text:'je Monat'}},
+   x:{grid:{display:false}}}}});
+</script>
+</body>
+</html>
