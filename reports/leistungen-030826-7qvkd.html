@@ -89,8 +89,8 @@ td b{font-weight:900}
     <h2>Die zentrale Kennzahl</h2>
     <p class="lead">Von tausend Besuchern der Plattform tragen sich rund hundert in eine Gästeliste ein. Weil im Schnitt 1,5 Personen je Eintrag kommen, entstehen daraus etwa 150 Gäste. Das ist keine Schätzung, sondern der gemessene Durchschnitt über alle Locations.</p>
     <div class="callout">
-      <b>Bei Maxxim liegt der Wert deutlich höher.</b>
-      Maxxim-Eventseiten wandeln 100 Seitenaufrufe in rund 39 Gäste um — ein Vielfaches des Plattformschnitts. Wer auf einer Maxxim-Seite landet, trägt sich mit hoher Wahrscheinlichkeit ein. Der Engpass ist also nicht die Umwandlung, sondern wie viele Menschen die Seite überhaupt sehen.
+      <b>Bei gut platzierten Locations liegt der Wert deutlich höher.</b>
+      Eventseiten unserer Top-Partner wandeln bis zu rund 39 von 100 Seitenaufrufen in Gäste um — ein Vielfaches des Plattformschnitts. Wer auf einer solchen Eventseite landet, trägt sich mit hoher Wahrscheinlichkeit ein. Der Engpass ist also nicht die Umwandlung, sondern wie viele Menschen die Seite überhaupt sehen.
     </div>
   </section>
 
@@ -101,8 +101,8 @@ td b{font-weight:900}
       <div class="chart-box"><canvas id="placement"></canvas></div>
     </div>
     <div class="callout">
-      <b>Was das für Maxxim bedeutet</b>
-      Im Juli erreichten 25 Events zusammen 616 Gäste. Bleiben nur 20–25 % der Sichtbarkeit, landet dieselbe Eventzahl rechnerisch bei etwa 125–155 Gästen im Monat — ein Rückgang von rund 460 bis 490 Gästen.
+      <b>Ein Rechenbeispiel</b>
+      Erreicht eine Location mit 25 Events im Monat rund 600 Gäste über die Gästeliste, und bleiben ohne Platzierung nur 20–25 % der Sichtbarkeit, landet dieselbe Eventzahl rechnerisch bei etwa 120–150 Gästen im Monat — ein Rückgang von rund 450 bis 480 Gästen.
     </div>
   </section>
 
@@ -123,7 +123,7 @@ td b{font-weight:900}
     </div>
     <div class="callout">
       <b>Einordnung</b>
-      400 € Werbebudget entsprechen bei Maxxim rund 60 bis 120 zusätzlichen Gästen im Monat — also etwa 10 bis 20 Prozent auf die Julizahl obendrauf. Die Spanne ist bewusst breit: Sie hängt vom Event, vom Motiv und vom Zeitpunkt ab. Belastbare eigene Werte liefern wir nach der ersten Kampagne.
+      400 € Werbebudget entsprechen rechnerisch rund 60 bis 120 zusätzlichen Gästen im Monat (400 € geteilt durch 3,30–6,70 € je Gast). Die Spanne ist bewusst breit: Sie hängt vom Event, vom Motiv und vom Zeitpunkt ab. Konservativ gerechnet — in unserer ersten gemessenen Kampagne im Juli lag der Preis je Gast darunter.
     </div>
   </section>
 
@@ -166,7 +166,7 @@ td b{font-weight:900}
 
   <p class="note">
     <b>Quellen und Lesart.</b> Reichweiten- und Umwandlungszahlen aus Google Search Console, Google Analytics und dem Anmeldesystem von Gästeliste030, Zeitraum Juli 2026. „Anmeldungen" sind Eintragungen auf Gästelisten; im Schnitt kommen 1,5 Personen je Eintragung. Wie viele Gäste tatsächlich an der Tür erscheinen, wird ohne Einlass-Scan nicht erfasst und hier nicht behauptet.<br><br>
-    Die Angaben zum Sichtbarkeitsverlust ohne Platzierung sowie zur Wirkung von Werbebudget sind Modellrechnungen auf Basis gemessener Umwandlungsraten — keine Zusagen. Belastbare eigene Werte zu Anzeigenkosten liefern wir nach Abschluss der ersten Kampagne.
+    Die Angaben zum Sichtbarkeitsverlust ohne Platzierung sowie zur Wirkung von Werbebudget sind Modellrechnungen auf Basis gemessener Umwandlungsraten — keine Zusagen. Die erste gemessene Kampagne (Juli 2026) lag unter der hier angesetzten Kostenspanne; wir rechnen bewusst konservativ.
   </p>
 
 </div>
@@ -175,10 +175,10 @@ td b{font-weight:900}
 Chart.defaults.font.family="'Roboto',sans-serif";
 Chart.defaults.color='#6b7785';
 new Chart(document.getElementById('placement'),{type:'bar',
- data:{labels:['Mit Top-/Premium-Platzierung (Juli)','Ohne Platzierung (Schätzung)'],
+ data:{labels:['Mit Top-/Premium-Platzierung (Beispiel)','Ohne Platzierung (Schätzung)'],
   datasets:[
-   {label:'Seitenaufrufe',data:[1355,305],backgroundColor:'#00b4dccc',borderRadius:6},
-   {label:'Gäste',data:[616,140],backgroundColor:'#00aa82cc',borderRadius:6}]},
+   {label:'Seitenaufrufe',data:[1350,300],backgroundColor:'#00b4dccc',borderRadius:6},
+   {label:'Gäste',data:[600,135],backgroundColor:'#00aa82cc',borderRadius:6}]},
  options:{responsive:true,maintainAspectRatio:false,
   plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:9,padding:16}},
    tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y.toLocaleString('de-DE')}`}}},
