@@ -636,8 +636,8 @@
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/aire-libre</loc></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/todo-incluido</loc></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/oktoberfest</loc></url>
-  <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/halloween</loc></url>
-  <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/nochevieja</loc></url>
+  <url><loc>https://www.gaesteliste030.de/es/berlin/events/halloween</loc></url>
+  <url><loc>https://www.gaesteliste030.de/es/berlin/events/nochevieja</loc></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/latin</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/latin</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/latin</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
