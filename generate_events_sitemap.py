@@ -60,6 +60,31 @@ def fetch(url: str) -> str:
         return ""
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Weiterleitungen NICHT folgen - sonst sieht eine 302-URL wie 200 aus."""
+
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+
+_no_redirect_opener = urllib.request.build_opener(_NoRedirect)
+
+
+def status_of(url: str) -> int:
+    """HTTP-Status ohne Redirect-Folgen. 0 = Netzwerkfehler (nicht bewertbar)."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    if BYPASS_TOKEN:
+        req.add_header("X-GL030-Auth", BYPASS_TOKEN)
+    try:
+        with _no_redirect_opener.open(req, timeout=20) as r:
+            return r.status
+    except urllib.error.HTTPError as e:
+        return e.code
+    except Exception as e:
+        print(f"  WARN Status {url}: {e}", file=sys.stderr)
+        return 0
+
+
 def load_json(path: str) -> dict:
     if not os.path.exists(path):
         return {}
@@ -109,6 +134,34 @@ def resolve_es_paths(de_paths: set, es_map: dict) -> set:
             else:
                 print(f"  WARN kein hreflang-es: {p}", file=sys.stderr)
             time.sleep(0.7)
+    # Gecachte Zuordnungen validieren: ES-Slugs aendern sich, wenn eine
+    # Uebersetzung nachgezogen oder ein Event umbenannt wird. Ohne Pruefung
+    # bleibt eine tote URL dauerhaft in der Sitemap (08.08.2026: 5x 302 + 3x 404,
+    # GSC-Meldung "Seite mit Weiterleitung"). Fehlerhafte Eintraege werden neu
+    # ueber hreflang aufgeloest; klappt das nicht, fliegt der Eintrag raus,
+    # statt eine kaputte URL zu listen.
+    cached = sorted(p for p in de_paths if p in es_map)
+    revalidated = dropped = 0
+    for p in cached:
+        st = status_of(BASE + es_map[p])
+        if st == 200 or st == 0:  # 0 = Netzwerkfehler: Bestand nicht wegwerfen
+            continue
+        print(f"  ES-Pfad ungueltig (HTTP {st}): {es_map[p]} - loese neu auf")
+        html = fetch(BASE + p)
+        m = HREFLANG_ES_RE.search(html)
+        if m:
+            es_map[p] = m.group(1)
+            revalidated += 1
+        else:
+            es_map.pop(p, None)
+            dropped += 1
+            print(f"  WARN kein hreflang-es bei Neuaufloesung: {p}",
+                  file=sys.stderr)
+        time.sleep(0.7)
+    if revalidated or dropped:
+        print(f"Revalidierung: {revalidated} korrigiert, {dropped} entfernt "
+              f"({len(cached)} geprueft)")
+
     # Nur ES-Pfade zurueckgeben, deren DE-Quelle aktuell in der Sitemap ist
     return {es_map[p] for p in de_paths if p in es_map}
 
