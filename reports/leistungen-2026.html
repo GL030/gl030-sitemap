@@ -76,6 +76,9 @@ h3{font-size:17px;font-weight:700;margin-bottom:6px}
 .t-line{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
 .t-line b{color:#111}
 .tiers-note{font-size:12.5px;color:var(--muted);margin-top:14px;text-align:center}
+.pk-card{margin-top:4px}
+.pk-card .tiers{margin-top:6px}
+.t-line span{text-align:left}
 .pk-title{font-size:clamp(18px,2.6vw,22px);font-weight:900;margin:30px 0 2px}
 .pk-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
 .dark-sec .pk-title{color:#fff}
@@ -113,7 +116,6 @@ h3{font-size:17px;font-weight:700;margin-bottom:6px}
 .ac-list{display:grid;gap:10px}
 .ac-item{font-size:13.5px;color:#3d464e;line-height:1.5;padding-left:22px;position:relative}
 .ac-item::before{content:"✓";position:absolute;left:0;top:0;font-weight:900;color:#00aa82}
-.budget-card{margin-top:0}
 .mf-b1{background:#8fd8c7}
 .mf-b2{background:#00b4dc}
 .mf-b3{background:linear-gradient(90deg,#00aa82,#00b4dc)}
@@ -373,58 +375,49 @@ td b{font-weight:900}
       </div>
     </div>
 
-    <div class="duo-card budget-card">
-      <div class="duo-title">Was ihr erwarten könnt</div>
-      <div class="duo-sub">Zusätzliche Gästelisten-Einträge von Berlinern und Touristen, je Event</div>
-      <div class="mini-funnel">
-        <div class="mf-row"><div class="mf-bar mf-b1" style="width:28%"><span>15–30</span></div><div class="mf-lab">bei 100&thinsp;€ Werbebudget</div></div>
-        <div class="mf-row"><div class="mf-bar mf-b2" style="width:55%"><span>30–60</span></div><div class="mf-lab">bei 200&thinsp;€ Werbebudget</div></div>
-        <div class="mf-row"><div class="mf-bar mf-b3" style="width:82%"><span>45–90</span></div><div class="mf-lab">bei 300&thinsp;€ Werbebudget</div></div>
+    <div class="duo-card pk-card">
+      <div class="duo-title">Was ihr erwarten könnt: Die Pakete im Überblick</div>
+      <div class="duo-sub">Performance-Marketing gibt es ausschließlich im Paket mit einem Top- oder Premium-Event. Beispiel: ein Event, das ohne alles auf rund 20 Gästelisten-Einträge kommt.</div>
+      <div class="tiers">
+        <div class="tier base">
+          <div class="t-head">Basis</div>
+          <div class="t-price">0&thinsp;€ — im Grundeintrag enthalten</div>
+          <div class="t-barzone"><div class="t-bar t-bar-base"></div></div>
+          <div class="t-mult t-mult-base">1×</div>
+          <div class="t-lines">
+            <div class="t-line"><span>Platzierung</span><b>—</b></div>
+            <div class="t-line"><span>Werbebudget</span><b>—</b></div>
+            <div class="t-line"><span>Gästelisten-Einträge je Event</span><b>~20</b></div>
+          </div>
+        </div>
+        <div class="tier top">
+          <div class="t-head">Top-Paket</div>
+          <div class="t-price">200&thinsp;€ gesamt je Event</div>
+          <div class="t-barzone"><div class="t-bar t-bar-top"></div></div>
+          <div class="t-mult">~×3</div>
+          <div class="t-lines">
+            <div class="t-line"><span>Top-Event</span><b>50&thinsp;€</b></div>
+            <div class="t-line"><span>Werbebudget</span><b>100&thinsp;€</b></div>
+            <div class="t-line"><span>Betreuung</span><b>50&thinsp;€</b></div>
+            <div class="t-line"><span>Gästelisten-Einträge je Event</span><b>~55–70</b></div>
+          </div>
+        </div>
+        <div class="tier premium">
+          <div class="t-badge">Bestes Ergebnis</div>
+          <div class="t-head">Premium-Paket</div>
+          <div class="t-price">350&thinsp;€ gesamt je Event</div>
+          <div class="t-barzone"><div class="t-bar t-bar-prem"></div></div>
+          <div class="t-mult">~×5</div>
+          <div class="t-lines">
+            <div class="t-line"><span>Premium-Event</span><b>100&thinsp;€</b></div>
+            <div class="t-line"><span>Werbebudget</span><b>200&thinsp;€</b></div>
+            <div class="t-line"><span>Betreuung</span><b>50&thinsp;€</b></div>
+            <div class="t-line"><span>Gästelisten-Einträge je Event</span><b>~90–120</b></div>
+          </div>
+        </div>
       </div>
-      <div class="duo-foot">Rechnerisch 3,30–6,70&thinsp;€ je zusätzlichem Eintrag — bewusst konservativ: In unserer ersten gemessenen Kampagne im Juli lag der Preis darunter. Richtwert, keine Zusage; die Wirkung hängt von Event, Motiv und Zeitpunkt ab.</div>
+      <div class="duo-foot">Richtwerte auf Basis unserer Juli-Daten (Platzierungs-Multiplikator plus Werbewirkung) — rechnerisch 3,30–6,70&thinsp;€ je zusätzlichem Gästelisten-Eintrag, bewusst konservativ: unsere erste gemessene Kampagne im Juli lag darunter. Jedes Event ist anders — manche erreichen deutlich mehr. Richtwert, keine Zusage.</div>
     </div>
-
-    <div class="pk-title">Die Pakete im Überblick</div>
-    <div class="pk-sub">Beispiel: ein Event, das ohne Platzierung und Werbung auf rund 20 Gästelisten-Einträge kommt</div>
-    <div class="tiers">
-      <div class="tier base">
-        <div class="t-head">Basis</div>
-        <div class="t-price">0&thinsp;€ — im Grundeintrag enthalten</div>
-        <div class="t-barzone"><div class="t-bar t-bar-base"></div></div>
-        <div class="t-mult t-mult-base">1×</div>
-        <div class="t-lines">
-          <div class="t-line"><span>Platzierung</span><b>—</b></div>
-          <div class="t-line"><span>Werbebudget</span><b>—</b></div>
-          <div class="t-line"><span>Einträge je Event</span><b>~20</b></div>
-        </div>
-      </div>
-      <div class="tier top">
-        <div class="t-head">Top-Paket</div>
-        <div class="t-price">200&thinsp;€ gesamt je Event</div>
-        <div class="t-barzone"><div class="t-bar t-bar-top"></div></div>
-        <div class="t-mult">~×3</div>
-        <div class="t-lines">
-          <div class="t-line"><span>Top-Event</span><b>50&thinsp;€</b></div>
-          <div class="t-line"><span>Werbebudget</span><b>100&thinsp;€</b></div>
-          <div class="t-line"><span>Betreuung</span><b>50&thinsp;€</b></div>
-          <div class="t-line"><span>Einträge je Event</span><b>~55–70</b></div>
-        </div>
-      </div>
-      <div class="tier premium">
-        <div class="t-badge">Bestes Ergebnis</div>
-        <div class="t-head">Premium-Paket</div>
-        <div class="t-price">350&thinsp;€ gesamt je Event</div>
-        <div class="t-barzone"><div class="t-bar t-bar-prem"></div></div>
-        <div class="t-mult">~×5</div>
-        <div class="t-lines">
-          <div class="t-line"><span>Premium-Event</span><b>100&thinsp;€</b></div>
-          <div class="t-line"><span>Werbebudget</span><b>200&thinsp;€</b></div>
-          <div class="t-line"><span>Betreuung</span><b>50&thinsp;€</b></div>
-          <div class="t-line"><span>Einträge je Event</span><b>~90–120</b></div>
-        </div>
-      </div>
-    </div>
-    <p class="tiers-note">Richtwerte auf Basis unserer Juli-Daten (Platzierungs-Multiplikator plus Werbewirkung). Jedes Event ist anders — manche erreichen deutlich mehr.</p>
 
     <div class="duo-hl ads-close"><b>Unterm Strich:</b> Premium-Event plus 100–200&thinsp;€ Werbebudget — und ihr bekommt gezielte Anzeigen an eine warme Zielgruppe, professionelles Conversion-Tracking und einen transparenten Report. Ein komplettes Performance-Marketing-Paket — für weniger, als eine einzige Gruppe an einem guten Abend an eurer Bar ausgibt.</div>
 
