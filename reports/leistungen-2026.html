@@ -53,10 +53,11 @@ h3{font-size:17px;font-weight:700;margin-bottom:6px}
 .lead{color:var(--muted);margin-bottom:24px;max-width:780px}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;align-items:stretch}
-.tier{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px 16px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.tier{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px 16px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.05);display:flex;flex-direction:column}
 .tier.premium{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#00aa82,#00b4dc) border-box;box-shadow:0 8px 24px rgba(0,170,130,.16)}
 .t-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#00aa82,#00b4dc);border-radius:999px;padding:4px 12px;white-space:nowrap}
 .tier.base{background:#f2f5f7;border-color:#e3e8ec;box-shadow:none}
+.tier .t-lines{margin-bottom:10px}
 .tier.base .t-head{color:#7a8791;font-weight:700}
 .tier.base .t-price{color:#9aa5ae}
 .tier.base .t-line,.tier.base .t-line b{color:#7a8791}
@@ -64,9 +65,9 @@ h3{font-size:17px;font-weight:700;margin-bottom:6px}
 .tier.top .t-head{display:inline-block;background:#00b4dc;color:#fff;border-radius:999px;padding:6px 18px;font-size:15px}
 .tier.premium .t-head{display:inline-block;background:linear-gradient(90deg,#00aa82,#00b4dc);color:#fff;border-radius:999px;padding:6px 18px;font-size:15px}
 .t-zero{font-size:28px;font-weight:900;margin-top:2px;line-height:1}
-.t-total{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.t-total{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line);margin-bottom:10px}
 .t-total b{color:#111;font-weight:900}
-.t-result{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px;background:rgba(0,170,130,.10);border:1px solid rgba(0,170,130,.35);border-radius:10px;padding:8px 11px;font-size:12px;text-align:left}
+.t-result{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;background:rgba(0,170,130,.10);border:1px solid rgba(0,170,130,.35);border-radius:10px;padding:8px 11px;font-size:12px;text-align:left}
 .t-result b{font-size:17px;font-weight:900;white-space:nowrap;background:linear-gradient(90deg,#00aa82,#00b4dc);-webkit-background-clip:text;background-clip:text;color:transparent}
 .t-result b.tr-base{background:none;color:#8b959e;-webkit-background-clip:unset}
 /* Paket-Karten im dunklen Fenster */
@@ -188,7 +189,14 @@ html,body{overflow-x:hidden}
 .tiers .t-mult{font-size:19px;margin-top:6px}
 .tiers .t-lines{margin-top:8px;padding-top:8px;gap:4px}
 .tiers .t-line{font-size:11.5px}
-.tiers .t-badge{font-size:10px;padding:3px 10px}}
+.tiers .t-badge{font-size:10px;padding:3px 10px}
+.pk-card .tiers{grid-template-columns:1fr;gap:14px}
+.pk-card .tier.premium{grid-column:auto}
+.pk-card .t-line{font-size:13px}
+.pk-card .t-result span{font-size:12px}
+.pk-card .t-barzone{height:56px}
+.pk-card .t-head{font-size:15px}
+.pk-card .t-zero{font-size:24px}}
 .cta-wrap{text-align:center;margin:22px 0 4px}
 .cta-btn{display:inline-block;background:linear-gradient(90deg,#00aa82,#00b4dc);color:#fff;font-weight:900;font-size:15px;text-decoration:none;border-radius:999px;padding:14px 28px;box-shadow:0 6px 20px rgba(0,170,130,.35);transition:transform .15s ease}
 .cta-btn:hover{transform:translateY(-1px)}
@@ -402,7 +410,7 @@ td b{font-weight:900}
 
     <div class="duo-card pk-card">
       <div class="duo-title">Was ihr erwarten könnt: Die Pakete im Überblick</div>
-      <div class="duo-sub">Performance-Marketing gibt es ausschließlich im Paket mit einem Top- oder Premium-Event. Beispiel: ein Event, das ohne alles auf rund 20 Gästelisten-Einträge kommt.</div>
+      <div class="duo-sub">Performance-Marketing gibt es ausschließlich im Paket mit einem Top- oder Premium-Event. Beispiel gerechnet mit einem Event, das ohne alles auf rund 20 Gästelisten-Einträge kommt.</div>
       <div class="tiers">
         <div class="tier base">
           <div class="t-head">Basis</div>
@@ -414,7 +422,7 @@ td b{font-weight:900}
             <div class="t-line"><span>Platzierung</span><b>randomisiert</b></div>
             <div class="t-line"><span>Werbebudget</span><b>0&thinsp;€</b></div>
           </div>
-          <div class="t-result"><span>Gästelisten-Einträge<br>je Event</span><b class="tr-base">~20–25</b></div>
+          <div class="t-result"><span>Gästelisten-Einträge<br>je Event</span><b class="tr-base">~5–25</b></div>
         </div>
         <div class="tier top">
           <div class="t-head">Top-Paket</div>
