@@ -56,6 +56,13 @@ h3{font-size:17px;font-weight:700;margin-bottom:6px}
 .tier{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px 16px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.05)}
 .tier.premium{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#00aa82,#00b4dc) border-box;box-shadow:0 8px 24px rgba(0,170,130,.16)}
 .t-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#00aa82,#00b4dc);border-radius:999px;padding:4px 12px;white-space:nowrap}
+.tier.base{background:#f2f5f7;border-color:#e3e8ec;box-shadow:none}
+.tier.base .t-head{color:#7a8791;font-weight:700}
+.tier.base .t-price{color:#9aa5ae}
+.tier.base .t-line,.tier.base .t-line b{color:#7a8791}
+.tier.top{border-color:#7fd3ec;box-shadow:0 8px 22px rgba(0,180,220,.16)}
+.tier.top .t-head{display:inline-block;background:#00b4dc;color:#fff;border-radius:999px;padding:6px 18px;font-size:15px}
+.tier.premium .t-head{display:inline-block;background:linear-gradient(90deg,#00aa82,#00b4dc);color:#fff;border-radius:999px;padding:6px 18px;font-size:15px}
 .t-head{font-weight:900;font-size:17px}
 .t-price{font-size:12.5px;color:var(--muted);margin:2px 0 14px}
 .t-barzone{height:150px;display:flex;align-items:flex-end;justify-content:center}
@@ -284,7 +291,7 @@ td b{font-weight:900}
     <p class="lead">Top- und Premium-Events stehen in Listen, Kategorie- und Tagesseiten ganz oben — je nach Stufe mit der zwei- bis fünffachen Sichtbarkeit, und entsprechend mehr Gästelisten-Einträgen.</p>
     <div class="panel">
       <div class="tiers">
-        <div class="tier">
+        <div class="tier base">
           <div class="t-head">Ohne Platzierung</div>
           <div class="t-price">im Grundeintrag enthalten</div>
           <div class="t-barzone"><div class="t-bar t-bar-base"></div></div>
@@ -294,7 +301,7 @@ td b{font-weight:900}
             <div class="t-line"><span>Gästelisten-Einträge</span><b>Basis</b></div>
           </div>
         </div>
-        <div class="tier">
+        <div class="tier top">
           <div class="t-head">Top-Event</div>
           <div class="t-price">50&thinsp;€ netto je Event</div>
           <div class="t-barzone"><div class="t-bar t-bar-top"></div></div>
