@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Test: Feed im Dark-Design – Samstag 22.08.2026</title>
+<style>
+  :root {
+    --card:#1b2735; --card-soft:#17222e;
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+    --hair:rgba(255,255,255,.07);
+    --ink:#eef2f6; --ink-2:#9fb0c0; --ink-3:#74889a;
+    --link:#57c8e8; --brand-from:#00c193; --brand-to:#16bde0;
+    --rcard:1rem; --rbtn:.5rem;
+  }
+  *{box-sizing:border-box}
+  html{background:#223546}
+  body{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:.875rem;
+    -webkit-font-smoothing:antialiased;min-height:100vh;
+    background:linear-gradient(90deg,#31314f 0%,#2b3149 24%,#243545 52%,#1d3b43 78%,#17423d 100%) fixed;
+    background-color:#223546}
+  a{text-decoration:none}
+  .phone{max-width:440px;margin:0 auto;padding-bottom:44px}
+  .topbar{background:#0b0f14;padding:11px 14px;display:flex;align-items:center}
+  .topbar img{height:25px}
+  .topbar .icons{margin-left:auto;display:flex;gap:18px;color:#fff;font-size:1.1rem;opacity:.85}
+
+  .hero{position:relative;min-height:262px;padding:14px 16px 34px;text-align:center;
+    display:flex;flex-direction:column;justify-content:center}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;
+    background-image:linear-gradient(180deg,rgba(8,12,16,.28) 0%,rgba(8,12,16,.5) 55%,rgba(8,12,16,.72) 100%),url('https://gl030.github.io/gl030-sitemap/reports/assets/cover-130826.jpg');
+    background-size:cover;background-position:18% 28%;
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 70%,rgba(0,0,0,.55) 86%,rgba(0,0,0,0) 100%);
+    mask-image:linear-gradient(180deg,#000 0%,#000 70%,rgba(0,0,0,.55) 86%,rgba(0,0,0,0) 100%)}
+  .hero > *{position:relative;z-index:1}
+  .hero h1{font-size:1.75rem;font-weight:300;letter-spacing:-.02em;margin:0 0 12px;color:#fff;line-height:1.15;
+    text-shadow:0 2px 18px rgba(0,0,0,.6)}
+  .hero h1 b{font-weight:700}
+  .search{display:flex;align-items:center;gap:8px;background:rgba(12,18,24,.5);border:1px solid var(--line-2);
+    border-radius:22px;padding:10px 16px;color:#b9c7d4;font-size:.9rem;max-width:300px;margin:0 auto;backdrop-filter:blur(8px)}
+  .datestrip{display:flex;align-items:center;gap:6px;margin-top:16px;justify-content:center}
+  .month{margin-right:6px;color:#b6c5d2;font-size:.7rem;font-weight:500;letter-spacing:.1em;
+    text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.5);align-self:center}
+  .day{min-width:34px;text-align:center;font-size:.74rem;color:#c3d0dc;padding-bottom:4px;border-bottom:2px solid transparent;
+    text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .day b{display:block;font-size:.9rem;font-weight:500;color:#fff;margin-top:2px}
+  .day.we{border-bottom-color:var(--brand-to)}
+  .day.on{background:linear-gradient(135deg,var(--brand-from),var(--brand-to));border-radius:var(--rbtn);padding:3px 6px;
+    border-bottom-color:transparent;box-shadow:0 4px 14px rgba(0,180,220,.35)}
+  .day.on b,.day.on span{color:#04231d;font-weight:500;text-shadow:none}
+
+  .pillnav{position:sticky;top:10px;z-index:20;margin:-20px 12px 10px;display:flex;gap:4px;
+    padding:6px;border-radius:999px;overflow-x:auto;scrollbar-width:none;
+    background:rgba(13,19,27,.72);backdrop-filter:blur(16px) saturate(1.3);
+    border:1px solid rgba(255,255,255,.13);box-shadow:0 10px 28px rgba(0,0,0,.42)}
+  .pillnav::-webkit-scrollbar{display:none}
+  .pillnav a{flex:0 0 auto;padding:7px 15px;border-radius:999px;font-size:.76rem;letter-spacing:.06em;
+    text-transform:uppercase;color:#9fb0c0;white-space:nowrap}
+  .pillnav a.on{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#04231d;font-weight:700}
+
+  .feed{padding:0 12px}
+  .answer{font-size:.85rem;color:var(--ink-2);margin:0 0 9px;padding:0 4px;line-height:1.45}
+  .answer b{color:var(--ink);font-weight:500}
+  .answer .stamp{font-size:.78rem;color:var(--ink-3)}
+  .dayhead{display:flex;align-items:center;gap:12px;padding:0 4px 8px}
+  .dayhead .wd{font-size:1.15rem;font-weight:300;color:var(--ink-2)}
+  .dayhead .sep{width:1px;height:22px;background:var(--line-2)}
+  .dayhead .dt{font-size:1.15rem;font-weight:700;color:var(--ink)}
+  .dayhead .count{margin-left:auto;font-size:.8rem;color:var(--ink-2);background:rgba(255,255,255,.08);border-radius:12px;padding:2px 11px}
+
+  /* Gruppen statt Einzelkarten: EIN Rahmen um alle Premium-Events des Tages,
+     darunter die Top-Events ohne Rahmen, darunter die kostenlosen Eintraege. */
+  .group{border-radius:var(--rcard);margin-bottom:10px;overflow:hidden}
+  .group.premium{border:2px solid transparent;background:var(--card);
+    background-image:linear-gradient(var(--card),var(--card)),linear-gradient(120deg,var(--brand-from),var(--brand-to));
+    background-origin:border-box;background-clip:padding-box,border-box}
+  .group.top{background:var(--card);border:1px solid var(--line)}
+  .group.free{background:var(--card-soft);border:1px solid var(--line)}
+  .row{display:flex;gap:10px;padding:9px 10px}
+  .entry + .entry{border-top:1px solid var(--hair)}
+
+  /* Variante A: Gaesteliste als Saeule rechts in der Zeile. Nutzt den Raum,
+     der ohnehin leer steht - kostet also keine zusaetzliche Hoehe - und die
+     Zuordnung ist eindeutig, weil der Button in der Zeile seines Events sitzt. */
+  .row{align-items:stretch}
+  .gl-rail{flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;
+    padding:6px 5px;border-radius:var(--rbtn);
+    background:linear-gradient(160deg,var(--brand-from),var(--brand-to));color:#04231d;
+    font-size:.63rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1.2;
+    hyphens:manual;box-shadow:0 2px 10px rgba(0,190,200,.25)}
+  .row.small .gl-rail{flex:0 0 56px;font-size:.58rem;padding:5px 4px}
+  .row.small{gap:8px;padding:8px 10px}
+
+  /* Premium und Top gleich gross (84 px), kostenlose Eintraege klein (32 px) */
+  .thumb{flex:0 0 80px;width:80px;height:80px;border-radius:var(--rbtn);overflow:hidden;display:block;background:#223042}
+  .row.small .thumb{flex:0 0 32px;width:32px;height:32px;border-radius:6px}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+  .ev-main{min-width:0;flex:1}
+  .ev-title{font-size:1rem;font-weight:700;margin:0 0 2px;line-height:1.2}
+  .row.small .ev-title{font-size:.875rem}
+  .ev-title a{color:var(--ink)}
+  .ev-meta{font-size:.75rem;margin:0 0 3px;color:var(--ink-2)}
+  .ev-meta a{color:var(--link);font-weight:500}
+  .ev-meta .sepdot{color:var(--ink-3);margin:0 3px}
+  .ev-meta .bis{color:var(--ink-3)}
+  .ev-text{font-size:.75rem;color:var(--ink-3);margin:0 0 5px;line-height:1.4;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+  .chip{font-size:.7rem;font-weight:500;border-radius:11px;padding:2px 9px;white-space:nowrap}
+  .chip-gl{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#04231d;font-weight:700}
+  .chip-tix{background:rgba(22,189,224,.16);color:#7fd8ee;border:1px solid rgba(22,189,224,.35)}
+  .chip-lot{background:rgba(127,110,220,.18);color:#b6acf5;border:1px solid rgba(127,110,220,.4)}
+  .chip-reco{background:rgba(224,87,74,.16);color:#ff8f82;border:1px solid rgba(224,87,74,.4)}
+  .chip-tag{background:rgba(255,255,255,.07);color:var(--ink-2)}
+  .genre{font-size:.7rem;color:var(--ink-3)}
+  /* Kein CTA-Button in der Liste: er kostet je Eintrag eine ganze Zeile.
+     Der Gaesteliste-Chip traegt die Information bereits. */
+  .caption{padding:26px 16px 0;font-size:.78rem;color:var(--ink-3);text-align:center;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="phone">
+    <div class="topbar">
+        <img src="https://assets.evntsvc.net/region/berlin/images/d697383dc0ba88be54ca.svg" alt="Gästeliste030">
+        <div class="icons"><span>&#9906;</span><span>&#9776;</span></div>
+    </div>
+
+    <div class="hero">
+        <h1>Party <b>Berlin</b> am 22.08.2026</h1>
+        <div class="search"><span>&#9906;</span> Suchen…</div>
+        <div class="datestrip">
+            <div class="month">Aug</div>
+            <div class="day"><span>Do</span><b>20</b></div>
+            <div class="day we"><span>Fr</span><b>21</b></div>
+            <div class="day on"><span>Sa</span><b>22</b></div>
+            <div class="day"><span>So</span><b>23</b></div>
+            <div class="day"><span>Mo</span><b>24</b></div>
+            <div class="day"><span>Di</span><b>25</b></div>
+            <div class="day"><span>Mi</span><b>26</b></div>
+        </div>
+    </div>
+
+    <nav class="pillnav">
+        <a class="on" href="#">Party</a><a href="#">Electro</a><a href="#">Open Air</a>
+        <a href="#">Halloween</a><a href="#">Silvester</a><a href="#">Clubs</a><a href="#">Mehr</a>
+    </nav>
+
+    <div class="feed">
+        <p class="answer"><b>34 Partys in Berlin</b> am Samstag, davon 3 mit vergünstigter Gästeliste.
+            <span class="stamp">Stand: 13.08.2026</span></p>
+        <div class="dayhead">
+            <span class="wd">Samstag</span><span class="sep"></span><span class="dt">22.08.2026</span>
+            <span class="count">34</span>
+        </div>
+        <div class="group premium">
+            <div class="entry">
+            <div class="row">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/xxl-poolparty-kevin-little-clubshow"><img src="https://cdn.evntsvc.net/r/e/ev_XAULF70rAU2SbhZs5_moOg-151_m.jpg" alt="XXL Poolparty &amp; Kevin Little Clubshow" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/xxl-poolparty-kevin-little-clubshow">XXL Poolparty &amp; Kevin Little Clubshow</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/maaya">Maaya</a></p>
+                    <p class="ev-text">XXL Poolparty &amp; Kevin Little Clubshow Superstar Kevin Lyttle wird seinen Welthit Turn Me On performen!</p>
+                    <div class="chips"><span class="chip chip-reco">Empfehlung</span><span class="chip chip-tix">Tickets</span><span class="genre">HipHop · RnB · Classics · Afrobeats</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/ak-ausserkontrolle-clubshow-the-ritual-x-midnight-affairs"><img src="https://cdn.evntsvc.net/r/e/ev_FuDv0eTTAEiuhe069QWgkA-701_m.jpg" alt="AK Ausserkontrolle Clubshow - The Ritual X Midnight Affairs" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/ak-ausserkontrolle-clubshow-the-ritual-x-midnight-affairs">AK Ausserkontrolle Clubshow - The Ritual X Midnight Affairs</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/the-pearl">The Pearl</a> <span class="sepdot">·</span> <span class="time">23:00</span></p>
+                    <p class="ev-text">AK Ausserkontrolle Clubshow - The Ritual X Midnight Affairs THE RITUAL X Midnight Affairs präsentiert: AK AUSSERKONTROLLE – LIVE ACT Samstag, 22.08.</p>
+                    <div class="chips"><span class="chip chip-reco">Empfehlung</span><span class="chip chip-tag">#Hip Hop</span><span class="genre">HipHop · RnB</span></div>
+                    
+                </div>
+                <a class="gl-rail" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/ak-ausserkontrolle-clubshow-the-ritual-x-midnight-affairs/gaesteliste">Gäste&shy;liste</a>
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/flashbacks-mit-liebe-3-floors-outdoor-sommergarten-sommerliebe-edition-2026"><img src="https://cdn.evntsvc.net/r/e/ev_jxZGmyNW4EGh5YzzFxP7rg-211_m.jpg" alt="Flashbacks mit Liebe - 3 Floors, Outdoor &amp; Sommergarten - Sommerliebe Edition 2026" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/flashbacks-mit-liebe-3-floors-outdoor-sommergarten-sommerliebe-edition-2026">Flashbacks mit Liebe - 3 Floors, Outdoor &amp; Sommergarten - Sommerliebe Edition 2026</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/frannz">Frannz</a> <span class="sepdot">·</span> <span class="time">22:00</span></p>
+                    <p class="ev-text">Flashbacks mit Liebe - 3 Floors, Outdoor &amp; Sommergarten - Sommerliebe Edition 2026 FLASHBACKS MIT LIEBE 80er, 90er &amp; 2000er Hits SPECIAL: KARAOKE DISCO FLOOR III FLOORS, OUTDOOR…</p>
+                    <div class="chips"><span class="chip chip-reco">Empfehlung</span><span class="chip chip-lot">Verlosung</span><span class="chip chip-tix">Tickets</span><span class="genre">80er · 90er &amp; 2000er mit Pop · Hip Hop · RnB</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+        </div>
+        <div class="group top">
+            <div class="entry">
+            <div class="row">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/u30-party-berlin"><img src="https://cdn.evntsvc.net/r/e/ev_3akbHtLpkUmZMW0AAZqDFw-254_m.jpg" alt="Ü30 Berlin Sommerparty – Feiern Direkt An Der Spree!" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/u30-party-berlin">Ü30 Berlin Sommerparty – Feiern Direkt An Der Spree!</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/spindler-klatt">Spindler &amp; Klatt</a> <span class="sepdot">·</span> <span class="time">22:00</span></p>
+                    <p class="ev-text">Ü30 BERLIN SOMMERPARTY – FEIERN DIREKT AN DER SPREE! Am Samstag, den 22. August 2026, heißt es wieder: Sommer, Beats &amp; beste Stimmung!</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="chip chip-tix">Tickets</span><span class="chip chip-tag">#2000er</span><span class="chip chip-tag">#90er</span><span class="chip chip-tag">#ü30</span><span class="chip chip-tag">#80er</span><span class="genre">House · Pop · RnB · 80s</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/10am-club-berlin"><img src="https://cdn.evntsvc.net/r/e/ev_7g4r72uYOUquR_uNmqHSkA-406_m.jpg" alt="10AM CLUB Berlin" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/10am-club-berlin">10AM CLUB Berlin</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/blu-loft-atelier-am-moritzplatz">Blu Loft/ Atelier am Moritzplatz</a></p>
+                    <p class="ev-text">Titel The most popular morning party with underground house music, coffee, matcha &amp; more! Erlebt den authentischen Sound der Underground-Szene – unkommerziell, pur, ehrlich.</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="chip chip-tag">#House</span><span class="genre">House</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/bambule-80s-90s-pop-hip-hop-house"><img src="https://cdn.evntsvc.net/r/e/ev_a_2f0TsyEU2XOyj5NUnYxQ-317_m.jpg" alt="Bambule/ 80s, 90s, Pop, Hip Hop, House" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/bambule-80s-90s-pop-hip-hop-house">Bambule/ 80s, 90s, Pop, Hip Hop, House</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/cassiopeia">Cassiopeia</a> <span class="sepdot">·</span> <span class="time">22:00</span></p>
+                    <p class="ev-text">Bambule/ 80s, 90s, Pop, Hip Hop, House Nach bewegten Wochen freuen wir uns darauf, am 22.08. wieder gemeinsam mit euch zu feiern.</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="chip chip-tix">Tickets</span><span class="genre">80s · 90s · Pop · Hip Hop</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/sodalicious101"><img src="https://cdn.evntsvc.net/r/e/ev_xXrPBLqhjE2W8rH26OIGeg-269_m.jpg" alt="Sodalicious" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/sodalicious101">Sodalicious</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/soda">Soda</a> <span class="sepdot">·</span> <span class="time">23:59</span></p>
+                    <p class="ev-text">Sodalicious It´s SODALICIOUS Time! Mit 5 Floors, über 10 DJs und einem spektakulären Musikmix bietet SODALICIOUS jede Woche die volle Ladung Partyfeeling.</p>
+                    <div class="chips"><span class="chip chip-tag">#90er</span><span class="genre">R&amp;B · Urban Dance · 2000er Hits · Electro</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+        </div>
+        <div class="group free">
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/open-air/22-08-26/qantaloop-festival"><img src="https://cdn.evntsvc.net/r/e/ev_3E2xSeEHeUeG0JQXfPq95A-744_m.jpg" alt="Qantaloop Festival" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/open-air/22-08-26/qantaloop-festival">Qantaloop Festival</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/strandbad-grunau">Strandbad Grünau</a> <span class="sepdot">·</span> <span class="time">14:00</span></p>
+                    <p class="ev-text">QANTALOOP FESTIVAL LIVE ON STAGE: LEXY &amp; K-PAUL | MARKUS KAVKA | LEXER uvm. Ein Highlight der letzten Beach Festivals Saisons war immer das qantaloop festival, und daher freuen…</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="chip chip-tix">Tickets</span><span class="genre">Electro</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/das-groe-mallorca-open-air"><img src="https://cdn.evntsvc.net/r/e/ev_5K58kdGFPEml1Wu1JpGLcA-211_m.jpg" alt="Das große Mallorca Open Air" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/das-groe-mallorca-open-air">Das große Mallorca Open Air</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/strandbad-erkner">Strandbad Erkner</a> <span class="sepdot">·</span> <span class="time">14:00</span></p>
+                    <p class="ev-text">Das große Mallorca Open Air DAS GROSSE MALLORCA OPEN AIR Mallorca kommt nach Erkner! Am 22.08.2026 verwandelt sich das Strandbad Erkner in die größte Mallorca-Party der Region.</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="genre">Partyhits · Ballermannmusik · Partyschlager</span></div>
+                    
+                </div>
+                <a class="gl-rail" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/das-groe-mallorca-open-air/gaesteliste">Gäste&shy;liste</a>
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/mega-90er-rave-bootstour"><img src="https://cdn.evntsvc.net/r/e/ev_qp4JvoBiIEWF1wMdJgXAJg-249_m.jpg" alt="Mega 90er Rave - Bootstour" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/mega-90er-rave-bootstour">Mega 90er Rave - Bootstour</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/uber-arena">Uber Arena</a> <span class="sepdot">·</span> <span class="time">16:30</span></p>
+                    <p class="ev-text">Mega 90er Rave - Bootstour MEGA 90er RAVE BOOTSTOUR Wir bringen den Sound der 90er zurück nach Berlin – und zwar direkt auf die Spree!</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="genre">Techno · Electro · Tech-House · Dance</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/baila-morena-old-school-reggaeton-party"><img src="https://cdn.evntsvc.net/r/e/ev_GLkdQW6eqUii0ZXA6ACs3A-211_m.jpg" alt="Call Me Maybe! • 2000s &amp; 2010s – Pop Party" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/baila-morena-old-school-reggaeton-party">Call Me Maybe! • 2000s &amp; 2010s – Pop Party</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/badehaus">Badehaus</a></p>
+                    <p class="ev-text">Call Me Maybe! - 2000&#x27;s &amp; 2010s - Pop Party „Hey, I just met you, and this is crazy, but here′s my number, so call me, maybe?</p>
+                    <div class="chips"><span class="chip chip-tag">#2000er</span><span class="genre">Pop</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/local-love-service"><img src="https://cdn.evntsvc.net/r/e/ev_XYi3WU-JVU-58w2ONKAjdQ-652_m.jpg" alt="Local Love Service" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/local-love-service">Local Love Service</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/kitty-cheng-bar">Kitty Cheng Bar</a> <span class="sepdot">·</span> <span class="time">20:00</span></p>
+                    <p class="ev-text">Local Love Service Local Love Service Every Saturday, The Local Love Service invites you to experience a new chapter of Berlin nightlife.</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="chip chip-tix">Tischreservierung</span><span class="genre">HipHop · RnB · House · All Time Classic&#x27;s</span></div>
+                    
+                </div>
+                <a class="gl-rail" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/local-love-service/gaesteliste">Gäste&shy;liste</a>
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/reinkarnation-szg-mrgnstrn-cargo-b2b-discodaisy-alemiko-amo788"><img src="https://cdn.evntsvc.net/r/e/ev__gjnUiOK-0GCx3_9mi1KwA-17_m.jpg" alt="Reinkarnation" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/reinkarnation-szg-mrgnstrn-cargo-b2b-discodaisy-alemiko-amo788">Reinkarnation</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/about-blank">about blank</a> <span class="sepdot">·</span> <span class="time">22:00</span></p>
+                    <p class="ev-text">Reinkarnation REINKARNATION returns to ://about blank on 22.08.26. Three floors, a beautiful spacious outdoor area and full of energy and atmosphere from start to finish.</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="chip chip-tix">Tickets</span><span class="genre">Neutrum Bounce Trance</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/turn-up-x-blitzlichtgewitter"><img src="https://cdn.evntsvc.net/r/e/ev_TiF_Td8930C2FhEw2p804A-182_m.jpg" alt="TURN UP x BLITZLICHTGEWITTER" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/turn-up-x-blitzlichtgewitter">TURN UP x BLITZLICHTGEWITTER</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/bricks">Bricks</a> <span class="sepdot">·</span> <span class="time">23:00</span></p>
+                    <p class="ev-text">Turn Up x Blitzlichtgewitter Der beliebte Moderator des Podcasts „Blitzlichtgewitter“ lädt euch am 22.08. ein! Freut euch auf nice Beats, eine coole Crowd und einige Influencer.</p>
+                    <div class="chips"><span class="chip chip-tix">Tischreservierung</span><span class="genre">HipHop · RnB · Urban Sound · Trap</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/sunny-terrace-fizzy-spritzes"><img src="https://cdn.evntsvc.net/r/e/ev_Q9_CNENXyE6XvdGAfaFyYQ-314_m.jpg" alt="Sunny Terrace - Fizzy Spritzes" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/sunny-terrace-fizzy-spritzes">Sunny Terrace - Fizzy Spritzes</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/100-gramm">100 Gramm</a> <span class="sepdot">·</span> <span class="time">16:00</span></p>
+                    <p class="ev-text">Sunny Terrace - Fizzy Spritzes @100 GRAMM Bar Sunny Terrace – Fizzy Spritzes täglich von 16:00 bis 22:00 Uhr in der 100 GRAMM Bar Ab 16 Uhr füllt sich unsere Terrasse mit Leben.</p>
+                    <div class="chips"><span class="genre">RnB · Pop</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/else-x-ic-ice"><img src="https://cdn.evntsvc.net/r/e/ev_LgWkkMYit0uWs_Fc_iSklQ-162_m.jpg" alt="Else x İÇ İÇE" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/else-x-ic-ice">Else x İÇ İÇE</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/else">Else</a></p>
+                    <p class="ev-text">Else x iÇ iÇE İÇ İÇE means “intertwined” or “interwoven” in Turkish. It is Germany’s first and only festival dedicated to new Anatolian music from diverse perspectives.</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="genre">House · Bass · Techno</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/nofuture-6-years-anniversary"><img src="https://cdn.evntsvc.net/r/e/ev_aVJP6O4uHk-6RTKPdHdeyw-730_m.jpg" alt="NOFUTURE 6 YEARS ANNIVERSARY" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/nofuture-6-years-anniversary">NOFUTURE 6 YEARS ANNIVERSARY</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/panke">Panke</a> <span class="sepdot">·</span> <span class="time">22:00</span></p>
+                    <p class="ev-text">NOFUTURE 6 YEARS ANNIVERSARY NOFUTURE CELEBRATES its ᰔᩚ 6 YEARS ANNIVERSARY ᰔᩚ 6 YEARS SINCE WE STARTED CURATING * HOSTING * PROMOTING &amp; ORGANIZING * SOUNDZ ON THE INTERNET…</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="genre">Reggaeton · Breakbeat</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/sturmfrei-mit-oliver-raumklang-freunde"><img src="https://cdn.evntsvc.net/r/e/ev_nsMOvGIb6EmIyfn2YN0p0g-717_m.jpg" alt="sturmfrei mit Oliver Raumklang &amp; Freunde" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/sturmfrei-mit-oliver-raumklang-freunde">sturmfrei mit Oliver Raumklang &amp; Freunde</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/minimal-bar">Minimal Bar</a> <span class="sepdot">·</span> <span class="time">18:00</span></p>
+                    <p class="ev-text">sturmfrei mit Oliver Raumklang &amp; Freunde You wanna spend a night with Electronic Beats,Ping Pong &amp; nice Drinks? A Dance Floor &amp; creative cosy chill Areas? Come to our Minimal Bar!!</p>
+                    <div class="chips"><span class="genre">Electro · House · Minimal</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/the-ritual"><img src="https://cdn.evntsvc.net/r/e/ev_ArIYtf0pcEOSYK-KmhMPjg-209_m.jpg" alt="The Ritual" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/the-ritual">The Ritual</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/the-pearl">The Pearl</a></p>
+                    <p class="ev-text">The Ritual THE RITUAL @ THE PEARL BERLIN jeden Samstag, ohne Ausnahme. Eine Nacht, eine Community, eine Energie. Jede Woche neu. Jede Woche krasser.</p>
+                    <div class="chips"><span class="chip chip-tix">Tischreservierung</span><span class="genre">HipHop · House · RnB · Latin</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/void-x-vanta.nyx-vi"><img src="https://cdn.evntsvc.net/r/e/ev_YYLAUSzEKUKUJE9ipaotKA-643_m.jpg" alt="VOID x Vanta.nyx VI" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/void-x-vanta.nyx-vi">VOID x Vanta.nyx VI</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/void-club-hall">Void Club &amp; Hall</a> <span class="sepdot">·</span> <span class="time">23:00</span></p>
+                    <p class="ev-text">VOID x Vanta.nyx VI VANTA.NYX VI 22. AUG. 2026 · Berlin · VOID @void_club // @void_hall Sechster Zyklus. System-Override initiiert. Die Maschinen atmen im Takt der Frequenz.</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="genre">Drum &amp; Bass · Techno</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini"><img src="https://cdn.evntsvc.net/r/e/ev_ZjZtjL6nwU6Apy83piQRAA-807_m.jpg" alt="100 GRAMM Bar Martini Hour - Afterwork Pornstar &amp; Matcha Martini" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini">100 GRAMM Bar Martini Hour - Afterwork Pornstar &amp; Matcha Martini</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/100-gramm">100 Gramm</a></p>
+                    <p class="ev-text">100 GRAMM Bar Martini Hour - Afterwork Pornstar &amp; Matcha Martini Jeden Tag Feiern wir die Existenz der Martinis.</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="chip chip-tag">#Afterwork</span><span class="genre">Pop · RnB</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/feieramt-x-lapsus-x-dollhaus-21-hours-day-plus-night"><img src="https://cdn.evntsvc.net/r/e/ev_QlDueBNRz0-DuD7M1uHUFg-793_m.jpg" alt="FEIERAMT x LAPSUS x DOLLHAUS (21 HOURS DAY + NIGHT)" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/feieramt-x-lapsus-x-dollhaus-21-hours-day-plus-night">FEIERAMT x LAPSUS x DOLLHAUS (21 HOURS DAY + NIGHT)</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/den">Æden</a></p>
+                    <p class="ev-text">FEIERAMT x LAPSUS x DOLLHAUS (21 HOURS DAY + NIGHT) MUTUALISM A form of symbiosis an ongoing, mutual connection between members of different organisms or species, leading to a…</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="genre">Techno</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/100-gramm-lounge-fancy-drinks-and-lovlely-people"><img src="https://cdn.evntsvc.net/r/e/ev_rQwiCbD-_0qY8o9F66P-lQ-804_m.jpg" alt="100 Gramm Lounge - Fancy Drinks and Lovlely People" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/100-gramm-lounge-fancy-drinks-and-lovlely-people">100 Gramm Lounge - Fancy Drinks and Lovlely People</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/100-gramm">100 Gramm</a> <span class="sepdot">·</span> <span class="time">19:00</span></p>
+                    <p class="ev-text">100 GRAMM Lounge - Fancy Drinks and Lovlely People 100 GRAMM Lounge Fancy Drinks &amp; Lovely People Wenn der Abend nach Stil, Geschmack und guter Gesellschaft verlangt, ist die 100…</p>
+                    <div class="chips"><span class="genre">House</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/tausend-house-dj-expo"><img src="https://cdn.evntsvc.net/r/e/ev_3f5CT3bS2EmeuYBG2vlpfg-151_m.jpg" alt="Tausend House: DJ Expo" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/tausend-house-dj-expo">Tausend House: DJ Expo</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/bar-tausend">Bar Tausend</a></p>
+                    <p class="ev-text">Tausend House: DJ Expo Los Angeles-bred and Berlin-based, DJ Expo brings more than 27 years of experience to the booth.</p>
+                    <div class="chips"><span class="chip chip-lot">Verlosung</span><span class="genre">House</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/open-air/22-08-26/free-open-air-schmeckt-auf-eis-x-44-hertz"><img src="https://cdn.evntsvc.net/r/e/ev_2ICx_5o6VkGT26MzlJfe3w-849_m.jpg" alt="Free Open Air: Schmeckt auf Eis x 44 Hertz" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/open-air/22-08-26/free-open-air-schmeckt-auf-eis-x-44-hertz">Free Open Air: Schmeckt auf Eis x 44 Hertz</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/cassiopeia">Cassiopeia</a> <span class="sepdot">·</span> <span class="time">12:00</span></p>
+                    <p class="ev-text">Free Open Air: Schmeckt auf Eis x 44 Hertz FREE OPEN AIR: Schmeckt auf Eis x 44 Hertz Am 22. August wird der Cassiopeia Sommergarten zum offenen Dancefloor.</p>
+                    <div class="chips"><span class="genre">Techno · Electro</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/goldkind-redballon"><img src="https://cdn.evntsvc.net/r/e/ev_zuoXoxAvdkSPPgOtklU4Mw-90_m.jpg" alt="Goldkind - Red Ballroom" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/goldkind-redballon">Goldkind - Red Ballroom</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/maxxim">Maxxim</a> <span class="sepdot">·</span> <span class="time">22:00</span></p>
+                    <p class="ev-text">Goldkind - Red Ballroom Eine Nacht in Gold, ein Ballsaal in Rot Das neue Highlight der GOLDKIND-Partyreihe kommt im August ins MAXXIM: RED BALLROOM verwandelt den Club in einen…</p>
+                    <div class="chips"><span class="chip chip-tix">Tischreservierung</span><span class="genre">Disco Classics</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/tresor-klubnacht"><img src="https://cdn.evntsvc.net/r/e/ev_6eKxbXLaOUy4dV-c-O7dWA-211_m.jpg" alt="Tresor Klubnacht" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/tresor-klubnacht">Tresor Klubnacht</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/tresor">Tresor</a> <span class="sepdot">·</span> <span class="time">23:00</span></p>
+                    <p class="ev-text">Tresor Klubnacht Guest Information: Self-service lockers are now installed for guests to store their belongings. It is recommended to download the DAYLOX app before arriving.</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="genre">Techno</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/klubnacht"><img src="https://cdn.evntsvc.net/r/e/ev_72SxN3hUk063gqMsOLjB4A-920_m.jpg" alt="Klubnacht" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/klubnacht">Klubnacht</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/berghain-panorama-bar-saule">Berghain, Panorama Bar, Säule</a></p>
+                    <p class="ev-text">Klubnacht In dieser Klubnacht feiert Maruwa ihr Debüt in der Panorama Bar. Die ursprünglich klassisch ausgebildete Pianistin, die in Frankfurt lebt, hat sich in den vergangenen…</p>
+                    <div class="chips"><span class="chip chip-tag">#Techno</span><span class="chip chip-tag">#House</span><span class="genre">Electro · Techno · Tech-House</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/good-souls-shabi-kat_es-javier-anxiety-marcus-holder"><img src="https://cdn.evntsvc.net/r/e/ev_gqQOXVK1FEae5BHxsuK0qQ-875_m.jpg" alt="GOOD SOULS: Shabi, Kat_Es, Javier Anxiety, Marcus Holder" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/good-souls-shabi-kat_es-javier-anxiety-marcus-holder">GOOD SOULS: Shabi, Kat_Es, Javier Anxiety, Marcus Holder</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/bulbul">Bulbul</a> <span class="sepdot">·</span> <span class="time">23:00</span></p>
+                    <p class="ev-text">GOOD SOULS: Shabi, Kat_Es, Javier Anxiety, Marcus Holder Bulbul (fka Farbfernseher) is a club/bar for electronic dance music in Berlin-Kreuzberg, located between Görlitzer…</p>
+                    <div class="chips"><span class="genre">House · Club</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/subwax-takeover"><img src="https://cdn.evntsvc.net/r/e/ev_2wnexFxVL0W9EgcHGNPdZw-506_m.jpg" alt="Subwax Takeover" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/subwax-takeover">Subwax Takeover</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/club-der-visionaere">Club der Visionaere</a></p>
+                    <p class="ev-text">Subwax Takeover Back at CDV Berlin for another Subwax Takeover! We couldn’t be happier to do this again. Last year was special, let&#x27;s make this one even better!</p>
+                    <div class="chips"><span class="genre">Electro · Techno · Tech-House</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/10-anti-party-berlin-karaoke-beer-pong-free-shots-at-entry-presented-by-delululand"><img src="https://cdn.evntsvc.net/r/e/ev_Wqa2QgjNqEaQIWoxCB5BVw-854_m.jpg" alt="10€ ANTI PARTY BERLIN // Karaoke, Beer-Pong, Free Shots at entry presented by Delululand" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/10-anti-party-berlin-karaoke-beer-pong-free-shots-at-entry-presented-by-delululand">10€ ANTI PARTY BERLIN // Karaoke, Beer-Pong, Free Shots at entry presented by Delululand</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/humboldthain">Humboldthain</a> <span class="sepdot">·</span> <span class="time">22:00</span></p>
+                    <p class="ev-text">10€ ANTI PARTY BERLIN // Karaoke, Beer-Pong, Free Shots at entry presented by Delululand Let’s be honest: going out in Berlin has gotten expensive.</p>
+                    <div class="chips"><span class="genre">Techno · Trance · Acid · House</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/toy-tonics-presents-italomania"><img src="https://cdn.evntsvc.net/r/e/ev_maO03_qDfUqER6DDtRzlxQ-240_m.jpg" alt="Toy Tonics presents ITALOMANIA" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/toy-tonics-presents-italomania">Toy Tonics presents ITALOMANIA</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/oxi">OXI</a></p>
+                    <p class="ev-text">Toy Tonics presents ITALOMANIA 14-22 OUTDOOR 22-08 INDOOR (2 Floors) 100% DISCOSLEAZE @ OXI We strive to provide a safe &amp; worry-free space.</p>
+                    <div class="chips"><span class="chip chip-tix">Tickets</span><span class="genre">House · disco</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/the-get-down-with-mandel-turner-balthazar-martinez-arnaud-denzler"><img src="https://cdn.evntsvc.net/r/e/ev_43qhXaoaYEyTr12tPnMctA-64_m.jpg" alt="THE GET DOWN with Mandel Turner, Balthazar Martinez, Arnaud Denzler" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/electro/22-08-26/the-get-down-with-mandel-turner-balthazar-martinez-arnaud-denzler">THE GET DOWN with Mandel Turner, Balthazar Martinez, Arnaud Denzler</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/paloma-bar">Paloma Bar</a> <span class="sepdot">·</span> <span class="time">23:00</span></p>
+                    <p class="ev-text">THE GET DOWN with Mandel Turner, Balthazar Martinez, Arnaud Denzler House, Deep Grooves and Soulful-House party, bring your friends, and meet you there, &quot;Where the music pumps…</p>
+                    <div class="chips"><span class="genre">House · Funk · Soul</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+            <div class="entry">
+            <div class="row small">
+                <a class="thumb" href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/pcee-live-in-berlin"><img src="https://cdn.evntsvc.net/r/e/ev_iAq9dqARCk6o5zaid4zYyg-41_m.jpg" alt="PCEE Live in Berlin" loading="lazy" /></a>
+                <div class="ev-main">
+                    <p class="ev-title"><a href="https://www.gaesteliste030.de/de/berlin/events/party/22-08-26/pcee-live-in-berlin">PCEE Live in Berlin</a></p>
+                    <p class="ev-meta"><a href="https://www.gaesteliste030.de/de/berlin/locations/the-cloud285">The Cloud</a> <span class="sepdot">·</span> <span class="time">23:00</span></p>
+                    <p class="ev-text">PCEE Live in Berlin BERLIN, ARE YOU READY? City of Yanos is coming to Berlin with a special live performance alongside Pcee, all the way from South Africa!</p>
+                    <div class="chips"><span class="genre">Afrobeats</span></div>
+                    
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+    <p class="caption">Variante A · Gästeliste-Button rechts in der Zeile · echte Events vom 22.08.2026 · 3 Premium in einer gerahmten Gruppe · 4 Top ohne Rahmen · 27 kostenlose Einträge mit kleinem Vorschaubild<br>Nicht öffentlich verlinkt</p>
+</div>
+</body>
+</html>
