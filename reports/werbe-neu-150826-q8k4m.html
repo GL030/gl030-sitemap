@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Entwurf · Werbemöglichkeiten auf Gästeliste030</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;800&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grad-a:#31314f; --grad-b:#17423d;
+  --teal:#2fd6a6; --teal-deep:#00AA82; --cyan:#00B4DC;
+  --ink:#eef4f2; --ink-dim:rgba(238,244,242,.72); --ink-faint:rgba(238,244,242,.5);
+  --panel:rgba(255,255,255,.045); --panel-2:rgba(255,255,255,.07);
+  --line:rgba(255,255,255,.11); --line-strong:rgba(47,214,166,.55);
+  --hallo:#ff9d4d; --silv:#e8c96b;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:'Barlow',system-ui,-apple-system,sans-serif;
+  font-size:.9375rem;line-height:1.55;color:var(--ink);
+  background:linear-gradient(90deg,var(--grad-a),var(--grad-b)) fixed;
+  min-height:100vh;
+}
+a{color:var(--teal);text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* ── Header: Platzhalter für den Standard-Site-Header (keine Werbung auf dieser Seite!) ── */
+.sitebar{background:rgba(12,14,24,.85);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.sitebar .wrap{display:flex;align-items:center;gap:20px;height:52px}
+.logo{font-family:'Barlow Semi Condensed';font-weight:700;font-size:1.02rem;letter-spacing:.04em;color:#fff}
+.logo b{color:var(--teal)}
+.logo small{display:block;font-size:.55rem;letter-spacing:.14em;color:var(--ink-faint);font-weight:600}
+.sitenav{display:flex;gap:16px;font-size:.82rem;color:var(--ink-dim);margin-left:auto}
+.sitenav span{opacity:.85}
+.draftchip{position:fixed;right:12px;bottom:12px;z-index:9;background:var(--teal-deep);color:#07211a;font-weight:800;font-size:.7rem;letter-spacing:.08em;padding:6px 10px;border-radius:99px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+
+/* ── Hero ── */
+.hero{padding:52px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{font-family:'Barlow Semi Condensed';font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+h1{font-family:'Barlow Semi Condensed';font-weight:700;font-size:clamp(1.9rem,4.2vw,2.9rem);line-height:1.08;margin:10px 0 6px}
+.kicker{font-size:1.05rem;font-weight:600;color:var(--ink);margin:14px 0 10px;padding-left:12px;border-left:3px solid var(--teal)}
+.hero p.lead{color:var(--ink-dim);max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:99px;padding:6px 12px;font-size:.78rem;color:var(--ink-dim)}
+.chip b{color:var(--ink);font-weight:800}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;border-radius:10px;padding:11px 18px;font-weight:800;font-size:.88rem;letter-spacing:.02em}
+.btn-primary{background:var(--teal-deep);color:#04231a}
+.btn-primary:hover{background:var(--teal)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--line-strong)}
+.hero-phone{position:relative;text-align:center}
+.hero-phone img{width:min(320px,80%);border-radius:26px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.hero-phone figcaption{margin-top:10px;font-size:.72rem;color:var(--ink-faint)}
+
+/* ── Übersicht / Sprungnav ── */
+.jump{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(0,0,0,.14)}
+.jump .wrap{display:flex;flex-wrap:wrap;gap:6px 26px;padding:12px 18px;font-size:.82rem}
+.jump a{color:var(--ink-dim);font-weight:600}
+.jump a:hover{color:var(--teal)}
+.jump em{font-style:normal;color:var(--teal);font-weight:800;margin-right:6px}
+
+/* ── Sektionen ── */
+section{padding:46px 0 8px}
+.sec-head{max-width:62ch;margin-bottom:24px}
+h2{font-family:'Barlow Semi Condensed';font-weight:700;font-size:1.45rem;margin:6px 0 6px}
+.sec-head p{color:var(--ink-dim);font-size:.9rem}
+
+/* Platzierungs-Leiter */
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:end}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;position:relative;transition:transform .15s ease}
+.card:hover{transform:translateY(-2px)}
+.card h3{font-family:'Barlow Semi Condensed';font-weight:700;font-size:1.08rem}
+.price{font-family:'Barlow Semi Condensed';font-weight:700;font-size:1.5rem;color:var(--teal);margin:6px 0 10px}
+.price small{font-size:.7rem;color:var(--ink-faint);font-weight:600}
+.card ul{list-style:none;margin:0 0 14px}
+.card li{padding:5px 0 5px 20px;position:relative;font-size:.84rem;color:var(--ink-dim)}
+.card li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:800}
+.card .more{font-size:.84rem;font-weight:700}
+.tier-top{background:var(--panel-2);border-color:rgba(255,255,255,.18);padding-bottom:26px}
+.tier-premium{border:1.5px solid var(--line-strong);background:linear-gradient(180deg,rgba(47,214,166,.10),var(--panel-2));box-shadow:0 12px 40px rgba(0,170,130,.18);padding-bottom:32px}
+.badge{position:absolute;top:-11px;left:18px;background:var(--teal-deep);color:#04231a;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
+.ladder-note{margin-top:10px;font-size:.74rem;color:var(--ink-faint)}
+
+/* Zwei schlanke Karten (Gästeliste/Verlosung) + Sondertermine-Grid */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.slim{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.slim div p{font-size:.82rem;color:var(--ink-dim);margin-top:2px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mini h3{font-size:.95rem}
+.mini .price{font-size:1.2rem}
+.tint-h{border-top:3px solid var(--hallo)}
+.tint-s{border-top:3px solid var(--silv)}
+.mini .season{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.tint-h .season{color:var(--hallo)}
+.tint-s .season{color:var(--silv)}
+
+/* Pakete */
+.packs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pack h3{font-size:1.15rem}
+.pack .sub{font-size:.82rem;color:var(--ink-dim);margin:2px 0 10px}
+.placements{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.pl{font-size:.72rem;border:1px solid var(--line);border-radius:8px;padding:4px 8px;color:var(--ink-dim)}
+.pl.on{border-color:var(--line-strong);color:var(--ink)}
+
+/* Banner + Sonstiges + Kontakt */
+.wide{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.quietlinks{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.8rem;padding:14px 0 4px}
+.quietlinks a{color:var(--ink-faint)}
+.quietlinks a:hover{color:var(--teal)}
+.contact{background:linear-gradient(90deg,rgba(0,170,130,.16),rgba(0,180,220,.12));border:1px solid var(--line-strong);border-radius:var(--r);padding:26px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;margin:40px 0 8px}
+.contact h2{margin:0 0 4px}
+.contact p{color:var(--ink-dim);font-size:.88rem}
+.contact .cta-row a.btn-ghost{border-color:var(--line-strong)}
+footer{padding:26px 0 40px;color:var(--ink-faint);font-size:.74rem}
+
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-phone{order:-1}
+  .hero-phone img{width:min(240px,64%)}
+  .ladder,.grid4{grid-template-columns:1fr 1fr}
+  .packs,.duo{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .ladder,.grid4{grid-template-columns:1fr}
+  .sitenav{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="draftchip">ENTWURF · 15.08.</div>
+
+<!-- Standard-Site-Header (Platzhalter — echte Seite nutzt den normalen Header; Werbung auf dieser Seite AUS) -->
+<div class="sitebar"><div class="wrap">
+  <div class="logo">GÄSTELISTE<b>030</b><small>BERLINS GRÖSSTER ONLINE PARTY GUIDE</small></div>
+  <nav class="sitenav"><span>Party</span><span>Electro</span><span>Open Air</span><span>Halloween</span><span>Silvester</span><span>Clubs</span><span>Mehr</span></nav>
+</div></div>
+
+<!-- ── HERO ── -->
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Für Clubs &amp; Veranstalter</div>
+    <h1>Werbemöglichkeiten auf Gästeliste030</h1>
+    <div class="kicker">Andere zeigen dich Leuten. Wir bringen dir Namen auf die Liste.</div>
+    <p class="lead">Berlins größter Online-Party-Guide — seit 2010, dreisprachig, jeden Tag aktuell. Wer hier sucht, will heute Abend ausgehen: Deine Werbung erreicht Gäste genau im Moment der Entscheidung und endet messbar auf deiner Gästeliste.</p>
+    <div class="chips">
+      <span class="chip"><b>1,8&thinsp;Mio</b> Gästelisten-Einträge</span>
+      <span class="chip">seit <b>2010</b></span>
+      <span class="chip"><b>59,5&thinsp;%</b> kommen wieder</span>
+      <span class="chip"><b>DE&thinsp;/&thinsp;EN&thinsp;/&thinsp;ES</b></span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/account/createevent/step1">Event einreichen</a>
+      <a class="btn btn-ghost" href="tel:+4917610300300">0176&thinsp;10&thinsp;300&thinsp;300</a>
+      <a class="btn btn-ghost" href="mailto:info@gaesteliste030.de">info@gaesteliste030.de</a>
+    </div>
+  </div>
+  <figure class="hero-phone">
+    <img src="assets/werbe-hero-phone-150826.jpg" alt="Gästeliste030 auf dem Smartphone — Eventliste mit Empfehlung, Tickets und Tischreservierung" width="320" height="500">
+    <figcaption>So sehen Gäste dein Event — hervorgehoben, mit Gästeliste, Tickets &amp; Tischreservierung.</figcaption>
+  </figure>
+</div></header>
+
+<!-- ── Sprung-Übersicht ── -->
+<nav class="jump"><div class="wrap">
+  <a href="#eintraege"><em>1</em>Event-Einträge</a>
+  <a href="#pakete"><em>2</em>Marketing-Pakete</a>
+  <a href="#sondertermine"><em>3</em>Sondertermine</a>
+  <a href="#banner"><em>4</em>Banner</a>
+</div></nav>
+
+<!-- ── 1 · EVENT-EINTRÄGE (Platzierungs-Leiter) ── -->
+<section id="eintraege"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Platzierungen</div>
+    <h2>Event-Einträge</h2>
+    <p>Drei Stufen, eine Logik: Je höher die Stufe, desto weiter oben und auffälliger steht dein Event im Kalender — genau so, wie die Karten hier aufsteigen.</p>
+  </div>
+  <div class="ladder">
+    <div class="card">
+      <h3>Kostenloses Standard-Event</h3>
+      <div class="price">0&thinsp;€</div>
+      <ul>
+        <li>Eintrag im Eventkalender</li>
+        <li>Eintrag in der Event-Karte</li>
+        <li>Gästeliste (vergünstigt) &amp; Verlosung anbietbar</li>
+      </ul>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/standard-event">Mehr dazu →</a>
+    </div>
+    <div class="card tier-top">
+      <h3>Top-Event</h3>
+      <div class="price">50&thinsp;€ <small>netto*</small></div>
+      <ul>
+        <li>Alle Standard-Features</li>
+        <li>Platzierung über allen Standard-Events</li>
+        <li>Größere Darstellung, größeres Bild</li>
+        <li>Hervorgehobene Stecknadel auf der Karte</li>
+      </ul>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/top-event">Mehr dazu →</a>
+    </div>
+    <div class="card tier-premium">
+      <span class="badge">Empfehlung</span>
+      <h3>Premium-Event</h3>
+      <div class="price">100&thinsp;€ <small>netto*</small></div>
+      <ul>
+        <li>Alle Top-Features</li>
+        <li>Platzierung über allen Einträgen</li>
+        <li>Farblich hervorgehobene Karte + „Empfehlung“-Kennzeichnung</li>
+        <li>Flyer als großer Startseiten-Banner (Fr &amp; Sa, Desktop)</li>
+      </ul>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/premium-top-event">Mehr dazu →</a>
+    </div>
+  </div>
+  <div class="ladder-note">* Nettopreise zzgl. USt.</div>
+
+  <div class="duo">
+    <div class="card slim">
+      <div>
+        <h3>Gästeliste</h3>
+        <p>Vergünstigte Gästelistenplätze anbieten — der Grund, warum Gäste zu uns kommen und wiederkommen.</p>
+      </div>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/gaestelisten-und-verlosungen-anbieten">Mehr dazu →</a>
+    </div>
+    <div class="card slim">
+      <div>
+        <h3>Verlosung</h3>
+        <p>Freikarten oder Specials verlosen — Reichweite und Anmeldungen für dein Event, ohne Streuverlust.</p>
+      </div>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/gaestelisten-und-verlosungen-anbieten">Mehr dazu →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ── 2 · MARKETING-PAKETE ── -->
+<section id="pakete"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Rundum-Betreuung</div>
+    <h2>Marketing-Pakete</h2>
+    <p>Platzierung plus Kampagne: Wir kombinieren deine Event-Einträge mit Social-Media-Werbung und professionellem Setup — ein Ansprechpartner, ein Preis.</p>
+  </div>
+  <div class="packs">
+    <div class="card pack">
+      <h3>Top-Paket</h3>
+      <div class="price">ab 200&thinsp;€ <small>netto*</small></div>
+      <div class="sub">Der Einstieg für einzelne Termine mit Reichweiten-Schub.</div>
+      <div class="placements">
+        <span class="pl on">Top-Event</span><span class="pl on">Gästeliste</span><span class="pl on">Meta-Kampagne</span><span class="pl">Startseiten-Banner</span>
+      </div>
+      <a class="more" href="/de/event-marketing-pakete">Alle Details zu den Paketen →</a>
+    </div>
+    <div class="card pack tier-premium">
+      <span class="badge">Meistgebucht</span>
+      <h3>Premium-Paket</h3>
+      <div class="price">ab 250&thinsp;€ <small>netto*</small></div>
+      <div class="sub">Maximale Sichtbarkeit: oberste Platzierung plus Kampagne.</div>
+      <div class="placements">
+        <span class="pl on">Premium-Event</span><span class="pl on">Gästeliste</span><span class="pl on">Meta-Kampagne</span><span class="pl on">Startseiten-Banner (Fr/Sa)</span>
+      </div>
+      <a class="more" href="/de/event-marketing-pakete">Alle Details zu den Paketen →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ── 3 · SONDERTERMINE ── -->
+<section id="sondertermine"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Die zwei größten Nächte des Jahres</div>
+    <h2>Sondertermine</h2>
+    <p>Halloween und Silvester haben eigene Kategorien, eigene Nachfrage — und eigene Konditionen.</p>
+  </div>
+  <div class="grid4">
+    <div class="card mini tint-h">
+      <div class="season">Halloween</div>
+      <h3>Top-Event</h3>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/top-event-halloween">Mehr dazu →</a>
+    </div>
+    <div class="card mini tint-h">
+      <div class="season">Halloween</div>
+      <h3>Premium-Event</h3>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/premium-top-event-halloween">Mehr dazu →</a>
+    </div>
+    <div class="card mini tint-s">
+      <div class="season">Silvester</div>
+      <h3>Top-Event</h3>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/top-event-silvester">Mehr dazu →</a>
+    </div>
+    <div class="card mini tint-s">
+      <div class="season">Silvester</div>
+      <h3>Premium-Event</h3>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/premium-top-event-silvester">Mehr dazu →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ── 4 · BANNER ── -->
+<section id="banner"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Display</div>
+    <h2>Banner</h2>
+  </div>
+  <div class="card wide">
+    <div style="max-width:56ch">
+      <h3>Banner auf Gästeliste030</h3>
+      <p style="color:var(--ink-dim);font-size:.86rem;margin-top:4px">Dein Motiv prominent im Eventkalender — sichtbar für alle, die gerade entscheiden, wo sie heute feiern. Buchbar pro Woche.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="price" style="margin:0">125&thinsp;€ <small>netto*</small></div>
+      <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/banner-1">Mehr dazu →</a>
+    </div>
+  </div>
+
+  <div class="quietlinks">
+    <span style="color:var(--ink-faint);font-weight:700">Weitere Angebote:</span>
+    <a href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/startseitenbanner">Startseiten-Banner</a>
+    <a href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/banner-2">Banner 2</a>
+    <a href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/mobile-app-banner">Mobile-App-Banner</a>
+    <a href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/gaestelistenmanagement">Online-Gästelistenmanagement</a>
+    <a href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/social-media">Social Media</a>
+  </div>
+</div></section>
+
+<!-- ── KONTAKT ── -->
+<div class="wrap">
+  <div class="contact">
+    <div>
+      <h2>Lass uns über dein Event sprechen.</h2>
+      <p>Kurzer Anruf oder eine Mail — wir sagen dir ehrlich, welche Platzierung sich für dein Event lohnt.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+4917610300300">0176&thinsp;10&thinsp;300&thinsp;300</a>
+      <a class="btn btn-ghost" href="mailto:info@gaesteliste030.de">info@gaesteliste030.de</a>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  Entwurf zur internen Abstimmung · Preise: Nettopreise zzgl. USt. · Diese Seite läuft ohne Fremdwerbung.
+</div></footer>
+
+</body>
+</html>
