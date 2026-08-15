@@ -84,8 +84,13 @@ h2{font-family:'Barlow Semi Condensed';font-weight:700;font-size:1.45rem;margin:
 .card li{padding:5px 0 5px 20px;position:relative;font-size:.84rem;color:var(--ink-dim)}
 .card li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:800}
 .card .more{font-size:.84rem;font-weight:700}
-.forecast{font-size:.8rem;color:var(--ink-dim);border:1px dashed rgba(47,214,166,.45);border-radius:9px;padding:7px 10px;margin:0 0 12px}
-.forecast b{color:var(--teal);font-weight:800}
+.forecast{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding:11px 14px;border-radius:11px;
+  background:linear-gradient(90deg,rgba(0,170,130,.26),rgba(0,180,220,.10));
+  border:1px solid var(--line-strong);box-shadow:inset 0 0 24px rgba(47,214,166,.08)}
+.fc-num{font-family:'Barlow Semi Condensed';font-weight:700;font-size:1.9rem;line-height:1;color:var(--teal);letter-spacing:-.01em;white-space:nowrap}
+.fc-side{display:flex;flex-direction:column;gap:2px;min-width:0}
+.fc-label{font-family:'Barlow Semi Condensed';font-weight:700;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.fc-unit{font-size:.78rem;color:var(--ink);font-weight:600;line-height:1.25}
 .tier-top{background:var(--panel-2);border-color:rgba(255,255,255,.18);padding-bottom:26px}
 .tier-premium{border:1.5px solid var(--line-strong);background:linear-gradient(180deg,rgba(47,214,166,.10),var(--panel-2));box-shadow:0 12px 40px rgba(0,170,130,.18);padding-bottom:32px}
 .badge{position:absolute;top:-11px;left:18px;background:var(--teal-deep);color:#04231a;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
@@ -195,7 +200,7 @@ footer{padding:26px 0 40px;color:var(--ink-faint);font-size:.74rem}
         <li>Eintrag in der Event-Karte</li>
         <li>Gästeliste (vergünstigt) &amp; Verlosung anbietbar</li>
       </ul>
-      <div class="forecast">Prognose: <b>0–25</b> Gästelisten-Einträge je Event</div>
+      <div class="forecast"><span class="fc-num">0–25</span><span class="fc-side"><span class="fc-label">Prognose</span><span class="fc-unit">Gästelisten-Einträge je&nbsp;Event</span></span></div>
       <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/standard-event">Mehr dazu →</a>
     </div>
     <div class="card tier-top">
@@ -207,7 +212,7 @@ footer{padding:26px 0 40px;color:var(--ink-faint);font-size:.74rem}
         <li>Größere Darstellung, größeres Bild</li>
         <li>Hervorgehobene Stecknadel auf der Karte</li>
       </ul>
-      <div class="forecast">Prognose: <b>15–60</b> Gästelisten-Einträge je Event</div>
+      <div class="forecast"><span class="fc-num">15–60</span><span class="fc-side"><span class="fc-label">Prognose</span><span class="fc-unit">Gästelisten-Einträge je&nbsp;Event</span></span></div>
       <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/top-event">Mehr dazu →</a>
     </div>
     <div class="card tier-premium">
@@ -220,7 +225,7 @@ footer{padding:26px 0 40px;color:var(--ink-faint);font-size:.74rem}
         <li>Farblich hervorgehobene Karte + „Empfehlung“-Kennzeichnung</li>
         <li>Flyer als großer Startseiten-Banner (Fr &amp; Sa, Desktop)</li>
       </ul>
-      <div class="forecast">Prognose: <b>25–100</b> Gästelisten-Einträge je Event</div>
+      <div class="forecast"><span class="fc-num">25–100</span><span class="fc-side"><span class="fc-label">Prognose</span><span class="fc-unit">Gästelisten-Einträge je&nbsp;Event</span></span></div>
       <a class="more" href="/de/werbemoeglichkeiten-fuer-clubs-und-veranstalter/premium-top-event">Mehr dazu →</a>
     </div>
   </div>
@@ -256,7 +261,7 @@ footer{padding:26px 0 40px;color:var(--ink-faint);font-size:.74rem}
       <h3>Top-Paket</h3>
       <div class="price">ab 200&thinsp;€ <small>netto*</small></div>
       <div class="sub">Der Einstieg für einzelne Termine mit Reichweiten-Schub.</div>
-      <div class="forecast">Prognose: <b>55–90</b> Gästelisten-Einträge je Event</div>
+      <div class="forecast"><span class="fc-num">55–90</span><span class="fc-side"><span class="fc-label">Prognose</span><span class="fc-unit">Gästelisten-Einträge je&nbsp;Event</span></span></div>
       
       <div class="placements">
         <span class="pl on">Top-Event</span><span class="pl on">Gästeliste</span><span class="pl on">Meta-Kampagne</span><span class="pl">Startseiten-Banner</span>
@@ -268,7 +273,7 @@ footer{padding:26px 0 40px;color:var(--ink-faint);font-size:.74rem}
       <h3>Premium-Paket</h3>
       <div class="price">ab 250&thinsp;€ <small>netto*</small></div>
       <div class="sub">Maximale Sichtbarkeit: oberste Platzierung plus Kampagne.</div>
-      <div class="forecast">Prognose: <b>90–180</b> Gästelisten-Einträge je Event</div>
+      <div class="forecast"><span class="fc-num">90–180</span><span class="fc-side"><span class="fc-label">Prognose</span><span class="fc-unit">Gästelisten-Einträge je&nbsp;Event</span></span></div>
       
       <div class="placements">
         <span class="pl on">Premium-Event</span><span class="pl on">Gästeliste</span><span class="pl on">Meta-Kampagne</span><span class="pl on">Startseiten-Banner (Fr/Sa)</span>
