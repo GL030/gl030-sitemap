@@ -37,6 +37,46 @@ function Normalize([string]$s) {
     return ($s -replace "[^a-z0-9]", "")
 }
 
+# Zeitueberlappung in Minuten zwischen zwei Zeitfenstern
+function Get-OverlapMinutes([datetime]$b1, [datetime]$e1, [datetime]$b2, [datetime]$e2) {
+    $s = if ($b1 -gt $b2) { $b1 } else { $b2 }
+    $e = if ($e1 -lt $e2) { $e1 } else { $e2 }
+    if ($e -le $s) { return 0 }
+    return [int]($e - $s).TotalMinutes
+}
+
+# Dublettenpruefung v1.5: ExternalId + Namensgleichheit + ZEITUEBERLAPPUNG (>=120 Min oder >=50% des kuerzeren Events)
+# Prueft Tag UND Vortag (Mitternachts-Grenzfaelle). Liefert $null oder Beschreibung des Treffers.
+function Test-Duplicate([string]$LocationId, [datetime]$Begin, [datetime]$End, [string]$Title, [string]$ExternalId) {
+    $nrm = Normalize $Title
+    $myDur = [int]($End - $Begin).TotalMinutes
+    if ($myDur -le 0) { $myDur = 360 }
+    foreach ($dayOffset in @(0, -1)) {
+        $day = $Begin.Date.AddDays($dayOffset)
+        try {
+            $qs = "locationId=" + $LocationId + "&date=" + $day.ToString("yyyy-MM-dd")
+            if ($dayOffset -eq 0 -and $ExternalId) { $qs += "&externalId=" + [uri]::EscapeDataString($ExternalId) }
+            Start-Sleep -Milliseconds 150
+            $d = Invoke-Handler "duplicates" $qs $null
+        } catch { continue }
+        if ($d.alreadyImportedExternalId) { return "[ExternalId]" }
+        foreach ($x in @($d.results)) {
+            if (-not $x.begin) { continue }
+            $xb = [datetime]$x.begin
+            $xe = if ($x.end) { [datetime]$x.end } else { $xb.AddHours(6) }
+            $xn = Normalize ([string]$x.name)
+            if ($xn -eq $nrm) { return ("[Name+Tag: '" + $x.name + "']") }
+            $ov = Get-OverlapMinutes $Begin $End $xb $xe
+            $xDur = [int]($xe - $xb).TotalMinutes; if ($xDur -le 0) { $xDur = 360 }
+            $shorter = [Math]::Min($myDur, $xDur)
+            if ($ov -ge 120 -or ($shorter -gt 0 -and $ov -ge 0.5 * $shorter)) {
+                return ("[Zeitueberlappung " + $ov + " Min mit '" + $x.name + "']")
+            }
+        }
+    }
+    return $null
+}
+
 function Invoke-Handler([string]$Action, [string]$Query, [string]$BodyFile) {
     $url = "$HandlerUrl`?action=$Action"
     if ($Query) { $url += "&$Query" }
@@ -242,16 +282,14 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
 
     if ($DryRun) {
         try {
-            Start-Sleep -Milliseconds 150
-            $d = Invoke-Handler "duplicates" ("locationId=" + $v.locationId + "&date=" + $begin.ToString("yyyy-MM-dd") + "&externalId=" + [uri]::EscapeDataString("ra:" + $e.id)) $null
-            $nrm = Normalize ([string]$e.title)
-            $isDup = $false
-            if ($d.alreadyImportedExternalId) { $isDup = $true }
-            foreach ($x in @($d.results)) { if ((Normalize ([string]$x.name)) -eq $nrm) { $isDup = $true } }
-            if ($isDup) { $Duplicates += $label } else { $Created += $label }
+            $dup = Test-Duplicate ([string]$v.locationId) $begin $end ([string]$e.title) ("ra:" + $e.id)
+            if ($dup) { $Duplicates += ($label + " " + $dup) } else { $Created += $label }
         } catch { $Errors += ($label + " :: " + $_.Exception.Message) }
         continue
     }
+
+    $dup = Test-Duplicate ([string]$v.locationId) $begin $end ([string]$e.title) ("ra:" + $e.id)
+    if ($dup) { $Duplicates += ($label + " " + $dup); continue }
 
     $tmp = Join-Path $env:TEMP ("gl030-import-" + $e.id + ".json")
     [IO.File]::WriteAllText($tmp, ($payload | ConvertTo-Json -Depth 6), (New-Object System.Text.UTF8Encoding($false)))
