@@ -258,6 +258,13 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
     try {
         Start-Sleep -Milliseconds 300
         $r = Invoke-Handler "create" $null $tmp
+        if ($r.status -eq "error" -and ([string]$r.message) -like "*No category resolved*") {
+            $payload["categoryNames"] = @("Electro")
+            [IO.File]::WriteAllText($tmp, ($payload | ConvertTo-Json -Depth 6), (New-Object System.Text.UTF8Encoding($false)))
+            Start-Sleep -Milliseconds 300
+            $r = Invoke-Handler "create" $null $tmp
+            if ($r.status -eq "created") { $label += " (Kategorie-Fallback: Electro - bitte pruefen)" }
+        }
         switch ($r.status) {
             "created"           { $note = ""; if ($r.unmatchedArtists -and $r.unmatchedArtists.Count -gt 0) { $note = " (Artists unbekannt: " + $r.unmatchedArtists.Count + ")" }; $Created += ($label + $note) }
             "duplicate-import"  { $Duplicates += ($label + " [ExternalId]") }
