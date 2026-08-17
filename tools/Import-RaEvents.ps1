@@ -113,11 +113,31 @@ if (Test-Path $VenueMap) {
     foreach ($p in $obj.PSObject.Properties) { $Map[$p.Name] = $p.Value }
 }
 
+# --- Club-Liste (Whitelist mit optionalem Alias) ---
+$ClubFile = Join-Path $BaseDir "clubs.txt"
+$Clubs = @{}
+if (Test-Path $ClubFile) {
+    foreach ($line in (Get-Content $ClubFile -Encoding UTF8)) {
+        $t = $line.Trim()
+        if (-not $t -or $t.StartsWith("#")) { continue }
+        $alias = $null
+        if ($t.Contains("=")) {
+            $pieces = $t.Split("=", 2)
+            $t = $pieces[0].Trim()
+            $alias = $pieces[1].Trim()
+        }
+        $Clubs[(Normalize $t)] = @{ raw = $t; alias = $alias }
+    }
+}
+if ($Clubs.Count -eq 0) { throw "clubs.txt fehlt oder ist leer - Lauf abgebrochen (Whitelist ist Pflicht)." }
+
 $RunCache = @{}
-function Resolve-Venue([string]$RaVenueId, [string]$RaVenueName) {
+function Resolve-Venue([string]$RaVenueId, [string]$RaVenueName, [string]$Alias) {
     if ($Map.ContainsKey($RaVenueId)) { return $Map[$RaVenueId] }
     if ($RunCache.ContainsKey($RaVenueId)) { return $RunCache[$RaVenueId] }
-    $tries = @($RaVenueName)
+    $tries = @()
+    if ($Alias) { $tries += $Alias }
+    $tries += $RaVenueName
     if ($RaVenueName -match "(?i)\sberlin$") { $tries += ($RaVenueName -replace "(?i)\sberlin$", "") }
     foreach ($t in $tries) {
         Start-Sleep -Milliseconds 150
@@ -160,9 +180,12 @@ for ($page = 1; $page -le $MaxPages; $page++) {
 $Created = @(); $Duplicates = @(); $Errors = @(); $NoVenue = 0
 $MissingVenues = @{}
 
+$SkippedNotListed = 0
 foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
     if (-not $e.venue -or -not $e.venue.id) { $NoVenue++; continue }
-    $v = Resolve-Venue ([string]$e.venue.id) ([string]$e.venue.name)
+    $clubKey = Normalize ([string]$e.venue.name)
+    if (-not $Clubs.ContainsKey($clubKey)) { $SkippedNotListed++; continue }
+    $v = Resolve-Venue ([string]$e.venue.id) ([string]$e.venue.name) ([string]$Clubs[$clubKey].alias)
     if ($v.status -ne "ok") {
         $k = [string]$e.venue.name
         if (-not $MissingVenues.ContainsKey($k)) { $MissingVenues[$k] = [pscustomobject]@{ count = 0; attending = 0 } }
@@ -251,7 +274,7 @@ if ($DryRun) { $mode = " (PROBELAUF - nichts angelegt)" }
 $md = @()
 $md += "# GL030 Event-Import $stamp$mode"
 $md += ""
-$md += "Fenster: $From bis $To ($Days Tage) | RA-Events gesamt: $($Events.Count) | ohne Venue: $NoVenue"
+$md += "Fenster: $From bis $To ($Days Tage) | RA-Events gesamt: $($Events.Count) | ohne Venue: $NoVenue | ausserhalb Club-Liste: $SkippedNotListed"
 $md += ""
 $md += "## Angelegt ($($Created.Count))"
 foreach ($x in $Created) { $md += "- $x" }
