@@ -115,6 +115,14 @@ if (Test-Path $VenueMap) {
 
 # --- Club-Liste (Whitelist mit optionalem Alias) ---
 $ClubFile = Join-Path $BaseDir "clubs.txt"
+# Bei jedem Lauf frisch aus dem Repo ziehen (Pflege ohne Server-Handgriff); Fallback: lokale Datei
+if (Test-Path $TokenFile) {
+    try {
+        $ghTok = (Get-Content $TokenFile -Raw).Trim()
+        $ghHdr = @{ Authorization = "token $ghTok"; "User-Agent" = "gl030-import"; Accept = "application/vnd.github.raw" }
+        Invoke-RestMethod -Uri "https://api.github.com/repos/gl030/gl030-sitemap/contents/tools/clubs.txt" -Headers $ghHdr -OutFile $ClubFile -TimeoutSec 30
+    } catch { Write-Output ("clubs.txt-Refresh fehlgeschlagen, nutze lokale Datei: " + $_.Exception.Message) }
+}
 $Clubs = @{}
 if (Test-Path $ClubFile) {
     foreach ($line in (Get-Content $ClubFile -Encoding UTF8)) {
