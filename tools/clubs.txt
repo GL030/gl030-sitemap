@@ -21,7 +21,7 @@ Kater = Kater Blau
 Birgit = Birgit & Bier
 KitKatClub = KitKat Club
 Tresor / Globus = Tresor
-Berghain | Panorama Bar | Saeule = Berghain
+Berghain | Panorama Bar | Saeule = Berghain, Panorama Bar, Saeule
 ://about blank
 RSO.BERLIN = RSO
 OST
