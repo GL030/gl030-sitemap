@@ -1,584 +1,130 @@
-# GL030 Event-Import 2026-08-17 10:51 (PROBELAUF - nichts angelegt)
+# GL030 Event-Import 2026-08-17 14:05
 
-Fenster: 2026-08-17 bis 2026-09-21 (35 Tage) | RA-Events gesamt: 787 | ohne Venue: 0
+Fenster: 2026-08-17 bis 2026-08-31 (14 Tage) | RA-Events gesamt: 441 | ohne Venue: 0 | ausserhalb Club-Liste: 298
 
-## Angelegt (345)
-- 15.08. 23:00 | Der Wei├ƒe Hase | +22957193023 LES ETAPES POUR AVOIR LE VRAI PORTEFEUILLE
-- 17.08. 21:00 | Dunckerclub | Dark Monday
-- 17.08. 17:00 | Klunkerkranich | MONDAY ROAST w. Dorsch
-- 17.08. 19:00 | Neue Zukunft | Grischa Lichtenberger, BK UNITED, Hilde Wollenstein (Saga.Domaine label night)
-- 17.08. 18:00 | Club der Visionaere | Santa Musica
-- 18.08. 17:00 | Klunkerkranich | BLAUES STÜNDCHEN w. RAULITO WOLF
-- 18.08. 18:00 | Minimal Bar | go.play mit Sarah
-- 18.08. 18:00 | Club der Visionaere | Bubble
-- 18.08. 20:00 | Silent Green | Silent Green Open Lab #11: ..o & Nilgün Özer + Gabi Pedrosa
-- 18.08. 20:00 | S├╝ss War Gestern | THE UNKNOWN (𝘍𝘙𝘌𝘌 𝘌𝘕𝘛𝘙𝘠 𝘜𝘕𝘛𝘐𝘓 22:00 ⟶ 𝘋𝘖𝘕𝘈𝘛𝘐𝘖𝘕-𝘉𝘈𝘚𝘌𝘋 𝘈𝘍𝘛𝘌𝘙)
-- 18.08. 23:00 | Der Wei├ƒe Hase | HART ◢◤ Tuesday Rave & Open Air Garden [free entry until midnight*]
-- 18.08. 23:00 | OXI | ✦SEELEN x encore.une.fois✦ / INDOOR RAVE + OPEN AIR CHILL GARDEN
-- 18.08. 18:00 | Humboldthain | Open Decks & Tischtennis
-- 19.08. 19:00 | Crack Bellmer | OPEN DECKS FOR FLINTA* PING PONG FOR ALL
-- 19.08. 20:00 | Neue Zukunft | 10¹⁷ (Colin Stetson  Stian Westerhus  Erland Dahlen), Actual Figures
-- 19.08. 23:00 | Sensorium | TECHNO MITTWOCH: TAKE YOUR TICKETS
-- 19.08. 21:00 | Eschschloraque | Cool Tunes for Hot Cats
-- 19.08. 17:00 | Klunkerkranich | WOCHENMITTE w. Adron & Manu Strasse
-- 19.08. 23:00 | ├åden | ＬＩＬＩＴＨ✦
-- 19.08. 19:00 | ├åden | Floating Over - ÆDEN/ŒL Garten
+## Angelegt (58)
+- 17.08. 22:00 | KitKat | Electric Monday@ KitKat Club Summer Special with Robert Owens  (Artists unbekannt: 1)
+- 17.08. 18:00 | Club der Visionaere | Santa Musica (Artists unbekannt: 1)
+- 17.08. 23:00 | Tresor | ◥◣GRÜV x SINGULARITY◥◣ (TRESOR + AURORA BAR / 2 floors) (Artists unbekannt: 2)
+- 18.08. 23:00 | Der Weiße Hase | HART ◢◤ Tuesday Rave & Open Air Garden [free entry until midnight*] (Artists unbekannt: 1)
+- 18.08. 18:00 | Club der Visionaere | Bubble (Artists unbekannt: 1)
+- 18.08. 23:00 | OXI | ✦SEELEN x encore.une.fois✦ / INDOOR RAVE + OPEN AIR CHILL GARDEN (Artists unbekannt: 2)
 - 19.08. 17:00 | Maaya | Common Grwnd
-- 19.08. 23:00 | Lokschuppen | SIGNALS - 5€ Tickets - with NSLZ, Nettta, DJ TRY & Suanni
-- 19.08. 20:00 | Silent Green | Unguarded pres. Jungstötter + Blurrydog
-- 20.08. 23:00 | Der Wei├ƒe Hase | STRAFF / Techno Thursday / 5€ until 1 AM
-- 20.08. 19:30 | Gretchen | G SESSIONS - 360 ° (Live) Show feat. KOOB, MAURA + KING OWUSU
-- 20.08. 20:00 | Arkaoda | dreamlink
-- 20.08. 18:00 | Renate | Renate x Queer Vinyl Night (Klubnacht + Free Open Air)
-- 20.08. 22:00 | Ohm | Foggy w/ LA RAT (live), Aneleon, Haya, Lily Haz, WD40, Pablo Ulises Lienhard (live)
-- 20.08. 18:00 | GIRI | Giri x Rawa Club - Mexican Ambient Night
+- 19.08. 21:00 | Tresor | Büro Siebzig: Arsenal Mikebe LIVE - hosted Nyege Nyege Festival (Artists unbekannt: 1)
+- 19.08. 22:00 | KitKat | SYMBIOTIKKA at KitKat Club Berlin (Artists unbekannt: 1)
+- 20.08. 20:00 | OXI | [OPEN: 20:00h] OXI LIVE: MODULAR / SYNTHS - Amsterdam and Berlin (Artists unbekannt: 5)
+- 20.08. 22:00 | KitKat | UNITY AT KITKAT CLUB (Artists unbekannt: 1)
 - 20.08. 17:00 | Maaya | OPERATION M3LTINGPOT: COMMUNITY SERVICE
-- 20.08. 19:00 | DNA. CLUB | FREE ENTRY: Live Music Jam Session & DJ Sets Community OPEN AIR
-- 20.08. 17:00 | Acud macht Neu | MUSIC BUSINESS: SELF MADE STORY — Edition 2
-- 20.08. 20:00 | OXI | [OPEN: 20:00h] OXI LIVE: MODULAR / SYNTHS - Amsterdam and Berlin
-- 20.08. 19:00 | Crack Bellmer | Pulso: Flor Coto, Nacho Carbajal, Santi Calvo, No Silver Bullet, Szew, Mati Amoretti
-- 21.08. 20:00 | Silent Green | Psychic Liberation Night: Niloofar Asghary + Júlia Koffler
-- 21.08. 23:59 | Kreuzwerk | Body Language
-- 21.08. 21:00 | Hafenbar | Stimmen in Aspik - Die Schlager-Party
-- 21.08. 22:30 | DNA. CLUB | FREE ENTRY: Connect & RAVE: Community OPEN AIR at DNA. CLUB: Tech House, Techno & Bounce
-- 21.08. 23:00 | Coco Boule | Discovery Sessions: Jay de Lys
-- 21.08. 23:00 | Void Club | 10 Years Enter the Void with dela Moon (USA), Mo, Marie Moon, Upzet, Luca Hagenmüller, Baraquz
-- 21.08. 22:00 | Crack Bellmer | ANIMAL FARM x MAJJA
-- 21.08. 22:00 | Acud macht Neu | Hypernormalization at ACUD
-- 21.08. 23:00 | Marmorbar | GRAVE BR x CHOKA
-- 21.08. 20:00 | Badehaus | Disco & Indie Dance
-- 21.08. 22:00 | Soda | Soda Club Sounds Friday
-- 21.08. 21:00 | Panke | Picha Congo Fundraiser
-- 21.08. 22:00 | Studio1111 | takt presents: Only Fire Hoe Weekend Release Party
-- 21.08. 18:00 | Ritter Butzke | Community-Rave - free entry until 7pm
-- 21.08. 22:00 | Humboldthain | WÜSTuWILD X NICE TRIES BERLIN
-- 21.08. 21:00 | Dunckerclub | 'IN THE ÄIR TONIGHT' Die 80er-Party by DJ WhamPee
-- 21.08. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) line-up curated by Lunacy Berlin
-- 21.08. 23:00 | Hoppetosse | METANOIC at Hoppetosse
-- 21.08. 22:00 | Arkaoda | arkaoda Final Chapter pt.1
-- 21.08. 22:00 | Blue Velvet | MNJM x XPAM
-- 21.08. 23:00 | Sensorium | ETHER
-- 21.08. 18:00 | GIRI | Giri x Infinite Drift
+- 20.08. 22:00 | Ohm | Foggy w/ LA RAT (live), Aneleon, Haya, Lily Haz, WD40, Pablo Ulises Lienhard (live) (Artists unbekannt: 1)
+- 20.08. 18:00 | Renate | Renate x Queer Vinyl Night (Klubnacht + Free Open Air) (Artists unbekannt: 2)
+- 20.08. 23:00 | Der Weiße Hase | STRAFF / Techno Thursday / 5€ until 1 AM (Artists unbekannt: 1)
+- 21.08. 23:00 | OXI | Common Ground with LIFTED, Flinta Club Deck & What A Playground (Artists unbekannt: 1)
+- 21.08. 23:00 | Hoppetosse | METANOIC at Hoppetosse (Artists unbekannt: 4)
+- 21.08. 18:00 | Ritter Butzke | Community-Rave - free entry until 7pm (Artists unbekannt: 8)
+- 21.08. 23:00 | RSO | SEMANTICA w/ Svreca, Mary Yuzovskaya, CONCEPTUAL, Ruman live
 - 21.08. 15:00 | Club der Visionaere | Sleep Is Commercial Interactions
-- 21.08. 18:00 | Golden Flamingo | SHAMELESS - OPEN AIR AFTERWORK & AFTERPARTY
-- 21.08. 23:00 | OXI | Common Ground with LIFTED, Flinta Club Deck & What A Playground
-- 22.08. 21:00 | Hafenbar | Käptens Club Party - Disco pur
-- 22.08. 21:00 | Dunckerclub | Independent Tanzmusik
-- 22.08. 22:00 | Soda | Soda Club Sounds Saturday
-- 22.08. 19:00 | Crack Bellmer | saHHara · سهّارة ⵣ Raksha · ركشة
-- 22.08. 14:00 | Else | Else x İÇ İÇE
-- 22.08. 22:00 | Arkaoda | arkaoda Final Chapter pt.2
-- 22.08. 22:00 | Cassiopeia | Bambule (House & Techno, 80s, 90s, Pop, Hip Hop)
-- 22.08. 14:00 | Hoppetosse | coppi at Hoppetosse 
-- 22.08. 23:59 | Prince Charles | Chlär presents: Ritua
-- 22.08. 13:00 | Maaya | FDLA X MS DSF POOL PARTY
-- 22.08. 16:00 | Klunkerkranich | Hoch hinaus mit Afterhour Sounds - Welcome back arkadiusz. Edition
-- 22.08. 19:30 | Malzfabrik | Hochsommer - Sommerhoch
-- 22.08. 18:00 | Minimal Bar | Circular Music with Oliver Raumklang and Nazaruk
-- 22.08. 13:00 | Mellowpark | Lost In Mellowpark ☼ Sommerfest ☼ Open Air
-- 22.08. 23:59 | Ohm | Daisy Records
-- 22.08. 16:00 |  Beach Neuk├╢lln | SOL HOUSE BERLIN: LAUNCH PARTY
-- 22.08. 23:00 | Void Club | VOID x Vanta.nyx VI with Ødium, Gabrielle, kutscher, K.EULE, Section 63 (UK), Aynaet, Shurui
-- 22.08. 23:00 | Marmorbar | Out of Touch (Berlin Bruisers x 4q4 Error x La Hueca)
-- 22.08. 12:00 | Ipse | 2 Years of Confluencia
-- 22.08. 20:00 | Coco Boule | Blurry Vision, Rhythm Express & Vreugdevuur present: Hot Waves
-- 22.08. 14:00 | OXI | Toy Tonics presents ITALOMANIA (OPEN AIR & INDOOR 18 hours)
-- 23.08. 12:00 | Festsaal Kreuzberg | Berlin Drag Festival
-- 23.08. 18:30 | DNA. CLUB | FREE ENTRY: 'Playground' Open Stage: Community OPEN AIR at DNA. CLUB: Jazz & House DJ Sets
-- 23.08. 22:00 | Lokschuppen | [BOILER] TAPE pres. SHANIXX, FC KABAGAR + MORE
-- 23.08. 14:00 | Ipse | kopfkultur Open Air Ipse Ufer
-- 23.08. 12:00 | Maaya | PRNCPTL POOL PARTY - 13 Years Anniversary
-- 23.08. 14:00 | ZENNER | SIP! with Kyle Toole & Millie Mckee, Zapa Records
-- 23.08. 23:00 | Sensorium | TRIG: FROM 23:00 - XXX
-- 23.08. 18:00 | Minimal Bar | U10247 x Oxytoxy (feat. maniac&me and Øntold) !FREE ENTRY
-- 23.08. 14:00 | Crack Bellmer | fling
-- 23.08. 21:00 | Arkaoda | arkaoda Final Chapter pt.3
-- 23.08. 14:00 | gART.n | Sonntags by Lotte Ahoi
-- 23.08. 14:00 | ┼ÆLgarten | 7Fridays x Spilka fundraising for Ukraine
-- 24.08. 18:00 | Minimal Bar | manic.monday mit Pablo Cornejo
-- 24.08. 21:00 | Dunckerclub | Dark Monday
-- 25.08. 23:00 | Der Wei├ƒe Hase | HART ◢◤ Tuesday Rave & Open Air Garden [free entry until midnight*]
-- 25.08. 18:00 | Humboldthain | Open Decks & Tischtennis
-- 25.08. 18:00 | Club der Visionaere | One Drink Plus
-- 25.08. 23:00 | OXI | ✦encore.une.fois✦ / INDOOR RAVE + OPEN AIR CHILL GARDEN
-- 25.08. 20:00 | S├╝ss War Gestern | THE UNKNOWN (𝘍𝘙𝘌𝘌 𝘌𝘕𝘛𝘙𝘠 𝘜𝘕𝘛𝘐𝘓 22:00 ⟶ 𝘋𝘖𝘕𝘈𝘛𝘐𝘖𝘕-𝘉𝘈𝘚𝘌𝘋 𝘈𝘍𝘛𝘌𝘙)
-- 26.08. 23:00 | ├åden | ＬＩＬＩＴＨ✦
-- 26.08. 19:00 | Crack Bellmer | OPEN DECKS FOR FLINTA* PING PONG FOR ALL **DANCEFLOOR EDITION**
-- 26.08. 18:00 | Minimal Bar | mittendrin mit Jim Dz
-- 26.08. 23:00 | Lokschuppen | SIGNALS - 5€ Tickets - with G.IO, LAURIX & YOUNG LOLO
-- 26.08. 19:30 | Gretchen | MOCKY and friends - LA meets BERLIN JAM with MAYLEE TODD *live
-- 26.08. 23:00 | Sensorium | TECHNO MITTWOCH: TAKE YOUR TICKETS
-- 26.08. 21:00 | Eschschloraque | MissVergnügen presents RESITANT – live
-- 27.08. 19:00 | Crack Bellmer | Night District
-- 27.08. 18:00 | Club der Visionaere | Rings of Neptune
-- 27.08. 19:00 | DNA. CLUB | FREE ENTRY: Live Music Jam Session & DJ Sets Community OPEN AIR
-- 27.08. 18:00 | Minimal Bar | electronic.thursday mit Man-L
+- 21.08. 23:00 | Void Club | 10 Years Enter the Void with dela Moon (USA), Mo, Marie Moon, Upzet, Luca Hagenmüller, Baraquz (Artists unbekannt: 5)
+- 21.08. 23:59 | Kreuzwerk | Body Language (Artists unbekannt: 4)
+- 21.08. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) DJ Line-Up curated by Lunacy Berlin
+- 22.08. 23:00 | Void Club | VOID x Vanta.nyx VI with Ødium, Gabrielle, kutscher, K.EULE, Section 63 (UK), Aynaet, Shurui (Artists unbekannt: 4)
+- 22.08. 14:00 | Hoppetosse | coppi at Hoppetosse  (Artists unbekannt: 3)
+- 22.08. 14:00 | OXI | Toy Tonics presents ITALOMANIA (OPEN AIR & INDOOR 18 hours) (Artists unbekannt: 2)
+- 22.08. 23:59 | Ohm | Daisy Records (Artists unbekannt: 2)
+- 22.08. 23:59 | RSO | La Mala Noche (Artists unbekannt: 5)
+- 23.08. 12:00 | Maaya | PRNCPTL POOL PARTY - 13 Years Anniversary (Artists unbekannt: 1)
+- 25.08. 18:00 | Club der Visionaere | One Drink Plus (Artists unbekannt: 1)
+- 25.08. 23:00 | Der Weiße Hase | HART ◢◤ Tuesday Rave & Open Air Garden [free entry until midnight*]
+- 25.08. 23:00 | OXI | ✦encore.une.fois✦ / INDOOR RAVE + OPEN AIR CHILL GARDEN (Artists unbekannt: 1)
+- 26.08. 22:00 | KitKat | SYMBIOTIKKA at KitKat Club Berlin (Artists unbekannt: 1)
+- 26.08. 21:00 | Tresor | Büro Siebzig: dreamcastmoe LIVE hosted by Refuge Worldwide
 - 27.08. 22:00 | Ritter Butzke | Calimas Sommerhütte Free Open Air
-- 27.08. 23:00 | ├åden | CANCELLED -  OBXENE
-- 27.08. 07:00 | Monarch Bar | Leaked Session 02 - Underground Rap
-- 27.08. 18:00 | GIRI | Giri x IN ARMOR
-- 27.08. 23:00 | Der Wei├ƒe Hase | STRAFF / Techno Thursday / 5€ until 1 AM
-- 27.08. 21:00 | Arkaoda | Wormhole 005 and Last Thursday ever at Arkaoda
-- 27.08. 16:00 | Klunkerkranich | LUKINS goes Klunkerkranich
-- 28.08. 22:00 | Studio1111 | Forward Festival Afterparty curated by EASYdoesit & Bipolar Berlin
-- 28.08. 18:00 | GIRI | Giri x DUBBDÄCK
-- 28.08. 21:00 | Dunckerclub | 80s Inferno
-- 28.08. 23:00 | Monarch Bar | GAGGLE - Summer Edition
-- 28.08. 21:00 | Hafenbar | Stimmen in Aspik - Die Schlager-Party
-- 28.08. 20:00 | Silent Green | Silent Green pres. Mutant Radio Sessions
-- 28.08. 18:00 | Minimal Bar | DAZA & freunde
-- 28.08. 23:00 | ├åden | Pikante / rhythm, spice and everything heiß
-- 28.08. 23:00 | Void Club | Berlin Bass Music Vibes with YOINK, Mikasta, audite, Yoru, Migz, Jimi Handtrix, Saint Popsy
-- 28.08. 20:00 | Urban Spree | CYBERFUNK BERLIN // OPEN AIR // 2 STAGES
-- 28.08. 21:00 | Marmorbar | Cracked(3): From Egg to (Wo)man
-- 28.08. 23:00 | Sensorium | ETHER
-- 28.08. 23:59 | Ohm | Sneaker Social Club with DJ Hype
+- 27.08. 23:00 | Der Weiße Hase | STRAFF / Techno Thursday / 5€ until 1 AM
+- 27.08. 18:00 | Club der Visionaere | Rings of Neptune
+- 28.08. 23:00 | RSO | TAPERED (Artists unbekannt: 1)
+- 28.08. 23:59 | Ohm | Sneaker Social Club with DJ Hype (Artists unbekannt: 2)
+- 28.08. 23:00 | OXI | DECOY w/ RUIZ OSC1, HUJUS, No Valentia, Bours?, Fran LF, Caniche & saya (Artists unbekannt: 4)
+- 28.08. 23:00 | Void Club | Berlin Bass Music Vibes with YOINK, Mikasta, audite, Yoru, Migz, Jimi Handtrix, Saint Popsy (Artists unbekannt: 8)
 - 28.08. 15:00 | Club der Visionaere | Love Letters From Oslo
-- 28.08. 22:00 | Soda | Soda Club Sounds Friday
-- 28.08. 19:00 | DNA. CLUB | FREE ENTRY: Connect & RAVE: Community OPEN AIR at DNA. CLUB: Tech House, Techno & Bounce
-- 29.08. 19:00 | Urban Spree | aufnahme + wiedergabe: Fünfzehn Jahre // Zweiter Akt
-- 29.08. 15:00 | Sage | Christian Löffler Open Air Berlin
-- 29.08. 18:00 | Minimal Bar | Equilibrisme x Dub Explorations
-- 29.08. 14:00 | Raw Gel├ñnde | Zug der Liebe goes RAW
-- 29.08. 14:00 | Gretchen | BFF Summer Festival
-- 29.08. 13:00 | ├åden | Nacktfleisch - Berlin Queer Summer Open Air August 2026
-- 29.08. 21:00 | Acud macht Neu | Sonido Mutante
-- 29.08. 23:00 | Bulbul | Bulbul Residents & Friends: Nikklaas, DJ Sanni, Casa Marrone & More
-- 29.08. 21:00 | Dunckerclub | Independent Tanzmusik
-- 29.08. 23:00 | Sensorium | SENSO NACHT
-- 29.08. 23:00 | Void Club | Neuro & Liquid - Drum & Bass on 3 Floors
-- 29.08. 20:00 | Ritter Butzke | Safe the Rave - After Party - free entry until 9pm
-- 29.08. 21:00 | Hafenbar | Käptens Club Party - Disco pur
-- 29.08. 22:00 | Crack Bellmer | STAY TOXIC x RAZJOB [FREE ENTRY*]
+- 29.08. 20:00 | Ritter Butzke | SAVE RAW RAVE Afterparty (Artists unbekannt: 9)
+- 29.08. 16:00 | Birgit & Bier | Pascale Voltaire & Friends - Open Air & Clubnight (Artists unbekannt: 1)
 - 29.08. 14:00 | Else | Else x Innellea, Massano, Dyzen, Ede and many more
-- 29.08. 20:00 | Ritter Butzke | SAVE RAW RAVE Afterparty
-- 29.08. 16:00 | Maaya | AFTER FORTUNA x Maaya
-- 29.08. 13:00 | Insel der Jugend | Home Again x Rotkäppchen Picnic at Insel der Jugend
+- 29.08. 21:00 | Ritter Butzke | BERLIN IST RAW at Garten der Nacht (Artists unbekannt: 2)
+- 29.08. 15:00 | OXI | OXI WEEKENDER 'OPEN AIR + INDOOR' W/ Alison Swing , Soela, Baroć , (Artists unbekannt: 1)
 - 29.08. 23:59 | Renate | DUBBDÄCK takeover Renate 
-- 29.08. 22:00 | Soda | Soda Club Sounds Saturday
-- 29.08. 15:00 | OXI | OXI WEEKENDER 'OPEN AIR + INDOOR' W/ Alison Swing , Soela, Baroć ,
-- 29.08. 23:00 | ├åden | Lilith GEORGIA
+- 29.08. 20:00 | Ritter Butzke | Save the Rave - After Party - free entry until 9pm (Artists unbekannt: 9)
 - 29.08. 15:00 | Club der Visionaere | CDV End Of Summer Weekender::
-- 29.08. 21:00 | Ritter Butzke | BERLIN IST RAW at Garten der Nacht
-- 30.08. 18:30 | DNA. CLUB | FREE ENTRY: 'Playground' Open Stage: Community OPEN AIR at DNA. CLUB: Jazz & House DJ Sets
+- 29.08. 15:00 | Sage | Christian Löffler Open Air Berlin (Artists unbekannt: 2)
+- 29.08. 23:00 | Void Club | Neuro & Liquid - Drum & Bass on 3 Floors (Artists unbekannt: 3)
+- 29.08. 23:59 | RSO | XTRUDE x LASTER w/ Alarico, Akua, Olivia Mendez, Sandrien and Kameliia (Artists unbekannt: 1)
+- 29.08. 16:00 | Maaya | AFTER FORTUNA x Maaya (Artists unbekannt: 4)
 - 30.08. 12:00 | Maaya | Amafreak .- Vigro Deep - Day Pool Party
-- 30.08. 23:00 | Sensorium | TRIG: FROM 23:00 - XXX
-- 30.08. 18:00 | Minimal Bar | DEEP SUNDAYS mit Clarence !FREE ENTRY
-- 30.08. 15:00 | Sage | Kinky Beach Festival
-- 30.08. 14:00 | Kreuzwerk | 2 Years In Balance I Open Air & Indoor
-- 30.08. 21:00 | Lokschuppen | wieder: BOILER ROOM SETUP + MARKETPLACE
-- 30.08. 19:00 | Cassiopeia | Buzz Kull + Boy Deluxe + Dream Council // Cassiopeia, Berlin
-- 30.08. 12:00 |  Beach Neuk├╢lln | Refuge Worldwide Free Open-Air
-- 30.08. 15:00 | Crack Bellmer | Dyke Goth Night
-- 31.08. 20:00 | Silent Green | The I in the mirror / Reflection
-- 31.08. 21:00 | Dunckerclub | Dark Monday
-- 31.08. 20:00 | Urban Spree | New Candys (Fuzz Club) – Live
-- 31.08. 18:00 | Minimal Bar | manic.monday mit Beta Basti
-- 31.08. 18:00 | Club der Visionaere | Mondays::
-- 01.09. 23:00 | Lokschuppen | PHASE:ONE
-- 01.09. 18:00 | Minimal Bar | go.play mit TBA
-- 01.09. 18:00 | Club der Visionaere | EASYMIX
-- 01.09. 18:00 | Humboldthain | Open Decks & Tischtennis
-- 02.09. 20:00 | Silent Green | Film concert: Midori Hirano x The Juniper Tree
-- 02.09. 23:00 | Sensorium | TECHNO MITTWOCH
-- 02.09. 20:00 | Panke | >>Who got da Props?!?<< - Open Mic with DJ BOOM BAP
-- 02.09. 18:00 | Minimal Bar | mittendrin mit TBA
-- 02.09. 23:00 | Lokschuppen | SIGNALS - 5€ Tickets - with Trancestrudel ALL NIGHT LONG
-- 02.09. 18:00 | GIRI | Giri x El Manto: Dario Jongerius release
-- 03.09. 20:00 | Neue Zukunft | Smote (UK), Codex Serafini (UK)
-- 03.09. 20:00 | Silent Green | hub pres. Doorman + Franco Franco
-- 03.09. 22:00 | Ohm | Técnica
-- 03.09. 18:00 | GIRI | Giri x Local Slang
-- 03.09. 19:00 | Promenaden Eck | Queer Open Decks
-- 03.09. 19:00 | DNA. CLUB | FREE ENTRY: Live Music Jam Session & DJ Sets Community OPEN AIR
-- 03.09. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) x RBL
-- 03.09. 18:00 | Minimal Bar | electronic.thursday mit Pablo Cornejo (Chile)
-- 03.09. 23:00 | ├åden | Soundhall
-- 04.09. 23:59 | ├åden | Cuddles: VIRGO SEASON
-- 04.09. 23:00 | Humboldthain | I LOVE MODUS 3 years anniversary w/ DJ Tallboy, Kling & Klang, DJ Räucherlaks
-- 04.09. 22:00 | Soda | Soda Club Sounds Friday
-- 04.09. 23:59 | Kreuzwerk | SWEAT
-- 04.09. 21:00 | Mikropol | Live SMFORMA+VEIVERIS//Djs PETRA FLURR/TEMPUSFUGIT/A.SINTESIS
-- 04.09. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with SEVEN
-- 04.09. 18:00 | Ritter Butzke | Deeportament Community with Nico Morano (Open Air & Indoor) - Free entry until 7 PM
-- 04.09. 23:00 | Lokschuppen | LOKSCHUPPEN KLUBNACHT pres. PARACEK INVITES w CARGO, MRGNSTRN + MORE
-- 04.09. 18:00 | Minimal Bar | BEATHEIM night with Bruno Otranto & Friends
-- 04.09. 18:00 | GIRI | Giri x  Presshouse
-- 04.09. 17:00 | Else | Else: Open Air & Indoor
-- 04.09. 22:00 | DNA. CLUB | KTA.MKE - Progressive House on Open Air Terrace and Indoor Club
-- 04.09. 21:00 | Hafenbar | Stimmen in Aspik - Die Schlager-Party
-- 04.09. 23:00 | Monarch Bar | Children Of The Sun X Hypnotic Mindscapes
-- 04.09. 21:00 | Studio1111 | Toy Tonics Art Jam
-- 05.09. 21:00 | Hafenbar | Käptens Club Party - Disco pur
-- 05.09. 23:00 | Lokschuppen | MILLIAMPERE x AMBRA pres two girls one mom HALF NIGHT LONG /w Danilo Filipe, George Radsport
-- 05.09. 18:00 | Ritter Butzke | Giorgia Angiuli Live (Open Air) - free entry until 7pm
-- 05.09. 23:00 | Void Hall | ALOBOI – FIRST HEADLINE SHOW
-- 05.09. 23:00 | Panke | THE MINE with Synkro, SGT Pokes, NINA, Torn, Formella, Dub Athlete, DUKU, Deximl
-- 05.09. 15:00 | Sage | Watergate Open Air with Anfisa Letyago, Chez Damier, Isaac Carter, Natalie Robinson
-- 05.09. 22:00 | Beate Uwe | Beate Invites///Smalltalk
-- 05.09. 16:00 | Blue Velvet | vis-a-vis Sommerfest (SoliParty für Kohäsion Ost e.V.)
-- 05.09. 14:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with Threads of Liberation x Zenith x Black.is
-- 05.09. 22:00 | Soda | Soda Club Sounds Saturday
-- 05.09. 23:59 | Kreuzwerk | MÁS X PRIMAL INSTINCT
-- 05.09. 18:00 | Minimal Bar | U10247 × Enough! Music (feat. Eveline Fink, Danilo Schneider, maniac&me)
-- 05.09. 14:00 | ┼ÆLgarten | House of Shameless - Day Rave
-- 05.09. 22:00 | Beate Uwe | Kollektiefe Nacht///SmallTalk
-- 05.09. 14:00 | Else | Else x Hoe__mies
-- 05.09. 22:00 | Ritter Butzke | Sascha Braemer
-- 06.09. 14:00 | Else | HEISSS I Open Air & Indoor
-- 06.09. 18:30 | DNA. CLUB | FREE ENTRY: 'Playground' Open Stage: Community OPEN AIR at DNA. CLUB: Jazz & House DJ Sets
-- 06.09. 12:00 | Maaya | Roda de Feijoada - Pool Party edition
-- 06.09. 18:00 | Minimal Bar | lazy.sunday mit Mario Lauriano
-- 06.09. 21:00 | Lokschuppen | wieder: BOILER ROOM SETUP + MARKETPLACE
-- 06.09. 14:00 | Lokschuppen | [CANCELLED] LOKSCHUPPEN pres. GIØ ALL DAY LONG
-- 06.09. 12:00 | Lokschuppen | KDW - FREE OPEN AIR + MARKET + EXHIBITION
-- 07.09. 20:00 | Kantine am Berghain | One Leg One Eye + Bridget Ferrill
-- 07.09. 18:00 | Minimal Bar | manic.monday mit Keyvan
-- 08.09. 18:00 | Humboldthain | Open Decks & Tischtennis
-- 08.09. 23:00 | Lokschuppen | PHASE:ONE
-- 08.09. 21:00 | Yaam | Noanda Soul Session
-- 08.09. 20:00 | Neue Zukunft | An Electric Evening Of ANTIMATTER & SLEEPING PULSE
-- 08.09. 18:00 | Minimal Bar | go.play mit Gaamer
-- 09.09. 18:00 | Minimal Bar | mittendrin mit Fineberg
-- 09.09. 23:00 | Sensorium | TECHNO MITTWOCH
-- 09.09. 23:00 | Lokschuppen | SIGNALS - 5€ Tickets - with BENNET, alemiko LIVE, MIMI404
-- 10.09. 18:00 | GIRI | Giri x Cilens: RE:FRAME - moving image from within East and Southeast Asian
-- 10.09. 22:00 | Ohm | System Revival with Haruka, Patrick Russell, Mayss
-- 10.09. 18:00 | Minimal Bar | electronic.thursday mit halfaneagle
-- 10.09. 20:00 | Kantine am Berghain | A Colourful Storm: Christoph de Babalon, Mark, Florence
-- 10.09. 19:30 | Gretchen | G SESSIONS - 360 ° (Live) Show feat. MOSES YOOFEE TRIO, ISHA & SEDRIC PERRY
-- 10.09. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with Solace Space
-- 10.09. 23:00 | ├åden | CHROMA XXL - tba
-- 10.09. 19:00 | Monarch Bar | Cannelle
-- 10.09. 22:00 | OXI | Broken Noise
-- 10.09. 19:00 | DNA. CLUB | FREE ENTRY: Live Music Jam Session & DJ Sets Community OPEN AIR
-- 10.09. 20:30 | Metropol | ADAM Berlin
-- 11.09. 23:00 | Void Hall | Infected Drum & Bass x Drumbule Hamburg with Brazed, Cine, Fu, ZPT, Ed Shepherd, Upzet
-- 11.09. 23:00 | ├åden | Lieber tot N° 2 – Synth & Minimal Wave Festival
-- 11.09. 22:00 | Prince Charles | Hungry4 ps Mall Grab & more at Prince Charles
-- 11.09. 23:00 | Lokschuppen | CUTE invites PASTIS & BUENRI
-- 11.09. 23:00 | Void Club | Dionys: Hardtechno x Trance/Bounce Rave(2 Floors)
-- 11.09. 22:00 | Soda | Soda Club Sounds Friday
-- 11.09. 18:00 | Marmorbar | Nomagie Community Event
-- 11.09. 22:00 | Crack Bellmer | Tales of Dakno: The Berlin Story
-- 11.09. 19:00 | DNA. CLUB | FREE ENTRY: Connect & RAVE: Community OPEN AIR at DNA. CLUB: Tech House, Techno & Bounce
-- 11.09. 21:00 | Hafenbar | Stimmen in Aspik - Die Schlager-Party
-- 11.09. 20:00 | Silent Green | 15 YEARS zweikommasieben: Anna Homler + Steven Warwick + zweikommasieben DJs
-- 11.09. 21:00 | Menagerie | SNEAKFREAXX - FETISH WKND
-- 11.09. 16:00 | Else | BCCO
-- 11.09. 18:00 | Minimal Bar | friends.zone mit Fritz Funke & Freunde
-- 11.09. 18:00 | GIRI | Giri x Wormhole Studies
-- 11.09. 19:00 | Kantine am Berghain | Schwindel [punk/Berlin] x Nancy & the Jam Fancys [punk/indie/AUS] live at Berghain Kantine
-- 11.09. 23:59 | Fitzroy | TANGA 3RD ANNIVERSARY
-- 11.09. 15:00 | Club der Visionaere | Understory
-- 11.09. 23:00 | Beate Uwe | Glücks-Modus
-- 11.09. 22:00 | Ritter Butzke | Unison with Nonchalance, Bambi-S, Oliviero
-- 12.09. 21:00 | Hafenbar | Käptens Club Party - Disco pur
-- 12.09. 22:00 | Alte M├╝nze | PiG
-- 12.09. 20:00 | Hole44 | Ásgeir
-- 12.09. 23:59 | Gretchen | BALKANBEATS - Robert Soko DJ-Set
-- 12.09. 23:59 | Kreuzwerk | Power Dance Club 24hours
-- 12.09. 22:00 | Marmorbar | Baba Yaga
-- 12.09. 19:30 | ausland | Frictive Frequencies: Munsha / DuChamp / Lun Ário
-- 12.09. 23:00 | Lokschuppen | 2Much at Lokschuppen: DJ YARAK, Orbi, t e s t p r e s s
-- 12.09. 23:00 | M-Bia | INCEPTION with Phantom - 2 FLOORS - GOA & TECHNO
-- 12.09. 22:00 | Soda | Soda Club Sounds Saturday
-- 12.09. 14:00 | Else | Else x OPUS pres. Yanamaste (All Day Long)
-- 12.09. 18:00 | Minimal Bar | DAZA & freunde
-- 12.09. 15:00 | Fitzroy | Insolar (Daytime Clubbing)
-- 12.09. 18:00 | Ritter Butzke | Echos of Utopia (Open Air & Indoor) - free entry until 7pm
-- 12.09. 14:00 | OXI | SIN VERGÜENZA [OPEN AIR + INDOOR]
-- 12.09. 15:00 | Club der Visionaere | It's Ours
-- 13.09. 14:00 | OXI | OXI SUNDAYS (OPEN AIR + INDOOR)
-- 13.09. 18:00 | Minimal Bar | lazy.sunday mit Robot Girl
-- 13.09. 15:00 | Crack Bellmer | Party Dyke's Hoe-Down: A Queer FLINTA* Cowboy Western Party
-- 13.09. 14:00 | Else | Sweet Nothing presents Pegassi All Day Long
-- 13.09. 18:30 | DNA. CLUB | FREE ENTRY: 'Playground' Open Stage: Community OPEN AIR at DNA. CLUB: Jazz & House DJ Sets
-- 13.09. 21:00 | Lokschuppen | wieder: BOILER ROOM SETUP + MARKETPLACE
-- 13.09. 14:00 | Fitzroy | Simbiosis at Fitzroy [daytime party]
-- 13.09. 18:00 | Funkhaus | Crushed Now–After Turning // Beyond Presence
-- 14.09. 18:00 | Minimal Bar | manic.monday mit Pablo Cornejo (Chile)
-- 15.09. 18:00 | Humboldthain | Open Decks & Tischtennis
-- 15.09. 20:00 | Silent Green | Curbside Lambsear
-- 15.09. 18:00 | Minimal Bar | go.play mit Keyvan
-- 15.09. 23:00 | Lokschuppen | PHASE:ONE
-- 16.09. 23:00 | Lokschuppen | SIGNALS - 5€ Tickets - with Unromantic, DJ EGOSHOOTER 10000, Bonzo & DJ Keyframe
-- 16.09. 18:00 | Minimal Bar | mittendrin mit Jago K
-- 16.09. 23:00 | Sensorium | TECHNO MITTWOCH
-- 17.09. 19:00 | DNA. CLUB | FREE ENTRY: Live Music Jam Session & DJ Sets Community OPEN AIR
-- 17.09. 22:00 | Ohm | Astral Industries
-- 17.09. 18:00 | Minimal Bar | electronic.thursday mit Man-L & freunde
-- 17.09. 18:00 | GIRI | Giri x TM - 25Sommervorbei
-- 18.09. 20:00 | Neue Zukunft | Black Market Karma (UK / Fuzz Club), Sacred Buzz, Miss Mellow
-- 18.09. 23:00 | Fitzroy | CONNECT: SNC Recs x 3Hertz
-- 18.09. 18:00 | GIRI | Giri x Eclectic Limited
-- 18.09. 22:00 | Crack Bellmer | Fulmen Phantasia
-- 18.09. 18:00 | Ritter Butzke | Giddy Club - free entry until 7pm
-- 18.09. 22:00 | Soda | Soda Club Sounds Friday
-- 18.09. 17:00 | Else | Else Season Closing x Sexyrecs
-- 18.09. 18:00 | Minimal Bar | luca.and.friends. mit Luca ( Minimal Bar) & Freunde
-- 18.09. 23:30 | Marmorbar | 7Fridays
-- 18.09. 23:00 | Cassiopeia | BASSIOPEIA Drum & Bass with Primate (BE), T-Lex (UK), Lora, Ivana and many more
-- 18.09. 21:00 | Hafenbar | Stimmen in Aspik - Die Schlager-Party
-- 18.09. 23:00 | Renate | SENSUS w/ DJ Fuckoff, P.Vanillaboy, PAU and many more
-- 18.09. 23:00 | Lokschuppen | F90
-- 18.09. 23:59 | Kreuzwerk | ABOV - FLINTA*
-- 19.09. 18:00 | Minimal Bar | friends.zone mit Jørnemann & Freunde
-- 19.09. 21:00 | Metropol | Torture Garden Berlin September Ball 2026
-- 19.09. 19:00 | DNA. CLUB | Connect & RAVE: Community OPEN AIR at DNA. CLUB: Tech House, Techno & Bounce
-- 19.09. 21:00 | Hafenbar | Käptens Club Party - Disco pur
-- 19.09. 23:59 | Ohm | Life Classics with Antal
-- 19.09. 20:00 | Silent Green | Burnt Friedman pres. Secret Rhythms
-- 19.09. 22:00 | Kreuzwerk | tracey
-- 19.09. 22:00 | Ritter Butzke | Solee
-- 19.09. 19:30 | Gretchen | DOV'È LIANA *live
-- 19.09. 23:59 | Gretchen | Recycle: LSB & DRS present Space Age
-- 19.09. 23:00 | Lokschuppen | NEER
-- 19.09. 22:00 | Soda | Soda Club Sounds Saturday
-- 19.09. 16:00 | Ohm | PuMp Berlin Daytime hosted by Anja Schneider with Skatman
-- 19.09. 18:00 | DNA. CLUB | Mein Film Releaseparty
-- 19.09. 12:00 | Cassiopeia | Twisted Trees Festival
-- 19.09. 14:00 | gART.n | Rebellion der Träumer* X Afterhour Sounds - Glitter and Glue the Soli-Raveatory
-- 19.09. 14:00 | Else | Else Season Closing x Teenage Dreams
-- 20.09. 20:00 | Neue Zukunft | Zoon Phonanta, Cobra Killer
-- 20.09. 14:00 | Else | Else Season Closing x Triangle Agency 10 Year Anniversary
-- 20.09. 13:00 | ├åden | Sunday Service by schnellschwimmer
-- 20.09. 21:00 | Lokschuppen | wieder: BOILER ROOM SETUP + MARKETPLACE
-- 20.09. 15:00 | Fitzroy | Familiar Feelings · Daytime Party
-- 20.09. 18:00 | Minimal Bar | lazy.sunday mit CEEE & Freunde
-- 20.09. 18:30 | DNA. CLUB | FREE ENTRY: 'Playground' Open Stage: Community OPEN AIR at DNA. CLUB: Jazz & House DJ Sets
-- 21.09. 18:00 | Minimal Bar | manic.monday mit Clarence
+- 30.08. 14:00 | Kreuzwerk | 2 Years In Balance I Open Air & Indoor (Artists unbekannt: 1)
+- 30.08. 15:00 | Sage | Kinky Beach Festival (Artists unbekannt: 5)
+- 31.08. 18:00 | Club der Visionaere | Mondays:: (Artists unbekannt: 2)
 
-## Dubletten (86)
-- 17.08. 18:00 | Minimal Bar | manic.monday mit Pablo Cornejo (Chile)
-- 18.08. 23:00 | Lokschuppen | PHASE:ONE
-- 19.08. 18:00 | Minimal Bar | mittendrin mit Fenoma
-- 19.08. 17:00 | Club der Visionaere | Musek Vol. V
-- 20.08. 23:59 | Golden Gate | Donnerdogge
-- 20.08. 23:00 | Bulbul | House of Others (Vol.11): Ahni, Dzoara, materia hache
-- 20.08. 18:00 | Minimal Bar | electronic.thursday mit CEEE
-- 20.08. 23:00 | Lokschuppen | Chantal's House of Shame
-- 20.08. 18:00 | Club der Visionaere | Apricots' Jam x Black Rhino 
-- 21.08. 23:00 | ├åden | BPM x Anechoic: Summer Ride
-- 21.08. 23:59 | Golden Gate | Shaktu Night
-- 21.08. 17:00 | Else | Jackies Open Air Party Berlin - with Dennis Cruz
-- 21.08. 23:00 | Lokschuppen | Polyamor X GOAT BALL 34h Weekender
-- 21.08. 18:00 | Minimal Bar | luca.and.friends. mit Luca ( Minimal Bar) & Freunde
-- 21.08. 23:00 | Bulbul | NODE: B. Clarke, TUP, Bianchetti, AD
-- 21.08. 23:00 | M-Bia | Club Night
-- 21.08. 23:59 | Ohm | Gift x Transatlantic
-- 21.08. 23:00 | Der Wei├ƒe Hase | Fem-All / Flinta Techno / Women & FLINTA free until 1 AM
-- 22.08. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with RDS, Eversines, Marie K, Iterations + Dub & Dal
-- 22.08. 22:00 | Ritter Butzke | Nifra
-- 22.08. 22:00 | DNA. CLUB | FREE ENTRY: Festival Afterparty at DNA. CLUB (Techno & Bounce)
-- 22.08. 22:00 | Ritter Butzke | Fab Massimo
-- 22.08. 12:00 | Cassiopeia | Free Open Air: Schmeckt auf Eis x 44 Hertz
-- 22.08. 22:00 | Humboldthain | 10€ ANTI PARTY BERLIN // Karaoke, Beer-Pong, Free Shots at entry presented by Delululand
-- 22.08. 22:00 | Panke | NOFUTURE 6 YEARS ANNIVERSARY
-- 22.08. 15:00 | Club der Visionaere | Subwax Takeover
-- 22.08. 23:00 | Der Wei├ƒe Hase | We Love Techno
-- 22.08. 14:00 | gART.n | Kalipo presents: Garden of Synths (open-air daytime rave w. Italo Brutalo, Kalipo...)
-- 22.08. 23:00 | Bulbul | GOOD SOULS: Shabi, Kat_Es, Javier Anxiety, Marcus Holder
-- 22.08. 14:00 | ├åden | FEIERAMT x LAPSUS x DOLLHAUS (21 HOURS DAY + NIGHT)
-- 22.08. 23:00 | M-Bia | Freakquency with Hatikwa
-- 23.08. 14:00 | OXI | OXIgarten presents Garage Girls with Moxie, livwutang & many more
-- 23.08. 12:00 | Club der Visionaere | Remain In Love
-- 23.08. 13:00 | ├åden | Figments: Berlin's Finest with DJ Pete, Spencer Parker, K-H1, Mottomo, KIV, arbër, MXC, Vaccaro
-- 23.08. 14:00 | Else | Else x DJ Gigola pres. Bigroom Sensual
-- 24.08. 17:00 | Club der Visionaere | Phantasy Dance
-- 25.08. 18:00 | Minimal Bar | go.play mit vernimoon
-- 25.08. 21:00 | Panke | In the Neighbourhood
-- 25.08. 23:00 | Lokschuppen | PHASE:ONE
-- 27.08. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) x Remoto Records
-- 27.08. 23:00 | Lokschuppen | Chantal's House of Shame
-- 27.08. 23:59 | Golden Gate | Sweetspot
-- 27.08. 23:00 | Bulbul | FRESH FACES (FREE ENTRY): Chez Bailey, Unna Foulanah, Buzz Boutique, ROBERT KAMP
-- 27.08. 22:00 | Ohm | Neighbourhood with Stenny, Tasha & Victor
-- 28.08. 22:00 | Ritter Butzke | Indiskret Berlin
-- 28.08. 20:00 | Badehaus | 7 Synths Party
-- 28.08. 17:00 | Else | Else x Job Jobse invites
-- 28.08. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with Handmade & Nina Queer
-- 28.08. 23:00 | OXI | DECOY w/ RUIZ OSC1, HUJUS, No Valentia, Bours?, Caniche & MORE
-- 28.08. 23:00 | Lokschuppen | Trancecore with DBBD, DJ GUESTLIST, Glen West, Amøn, Eva Charley, Neuf and many more
-- 28.08. 23:59 | M-Bia | VEXED with Fernanda Martins 
-- 28.08. 23:00 | Bulbul | Durchreise: Etiennette, mp.ulle, Jasper Kråch, Siegfried Plemo
-- 28.08. 23:59 | Golden Gate | Golden Times
-- 28.08. 23:00 | Der Wei├ƒe Hase | Techno Ihr Hasen
-- 29.08. 21:00 | Der Wei├ƒe Hase | Liebe & Bass / Demo Aftershow
-- 29.08. 22:00 | Lokschuppen | EUPHORIK x CYCLE pres.SHOKI287, L.zwo, Noise Not War, DJ SPORTSCHUH 
-- 29.08. 22:00 | Yaam | PSYCHO CALYPSO
-- 29.08. 23:00 | M-Bia | GOA Special pres. Klipsun [Brasilian Psytrance]
-- 29.08. 14:00 | gART.n | Kotori Open Air
-- 29.08. 23:59 | Golden Gate | Highly Addictive
-- 29.08. 23:00 | Panke | (c)rave PRESENTS Tujiko Noriko, Proc Fiskal, Wounder + MORE
-- 29.08. 14:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with Dabbs Traxx, Franz Scala & DUBBDÄCK
-- 29.08. 23:30 | Badehaus | DYNABASS your Afrobeats, Dancehall, Shatta & Basshall Party in Berlin
-- 30.08. 14:00 | gART.n | OewerSause im gART.n
-- 30.08. 14:00 | OXI | DAY: Fadercult @ OXI Garden with Montezuma [LIVE]  
-- 30.08. 14:00 | Else | Hard Feelings - Mischluft All Day Long 
-- 04.09. 23:00 | Der Wei├ƒe Hase | Antrieb #45 W/ Nachtigaller  VBR Residents
-- 04.09. 23:00 | M-Bia | 15Y EFN • Anime • Unicorn on K. • Eycer • Koksberg • FabiTekk • Phiesi • District Red • Morbid 
-- 04.09. 22:00 | Ohm | KOOKOO
-- 05.09. 18:30 | Ohm | KINETIC II, Secret Lineup + Tech Talk & Garden Pop-up
-- 05.09. 14:00 | gART.n | AROMA
-- 05.09. 23:00 | M-Bia | INTOXICATION Summer Special
-- 05.09. 15:00 | OXI | Small Great House 'September Edition' (Open Air + Indoor) 19 Hours
-- 06.09. 14:00 | gART.n | Sonntags by Caleesi & Kreis
-- 09.09. 19:30 | Panke | CONTAGIOUS - BEING album release concert
-- 09.09. 17:00 | Club der Visionaere | 10 Years of Secret Society at CDV
-- 11.09. 23:59 | Hoppetosse | 23 Jahre Betriebsfeier
-- 11.09. 23:00 | Humboldthain | Oszillation x Villa Wumms
-- 11.09. 23:00 | M-Bia | Bleib deinen Linientreu vs. Mega 90er Rave
-- 11.09. 16:00 | Renate | 19 Years Renate - 7 Floors - 66 Hours Birthday Party
-- 12.09. 22:00 | Humboldthain | KNEIPENKLÄNGE /// BOX OFFICE 15€
-- 12.09. 21:00 | Spindler & Klatt | SUPA CLUB
-- 12.09. 23:00 | Der Wei├ƒe Hase | Die Lust am Feiern
-- 13.09. 14:00 | gART.n | Tipping Point Open Air im gART.n
-- 18.09. 23:00 | M-Bia | Sanctus Harder Styles [Remzcore is back]
-- 20.09. 14:00 | gART.n | RAAMO - Label Launch Party
+## Dubletten (56)
+- 18.08. 18:00 | Kater Blau | The Funky Chicken Club [Name+Tag]
+- 19.08. 23:00 | Tresor | Tresor New Faces hosted by Scheißmukke [Name+Tag]
+- 19.08. 17:00 | Club der Visionaere | Musek Vol. V [Name+Tag]
+- 20.08. 23:59 | Golden Gate | Donnerdogge [Name+Tag]
+- 20.08. 18:00 | Club der Visionaere | Apricots' Jam x Black Rhino  [Name+Tag]
+- 21.08. 23:00 | Tresor | Tresor meets Echocord [Name+Tag]
+- 21.08. 23:59 | Golden Gate | Shaktu Night [Name+Tag]
+- 21.08. 23:59 | Ohm | Gift x Transatlantic [Name+Tag]
+- 21.08. 23:00 | Der Weiße Hase | Fem-All / Flinta Techno / Women & FLINTA free until 1 AM [Name+Tag]
+- 21.08. 23:00 | M-Bia | Club Night [Name+Tag]
+- 21.08. 22:00 | Kater Blau | DER GEBURTSTAG: Gurken im Olymp (+ Sunday Open Air!) [Name+Tag]
+- 21.08. 20:00 | KitKat | PSYCHO Girls 5th Edition [Name+Tag]
+- 21.08. 17:00 | Else | Jackies Open Air Party Berlin - with Dennis Cruz [Name+Tag]
+- 21.08. 18:00 | Birgit & Bier | Birgits WEEKENDER [Name+Tag]
+- 22.08. 23:00 | Tresor | Tresor Klubnacht [Name+Tag]
+- 22.08. 22:00 | Ritter Butzke | Nifra [Name+Tag]
+- 22.08. 23:00 | M-Bia | Freakquency with Hatikwa [Name+Tag]
+- 22.08. 14:00 | Else | Else x İÇ İÇE [Name+Tag]
+- 22.08. 15:00 | Club der Visionaere | Subwax Takeover [Name+Tag]
+- 22.08. 22:00 | Ritter Butzke | Fab Massimo [Name+Tag]
+- 22.08. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with RDS, Eversines, Marie K, Iterations + Dub & Dal [Name+Tag]
+- 22.08. 23:00 | Der Weiße Hase | We Love Techno [Name+Tag]
+- 23.08. 12:00 | Club der Visionaere | Remain In Love [Name+Tag]
+- 23.08. 14:00 | OXI | OXIgarten presents Garage Girls with Moxie, livwutang & many more [Name+Tag]
+- 23.08. 14:00 | Else | Else x DJ Gigola pres. Bigroom Sensual [Name+Tag]
+- 23.08. 08:00 | KitKat | Nachspiel [Name+Tag]
+- 24.08. 17:00 | Club der Visionaere | Phantasy Dance [Name+Tag]
+- 24.08. 23:00 | Tresor | ◥◣ALL EXCESS x SINGULARITY◥◣ [Name+Tag]
+- 24.08. 22:00 | KitKat | Electric Monday Summer Special Latex Valencia ORACLE CULTURE [Name+Tag]
+- 25.08. 18:00 | Kater Blau | The Funky Chicken Club [Name+Tag]
+- 26.08. 22:00 | KitKat | Symbiotikka [Name+Tag]
+- 26.08. 23:00 | Tresor | Tresor New Faces hosted by Primal Instinct [Name+Tag]
+- 27.08. 22:00 | Ohm | Neighbourhood with Stenny, Tasha & Victor [Name+Tag]
+- 27.08. 23:59 | Golden Gate | Sweetspot [Name+Tag]
+- 27.08. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) x Remoto Records [Name+Tag]
+- 28.08. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with Handmade & Nina Queer [Name+Tag]
+- 28.08. 23:00 | Tresor | Tresor meets Fireground [Name+Tag]
+- 28.08. 23:59 | Golden Gate | Golden Times [Name+Tag]
+- 28.08. 17:00 | Else | Else x Job Jobse invites [Name+Tag]
+- 28.08. 23:59 | M-Bia | VEXED with Fernanda Martins  [Name+Tag]
+- 28.08. 22:00 | Ritter Butzke | Indiskret Berlin [Name+Tag]
+- 28.08. 20:00 | KitKat | PiepShow - AugustPiep [Name+Tag]
+- 28.08. 22:00 | Kater Blau | 4Q4 ERROR Festival: Heatwave [Name+Tag]
+- 28.08. 23:00 | Der Weiße Hase | Techno Ihr Hasen [Name+Tag]
+- 28.08. 18:00 | Birgit & Bier | Birgits WEEKENDER [Name+Tag]
+- 29.08. 23:00 | Tresor | Tresor Klubnacht [Name+Tag]
+- 29.08. 23:00 | M-Bia | GOA Special pres. Klipsun [Brasilian Psytrance] [Name+Tag]
+- 29.08. 23:59 | Golden Gate | Highly Addictive [Name+Tag]
+- 29.08. 21:00 | Der Weiße Hase | Liebe & Bass / Demo Aftershow [Name+Tag]
+- 29.08. 14:00 | Renate | Renate Klubnacht + Open Air (Free Entry) with Dabbs Traxx, Franz Scala & DUBBDÄCK [Name+Tag]
+- 30.08. 08:00 | KitKat | Nachspiel [Name+Tag]
+- 30.08. 14:00 | OXI | DAY: Fadercult @ OXI Garden with Montezuma [LIVE]   [Name+Tag]
+- 30.08. 14:00 | Else | Hard Feelings - Mischluft All Day Long  [Name+Tag]
+- 30.08. 10:00 | Kater Blau | 257 x Santamusica with CHKLTE, Topper + more [Name+Tag]
+- 31.08. 22:00 | KitKat | Electric Monday Summer Special  [Name+Tag]
+- 31.08. 23:00 | Tresor | ◥◣ZENITH x SINGULARITY◥◣ [Name+Tag]
 
-## Club fehlt (142 Venues)
-- Haus der Visionäre | Events: 4 | RA-Interesse: 2957
-- ://about blank | Events: 20 | RA-Interesse: 2627
-- RSO.BERLIN | Events: 10 | RA-Interesse: 2477
-- OST | Events: 13 | RA-Interesse: 2148
-- Kesselhaus | Events: 1 | RA-Interesse: 1570
-- KitKatClub | Events: 17 | RA-Interesse: 1375
-- Tresor / Globus | Events: 20 | RA-Interesse: 1373
-- Berghain | Panorama Bar | Säule | Events: 14 | RA-Interesse: 1039
-- TBA - SECRET PORTAL WAREHOUSE RAVE | Events: 1 | RA-Interesse: 985
-- Kater | Events: 10 | RA-Interesse: 799
-- Sonnenraum | Events: 2 | RA-Interesse: 585
-- DSTRKT Club Berlin | Events: 1 | RA-Interesse: 568
-- Tempelhof Airport | Events: 1 | RA-Interesse: 489
-- Sommerbad Neuköln | Events: 1 | RA-Interesse: 387
-- Gestrandet An Der Jannowitzbrücke | Events: 5 | RA-Interesse: 384
-- Hamburger Bahnhof - Museum für Gegenwart | Events: 2 | RA-Interesse: 236
-- AMT | Events: 3 | RA-Interesse: 227
-- Jonny Knüppel | Events: 3 | RA-Interesse: 215
-- TBA - UnityCode Galerie im Moabit | Events: 1 | RA-Interesse: 214
-- Insomnia | Events: 13 | RA-Interesse: 209
-- ROSA | Events: 2 | RA-Interesse: 175
-- TBA - WARSCHAUER PLATZ 18 10245 BERLIN | Events: 1 | RA-Interesse: 171
-- Luftschloss auf dem Tempelhofer Feld | Events: 1 | RA-Interesse: 170
-- Birgit | Events: 6 | RA-Interesse: 150
-- TBA - Secret Location near Jannowitzbrücke | Events: 1 | RA-Interesse: 118
-- Neue Nationalgalerie | Events: 1 | RA-Interesse: 104
-- Monster Ronson's Ichiban Karaoke | Events: 3 | RA-Interesse: 102
-- Tausend | Events: 4 | RA-Interesse: 95
-- TBA | Events: 6 | RA-Interesse: 93
-- Paloma | Events: 12 | RA-Interesse: 79
-- Genezareth-Kirche | Events: 1 | RA-Interesse: 66
-- Atemporal | Events: 3 | RA-Interesse: 64
-- TBA - Secret Location | Events: 5 | RA-Interesse: 59
-- Ikii | Events: 4 | RA-Interesse: 58
-- FOUND | Events: 1 | RA-Interesse: 50
-- TBA - Neükolln  | Events: 1 | RA-Interesse: 45
-- Containerhafen | Events: 2 | RA-Interesse: 40
-- Backsteinboot | Events: 1 | RA-Interesse: 40
-- Sameheads | Events: 5 | RA-Interesse: 40
-- Theater des Westens | Events: 1 | RA-Interesse: 39
-- Monopol | Events: 2 | RA-Interesse: 36
-- Atelier Gardens Campus | Events: 2 | RA-Interesse: 36
-- TBA - Secret Location, Berlin | Events: 1 | RA-Interesse: 34
-- TBA - NeuKölln Berlin | Events: 1 | RA-Interesse: 33
-- Mena Berlin | Events: 2 | RA-Interesse: 31
-- TBA - Cherry on Top, Ganghoferstr 10 | Events: 1 | RA-Interesse: 31
-- TBA - Secret Location - Some of Us Instagram for Location | Events: 1 | RA-Interesse: 31
-- Phantom Bar Berlin | Events: 4 | RA-Interesse: 30
-- Madame Claude | Events: 4 | RA-Interesse: 29
-- Centro Italia Prenzlauer Berg | Events: 1 | RA-Interesse: 26
-- TBA - Friedrichshain Off Location in Nature | Events: 1 | RA-Interesse: 23
-- TBA - Follow @BerlinFloraFestival & @Ousiasound to know exact locations | Events: 3 | RA-Interesse: 22
-- Kaos Berlin | Events: 1 | RA-Interesse: 21
-- 8MM | Events: 4 | RA-Interesse: 19
-- Blockparty: Wheels and Decks | Events: 1 | RA-Interesse: 19
-- TBA - check description | Events: 1 | RA-Interesse: 17
-- THF Radio / Torhaus | Events: 3 | RA-Interesse: 17
-- Boat - MS Rhein / Boat Terminal: Mühlenstr. 70-71 / 10243 Berlin | Events: 1 | RA-Interesse: 16
-- Deutsche Oper Berlin | Events: 1 | RA-Interesse: 16
-- Prinzessinnenstraße 21-24 | Events: 1 | RA-Interesse: 16
-- Weekend | Events: 5 | RA-Interesse: 15
-- Industriepalast Hostel | Events: 1 | RA-Interesse: 15
-- Chausseestrasse 131 | Events: 1 | RA-Interesse: 14
-- ÆDEN x MARMORBAR: Fields & Spaces | Events: 1 | RA-Interesse: 13
-- 90mil | Events: 2 | RA-Interesse: 12
-- Komplex Berlin | Events: 1 | RA-Interesse: 12
-- TBA - Neukolln | Events: 1 | RA-Interesse: 12
-- KINDL Centre for Contemporary Art | Events: 2 | RA-Interesse: 12
-- Kolonnadenhof der Museumsinsel Berlin | Events: 1 | RA-Interesse: 11
-- Schinkel Pavillon | Events: 1 | RA-Interesse: 11
-- Schiffsanlegestelle Uber Arena | Events: 2 | RA-Interesse: 11
-- Völklingen Ironworks | Events: 2 | RA-Interesse: 10
-- TBA - New Secret Location  | Events: 1 | RA-Interesse: 10
-- Pastiche | Events: 5 | RA-Interesse: 9
-- Drinkhall Venue | Events: 3 | RA-Interesse: 9
-- Mokka Mitte Bar / James Simon Park | Events: 1 | RA-Interesse: 8
-- YSY | Events: 2 | RA-Interesse: 8
-- Bohnengold | Events: 2 | RA-Interesse: 8
-- TBA - Rummelsburger Bucht | Events: 2 | RA-Interesse: 8
-- M24 | Events: 1 | RA-Interesse: 8
-- TBA - Heidereuter Am Peetzsee - Grünheide (Mark) | Events: 1 | RA-Interesse: 8
-- migas, a listening bar | Events: 5 | RA-Interesse: 8
-- TBA - Lovétosse | Events: 1 | RA-Interesse: 7
-- Prisma | Events: 5 | RA-Interesse: 7
-- Kink Bar & Restaurant | Events: 1 | RA-Interesse: 7
-- Boat - MS Rhein | Events: 1 | RA-Interesse: 6
-- TBA - Neukölln Secret Location | Events: 1 | RA-Interesse: 6
-- Berndhain | Events: 1 | RA-Interesse: 5
-- Unkompress | Events: 4 | RA-Interesse: 5
-- Taborkirche | Events: 1 | RA-Interesse: 5
-- Perro Loco | Events: 1 | RA-Interesse: 5
-- Halle | Events: 1 | RA-Interesse: 5
-- Großer Bunkerberg Volkspark Fhain | Events: 1 | RA-Interesse: 5
-- TBA - location on the day of | Events: 1 | RA-Interesse: 5
-- Der Kegel | Events: 1 | RA-Interesse: 5
-- Café Engels | Events: 1 | RA-Interesse: 4
-- TBA - NOC Not Only Coffee | Events: 1 | RA-Interesse: 4
-- 25hours Hotel Bikini Berlin, 3. Etage | Events: 1 | RA-Interesse: 4
-- TBA - Private Location | Events: 1 | RA-Interesse: 4
-- TBA - underground topfloor storage/kreuzberg | Events: 1 | RA-Interesse: 4
-- Wühlisch 40 | Events: 1 | RA-Interesse: 4
-- TBA - VIP Späti, Neukölln | Events: 1 | RA-Interesse: 4
-- The Space KU Damm | Events: 1 | RA-Interesse: 3
-- Ziegrastraße 11 | Events: 1 | RA-Interesse: 3
-- TBA - Secret Location - Infos on our socials  | Events: 1 | RA-Interesse: 3
-- Morphine Raum | Events: 1 | RA-Interesse: 3
-- Heilige-Geist-Kirche | Events: 1 | RA-Interesse: 3
-- TBA - KULTURELLES AUTOKINO ZEMPOW | Events: 1 | RA-Interesse: 3
-- Studio 14 (RBB Dachlounge) | Events: 1 | RA-Interesse: 3
-- East Side Gallery Deck | Events: 1 | RA-Interesse: 3
-- Emma Pea | Events: 1 | RA-Interesse: 3
-- Slaughterhouse am Kulturfabrik Moabit | Events: 1 | RA-Interesse: 3
-- Tempelhofer Feld | Events: 1 | RA-Interesse: 2
-- TBA - Ring Bar Neükolln | Events: 1 | RA-Interesse: 2
-- KW Institute for Contemporary Art | Events: 1 | RA-Interesse: 2
-- Museum Europäischer Kulturen | Events: 1 | RA-Interesse: 2
-- Zu Mir Oder Zu Dir | Events: 1 | RA-Interesse: 2
-- Ficken 3000 | Events: 2 | RA-Interesse: 2
-- Radialsystem | Events: 1 | RA-Interesse: 2
-- Synthesizer Museum | Events: 1 | RA-Interesse: 2
-- Atelier Rooftop | Events: 1 | RA-Interesse: 2
-- TBA - East Gallery Dock | Events: 1 | RA-Interesse: 2
-- ciao ciao Bar | Events: 1 | RA-Interesse: 1
-- TBA - Baergarten | Events: 1 | RA-Interesse: 1
-- Salöön (Säälchen/Holzmarkt 25) | Events: 1 | RA-Interesse: 1
-- Emmauskirche | Events: 1 | RA-Interesse: 1
-- Skatehalle Berlin | Events: 1 | RA-Interesse: 1
-- Bar Neun | Events: 1 | RA-Interesse: 1
-- Galiläakirche | Events: 1 | RA-Interesse: 1
-- TBA - Secret Location (near Frankfurter Allee) | Events: 1 | RA-Interesse: 1
-- La Brezza | Events: 1 | RA-Interesse: 1
-- Schokoladen | Events: 2 | RA-Interesse: 1
-- Bredouille | Events: 1 | RA-Interesse: 1
-- Glasweise | Events: 1 | RA-Interesse: 1
-- Spielbank Berlin am Potsdamer Platz | Events: 5 | RA-Interesse: 1
-- NEW FEARS | Events: 1 | RA-Interesse: 1
-- TBA - St. Matthäus-Kirche | Events: 1 | RA-Interesse: 0
-- B.L.O-Ateliers | Events: 1 | RA-Interesse: 0
-- Cispace | Events: 1 | RA-Interesse: 0
-- Liquidrom | Events: 1 | RA-Interesse: 0
-- Spit And Sawdust | Events: 1 | RA-Interesse: 0
-- Rough Trade Berlin | Events: 2 | RA-Interesse: 0
+## Club fehlt (4 Venues)
+- Haus der Visionäre | Events: 3 | RA-Interesse: 2810
+- ://about blank | Events: 12 | RA-Interesse: 2096
+- OST | Events: 6 | RA-Interesse: 839
+- Berghain | Panorama Bar | Säule | Events: 6 | RA-Interesse: 694
 
-## Fehler (0)
+## Fehler (1)
+- 22.08. 13:00 | Maaya | FDLA X MS DSF POOL PARTY :: error No category resolved. Provide categoryNames matching existing categories.
