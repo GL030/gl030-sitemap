@@ -7,6 +7,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
 
@@ -170,7 +171,9 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
         continue
     }
 
+    if (([string]$e.title) -match "(?i)cancell?ed|abgesagt") { continue }
     $begin = [datetime]::ParseExact(([string]$e.startTime).Substring(0, 19), "yyyy-MM-ddTHH:mm:ss", [Globalization.CultureInfo]::InvariantCulture)
+    if ($begin -lt (Get-Date).Date) { continue }
     $end = $null
     if ($e.endTime) { $end = [datetime]::ParseExact(([string]$e.endTime).Substring(0, 19), "yyyy-MM-ddTHH:mm:ss", [Globalization.CultureInfo]::InvariantCulture) }
     if (-not $end) { $end = $begin.AddHours(6) }
