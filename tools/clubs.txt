@@ -1,0 +1,30 @@
+# GL030 Club-Liste fuer den RA-Import (v1, 17.08.2026)
+# Format: RA-Venue-Name = GL030-Location-Name (Alias nur noetig, wenn Namen abweichen)
+# Zeilen mit # sind Kommentare. Aenderungen: Datei editieren, naechster Lauf uebernimmt sie.
+Lokschuppen
+Ritter Butzke
+Else
+Club der Visionaere
+OXI
+Renate
+M-Bia
+Ohm
+Kreuzwerk
+Maaya
+Der Weisse Hase
+Void Club
+Void Hall
+Sage
+Hoppetosse
+Golden Gate
+Kater = Kater Blau
+Birgit = Birgit & Bier
+KitKatClub = KitKat Club
+Tresor / Globus = Tresor
+Berghain | Panorama Bar | Saeule = Berghain
+://about blank
+RSO.BERLIN = RSO
+OST
+Haus der Visionaere
+Sisyphos
+Watergate
