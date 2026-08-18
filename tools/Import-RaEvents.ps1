@@ -134,15 +134,15 @@ function Build-Content($Title, $VenueName, [datetime]$Begin, [datetime]$End, $Ge
     $de = "<p>$Title im $VenueName" + ": am " + $WdDe[$wd] + ", " + $Begin.Day + ". " + $Months[[int]$Begin.Month] + " ab " + $Begin.ToString("HH:mm") + " Uhr" + $(if ($End) { " bis " + $End.ToString("HH:mm") + " Uhr" } else { "" }) + "."
     if ($gtxt) { $de += " Musikalisch stehen $gtxt auf dem Programm." }
     if ($atxt) { $de += " Mit dabei: $atxt." }
-    $de += " Alle Infos und die G&auml;steliste findest du hier auf G&auml;steliste030.</p>"
+    $de += "</p>"
     $en = "<p>$Title at $VenueName" + ": " + $wd + ", " + $MonthsEn[[int]$Begin.Month] + " " + $Begin.Day + ", from " + $Begin.ToString("HH:mm") + $(if ($End) { " until " + $End.ToString("HH:mm") } else { "" }) + "."
     if ($gtxt) { $en += " Expect $gtxt on the floors." }
     if ($atxt) { $en += " Line-up includes $atxt." }
-    $en += " Guest list and details right here on Gaesteliste030.</p>"
+    $en += "</p>"
     $es = "<p>$Title en $VenueName" + ": el " + $WdEs[$wd] + " " + $Begin.Day + " de " + $MonthsEs[[int]$Begin.Month] + ", desde las " + $Begin.ToString("HH:mm") + $(if ($End) { " hasta las " + $End.ToString("HH:mm") } else { "" }) + "."
     if ($gtxt) { $es += " Sonar&aacute;n $gtxt." }
     if ($atxt) { $es += " Con $atxt." }
-    $es += " Lista de invitados y detalles aqu&iacute; en Gaesteliste030.</p>"
+    $es += "</p>"
     return @{ de = $de; en = $en; es = $es }
 }
 
