@@ -118,30 +118,39 @@ $MonthsEn = @{ 1="January";2="February";3="March";4="April";5="May";6="June";7="
 $MonthsEs = @{ 1="enero";2="febrero";3="marzo";4="abril";5="mayo";6="junio";7="julio";8="agosto";9="septiembre";10="octubre";11="noviembre";12="diciembre" }
 $WdEs = @{ Monday="lunes";Tuesday="martes";Wednesday="mi&eacute;rcoles";Thursday="jueves";Friday="viernes";Saturday="s&aacute;bado";Sunday="domingo" }
 
+# v2.1: Line-Up als Plaintext "+ Name" je Zeile (Frontend rendert Ueberschrift + Umbrueche)
+function Build-LineUp($ArtistNames) {
+    if (-not $ArtistNames -or $ArtistNames.Count -eq 0) { return $null }
+    return (($ArtistNames | ForEach-Object { "+ " + $_ }) -join "`n")
+}
+
+# v2.1: Eintritt aus RA-cost, NUR wenn parsebar (sonst $null -> Feld entfaellt)
+function Build-EntryInfo([string]$Cost) {
+    if ([string]::IsNullOrWhiteSpace($Cost)) { return $null }
+    $t = $Cost.Trim()
+    # Reine Waehrungszeichen/Platzhalter ohne Zahl verwerfen (RA liefert oft nur "€" oder "tba")
+    if ($t -match "(?i)^(tba|tbc|n/?a|free|kostenlos)$") { return $null }
+    $m = [regex]::Match($t, "(\d+([.,]\d{1,2})?)")
+    if (-not $m.Success) { return $null }
+    $val = $m.Groups[1].Value.Replace(".", ",")
+    return @{ de = "Abendkasse: $val €"; en = "Door: $val €"; es = "Taquilla: $val €" }
+}
+
 function Build-Content($Title, $VenueName, [datetime]$Begin, [datetime]$End, $Genres, $ArtistNames) {
     $gtxt = ""
     if ($Genres -and $Genres.Count -gt 0) {
         $gnames = @(); foreach ($g in $Genres) { $gnames += $g.name }
         $gtxt = ($gnames -join ", ")
     }
-    $atxt = ""
-    if ($ArtistNames -and $ArtistNames.Count -gt 0) {
-        $top = $ArtistNames | Select-Object -First 3
-        $atxt = ($top -join ", ")
-        if ($ArtistNames.Count -gt 3) { $atxt += " u. a." }
-    }
     $wd = [string]$Begin.DayOfWeek
     $de = "<p>$Title im $VenueName" + ": am " + $WdDe[$wd] + ", " + $Begin.Day + ". " + $Months[[int]$Begin.Month] + " ab " + $Begin.ToString("HH:mm") + " Uhr" + $(if ($End) { " bis " + $End.ToString("HH:mm") + " Uhr" } else { "" }) + "."
     if ($gtxt) { $de += " Musikalisch stehen $gtxt auf dem Programm." }
-    if ($atxt) { $de += " Mit dabei: $atxt." }
     $de += "</p>"
     $en = "<p>$Title at $VenueName" + ": " + $wd + ", " + $MonthsEn[[int]$Begin.Month] + " " + $Begin.Day + ", from " + $Begin.ToString("HH:mm") + $(if ($End) { " until " + $End.ToString("HH:mm") } else { "" }) + "."
     if ($gtxt) { $en += " Expect $gtxt on the floors." }
-    if ($atxt) { $en += " Line-up includes $atxt." }
     $en += "</p>"
     $es = "<p>$Title en $VenueName" + ": el " + $WdEs[$wd] + " " + $Begin.Day + " de " + $MonthsEs[[int]$Begin.Month] + ", desde las " + $Begin.ToString("HH:mm") + $(if ($End) { " hasta las " + $End.ToString("HH:mm") } else { "" }) + "."
     if ($gtxt) { $es += " Sonar&aacute;n $gtxt." }
-    if ($atxt) { $es += " Con $atxt." }
     $es += "</p>"
     return @{ de = $de; en = $en; es = $es }
 }
@@ -207,7 +216,7 @@ function Resolve-Venue([string]$RaVenueId, [string]$RaVenueName, [string]$Alias)
 # --- RA: Listing holen ---
 $From = (Get-Date).ToString("yyyy-MM-dd")
 $To   = (Get-Date).AddDays($Days).ToString("yyyy-MM-dd")
-$ListQuery = "query(`$filters: FilterInputDtoInput, `$pageSize: Int, `$page: Int) { eventListings(filters: `$filters, pageSize: `$pageSize, page: `$page) { data { event { id title date startTime endTime contentUrl venue { id name } attending artists { name } genres { name } images { filename } } } totalResults } }"
+$ListQuery = "query(`$filters: FilterInputDtoInput, `$pageSize: Int, `$page: Int) { eventListings(filters: `$filters, pageSize: `$pageSize, page: `$page) { data { event { id title date startTime endTime contentUrl cost venue { id name } attending artists { name } genres { name } images { filename } } } totalResults } }"
 
 $Events = @{}
 $total = $null
@@ -276,6 +285,11 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
         longContent = $content
         ticketUrl   = "https://ra.co" + [string]$e.contentUrl
     }
+    $lineUp = Build-LineUp $artistNames
+    if ($lineUp) { $payload["lineUp"] = $lineUp }
+    $entryInfo = Build-EntryInfo ([string]$e.cost)
+    if ($entryInfo) { $payload["entryInfo"] = $entryInfo }
+    # specials: bewusst weggelassen (kommt nur von Veranstaltern)
     if ($flyer) { $payload["flyerUrl"] = $flyer; $payload["flyerReferer"] = "https://ra.co/" }
 
     $label = "{0} | {1} | {2}" -f $begin.ToString("dd.MM. HH:mm"), $v.glName, $e.title
