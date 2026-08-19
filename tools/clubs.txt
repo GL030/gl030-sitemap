@@ -13,7 +13,11 @@ Kreuzwerk
 Maaya
 Der Weisse Hase
 Void Club
-Void Hall
+# Void Hall bewusst NICHT gelistet (19.08.2026): Club- und Hall-Events laufen real parallel
+# am selben Abend an derselben (fusionierten) Location AE2882E5-49BE-4865-A536-D18ABA821FA8.
+# Die Dedupe-Regel (>=120 Min Ueberlappung je Location) wuerde eines faelschlich verwerfen.
+# Erst aktivieren, wenn die Dedupe-Logik ein Zusatzkriterium hat (z. B. Namens-Unaehnlichkeit
+# schuetzt vor Dedup). Bis dahin bleiben Hall-only-Events bewusst unimportiert.
 Sage
 Hoppetosse
 Golden Gate
