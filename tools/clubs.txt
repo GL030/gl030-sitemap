@@ -12,7 +12,7 @@ Ohm
 Kreuzwerk
 Maaya
 Der Weisse Hase
-Void Club
+Void Club = Void Club & Hall
 # Void Hall bewusst NICHT gelistet (19.08.2026): Club- und Hall-Events laufen real parallel
 # am selben Abend an derselben (fusionierten) Location AE2882E5-49BE-4865-A536-D18ABA821FA8.
 # Die Dedupe-Regel (>=120 Min Ueberlappung je Location) wuerde eines faelschlich verwerfen.
