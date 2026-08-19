@@ -201,7 +201,9 @@ function Resolve-Venue([string]$RaVenueId, [string]$RaVenueName, [string]$Alias)
         try {
             $r = Invoke-Handler "lookup" ("type=location&q=" + [uri]::EscapeDataString($t)) $null
         } catch { continue }
-        $exact = @($r.results | Where-Object { $_.match -eq "exact" })
+        # Deaktivierte Locations nie als Importziel (Lehre 19.08.: fusionierte Void-Alt-Datensaetze
+        # tragen denselben Namen wie die Ziel-Location -> ohne Filter zwei "exact"-Treffer, Abbruch)
+        $exact = @($r.results | Where-Object { $_.match -eq "exact" -and $_.isApproved -eq $true })
         if ($exact.Count -eq 1) {
             $entry = [pscustomobject]@{ locationId = $exact[0].id; glName = $exact[0].name; status = "ok"; raName = $RaVenueName }
             $Map[$RaVenueId] = $entry
