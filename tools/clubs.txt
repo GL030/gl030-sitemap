@@ -36,9 +36,9 @@ Berghain | Panorama Bar | Saeule = Berghain, Panorama Bar, Säule
 # 20.08.: ohne Alias wurde woertlich "://about blank" gesucht -> 11 Events/Lauf verloren.
 ://about blank = about blank
 RSO.BERLIN = RSO
-# OST und Haus der Visionaere: als GL030-Location noch nicht vorhanden (geprueft 20.08.2026).
-# Bleiben gelistet - sobald die Location angelegt ist, greift der Import automatisch.
-OST
+# Haus der Visionaere: 20.08.2026 als Location angelegt, loest exakt auf.
+# OST: GL030-Profil existiert (/locations/club-ost571), Name weicht ab -> Alias offen,
+# bis der exakte Name per lookup bestaetigt ist. Erscheint bis dahin unter 'Club fehlt'.
 Haus der Visionaere
 Sisyphos
 Watergate
@@ -49,7 +49,6 @@ Lokschuppen Berlin
 Sensorium
 DSTRKT Club Berlin
 ÆDEN
-OST
 gART.n
 DNA. CLUB
 Humboldthain Club
