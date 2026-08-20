@@ -1,6 +1,12 @@
-# GL030 Club-Liste fuer den RA-Import (v1, 17.08.2026)
+# GL030 Club-Liste fuer den RA-Import (v2, 20.08.2026)
 # Format: RA-Venue-Name = GL030-Location-Name (Alias nur noetig, wenn Namen abweichen)
 # Zeilen mit # sind Kommentare. Aenderungen: Datei editieren, naechster Lauf uebernimmt sie.
+#
+# WICHTIG (20.08.2026): Der Whitelist-Abgleich links normalisiert (Umlaute, Sonderzeichen,
+# Gross/Klein) - die GL030-Namensaufloesung rechts NICHT. Der Alias muss den GL030-Namen
+# daher ZEICHENGENAU treffen, inkl. Umlauten und Satzzeichen. Pruefen per:
+#   action=lookup&type=location&q=<Name> -> genau EIN match="exact" mit isApproved=true,
+#   sonst landet der Club im Report unter "Club fehlt".
 Lokschuppen
 Ritter Butzke
 Else
@@ -25,9 +31,13 @@ Kater = Kater Blau
 Birgit = Birgit & Bier
 KitKatClub = KitKat Club
 Tresor / Globus = Tresor
-Berghain | Panorama Bar | Saeule = Berghain, Panorama Bar, Saeule
-://about blank
+# 20.08.: Alias-Ziel trug "Saeule" statt echtem Umlaut -> kein exact-Treffer -> 4 Events/Lauf verloren.
+Berghain | Panorama Bar | Saeule = Berghain, Panorama Bar, Säule
+# 20.08.: ohne Alias wurde woertlich "://about blank" gesucht -> 11 Events/Lauf verloren.
+://about blank = about blank
 RSO.BERLIN = RSO
+# OST und Haus der Visionaere: als GL030-Location noch nicht vorhanden (geprueft 20.08.2026).
+# Bleiben gelistet - sobald die Location angelegt ist, greift der Import automatisch.
 OST
 Haus der Visionaere
 Sisyphos
