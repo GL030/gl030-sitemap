@@ -1,25 +1,25 @@
-# GL030 Event-Import 2026-08-20 15:15 (PROBELAUF - nichts angelegt)
+# GL030 Event-Import 2026-08-20 15:17
 
 Fenster: 2026-08-20 bis 2026-08-31 (11 Tage) | RA-Events gesamt: 432 | ohne Venue: 0 | ausserhalb Club-Liste: 258
 
 ## Angelegt (18)
-- 20.08. 18:00 | GIRI | Giri x Rawa Club - Mexican Ambient Night
-- 21.08. 23:00 | Sensorium | ETHER
-- 21.08. 18:00 | GIRI | Giri x Infinite Drift
+- 20.08. 18:00 | GIRI | Giri x Rawa Club - Mexican Ambient Night (Artists unbekannt: 3)
+- 21.08. 23:00 | Sensorium | ETHER (Artists unbekannt: 4)
+- 21.08. 18:00 | GIRI | Giri x Infinite Drift (Artists unbekannt: 1)
 - 22.08. 23:59 | Prince Charles | Chlär presents: Ritua
 - 23.08. 23:00 | Sensorium | TRIG: FROM : TAKE YOUR FREE TICKETS
-- 23.08. 14:00 | ZENNER | SIP! with Kyle Toole & Millie Mckee, Zapa Records
+- 23.08. 14:00 | ZENNER | SIP! with Kyle Toole & Millie Mckee, Zapa Records (Artists unbekannt: 1)
 - 26.08. 23:00 | Æden | ＬＩＬＩＴＨ✦
-- 26.08. 23:00 | Sensorium | TECHNO MITTWOCH: TAKE YOUR TICKETS
-- 27.08. 18:00 | GIRI | Giri x IN ARMOR
-- 28.08. 23:00 | Sensorium | ETHER
-- 28.08. 18:00 | GIRI | Giri x DUBBDÄCK (a bi / pansexual flirty night)
-- 28.08. 17:00 | about blank | ://sektgarten x Garten Träume [free entry & open air]
+- 26.08. 23:00 | Sensorium | TECHNO MITTWOCH: TAKE YOUR TICKETS (Artists unbekannt: 4)
+- 27.08. 18:00 | GIRI | Giri x IN ARMOR (Artists unbekannt: 2)
+- 28.08. 23:00 | Sensorium | ETHER (Artists unbekannt: 5)
+- 28.08. 18:00 | GIRI | Giri x DUBBDÄCK (a bi / pansexual flirty night) (Artists unbekannt: 3)
+- 28.08. 17:00 | about blank | ://sektgarten x Garten Träume [free entry & open air] (Artists unbekannt: 1)
 - 28.08. 23:00 | Humboldthain | NAIT - The Nocturnal Journey
-- 29.08. 23:59 | Ohm | forever unlimited & STEAMROOM
+- 29.08. 23:59 | Ohm | forever unlimited & STEAMROOM (Artists unbekannt: 4)
 - 29.08. 23:00 | Æden | Lilith GEORGIA
 - 29.08. 13:00 | Insel der Jugend | Home Again x Rotkäppchen Picnic at Insel der Jugend
-- 30.08. 21:00 | Lokschuppen | wieder: BOILER ROOM SETUP + MARKETPLACE
+- 30.08. 21:00 | Lokschuppen | wieder: BOILER ROOM SETUP + MARKETPLACE (Artists unbekannt: 1)
 - 30.08. 23:00 | Sensorium | TRIG: FROM 23:00 - XXX
 
 ## Dubletten (154)
