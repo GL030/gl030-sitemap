@@ -42,3 +42,18 @@ OST
 Haus der Visionaere
 Sisyphos
 Watergate
+# --- Stufe 1, 20.08.2026: Venues mit vorhandenem GL030-Profil, bisher nicht gelistet.
+# Ermittelt per tools/Find-MissingVenues.ps1 (RA-Interesse ueber 35 Tage, Lookup verifiziert).
+# Kein Alias noetig: der Lookup trifft auch alternative Namen (Humboldthain Club -> Humboldthain).
+Lokschuppen Berlin
+Sensorium
+DSTRKT Club Berlin
+ÆDEN
+OST
+gART.n
+DNA. CLUB
+Humboldthain Club
+Giri
+Prince Charles
+ZENNER
+Insel der Jugend
