@@ -3,13 +3,18 @@
 # Aufruf: Import-RaEvents.ps1 -Days 35 [-DryRun]
 param(
     [int]$Days = 35,
-    [switch]$DryRun
+    [switch]$DryRun,
+    # v2.3: RA-Beschreibung (Veranstaltertext) woertlich uebernehmen statt eigenem Faktentext.
+    # Standard aus - siehe Kommentar bei Build-Content.
+    [switch]$CopyRaText
 )
 
 $ErrorActionPreference = "Stop"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
+# 20.08.2026 entfernt: PS-Skriptblock als Zertifikats-Callback laesst den ERSTEN HTTPS-Aufruf
+# des Prozesses scheitern (clubs.txt-Refresh). Gemessen mit/ohne. Nicht noetig: der Handler wird
+# ueber curl.exe -k angesprochen, ra.co und GitHub haben gueltige Zertifikate.
 
 $BaseDir    = "C:\gl030-import"
 $ReportDir  = Join-Path $BaseDir "reports"
@@ -96,6 +101,55 @@ function Invoke-Ra([string]$Query, $Variables) {
         -Headers @{ "User-Agent" = $UserAgent } -Body $body -TimeoutSec 60
 }
 
+# --- v2.3 R11: Titel vereinheitlichen ---
+# RA-Titel kommen in VERSALIEN, mit Deko-Zeichen und Emojis. Ziel: ein Titel, der sich von
+# der RA-Fassung unterscheidet und ueber alle Events gleich aussieht.
+# Bekannte Kuerzel bleiben gross, sonst Wortanfang gross / Rest klein.
+$KeepLower = @("x","w/","w.","b2b","b3b","vs","feat.","pres.","invites","at","im","in","the","und","and","x.")
+$KeepUpper = @("DJ","MC","UK","US","USA","EU","NYE","VIP","EP","LP","VA","FLINTA","LGBTQ","LGBTQIA",
+               "B2B","B3B","AKA","XL","XXL","OG","RSVP","BBQ","NRW","RA","AM","PM","CDV","HDV","RSO","OXI")
+function Clean-Title([string]$Title) {
+    if ([string]::IsNullOrWhiteSpace($Title)) { return $Title }
+    $s = $Title
+
+    # Deko- und Symbolzeichen entfernen: alles ausser Buchstaben (inkl. Umlaute/Akzente),
+    # Ziffern und einer Positivliste an Satzzeichen.
+    $s = [regex]::Replace($s, "[^\p{L}\p{N}\s&/\-\+\.,:'()!?#]", " ")
+
+    # Mehrfache Leerzeichen und Reste zusammenziehen
+    $s = [regex]::Replace($s, "\s{2,}", " ").Trim()
+    $s = [regex]::Replace($s, "^[\-\+\.,:!?/&\s]+", "")
+    $s = [regex]::Replace($s, "[\-\+\.,:/&\s]+$", "")
+    if (-not $s) { return $Title.Trim() }
+
+    $words = $s.Split(" ")
+    $out = @()
+    foreach ($w in $words) {
+        if (-not $w) { continue }
+        $bare = ($w -replace "[^\p{L}\p{N}]", "")
+        if ($out.Count -gt 0 -and ($KeepLower -contains $w.ToLower())) {
+            $out += $w.ToLower()
+        } elseif ($bare -and ($KeepUpper -contains $bare.ToUpper()) -and $bare.Length -le 7) {
+            $out += $w.ToUpper()
+        } elseif ($bare -match "^\d+$") {
+            $out += $w
+        } else {
+            $lower = $w.ToLower()
+            # Erster Buchstabe des Wortes gross - auch wenn eine Klammer o.ae. davor steht
+            $m = [regex]::Match($lower, "\p{L}")
+            if ($m.Success) {
+                $i = $m.Index
+                $lower = $lower.Substring(0, $i) + $lower.Substring($i, 1).ToUpper() + $lower.Substring($i + 1)
+            }
+            $out += $lower
+        }
+    }
+    $result = ($out -join " ")
+    # Ordinalzahlen: "2Nd" -> "2nd", "1St" -> "1st", "3Rd" -> "3rd", "4Th" -> "4th"
+    $result = [regex]::Replace($result, "(?<=\d)(St|Nd|Rd|Th)\b", { param($m) $m.Groups[1].Value.ToLower() })
+    return $result
+}
+
 # --- R4: Genre -> Kategorie ---
 $HipHopGenres = @("hip hop", "hip-hop", "r&b", "rnb", "trap", "rap", "afrobeats", "dancehall", "reggaeton")
 function Map-Category($Genres, [string]$Title) {
@@ -124,19 +178,62 @@ function Build-LineUp($ArtistNames) {
     return (($ArtistNames | ForEach-Object { "+ " + $_ }) -join "`n")
 }
 
-# v2.1: Eintritt aus RA-cost, NUR wenn parsebar (sonst $null -> Feld entfaellt)
+# v2.3: Eintritt = Ticketpreis (RA-cost) UND Abendkasse getrennt ausweisen.
+# RA liefert keinen Abendkassenpreis -> dort immer TBA. cost-Formate gemessen (400 Events,
+# 21.08.): "18", "20€", "18,00", "9,95+", "0", "0.00", "10,12,15". Waehrung als &euro;
+# (HTML-Entity), weil Windows PowerShell 5.1 die Skriptdatei als ANSI liest und ein
+# woertliches Euro-Zeichen dabei zerfaellt.
 function Build-EntryInfo([string]$Cost) {
-    if ([string]::IsNullOrWhiteSpace($Cost)) { return $null }
-    $t = $Cost.Trim()
-    # Reine Waehrungszeichen/Platzhalter ohne Zahl verwerfen (RA liefert oft nur "€" oder "tba")
-    if ($t -match "(?i)^(tba|tbc|n/?a|free|kostenlos)$") { return $null }
-    $m = [regex]::Match($t, "(\d+([.,]\d{1,2})?)")
-    if (-not $m.Success) { return $null }
-    $val = $m.Groups[1].Value.Replace(".", ",")
-    return @{ de = "Abendkasse: $val €"; en = "Door: $val €"; es = "Taquilla: $val €" }
+    $ticketDe = "TBA"; $ticketEn = "TBA"; $ticketEs = "TBA"
+
+    $t = if ($Cost) { $Cost.Trim() } else { "" }
+
+    if ($t -and $t -notmatch "(?i)^(tba|tbc|n/?a)$") {
+        $nums = @()
+        foreach ($m in [regex]::Matches($t, "\d+(?:[.,]\d{1,2})?")) {
+            $raw = $m.Value.Replace(",", ".")
+            $d = 0.0
+            if ([double]::TryParse($raw, [Globalization.NumberStyles]::Float,
+                    [Globalization.CultureInfo]::InvariantCulture, [ref]$d)) { $nums += $d }
+        }
+
+        if ($nums.Count -gt 0) {
+            $min = ($nums | Measure-Object -Minimum).Minimum
+            $max = ($nums | Measure-Object -Maximum).Maximum
+
+            if ($max -le 0) {
+                $ticketDe = "Eintritt frei"; $ticketEn = "Free entry"; $ticketEs = "Entrada libre"
+            } else {
+                $fmt = { param($x) ([string]::Format([Globalization.CultureInfo]::GetCultureInfo("de-DE"),
+                        "{0:0.##}", $x)) }
+                $lo = & $fmt $min
+                $hi = & $fmt $max
+                $open = $t.Contains("+")
+                if ($min -lt $max) {
+                    $ticketDe = "$lo - $hi &euro;"; $ticketEn = "$lo - $hi &euro;"; $ticketEs = "$lo - $hi &euro;"
+                } elseif ($open) {
+                    $ticketDe = "ab $lo &euro;"; $ticketEn = "from $lo &euro;"; $ticketEs = "desde $lo &euro;"
+                } else {
+                    $ticketDe = "$lo &euro;"; $ticketEn = "$lo &euro;"; $ticketEs = "$lo &euro;"
+                }
+            }
+        }
+    } elseif ($t -match "(?i)^(free|kostenlos)$") {
+        $ticketDe = "Eintritt frei"; $ticketEn = "Free entry"; $ticketEs = "Entrada libre"
+    }
+
+    return @{
+        de = "Tickets: $ticketDe" + [char]10 + "Abendkasse: TBA"
+        en = "Tickets: $ticketEn" + [char]10 + "Door: TBA"
+        es = "Entradas: $ticketEs" + [char]10 + "Taquilla: TBA"
+    }
 }
 
-function Build-Content($Title, $VenueName, [datetime]$Begin, [datetime]$End, $Genres, $ArtistNames) {
+# v2.3: $RaContent wird nur genutzt, wenn -CopyRaText gesetzt ist. Standard bleibt der
+# eigene Faktentext (R6): der RA-Text stammt zwar vom Veranstalter, ist aber auf hunderten
+# Portalen identisch - woertlich uebernommen entsteht Duplicate Content, und GL030 verliert
+# genau den Textvorsprung, auf dem die Locationprofile ranken.
+function Build-Content($Title, $VenueName, [datetime]$Begin, [datetime]$End, $Genres, $ArtistNames, [string]$RaContent) {
     $gtxt = ""
     if ($Genres -and $Genres.Count -gt 0) {
         $gnames = @(); foreach ($g in $Genres) { $gnames += $g.name }
@@ -152,6 +249,17 @@ function Build-Content($Title, $VenueName, [datetime]$Begin, [datetime]$End, $Ge
     $es = "<p>$Title en $VenueName" + ": el " + $WdEs[$wd] + " " + $Begin.Day + " de " + $MonthsEs[[int]$Begin.Month] + ", desde las " + $Begin.ToString("HH:mm") + $(if ($End) { " hasta las " + $End.ToString("HH:mm") } else { "" }) + "."
     if ($gtxt) { $es += " Sonar&aacute;n $gtxt." }
     $es += "</p>"
+
+    if ($CopyRaText -and -not [string]::IsNullOrWhiteSpace($RaContent)) {
+        # RA-Text als zweiter Absatz; Zeilenumbrueche zu <br>, HTML im Quelltext neutralisieren.
+        $raw = $RaContent.Trim()
+        $raw = $raw.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;")
+        $raw = [regex]::Replace($raw, "(\r?\n){2,}", "</p><p>")
+        $raw = $raw.Replace("`r`n", "<br>").Replace("`n", "<br>")
+        $block = "<p>" + $raw + "</p>"
+        $de += $block; $en += $block; $es += $block
+    }
+
     return @{ de = $de; en = $en; es = $es }
 }
 
@@ -218,7 +326,7 @@ function Resolve-Venue([string]$RaVenueId, [string]$RaVenueName, [string]$Alias)
 # --- RA: Listing holen ---
 $From = (Get-Date).ToString("yyyy-MM-dd")
 $To   = (Get-Date).AddDays($Days).ToString("yyyy-MM-dd")
-$ListQuery = "query(`$filters: FilterInputDtoInput, `$pageSize: Int, `$page: Int) { eventListings(filters: `$filters, pageSize: `$pageSize, page: `$page) { data { event { id title date startTime endTime contentUrl cost venue { id name } attending artists { name } genres { name } images { filename } } } totalResults } }"
+$ListQuery = "query(`$filters: FilterInputDtoInput, `$pageSize: Int, `$page: Int) { eventListings(filters: `$filters, pageSize: `$pageSize, page: `$page) { data { event { id title date startTime endTime contentUrl cost isTicketed content venue { id name } attending artists { name } genres { name } images { filename } } } totalResults } }"
 
 $Events = @{}
 $total = $null
@@ -264,8 +372,9 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
     if ($e.artists) { foreach ($a in $e.artists) { if ($a.name) { $artistNames += [string]$a.name } } }
     $artistNames = @($artistNames | Select-Object -First 30)
 
+    $cleanTitle = Clean-Title ([string]$e.title)
     $cats = @(Map-Category $e.genres ([string]$e.title))
-    $content = Build-Content ([string]$e.title) ([string]$v.glName) $begin $end $e.genres $artistNames
+    $content = Build-Content $cleanTitle ([string]$v.glName) $begin $end $e.genres $artistNames ([string]$e.content)
 
     $music = ""
     if ($e.genres) { $gn = @(); foreach ($g in $e.genres) { $gn += $g.name }; $music = ($gn -join ", ") }
@@ -277,7 +386,7 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
         externalId  = "ra:" + $e.id
         source      = "ra"
         sourceUrl   = "https://ra.co" + [string]$e.contentUrl
-        name        = [string]$e.title
+        name        = $cleanTitle
         locationId  = [string]$v.locationId
         begin       = $begin.ToString("yyyy-MM-ddTHH:mm:ss")
         end         = $end.ToString("yyyy-MM-ddTHH:mm:ss")
@@ -285,8 +394,10 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
         categoryNames = $cats
         artistNames = $artistNames
         longContent = $content
-        ticketUrl   = "https://ra.co" + [string]$e.contentUrl
     }
+    # v2.3: Ticket-Link NUR, wenn RA das Event als ticketed fuehrt. Gemessen 21.08. ueber
+    # 400 Berliner Events: 175 ticketed, 225 nicht - das Feld unterscheidet also wirklich.
+    if ($e.isTicketed -eq $true) { $payload["ticketUrl"] = "https://ra.co" + [string]$e.contentUrl }
     $lineUp = Build-LineUp $artistNames
     if ($lineUp) { $payload["lineUp"] = $lineUp }
     $entryInfo = Build-EntryInfo ([string]$e.cost)
@@ -294,7 +405,7 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
     # specials: bewusst weggelassen (kommt nur von Veranstaltern)
     if ($flyer) { $payload["flyerUrl"] = $flyer; $payload["flyerReferer"] = "https://ra.co/" }
 
-    $label = "{0} | {1} | {2}" -f $begin.ToString("dd.MM. HH:mm"), $v.glName, $e.title
+    $label = "{0} | {1} | {2}" -f $begin.ToString("dd.MM. HH:mm"), $v.glName, $cleanTitle
 
     if ($DryRun) {
         try {
