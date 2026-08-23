@@ -47,7 +47,7 @@ Watergate
 # Kein Alias noetig: der Lookup trifft auch alternative Namen (Humboldthain Club -> Humboldthain).
 Lokschuppen Berlin
 Sensorium
-DSTRKT Club Berlin
+DSTRKT Club Berlin = DSTRKT
 ÆDEN
 gART.n
 DNA. CLUB
