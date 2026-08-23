@@ -159,12 +159,16 @@ $HipHopGenres = @("hip hop", "hip-hop", "r&b", "rnb", "trap", "rap", "afrobeats"
 function Map-Category($Genres, [string]$Title) {
     $names = @()
     foreach ($g in $Genres) { $names += ([string]$g.name).ToLower() }
-    $primary = "Electro"
+    # v2.4 (23.08.): Party wird NICHT mehr gesendet. Die Regel-Engine setzt Party ohnehin bei
+    # jedem Event - sendet der Import sie zusaetzlich, entstehen zwei Verknuepfungen auf
+    # dieselbe Kategorie ("Party Party" am Event). Ohne Genres also gar keine Kategorie
+    # mitschicken; categoryNames ist seit 19.08. optional.
+    # Hip Hop rechnet die Engine ebenfalls selbst (Tag/Musikfeld) - hier nur noch Electro,
+    # weil Electro in Stufe 1 nicht regelverwaltet ist.
     $isHipHop = $false
     foreach ($n in $names) { foreach ($h in $HipHopGenres) { if ($n -like "*$h*") { $isHipHop = $true } } }
-    if ($isHipHop) { $primary = "Hip Hop" }
-    elseif ($names.Count -eq 0) { $primary = "Party" }
-    $cats = @($primary)
+    $cats = @()
+    if ($names.Count -gt 0 -and -not $isHipHop) { $cats += "Electro" }
     if ($Title -match "(?i)open[\s-]?air") { $cats += "Open Air" }
     return $cats
 }
