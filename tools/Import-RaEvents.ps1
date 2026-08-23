@@ -4,9 +4,11 @@
 param(
     [int]$Days = 35,
     [switch]$DryRun,
-    # v2.3: RA-Beschreibung (Veranstaltertext) woertlich uebernehmen statt eigenem Faktentext.
-    # Standard aus - siehe Kommentar bei Build-Content.
-    [switch]$CopyRaText
+    # v2.3: RA-Beschreibung woertlich uebernehmen (Duplicate Content - nur zu Testzwecken).
+    [switch]$CopyRaText,
+    # v2.4: Beschreibung per Sprachmodell neu schreiben (Variante B, Beschluss 23.08.):
+    # RA-Text als Faktenquelle, kombiniert mit Line-up/Genres/Zeiten aus dem Import.
+    [switch]$RewriteText
 )
 
 $ErrorActionPreference = "Stop"
@@ -231,6 +233,77 @@ function Build-EntryInfo([string]$Cost) {
     }
 }
 
+# --- v2.4 R12: Beschreibung neu schreiben (Anthropic API) ---
+# Ziel (Variante B): ein Text ueber DIESE Nacht, nicht die Haus-FAQ des Clubs. RA-Texte sind
+# oft reine Venue-Boilerplate und auf jedem Event derselben Location identisch - deshalb
+# werden Line-up, Genres und Zeiten mit hineingegeben, damit der Text pro Event verschieden ist.
+# Faellt die API aus, bleibt es beim Faktentext: ein Lauf darf nie an der API scheitern.
+$Script:RewriteFails = 0
+
+function Rewrite-Content($Title, $VenueName, [datetime]$Begin, [datetime]$End, $Genres, $ArtistNames,
+                         [string]$RaContent, [string]$EntryDe) {
+    if (-not $RewriteText) { return $null }
+    if ($Script:RewriteFails -ge 5) { return $null }   # nach 5 Fehlern nicht weiter versuchen
+
+    $key = [Environment]::GetEnvironmentVariable("GL030_ANTHROPIC_KEY", "Machine")
+    if (-not $key) { $key = $env:GL030_ANTHROPIC_KEY }
+    if (-not $key) { return $null }
+
+    $genreList  = if ($Genres) { (($Genres | ForEach-Object { [string]$_.name }) -join ", ") } else { "" }
+    $artistList = if ($ArtistNames) { (($ArtistNames | Select-Object -First 12) -join ", ") } else { "" }
+    $ra = if ($RaContent) { $RaContent.Trim() } else { "" }
+    if ($ra.Length -gt 3000) { $ra = $ra.Substring(0, 3000) }
+
+    $facts = @"
+Titel: $Title
+Location: $VenueName
+Beginn: $($Begin.ToString("dddd, dd.MM.yyyy HH:mm"))
+Ende: $($End.ToString("dd.MM.yyyy HH:mm"))
+Genres: $genreList
+Line-up: $artistList
+Eintritt: $EntryDe
+
+Veranstaltertext (Faktenquelle, NICHT uebernehmen):
+$ra
+"@
+
+    $system = "Du schreibst kurze Eventbeschreibungen fuer Gaesteliste030, ein Berliner Nachtleben-Portal. " +
+              "Aufgabe: aus den Angaben EINEN Absatz ueber genau diese Nacht schreiben, 45 bis 75 Woerter. " +
+              "Regeln: Nur Fakten verwenden, die in den Angaben stehen - nichts hinzuerfinden, keine Bewertungen " +
+              "wie 'legendaer' oder 'unvergesslich', kein Werbedeutsch, keine Ausrufezeichen. " +
+              "Den Veranstaltertext als Quelle nutzen, aber neu formulieren und nur das aufgreifen, was fuer " +
+              "diesen Abend relevant ist - allgemeine Hausinfos (Anfahrt, Zahlungsmittel, Altersgrenze) weglassen, " +
+              "ausser sie sind ungewoehnlich. Nuechterner Szene-Ton, wie ein Berliner Stadtmagazin. " +
+              "Antworte ausschliesslich mit JSON: {\"de\":\"...\",\"en\":\"...\",\"es\":\"...\"} - " +
+              "derselbe Inhalt auf Deutsch, Englisch und Spanisch, kein Markdown, kein Text davor oder danach."
+
+    $body = @{
+        model      = "claude-sonnet-4-5-20250929"
+        max_tokens = 1200
+        system     = $system
+        messages   = @(@{ role = "user"; content = $facts })
+    } | ConvertTo-Json -Depth 8
+
+    try {
+        $resp = Invoke-RestMethod -Method Post -Uri "https://api.anthropic.com/v1/messages" `
+            -Headers @{ "x-api-key" = $key; "anthropic-version" = "2023-06-01" } `
+            -ContentType "application/json; charset=utf-8" `
+            -Body ([Text.Encoding]::UTF8.GetBytes($body)) -TimeoutSec 90
+
+        $txt = ($resp.content | Where-Object { $_.type -eq "text" } | Select-Object -First 1).text
+        if (-not $txt) { $Script:RewriteFails++; return $null }
+
+        $txt = $txt.Trim() -replace "^``````json", "" -replace "^``````", "" -replace "``````$", ""
+        $j = $txt.Trim() | ConvertFrom-Json
+
+        if (-not $j.de -or -not $j.en -or -not $j.es) { $Script:RewriteFails++; return $null }
+        return @{ de = [string]$j.de; en = [string]$j.en; es = [string]$j.es }
+    } catch {
+        $Script:RewriteFails++
+        return $null
+    }
+}
+
 # v2.3: $RaContent wird nur genutzt, wenn -CopyRaText gesetzt ist. Standard bleibt der
 # eigene Faktentext (R6): der RA-Text stammt zwar vom Veranstalter, ist aber auf hunderten
 # Portalen identisch - woertlich uebernommen entsteht Duplicate Content, und GL030 verliert
@@ -376,7 +449,20 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
 
     $cleanTitle = Clean-Title ([string]$e.title)
     $cats = @(Map-Category $e.genres ([string]$e.title))
+    $entry = Build-EntryInfo ([string]$e.cost)
     $content = Build-Content $cleanTitle ([string]$v.glName) $begin $end $e.genres $artistNames ([string]$e.content)
+
+    # v2.4: umgeschriebene Beschreibung ersetzt den Faktenabsatz. Schlaegt die API fehl,
+    # bleibt $content stehen - der Lauf laeuft in jedem Fall durch.
+    $rewritten = Rewrite-Content $cleanTitle ([string]$v.glName) $begin $end $e.genres $artistNames `
+                                 ([string]$e.content) ([string]$entry.de)
+    if ($rewritten) {
+        $content = @{
+            de = "<p>" + $rewritten.de + "</p>"
+            en = "<p>" + $rewritten.en + "</p>"
+            es = "<p>" + $rewritten.es + "</p>"
+        }
+    }
 
     $music = ""
     if ($e.genres) { $gn = @(); foreach ($g in $e.genres) { $gn += $g.name }; $music = ($gn -join ", ") }
@@ -402,8 +488,7 @@ foreach ($e in ($Events.Values | Sort-Object { $_.date })) {
     if ($e.isTicketed -eq $true) { $payload["ticketUrl"] = "https://ra.co" + [string]$e.contentUrl }
     $lineUp = Build-LineUp $artistNames
     if ($lineUp) { $payload["lineUp"] = $lineUp }
-    $entryInfo = Build-EntryInfo ([string]$e.cost)
-    if ($entryInfo) { $payload["entryInfo"] = $entryInfo }
+    if ($entry) { $payload["entryInfo"] = $entry }
     # specials: bewusst weggelassen (kommt nur von Veranstaltern)
     if ($flyer) { $payload["flyerUrl"] = $flyer; $payload["flyerReferer"] = "https://ra.co/" }
 
