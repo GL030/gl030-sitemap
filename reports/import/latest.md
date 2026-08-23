@@ -1,4 +1,4 @@
-# GL030 Event-Import 2026-08-23 13:18 (PROBELAUF - nichts angelegt)
+# GL030 Event-Import 2026-08-23 13:24 (PROBELAUF - nichts angelegt)
 
 Fenster: 2026-08-23 bis 2026-09-03 (11 Tage) | RA-Events gesamt: 313 | ohne Venue: 0 | ausserhalb Club-Liste: 181
 
@@ -22,7 +22,7 @@ Fenster: 2026-08-23 bis 2026-09-03 (11 Tage) | RA-Events gesamt: 313 | ohne Venu
 - 03.09. 22:00 | Ohm | Técnica
 - 03.09. 18:00 | GIRI | Giri x Local Slang
 
-## Dubletten (109)
+## Dubletten (110)
 - 23.08. 14:00 | ZENNER | Sip! With Kyle Toole & Millie Mckee, Zapa Records [ExternalId]
 - 23.08. 14:00 | OXI | Oxigarten Presents Garage Girls With Moxie, Livwutang & Many More [Name+Tag: 'OXIgarten presents Garage Girls with Moxie, livwutang & many more']
 - 23.08. 14:00 | gART.n | Sonntags By Lotte Ahoi [Zeitueberlappung 480 Min mit 'Sonntags im gART.n by Lotte Ahoi']
@@ -104,6 +104,7 @@ Fenster: 2026-08-23 bis 2026-09-03 (11 Tage) | RA-Events gesamt: 313 | ohne Venu
 - 29.08. 23:00 | Sensorium | Senso Nacht [Zeitueberlappung 480 Min mit 'Senso Nacht bei Sensorium']
 - 29.08. 23:59 | Golden Gate | Highly Addictive [Name+Tag: 'Highly Addictive']
 - 29.08. 13:00 | Æden | Nacktfleisch - Berlin Queer Summer Open Air August 2026 [Zeitueberlappung 540 Min mit 'Nacktfleisch - Berlin Queer Summer Open Air']
+- 29.08. 23:00 | DSTRKT | Blackworks Berlin - Dstrkt [Name+Tag: 'BlackWorks BERLIN - DSTRKT']
 - 29.08. 15:00 | Club der Visionaere | CDV End Of Summer Weekender [ExternalId]
 - 29.08. 23:00 | Tresor | Tresor Klubnacht [Name+Tag: 'Tresor Klubnacht']
 - 29.08. 16:00 | Birgit & Bier | Pascale Voltaire & Friends - Open Air & Clubnight [ExternalId]
@@ -133,7 +134,6 @@ Fenster: 2026-08-23 bis 2026-09-03 (11 Tage) | RA-Events gesamt: 313 | ohne Venu
 - 02.09. 23:00 | Tresor | Tresor New Faces Hosted By Carmen Electro [Zeitueberlappung 660 Min mit 'Tresor New Faces hosted by by Carmen Electro']
 - 03.09. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) x Rbl [Name+Tag: 'Renate Klubnacht + Open Air (Free Entry) x RBL']
 
-## Club fehlt (1 Venues)
-- DSTRKT Club Berlin | Events: 1 | RA-Interesse: 725
+## Club fehlt (0 Venues)
 
 ## Fehler (0)
