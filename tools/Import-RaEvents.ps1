@@ -274,7 +274,8 @@ $ra
               "Den Veranstaltertext als Quelle nutzen, aber neu formulieren und nur das aufgreifen, was fuer " +
               "diesen Abend relevant ist - allgemeine Hausinfos (Anfahrt, Zahlungsmittel, Altersgrenze) weglassen, " +
               "ausser sie sind ungewoehnlich. Nuechterner Szene-Ton, wie ein Berliner Stadtmagazin. " +
-              "Antworte ausschliesslich mit JSON: {\"de\":\"...\",\"en\":\"...\",\"es\":\"...\"} - " +
+              "Antworte ausschliesslich mit einem JSON-Objekt mit genau den drei Schluesseln " +
+              "de, en und es - jeweils der fertige Absatz als Zeichenkette. " +
               "derselbe Inhalt auf Deutsch, Englisch und Spanisch, kein Markdown, kein Text davor oder danach."
 
     $body = @{
