@@ -1,9 +1,9 @@
-# GL030 Event-Import 2026-08-23 16:55 (PROBELAUF - nichts angelegt)
+# GL030 Event-Import 2026-08-23 16:56
 
 Fenster: 2026-08-23 bis 2026-08-27 (4 Tage) | RA-Events gesamt: 105 | ohne Venue: 0 | ausserhalb Club-Liste: 57
 
 ## Angelegt (1)
-- 26.08. 18:00 | Club der Visionaere | Elevate Takeover
+- 26.08. 18:00 | Club der Visionaere | Elevate Takeover (Artists unbekannt: 2)
 
 ## Dubletten (43)
 - 23.08. 08:00 | KitKat | Nachspiel [Name+Tag: 'Nachspiel']
