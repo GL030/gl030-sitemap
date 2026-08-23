@@ -105,16 +105,18 @@ function Invoke-Ra([string]$Query, $Variables) {
 # RA-Titel kommen in VERSALIEN, mit Deko-Zeichen und Emojis. Ziel: ein Titel, der sich von
 # der RA-Fassung unterscheidet und ueber alle Events gleich aussieht.
 # Bekannte Kuerzel bleiben gross, sonst Wortanfang gross / Rest klein.
-$KeepLower = @("x","w/","w.","b2b","b3b","vs","feat.","pres.","invites","at","im","in","the","und","and","x.")
-$KeepUpper = @("DJ","MC","UK","US","USA","EU","NYE","VIP","EP","LP","VA","FLINTA","LGBTQ","LGBTQIA",
+$KeepLower = @("x","w/","w.","b2b","b3b","vs","feat.","pres.","invites")
+$KeepUpper = @("DJ","MC","DNA","THF","VA","AM","PM","UK","US","USA","EU","NYE","VIP","EP","LP","VA","FLINTA","LGBTQ","LGBTQIA",
                "B2B","B3B","AKA","XL","XXL","OG","RSVP","BBQ","NRW","RA","AM","PM","CDV","HDV","RSO","OXI")
 function Clean-Title([string]$Title) {
     if ([string]::IsNullOrWhiteSpace($Title)) { return $Title }
-    $s = $Title
+    # Breitschrift/Ligaturen auf Normalform bringen (RA-Titel wie "Ｌｉｌｉｔｈ")
+    $s = $Title.Normalize([Text.NormalizationForm]::FormKC)
 
     # Deko- und Symbolzeichen entfernen: alles ausser Buchstaben (inkl. Umlaute/Akzente),
     # Ziffern und einer Positivliste an Satzzeichen.
-    $s = [regex]::Replace($s, "[^\p{L}\p{N}\s&/\-\+\.,:'()!?#]", " ")
+    # Waehrungszeichen bleiben: "5&euro; Tickets" darf nicht zu "5 Tickets" werden.
+    $s = [regex]::Replace($s, "[^\p{L}\p{N}\p{Sc}\s&/\-\+\.,:'()!?#]", " ")
 
     # Mehrfache Leerzeichen und Reste zusammenziehen
     $s = [regex]::Replace($s, "\s{2,}", " ").Trim()
@@ -146,7 +148,7 @@ function Clean-Title([string]$Title) {
     }
     $result = ($out -join " ")
     # Ordinalzahlen: "2Nd" -> "2nd", "1St" -> "1st", "3Rd" -> "3rd", "4Th" -> "4th"
-    $result = [regex]::Replace($result, "(?<=\d)(St|Nd|Rd|Th)\b", { param($m) $m.Groups[1].Value.ToLower() })
+    $result = [regex]::Replace($result, "(?<=\d)(St|Nd|Rd|Th|Am|Pm)\b", { param($m) $m.Groups[1].Value.ToLower() })
     return $result
 }
 
