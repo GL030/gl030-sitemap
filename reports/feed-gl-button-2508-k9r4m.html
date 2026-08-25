@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GL030 – Gästeliste im mobilen Feed (3 Varianten)</title>
+<style>
+:root{
+  --ink:#212529; --ink-2:#6c757d; --ink-3:#adb5bd;
+  --line:#e9ecef; --link:#00a0c6;
+  --brand-from:#00aa82; --brand-to:#00b4dc;
+  --warn-bg:#fff3e0; --warn-ink:#e07000; --warn-line:#ffcc80;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:.875rem;
+  color:var(--ink);background:#f1f3f5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:100%;margin:0 auto;padding:12px}
+@media(min-width:760px){ .wrap{max-width:412px} body{padding:20px 0} }
+
+h2.vt{font-size:.95rem;margin:22px 0 4px;display:flex;align-items:baseline;gap:8px}
+h2.vt span{font-size:.7rem;font-weight:400;color:var(--ink-2);margin-left:auto}
+.note{font-size:.74rem;color:var(--ink-2);margin:0 0 9px;line-height:1.45}
+.note b{color:var(--ink)}
+
+/* --- Feed-Karte wie live --- */
+.card{background:#fff;border:1px solid var(--line);border-radius:.5rem;margin-bottom:8px;overflow:hidden}
+.item{display:flex;gap:10px;padding:11px}
+.thumb{width:46px;height:46px;border-radius:.3rem;flex:none;
+  background:linear-gradient(135deg,#cfd6dd,#eef1f4)}
+.body{min-width:0;flex:1}
+.title{font-size:.9rem;font-weight:700;line-height:1.25;color:#111}
+.meta{font-size:.78rem;color:var(--ink-2);margin-top:2px}
+.meta a{color:var(--link);text-decoration:none;font-weight:500}
+.desc{font-size:.78rem;color:#495057;margin-top:5px;line-height:1.4;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px;align-items:center}
+.chip{font-size:.7rem;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.chip-brand{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#fff;font-weight:600}
+.chip-plain{color:var(--ink-2);border:1px solid var(--line)}
+.chip-tag{color:var(--ink-3)}
+
+/* --- A: Button unter dem Text --- */
+.a-actions{display:flex;gap:6px;margin-top:9px}
+.a-actions a{flex:1;text-align:center;padding:9px 6px;border-radius:.35rem;font-size:.78rem;
+  font-weight:700;text-decoration:none;
+  background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#fff}
+.a-actions a.sec{background:#fff;border:1px solid var(--line);color:var(--link);font-weight:600}
+
+/* --- B: klickbarer Chip mit Frist (kein Extraplatz) --- */
+.chip-cta{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#fff;
+  font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:5px;
+  padding:5px 11px;border-radius:999px;font-size:.72rem}
+.chip-cta .arrow{opacity:.85;font-size:.8rem;line-height:1}
+.chip-cta.warn{background:var(--warn-bg);color:var(--warn-ink);border:1px solid var(--warn-line)}
+.chip-sec{border:1px solid var(--line);color:var(--link);font-weight:600;text-decoration:none;
+  display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;font-size:.72rem}
+
+/* --- C: schmale Leiste am Kartenfuß --- */
+.c-bar{display:flex;border-top:1px solid var(--line)}
+.c-bar a{flex:1;text-align:center;padding:10px 6px;font-size:.78rem;font-weight:700;
+  text-decoration:none;color:#0d7a63;border-right:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;gap:6px}
+.c-bar a:last-child{border-right:0;color:var(--link);font-weight:600}
+.c-bar .when{font-weight:400;color:var(--ink-2);font-size:.72rem}
+.c-bar.warnrow a:first-child{background:var(--warn-bg);color:var(--warn-ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="note" style="margin-top:0">
+    Drei Wege, den Gästelisten-Button mobil sichtbar zu machen. Alle mit den echten
+    Events von Dienstag, 25.08. Entscheidend ist die Spalte rechts: <b>wie viel Höhe
+    kostet die Variante pro Eintrag</b>.
+  </p>
+
+  <!-- ============ VARIANTE A ============ -->
+  <h2 class="vt">A · Button unter dem Text <span>+42 px pro Event</span></h2>
+  <p class="note">
+    Die Desktop-Buttons rutschen unter den Textblock, volle Breite, zwei nebeneinander.
+    <b>Größte Klickfläche</b>, aber der Feed wird deutlich länger – bei 19 Events am Tag
+    rund <b>800 px zusätzlich</b>. Geschlossene Listen werden ausgeblendet.
+  </p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Super Tuesday – 80s, Disco Hits &amp; Hip Hop Party</div>
+        <div class="meta"><a href="#">Cassiopeia</a> · 23:00 <b>bis</b> 04:00</div>
+        <div class="desc">Mit dem Super Tuesday füllen wir das schwarze Loch in der Berliner Feier-Landschaft.</div>
+        <div class="tags">
+          <span class="chip chip-plain">#80er</span>
+          <span class="chip chip-tag">80s</span>
+          <span class="chip chip-tag">Disco Hits</span>
+        </div>
+        <div class="a-actions">
+          <a href="#">Gästeliste bis 18:00</a>
+          <a class="sec" href="#">Tickets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Far Out – After Work</div>
+        <div class="meta"><a href="#">Maxxim</a> · 19:00</div>
+        <div class="desc">FOREVER YOUNG – der Dienstag, der nie aufhört zu feiern.</div>
+        <div class="tags">
+          <span class="chip chip-plain">Tischreservierung</span>
+          <span class="chip chip-tag">Dance</span>
+          <span class="chip chip-tag">House</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ VARIANTE B ============ -->
+  <h2 class="vt">B · Chip wird klickbar <span>±0 px</span></h2>
+  <p class="note">
+    Der bereits vorhandene „Gästeliste“-Chip bekommt die Frist und wird zum Link.
+    <b>Kostet keinen zusätzlichen Platz</b>, weil die Chip-Zeile ohnehin da ist.
+    Klickfläche ist kleiner als bei A, aber mit 30 px Höhe noch gut treffbar.
+    Bei unter 3 Stunden Restzeit wird der Chip orange.
+  </p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Super Tuesday – 80s, Disco Hits &amp; Hip Hop Party</div>
+        <div class="meta"><a href="#">Cassiopeia</a> · 23:00 <b>bis</b> 04:00</div>
+        <div class="desc">Mit dem Super Tuesday füllen wir das schwarze Loch in der Berliner Feier-Landschaft.</div>
+        <div class="tags">
+          <a class="chip-cta" href="#">Gästeliste bis 18:00 <span class="arrow">›</span></a>
+          <a class="chip-sec" href="#">Tickets</a>
+          <span class="chip chip-tag">#80er</span>
+          <span class="chip chip-tag">80s</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">100 GRAMM Bar Martini Hour – Afterwork</div>
+        <div class="meta"><a href="#">100 Gramm</a> · 16:00 <b>bis</b> 19:00</div>
+        <div class="desc">Jeden Tag feiern wir die Existenz der Martinis.</div>
+        <div class="tags">
+          <a class="chip-cta warn" href="#">Gästeliste – noch 2 Std. <span class="arrow">›</span></a>
+          <span class="chip chip-tag">#Afterwork</span>
+          <span class="chip chip-tag">Pop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Matrix – Party Every Night</div>
+        <div class="meta"><a href="#">Matrix</a> · 22:00</div>
+        <div class="desc">BACK TO „Party Every Night“ – Line-Up: DJ SizMo House, Hip Hop, Reggaeton.</div>
+        <div class="tags">
+          <span class="chip chip-plain">Tischreservierung</span>
+          <span class="chip chip-tag">#80er</span>
+          <span class="chip chip-tag">Hip Hop</span>
+          <span class="chip chip-tag">House</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ VARIANTE C ============ -->
+  <h2 class="vt">C · Leiste am Kartenfuß <span>+38 px pro Event</span></h2>
+  <p class="note">
+    Eine schmale Aktionsleiste unten in der Karte, über die volle Breite geteilt.
+    <b>Klar als Aktion erkennbar</b> und sauber vom Inhalt getrennt – kostet aber
+    ähnlich viel Höhe wie A. Nur bei Events mit offener Liste.
+  </p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Super Tuesday – 80s, Disco Hits &amp; Hip Hop Party</div>
+        <div class="meta"><a href="#">Cassiopeia</a> · 23:00 <b>bis</b> 04:00</div>
+        <div class="desc">Mit dem Super Tuesday füllen wir das schwarze Loch in der Berliner Feier-Landschaft.</div>
+        <div class="tags">
+          <span class="chip chip-plain">#80er</span>
+          <span class="chip chip-tag">80s</span>
+          <span class="chip chip-tag">Disco Hits</span>
+        </div>
+      </div>
+    </div>
+    <div class="c-bar">
+      <a href="#">Gästeliste <span class="when">bis 18:00</span></a>
+      <a href="#">Tickets</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">100 GRAMM Bar Martini Hour – Afterwork</div>
+        <div class="meta"><a href="#">100 Gramm</a> · 16:00 <b>bis</b> 19:00</div>
+        <div class="desc">Jeden Tag feiern wir die Existenz der Martinis.</div>
+        <div class="tags">
+          <span class="chip chip-tag">#Afterwork</span>
+          <span class="chip chip-tag">Pop</span>
+        </div>
+      </div>
+    </div>
+    <div class="c-bar warnrow">
+      <a href="#">Gästeliste <span class="when">noch 2 Std.</span></a>
+      <a href="#">Verlosung</a>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:20px">
+    <b>Zur Einordnung:</b> Nur ein kleiner Teil der Events hat überhaupt eine offene
+    Gästeliste – heute 2 von 19. Die Höhenkosten von A und C fallen also nur bei
+    diesen Einträgen an, nicht im ganzen Feed.
+  </p>
+
+</div>
+</body>
+</html>
