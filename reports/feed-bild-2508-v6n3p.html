@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GL030 – Feed: Buttonbreite &amp; Bildformat</title>
+<style>
+:root{
+  --ink:#212529; --ink-2:#6c757d; --ink-3:#9aa4ad;
+  --line:#e9ecef; --link:#1a9dd9;
+  --brand-from:#00a884; --brand-to:#12b5d4;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:.875rem;
+  color:var(--ink);background:#eef0f2;-webkit-font-smoothing:antialiased}
+.wrap{max-width:100%;margin:0 auto;padding:12px}
+@media(min-width:760px){ .wrap{max-width:400px} body{padding:20px 0} }
+
+.lead{font-size:.75rem;color:var(--ink-2);line-height:1.5;margin:0 0 6px}
+.lead b{color:var(--ink)}
+h2.vt{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
+  color:#495057;margin:24px 0 3px;font-weight:700;
+  padding-top:12px;border-top:2px solid #dde2e6}
+.hint{font-size:.7rem;color:var(--ink-3);margin:0 0 9px;line-height:1.45}
+
+.card{background:#fff;border-radius:.5rem;margin-bottom:8px;
+  box-shadow:0 1px 2px rgba(0,0,0,.07);overflow:hidden}
+.item{display:flex;gap:11px;padding:12px}
+.body{min-width:0;flex:1}
+.title{font-size:.92rem;font-weight:700;line-height:1.28;color:#111}
+.meta{font-size:.8rem;color:var(--ink-2);margin-top:3px}
+.meta a{color:var(--link);text-decoration:none;font-weight:500}
+.meta b{font-weight:600;color:#495057}
+.desc{font-size:.8rem;color:#5a6169;margin-top:6px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* --- Bild: quadratisch (heute) --- */
+.thumb-sq{width:48px;height:48px;border-radius:.3rem;flex:none;overflow:hidden;background:#dde2e6}
+.thumb-sq img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* --- Bild: hochkant, 3:4 --- */
+.thumb-tall{width:58px;height:77px;border-radius:.35rem;flex:none;overflow:hidden;background:#dde2e6}
+.thumb-tall img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* --- Bild: hochkant, größer 2:3 --- */
+.thumb-xl{width:66px;height:99px;border-radius:.35rem;flex:none;overflow:hidden;background:#dde2e6}
+.thumb-xl img{width:100%;height:100%;object-fit:cover;display:block}
+
+.tags{display:flex;flex-wrap:wrap;align-items:center;gap:7px 8px;margin-top:9px}
+.chip{display:inline-flex;align-items:center;height:26px;padding:0 11px;
+  border-radius:13px;font-size:.72rem;line-height:1;white-space:nowrap;text-decoration:none}
+.chip-action{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#fff;font-weight:600}
+.chip-reco{background:#e74c3c;color:#fff;font-weight:600}
+.chip-tag{color:var(--ink-3);padding:0 3px}
+.chip-tag.strong{color:#343a40;font-weight:500}
+
+/* --- Button: nur unter dem Text --- */
+.gl-btn{display:flex;align-items:center;justify-content:center;
+  width:100%;height:42px;margin-top:11px;border-radius:.4rem;
+  background:linear-gradient(90deg,var(--brand-from),var(--brand-to));
+  color:#fff;font-size:.85rem;font-weight:700;text-decoration:none;
+  box-shadow:0 1px 3px rgba(0,168,132,.35)}
+.gl-btn .arr{margin-left:8px;opacity:.85;font-weight:400}
+
+/* --- Button: volle Kartenbreite --- */
+.gl-full{display:flex;align-items:center;justify-content:center;
+  height:44px;margin:0;border-radius:0;
+  background:linear-gradient(90deg,var(--brand-from),var(--brand-to));
+  color:#fff;font-size:.85rem;font-weight:700;text-decoration:none}
+.gl-full .arr{margin-left:8px;opacity:.85;font-weight:400}
+.card.has-full .item{padding-bottom:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="lead">
+    Echte Flyer von <b>Samstag, 29.08.</b> Drei der Bilder sind im Original hochkant
+    (808, The Cloud, Soda), zwei quer, eines quadratisch – im Feed werden sie
+    derzeit alle auf 48×48 quadratisch beschnitten.
+  </p>
+
+  <!-- ============================================================ -->
+  <h2 class="vt">A · heute: quadratisch + Button unter dem Text</h2>
+  <p class="hint">Links vom Button bleibt Leerraum unter dem Bild.</p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb-sq"><img src="https://cdn.evntsvc.net/r/e/ev_4C_oj3MFYkSybCyitJeZMg-130_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">808 Mob pres. Exo's Birthday</div>
+        <div class="meta"><a href="#">808</a> · 23:00</div>
+        <div class="desc">808 Mob pres. Exo's Birthday / Modern Jam</div>
+        <div class="tags">
+          <span class="chip chip-reco">Empfehlung</span>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">HipHop</span>
+          <span class="chip chip-tag">RnB</span>
+        </div>
+        <a class="gl-btn" href="#">Gästeliste bis 22:00<span class="arr">›</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 class="vt">B · quadratisch + Button über volle Kartenbreite</h2>
+  <p class="hint">Der Button schließt die Karte ab – kein Leerraum, wirkt wie eine Aktionsleiste.</p>
+
+  <div class="card has-full">
+    <div class="item">
+      <div class="thumb-sq"><img src="https://cdn.evntsvc.net/r/e/ev_4C_oj3MFYkSybCyitJeZMg-130_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">808 Mob pres. Exo's Birthday</div>
+        <div class="meta"><a href="#">808</a> · 23:00</div>
+        <div class="desc">808 Mob pres. Exo's Birthday / Modern Jam</div>
+        <div class="tags">
+          <span class="chip chip-reco">Empfehlung</span>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">HipHop</span>
+          <span class="chip chip-tag">RnB</span>
+        </div>
+      </div>
+    </div>
+    <a class="gl-full" href="#">Gästeliste bis 22:00<span class="arr">›</span></a>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 class="vt">C · hochkant 3:4 + Button unter dem Text</h2>
+  <p class="hint">Bild 58×77 statt 48×48 – der Flyer ist erkennbar, ohne die Karte zu dominieren.</p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb-tall"><img src="https://cdn.evntsvc.net/r/e/ev_4C_oj3MFYkSybCyitJeZMg-130_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">808 Mob pres. Exo's Birthday</div>
+        <div class="meta"><a href="#">808</a> · 23:00</div>
+        <div class="desc">808 Mob pres. Exo's Birthday / Modern Jam</div>
+        <div class="tags">
+          <span class="chip chip-reco">Empfehlung</span>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">HipHop</span>
+        </div>
+        <a class="gl-btn" href="#">Gästeliste bis 22:00<span class="arr">›</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 class="vt">D · hochkant 3:4 + Button über volle Breite</h2>
+
+  <div class="card has-full">
+    <div class="item">
+      <div class="thumb-tall"><img src="https://cdn.evntsvc.net/r/e/ev_b4od3aafPE6lgqvitvG6Og-206_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Local Love Service</div>
+        <div class="meta"><a href="#">Kitty Cheng Bar</a> · 20:00</div>
+        <div class="desc">Every Saturday, The Local Love Service invites you to experience a new chapter of Berlin nightlife.</div>
+        <div class="tags">
+          <a class="chip chip-action" href="#">Verlosung</a>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">HipHop</span>
+          <span class="chip chip-tag">House</span>
+        </div>
+      </div>
+    </div>
+    <a class="gl-full" href="#">Gästeliste bis 21:30<span class="arr">›</span></a>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 class="vt">E · hochkant 2:3, deutlich größer (66×99)</h2>
+  <p class="hint">Der Flyer wird zum Blickfang – die Karte wird dadurch spürbar höher.</p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb-xl"><img src="https://cdn.evntsvc.net/r/e/ev_0zlrUqenyUaKXrggDPPzeA-704_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Skales Clubshow @ The Cloud Club</div>
+        <div class="meta"><a href="#">The Cloud</a> · 23:00 <b>bis</b> 04:00</div>
+        <div class="desc">LIVE ON STAGE: SKALES! Der internationale Afrobeats-Star sorgt mit seinen größten Hits für Stimmung.</div>
+        <div class="tags">
+          <span class="chip chip-reco">Empfehlung</span>
+          <a class="chip chip-action" href="#">Tickets</a>
+          <span class="chip chip-tag">Afrobeats</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 class="vt">F · Feed im Scrollen – hochkant 3:4, Button unter dem Text</h2>
+  <p class="hint">Gemischte Formate: hochkant, quer und quadratisch nebeneinander.</p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb-tall"><img src="https://cdn.evntsvc.net/r/e/ev_0zlrUqenyUaKXrggDPPzeA-704_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Skales Clubshow @ The Cloud Club</div>
+        <div class="meta"><a href="#">The Cloud</a> · 23:00 <b>bis</b> 04:00</div>
+        <div class="desc">LIVE ON STAGE: SKALES! Der internationale Afrobeats-Star sorgt mit seinen größten Hits für Stimmung.</div>
+        <div class="tags">
+          <span class="chip chip-reco">Empfehlung</span>
+          <a class="chip chip-action" href="#">Tickets</a>
+          <span class="chip chip-tag">Afrobeats</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb-tall"><img src="https://cdn.evntsvc.net/r/e/ev_4C_oj3MFYkSybCyitJeZMg-130_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">808 Mob pres. Exo's Birthday</div>
+        <div class="meta"><a href="#">808</a> · 23:00</div>
+        <div class="desc">808 Mob pres. Exo's Birthday / Modern Jam</div>
+        <div class="tags">
+          <span class="chip chip-reco">Empfehlung</span>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">HipHop</span>
+        </div>
+        <a class="gl-btn" href="#">Gästeliste bis 22:00<span class="arr">›</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb-tall"><img src="https://cdn.evntsvc.net/r/e/ev_eDLBJoOIvEyGalTJM0CPKw-462_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Sodalicious</div>
+        <div class="meta"><a href="#">Soda</a> · 22:00</div>
+        <div class="desc">It´s SODALICIOUS Time! Mit 5 Floors, über 10 DJs und einem spektakulären Musikmix.</div>
+        <div class="tags">
+          <span class="chip chip-tag strong">#90er</span>
+          <span class="chip chip-tag">R&amp;B</span>
+          <span class="chip chip-tag">Urban Dance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb-tall"><img src="https://cdn.evntsvc.net/r/e/ev_0ke91XUppEqnpg7ecTQA3Q-696_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">80'S &amp; 90'S Party – End of Summer</div>
+        <div class="meta"><a href="#">Club Weekend</a> · 20:00</div>
+        <div class="desc">80'S &amp; 90'S PARTY – END OF SUMMER, Saturday August 29th, Start 8 PM (weather permitting).</div>
+        <div class="tags">
+          <a class="chip chip-action" href="#">Verlosung</a>
+          <a class="chip chip-action" href="#">Tickets</a>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">80`s</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="lead" style="margin-top:16px">
+    <b>Hinweis zur Umsetzung:</b> Die hochkanten Bilder stammen hier aus der
+    <code>_m</code>-Variante (bis 1080×1350 px). Für den Live-Betrieb bräuchte es
+    eine neue, kleine Thumbnail-Größe im Hochformat – sonst lädt der Feed bei
+    50 Events mehrere Megabyte.
+  </p>
+
+</div>
+</body>
+</html>
