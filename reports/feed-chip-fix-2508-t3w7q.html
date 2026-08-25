@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GL030 – Gästelisten-Chip, harmonisch</title>
+<style>
+:root{
+  --ink:#212529; --ink-2:#6c757d; --ink-3:#9aa4ad;
+  --line:#e9ecef; --link:#1a9dd9;
+  --brand-from:#2bb5a0; --brand-to:#3ab7d9;
+  --warn-from:#e8933a; --warn-to:#e0a93c;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:.875rem;
+  color:var(--ink);background:#eef0f2;-webkit-font-smoothing:antialiased}
+.wrap{max-width:100%;margin:0 auto;padding:12px}
+@media(min-width:760px){ .wrap{max-width:400px} body{padding:20px 0} }
+
+h2.vt{font-size:.9rem;margin:20px 0 3px}
+.note{font-size:.73rem;color:var(--ink-2);margin:0 0 8px;line-height:1.45}
+.note b{color:var(--ink)}
+.bad{color:#c0392b}
+
+.card{background:#fff;border-radius:.55rem;margin-bottom:8px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.item{display:flex;gap:11px;padding:12px}
+.thumb{width:48px;height:48px;border-radius:.3rem;flex:none;
+  background:linear-gradient(135deg,#c8d2da,#e8edf1)}
+.body{min-width:0;flex:1}
+.title{font-size:.92rem;font-weight:700;line-height:1.25;color:#111}
+.meta{font-size:.8rem;color:var(--ink-2);margin-top:3px}
+.meta a{color:var(--link);text-decoration:none;font-weight:500}
+.desc{font-size:.8rem;color:#5a6169;margin-top:6px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ---- Chip-Zeile: einheitliche Höhe, saubere Abstände ---- */
+.tags{display:flex;flex-wrap:wrap;align-items:center;
+  gap:7px 8px;             /* Zeilen- und Spaltenabstand getrennt */
+  margin-top:9px}
+.chip{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:26px;                       /* ALLE Chips exakt gleich hoch */
+  padding:0 11px;border-radius:13px;
+  font-size:.72rem;line-height:1;    /* line-height 1 verhindert Versatz */
+  white-space:nowrap;text-decoration:none}
+.chip-brand{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#fff;font-weight:600}
+.chip-red{background:#e74c3c;color:#fff;font-weight:600}
+.chip-tag{color:var(--ink-3);padding:0 4px}
+.chip-tag.strong{color:var(--ink)}
+
+/* ---- der Gästelisten-CTA ---- */
+.gl{
+  display:inline-flex;align-items:center;
+  height:26px;border-radius:13px;padding:0 4px 0 11px;
+  background:linear-gradient(90deg,var(--brand-from),var(--brand-to));
+  color:#fff;font-weight:700;font-size:.72rem;line-height:1;
+  text-decoration:none;white-space:nowrap;
+  margin-right:4px;                  /* etwas Luft zum nächsten Chip */
+  box-shadow:0 1px 3px rgba(43,181,160,.35)}
+.gl .t{
+  display:inline-flex;align-items:center;height:18px;
+  margin-left:7px;padding:0 7px;border-radius:9px;
+  background:rgba(255,255,255,.22);
+  font-weight:600;font-size:.68rem;letter-spacing:.01em}
+.gl.warn{background:linear-gradient(90deg,var(--warn-from),var(--warn-to));
+  box-shadow:0 1px 3px rgba(224,145,58,.4)}
+
+/* Variante B: Trennpunkt statt Pille */
+.gl-b{padding:0 11px}
+.gl-b .t{background:none;margin-left:5px;padding:0;height:auto;font-weight:400;opacity:.9}
+.gl-b .t::before{content:"·";margin-right:5px;opacity:.7}
+
+/* Variante C: eigene Zeile über den Tags */
+.gl-row{margin-top:9px}
+.gl-c{display:inline-flex;align-items:center;height:32px;border-radius:16px;
+  padding:0 6px 0 14px;font-size:.78rem;font-weight:700;color:#fff;text-decoration:none;
+  background:linear-gradient(90deg,var(--brand-from),var(--brand-to));
+  box-shadow:0 1px 4px rgba(43,181,160,.4)}
+.gl-c .t{display:inline-flex;align-items:center;height:21px;margin-left:9px;padding:0 9px;
+  border-radius:11px;background:rgba(255,255,255,.24);font-size:.72rem;font-weight:600}
+.gl-c .arr{margin-left:7px;margin-right:4px;opacity:.85}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="note" style="margin-top:0">
+    <b>Was aktuell stört:</b> Der Chip ist höher als seine Nachbarn, dadurch sitzt die
+    Zeile schief. Die Uhrzeit wirkt hochgestellt, weil sie eine andere Grundlinie hat.
+    Und der Chip klebt am nächsten Element.<br>
+    <b>Gemeinsam in allen Varianten:</b> alle Chips exakt 26 px hoch,
+    <code>line-height:1</code>, Abstände 8 px horizontal / 7 px zwischen den Zeilen.
+  </p>
+
+  <!-- ---------- A ---------- -->
+  <h2 class="vt">A · Uhrzeit als abgesetzte Pille</h2>
+  <p class="note">
+    Die Zeit sitzt in einer halbtransparenten Pille im Chip – klar als Zusatzinfo lesbar,
+    exakt mittig, gleiche Höhe wie alle anderen Chips. <b>Meine Empfehlung.</b>
+  </p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Super Tuesday – 80s, Disco Hits &amp; Hip Hop Party</div>
+        <div class="meta"><a href="#">Cassiopeia</a> · 23:00 <b>bis</b> 04:00</div>
+        <div class="desc">Mit dem Super Tuesday füllen wir das schwarze Loch in der Berliner Feier-Landschaft.</div>
+        <div class="tags">
+          <a class="gl" href="#">Gästeliste<span class="t">18:00</span></a>
+          <a class="chip chip-brand" href="#">Tickets</a>
+          <span class="chip chip-tag strong">#80er</span>
+          <span class="chip chip-tag">80s</span>
+          <span class="chip chip-tag">Disco Hits</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">808 Mob pres. Exo's Birthday</div>
+        <div class="meta"><a href="#">808</a> · 23:59</div>
+        <div class="desc">808 Mob pres. Exo's Birthday / Modern Jam</div>
+        <div class="tags">
+          <span class="chip chip-red">Empfehlung</span>
+          <a class="gl" href="#">Gästeliste<span class="t">22:00</span></a>
+          <a class="chip chip-brand" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">HipHop</span>
+          <span class="chip chip-tag">RnB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">100 GRAMM Bar Martini Hour</div>
+        <div class="meta"><a href="#">100 Gramm</a> · 16:00 <b>bis</b> 19:00</div>
+        <div class="desc">Jeden Tag feiern wir die Existenz der Martinis.</div>
+        <div class="tags">
+          <a class="gl warn" href="#">Gästeliste<span class="t">noch 2 Std.</span></a>
+          <span class="chip chip-tag strong">#Afterwork</span>
+          <span class="chip chip-tag">Pop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- B ---------- -->
+  <h2 class="vt">B · Uhrzeit mit Trennpunkt</h2>
+  <p class="note">
+    Ruhiger und schlanker, die Zeit steht direkt im Chip. Weniger auffällig als A –
+    dafür wirkt der Chip wie ein normales Label und weniger wie ein Button.
+  </p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Local Love Service</div>
+        <div class="meta"><a href="#">Kitty Cheng Bar</a> · 20:00</div>
+        <div class="desc">Every Saturday, The Local Love Service invites you to experience a new chapter of Berlin nightlife.</div>
+        <div class="tags">
+          <a class="gl gl-b" href="#">Gästeliste<span class="t">21:30</span></a>
+          <a class="chip chip-brand" href="#">Verlosung</a>
+          <a class="chip chip-brand" href="#">Tischreservierung</a>
+          <span class="chip chip-tag">HipHop</span>
+          <span class="chip chip-tag">RnB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- C ---------- -->
+  <h2 class="vt">C · Eigene Zeile, größerer Button</h2>
+  <p class="note">
+    Der CTA steht über den Chips in eigener Zeile und ist 32 px hoch.
+    <b>Am deutlichsten sichtbar</b>, kostet aber rund 20 px Höhe pro Event mit Liste.
+  </p>
+
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Super Tuesday – 80s, Disco Hits &amp; Hip Hop Party</div>
+        <div class="meta"><a href="#">Cassiopeia</a> · 23:00 <b>bis</b> 04:00</div>
+        <div class="desc">Mit dem Super Tuesday füllen wir das schwarze Loch in der Berliner Feier-Landschaft.</div>
+        <div class="gl-row">
+          <a class="gl-c" href="#">Gästeliste<span class="t">bis 18:00</span><span class="arr">›</span></a>
+        </div>
+        <div class="tags">
+          <a class="chip chip-brand" href="#">Tickets</a>
+          <span class="chip chip-tag strong">#80er</span>
+          <span class="chip chip-tag">80s</span>
+          <span class="chip chip-tag">Disco Hits</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:18px">
+    Zum Vergleich ein Eintrag <b>ohne</b> Gästeliste – die Chip-Zeile bleibt in allen
+    Varianten unverändert ruhig.
+  </p>
+  <div class="card">
+    <div class="item">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="title">Matrix – Party Every Night</div>
+        <div class="meta"><a href="#">Matrix</a> · 22:00</div>
+        <div class="desc">BACK TO „Party Every Night" – Line-Up: DJ SizMo House, Hip Hop, Reggaeton.</div>
+        <div class="tags">
+          <a class="chip chip-brand" href="#">Tischreservierung</a>
+          <span class="chip chip-tag strong">#80er</span>
+          <span class="chip chip-tag strong">#90er</span>
+          <span class="chip chip-tag">Hip Hop</span>
+          <span class="chip chip-tag">House</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
