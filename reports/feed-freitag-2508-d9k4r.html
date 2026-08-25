@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GL030 – Freitag 28.08., Variante D</title>
+<style>
+:root{
+  --ink:#212529; --ink-2:#6c757d; --ink-3:#9aa4ad;
+  --line:#e9ecef; --link:#1a9dd9;
+  --brand-from:#00a884; --brand-to:#12b5d4;
+  --premium:#12b5d4;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:.875rem;
+  color:var(--ink);background:#eef0f2;-webkit-font-smoothing:antialiased}
+.wrap{max-width:100%;margin:0 auto;padding:12px}
+@media(min-width:760px){ .wrap{max-width:400px} body{padding:20px 0} }
+
+.daybar{display:flex;align-items:baseline;gap:12px;margin:2px 0 10px}
+.daybar .wd{font-size:1.35rem;color:var(--ink-2)}
+.daybar .dt{font-size:1.35rem;font-weight:700}
+.daybar .cnt{margin-left:auto;font-size:.72rem;color:var(--ink-2);
+  background:#e3e7ea;border-radius:11px;padding:2px 9px}
+.lead{font-size:.74rem;color:var(--ink-2);line-height:1.5;margin:0 0 12px}
+.lead b{color:var(--ink)}
+
+.card{background:#fff;border-radius:.55rem;margin-bottom:9px;
+  box-shadow:0 1px 2px rgba(0,0,0,.07);overflow:hidden}
+.card.premium{border:2px solid var(--premium);box-shadow:0 2px 8px rgba(18,181,212,.18)}
+.item{display:flex;gap:11px;padding:12px}
+
+/* Bild: Premium groesser als Standard, beide hochkant 3:4 */
+.thumb{flex:none;border-radius:.35rem;overflow:hidden;background:#dde2e6}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb-std{width:56px;height:75px}
+.thumb-prem{width:76px;height:101px}
+
+.body{min-width:0;flex:1}
+.title{font-size:.92rem;font-weight:700;line-height:1.28;color:#111}
+.meta{font-size:.8rem;color:var(--ink-2);margin-top:3px}
+.meta a{color:var(--link);text-decoration:none;font-weight:500}
+.meta b{font-weight:600;color:#495057}
+.desc{font-size:.8rem;color:#5a6169;margin-top:6px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Aktions-Chips */
+.tags{display:flex;flex-wrap:wrap;align-items:center;gap:7px 8px;margin-top:9px}
+.chip{display:inline-flex;align-items:center;height:26px;padding:0 11px;
+  border-radius:13px;font-size:.72rem;line-height:1;white-space:nowrap;text-decoration:none}
+.chip-action{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#fff;font-weight:600}
+.chip-reco{background:#e74c3c;color:#fff;font-weight:600}
+
+/* Musikstile: EINE Zeile, Rest wird abgeschnitten - keine einzelne Waise mehr */
+.styles{display:flex;align-items:center;gap:10px;margin-top:8px;
+  overflow:hidden;white-space:nowrap;font-size:.74rem;color:var(--ink-3)}
+.styles .s{flex:none}
+.styles .s.strong{color:#343a40;font-weight:500}
+.styles .more{flex:none;color:var(--ink-3);letter-spacing:1px}
+
+/* Button ueber die volle Kartenbreite */
+.gl-full{display:flex;align-items:center;justify-content:center;
+  height:44px;border-radius:0;
+  background:linear-gradient(90deg,var(--brand-from),var(--brand-to));
+  color:#fff;font-size:.85rem;font-weight:700;text-decoration:none;letter-spacing:.01em}
+.gl-full .arr{margin-left:8px;opacity:.85;font-weight:400}
+.card.premium .gl-full{border-radius:0 0 .35rem .35rem}
+
+.adnote{text-align:center;font-size:.6rem;color:#adb5bd;letter-spacing:.1em;
+  padding:6px 0;background:#f6f7f8;border-radius:.3rem;margin-bottom:9px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="daybar">
+    <span class="wd">Freitag</span><span class="dt">28.08.2026</span><span class="cnt">49</span>
+  </div>
+
+  <p class="lead">
+    Echte Events von Freitag. <b>Variante D:</b> Button über die volle Kartenbreite,
+    Bilder hochkant im Verhältnis 3:4. Premium-Events bekommen ein größeres Bild
+    (76×101) als Standard-Events (56×75). Die Musikstile stehen in einer eigenen Zeile
+    über dem Button und werden auf <b>eine</b> Zeile begrenzt – dadurch steht kein
+    einzelner Stil mehr allein in einer neuen Reihe.
+  </p>
+
+  <!-- 1 · PREMIUM mit Gästeliste -->
+  <div class="card premium">
+    <div class="item">
+      <div class="thumb thumb-prem"><img src="https://cdn.evntsvc.net/r/e/ev_HIFUV-_OuU25C9AbNwQI5Q-535_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Any Given Friday x NO LIMIT</div>
+        <div class="meta"><a href="#">Bricks</a> · 23:00</div>
+        <div class="desc">Any Given Friday Summernights, jeden Freitag im Juli &amp; August. Wir holen den Sommer direkt zu uns.</div>
+        <div class="tags">
+          <span class="chip chip-reco">Empfehlung</span>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+        </div>
+        <div class="styles">
+          <span class="s strong">HipHop</span><span class="s">RnB</span>
+          <span class="s">Urban Sound</span><span class="s">Trap</span>
+        </div>
+      </div>
+    </div>
+    <a class="gl-full" href="#">Gästeliste bis 22:00<span class="arr">›</span></a>
+  </div>
+
+  <!-- 2 · Standard ohne Gästeliste -->
+  <div class="card">
+    <div class="item">
+      <div class="thumb thumb-std"><img src="https://cdn.evntsvc.net/r/e/ev_Svl237FNPk-scTGTUrF-Aw-296_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Famous Friday</div>
+        <div class="meta"><a href="#">Soda</a> · 22:00</div>
+        <div class="desc">Achtung Ladies &amp; Gentlemen: it's calling FAMOUS NIGHT! Euer FRIDAY NIGHT wird zur prominentesten Ausgabe.</div>
+        <div class="styles">
+          <span class="s strong">#90er</span><span class="s">R'n'B</span>
+          <span class="s">Urban Dance</span><span class="s">Electro</span>
+          <span class="more">•••</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="adnote">ANZEIGE</div>
+
+  <!-- 3 · Standard mit Gästeliste + Tickets -->
+  <div class="card">
+    <div class="item">
+      <div class="thumb thumb-std"><img src="https://cdn.evntsvc.net/r/e/ev_LjniSGu89kCD7gB8t_5Ncw-943_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Club Room Party | Birthday Club</div>
+        <div class="meta"><a href="#">Paradise Club</a> · 21:00</div>
+        <div class="desc">Jeden Freitag steigt in Berlin &amp; Brandenburg die einzige Party für alle ab 16 Jahren!</div>
+        <div class="tags">
+          <a class="chip chip-action" href="#">Tickets</a>
+        </div>
+        <div class="styles">
+          <span class="s strong">#16+</span><span class="s">HipHop</span>
+          <span class="s">Club Sounds</span><span class="s">Deutschrap</span>
+          <span class="more">•••</span>
+        </div>
+      </div>
+    </div>
+    <a class="gl-full" href="#">Gästeliste bis 20:00<span class="arr">›</span></a>
+  </div>
+
+  <!-- 4 · Standard, viele Aktionen, keine Gästeliste -->
+  <div class="card">
+    <div class="item">
+      <div class="thumb thumb-std"><img src="https://cdn.evntsvc.net/r/e/ev_K-QA2TF07EuvQbpayYroiw-520_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">WKND X Usha Berlin</div>
+        <div class="meta"><a href="#">Club Weekend</a> · 18:00</div>
+        <div class="desc">Friday, August 28th, 2026. Start: 6 PM | 10 PM. Weekend Club, located on the 12th floor.</div>
+        <div class="tags">
+          <a class="chip chip-action" href="#">Verlosung</a>
+          <a class="chip chip-action" href="#">Tickets</a>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+        </div>
+        <div class="styles">
+          <span class="s strong">Techno</span><span class="s">House</span>
+          <span class="s">Deep House</span><span class="s">Electro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 · Havanna: Gästeliste + Verlosung -->
+  <div class="card">
+    <div class="item">
+      <div class="thumb thumb-std"><img src="https://cdn.evntsvc.net/r/e/ev_sQfYKh38506wPdqAOh9Z4w-949_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Friday Night – Party on 3 Floors</div>
+        <div class="meta"><a href="#">Havanna</a> · 22:00</div>
+        <div class="desc">OPEN END – wir tanzen bis zum Morgengrauen. Eine Nacht. Drei Floors. Drei DJ-Styles.</div>
+        <div class="tags">
+          <a class="chip chip-action" href="#">Verlosung</a>
+        </div>
+        <div class="styles">
+          <span class="s strong">Latin</span><span class="s">Reggaeton</span>
+          <span class="s">Pop</span><span class="s">RnB</span>
+          <span class="more">•••</span>
+        </div>
+      </div>
+    </div>
+    <a class="gl-full" href="#">Gästeliste bis 21:00<span class="arr">›</span></a>
+  </div>
+
+  <!-- 6 · Standard ohne alles -->
+  <div class="card">
+    <div class="item">
+      <div class="thumb thumb-std"><img src="https://cdn.evntsvc.net/r/e/ev_1OYXW_P1aEi_lHN-nsGXTA-820_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">Birgits Weekender</div>
+        <div class="meta"><a href="#">Birgit &amp; Bier</a> · 18:00 <b>bis</b> 30.08. 06:00</div>
+        <div class="desc">Age 18+. Presale and box office. No Cash – Card only. No Place for Racism.</div>
+        <div class="styles">
+          <span class="s strong">House</span><span class="s">Techno</span><span class="s">Hiphop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 · Pirates -->
+  <div class="card">
+    <div class="item">
+      <div class="thumb thumb-std"><img src="https://cdn.evntsvc.net/r/e/ev_GoXFWdILHE-qzZO6zwu2ag-430_m.jpg" alt=""></div>
+      <div class="body">
+        <div class="title">HEY FRIDAY</div>
+        <div class="meta"><a href="#">Pirates</a> · 19:00</div>
+        <div class="desc">Feiern | Singen | Flirten auf 2 Floors. Freier Eintritt für alle bis 22 Uhr, ab 18 Uhr WarmUp auf der Spree.</div>
+        <div class="tags">
+          <a class="chip chip-action" href="#">Verlosung</a>
+          <a class="chip chip-action" href="#">Tischreservierung</a>
+        </div>
+        <div class="styles">
+          <span class="s strong">#90er</span><span class="s">Charts</span>
+          <span class="s">Dance</span><span class="s">Classics</span>
+          <span class="more">•••</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="lead" style="margin-top:16px">
+    <b>Zum Vergleich der Bildgrößen:</b> Das erste Event (Bricks, Premium) hat ein
+    76×101-Bild, alle anderen 56×75. Heute sind es einheitlich 48×48 quadratisch –
+    Premium-Events fallen dadurch fast nur über den Rahmen auf.
+  </p>
+
+</div>
+</body>
+</html>
