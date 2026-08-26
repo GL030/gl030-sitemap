@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GL030 – Logo-Button, Varianten</title>
+<style>
+:root{
+  --ink:#eef2f6; --ink-2:#9fb0c0; --ink-3:#74889a;
+  --bar:#0b0f14;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:.875rem;
+  color:var(--ink);-webkit-font-smoothing:antialiased;
+  background:linear-gradient(90deg,#31314f,#2b3149 24%,#243545 52%,#1d3b43 78%,#17423d);
+  background-attachment:fixed;padding:18px 0}
+.wrap{max-width:412px;margin:0 auto;padding:0 12px}
+h2{font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);
+  margin:26px 0 4px;font-weight:700}
+.note{font-size:.72rem;color:var(--ink-2);margin:0 0 9px;line-height:1.45}
+.note b{color:var(--ink)}
+
+/* ---------- Grundgerüst wie im Original ---------- */
+.phone{border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.topbar{background:var(--bar);display:flex;align-items:center;position:relative;z-index:3}
+.topbar .icons{margin-left:auto;display:flex;gap:18px;color:#fff;font-size:1.1rem;opacity:.85}
+.hero{position:relative;min-height:230px;padding:14px 16px 30px;text-align:center;
+  display:flex;flex-direction:column;justify-content:center}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(180deg,rgba(8,12,16,.28),rgba(8,12,16,.5) 55%,rgba(8,12,16,.72)),
+                   url('https://gl030.github.io/gl030-sitemap/reports/assets/cover-130826.jpg');
+  background-size:cover;background-position:center}
+.hero > *{position:relative;z-index:1}
+.hero h1{font-size:1.6rem;font-weight:300;letter-spacing:-.02em;margin:0 0 12px;color:#fff;
+  line-height:1.15;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+.hero h1 b{font-weight:700}
+.search{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;padding:9px 15px;color:rgba(255,255,255,.75);font-size:.82rem;
+  display:flex;gap:8px;align-items:center;max-width:280px;margin:0 auto}
+
+/* ---------- Der Logo-Knopf ---------- */
+.badge{
+  position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);
+  z-index:4;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:#141b23;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 6px 18px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.06) inset;
+}
+.badge img{width:auto;display:block}
+
+/* Variante A – 96 px, mittig auf der Kante */
+.v-a .topbar{padding:8px 14px}
+.v-a .topbar .brand{visibility:hidden;height:26px}
+.v-a .badge{width:96px;height:96px}
+.v-a .badge img{height:56px}
+.v-a .hero{padding-top:56px}
+
+/* Variante B – 112 px, tiefer im Bild */
+.v-b .topbar{padding:7px 14px}
+.v-b .badge{width:112px;height:112px;transform:translate(-50%,58%)}
+.v-b .badge img{height:66px}
+.v-b .hero{padding-top:64px}
+
+/* Variante C – heller Kreis */
+.v-c .topbar{padding:8px 14px}
+.v-c .badge{width:100px;height:100px;background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.v-c .badge img{height:58px}
+.v-c .hero{padding-top:58px}
+
+/* Variante D – ohne Kreis, nur Schatten */
+.v-d .topbar{padding:8px 14px}
+.v-d .badge{width:auto;height:auto;background:none;border:0;box-shadow:none;
+  transform:translate(-50%,45%);filter:drop-shadow(0 6px 14px rgba(0,0,0,.65))}
+.v-d .badge img{height:64px}
+.v-d .hero{padding-top:52px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="note" style="margin-top:0">
+    Vier Fassungen des Logo-Knopfs. Gemeinsam: Die Kopfleiste ist schmaler als vorher,
+    das Logo sitzt mittig auf der Kante zwischen Leiste und Bannerbild und überlappt beide.
+  </p>
+
+  <!-- A -->
+  <h2>A · Kreis 96 px, mittig auf der Kante</h2>
+  <p class="note">Der Knopf liegt <b>zur Hälfte</b> in der Leiste, zur Hälfte im Bild.
+     Dunkler Kreis, feine helle Kante, weicher Schatten.</p>
+  <div class="phone v-a">
+    <div class="topbar">
+      <span class="brand"></span>
+      <div class="icons"><span>&#9906;</span><span>&#9776;</span></div>
+      <div class="badge"><img src="https://gl030.github.io/gl030-sitemap/reports/assets/gl030-logo-chenille-v2.png" alt="GL030"></div>
+    </div>
+    <div class="hero">
+      <h1>Party <b>Berlin</b> am 22.08.2026</h1>
+      <div class="search"><span>&#9906;</span> Suchen…</div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <h2>B · Kreis 112 px, tiefer im Bild</h2>
+  <p class="note">Größer und weiter ins Bild geschoben – der Knopf wird zum Blickfang,
+     die Leiste tritt zurück.</p>
+  <div class="phone v-b">
+    <div class="topbar">
+      <span class="brand"></span>
+      <div class="icons"><span>&#9906;</span><span>&#9776;</span></div>
+      <div class="badge"><img src="https://gl030.github.io/gl030-sitemap/reports/assets/gl030-logo-chenille-v2.png" alt="GL030"></div>
+    </div>
+    <div class="hero">
+      <h1>Party <b>Berlin</b> am 22.08.2026</h1>
+      <div class="search"><span>&#9906;</span> Suchen…</div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <h2>C · Heller Kreis, milchig</h2>
+  <p class="note">Statt dunkler Fläche ein leicht aufgehelltes Glas mit Unschärfe –
+     das Bannerbild schimmert durch.</p>
+  <div class="phone v-c">
+    <div class="topbar">
+      <span class="brand"></span>
+      <div class="icons"><span>&#9906;</span><span>&#9776;</span></div>
+      <div class="badge"><img src="https://gl030.github.io/gl030-sitemap/reports/assets/gl030-logo-chenille-v2.png" alt="GL030"></div>
+    </div>
+    <div class="hero">
+      <h1>Party <b>Berlin</b> am 22.08.2026</h1>
+      <div class="search"><span>&#9906;</span> Suchen…</div>
+    </div>
+  </div>
+
+  <!-- D -->
+  <h2>D · Ohne Kreis, nur Schlagschatten</h2>
+  <p class="note">Zum Vergleich: Das Logo schwebt frei über der Kante, der Schatten
+     löst es vom Bild. Ruhiger, aber weniger „Knopf“.</p>
+  <div class="phone v-d">
+    <div class="topbar">
+      <span class="brand"></span>
+      <div class="icons"><span>&#9906;</span><span>&#9776;</span></div>
+      <div class="badge"><img src="https://gl030.github.io/gl030-sitemap/reports/assets/gl030-logo-chenille-v2.png" alt="GL030"></div>
+    </div>
+    <div class="hero">
+      <h1>Party <b>Berlin</b> am 22.08.2026</h1>
+      <div class="search"><span>&#9906;</span> Suchen…</div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:22px">
+    <b>Zu bedenken:</b> Der Knopf überlappt die Leiste – beim Scrollen mit fixierter
+    Kopfzeile muss entschieden werden, ob er mitwandert oder wegscrollt. Und die
+    Suchleiste rückt nach unten, weil oben Platz für den Knopf gebraucht wird.
+  </p>
+
+</div>
+</body>
+</html>
