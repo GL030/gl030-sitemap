@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gästeliste030 – Dark Theme</title>
+<style>
+:root{
+  --bg-a:#31314f; --bg-b:#2b3149; --bg-c:#243545; --bg-d:#1d3b43; --bg-e:#17423d;
+  --card:#1b2735; --card-soft:#17222e;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+  --ink:#eef2f6; --ink-2:#9fb0c0; --ink-3:#74889a;
+  --link:#57c8e8; --brand-from:#00c193; --brand-to:#16bde0;
+  --reco-from:#e8534a; --reco-to:#e0653f;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:.875rem;color:var(--ink);
+  -webkit-font-smoothing:antialiased;min-height:100vh;
+  background:linear-gradient(90deg,var(--bg-a) 0%,var(--bg-b) 24%,var(--bg-c) 52%,var(--bg-d) 78%,var(--bg-e) 100%) fixed;
+  background-color:#223546}
+a{text-decoration:none}
+.phone{max-width:100%;margin:0 auto}
+@media(min-width:760px){body{padding:22px 0}
+  .phone{max-width:412px;border:10px solid #0b0f14;border-radius:34px;overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.5)}}
+
+.topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;
+  padding:10px 13px;background:rgba(11,15,20,.88);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.topbar img{height:20px;filter:brightness(0) invert(1)}
+.topbar .ic{margin-left:auto;display:flex;gap:15px;color:var(--ink-2);font-size:1.1rem}
+.pillnav{display:flex;gap:7px;overflow-x:auto;padding:10px 13px;
+  background:rgba(11,15,20,.5);border-bottom:1px solid var(--line);scrollbar-width:none}
+.pillnav::-webkit-scrollbar{display:none}
+.pillnav a{flex:none;font-size:.75rem;padding:6px 13px;border-radius:999px;
+  border:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
+.pillnav a.on{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));
+  color:#04231d;font-weight:700;border-color:transparent}
+
+.wrap{padding:13px 12px 26px}
+.daybar{display:flex;align-items:baseline;gap:11px;margin:2px 0 12px}
+.daybar .wd{font-size:1.3rem;color:var(--ink-2);font-weight:300}
+.daybar .sep{color:var(--ink-3)}
+.daybar .dt{font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+.daybar .cnt{margin-left:auto;font-size:.72rem;color:var(--ink-2);
+  background:rgba(255,255,255,.07);border-radius:11px;padding:3px 10px}
+
+.group{border:2px solid transparent;border-radius:1rem;
+  background:linear-gradient(var(--card),var(--card)) padding-box,
+             linear-gradient(90deg,var(--brand-from),var(--brand-to)) border-box;
+  margin-bottom:14px;overflow:hidden}
+.ev{display:flex;gap:11px;padding:12px;background:var(--card)}
+.group .ev + .ev{border-top:1px solid var(--line)}
+.card-std{background:var(--card);border:1px solid var(--line);border-radius:.75rem;
+  margin-bottom:9px;overflow:hidden}
+
+.flyer{flex:none;border-radius:.4rem;overflow:hidden;background:#22323f}
+.flyer img{width:100%;height:100%;object-fit:cover;display:block}
+.f-std{width:56px;height:56px}
+.f-prem{width:84px;height:84px}
+
+.body{min-width:0;flex:1}
+.ttl{font-size:.9rem;font-weight:700;line-height:1.28;color:var(--ink)}
+.meta{font-size:.78rem;color:var(--ink-2);margin-top:3px}
+.meta a{color:var(--link);font-weight:500}
+.meta b{color:var(--ink-2);font-weight:600}
+.desc{font-size:.78rem;color:var(--ink-3);margin-top:5px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:7px 8px;margin-top:8px}
+.chip{display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:13px;
+  font-size:.72rem;line-height:1;white-space:nowrap}
+.c-act{background:linear-gradient(90deg,var(--brand-from),var(--brand-to));color:#04231d;font-weight:700}
+.c-reco{background:linear-gradient(90deg,var(--reco-from),var(--reco-to));color:#fff;font-weight:700}
+.c-hash{border:1px solid var(--line-2);color:var(--ink-2)}
+.styles{display:flex;align-items:center;gap:11px;margin-top:8px;overflow:hidden;
+  white-space:nowrap;font-size:.74rem;color:var(--ink-3)}
+.gl{flex:none;width:76px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:.15rem;margin-left:8px;padding:6px;border-radius:.5rem;
+  background:linear-gradient(160deg,var(--brand-from),var(--brand-to));color:#04231d;
+  text-align:center;line-height:1.15}
+.gl .l{font-size:.7rem;font-weight:800;text-transform:uppercase}
+.gl .t{font-size:.67rem;font-weight:600;opacity:.88}
+.ad{text-align:center;font-size:.58rem;color:var(--ink-3);letter-spacing:.12em;
+  padding:7px 0;background:rgba(255,255,255,.03);border-radius:.4rem;margin-bottom:9px}
+footer{padding:16px 14px 24px;font-size:.7rem;color:var(--ink-3);text-align:center;line-height:1.7}
+
+/* Topbar: Logo mittig, Slogan rechts, kompakter Rand */
+.topbar{position:relative;gap:10px;justify-content:flex-end;padding:6px 13px;min-height:0}
+.topbar .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  height:84px;width:auto}
+.topbar .claim{font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink-3);line-height:1.25;text-align:right;max-width:92px}
+.topbar .ic{margin-left:0}
+</style></head>
+<body><div class="phone">
+  <div class="topbar">
+    <img class="logo" src="https://gl030.github.io/gl030-sitemap/reports/assets/gl030-logo-chenille-v2.png" alt="GL030">
+    <span class="claim">Berlins größter<br>Online Party Guide</span>
+    <div class="ic"><span>&#9906;</span><span>&#9776;</span></div>
+  </div>
+  <nav class="pillnav">
+    <a class="on" href="#">Party</a><a href="#">Hip Hop</a><a href="#">Electro</a>
+    <a href="#">Day Party</a><a href="#">Open Air</a><a href="#">Halloween</a>
+    <a href="#">Silvester</a><a href="#">Clubs</a><a href="#">Mehr</a>
+  </nav>
+  <div class="wrap">
+    <div class="daybar"><span class="wd">Mittwoch</span><span class="sep">|</span>
+      <span class="dt">26.08.2026</span><span class="cnt">20</span></div>
+    <div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_tYLGE_tfCEm99lwCz8f3uw-475_s_2.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Sunset, Food &amp; Drinks - Weekend Rooftop</div>
+        <div class="meta"><a href="#">Club Weekend</a> · 18:00 bis 23:00</div>
+        <div class="desc">Erlebe einen unvergesslichen Sommerabend über den Dächern der Stadt Mittwoch, 26.08. | 18:00 – 23:00 Uhr Weekend Club Rooftop Freu dich auf einen entspannten Ab</div>
+        <div class="chips"><span class="chip c-act">Tickets</span><span class="chip c-hash">Hip Hop</span><span class="chip c-hash">Afterwork</span><span class="chip c-hash">RnB</span></div>
+        <div class="styles"><span>House</span><span>HipHop</span></div>
+      </div>
+      <a class="gl" href="#"><span class="l">Gästeliste</span><span class="t"></span></a>
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_IGtKvtOzWUmz32pzdeqERg-269_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">MOCKY and friends - LA meets BERLIN JAM with MAYLEE TODD</div>
+        <div class="meta"><a href="#">Gretchen</a> · 19:30</div>
+        <div class="desc">Mit seinem Album „Music Will Explain“ (Choir Music Vol. 1), erschienen beim legendären Los-Angeles-Label Stones Throw Records, rückt Mocky die menschliche Stimm</div>
+        <div class="chips"><span class="chip c-act">Tickets</span><span class="chip c-hash">16+</span><span class="chip c-hash">Jazz</span><span class="chip c-hash">Fusion</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_ifXhK86XgEOVWdjQ71QwFg-717_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Afterwork @ 100 GRAMM Vino</div>
+        <div class="meta"><a href="#">100 Gramm Vino</a> · 21:00</div>
+        <div class="desc">Afterwork @ 100 GRAMM Vino Der Feierabend hat ein neues Zuhause: Jeden Mittwoch verwandelt sich unser Garten am Rosenthaler Platz in euren Afterwork-Spot.</div>
+        <div class="chips"><span class="chip c-hash">House</span><span class="chip c-hash">Pop</span></div>
+        
+      </div>
+      <a class="gl" href="#"><span class="l">Gästeliste</span><span class="t">bis 18:00</span></a>
+    </div></div><div class="ad">ANZEIGE</div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_or-4UWFFg0yIcQAQuPc6aA-807_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Beer Pong Night</div>
+        <div class="meta"><a href="#">Alte Kantine</a> · 20:00 bis 01:00</div>
+        <div class="desc">Beer Pong Night JEDEN MITTWOCH BEER PONG NIGHT ALTE KANTINE Bei uns steht der Spaß am Beer Pong klar im Vordergrund - chillige Vibes, freshe Beats und wir sind </div>
+        <div class="chips"><span class="chip c-hash">HipHop</span><span class="chip c-hash">House</span><span class="chip c-hash">Pop</span></div>
+        <div class="styles"><span>RnB</span><span>Dance</span></div>
+      </div>
+      <a class="gl" href="#"><span class="l">Gästeliste</span><span class="t">bis 19:00</span></a>
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_e41YYD8AxkG8j1Nk8jgxwQ-106_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Matrix - Party Every Night</div>
+        <div class="meta"><a href="#">Matrix</a> · 22:00</div>
+        <div class="desc">BACK TO &quot;Party Every Night Line-Up: + DJ Noircutz House, Hip Hop, Reggaeton, Afro, RnB, Dance Classics, Top40, Charts &amp; more...</div>
+        <div class="chips"><span class="chip c-act">Tischreservierung</span><span class="chip c-hash">90er</span><span class="chip c-hash">80er</span><span class="chip c-hash">Hip Hop</span></div>
+        <div class="styles"><span>House</span><span>Reggaeton</span><span>Top40</span><span>Trap</span><span>•••</span></div>
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_1lzw8hd56EiGShWitS88nQ-802_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Tango Vicioso</div>
+        <div class="meta"><a href="#">Insomnia Erotic Nightclub</a> · 20:00 bis 22:00</div>
+        <div class="desc">Tango Argentino ausschweifend und lasterhaft Immer am zweiten und vierten Mittwoch des Monats ab 20 Uhr bis ca.</div>
+        <div class="chips"><span class="chip c-hash">Tango</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_D81J8c3n_0q5gWFpYVupGg-477_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Chess Night</div>
+        <div class="meta"><a href="#">100 Gramm</a> · 19:00 bis 22:00</div>
+        <div class="desc">Strategie trifft auf Signature Drinks. Konzentration auf dem Brett, Energie im Glas – und dazu der Sound, der den Abend trägt.</div>
+        
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_CkpJwFrGbkCb9NgwO5PBJg-298_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">100 GRAMM Bar Martini Hour - Afterwork Pornstar &amp; Matcha Martini</div>
+        <div class="meta"><a href="#">100 Gramm</a> · 19:00</div>
+        <div class="desc">Jeden Tag Feiern wir die Existenz der Martinis. Sei es den Weltbekannten Espresso Martini, den aufregenden Pornstar Martini oder den Newcomer Pornstar Martini.</div>
+        <div class="chips"><span class="chip c-act">Verlosung</span><span class="chip c-hash">Afterwork</span><span class="chip c-hash">Pop</span><span class="chip c-hash">RnB</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev__LA6-nS91EqCYFHzPEjM_w-943_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Büro Siebzig: dreamcastmoe LIVE hosted by Refuge Worldwide</div>
+        <div class="meta"><a href="#">Tresor</a> · 21:00 bis 23:00</div>
+        <div class="desc">Büro Siebzig: dreamcastmoe LIVE hosted by Refuge Worldwide im Tresor in Berlin am 26.08.2026.</div>
+        <div class="chips"><span class="chip c-act">Tickets</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev__aoszJ6960Wew5P_9Gw_1Q-838_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">100 Gramm Lounge - Fancy Drinks and Lovlely People</div>
+        <div class="meta"><a href="#">100 Gramm</a> · 19:00</div>
+        <div class="desc">100 GRAMM Lounge Fancy Drinks &amp; Lovely People Wenn der Abend nach Stil, Geschmack und guter Gesellschaft verlangt, ist die 100 GRAMM Lounge der richtige Ort.</div>
+        <div class="chips"><span class="chip c-hash">House</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_W5xeG5j9KkWa24ici5Uesg-153_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">mittendrin mit Fenoma</div>
+        <div class="meta"><a href="#">Minimal Bar</a> · 18:00</div>
+        <div class="desc">You wanna spend a night with Electronic Beats,Ping Pong &amp; nice Drinks? A Dance Floor &amp; creative cosy chill Areas? Come to our Minimal Bar!!</div>
+        <div class="chips"><span class="chip c-hash">Electro</span><span class="chip c-hash">House</span><span class="chip c-hash">Minimal</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_XUb-FkcgZ0CDHqZiwdcQmA-535_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Tipsy Lesbian Wednesday</div>
+        <div class="meta"><a href="#">Tipsy Bear Berlin</a> · 18:00</div>
+        <div class="desc">A weekly invitation to lesbians, dykes, and women-loving women of all varieties to take over Tipsy Bear for a flirtatious Wednesday bar night.</div>
+        <div class="chips"><span class="chip c-hash">LGBTQ+</span><span class="chip c-hash">Pop Queer</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_wGOe6hxP30-PCzr3PB0abA-167_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Salsa Dance Night</div>
+        <div class="meta"><a href="#">zik Zeit ist Knapp &quot;Zentrum für internationale Künste&quot;</a> · 19:00 bis 23:00</div>
+        <div class="desc">Salsa Dance Night with Salsa del Arte Salsa class from 7 to 8 p.m., followed by open dancing until 11 p.m.</div>
+        <div class="chips"><span class="chip c-hash">Latin</span><span class="chip c-hash">Salsa</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_NFiChr0YSUiqUuT5HTJwog-264_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Sunny Terrace - Fizzy Spritzes</div>
+        <div class="meta"><a href="#">100 Gramm</a> · 22:00</div>
+        <div class="desc">Sunny Terrace – Fizzy Spritzes täglich von 16:00 bis 22:00 Uhr in der 100 GRAMM Bar Ab 16 Uhr füllt sich unsere Terrasse mit Leben.</div>
+        <div class="chips"><span class="chip c-hash">RnB</span><span class="chip c-hash">Pop</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_r6AtDH2X-Eq4PELVQLh5_A-343_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Symbiotikka</div>
+        <div class="meta"><a href="#">KitKat</a> · 22:00</div>
+        <div class="desc">Expand your horizon and have a look over the edge - SYMBIOTIKKA - The Wednesday at KitKat Club! Celebrate with us Respect, Freedom, Love and Music!</div>
+        <div class="chips"><span class="chip c-hash">Electro</span><span class="chip c-hash">Techno</span><span class="chip c-hash">Tech-House</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_KoQDQA-Fqk-G3EgxQ33gNg-625_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Techno Mittwoch</div>
+        <div class="meta"><a href="#">Sensorium</a> · 23:00</div>
+        <div class="desc">„Techno Mittwoch ist unser wöchentlicher Reset-Button: ein safer, offener Raum mitten in der Woche, wo der Alltag draußen bleibt.</div>
+        <div class="chips"><span class="chip c-act">Tickets</span><span class="chip c-hash">Techno</span><span class="chip c-hash">Tech House</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_39eoeH0wcUuYW-F2ODzknA-686_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">Tresor New Faces hosted by Primal Instinct</div>
+        <div class="meta"><a href="#">Tresor</a> · 23:00</div>
+        <div class="desc">Tresor New Faces hosted by Primal Instinct An era-defining label that is shaping the landscape in real time.</div>
+        <div class="chips"><span class="chip c-act">Tickets</span><span class="chip c-hash">Techno</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_thCTP7nXM0yjZtOtCq7KNQ-580_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">N.E.S.T.A. presents: SATURNO 4000 *live | Carlos René, N.E.S.T.A.</div>
+        <div class="meta"><a href="#">Klunkerkranich</a> · 00:00</div>
+        <div class="desc">Seit 2023 holt uns N.E.S.T.A. wunderbare Bands und Live-Acts auf die Bühne in unserem *Wohnzimmer. Für sein erstes Konzert in 2024 hat der portugiesische DJ &amp; V</div>
+        <div class="chips"><span class="chip c-hash">House</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_P5apmJIFS0iY_iwhinE7AA-670_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">SIGNALS w/ G.IO, LAURIX &amp; YOUNG LOLO</div>
+        <div class="meta"><a href="#">Lokschuppen</a> · 23:00</div>
+        <div class="desc">Be ready for another midweek - madness. SIGNALS is a community event. Every Wednesday, with presale tickets for just 5,50 €.</div>
+        <div class="chips"><span class="chip c-act">Tickets</span><span class="chip c-hash">Techno</span><span class="chip c-hash">Techno</span><span class="chip c-hash">Trance</span></div>
+        
+      </div>
+      
+    </div></div><div class="card-std"><div class="ev">
+      <div class="flyer f-std"><img src="https://cdn.evntsvc.net/r/e/ev_LSbWjyB9J0m5lk9SXlRC1A-862_s.jpg" alt=""></div>
+      <div class="body">
+        <div class="ttl">://sektgarten x about Kiez [free entry &amp; open air]</div>
+        <div class="meta"><a href="#">about blank</a> · 22:00</div>
+        <div class="desc">Liebe Leute aus der Nachbarschaft, liebe Freund*innen und Mitstreitende, steigende Preise, neue Bauprojekte, Verdrängung – Gentrifizierung hautnah, live und in </div>
+        <div class="chips"><span class="chip c-hash">Electro</span><span class="chip c-hash">Techno</span><span class="chip c-hash">Tech-House</span></div>
+        
+      </div>
+      
+    </div></div>
+  </div>
+  <footer>Gästeliste030 – Berlins größter Online Party Guide</footer>
+</div></body></html>
