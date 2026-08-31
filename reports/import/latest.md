@@ -1,109 +1,317 @@
-# GL030 Event-Import 2026-08-27 09:01
+# GL030 Event-Import 2026-08-31 09:09
 
-Fenster: 2026-08-27 bis 2026-09-03 (7 Tage) | RA-Events gesamt: 274 | ohne Venue: 0 | ausserhalb Club-Liste: 174
+Fenster: 2026-08-31 bis 2026-10-05 (35 Tage) | RA-Events gesamt: 828 | ohne Venue: 0 | ausserhalb Club-Liste: 519
 
-## Angelegt (13)
-- 01.09. 23:00 | Lokschuppen | Phase:one
-- 02.09. 23:00 | Lokschuppen | Signals - 5€ Tickets - With Trancestrudel All Night Long
-- 02.09. 18:00 | GIRI | Giri x El Manto: Dario Jongerius Release (Artists unbekannt: 3)
-- 02.09. 23:00 | Sensorium | Techno Mittwoch
-- 02.09. 19:00 | Æden | Floating Over - Æden/œl Garten (Artists unbekannt: 1)
-- 02.09. 22:00 | KitKat | Symbiotikka At Kitkat Club Berlin (Artists unbekannt: 1)
-- 03.09. 18:00 | GIRI | Giri x Local Slang
-- 03.09. 22:00 | KitKat | Unity At Kitkat Club (Artists unbekannt: 2)
-- 03.09. 19:00 | DNA. CLUB | Free Entry: Live Music Jam Session & DJ Sets Community Open Air
-- 03.09. 18:00 | Club der Visionaere | Dunkle Dummies
-- 03.09. 17:00 | about blank | Sektgarten x b2b Bash Free Entry & Open Air (Artists unbekannt: 2)
-- 03.09. 23:00 | Æden | Soundhall (Artists unbekannt: 9)
-- 03.09. 22:00 | Ohm | Técnica (Artists unbekannt: 2)
+## Angelegt (163)
+- 03.09. 23:59 | Golden Gate | Donnerdogge
+- 04.09. 22:00 | DSTRKT | Hive Free Rave (Artists unbekannt: 10)
+- 04.09. 23:59 | Kreuzwerk | Sweat (Artists unbekannt: 1)
+- 04.09. 23:00 | Humboldthain | I Love Modus 3 Years Anniversary w/ DJ Tallboy, Kling & Klang, DJ Räucherlaks (Artists unbekannt: 5)
+- 04.09. 23:59 | Æden | Cuddles: Virgo Season (Artists unbekannt: 5)
+- 04.09. 17:00 | about blank | Sektgarten x Insel Der Jugend Free Entry & Open Air (Artists unbekannt: 1)
+- 04.09. 18:00 | GIRI | Giri x Presshouse
+- 04.09. 23:59 | Golden Gate | Nightshade Family
+- 04.09. 21:00 | RSO | Puls x Shockwerk x Coconut Concepts pres. Last Summer Night (Artists unbekannt: 4)
+- 04.09. 23:00 | Void Club & Hall | Out Of Mind With Cosmikat, Krakau, Sasaxx, Crs (Dnk), K3lt, Upzet, Will Tempo (Artists unbekannt: 3)
+- 04.09. 20:00 | KitKat | Four Play (Artists unbekannt: 5)
+- 04.09. 16:00 | Else | Else x Max Cooper invites (Artists unbekannt: 3)
+- 04.09. 23:00 | Sensorium | Ether (Artists unbekannt: 1)
+- 05.09. 23:00 | Humboldthain | Party 4 Broke // Delululand x Sause (Artists unbekannt: 4)
+- 05.09. 23:00 | Sensorium | Senso Nacht (Artists unbekannt: 1)
+- 05.09. 23:59 | RSO | Xtrude w/ Alexander Kowalski, Justine Perry, Philippa Pacho, Benjamin Damage And Badsista (Artists unbekannt: 3)
+- 05.09. 15:00 | Sage | Watergate Open Air With Anfisa Letyago, Chez Damier, Isaac Carter, Natalie Robinson (Artists unbekannt: 1)
+- 05.09. 23:59 | Golden Gate | Klubnacht
+- 05.09. 22:00 | Æden | Same Floor (Artists unbekannt: 1)
+- 05.09. 23:59 | Kreuzwerk | Más x Primal Instinct (Artists unbekannt: 2)
+- 05.09. 14:00 | Else | Else x Hoe Mies (Artists unbekannt: 4)
+- 06.09. 12:00 | Maaya | Roda De Feijoada - Pool Party Edition
+- 06.09. 21:00 | Lokschuppen | Wieder: Boiler Room Setup + Marketplace
+- 06.09. 23:00 | Sensorium | Trig (Artists unbekannt: 2)
+- 06.09. 14:00 | Else | Heisss I Open Air & Indoor (Artists unbekannt: 2)
+- 07.09. 22:00 | KitKat | Electric Monday Kitkat Club With Timo Maas (Artists unbekannt: 1)
+- 08.09. 23:00 | Lokschuppen | Phase:one (Artists unbekannt: 1)
+- 09.09. 23:00 | Sensorium | Techno Mittwoch (Artists unbekannt: 3)
+- 09.09. 23:00 | Lokschuppen | Signals - 5€ Tickets - With Bennett, Alemiko Live, Mimi404 (Artists unbekannt: 2)
+- 09.09. 22:00 | KitKat | Symbiotikka At Kitkat Club Berlin (Artists unbekannt: 2)
+- 10.09. 23:00 | Æden | Chroma XXL - Offbeat Session (Artists unbekannt: 4)
+- 10.09. 20:00 | KitKat | Psycho Pets (Artists unbekannt: 1)
+- 10.09. 18:00 | GIRI | Giri x Cilens: Re:frame - Moving Image From Within East And Southeast Asian
+- 10.09. 23:59 | Golden Gate | Hidden Variables (Artists unbekannt: 1)
+- 10.09. 19:00 | OXI | Drag Bingo With Amy Strong 'Free Entry!'
+- 10.09. 22:00 | Ohm | System Revival With Haruka, Patrick Russell, Mayss (Artists unbekannt: 1)
+- 11.09. 12:00 | Haus der Visionäre | Soft Power Festival (Artists unbekannt: 14)
+- 11.09. 20:00 | KitKat | Gegen Gear (Artists unbekannt: 10)
+- 11.09. 18:00 | GIRI | Giri x Wormhole Studies (Artists unbekannt: 2)
+- 11.09. 23:00 | RSO | The Third Room w/ .Vril Live, Ahmet Sisman, Dasha Rush, Ehua b2b Felix Fleer (Artists unbekannt: 1)
+- 11.09. 23:59 | Golden Gate | Klubnacht (Artists unbekannt: 1)
+- 11.09. 23:00 | OXI | Body Electric w/ Soundstream (Artists unbekannt: 2)
+- 11.09. 23:00 | Void Club & Hall | Dionys: Hardtechno x Trance/bounce Rave(2 Floors) (Artists unbekannt: 3)
+- 11.09. 23:00 | Æden | Lieber Tot N 2 Synth & Minimal Wave Festival (Artists unbekannt: 6)
+- 11.09. 23:00 | Lokschuppen | Cute invites Pastis & Buenri (Artists unbekannt: 4)
+- 11.09. 22:00 | Prince Charles | Hungry4 Ps Mall Grab & More At Prince Charles (Artists unbekannt: 1)
+- 11.09. 16:00 | Else | Bcco (Artists unbekannt: 2)
+- 12.09. 14:00 | gART.n | Flowers By Hovr (Artists unbekannt: 1)
+- 12.09. 23:00 | Lokschuppen | 2Much At Lokschuppen: DJ Yarak, Orbi, T E S T P R E S S (Artists unbekannt: 7)
+- 12.09. 23:59 | Kreuzwerk | Power Dance Club 24Hours (Artists unbekannt: 3)
+- 12.09. 14:00 | Else | Else x Opus pres. Yanamaste (All Day Long)
+- 12.09. 23:00 | Void Club & Hall | Klangknospe x Abgedreht Springklang (Artists unbekannt: 8)
+- 12.09. 23:30 | DNA. CLUB | (10€) Bpm Presents: Sterni invites (Artists unbekannt: 1)
+- 12.09. 15:00 | Sage | The Gardens Of Babylon: The Return To Berlin (Artists unbekannt: 4)
+- 12.09. 14:00 | RSO | Home Again Festival - 10 Years (Artists unbekannt: 10)
+- 13.09. 14:00 | about blank | Mixed & Juicy - Open Air (Artists unbekannt: 1)
+- 13.09. 23:00 | Hoppetosse | Round The Corner x Afterground x Zapped (Artists unbekannt: 1)
+- 13.09. 21:00 | Lokschuppen | Wieder: Boiler Room Setup + Marketplace
+- 13.09. 23:00 | Sensorium | Trig (Artists unbekannt: 1)
+- 13.09. 14:00 | Else | Sweet Nothing Presents Pegassi All Day Long
+- 14.09. 22:00 | KitKat | Electric Monday Kitkat
+- 15.09. 23:00 | Lokschuppen | Phase:one (Artists unbekannt: 1)
+- 16.09. 23:00 | Lokschuppen | Signals - 5€ Tickets - With Unromantic, DJ Egoshooter 10000, Bonzo & DJ Keyframe (Artists unbekannt: 2)
+- 16.09. 23:00 | Sensorium | Techno Mittwoch (Artists unbekannt: 3)
+- 16.09. 22:00 | KitKat | Symbiotikka At Kitkat Club Berlin (Artists unbekannt: 1)
+- 17.09. 23:59 | Golden Gate | Donnerdogge (Artists unbekannt: 1)
+- 17.09. 18:00 | GIRI | Giri x Tm - 25Sommervorbei
+- 17.09. 22:00 | Ohm | Astral Industries (Artists unbekannt: 1)
+- 18.09. 23:59 | Golden Gate | Highly Addictive
+- 18.09. 23:59 | Kreuzwerk | Abov - FLINTA (Artists unbekannt: 1)
+- 18.09. 23:00 | Lokschuppen | F90 Summer Closing With Zwilling. / Hanà / DJ Tallboy / Kamäleon / Kling&klang / Amøn & More (Artists unbekannt: 9)
+- 18.09. 17:00 | Else | Else Season Closing x Sexyrecs (Artists unbekannt: 3)
+- 18.09. 23:00 | Sensorium | Ether
+- 18.09. 20:00 | KitKat | The Mystic Rose Meets Liquid Soul & Dr. Motte (Artists unbekannt: 2)
+- 18.09. 23:00 | Void Club & Hall | Drum And Bass W/codex (Srb), Datalog (Hu), Zorkow (Slo) - Human Made 006 (Artists unbekannt: 2)
+- 18.09. 18:00 | GIRI | Giri x Eclectic Limited
+- 18.09. 23:00 | RSO | Khidi Night w/ Ancient Methods, Boston 168 Live, Liza Rivs And Vulkanski
+- 19.09. 14:00 | OXI | Toy Tonics Presents Italomania (Open Air & Indoor 18 Hours) (Artists unbekannt: 1)
+- 19.09. 23:00 | about blank | Dualism With Speedboys Live, Cargo, Yova (Artists unbekannt: 2)
+- 19.09. 14:00 | Else | Else Season Closing x Teenage Dreams (Artists unbekannt: 2)
+- 19.09. 23:59 | Golden Gate | Klubnacht (Artists unbekannt: 2)
+- 19.09. 21:00 | Hoppetosse | Szenetreffen Shameless + Pbc Afterparty
+- 19.09. 23:00 | Sensorium | Senso Nacht (Artists unbekannt: 5)
+- 19.09. 23:00 | RSO | 11 Years Selected (Artists unbekannt: 5)
+- 19.09. 14:00 | about blank | Daytime Department By Tam Ias (14-22 Uhr)
+- 19.09. 19:00 | Humboldthain | Flightmode (Artists unbekannt: 4)
+- 19.09. 23:59 | Ohm | Life Classics With Antal
+- 19.09. 22:00 | Renate | Renate Klubnacht With Tecnica & Foggy
+- 19.09. 22:00 | Kreuzwerk | Tracey (Artists unbekannt: 10)
+- 19.09. 16:00 | Ohm | Pump Berlin Daytime Hosted By Anja Schneider With Skatman
+- 19.09. 18:00 | Lokschuppen | Neer Day & Night + Art Exhibition
+- 19.09. 23:00 | Void Club & Hall | Enter The Void #81
+- 20.09. 23:00 | Sensorium | Trig
+- 20.09. 21:00 | Lokschuppen | Wieder: Boiler Room Setup + Marketplace
+- 20.09. 14:00 | Else | Else Season Closing x Triangle Agency 10 Year Anniversary
+- 20.09. 13:00 | Æden | Sunday Service By Schnellschwimmer
+- 21.09. 22:00 | KitKat | Electric Monday Kitkat Club
+- 22.09. 23:00 | Lokschuppen | Phase:one
+- 23.09. 23:00 | Lokschuppen | Signals
+- 23.09. 22:00 | KitKat | Symbiotikka At Kitkat Club Berlin (Artists unbekannt: 1)
+- 23.09. 23:00 | Sensorium | Techno Mittwoch
+- 24.09. 18:00 | GIRI | Giri x Amour Africain
+- 24.09. 23:00 | Æden | Fornax Collective At Æden (Artists unbekannt: 3)
+- 24.09. 22:00 | Ohm | La Casita Presents: Banu, Ch3lo b2b Huammaniser, V.(live), Spicy Lab & Much More (Artists unbekannt: 3)
+- 24.09. 19:00 | ZENNER | 180 Min With Barker (Live)
+- 24.09. 23:59 | Golden Gate | Compute (Artists unbekannt: 1)
+- 25.09. 23:59 | Golden Gate | Aga Babies (Artists unbekannt: 2)
+- 25.09. 22:00 | Kreuzwerk | Overload #4 (Artists unbekannt: 5)
+- 25.09. 23:00 | Lokschuppen | Candyflip (Artists unbekannt: 8)
+- 25.09. 23:00 | Maaya | Sahra Party Presents Saliah In Berlin (Artists unbekannt: 2)
+- 25.09. 20:00 | KitKat | Piepshow - Septemberpiep
+- 25.09. 18:00 | GIRI | Giri x Dimensionless Unity: Love To The World
+- 25.09. 22:00 | Ohm | Twin (Artists unbekannt: 3)
+- 25.09. 23:00 | Void Club & Hall | 5 Years Animarum A Club Festival For Your Soul (Artists unbekannt: 8)
+- 25.09. 23:00 | RSO | Sesh (Artists unbekannt: 3)
+- 25.09. 22:00 | DNA. CLUB | Vektor (Artists unbekannt: 3)
+- 25.09. 23:00 | Tresor | Tresor Meets Non Series
+- 25.09. 23:00 | about blank | Expeditions (Artists unbekannt: 4)
+- 25.09. 23:00 | Hoppetosse | Musek Vol. Vii
+- 26.09. 10:00 | Haus der Visionäre | Giegling Berlin
+- 26.09. 23:59 | RSO | Xtrude w/ Matrixxman, Anabel Arroyo, Francois X, Againstme Live, Jensen Interceptor (Artists unbekannt: 3)
+- 26.09. 23:00 | Lokschuppen | Goat Ball Summer Closing (Artists unbekannt: 5)
+- 26.09. 22:00 | Æden | Obscura x Stay Toxic Free Entry
+- 26.09. 15:00 | OXI | OXI Groove Affair (Open Air + Indoor) (Artists unbekannt: 3)
+- 26.09. 19:00 | DNA. CLUB | Free Entry: Connect & Rave: Community Open Air At DNA. Club: Tech House, Techno & Bounce
+- 26.09. 18:00 | GIRI | Giri x Within
+- 26.09. 23:00 | Tresor | Tresor Klubnacht
+- 26.09. 22:00 | Ohm | Version
+- 26.09. 23:59 | Golden Gate | Cynosure Nacht (Artists unbekannt: 1)
+- 26.09. 22:00 | Hoppetosse | Quirk: Henriku Birthday Edition
+- 26.09. 14:00 | Renate | Renate Klubnacht + Open Air (Free Entry)
+- 26.09. 23:00 | Void Club & Hall | Free Party
+- 26.09. 19:00 | about blank | Blank Off Summer - Garden Closing 2026 (Artists unbekannt: 4)
+- 27.09. 23:00 | Sensorium | Trig
+- 27.09. 21:00 | Lokschuppen | Wieder: Boiler Room Setup + Marketplace (Artists unbekannt: 1)
+- 27.09. 12:00 | Lokschuppen | Kdw x Køse Summer Closing - Dancefloor + Market + Exhibition
+- 28.09. 22:00 | KitKat | Electric Monday Kitkat
+- 29.09. 23:00 | Lokschuppen | Phase:one
+- 30.09. 23:00 | Sensorium | Techno Mittwoch (Artists unbekannt: 2)
+- 30.09. 22:00 | KitKat | Symbiotikka At Kitkat Club Berlin
+- 30.09. 23:00 | Lokschuppen | Signals - 5€ Tickets - w/ Hoom, C:ko, DJ Primitivo (Artists unbekannt: 1)
+- 30.09. 23:00 | Tresor | Tresor New Faces Hosted By Tresor (Artists unbekannt: 3)
+- 01.10. 22:00 | Ohm | Ara x Ohm
+- 02.10. 23:59 | Kreuzwerk | Eau De Cologne (Artists unbekannt: 2)
+- 02.10. 23:00 | Ohm | Body Language pres. Body Talk
+- 02.10. 22:00 | Ritter Butzke | Keep My Letters With Guy J
+- 02.10. 18:00 | GIRI | Giri x Childhood Intelligence
+- 02.10. 20:00 | KitKat | Four Play
+- 02.10. 23:00 | Lokschuppen | Obsidia W / Jacidorex, Giø, Cargo, Paul Meier (Artists unbekannt: 7)
+- 02.10. 23:59 | ZENNER | Get Perlonized
+- 02.10. 23:00 | Void Club & Hall | Crave Tapes x Lmntl x Distant Gaze Records (Artists unbekannt: 2)
+- 02.10. 22:00 | Kater Blau | Together Forever: Weekender + Free Saturday Open Air With Sensus & Fäncy (Artists unbekannt: 5)
+- 02.10. 23:00 | Tresor | T35: Tresor Records Anniversary Day One
+- 03.10. 22:00 | Der Weiße Hase | Dämonenball
+- 03.10. 23:00 | Tresor | T35: Tresor Records Anniversary Day Two
+- 03.10. 23:00 | Lokschuppen | Kapitel Berlin (Artists unbekannt: 3)
+- 03.10. 23:00 | Hoppetosse | Yellow Mellow Invites: Legowelt (Artists unbekannt: 4)
+- 03.10. 22:00 | Ritter Butzke | Yubik
+- 03.10. 15:00 | OXI | Small Great House 'Garden Closing 2026' (Open Air + Indoor) (Artists unbekannt: 3)
+- 03.10. 23:00 | Void Club & Hall | Network 2.0
+- 03.10. 16:00 | Ohm | Pump Berlin Daytime Hosted By Anja Schneider With Karotte
+- 04.10. 19:00 | Haus der Visionäre | Spell pres. Moin (Artists unbekannt: 1)
+- 04.10. 21:00 | Lokschuppen | Wieder: Boiler Room Setup + Marketplace
 
-## Dubletten (86)
-- 27.08. 23:00 | Der Weiße Hase | Straff / Techno Thursday / 5€ Until 1 AM [ExternalId]
-- 27.08. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) x Remoto Records [Name+Tag: 'Renate Klubnacht + Open Air (Free Entry) x Remoto Records']
-- 27.08. 17:00 | about blank | Sektgarten x Jewish Lipsync Free Entry & Open Air [Name+Tag: '://sektgarten x JEWISH LIPSYNC [free entry & open air]']
-- 27.08. 22:00 | Ohm | Neighbourhood With Stenny, Tasha & Victor [Name+Tag: 'Neighbourhood with Stenny, Tasha & Victor']
-- 27.08. 22:00 | KitKat | Unity At Kitkat Club [ExternalId]
-- 27.08. 23:59 | Golden Gate | Sweetspot [Name+Tag: 'Sweetspot']
-- 27.08. 18:00 | Club der Visionaere | Rings Of Neptune [ExternalId]
-- 27.08. 22:00 | Berghain, Panorama Bar, Säule | Keyi Magazine [Zeitueberlappung 360 Min mit 'KEYI Magazine x Säule']
-- 27.08. 19:00 | DNA. CLUB | Free Entry: Live Music Jam Session & DJ Sets Community Open Air [Zeitueberlappung 240 Min mit 'JAM SESSION CLUB']
-- 27.08. 18:00 | GIRI | Giri x In Armor [ExternalId]
-- 27.08. 22:00 | Ritter Butzke | Calimas Sommerhütte Free Open Air [ExternalId]
-- 27.08. 23:00 | about blank | Amsterdam Techno Records And ://About Blank On Thursday's Amsterdam And Berlin [Name+Tag: 'amsterdam techno records and about blank on thursday's (Amsterdam and Berlin)']
-- 27.08. 23:00 | Lokschuppen | Chantal's House Of Shame [Name+Tag: 'Chantal's House of Shame']
-- 28.08. 23:00 | Sensorium | Ether [ExternalId]
-- 28.08. 18:00 | GIRI | Giri x Dubbdäck (A Bi / Pansexual Flirty Night) [ExternalId]
-- 28.08. 17:00 | about blank | Sektgarten x Garten Träume & Bingo Babes Free Entry & Open Air [ExternalId]
-- 28.08. 20:00 | KitKat | Piepshow - Augustpiep [Name+Tag: 'PiepShow - AugustPiep']
-- 28.08. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) With Handmade & Nina Queer [Name+Tag: 'Renate Klubnacht + Open Air (Free Entry) with Handmade & Nina Queer']
-- 28.08. 22:00 | DNA. CLUB | Free Entry: Connect & Rave: Community Open Air At DNA. Club: Techno, Bounce & Groove [ExternalId]
-- 28.08. 23:00 | M-Bia | Vexed With Fernanda Martins [Name+Tag: 'VEXED with Fernanda Martins']
-- 28.08. 23:00 | about blank | Dualism Weekender With Sachsentrance, Candyflip, Pfandidos [Name+Tag: 'DUALISM WEEKENDER with Sachsentrance, Candyflip, Pfandidos']
-- 28.08. 17:00 | Else | Else x Job Jobse invites [Name+Tag: 'Else x Job Jobse invites']
-- 28.08. 23:59 | Golden Gate | Golden Times [Name+Tag: 'Golden Times']
-- 28.08. 23:00 | Humboldthain | Nait - The Nocturnal Journey [ExternalId]
-- 28.08. 22:00 | Berghain, Panorama Bar, Säule | Love On The Rocks [Name+Tag: 'Love On The Rocks']
-- 28.08. 23:00 | RSO | Tapered [ExternalId]
-- 28.08. 23:00 | Der Weiße Hase | Techno Ihr Hasen [Name+Tag: 'Techno Ihr Hasen']
-- 28.08. 23:00 | Void Club & Hall | Berlin Bass Music Vibes With Yoink, Mikasta, Audite, Yoru, Migz, Jimi Handtrix, Saint Popsy [ExternalId]
-- 28.08. 23:00 | OXI | Decoy w/ Ruiz Osc1, Hujus, No Valentia, Bours?, Fran Lf, Caniche & Saya [ExternalId]
-- 28.08. 23:00 | Lokschuppen | Trancecore With Dbbd, DJ Guestlist, Glen West, Amøn, Eva Charley, Neuf And Many More [Name+Tag: 'Trancecore with DBBD, DJ GUESTLIST, Glen West, Amøn, Eva Charley, Neuf and many more']
-- 28.08. 23:00 | Tresor | Tresor Meets Fireground [Name+Tag: 'Tresor meets Fireground']
-- 28.08. 22:00 | Kater Blau | 4Q4 Error Festival: Heatwave [Name+Tag: '4Q4 ERROR Festival: Heatwave']
-- 28.08. 18:00 | Birgit & Bier | Birgits Weekender [Name+Tag: 'Birgits Weekender']
-- 28.08. 22:00 | Ritter Butzke | Indiskret Berlin [Name+Tag: 'Indiskret Berlin']
-- 28.08. 23:00 | Æden | Pikante / Benza, Eloisa, Alfa Cornae & Many More [Zeitueberlappung 600 Min mit 'Pikante / rhythm, spice and everything heiß']
-- 28.08. 15:00 | Club der Visionaere | Love Letters From Oslo [ExternalId]
-- 28.08. 23:59 | Ohm | Sneaker Social Club With DJ Hype [ExternalId]
-- 29.08. 15:00 | OXI | OXI Weekender 'Open Air + Indoor' [ExternalId]
-- 29.08. 15:00 | Sage | Christian Löffler Open Air Berlin [ExternalId]
-- 29.08. 12:00 | Maaya | After Fortuna Pool Party x Maaya [ExternalId]
-- 29.08. 23:00 | Tresor | Tresor Klubnacht [Name+Tag: 'Tresor Klubnacht']
-- 29.08. 23:59 | Ohm | Forever Unlimited & Steamroom [ExternalId]
-- 29.08. 14:00 | gART.n | Kotori Open Air [Name+Tag: 'Kotori Open Air']
-- 29.08. 23:59 | RSO | Xtrude x Laster w/ Alarico, Akua, Olivia Mendez, Sandrien And Kameliia [ExternalId]
-- 29.08. 22:00 | DNA. CLUB | Free Entry: Connect & Rave: Open Air At DNA. Club w. Techno, Bounce & Groove [ExternalId]
-- 29.08. 14:00 | Renate | Renate Klubnacht + Open Air (Free Entry) With Dabbs Traxx, Franz Scala & Dubbdäck [Name+Tag: 'Renate Klubnacht + Open Air (Free Entry) with DabbsTraxx, Franz Scala & DUBBDÄCK']
-- 29.08. 15:00 | Club der Visionaere | CDV End Of Summer Weekender [ExternalId]
-- 29.08. 20:00 | Ritter Butzke | Save The Rave - After Party - Free Entry Until 9pm [ExternalId]
-- 29.08. 23:00 | Sensorium | Senso Nacht [Zeitueberlappung 480 Min mit 'Senso Nacht bei Sensorium']
-- 29.08. 16:00 | Birgit & Bier | Pascale Voltaire & Friends - Open Air & Clubnight w/ Dirty Doering & Pascale Voltaire [ExternalId]
-- 29.08. 13:00 | Insel der Jugend | Home Again x Rotkäppchen Picnic At Insel Der Jugend [ExternalId]
-- 29.08. 21:00 | Ritter Butzke | Berlin Ist Raw At Garten Der Nacht [ExternalId]
-- 29.08. 21:00 | Der Weiße Hase | Liebe & Bass / Demo Aftershow [Name+Tag: 'Liebe & Bass / Demo Aftershow']
-- 29.08. 22:00 | Lokschuppen | Euphorik x Cycle pres. L.zwo, Noise Not War, DJ Sportschuh, Cargo, Alex Friday, L-aux, Madman [Zeitueberlappung 660 Min mit 'EUPHORIK x CYCLE pres.SHOKI287, L.zwo, Noise Not War, DJ SPORTSCHUH']
-- 29.08. 18:00 | GIRI | Ruta: Colombia Earthquake Aid [Zeitueberlappung 359 Min mit 'Giri x DUBBDÄCK (a bi / pansexual flirty night)']
-- 29.08. 23:59 | Berghain, Panorama Bar, Säule | Klubnacht [Name+Tag: 'Klubnacht']
-- 29.08. 14:00 | Else | Else x Innellea, Massano, Dyzen, Ede And Many More [ExternalId]
-- 29.08. 23:00 | Void Club & Hall | Neuro & Liquid - Drum & Bass On 3 Floors [ExternalId]
-- 29.08. 20:00 | Ritter Butzke | Save Raw Rave Afterparty [ExternalId]
-- 29.08. 23:00 | M-Bia | Goa Special pres. Klipsun Brasilian Psytrance [Name+Tag: 'GOA Special pres. Klipsun [Brasilian Psytrance]']
-- 29.08. 23:59 | Golden Gate | Highly Addictive [Name+Tag: 'Highly Addictive']
-- 29.08. 22:00 | Æden | Lilith Echoes Of Georgia [ExternalId]
-- 29.08. 13:00 | Æden | Nacktfleisch - Berlin Queer Summer Open Air August 2026 [Zeitueberlappung 540 Min mit 'Nacktfleisch - Berlin Queer Summer Open Air']
-- 29.08. 23:00 | DSTRKT | Blackworks Berlin - Dstrkt [Name+Tag: 'BlackWorks BERLIN - DSTRKT']
-- 30.08. 08:00 | KitKat | Nachspiel [Name+Tag: 'Nachspiel']
-- 30.08. 14:00 | gART.n | Oewersause Im Gart.n [Name+Tag: 'OewerSause im gART.n']
-- 30.08. 12:00 | Maaya | Amafreak .- Vigro Deep - Day Pool Party [ExternalId]
-- 30.08. 18:30 | DNA. CLUB | Free Entry: 'Playground' Open Stage: Community Open Air At DNA. Club: Jazz & House DJ Sets [Zeitueberlappung 270 Min mit '"Playground" - Open Stage']
-- 30.08. 14:00 | OXI | Day: Fadercult OXI Garden With Montezuma Live [Name+Tag: 'DAY: Fadercult @ OXI Garden with Montezuma [LIVE]']
-- 30.08. 14:00 | Kreuzwerk | 2 Years In Balance I Open Air & Indoor [ExternalId]
-- 30.08. 14:00 | Else | Hard Feelings - Mischluft All Day Long [Name+Tag: 'Hard Feelings - Mischluft All Day Long']
-- 30.08. 10:00 | Kater Blau | 257 x Santamusica With Chklte, Topper + More [Name+Tag: '257 x Santamusica with CHKLTE, Topper + more']
-- 30.08. 21:00 | Lokschuppen | Wieder: Boiler Room Setup + Marketplace [ExternalId]
-- 30.08. 15:00 | Sage | Kinky Beach Festival [ExternalId]
-- 30.08. 23:00 | Sensorium | Trig: From 23:00 - Xxx [ExternalId]
-- 31.08. 18:00 | Club der Visionaere | Mondays [ExternalId]
-- 31.08. 22:00 | KitKat | Electric Monday Summer Special [Name+Tag: 'Electric Monday Summer Special']
+## Dubletten (144)
+- 31.08. 22:00 | KitKat | Electric Monday Summer Special Kitkat Club [Zeitueberlappung 480 Min mit 'Electric Monday Summer Special']
 - 31.08. 23:00 | Tresor | Zenith x Singularity (Tresor + Aurora Bar / 2 Floors) [Zeitueberlappung 540 Min mit 'zenith x singularity']
+- 31.08. 18:00 | Club der Visionaere | Mondays [ExternalId]
 - 01.09. 18:00 | Club der Visionaere | Easymix [Name+Tag: 'Easymix']
-- 01.09. 23:00 | Der Weiße Hase | Smash & Hart Tuesday Rave & Open Air Garden Free Entry Until Midnight [Zeitueberlappung 540 Min mit 'Smash & HART']
 - 01.09. 18:00 | Humboldthain | Open Decks & Tischtennis [Zeitueberlappung 600 Min mit 'Open Decks & Tischtennis - Open Air & Indoors']
+- 01.09. 23:00 | Lokschuppen | Phase:one [ExternalId]
+- 01.09. 23:00 | Der Weiße Hase | Smash & Hart Tuesday Rave & Open Air Garden Free Entry Until Midnight [Zeitueberlappung 540 Min mit 'Smash & HART']
 - 01.09. 23:00 | OXI | Encore.une.fois / Tuesday Techno Rave [Name+Tag: 'encore.une.fois / tuesday techno rave']
-- 02.09. 23:00 | Tresor | Tresor New Faces Hosted By Carmen Electro [Zeitueberlappung 660 Min mit 'Tresor New Faces hosted by by Carmen Electro']
+- 01.09. 18:00 | Kater Blau | The Funky Chicken Club - Summer Closing [Name+Tag: 'The Funky Chicken Club: Summer Closing']
+- 02.09. 22:00 | KitKat | Symbiotikka At Kitkat Club Berlin [ExternalId]
+- 02.09. 23:00 | Lokschuppen | Signals - 5€ Tickets - With Trancestrudel All Night Long [ExternalId]
+- 02.09. 23:00 | Sensorium | Techno Mittwoch: Take Your Free Tickets [ExternalId]
 - 02.09. 18:00 | Club der Visionaere | Meltdown [ExternalId]
+- 02.09. 18:00 | GIRI | Giri x El Manto: Dario Jongerius Release [ExternalId]
+- 02.09. 23:00 | Tresor | Tresor New Faces Hosted By Carmen Electro [Zeitueberlappung 660 Min mit 'Tresor New Faces hosted by by Carmen Electro']
+- 02.09. 19:00 | Æden | Floating Over - Æden/œl Garten [ExternalId]
+- 03.09. 17:00 | about blank | Sektgarten x b2b Bash Free Entry & Open Air [ExternalId]
+- 03.09. 18:00 | GIRI | Giri x Local Slang [ExternalId]
+- 03.09. 22:00 | KitKat | Unity At Kitkat Club [ExternalId]
+- 03.09. 22:00 | Ohm | Técnica [ExternalId]
 - 03.09. 22:00 | Berghain, Panorama Bar, Säule | Omen Wapta [Zeitueberlappung 360 Min mit 'Omen Wapta x Säule']
+- 03.09. 18:00 | Club der Visionaere | Dunkle Dummies [ExternalId]
+- 03.09. 23:00 | Æden | Soundhall [ExternalId]
+- 03.09. 19:00 | DNA. CLUB | Free Entry: Live Music Jam Session & DJ Sets Community Open Air [ExternalId]
 - 03.09. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) x Rbl [Name+Tag: 'Renate Klubnacht + Open Air (Free Entry) x RBL']
+- 03.09. 17:00 | Maaya | Ripples With Tiago Cruz [Zeitueberlappung 300 Min mit 'RIPPLES - w/ Tiago Cruz']
+- 04.09. 22:00 | Kater Blau | Kater x Zapped & Anxiety Therapy [Name+Tag: 'Kater x Zapped & Anxiety Therapy']
+- 04.09. 23:00 | Lokschuppen | Lokschuppen Klubnacht pres. Paracek invites W Cargo, Mrgnstrn + More [Zeitueberlappung 600 Min mit 'LOKSCHUPPEN KLUBNACHT ']
+- 04.09. 22:00 | DNA. CLUB | Kta.mke - Progressive House On Open Air Terrace And Indoor Club [Zeitueberlappung 360 Min mit 'DNA. CLUB: COMMUNITY PARTY']
+- 04.09. 23:00 | M-Bia | 15Y Efn Anime Unicorn On K. Eycer Koksberg Fabitekk Phiesi District Red Morbid [Name+Tag: '15Y EFN • Anime • Unicorn on K. • Eycer • Koksberg • FabiTekk • Phiesi • District Red • Morbid']
+- 04.09. 23:00 | Der Weiße Hase | Antrieb #45 w/ Nachtigaller Vbr Residents [Name+Tag: 'Antrieb #45 W/ Nachtigaller VBR Residents']
+- 04.09. 16:00 | Renate | Renate Klubnacht + Open Air (Free Entry) With Seven [Name+Tag: 'Renate Klubnacht + Open Air (Free Entry) with SEVEN']
+- 04.09. 18:00 | Ritter Butzke | Deeportament Community With Nico Morano (Open Air & Indoor) - Free Entry Until 7 PM [Zeitueberlappung 780 Min mit 'Deeportament Community w/ Nico Morano (Open Air & Indoor)']
+- 04.09. 18:00 | Birgit & Bier | Birgits Weekender [Name+Tag: 'Birgits Weekender']
+- 04.09. 15:00 | Club der Visionaere | Roof x CDV [ExternalId]
+- 04.09. 23:00 | about blank | Motus x Locomotiva x Lieber With DJ Angel, Adb, DJ Hörde [Name+Tag: 'Motus x LOCOMOTIVA x LIEBER with DJ Angel, ADB, DJ HÖRDE']
+- 04.09. 22:00 | Ohm | Kookoo [Name+Tag: 'KOOKOO']
+- 04.09. 23:00 | Tresor | Tresor: The Continuous Present [Name+Tag: 'Tresor: The Continuous present']
+- 04.09. 22:00 | Berghain, Panorama Bar, Säule | Desert Ghosts [Name+Tag: 'Desert Ghosts']
+- 05.09. 23:59 | Berghain, Panorama Bar, Säule | Klubnacht [Name+Tag: 'Klubnacht']
+- 05.09. 23:00 | Lokschuppen | Milliampere x Ambra Pres Two Girls One Mom Half Night Long /W Danilo Filipe, George Radsport [Zeitueberlappung 600 Min mit 'MILLIAMPERE x AMBRA pres two girls one mom HALF NIGHT LONG']
+- 05.09. 18:30 | Ohm | Kinetic Ii, Secret Lineup + Tech Talk & Garden Pop-up [Name+Tag: 'KINETIC II, Secret Lineup + Tech Talk & Garden Pop-up']
+- 05.09. 23:00 | about blank | Amsterdam Techno Records And Depot Berlin Amsterdam & Berlin [Name+Tag: 'Amsterdam Techno Records and DEPOT BERLIN [Amsterdam & Berlin]']
+- 05.09. 14:00 | gART.n | Aroma [Name+Tag: 'AROMA']
+- 05.09. 14:00 | Renate | Renate Klubnacht + Open Air (Free Entry) With Threads Of Liberation x Zenith x Black.is [Name+Tag: 'Renate Klubnacht + Open Air (Free Entry) with Threads of Liberation x Zenith x Black.is']
+- 05.09. 23:00 | Kater Blau | Katernacht With Reflex Blue, Frinda Di Lanco, Telephones + More [Name+Tag: 'Katernacht with Reflex Blue, Frinda di Lanco, Telephones + more']
+- 05.09. 23:00 | Tresor | Tresor invites O/v/r [Name+Tag: 'Tresor invites O/V/R']
+- 05.09. 23:00 | Void Club & Hall | Expedicion 29 With Antiquis Anima, Carlsson, Rabbi Green, Sentient Number Six, Astraluna [Zeitueberlappung 240 Min mit 'ALOBOI – FIRST HEADLINE SHOW']
+- 05.09. 11:00 | Maaya | Family Pool Day [Name+Tag: 'Family Pool Day']
+- 05.09. 15:00 | OXI | Small Great House 'September Edition' (Open Air + Indoor) 19 Hours [Name+Tag: 'Small Great House 'September Edition' (Open Air + Indoor) 19 Hours']
+- 05.09. 23:00 | M-Bia | Intoxication Summer Special [Name+Tag: 'INTOXICATION Summer Special']
+- 05.09. 18:00 | Ritter Butzke | Giorgia Angiuli Live (Open Air) - Free Entry Until 7pm [Zeitueberlappung 240 Min mit 'Giorgia Angiuli Live (Open Air)']
+- 05.09. 22:00 | Ritter Butzke | Sascha Braemer [Name+Tag: 'Sascha Braemer']
+- 06.09. 14:00 | gART.n | Sonntags By Caleesi & Kreis [Name+Tag: 'Sonntags by Caleesi & Kreis']
+- 06.09. 08:00 | KitKat | Nachspiel [Name+Tag: 'Nachspiel']
+- 06.09. 18:30 | DNA. CLUB | Free Entry: 'Playground' Open Stage: Community Open Air At DNA. Club: Jazz & House DJ Sets [Zeitueberlappung 270 Min mit '"Playground" - Open Stage']
+- 06.09. 12:00 | Club der Visionaere | The Joint x Danube Sunday [ExternalId]
+- 07.09. 18:00 | Club der Visionaere | Musek Vol. Vi [ExternalId]
+- 07.09. 23:00 | Tresor | Singularity [Name+Tag: 'Singularity']
+- 08.09. 18:00 | Humboldthain | Open Decks & Tischtennis [Zeitueberlappung 600 Min mit 'Open Decks & Tischtennis - Open Air & Indoors']
+- 08.09. 23:00 | OXI | Encore.une.fois / Tuesday Techno Rave [Name+Tag: 'encore.une.fois / tuesday techno rave']
+- 08.09. 23:00 | Der Weiße Hase | Smash & Hart Tuesday Rave & Open Air Garden Free Entry Until Midnight [Zeitueberlappung 540 Min mit 'Smash & HART']
+- 09.09. 17:00 | Club der Visionaere | 10 Years Of Secret Society At CDV [Name+Tag: '10 Years of Secret Society at CDV']
+- 09.09. 23:00 | Tresor | Tresor New Faces Hosted By Super Sound Tool [Name+Tag: 'Tresor New Faces hosted by Super Sound Tool']
+- 09.09. 17:00 | Maaya | Pink Mango x Marina Hoermanseder + Bärencompany [Zeitueberlappung 300 Min mit 'Pink Mango – Afrobeats Afterwork at MAAYA Pool  - Marina Hoermanseder']
+- 10.09. 22:00 | OXI | Broken Noise [Name+Tag: 'Broken Noise']
+- 10.09. 18:00 | Renate | Renate Klubnacht + Open Air (Free Entry) With Solace Space [Zeitueberlappung 660 Min mit 'Renate Klubnacht + Open Air (Free Entry) x Solace Space']
+- 10.09. 19:00 | DNA. CLUB | Free Entry: Live Music Jam Session & DJ Sets Community Open Air [Zeitueberlappung 299 Min mit 'JAM SESSION CLUB']
+- 11.09. 23:00 | Tresor | Tresor Meets Enigma [Name+Tag: 'Tresor meets ENIGMA']
+- 11.09. 16:00 | Renate | 19 Years Renate - 7 Floors - 66 Hour Party With Angel D'lite, Stenny, Mary Lake, Daniel Avery [Zeitueberlappung 3960 Min mit '19 Years Renate - 7 Floors - 66 Hours Birthday Party']
+- 11.09. 19:00 | DNA. CLUB | Free Entry: Connect & Rave: Community Open Air At DNA. Club: Tech House, Techno & Bounce [Zeitueberlappung 180 Min mit 'Speed Dating &/ Friending']
+- 11.09. 23:00 | Ritter Butzke | Unison With Nonchalance, Bambi-s, Oliviero [Zeitueberlappung 360 Min mit 'Unison w/ Nonchalance, Bambi-S, Oliviero']
+- 11.09. 22:00 | Berghain, Panorama Bar, Säule | Laundrette [Name+Tag: 'Laundrette']
+- 11.09. 23:00 | about blank | Kinky Indie Party + 2nd Floor: 80S New Wave About Blank Berlin [Zeitueberlappung 420 Min mit 'Kinky Indie Party']
+- 11.09. 22:00 | Kater Blau | Forever 25 Curated By Franca & Mimi Love [Name+Tag: 'FOREVER 25 curated by Franca & Mimi Love']
+- 11.09. 23:00 | M-Bia | Bleib Deinen Linientreu Vs. Mega 90Er Rave [Name+Tag: 'Bleib deinen Linientreu vs. Mega 90er Rave']
+- 11.09. 23:00 | Humboldthain | Oszillation x Villa Wumms [Name+Tag: 'Oszillation x Villa Wumms']
+- 11.09. 23:59 | Hoppetosse | 23 Jahre Betriebsfeier [Name+Tag: '23 Jahre Betriebsfeier']
+- 11.09. 18:00 | Birgit & Bier | Birgits Weekender [Name+Tag: 'Birgits Weekender']
+- 11.09. 15:00 | Club der Visionaere | Understory: Anderson Live, Stereociti, Clovis, Fred Quest, Thilini [Zeitueberlappung 900 Min mit 'Understory']
+- 12.09. 23:00 | Tresor | Tresor invites Surgeon [Name+Tag: 'Tresor invites Surgeon']
+- 12.09. 18:00 | Ritter Butzke | Echos Of Utopia (Open Air & Indoor) - Free Entry Until 7pm [Name+Tag: 'Echos of Utopia (Open Air & Indoor) - free entry until 7pm']
+- 12.09. 15:00 | Club der Visionaere | It's Ours [Name+Tag: 'It's Ours']
+- 12.09. 23:00 | Der Weiße Hase | Die Lust AM Feiern [Name+Tag: 'Die Lust am Feiern']
+- 12.09. 23:59 | Golden Gate | Klubnacht [Name+Tag: 'Klubnacht']
+- 12.09. 22:00 | Humboldthain | Kneipenklänge /// Box Office 15€ [Name+Tag: 'KNEIPENKLÄNGE /// BOX OFFICE 15€']
+- 12.09. 12:00 | about blank | Staub XL [Name+Tag: 'STAUB XL']
+- 12.09. 23:00 | M-Bia | Inception With Phantom - 2 Floors - Goa & Techno [Zeitueberlappung 540 Min mit 'Inception w/ Phantom | 2 Floors | Goa & Techno - Valentine's Special']
+- 12.09. 14:00 | OXI | Sin Vergüenza Open Air + Indoor [Name+Tag: 'SIN VERGÜENZA [OPEN AIR + INDOOR]']
+- 12.09. 23:59 | Berghain, Panorama Bar, Säule | Klubnacht [Name+Tag: 'Klubnacht']
+- 13.09. 08:00 | KitKat | Nachspiel [Name+Tag: 'Nachspiel']
+- 13.09. 18:30 | DNA. CLUB | Free Entry: 'Playground' Open Stage: Community Open Air At DNA. Club: Jazz & House DJ Sets [Zeitueberlappung 270 Min mit '"Playground" - Open Stage']
+- 13.09. 14:00 | OXI | OXI Sundays (Open Air + Indoor) (Free Entry) [Zeitueberlappung 660 Min mit 'OXI SUNDAYS (OPEN AIR + INDOOR)']
+- 13.09. 14:00 | gART.n | Tipping Point Open Air Im Gart.n [Name+Tag: 'Tipping Point Open Air im gART.n']
+- 14.09. 23:00 | Tresor | Singularity [Name+Tag: 'Singularity']
+- 15.09. 23:00 | OXI | Encore.une.fois / Tuesday Techno Rave [Name+Tag: 'encore.une.fois / tuesday techno rave']
+- 15.09. 23:00 | Der Weiße Hase | Smash & Hart Tuesday Rave & Open Air Garden Free Entry Until Midnight [Zeitueberlappung 540 Min mit 'Smash & HART']
+- 15.09. 18:00 | Humboldthain | Open Decks & Tischtennis [Zeitueberlappung 600 Min mit 'Open Decks & Tischtennis - Open Air & Indoors']
+- 16.09. 23:00 | Tresor | Tresor New Faces Hosted By Secret Keywords [Name+Tag: 'Tresor New Faces hosted by Secret Keywords']
+- 16.09. 18:00 | Club der Visionaere | Zel At CDV [ExternalId]
+- 17.09. 19:00 | DNA. CLUB | Free Entry: Live Music Jam Session & DJ Sets Community Open Air [Zeitueberlappung 299 Min mit 'JAM SESSION CLUB']
+- 17.09. 22:00 | Berghain, Panorama Bar, Säule | Mäzen [Name+Tag: 'Mäzen']
+- 18.09. 18:00 | Ritter Butzke | Giddy Club - Free Entry Until 7pm [Name+Tag: 'Giddy Club - free entry until 7pm']
+- 18.09. 22:00 | Berghain, Panorama Bar, Säule | Italorama Bar [Name+Tag: 'Italorama Bar']
+- 18.09. 22:00 | Kater Blau | Praerie Festival Reboot [Zeitueberlappung 600 Min mit 'Praerie Festival Reboot at Kater']
+- 18.09. 23:00 | Tresor | Tresor Meets Tssrct [Name+Tag: 'Tresor meets TSSRCT']
+- 18.09. 23:00 | Renate | Sensus w/ DJ Fuckoff, P.vanillaboy, Pau And Many More [Name+Tag: 'SENSUS w/ DJ Fuckoff, P.Vanillaboy, PAU and many more']
+- 18.09. 18:00 | Birgit & Bier | Birgits Weekender [Name+Tag: 'Birgits Weekender']
+- 18.09. 23:00 | M-Bia | Sanctus Harder Styles Remzcore Is Back [Name+Tag: 'Sanctus Harder Styles [Remzcore is back]']
+- 19.09. 22:00 | Kater Blau | Kater x Riotvan & Muting The Noise [Name+Tag: 'Kater x Riotvan & Muting The Noise']
+- 19.09. 18:00 | DNA. CLUB | Mein Film Releaseparty [Name+Tag: 'Mein Film Releaseparty']
+- 19.09. 22:00 | Ritter Butzke | Solee [Name+Tag: 'Solee']
+- 19.09. 19:00 | DNA. CLUB | Connect & Rave: Community Open Air At DNA. Club: Tech House, Techno & Bounce [Zeitueberlappung 180 Min mit 'Mein Film Releaseparty']
+- 19.09. 23:59 | Berghain, Panorama Bar, Säule | Klubnacht [Name+Tag: 'Klubnacht']
+- 19.09. 14:00 | gART.n | Rebellion Der Träumer x Afterhour Sounds - Glitter And Glue The Soli-raveatory [Name+Tag: 'Rebellion der Träumer* X Afterhour Sounds - Glitter and Glue the Soli-Raveatory']
+- 19.09. 23:00 | Tresor | Tresor Klubnacht [Name+Tag: 'Tresor Klubnacht']
+- 20.09. 14:00 | gART.n | Raamo - Label Launch Party [Name+Tag: 'RAAMO - Label Launch Party']
+- 20.09. 18:30 | DNA. CLUB | Free Entry: 'Playground' Open Stage: Community Open Air At DNA. Club: Jazz & House DJ Sets [Zeitueberlappung 270 Min mit '"Playground" - Open Stage']
+- 20.09. 08:00 | KitKat | Nachspiel [Name+Tag: 'Nachspiel']
+- 21.09. 23:00 | Tresor | Singularity [Name+Tag: 'Singularity']
+- 22.09. 23:00 | OXI | Encore.une.fois / Tuesday Techno Rave [Name+Tag: 'encore.une.fois / tuesday techno rave']
+- 22.09. 18:00 | Humboldthain | Open Decks & Tischtennis [Zeitueberlappung 600 Min mit 'Open Decks & Tischtennis - Open Air & Indoors']
+- 22.09. 23:00 | Der Weiße Hase | Smash & Hart Tuesday Rave & Open Air Garden Free Entry Until Midnight [Zeitueberlappung 540 Min mit 'Smash & HART']
+- 23.09. 23:00 | Tresor | Tresor New Faces Hosted By Sabine Hoffmann [Name+Tag: 'Tresor New Faces hosted by Sabine Hoffmann']
+- 23.09. 23:00 | Lokschuppen | Signals - 5€ Tickets - With Anna Ullrich, Bouncy Cat, Tom Forelli [Zeitueberlappung 360 Min mit 'Signals']
+- 24.09. 19:00 | DNA. CLUB | Free Entry: Live Music Jam Session & DJ Sets Community Open Air [Zeitueberlappung 299 Min mit 'JAM SESSION CLUB']
+- 24.09. 22:00 | Berghain, Panorama Bar, Säule | Terenor [Zeitueberlappung 360 Min mit 'Terenor x Säule']
+- 25.09. 22:00 | Berghain, Panorama Bar, Säule | Wsnwg Live [Name+Tag: 'WSNWG Live']
+- 25.09. 23:00 | OXI | OXI Live: Modular / Synths - With Dr. Spree - Berlin And Amsterdam [Zeitueberlappung 540 Min mit 'OXI LIVE: MODULAR / SYNTHS - Amsterdam and Berlin']
+- 25.09. 22:00 | Kater Blau | 44 Hertz [Name+Tag: '44 Hertz']
+- 26.09. 23:00 | DNA. CLUB | Toilet Session: Blck Swan invites [Zeitueberlappung 240 Min mit 'Free Entry: Connect & Rave: Community Open Air At DNA. Club: Tech House, Techno & Bounce']
+- 26.09. 22:00 | Kater Blau | Katernacht + 30 Years Of Mira With Harry Romero, Lulah Francs, Rotciv + More [Name+Tag: 'Katernacht + 30 Years of Mira with Harry Romero, Lulah Francs, Rotciv + more']
+- 26.09. 23:00 | M-Bia | Tropical Nomads Presents: Technology (Nano Rec.) & Aram (Believe Lab) [Zeitueberlappung 600 Min mit 'Tropical Nomads presents: Technology (Nano Rec.)']
+- 26.09. 18:00 | Ritter Butzke | Sommersafari [Name+Tag: 'SommerSafari']
+- 26.09. 23:59 | Berghain, Panorama Bar, Säule | Klubnacht [Name+Tag: 'Klubnacht']
+- 27.09. 08:00 | KitKat | Nachspiel [Name+Tag: 'Nachspiel']
+- 27.09. 18:30 | DNA. CLUB | Free Entry: 'Playground' Open Stage: Community Open Air At DNA. Club: Jazz & House DJ Sets [Zeitueberlappung 270 Min mit '"Playground" - Open Stage']
+- 27.09. 14:00 | Lokschuppen | Lokschuppen Summer Closing [Zeitueberlappung 420 Min mit 'Kdw x Køse Summer Closing - Dancefloor + Market + Exhibition']
+- 28.09. 23:00 | Tresor | Singularity [Name+Tag: 'Singularity']
+- 29.09. 18:00 | Humboldthain | Open Decks & Tischtennis [Zeitueberlappung 600 Min mit 'Open Decks & Tischtennis - Open Air & Indoors']
+- 29.09. 23:00 | OXI | Encore.une.fois / Tuesday Techno Rave [Name+Tag: 'encore.une.fois / tuesday techno rave']
+- 29.09. 23:00 | Der Weiße Hase | Smash & Hart Tuesday Rave & Open Air Garden Free Entry Until Midnight [Zeitueberlappung 540 Min mit 'Smash & HART']
+- 03.10. 23:00 | M-Bia | Psylab Unity Psytrance Rave [ExternalId]
+- 03.10. 22:00 | Ritter Butzke | Conrad Taylor [Zeitueberlappung 540 Min mit 'Yubik']
 
 ## Club fehlt (0 Venues)
 
