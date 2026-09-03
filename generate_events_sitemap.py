@@ -26,7 +26,7 @@ from datetime import date, timedelta
 
 BASE = "https://www.gaesteliste030.de"
 LANGS = ["de", "en"]  # ES-Tageslisten leiten um; ES-Details kommen ueber hreflang
-DAYS_AHEAD = 14
+DAYS_AHEAD = 60  # 03.09.2026: 14 -> 60 (Audit #3: Halloween-Events standen sonst erst ab ~17.10. in der Sitemap)
 SITEMAP_FILE = "sitemap-events.xml"
 ES_MAP_FILE = "hreflang-es-map.json"
 FIRST_SEEN_FILE = "first-seen.json"
@@ -39,6 +39,13 @@ BYPASS_TOKEN = os.environ.get("GL030_BYPASS_TOKEN", "").strip()
 
 DETAIL_RE = re.compile(
     r'href="(/(?:de|en)/berlin/events/[a-z0-9-]+/\d{2}-\d{2}-\d{2}/[a-z0-9-]+)"'
+)
+# Themen-Kategorien (Halloween/Silvester): Event-Detailseiten liegen unter
+# /events/{theme}/{location-slug} (ohne Jahr = aktuelles Jahr) und sind 200 self-canonical;
+# die Standard-Detail-URLs (/{theme}/{date}/{slug}) leiten 301 dorthin.
+THEMED = ["halloween", "silvester"]
+THEMED_RE = re.compile(
+    r'href="(/(?:de|en)/berlin/events/(?:halloween|silvester)/(?!\d{4}(?:/|"))[a-z0-9-]+)"'
 )
 HREFLANG_ES_RE = re.compile(
     r'hreflang="es"\s+href="(?:https?://www\.gaesteliste030\.de)?'
@@ -115,6 +122,15 @@ def collect_event_paths() -> set:
             paths |= found
             print(f"  {url}: {len(found)} Events")
             time.sleep(1.5)  # hoeflich bleiben
+    # Themen-Kategorien ohne Datumsfenster (Audit #3, 03.09.2026)
+    for theme in THEMED:
+        for lang in LANGS:
+            url = f"{BASE}/{lang}/berlin/events/{theme}"
+            html = fetch(url)
+            found = set(THEMED_RE.findall(html))
+            paths |= found
+            print(f"  {url}: {len(found)} Themen-Events")
+            time.sleep(1.5)
     return paths
 
 
