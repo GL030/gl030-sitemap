@@ -21,22 +21,22 @@
     background:linear-gradient(90deg,#31314f 0%,#2b3149 24%,#243545 52%,#1d3b43 78%,#17423d 100%) fixed;
     background-color:#223546}
   a{text-decoration:none}
-  .phone{max-width:440px;margin:0 auto;padding-bottom:44px}
-  .topbar{background:#0b0f14;padding:8px 14px;display:flex;align-items:center;
-    position:relative;z-index:3;min-height:42px}
-  /* Logo sitzt frei auf der Kante zwischen Leiste und Bannerbild - kein Kreis,
-     der Schlagschatten loest es vom Hintergrund (26.08.2026). */
-  .topbar .brand-logo{position:absolute;left:50%;bottom:0;
-    transform:translate(-50%,50%);height:76px;width:auto;z-index:4;
-    filter:drop-shadow(0 9px 20px rgba(0,0,0,.7))}
+  .phone{max-width:440px;margin:0 auto;padding-bottom:44px;position:relative}
+  /* 12.09.2026: keine schwarze Menue-Leiste mehr - das Bannerbild fuellt den
+     Bildschirm bis ganz oben. Icons und Logo schweben ueber dem Bild. */
+  .topbar{background:transparent;padding:12px 14px 0;display:flex;align-items:flex-start;
+    position:absolute;top:0;left:0;right:0;z-index:3;min-height:0}
+  .topbar .brand-logo{position:absolute;left:50%;top:14px;transform:translateX(-50%);
+    height:82px;width:auto;z-index:4;filter:drop-shadow(0 8px 18px rgba(0,0,0,.65))}
   .topbar img{height:25px}
-  .topbar .icons{margin-left:auto;display:flex;gap:18px;color:#fff;font-size:1.1rem;opacity:.85}
+  .topbar .icons{margin-left:auto;display:flex;gap:18px;color:#fff;font-size:1.1rem;opacity:.9;
+    text-shadow:0 1px 8px rgba(0,0,0,.7)}
 
-  .hero{position:relative;min-height:262px;padding:86px 16px 34px;text-align:center;
+  .hero{position:relative;min-height:310px;padding:118px 16px 34px;text-align:center;
     display:flex;flex-direction:column;justify-content:center}
   .hero::before{content:"";position:absolute;inset:0;z-index:0;
-    background-image:linear-gradient(180deg,rgba(8,12,16,.18) 0%,rgba(8,12,16,.34) 55%,rgba(8,12,16,.62) 100%),url('https://gl030.github.io/gl030-sitemap/reports/assets/banner-berlin-2026.jpg');
-    background-size:cover;background-position:18% 28%;
+    background-image:linear-gradient(180deg,rgba(8,12,16,.42) 0%,rgba(8,12,16,.22) 30%,rgba(8,12,16,.36) 60%,rgba(8,12,16,.64) 100%),url('https://gl030.github.io/gl030-sitemap/reports/assets/banner-berlin-2026.jpg');
+    background-size:cover;background-position:18% 22%;
     -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 70%,rgba(0,0,0,.55) 86%,rgba(0,0,0,0) 100%);
     mask-image:linear-gradient(180deg,#000 0%,#000 70%,rgba(0,0,0,.55) 86%,rgba(0,0,0,0) 100%)}
   .hero > *{position:relative;z-index:1}
@@ -136,7 +136,7 @@
 <body>
 <div class="phone">
     <div class="topbar">
-        <img class="brand-logo" src="https://gl030.github.io/gl030-sitemap/reports/assets/gl030-logo-3d-1109.png" alt="GL030">
+        <img class="brand-logo" src="https://gl030.github.io/gl030-sitemap/reports/assets/gl030-logo-3d-1209.png" alt="GL030">
         <div class="icons"><span>&#9906;</span><span>&#9776;</span></div>
     </div>
 
