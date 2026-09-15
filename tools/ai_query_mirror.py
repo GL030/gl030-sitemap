@@ -50,6 +50,51 @@ def gql(query, variables):
     return data["data"]["viewer"]["zones"][0]["httpRequestsAdaptiveGroups"]
 
 
+# 15.09.2026: Antwortblock-Test auf Profilen (Gl.Application.Web/Helper/LocationAnswerTest.cs) -
+# Listen synchron halten. Gemessen werden On-Demand-Abrufe je Gruppe (DE+EN+ES summiert).
+ANSWER_TEST = set("""alte-munze gart.n kreuzwerk ayoka-eventspace the-coral birgit-bier parkbuhne-wuhlheide
+the-door trompete tabu-bar-club insomnia-erotic-nightclub bowling-spreehofe 1love4-kudamm astra-kulturhaus ohm
+flowers altes-ziegelwerk-klausdorf dream-club huxleys-neue-welt den lido mio studio1111 sage strandbad-erkner""".split())
+ANSWER_CONTROL = set("""cassiopeia suss-war-gestern napoleon-komplex kitty-cheng-bar solar-bar cafe-am-neuen-see
+prisma-bar arena-garten-der-welt zur-klappe dirty-rose amano-grand-central wild-at-heart rso haus-der-visionaere void
+mustang-bar554 top-disco panke silverwings grand amano-bar marrakesch-lounge-bar-nahe-alexanderplatz golden-gate
+kesselhaus frannz""".split())
+PROFILE_RX = re.compile(r"^/(de|en|es)/berlin/(locations|ubicaciones)/([^/]+)/?$")
+
+
+def gql_raw(query, variables):
+    req = urllib.request.Request(
+        "https://api.cloudflare.com/client/v4/graphql",
+        data=json.dumps({"query": query, "variables": variables}).encode(),
+        headers={"Authorization": "Bearer " + TOKEN, "Content-Type": "application/json"},
+    )
+    data = json.load(urllib.request.urlopen(req, timeout=60))
+    if data.get("errors"):
+        raise SystemExit("GraphQL error: " + json.dumps(data["errors"])[:500])
+    return data["data"]["viewer"]["zones"][0]
+
+
+def operations(start, end):
+    """524-Zaehler (Origin-Timeout) und echte Banner-Klicks je Tag. Banner-Klick = 302 auf
+    /api/v2/campaign/redirect/; 504/403 dort sind Early-Hints-Vorabrufe bzw. Bot-Sperren."""
+    q = """query($zone:String!,$start:Time!,$end:Time!){ viewer { zones(filter:{zoneTag:$zone}) {
+      t524: httpRequestsAdaptiveGroups(limit:100, filter:{datetime_geq:$start, datetime_lt:$end, edgeResponseStatus:524},
+        orderBy:[date_ASC]) { count dimensions { date } }
+      t5xx: httpRequestsAdaptiveGroups(limit:100, filter:{datetime_geq:$start, datetime_lt:$end, edgeResponseStatus_geq:500,
+        userAgent_notlike:"%early hints%"},
+        orderBy:[date_ASC]) { count dimensions { date } }
+      banner: httpRequestsAdaptiveGroups(limit:100, filter:{datetime_geq:$start, datetime_lt:$end,
+        clientRequestPath_like:"/api/v2/campaign/redirect/%", edgeResponseStatus:302},
+        orderBy:[date_ASC]) { count dimensions { date } } } } }"""
+    z = gql_raw(q, {"zone": ZONE, "start": start.isoformat().replace("+00:00", "Z"),
+                    "end": end.isoformat().replace("+00:00", "Z")})
+    days = defaultdict(lambda: {"524": 0, "5xx": 0, "banner": 0})
+    for key, col in (("t524", "524"), ("t5xx", "5xx"), ("banner", "banner")):
+        for r in z[key]:
+            days[r["dimensions"]["date"]][col] += r["count"]
+    return days
+
+
 def classify(path):
     for name, rx in CLASS_RULES:
         if rx.search(path):
@@ -106,6 +151,35 @@ def main():
     lines += ["", "## Top 60 Pfade (nur On-Demand)", "", "| # | Pfad | Abrufe | ChatGPT-User | Perplexity-User | Claude-User |", "|---:|---|---:|---:|---:|---:|"]
     for i, (p, n) in enumerate(sorted(total.items(), key=lambda kv: -kv[1])[:60], 1):
         lines.append(f"| {i} | `{p}` | {n} | {per_bot['ChatGPT-User'].get(p, 0)} | {per_bot['Perplexity-User'].get(p, 0)} | {per_bot['Claude-User'].get(p, 0)} |")
+    # Antwortblock-Test (Profile)
+    groups = {"Test": defaultdict(int), "Kontrolle": defaultdict(int)}
+    for p, n in total.items():
+        m = PROFILE_RX.match(p)
+        if not m:
+            continue
+        slug = m.group(3).lower()
+        if slug in ANSWER_TEST:
+            groups["Test"][m.group(1)] += n
+        elif slug in ANSWER_CONTROL:
+            groups["Kontrolle"][m.group(1)] += n
+    lines += ["", "## Antwortblock-Test Profile (On-Demand-Abrufe, Start 15./16.09.2026)", "",
+              "| Gruppe | de | en | es | Summe |", "|---|---:|---:|---:|---:|"]
+    for g, c in groups.items():
+        lines.append(f"| {g} | {c['de']} | {c['en']} | {c['es']} | {sum(c.values())} |")
+
+    # Betrieb: 524 + Banner-Klicks
+    try:
+        ops = operations(start, end)
+        lines += ["", "## Betrieb (Cloudflare, Stichprobe)", "",
+                  "| Tag | 524 Origin-Timeout | 5xx ohne Early Hints | Banner-Klicks (302) |", "|---|---:|---:|---:|"]
+        for d in sorted(ops):
+            o = ops[d]
+            lines.append(f"| {d} | {o['524']} | {o['5xx']} | {o['banner']} |")
+        lines.append(f"| **Summe** | **{sum(o['524'] for o in ops.values())}** | **{sum(o['5xx'] for o in ops.values())}** "
+                     f"| **{sum(o['banner'] for o in ops.values())}** |")
+    except SystemExit as ex:
+        lines += ["", f"_Betriebszahlen nicht abrufbar: {ex}_"]
+
     lines += ["", "Lesehilfe: On-Demand-Abrufe spiegeln konkrete Nutzerfragen; Crawler-Summen zeigen nur, wie tief die Indizes gehen. "
               "Datumsseiten = heute/Wochenende-Fragen, Profile = Club-Fragen, EN = Touristen."]
     out = "\n".join(lines) + "\n"
