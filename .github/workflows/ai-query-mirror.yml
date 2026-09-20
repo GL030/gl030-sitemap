@@ -1,0 +1,53 @@
+name: N19 AI-Query-Mirror woechentlich
+
+# Wochenbericht: Welche Seiten holen ChatGPT-User / Perplexity-User / Claude-User
+# auf Nutzeranfrage? Plus Betriebszeilen (524, 5xx ohne Early Hints, Banner-Klicks)
+# und Antwortblock-Test je Gruppe. Braucht Secret CF_ANALYTICS_TOKEN (Zone Analytics Read).
+# Cloudflare haelt die adaptive Aufloesung nur 7 Tage -> Lauf jeden Montag frueh.
+
+on:
+  schedule:
+    - cron: "15 4 * * 1"   # Montag 06:15 Berlin (Sommerzeit)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bericht erzeugen
+        env:
+          CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+        run: |
+          if [ -z "$CF_ANALYTICS_TOKEN" ]; then
+            echo "::error::Secret CF_ANALYTICS_TOKEN fehlt (Settings -> Secrets and variables -> Actions)"
+            exit 1
+          fi
+          python tools/ai_query_mirror.py
+
+      - name: Bericht committen
+        run: |
+          git config user.name "gl030-sitemap-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin main
+          git reset --soft origin/main
+          git add reports/ai-query-mirror/
+          if git diff --cached --quiet; then
+            echo "Keine Aenderung"
+          else
+            git commit -m "N19 AI-Query-Mirror $(date -u +%F)"
+            git push origin HEAD:main
+          fi
+
+      - name: Zusammenfassung
+        run: |
+          echo '## AI-Query-Mirror' >> $GITHUB_STEP_SUMMARY
+          head -40 reports/ai-query-mirror/latest.md >> $GITHUB_STEP_SUMMARY
