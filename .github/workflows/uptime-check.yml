@@ -1,0 +1,60 @@
+name: Uptime-Check gaesteliste030.de
+
+# Fruehwarnung (Schicht 4 nach Vorfall 14.09.2026): Startseite + Feed haengen bei
+# SQL-Fehlplan (RESOURCE_SEMAPHORE), Profile laufen weiter. Prueft alle 5 Min
+# Startseite (cache-gebustet -> trifft Origin, umgeht stale-if-error) und ein Profil.
+# Fehlschlag -> GitHub-Mail an den Committer (Settings -> Notifications -> Actions).
+# 403 (Bot-Schutz) zaehlt NICHT als Ausfall.
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Startseite und Profil pruefen
+        env:
+          GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
+        run: |
+          set +e
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
+          FAIL=0
+          check() {
+            URL="$1"; NAME="$2"
+            for i in 1 2; do
+              CB=$RANDOM$RANDOM
+              OUT=$(curl -s -o /dev/null -A "$UA" -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" \
+                    --max-time 25 -w "%{http_code} %{time_starttransfer}" "$URL?cb=$CB")
+              CODE=${OUT%% *}; TTFB=${OUT##* }
+              echo "$NAME Versuch $i: HTTP $CODE, TTFB ${TTFB}s"
+              if [ "$CODE" = "200" ] || [ "$CODE" = "403" ]; then
+                echo "| $NAME | $CODE | ${TTFB}s | ok |" >> $GITHUB_STEP_SUMMARY
+                return 0
+              fi
+              [ $i = 1 ] && sleep 30
+            done
+            echo "| $NAME | $CODE | ${TTFB}s | **AUSFALL** |" >> $GITHUB_STEP_SUMMARY
+            return 1
+          }
+          echo "| Seite | HTTP | TTFB | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          check "https://www.gaesteliste030.de/" "Startseite" || FAIL=1
+          check "https://www.gaesteliste030.de/de/berlin/locations/kitkat" "Profil kitkat" || FAIL=1
+          if [ $FAIL = 1 ]; then
+            {
+              echo ""
+              echo "## Runbook (Vorfall-Muster 14.09.2026)"
+              echo "1. RDP auf AX102, dann: sqlcmd -S . -E -Q \"SELECT COUNT(*) AS wartend FROM sys.dm_exec_query_memory_grants WHERE granted_memory_kb IS NULL\""
+              echo "2. Wenn wartend > 5: sqlcmd -S . -E -Q \"DBCC FREEPROCCACHE\" und 30 s warten. App-Pool-Restart hilft hier NICHT."
+              echo "3. Bleibt es rot: Cloudflare-Status pruefen, dann IIS/Eventlog."
+            } >> $GITHUB_STEP_SUMMARY
+            echo "::error::Ausfall erkannt - Runbook im Job-Summary"
+            exit 1
+          fi
