@@ -1,0 +1,21 @@
+name: Partner-Aenderungsmails nachziehen
+
+# 22.09.2026: Schliesst ein Partner den Browser mitten in der Bearbeitung, fehlt die Aenderungsmail.
+# Dieser Lauf meldet alle Bearbeitungen, die seit 15 Minuten still sind.
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  flush:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Offene Bearbeitungen melden
+        run: |
+          RESPONSE=$(curl -s -m 60 -w '\n%{http_code}' \
+            "https://www.gaesteliste030.de/account/register/flushedits?key=${{ secrets.PARTNER_FLUSH_KEY }}")
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          CODE=$(echo "$RESPONSE" | tail -n 1)
+          echo "HTTP $CODE: $BODY"
+          if [ "$CODE" != "200" ]; then echo "::warning::Aufruf fehlgeschlagen ($CODE)"; fi
