@@ -1,0 +1,22 @@
+name: Halloween/Silvester-Kategorie automatisch ergaenzen
+
+# 24.09.2026: Events im Themenfenster, deren Name das Thema nennt, bekommen die Themen-Kategorie und
+# erscheinen damit auf der Halloween-/Silvester-Seite (Importe Mo/Do, Partner-Eintraege jederzeit).
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+jobs:
+  autotag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Themen-Kategorie ergaenzen
+        run: |
+          RESPONSE=$(curl -s -m 120 -w '\n%{http_code}' \
+            "https://www.gaesteliste030.de/account/register/themeautotag?key=${{ secrets.PARTNER_FLUSH_KEY }}")
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          CODE=$(echo "$RESPONSE" | tail -n 1)
+          echo "HTTP $CODE"
+          echo "$BODY"
+          if [ "$CODE" != "200" ]; then echo "::warning::Aufruf fehlgeschlagen ($CODE)"; fi
