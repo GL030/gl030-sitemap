@@ -43,10 +43,20 @@ DETAIL_RE = re.compile(
 # Themen-Kategorien (Halloween/Silvester): Event-Detailseiten liegen unter
 # /events/{theme}/{location-slug} (ohne Jahr = aktuelles Jahr) und sind 200 self-canonical;
 # die Standard-Detail-URLs (/{theme}/{date}/{slug}) leiten 301 dorthin.
-THEMED = ["halloween", "silvester"]
+# 24.09.2026: Clubs mit mehreren Themen-Events haben Unterseiten /{theme}/{location}/{TT-MM-JJJJ}
+# (plus die Uebersicht /{theme}/{location}) - fehlten bisher; Slugs duerfen Punkte enthalten
+# (greifswalder-str.-23a163); ES laeuft unter /eventos/ (halloween, nochevieja).
+THEMED = {"de": ["halloween", "silvester"], "en": ["halloween", "silvester"],
+          "es": ["halloween", "nochevieja"]}
 THEMED_RE = re.compile(
-    r'href="(/(?:de|en)/berlin/events/(?:halloween|silvester)/(?!\d{4}(?:/|"))[a-z0-9-]+)"'
+    r'href="(/(?:de|en)/berlin/events/(?:halloween|silvester)/(?!\d{4}(?:/|"))[a-z0-9.-]+(?:/\d{2}-\d{2}-\d{4})?)"'
+    r'|href="(/es/berlin/eventos/(?:halloween|nochevieja)/(?!\d{4}(?:/|"))[a-z0-9.-]+(?:/\d{2}-\d{2}-\d{4})?)"'
 )
+THEMED_MULTI_RE = re.compile(r'^(.+)/\d{2}-\d{2}-\d{4}$')
+# Themen-Fenster: Detail-URLs (/party/TT-MM-JJ/slug) aus diesen Zeitraeumen koennen per Canonical auf die
+# Themen-URL zeigen (seit 24.09.2026) - solche Doppel-URLs gehoeren nicht in die Sitemap.
+CANONICAL_RE = re.compile(r'rel="canonical" href="(?:https?://www\.gaesteliste030\.de)?([^"]+)"')
+DATE_IN_PATH_RE = re.compile(r'/(\d{2})-(\d{2})-(\d{2})/')
 HREFLANG_ES_RE = re.compile(
     r'hreflang="es"\s+href="(?:https?://www\.gaesteliste030\.de)?'
     r'(/es/berlin/eventos/[a-z0-9-]+/\d{2}-\d{2}-\d{2}/[a-z0-9-]+)"'
@@ -123,15 +133,41 @@ def collect_event_paths() -> set:
             print(f"  {url}: {len(found)} Events")
             time.sleep(1.5)  # hoeflich bleiben
     # Themen-Kategorien ohne Datumsfenster (Audit #3, 03.09.2026)
-    for theme in THEMED:
-        for lang in LANGS:
-            url = f"{BASE}/{lang}/berlin/events/{theme}"
+    for lang, themes in THEMED.items():
+        seg = "eventos" if lang == "es" else "events"
+        for theme in themes:
+            url = f"{BASE}/{lang}/berlin/{seg}/{theme}"
             html = fetch(url)
-            found = set(THEMED_RE.findall(html))
+            found = {a or b for a, b in THEMED_RE.findall(html)}
+            # Mehrfach-Clubs: Uebersichtsseite /{theme}/{location} zusaetzlich aufnehmen
+            found |= {m.group(1) for m in map(THEMED_MULTI_RE.match, list(found)) if m}
             paths |= found
-            print(f"  {url}: {len(found)} Themen-Events")
+            print(f"  {url}: {len(found)} Themen-URLs")
             time.sleep(1.5)
     return paths
+
+
+def in_theme_window(path: str) -> bool:
+    m = DATE_IN_PATH_RE.search(path)
+    if not m:
+        return False
+    dd, mm = int(m.group(1)), int(m.group(2))
+    return (mm == 10 and dd >= 24) or (mm == 11 and dd <= 2) or (mm == 12 and dd >= 28) or (mm == 1 and dd <= 3)
+
+
+def drop_themed_duplicates(paths: set) -> set:
+    """Detail-URLs im Themen-Fenster, deren Canonical auf eine andere URL zeigt, entfernen."""
+    candidates = sorted(p for p in paths if DETAIL_RE.fullmatch(f'href="{p}"') and in_theme_window(p))
+    dropped = set()
+    for p in candidates[:MAX_DETAIL_FETCHES]:
+        html = fetch(BASE + p)
+        m = CANONICAL_RE.search(html)
+        if m and m.group(1) != p:
+            dropped.add(p)
+            print(f"  Doppel-URL (Canonical -> {m.group(1)}): {p}")
+        time.sleep(0.7)
+    print(f"Themen-Doppel-URLs: {len(dropped)} von {len(candidates)} geprueften entfernt")
+    return paths - dropped
 
 
 def resolve_es_paths(de_paths: set, es_map: dict) -> set:
@@ -245,6 +281,8 @@ def main():
         print("FEHLER: 0 Events gefunden - Sitemap wird NICHT ueberschrieben "
               "(vermutlich Blockierung oder Strukturaenderung).", file=sys.stderr)
         sys.exit(1)
+
+    current = drop_themed_duplicates(current)
 
     es_map = load_json(ES_MAP_FILE)
     de_paths = {p for p in current if p.startswith("/de/")}
