@@ -161,24 +161,18 @@ body .page-header:has(.gl-hero-logo)::after { content: '' !important; position: 
 body .page-header:has(.gl-hero-logo) .container { position: relative !important; z-index: 1 !important; }
 </style><style id="gl-mock-club-event">
 @media (max-width: 991.98px) {
-  /* Leiste: Logo mittig, Groesse unveraendert, Luft oben/unten */
-  #root-nav.navbar { background-color: #0b0f14 !important; background-image: none !important; box-shadow: none !important; padding: 14px 16px 10px !important; min-height: 64px; }
-  #root-nav .navbar-brand { position: absolute !important; left: 50% !important; top: 14px; transform: translateX(-50%) !important; margin: 0 !important; padding: 0 !important; visibility: visible !important; }
-  #root-nav .navbar-brand img { display: block; }
+  /* Logo mittig, Groesse unveraendert */
+  #root-nav .navbar-brand { position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; margin: 0 !important; visibility: visible !important; }
+  /* dunkler Streifen hinter Leiste + Kategorien statt weiss */
   header .fixed-top, header > div { background: #0b0f14 !important; }
-  /* Kategorien: dunkle Pill-Leiste, nur so breit wie der Inhalt, mittig, mit Luft nach oben und unten */
-  .tab-menu-component.style-default { background: #0b0f14 !important; border: 0 !important; -o-border-image: none !important; border-image: none !important; padding: 2px 0 12px !important; }
+  #root-nav.navbar { background-color: #0b0f14 !important; background-image: none !important; box-shadow: none !important; }
+  .tab-menu-component.style-default { background: #0b0f14 !important; border: 0 !important; -o-border-image: none !important; border-image: none !important; }
   .tab-menu-component .start-overflow-indicator, .tab-menu-component .end-overflow-indicator { display: none !important; }
-  .tab-menu-component .container { padding: 0 16px !important; }
-  .tab-menu-component .container .nav { background: rgba(255,255,255,.06) !important; border: 1px solid rgba(255,255,255,.12) !important; border-radius: 999px !important; padding: 4px !important; margin: 0 auto !important; width: max-content; max-width: 100%; gap: 4px; }
-  .tab-menu-component .nav .nav-item .nav-link { border-radius: 999px !important; padding: 6px 13px !important; font-size: .72rem !important; letter-spacing: .06em; text-transform: uppercase; color: #9fb0c0 !important; border: 0 !important; background: transparent !important; line-height: 1.3; }
+  .tab-menu-component .container { padding: 0 !important; }
+  .tab-menu-component .container .nav { background: rgba(255,255,255,.06) !important; border: 1px solid rgba(255,255,255,.12) !important; border-radius: 999px !important; padding: 4px !important; margin: 4px 16px 8px !important; width: max-content; max-width: calc(100% - 32px); gap: 4px; }
+  .tab-menu-component .nav .nav-item .nav-link { border-radius: 999px !important; padding: 6px 13px !important; font-size: .72rem !important; letter-spacing: .06em; text-transform: uppercase; color: #9fb0c0 !important; border: 0 !important; background: transparent !important; }
   .tab-menu-component .nav .nav-item.active .nav-link { background: linear-gradient(90deg,#00aa82,#00b4dc) !important; color: #04231d !important; font-weight: 700 !important; }
   .tab-menu-component .nav .nav-item.spacing-start, .tab-menu-component .nav .nav-item.spacing-end { display: none !important; }
-  /* Eventseite: Werbeplatz zwischen Leiste und Flyer entfernt, Inhalt rueckt mit gleichmaessigem Abstand nach oben */
-  .page-body > .layout-container > .container > .beff1b4931862-component:first-child { display: none !important; }
-  /* Inhalt beginnt unter der 114px hohen Leiste, Club-Kopfbild rutscht darunter (Bild bleibt oben) */
-  body:not(:has(.page-header)) .page-body { margin-top: 114px !important; padding-top: 16px !important; }
-  .page-header.theme-light { padding-top: 114px !important; }
 }
 </style></head>
 <body class="gl-app-2nd-level-nav" itemscope itemtype="http://schema.org/LocalBusiness">
