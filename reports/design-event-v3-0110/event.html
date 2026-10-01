@@ -150,22 +150,22 @@
 <style id="gl-mock-event-v3">
 @media (max-width: 991.98px) {
   /* Leiste: Kartenblau #1b2735 nur hinter dem Logo; Logo mittig, Groesse unveraendert */
-  #root-nav.navbar { background-color: #1b2735 !important; background-image: none !important; box-shadow: none !important; padding: 14px 16px 10px !important; min-height: 64px; }
-  #root-nav .navbar-brand { position: absolute !important; left: 50% !important; top: 14px; transform: translateX(-50%) !important; margin: 0 !important; padding: 0 !important; visibility: visible !important; }
-  #root-nav .navbar-brand img { display: block; }
-  header .fixed-top, header > div { background: transparent !important; }
+html body:not(:has(.gl-hero-logo)) #root-nav.navbar { background-color: #1b2735 !important; background-image: none !important; box-shadow: none !important; padding: 14px 16px 10px !important; min-height: 64px; }
+html body:not(:has(.gl-hero-logo)) #root-nav .navbar-brand { position: absolute !important; left: 50% !important; top: 14px; transform: translateX(-50%) !important; margin: 0 !important; padding: 0 !important; visibility: visible !important; }
+html body:not(:has(.gl-hero-logo)) #root-nav .navbar-brand img { display: block; }
+html body:not(:has(.gl-hero-logo)) header .fixed-top, html body:not(:has(.gl-hero-logo)) header > div { background: transparent !important; }
   /* Pill-Leiste liegt auf dem Seitenhintergrund (Verlauf), nicht auf einem schwarzen Block */
-  .tab-menu-component.style-default { background: transparent !important; border: 0 !important; -o-border-image: none !important; border-image: none !important; padding: 10px 0 0 !important; }
-  .tab-menu-component .start-overflow-indicator, .tab-menu-component .end-overflow-indicator { display: none !important; }
-  .tab-menu-component .container { padding: 0 16px !important; }
-  .tab-menu-component .container .nav { background: rgba(13,19,27,.72) !important; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.12) !important; border-radius: 999px !important; padding: 4px !important; margin: 0 auto !important; width: max-content; max-width: 100%; gap: 4px; scrollbar-width: none !important; }
-  .tab-menu-component .nav::-webkit-scrollbar, .tab-menu-component .container::-webkit-scrollbar { display: none !important; height: 0 !important; }
-  .tab-menu-component .nav .nav-item .nav-link { border-radius: 999px !important; padding: 6px 13px !important; font-size: .72rem !important; letter-spacing: .06em; text-transform: uppercase; color: #9fb0c0 !important; border: 0 !important; background: transparent !important; line-height: 1.3; }
-  .tab-menu-component .nav .nav-item.active .nav-link { background: linear-gradient(90deg,#00aa82,#00b4dc) !important; color: #04231d !important; font-weight: 700 !important; }
-  .tab-menu-component .nav .nav-item.spacing-start, .tab-menu-component .nav .nav-item.spacing-end { display: none !important; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component.style-default { background: transparent !important; border: 0 !important; -o-border-image: none !important; border-image: none !important; padding: 10px 0 0 !important; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component .start-overflow-indicator, html body:not(:has(.gl-hero-logo)) .tab-menu-component .end-overflow-indicator { display: none !important; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component .container { padding: 0 16px !important; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component .container .nav { background: rgba(13,19,27,.72) !important; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.12) !important; border-radius: 999px !important; padding: 4px !important; margin: 0 auto !important; width: max-content; max-width: 100%; gap: 4px; scrollbar-width: none !important; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component .nav::-webkit-scrollbar, html body:not(:has(.gl-hero-logo)) .tab-menu-component .container::-webkit-scrollbar { display: none !important; height: 0 !important; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component .nav .nav-item .nav-link { border-radius: 999px !important; padding: 6px 13px !important; font-size: .72rem !important; letter-spacing: .06em; text-transform: uppercase; color: #9fb0c0 !important; border: 0 !important; background: transparent !important; line-height: 1.3; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component .nav .nav-item.active .nav-link { background: linear-gradient(90deg,#00aa82,#00b4dc) !important; color: #04231d !important; font-weight: 700 !important; }
+html body:not(:has(.gl-hero-logo)) .tab-menu-component .nav .nav-item.spacing-start, html body:not(:has(.gl-hero-logo)) .tab-menu-component .nav .nav-item.spacing-end { display: none !important; }
   /* Inhalt: 64px Leiste + 46px Pill-Zeile, Flyer mit 12px Abstand */
-  .page-body > .layout-container > .container > .beff1b4931862-component:first-child { display: none !important; }
-  body:not(:has(.page-header)) .page-body { margin-top: 110px !important; padding-top: 12px !important; }
+html body:not(:has(.gl-hero-logo)) .page-body > .layout-container > .container > .beff1b4931862-component:first-child { display: none !important; }
+html body:not(:has(.page-header)) .page-body { margin-top: 110px !important; padding-top: 12px !important; }
 }
 </style></head>
 <body class="gl-app-2nd-level-nav" >
