@@ -1,0 +1,27 @@
+name: EN/ES-Qualitaets-Check
+
+# 02.10.2026: Publish-Gate-Messung - deutsche Texte, Datumswidersprueche, Eigennamen, Dubletten, Schema auf EN/ES-Seiten
+on:
+  schedule:
+    - cron: '45 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check
+        env:
+          GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
+        run: python tools/translation_check.py
+      - name: Commit
+        run: |
+          git config user.name "gl030-bot"
+          git config user.email "bot@gaesteliste030.de"
+          git add reports/translation-check.md reports/translation-check.json
+          git commit -m "EN/ES-Qualitaets-Check $(date -u +%Y-%m-%d)" || echo "keine Aenderung"
+          git push
