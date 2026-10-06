@@ -1,0 +1,89 @@
+name: Fehler-Alarm (5xx + Durchklick)
+
+# 05.10.2026 nach dem Ausfall "Event eintragen" (04./05.10.): Serverfehler auf kritischen Seiten frueh erkennen.
+# 1) Cloudflare-Analytics: Anzahl HTTP 5xx der letzten 15 Min auf kritischen Pfaden (braucht Secret CF_ANALYTICS_TOKEN)
+# 2) Durchklick: kritische Seiten laden, Fehlerseite ("Etwas ist schiefgelaufen") oder 5xx = Alarm
+# Alarm = fehlgeschlagener Job -> GitHub-Mail (Settings -> Notifications -> Actions: "Only failed workflows").
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  alarm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Pruefen
+        env:
+          CF_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+          GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, sys, time, datetime, urllib.request
+          summary = open(os.environ["GITHUB_STEP_SUMMARY"], "a")
+          fail = []
+          zone = "917c95aa0daa0628e84e3c9aa0ae81da"
+          critical = ["/account/createevent%", "%/gaesteliste%", "%/verlosung%", "%/guestlist%", "%/competition%",
+                      "%/lista-de-invitados%", "/account/profile%", "/checkin.ashx%", "/qr.ashx%", "/pl.ashx%"]
+          tok = os.environ.get("CF_TOKEN", "").strip()
+          summary.write("## 5xx der letzten 15 Minuten\n\n")
+          if tok:
+              end = datetime.datetime.utcnow().replace(microsecond=0)
+              start = end - datetime.timedelta(minutes=15)
+              total = []
+              for pat in critical:
+                  q = {"query": 'query{viewer{zones(filter:{zoneTag:"%s"}){httpRequestsAdaptiveGroups(limit:20,filter:{datetime_geq:"%sZ",datetime_leq:"%sZ",edgeResponseStatus_geq:500,clientRequestPath_like:"%s"},orderBy:[count_DESC]){count dimensions{clientRequestPath edgeResponseStatus}}}}}' % (zone, start.isoformat(), end.isoformat(), pat)}
+                  req = urllib.request.Request("https://api.cloudflare.com/client/v4/graphql", data=json.dumps(q).encode(),
+                                               headers={"Authorization": "Bearer " + tok, "Content-Type": "application/json"})
+                  try:
+                      d = json.load(urllib.request.urlopen(req, timeout=20))
+                      for r in d["data"]["viewer"]["zones"][0]["httpRequestsAdaptiveGroups"]:
+                          total.append((r["count"], r["dimensions"]["clientRequestPath"], r["dimensions"]["edgeResponseStatus"]))
+                  except Exception as e:
+                      summary.write("- Abfrage %s fehlgeschlagen: %s\n" % (pat, e))
+              n = sum(c for c, _, _ in total)
+              for c, p, s in sorted(total, reverse=True)[:15]:
+                  summary.write("- %s × HTTP %s %s\n" % (c, s, p))
+              summary.write("\nSumme: %s\n\n" % n)
+              if n >= 3:
+                  fail.append("%s Serverfehler (5xx) auf kritischen Seiten in 15 Min" % n)
+          else:
+              summary.write("_Secret CF_ANALYTICS_TOKEN fehlt - 5xx-Pruefung uebersprungen._\n\n")
+
+          # Durchklick
+          UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
+          bp = os.environ.get("GL030_BYPASS_TOKEN", "")
+          def get(url):
+              r = urllib.request.Request(url + ("&" if "?" in url else "?") + "cb=%d" % time.time(), headers={"User-Agent": UA, "X-GL030-Auth": bp})
+              try:
+                  with urllib.request.urlopen(r, timeout=30) as x:
+                      return x.status, x.read().decode("utf-8", "replace")
+              except urllib.error.HTTPError as e:
+                  return e.code, e.read().decode("utf-8", "replace") if e.fp else ""
+              except Exception as e:
+                  return 0, str(e)
+          summary.write("## Durchklick\n\n| Seite | HTTP | Ergebnis |\n|---|---|---|\n")
+          st, home = get("https://www.gaesteliste030.de/de/")
+          gl = re.findall(r'href="(/de/berlin/events/[^"]+/gaesteliste)"', home)
+          pages = [("Startseite", "https://www.gaesteliste030.de/"),
+                   ("Event eintragen Schritt 1", "https://www.gaesteliste030.de/account/createevent/step1"),
+                   ("Partner-Login", "https://www.gaesteliste030.de/account/register")]
+          if gl:
+              pages.append(("Gaesteliste (erste im Feed)", "https://www.gaesteliste030.de" + gl[0]))
+          for name, url in pages:
+              s, body = get(url)
+              err = s >= 500 or "Etwas ist schiefgelaufen" in body or "Something went wrong" in body
+              ok = (s == 200 or s == 403) and not err
+              summary.write("| %s | %s | %s |\n" % (name, s, "ok" if ok else "**FEHLER**"))
+              if not ok:
+                  fail.append("%s: HTTP %s%s" % (name, s, " (Fehlerseite)" if err else ""))
+          if fail:
+              summary.write("\n## ALARM\n\n" + "\n".join("- " + f for f in fail) + "\n")
+              print("::error::" + " | ".join(fail))
+              sys.exit(1)
+          PY
