@@ -48,3 +48,7 @@
   background-color:#0b040a !important;
 }
 .app-theme-dark{--gl-card:#15131a;--gl-card-soft:#110f16;--gl-link:#ff5c5c}
+
+/* Halloween-Logo (2:1 statt 2,5:1): Hoehe automatisch, Breite bleibt */
+.gl-hero-logo{height:auto!important;width:230px!important}
+img[data-cy="gl030logo"]{height:auto!important;width:96px!important}
