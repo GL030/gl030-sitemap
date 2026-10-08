@@ -6,3 +6,10 @@
 .tab-menu-component .nav > .nav-item:has(> a[href$="/day-party"]) { order: 5; }
 .tab-menu-component .nav > .nav-item:has(> a[href$="/open-air"]), .tab-menu-component .nav > .nav-item:has(> a[href$="/aire-libre"]),
 .gl-pill-wrap .nav-item:has(> a[href$="/es/artista"]) { display: none !important; }
+/* 08.10.2026 Staedte raus (nur Berlin): mobiles Menue inkl. Trennstrich davor, Desktop-Dropdown, Footer */
+.navbar-nav li.nav-item:has(> a[href="https://www.gaesteliste030.de"]), .navbar-nav li.nav-item:has(> a[href*="gaesteliste040.de"]),
+.navbar-nav li.nav-divider:has(+ li.nav-item > a[href="https://www.gaesteliste030.de"]),
+li.nav-item.dropdown:has(.dropdown-item[href*="gaesteliste040.de"]),
+.col-md .nav-item:has(> a[href="https://www.gaesteliste030.de"]), .col-md .nav-item:has(> a[href*="gaesteliste040.de"]) { display: none !important; }
+/* 08.10.2026 grosses Kopf-Logo verlinkt zur Startseite (Link setzt das Snippet) */
+a.gl-hero-home { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
