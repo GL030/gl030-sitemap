@@ -6,3 +6,4 @@ html.app-theme-dark .event-list .metadata, html.app-theme-dark .event-list .meta
 html.app-theme-dark .badge-hashtag.tag-secondary { color: #b0bfcc !important; }
 html.app-theme-dark .badge.badge-disabled { color: #b0bfcc !important; }
 html.app-theme-dark .indicator { color: #b6c3cf !important; }
+html.app-theme-dark .btn.btn-outline-secondary { color: #d5dee7 !important; border-color: rgba(255, 255, 255, .28) !important; }
