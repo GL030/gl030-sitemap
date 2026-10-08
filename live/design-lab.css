@@ -1,4 +1,4 @@
-/* GL030 Design-Lab (deploy-frei) – wird per Cloudflare-Snippet "designlab" NUR auf Seiten mit
+/* GL030 Design-Lab (deploy-frei) – wird per Cloudflare-Snippet "designlab" (CSS dort eingebettet, Deploy per lab-deploy.sh) NUR auf Seiten mit
    <html class="... app-theme-halloween ..."> inline in den <head> geschrieben (Edge-Cache 60 s).
    Regeln IMMER auf die Seitenfamilie eingrenzen:
      Kopf-Logo-Seiten (Feed 30./31.10., Halloween-Übersicht):  body:has(.gl-hero-logo) ...
