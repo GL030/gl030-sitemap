@@ -1,1 +1,1 @@
-{}
+{"^/(de|en)/berlin/events/halloween/?$|^/es/berlin/eventos/halloween/?$": "/* 08.10.2026 bis Code-Fix: Halloween-Uebersicht ab 30.10. */ .items-group:has(.group-title a[href*=\"halloween/29-10-26\"]) { display: none !important; }"}
