@@ -5,3 +5,5 @@
      Eventseiten: TABU (abgenommen 08.10.) – keine Regel ohne body:has(.gl-hero-logo)
    Nach Freigabe gesammelt in Assets/stylesheets/themes/_halloween.scss übernehmen und Datei leeren.
    Vergleich ohne Lab: ?nolab=1 an die URL hängen. */
+/* 08.10.2026 freigegeben (1a): Kopf beim Scrollen – dunkler Hintergrund endet auf Pillenmitte; Feed 30./31.10. + Uebersicht */
+html.app-theme-halloween.gl-scrolled body:has(.gl-hero-logo) .gl-pill-wrap { background: linear-gradient(to bottom, #15131a 0, #15131a 21px, transparent 21px) !important; padding-bottom: 0 !important; box-shadow: none !important; } html.app-theme-halloween.gl-scrolled body:has(.gl-hero-logo) .gl-pill-wrap .tab-menu-component, html.app-theme-halloween.gl-scrolled body:has(.gl-hero-logo) .gl-pill-wrap .tab-menu-component.style-default { background: transparent !important; } html.app-theme-halloween.gl-scrolled body:has(.gl-hero-logo) .gl-pill-wrap .tab-menu-component .nav { background: #15131a !important; box-shadow: 0 6px 14px rgba(0,0,0,.45) !important; }
