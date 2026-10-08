@@ -1,0 +1,7 @@
+/* GL030 Design-Lab (deploy-frei) – wird per Cloudflare-Snippet "designlab" NUR auf Seiten mit
+   <html class="... app-theme-halloween ..."> inline in den <head> geschrieben (Edge-Cache 60 s).
+   Regeln IMMER auf die Seitenfamilie eingrenzen:
+     Kopf-Logo-Seiten (Feed 30./31.10., Halloween-Übersicht):  body:has(.gl-hero-logo) ...
+     Eventseiten: TABU (abgenommen 08.10.) – keine Regel ohne body:has(.gl-hero-logo)
+   Nach Freigabe gesammelt in Assets/stylesheets/themes/_halloween.scss übernehmen und Datei leeren.
+   Vergleich ohne Lab: ?nolab=1 an die URL hängen. */
