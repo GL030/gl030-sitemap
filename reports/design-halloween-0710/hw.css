@@ -35,3 +35,16 @@
 /*# sourceMappingURL=0841cdf59ebfa01ed6df.css.map*/
 /* Halloween-Modus Vorschau */
 :root{--gl-brand-from:#c8102e;--gl-brand-to:#ff3b4a}
+
+/* Halloween-Modus v2: dunkel, mit Verlauf und feiner Textur */
+.app-theme-dark{
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .055 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+    radial-gradient(900px 600px at 15% 0%, rgba(120,16,34,.55), transparent 65%),
+    radial-gradient(800px 700px at 90% 25%, rgba(96,10,30,.45), transparent 65%),
+    radial-gradient(1000px 800px at 50% 110%, rgba(70,8,22,.6), transparent 60%),
+    linear-gradient(160deg,#07030a 0%,#120509 30%,#1d0810 55%,#2a0b14 80%,#33101a 100%) !important;
+  background-attachment: fixed, fixed, fixed, fixed, fixed !important;
+  background-color:#0b040a !important;
+}
+.app-theme-dark{--gl-card:#15131a;--gl-card-soft:#110f16;--gl-link:#ff5c5c}
