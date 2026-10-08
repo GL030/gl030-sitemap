@@ -5,3 +5,4 @@
      Eventseiten: TABU (abgenommen 08.10.) – keine Regel ohne body:has(.gl-hero-logo)
    Nach Freigabe gesammelt in Assets/stylesheets/themes/_halloween.scss übernehmen und Datei leeren.
    Vergleich ohne Lab: ?nolab=1 an die URL hängen. */
+html.app-theme-halloween{--gl-lab:1}
