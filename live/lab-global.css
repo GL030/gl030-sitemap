@@ -10,9 +10,9 @@ html.app-theme-dark .btn.btn-outline-secondary { color: #d5dee7 !important; bord
 /* 08.10.2026 Clubs/Eventreihen mobil: schlanker Kopf, Liste beginnt direkt darunter, keine Werbung */
 @media (max-width: 991.98px) {
   body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header { min-height: 0 !important; height: auto !important; padding-bottom: 14px !important; }
-  body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header > .container { min-height: 0 !important; padding-top: 10px !important; padding-bottom: 0 !important; }
+  body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header .layout-container > .container { min-height: 0 !important; height: auto !important; padding-top: 14px !important; padding-bottom: 0 !important; }
   body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header h1 { font-size: 24px !important; line-height: 1.2 !important; margin: 0 0 8px !important; }
-  body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header h1 ~ p, body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header .page-subtitle, body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header .lead { display: none !important; }
+  body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header h1 ~ p, body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header h1 + h2, body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header .page-subtitle, body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-header .lead { display: none !important; }
   body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-body { padding-top: 12px !important; }
 }
 body:is(:has(.gl-loc-grid), :has(.gl-loc-rows), :has(.gl-brand-tiles)) .page-body > .layout-container > .container > .beff1b4931862-component { display: none !important; }
