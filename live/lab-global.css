@@ -13,13 +13,16 @@ li.nav-item.dropdown:has(.dropdown-item[href*="gaesteliste040.de"]),
 .col-md .nav-item:has(> a[href="https://www.gaesteliste030.de"]), .col-md .nav-item:has(> a[href*="gaesteliste040.de"]) { display: none !important; }
 /* 08.10.2026 grosses Kopf-Logo verlinkt zur Startseite (Link setzt das Snippet) */
 a.gl-hero-home { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
-/* 08.10.2026 Desktop-Hauptmenue: gleiche Reihenfolge wie Pill-Leiste, Open Air raus, Trennstrich vor Halloween raus */
+/* 08.10.2026 Desktop-Hauptmenue (nur >= 992 px; mobil liegen Sprachen u. a. im selben Element): gleiche Reihenfolge, Open Air raus */
+@media (min-width: 992px) {
 #root-nav ul.navbar-nav:has(> li > a[href$="/hip-hop"]) > li { order: 10; }
-#root-nav ul.navbar-nav > li:has(> a[href="/"]), #root-nav ul.navbar-nav > li:has(> a[href="/en/"]), #root-nav ul.navbar-nav > li:has(> a[href="/es/"]) { order: 1; }
-#root-nav ul.navbar-nav > li:has(> a[href$="/hip-hop"]) { order: 2; }
-#root-nav ul.navbar-nav > li:has(> a[href$="/electro"]) { order: 3; }
-#root-nav ul.navbar-nav > li:has(> a[href$="/halloween"]) { order: 4; }
-#root-nav ul.navbar-nav > li:has(> a[href$="/silvester"]), #root-nav ul.navbar-nav > li:has(> a[href$="/nochevieja"]) { order: 5; }
-#root-nav ul.navbar-nav > li:has(> a[href$="/day-party"]) { order: 6; }
-#root-nav ul.navbar-nav > li:has(> a[href$="/open-air"]), #root-nav ul.navbar-nav > li:has(> a[href$="/aire-libre"]),
+#root-nav ul.navbar-nav > li:has(> a[href="/"]), #root-nav ul.navbar-nav > li:has(> a[href="/en/"]), #root-nav ul.navbar-nav > li:has(> a[href="/es/"]) { order: 1 !important; }
+#root-nav ul.navbar-nav > li:has(> a[href$="/hip-hop"]) { order: 2 !important; }
+#root-nav ul.navbar-nav > li:has(> a[href$="/electro"]) { order: 3 !important; }
+#root-nav ul.navbar-nav > li:has(> a[href$="/halloween"]) { order: 4 !important; }
+#root-nav ul.navbar-nav > li:has(> a[href$="/silvester"]), #root-nav ul.navbar-nav > li:has(> a[href$="/nochevieja"]) { order: 5 !important; }
+#root-nav ul.navbar-nav > li:has(> a[href$="/day-party"]) { order: 6 !important; }
 #root-nav ul.navbar-nav > li.nav-divider:has(+ li > a[href$="/halloween"]) { display: none !important; }
+}
+/* Open Air im Hauptmenue raus (Desktop + mobil) */
+#root-nav ul.navbar-nav > li:has(> a[href$="/open-air"]), #root-nav ul.navbar-nav > li:has(> a[href$="/aire-libre"]) { display: none !important; }
