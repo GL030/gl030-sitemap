@@ -1,0 +1,8 @@
+/* 08.10.2026 Pill-Leiste ueberall: Party, Hip Hop, Electro, Halloween, Silvester, Day Party; Open Air raus; ES-DJs raus */
+.tab-menu-component .nav > .nav-item:has(> a[href$="/hip-hop"]) { order: 1; }
+.tab-menu-component .nav > .nav-item:has(> a[href$="/electro"]) { order: 2; }
+.tab-menu-component .nav > .nav-item:has(> a[href$="/halloween"]) { order: 3; }
+.tab-menu-component .nav > .nav-item:has(> a[href$="/silvester"]), .tab-menu-component .nav > .nav-item:has(> a[href$="/nochevieja"]) { order: 4; }
+.tab-menu-component .nav > .nav-item:has(> a[href$="/day-party"]) { order: 5; }
+.tab-menu-component .nav > .nav-item:has(> a[href$="/open-air"]), .tab-menu-component .nav > .nav-item:has(> a[href$="/aire-libre"]),
+.gl-pill-wrap .nav-item:has(> a[href$="/es/artista"]) { display: none !important; }
