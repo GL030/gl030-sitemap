@@ -1,1 +1,8 @@
 /* leer seit Release 08.10.2026 */
+/* 08.10.2026 Kontrast Dark-Theme (Bezirksseiten/Profile): gemessen < 4,5:1 -> angehoben */
+html.app-theme-dark .partyphoto-album-item .metadata { background: rgba(11, 15, 20, .88) !important; color: #eef2f6 !important; }
+html.app-theme-dark .partyphoto-album-item .metadata * { color: #eef2f6 !important; }
+html.app-theme-dark .event-list .metadata, html.app-theme-dark .event-list .metadata span { color: #b6c3cf !important; }
+html.app-theme-dark .badge-hashtag.tag-secondary { color: #b0bfcc !important; }
+html.app-theme-dark .badge.badge-disabled { color: #b0bfcc !important; }
+html.app-theme-dark .indicator { color: #b6c3cf !important; }
