@@ -1,3 +1,2 @@
-/* 09.10.2026 bis Release: Clubname in den Feed-Metadaten wieder in Originalfarbe (Uhrzeit-Regel war zu breit) */
-html.app-theme-dark body .event-item .metadata > span:first-child, html.app-theme-dark body .event-item .metadata > span:first-child span { color: #4fc3e6 !important; }
-html.app-theme-halloween.app-theme-dark body .event-item .metadata > span:first-child, html.app-theme-halloween.app-theme-dark body .event-item .metadata > span:first-child span { color: #e52402 !important; }
+/* 09.10.2026 bis Release: Clubname (Location-Link) erbt wieder die Linkfarbe - Uhrzeit-Regeln waren zu breit */
+html.app-theme-dark body .event-item .metadata .location-link, html.app-theme-dark body .event-item .metadata .location-link span { color: inherit !important; }
