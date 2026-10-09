@@ -1,2 +1,1 @@
-/* 09.10.2026 bis Release: Clubname (Location-Link) erbt wieder die Linkfarbe - Uhrzeit-Regeln waren zu breit */
-html.app-theme-dark body .event-item .metadata .location-link, html.app-theme-dark body .event-item .metadata .location-link span { color: inherit !important; }
+/* leer seit Release-562 (09.10.2026) */
