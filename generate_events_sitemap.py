@@ -273,9 +273,29 @@ class _MicrodataProps(HTMLParser):
             self.done = True
 
 
+def fetch_patient(url: str) -> str:
+    """Wie fetch(), aber bei HTTP 429 (Cloudflare-Drosselung) bis zu 3x mit Pause neu versuchen."""
+    for wait in (0, 5, 15, 30):
+        if wait:
+            time.sleep(wait)
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        if BYPASS_TOKEN:
+            req.add_header("X-GL030-Auth", BYPASS_TOKEN)
+        try:
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return r.read().decode("utf-8", errors="replace") if r.status == 200 else ""
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                return ""
+        except Exception:
+            return ""
+    return ""
+
+
 def fingerprint(path: str):
     """sha1 der Event-Kerndaten (Microdata) oder None (nicht abrufbar / kein Event -> alter Stand bleibt)."""
-    html = fetch(BASE + path)
+    time.sleep(0.3)  # 09.10.2026: sanft abrufen - mit 8 Workern drosselte Cloudflare (429) 2/3 der Seiten
+    html = fetch_patient(BASE + path)
     if not html:
         return None
     parser = _MicrodataProps()
@@ -296,7 +316,7 @@ def detect_changes(paths: set) -> set:
     last_changed = load_json(LAST_CHANGED_FILE)
     today_str = date.today().isoformat()
     changed = set()
-    with ThreadPoolExecutor(max_workers=8) as ex:
+    with ThreadPoolExecutor(max_workers=3) as ex:
         results = dict(zip(sorted(paths), ex.map(fingerprint, sorted(paths))))
     new = {}
     for p in paths:
