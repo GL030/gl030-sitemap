@@ -35,16 +35,19 @@ jobs:
         run: |
           git config user.name "gl030-sitemap-bot"
           git config user.email "actions@users.noreply.github.com"
-          git fetch origin main
-          git reset --soft origin/main
           git add sitemap-events.xml hreflang-es-map.json first-seen.json event-fingerprint.json last-changed.json sitemap-berlin.xml berlin-lastmod.json
           if git diff --cached --quiet; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "Keine Aenderung an sitemap-events.xml"
+            echo "changed=false" >> $GITHUB_OUTPUT 2>/dev/null || true
+            echo "Keine Aenderung"
           else
             git commit -m "Event-Sitemap Update $(date -u +%F_%H:%M)"
-            git push origin HEAD:main
-            echo "changed=true" >> $GITHUB_OUTPUT
+            # 09.10.2026: NICHT mehr "reset --soft origin/main" - das hat Dateien geloescht, die waehrend des Laufs
+            # auf main kamen (KI-Panel am 09.10.). Jetzt: eigene Aenderung auf den aktuellen Stand rebasen.
+            for i in 1 2 3 4; do
+              git pull --rebase -X theirs origin main && git push origin HEAD:main && break
+              echo "Push-Versuch $i fehlgeschlagen - neuer Versuch"; sleep $((i*5))
+            done
+            echo "changed=true" >> $GITHUB_OUTPUT 2>/dev/null || true
           fi
 
       - name: Auslieferung ueber GitHub Pages verifizieren

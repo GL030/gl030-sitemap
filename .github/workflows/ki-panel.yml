@@ -1,35 +1,41 @@
-name: Crawl-Freshness Events (Googlebot/Bingbot)
+name: KI-Panel ChatGPT (woechentlich)
 
 on:
   schedule:
-    - cron: "15 5 * * *"   # taeglich 07:15 Berlin (Sommerzeit); Cloudflare bewahrt nur 8 Tage auf
+    - cron: "0 6 * * 1"   # Montag 08:00 Berlin (Sommerzeit)
   workflow_dispatch:
+    inputs:
+      repeats:
+        description: "Durchlaeufe je Prompt (Test: 1)"
+        default: "5"
 
 permissions:
   contents: write
 
 jobs:
-  crawl-freshness:
+  panel:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Abrufe protokollieren und Bericht schreiben
+      - name: Panel ausfuehren
         env:
-          CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
-        run: python tools/crawl_freshness.py
-      - name: Commit nur bei Aenderung
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REPEATS: ${{ github.event.inputs.repeats || '5' }}
+        run: python tools/ki_panel.py
+      - name: Ergebnisse committen
         run: |
           git config user.name "gl030-sitemap-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add googlebot-seen.json reports/crawl-freshness/latest.md
+          git add reports/ki-panel/
           if git diff --cached --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT 2>/dev/null || true
             echo "Keine Aenderung"
           else
-            git commit -m "Crawl-Freshness $(date -u +%F)"
+            git commit -m "KI-Panel $(date -u +%F)"
             # 09.10.2026: NICHT mehr "reset --soft origin/main" - das hat Dateien geloescht, die waehrend des Laufs
             # auf main kamen (KI-Panel am 09.10.). Jetzt: eigene Aenderung auf den aktuellen Stand rebasen.
             for i in 1 2 3 4; do

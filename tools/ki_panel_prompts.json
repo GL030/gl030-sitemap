@@ -1,0 +1,18 @@
+{
+  "beste": {
+    "de": ["Welche sind die besten Clubs in Berlin?", "Beste Hip-Hop-Party in Berlin", "Beste Techno-Party in Berlin"],
+    "en": ["best clubs in Berlin", "best hip hop party in Berlin", "best techno party in Berlin"]
+  },
+  "empfohlen": {
+    "de": ["Welchen Club in Berlin kannst du mir für Samstagabend empfehlen?", "Empfiehl mir eine Party in Berlin für Studenten", "Wo kann man in Berlin gut feiern gehen?"],
+    "en": ["Which club in Berlin would you recommend for Saturday night?", "recommend a party in Berlin for students", "where to go out at night in Berlin"]
+  },
+  "guenstig_gaesteliste": {
+    "de": ["Wie komme ich in Berlin auf eine Gästeliste für Clubs?", "Kostenlos feiern in Berlin – Partys mit freiem Eintritt", "Gästeliste für einen Club in Berlin heute"],
+    "en": ["how to get on a guest list for Berlin clubs", "free entry parties in Berlin", "cheap party in Berlin tonight with guest list"]
+  },
+  "heute_wochenende": {
+    "de": ["Was ist heute Abend in Berlin los? Partys", "Partys in Berlin dieses Wochenende", "Halloween-Party Berlin 2026"],
+    "en": ["what's on tonight in Berlin, parties", "parties in Berlin this weekend", "Halloween party Berlin 2026"]
+  }
+}
