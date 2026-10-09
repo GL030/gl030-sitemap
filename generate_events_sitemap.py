@@ -20,6 +20,8 @@ import os
 import re
 import sys
 import time
+import hashlib
+from html.parser import HTMLParser
 import json
 import urllib.request
 from datetime import date, timedelta
@@ -30,6 +32,10 @@ DAYS_AHEAD = 60  # 03.09.2026: 14 -> 60 (Audit #3: Halloween-Events standen sons
 SITEMAP_FILE = "sitemap-events.xml"
 ES_MAP_FILE = "hreflang-es-map.json"
 FIRST_SEEN_FILE = "first-seen.json"
+# 09.10.2026: lastmod bei echten Aenderungen (Microdata-Pruefsumme) (Google: bekannte URLs werden nur ~alle 30 Tage neu gecrawlt,
+# Absagen/Zeitaenderungen/nachtraegliche Gaestelisten muessen per lastmod + IndexNow signalisiert werden).
+FINGERPRINT_FILE = "event-fingerprint.json"   # {pfad: sha1 der Event-Kerndaten aus dem JSON-LD}
+LAST_CHANGED_FILE = "last-changed.json"       # {pfad: JJJJ-MM-TT der letzten substanziellen Aenderung}
 MAX_DETAIL_FETCHES = 500  # Schutz gegen Amok-Laeufe; Erstlauf ~400 DE-Seiten
 UA = ("Mozilla/5.0 (compatible; GL030-SitemapBot/1.0; "
       "+https://www.gaesteliste030.de)")
@@ -218,6 +224,97 @@ def resolve_es_paths(de_paths: set, es_map: dict) -> set:
     return {es_map[p] for p in de_paths if p in es_map}
 
 
+class _MicrodataProps(HTMLParser):
+    """Sammelt itemprop-Werte (content/href/src/datetime) NUR innerhalb des ersten Event-Elements der Seite
+    (Hauptevent). Die Eventseiten nutzen Microdata (schema.org/DanceEvent); darunter folgen weitere Events
+    ("Weitere Events") - die duerfen die Pruefsumme nicht beeinflussen."""
+    KEEP = {"eventStatus", "startDate", "endDate", "doorTime", "image", "name", "price", "lowPrice", "priceCurrency",
+            "availability", "validFrom", "validThrough", "eventAttendanceMode"}
+    VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+
+    def __init__(self):
+        super().__init__()
+        self.props = []
+        self.has_event = False
+        self.depth = 0          # aktuelle Verschachtelungstiefe (ohne void-Elemente)
+        self.event_depth = None # Tiefe, auf der das Hauptevent geoeffnet wurde
+        self.done = False
+        self.skip_depth = None  # Tiefe eines verschachtelten Events, dessen Inhalt ignoriert wird
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        is_event = "Event" in (a.get("itemtype") or "")
+        if not self.done and self.event_depth is None and is_event:
+            self.has_event = True
+            self.event_depth = self.depth
+        elif self.event_depth is not None and not self.done and self.skip_depth is None and is_event:
+            self.skip_depth = self.depth   # verschachteltes Event ("Weitere Events") komplett ueberspringen
+        if self.event_depth is not None and not self.done and self.skip_depth is None:
+            prop = a.get("itemprop")
+            if prop in self.KEEP:
+                val = a.get("content") or a.get("datetime") or a.get("href") or a.get("src")
+                if val:
+                    self.props.append((prop, val.strip()))
+        if tag not in self.VOID:
+            self.depth += 1
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        if tag not in self.VOID:
+            self.depth -= 1
+
+    def handle_endtag(self, tag):
+        if tag in self.VOID:
+            return
+        self.depth -= 1
+        if self.skip_depth is not None and self.depth <= self.skip_depth:
+            self.skip_depth = None
+        if self.event_depth is not None and not self.done and self.depth <= self.event_depth:
+            self.done = True
+
+
+def fingerprint(path: str):
+    """sha1 der Event-Kerndaten (Microdata) oder None (nicht abrufbar / kein Event -> alter Stand bleibt)."""
+    html = fetch(BASE + path)
+    if not html:
+        return None
+    parser = _MicrodataProps()
+    try:
+        parser.feed(html)
+    except Exception:
+        return None
+    if not parser.has_event or not any(k == "startDate" for k, _ in parser.props):
+        return None
+    blob = json.dumps(sorted(set(parser.props)), ensure_ascii=False)
+    return hashlib.sha1(blob.encode("utf-8")).hexdigest()
+
+
+def detect_changes(paths: set) -> set:
+    """Vergleicht Prueffsummen mit dem Vorlauf; setzt last-changed bei Aenderung. Erster Lauf: nur Bestand anlegen."""
+    from concurrent.futures import ThreadPoolExecutor
+    old = load_json(FINGERPRINT_FILE)
+    last_changed = load_json(LAST_CHANGED_FILE)
+    today_str = date.today().isoformat()
+    changed = set()
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        results = dict(zip(sorted(paths), ex.map(fingerprint, sorted(paths))))
+    new = {}
+    for p in paths:
+        fp = results.get(p)
+        if fp is None:
+            if p in old:
+                new[p] = old[p]          # nicht abrufbar -> alten Stand behalten, nichts melden
+            continue
+        if p in old and old[p] != fp:
+            last_changed[p] = today_str
+            changed.add(p)
+        new[p] = fp
+    save_json(FINGERPRINT_FILE, new)
+    save_json(LAST_CHANGED_FILE, {p: d for p, d in last_changed.items() if p in paths})
+    print(f"Pruefsummen: {len(new)} von {len(paths)} URLs, {len(changed)} substanziell geaendert")
+    return changed
+
+
 def write_sitemap(paths: set, first_seen: dict) -> None:
     today_str = date.today().isoformat()
     lines = [
@@ -228,8 +325,9 @@ def write_sitemap(paths: set, first_seen: dict) -> None:
         if p not in first_seen:
             first_seen[p] = today_str
         loc = (BASE + p).replace("&", "&amp;")
+        lastmod = max(first_seen[p], LAST_CHANGED.get(p, first_seen[p]))
         lines.append(f"  <url><loc>{loc}</loc>"
-                     f"<lastmod>{first_seen[p]}</lastmod></url>")
+                     f"<lastmod>{lastmod}</lastmod></url>")
     lines.append("</urlset>")
     with open(SITEMAP_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
@@ -293,6 +391,13 @@ def main():
 
     first_seen = load_json(FIRST_SEEN_FILE)
     new_paths = current - previous
+    try:
+        changed = detect_changes(current)
+    except Exception as e:
+        print(f"  WARN Aenderungserkennung uebersprungen: {e}", file=sys.stderr)
+        changed = set()
+    LAST_CHANGED.clear()
+    LAST_CHANGED.update(load_json(LAST_CHANGED_FILE))
     write_sitemap(current, first_seen)
     # first_seen auf aktuellen Bestand beschneiden (haelt die Datei klein)
     first_seen = {p: d for p, d in first_seen.items() if p in current}
@@ -303,8 +408,10 @@ def main():
 
     print(f"Sitemap geschrieben: {len(current)} URLs "
           f"({len(new_paths)} neu gegenueber Vorlauf)")
-    ping_indexnow(new_paths)
+    ping_indexnow(new_paths | changed)
 
+
+LAST_CHANGED = {}
 
 if __name__ == "__main__":
     main()

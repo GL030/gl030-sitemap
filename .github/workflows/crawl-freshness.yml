@@ -1,0 +1,30 @@
+name: Crawl-Freshness Events (Googlebot/Bingbot)
+
+on:
+  schedule:
+    - cron: "15 5 * * *"   # taeglich 07:15 Berlin (Sommerzeit); Cloudflare bewahrt nur 8 Tage auf
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crawl-freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Abrufe protokollieren und Bericht schreiben
+        env:
+          CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+        run: python tools/crawl_freshness.py
+      - name: Commit nur bei Aenderung
+        run: |
+          git config user.name "gl030-sitemap-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin main
+          git reset --soft origin/main
+          git add googlebot-seen.json reports/crawl-freshness/latest.md
+          if git diff --cached --quiet; then echo "Keine Aenderung"; else git commit -m "Crawl-Freshness $(date -u +%F)" && git push origin HEAD:main; fi
