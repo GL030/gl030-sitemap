@@ -1,9 +1,1 @@
-/* 09.10.2026 D1/D2: weisse Schrift auf roten Aktionsflaechen (Halloween) */
-html.app-theme-halloween .btn.btn-brand, html.app-theme-halloween .btn.btn-brand *, html.app-theme-halloween .btn.btn-brand:hover, html.app-theme-halloween .btn.btn-brand:hover *, html.app-theme-halloween .badge.badge-brand { color: #ffffff !important; }
-/* D3: Veranstaltungstitel weiss (Uebersicht + Feed 30./31.10. = Seiten mit Kopf-Logo) */
-html.app-theme-halloween body:has(.gl-hero-logo) .event-item .title, html.app-theme-halloween body:has(.gl-hero-logo) .event-item .title a { color: #eef2f6 !important; }
-/* D1 erweitert: Event-Chips (badge-primary) weiss */
-html.app-theme-halloween .badge.badge-primary { color: #ffffff !important; }
-/* Lesbarkeit: Uhrzeiten/Metadaten im Feed, Saison-Chips helleres Rot */
-html.app-theme-halloween .event-item .metadata, html.app-theme-halloween .event-item .metadata span { color: #b6c3cf !important; }
-html.app-theme-halloween .tag-answer-chips .badge.badge-light { color: #ff7a7a !important; }
+/* GL030 Design-Lab: leer (Stand 08.10.2026 nach Release mit Halloween-Paket). Neue Iterationen hier anlegen. */
