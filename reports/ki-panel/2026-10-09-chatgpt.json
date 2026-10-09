@@ -13,9 +13,20 @@
    "mention": false,
    "cited": false,
    "domains": [
-    "google.com"
+    "aboutblank.li",
+    "kitkatclub.org",
+    "renate.cc",
+    "tresorberlin.com"
    ],
-   "chars": 1967
+   "urls": [
+    "http://kitkatclub.org",
+    "http://www.aboutblank.li",
+    "http://www.renate.cc",
+    "https://www.tresorberlin.com"
+   ],
+   "ours": [],
+   "chars": 1826,
+   "text": "Berlin ist weltweit bekannt für seine lebendige und vielfältige Clubszene. Hier sind einige der bekanntesten Clubs der Stadt:\n\n**[Tresor Berlin I Club & label](https://www.tresorberlin.com/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 10–50 € · 3.7 (5281 Bewertungen)**  \n_Köpenicker Str. 70, 10179 Berlin, Deutschland_  \nEiner der bekanntesten Techno-Clubs der Welt, residiert in einem stillgelegten Heizkraftwerk in Mitte.\n\n**[KitKatClub](http://kitkatclub.org/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 20–60 € · 4.0 (4321 Bewertungen)**  \n_Köpenicker Str. 76, 10179 Berlin, Deutschland_  \nInternational bekanntes Aushängeschild der Berliner Fetisch- und Partyszene, bekannt für Freizügigkeit, Toleranz und musikalische Vielfalt.\n\n**[://about blank](http://www.aboutblank.li/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 3.7 (1928 Bewertungen)**  \n_Markgrafendamm 24c, 10245 Berlin-Bezirk Friedrichshain-Kreuzberg, Deutschland_  \nBietet eine queer-feministische Gartenparty-Atmosphäre und ist bekannt für seine Open-Air-Veranstaltungen.\n\n**Golden Gate**  \n**Geschlossen · Nachtclub · 10–30 € · 4.1 (1216 Bewertungen)**  \n_Dircksenstraße 77-78, 10179 Berlin, Deutschland_  \nKleiner, aber legendärer Club in einem Brückenpfeiler der Berliner Stadtbahn, bekannt für seine Afterhour-Partys.\n\n**[Renate](http://www.renate.cc/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 4.5 (2075 Bewertungen)**  \n_Alt-Stralau 70, 10245 Berlin-Bezirk Friedrichshain-Kreuzberg, Deutschland_  \nVerteilt auf drei Floors in einem alten Wohnhaus, bekannt für seine einzigartige Atmosphäre und vielfältige Musikrichtungen.\n\nBitte beachten Sie, dass die Clubszene in Berlin ständig im Wandel ist. Es empfiehlt sich daher, vor einem Besuch die aktuellen Öffnungszeiten und Veranstaltungen der jeweiligen Clubs zu überprüfen. "
   },
   {
    "group": "beste",
@@ -29,7 +40,14 @@
     "maxxim-berlin.de",
     "surprise-berlin.de"
    ],
-   "chars": 1356
+   "urls": [
+    "http://www.maxxim-berlin.de",
+    "https://bricks-berlin.club",
+    "https://surprise-berlin.de"
+   ],
+   "ours": [],
+   "chars": 1269,
+   "text": "Berlin bietet eine lebendige Hip-Hop-Szene mit zahlreichen Veranstaltungen und Clubs. Hier sind einige der besten Hip-Hop-Partys und -Clubs in der Stadt:\n\n**[MAXXIM CLUB BERLIN](http://www.maxxim-berlin.de/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 4.5 (5352 Bewertungen)**  \n_Joachimsthaler Str. 15, 10719 Berlin, Deutschland_  \nJeden Mittwoch eine energiegeladene Hip-Hop-Party mit den besten Black Beats und Hip-Hop-DJs der Stadt.\n\n**[Bricks-Club](https://bricks-berlin.club/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 20–50 € · 4.3 (331 Bewertungen)**  \n_Anton-Wilhelm-Amo-Straße 30, 10117 Berlin, Deutschland_  \nEin eleganter Club im Herzen Berlins, der regelmäßig Hip-Hop-Nächte mit internationalen DJs veranstaltet.\n\n**[Surprise Club & Disco Berlin](https://surprise-berlin.de/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 10–50 € · 3.3 (243 Bewertungen)**  \n_Potsdamer Str. 84, 10785 Berlin, Deutschland_  \nBietet eine Mischung aus Dancehall, Salsa, Hip-Hop, Afrobeat und RnB. Regelmäßige Afrobeats-Partys mit verschiedenen DJs.\n\nBitte beachten Sie, dass sich Veranstaltungsdetails ändern können. Es ist daher ratsam, die aktuellen Informationen auf den jeweiligen Websites oder Social-Media-Kanälen der Veranstaltungsorte zu überprüfen. "
   },
   {
    "group": "beste",
@@ -39,9 +57,20 @@
    "mention": false,
    "cited": false,
    "domains": [
-    "google.com"
+    "aboutblank.li",
+    "berghain.berlin",
+    "sisyphos-berlin.net",
+    "tresorberlin.com"
    ],
-   "chars": 2528
+   "urls": [
+    "http://www.aboutblank.li",
+    "http://www.berghain.berlin",
+    "http://www.sisyphos-berlin.net",
+    "https://www.tresorberlin.com"
+   ],
+   "ours": [],
+   "chars": 2039,
+   "text": "Berlin ist weltweit bekannt für seine lebendige Techno-Szene und beherbergt zahlreiche Clubs, die für ihre einzigartigen Partys und Atmosphäre berühmt sind. Hier sind einige der besten Techno-Clubs in Berlin:\n\n**[Berghain | Panorama Bar | Säule](http://www.berghain.berlin/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 20–60 € · 3.9 (6488 Bewertungen)**  \n_Am Wriezener bhf, 10243 Berlin, Deutschland_  \nDer legendäre Club in einem ehemaligen Heizkraftwerk bietet kompromisslosen Techno-Sound und eine unverwechselbare Atmosphäre.\n\n**[Tresor Berlin I Club & label](https://www.tresorberlin.com/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 3.7 (5281 Bewertungen)**  \n_Köpenicker Str. 70, 10179 Berlin, Deutschland_  \nSeit 1991 ein fester Bestandteil der Berliner Clubszene, bekannt für seine industrielle Architektur und tief verwurzelte Verbindung zur Detroit-Techno-Szene.\n\n**[://about blank](http://www.aboutblank.li/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 3.7 (1928 Bewertungen)**  \n_Markgrafendamm 24c, 10245 Berlin-Bezirk Friedrichshain-Kreuzberg, Deutschland_  \nEin kollektiv geführter Club mit mehreren Floors und einem großen Garten, der für seine inklusive Atmosphäre und vielfältigen Musikrichtungen geschätzt wird.\n\n**[Sisyphos](http://www.sisyphos-berlin.net/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 20–50 € · 3.9 (7603 Bewertungen)**  \n_Hauptstraße 15, 10317 Bezirk Lichtenberg, Deutschland_  \nEin Club mit mehreren Floors und einem großen Außenbereich, der für seine langen Partys von Freitag bis Montag bekannt ist.\n\n**Golden Gate**  \n**Geschlossen · Nachtclub · 4.1 (1216 Bewertungen)**  \n_Dircksenstraße 77-78, 10179 Berlin, Deutschland_  \nEin kleiner, aber feiner Club unter der Jannowitzbrücke, bekannt für seine Afterhour-Partys und intime Atmosphäre.\n\nBitte beachten Sie, dass die Clubszene in Berlin dynamisch ist und sich ständig verändert. Es ist daher ratsam, die aktuellen Veranstaltungskalender der jeweiligen Clubs zu konsultieren, um die neuesten Informationen zu erhalten. "
   },
   {
    "group": "beste",
@@ -52,12 +81,19 @@
    "cited": false,
    "domains": [
     "berghain.berlin",
-    "elpais.com",
     "kitkatclub.org",
-    "sisyphos-berlin.net",
-    "tresorberlin.com"
+    "renate.cc",
+    "sisyphos-berlin.net"
    ],
-   "chars": 1992
+   "urls": [
+    "http://kitkatclub.org",
+    "http://www.berghain.berlin",
+    "http://www.renate.cc",
+    "http://www.sisyphos-berlin.net"
+   ],
+   "ours": [],
+   "chars": 2144,
+   "text": "Berlin's nightlife is renowned for its vibrant and diverse club scene, offering a range of venues that cater to various musical tastes and atmospheres. Here are some of the top nightclubs in Berlin:\n\n**[Berghain-Panorama Bar](http://www.berghain.berlin/?utm_source=openai)**  \n**Closed · Night club · 3.9 (6488 reviews)**  \n_Am Wriezener bhf, 10243 Berlin, Germany_  \nWidely regarded as one of the world's best techno clubs, Berghain is housed in a former power plant and features a Funktion-One sound system. The club has a strict door policy and a no-photos rule, enhancing its exclusive atmosphere.\n\n**[Renate](http://www.renate.cc/?utm_source=openai)**  \n**Closed · Night club · €20–50 · 4.5 (2075 reviews)**  \n_Alt-Stralau 70, 10245 Berlin-Bezirk Friedrichshain-Kreuzberg, Germany_  \nHoused in a former residential building in Friedrichshain, Renate is known for its eclectic and immersive party experiences, featuring multiple rooms and a diverse range of electronic music.\n\n**[Sisyphos Nightclub](http://www.sisyphos-berlin.net/?utm_source=openai)**  \n**Closed · Night club · €20–50 · 3.9 (7603 reviews)**  \n_Hauptstraße 15, 10317 Bezirk Lichtenberg, Germany_  \nMore festival than nightclub, Sisyphos is a sprawling compound in Rummelsburg with multiple dance floors, an outdoor stage, food trucks, a sandy beach area, and parties that run all weekend. It's the most accessible of Berlin's major clubs, offering a diverse crowd and welcoming atmosphere.\n\n**[KitKatClub](http://kitkatclub.org/?utm_source=openai)**  \n**Closed · Night club · €20–60 · 4.0 (4321 reviews)**  \n_Köpenicker Str. 76, 10179 Berlin, Germany_  \nKnown for its hedonistic and sex-positive atmosphere, KitKatClub is a techno club that enforces a strict dress code, encouraging fetish and fetish-inspired attire. The club hosts themed parties and is known for its avant-garde approach to nightlife.\n\nPlease note that Berlin's club scene is dynamic, with events and line-ups changing regularly. It's advisable to check the official websites or social media pages of these venues for the latest information on events, opening hours, and any specific entry requirements. "
   },
   {
    "group": "beste",
@@ -73,7 +109,18 @@
     "simonweckert.com",
     "tagesspiegel.de"
    ],
-   "chars": 2541
+   "urls": [
+    "https://www.cassiopeia-berlin.de/event/super-tuesday-111639763-c1d51",
+    "https://www.gaesteliste030.de/de/berlin/bilder/16-09-17/saturdays-party-auf-4-dancefloors/bild-11",
+    "https://www.nightlife030.de/de/galerie/matrix-party-2024-02-29",
+    "https://www.simonweckert.com/petview.html",
+    "https://www.tagesspiegel.de/kultur/battle-reime-mit-goldkante-4322923.html"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/bilder/16-09-17/saturdays-party-auf-4-dancefloors/bild-11"
+   ],
+   "chars": 2609,
+   "text": "Berlin offers a vibrant hip-hop scene with numerous events throughout October 2026. Here are some notable parties you might consider:\n\n\n[Partybild 11/68 - Havanna 16.09.2017 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/bilder/16-09-17/saturdays-party-auf-4-dancefloors/bild-11?utm_source=openai)\n**XXL 16+ Party at Havanna Club**  \n*Date:* Thursday, October 22, 2026, 19:00\n*Location:* Havanna Club Berlin, Hauptstraße 30, 10823 Berlin-Schöneberg\n*Details:* A dynamic event spanning four floors, featuring Hip-Hop, Afro, Latin, and Classics. Special attractions include a welcome special, candy & giveaways, and photo spots. Note: Entry is permitted from 16 years old, with specific regulations for attendees aged 16 and 17.\n\n\n\n[„Das schönste Mädchen der Welt“ am Grips Theater: Battle-Reime mit Goldkante](https://www.tagesspiegel.de/kultur/battle-reime-mit-goldkante-4322923.html?utm_source=openai)\n**What's Golden - True School Hip Hop with DJ Robert Smith, Marc Hype & Frank Popp**  \n*Date:* Friday, October 23, 2026, 22:00–04:00\n*Location:* Lido, Cuvrystraße 7, Berlin\n*Details:* Experience a masterclass of 90s boom bap, 2k anthems, and future hip-hop classics. Sounds reminiscent of A Tribe Called Quest, Nas, De La Soul, and more. Tickets start at €12.\n\n\n\n[SIMON WECKERT](https://www.simonweckert.com/petview.html?utm_source=openai)\n**Matiah Chinasky & DJ Perez at Panke**  \n*Date:* Thursday, October 1, 2026, 20:00–04:00\n*Location:* Panke, Gerichtstraße 23, 13347 Berlin\n*Details:* A concert and party showcasing the best of Chilean and South American hip-hop, featuring Matiah Chinasky & DJ Perez, along with Caos Sensible. Tickets are €15, with an age restriction of 18+.\n\n\n\n[Cassiopeia Berlin – Super Tuesday](https://www.cassiopeia-berlin.de/event/super-tuesday-111639763-c1d51?utm_source=openai)\n**Super Tuesday - 80s, Disco Hits & Hip Hop Party**  \n*Date:* Tuesday, October 13, 2026, 23:00–04:00\n*Location:* Cassiopeia, Berlin\n*Details:* A vibrant mix of 80s, disco hits, and hip-hop classics. Enjoy a musical potpourri with discounted guest list entry available until 18:00.\n\n\n\n[Galerie Matrix - Party](https://www.nightlife030.de/de/galerie/matrix-party-2024-02-29/?utm_source=openai)\n**Matrix Berlin Hip Hop Party**  \n*Date:* Saturday, October 10, 2026\n*Location:* Matrix Berlin, Warschauer Platz 18, Berlin\n*Details:* A night featuring Afrobeats, classics, hip-hop, house, reggaeton, and top 40 hits. The event starts at 22:00.\n\n\nPlease verify event details and ticket "
   },
   {
    "group": "beste",
@@ -87,42 +134,65 @@
     "es.ra.co",
     "gaesteliste030.de",
     "househeads.live",
-    "korg.com",
+    "midiamsterdam.nl",
     "musicradar.com",
-    "ra.co",
-    "soundcheck.club"
+    "ra.co"
    ],
-   "chars": 3049
+   "urls": [
+    "https://de.ra.co/events/2520866",
+    "https://de.ra.co/events/2542422",
+    "https://es.ra.co/events/2536187",
+    "https://househeads.live/events/pkh-warehouse-opening-event-with-trancecore-sachsentrance-tragedie-berlinpoisone-a4fa96af-d8da-48d4-b9af-bb21e58ad2b4",
+    "https://midiamsterdam.nl/blog/superbooth-closing-2026.html",
+    "https://ra.co/dj/vintageculture",
+    "https://ra.co/events/2520662",
+    "https://ra.co/events/de/berlin/techno",
+    "https://www.gaesteliste030.de/de/berlin/events/electro/08-06-24/triception",
+    "https://www.musicradar.com/music-tech/what-is-superbooth-2026-everything-you-need-to-know-about-the-berlin-music-tech-show"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/electro/08-06-24/triception"
+   ],
+   "chars": 2853,
+   "text": "Berlin's techno scene is vibrant and ever-evolving, offering a plethora of events that cater to diverse tastes. Here are some notable techno parties and events in Berlin:\n\n\n[Electro Void Club 08.06.2024 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/electro/08-06-24/triception?utm_source=openai)\n**TRI:CEPTION at VOID Club**  \nOn October 23, 2026, VOID Club hosts TRI:CEPTION, a multifaceted event spanning four floors. The lineup includes Marika Rossa, Mike Väth, Sven Tasnadi, and Astralica, among others. The event promises a blend of techno, tech house, and psytrance, with tickets starting at €15. ([ra.co](https://ra.co/events/2520662?utm_source=openai))\n\n\n\n[PKH Warehouse Opening Event with Trancecore, Sachsentrance, Tragedie, BerlinPoisonedMe, uvm — househeads](https://househeads.live/events/pkh-warehouse-opening-event-with-trancecore-sachsentrance-tragedie-berlinpoisone-a4fa96af-d8da-48d4-b9af-bb21e58ad2b4?utm_source=openai)\n**GLXY Rave at PKH Warehouse**  \nScheduled for October 16, 2026, GLXY brings a fresh rave experience to central Berlin. The event features artists like Millie Forsberg, SKKIN, and Velvet MZR, offering a mix of techno and trance. Tickets are available for €18. ([de.ra.co](https://de.ra.co/events/2542422?utm_source=openai))\n\n\n\n[Vintage Culture · Artist Profile](https://ra.co/dj/vintageculture?utm_source=openai)\n**Locura Groovy at The Cloud**  \nOn October 9, 2026, The Cloud hosts Locura Groovy, an event by MAKENI EVENTS. Headlined by The YellowHeads, the night promises powerful techno and hypnotic grooves. Additional acts include Hekon, Mosher, and Ivanna. Tickets are priced at €10. ([es.ra.co](https://es.ra.co/events/2536187?utm_source=openai))\n\n\n\n[Upcoming Techno Events in Berlin · Get Your Tickets On RA](https://ra.co/events/de/berlin/techno?utm_source=openai)\n**THE BEAT - World of Techno at Silver Event Location**  \nCelebrating its 4th anniversary on October 3, 2026, THE BEAT features artists like Mayze, Funk@delic, and Ronzka. The event runs from 9 PM to 8 AM, with tickets at €20. ([de.ra.co](https://de.ra.co/events/2520866?utm_source=openai))\n\n\n\n[Superbooth Closing 2026](https://midiamsterdam.nl/blog/superbooth-closing-2026.html?utm_source=openai)\n**Superbooth 2026 at FEZ Berlin**  \nFrom May 7–9, 2026, Superbooth celebrates its 10th anniversary at the FEZ center. This major music tech event showcases the latest in music production technology, featuring live performances, workshops, and exhibitions from brands like "
   },
   {
    "group": "empfohlen",
    "lang": "de",
    "prompt": "Welchen Club in Berlin kannst du mir für Samstagabend empfehlen?",
    "run": 1,
-   "mention": true,
-   "cited": true,
+   "mention": false,
+   "cited": false,
    "domains": [
     "berghain.berlin",
-    "gaesteliste030.de",
-    "renate.cc",
-    "sisyphos-berlin.net",
-    "tresorberlin.com"
+    "kitkatclub.org",
+    "sisyphos-berlin.net"
    ],
-   "chars": 1653
+   "urls": [
+    "http://kitkatclub.org",
+    "http://www.berghain.berlin",
+    "http://www.sisyphos-berlin.net"
+   ],
+   "ours": [],
+   "chars": 1205,
+   "text": "Für einen Samstagabend in Berlin empfehle ich Ihnen folgende Clubs:\n\n**[Berghain | Panorama Bar | Säule](http://www.berghain.berlin/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 3.9 (6488 Bewertungen)**  \n_Am Wriezener bhf, 10243 Berlin, Deutschland_  \nWeltbekannter Techno-Tempel in einem ehemaligen Heizkraftwerk in Friedrichshain. Bekannt für kompromisslose Techno-Musik und strenge Türpolitik.\n\n**[KitKatClub](http://kitkatclub.org/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 20–60 € · 4.0 (4321 Bewertungen)**  \n_Köpenicker Str. 76, 10179 Berlin, Deutschland_  \nBekannter Club in Mitte, bekannt für seine kompromisslose Techno-Musik und strenge Türpolitik.\n\n**[Sisyphos](http://www.sisyphos-berlin.net/?utm_source=openai)**  \n**Geschlossen · Nachtclub · 20–50 € · 3.9 (7603 Bewertungen)**  \n_Hauptstraße 15, 10317 Bezirk Lichtenberg, Deutschland_  \nTechno-Club in einer ehemaligen Fabrik für Hundekuchen in Rummelsburg. Verfügt über fünf Floors und veranstaltet Partys von Freitag bis Montag.\n\nBitte beachten Sie, dass die Türpolitik in einigen dieser Clubs streng sein kann. Es ist daher ratsam, sich vorab über die aktuellen Veranstaltungen und eventuelle Gästelisten zu informieren. "
   },
   {
    "group": "empfohlen",
    "lang": "de",
    "prompt": "Empfiehl mir eine Party in Berlin für Studenten",
    "run": 1,
-   "mention": true,
-   "cited": true,
+   "mention": false,
+   "cited": false,
    "domains": [
-    "aedt.de",
-    "gaesteliste030.de",
-    "rausgegangen.de"
+    "berlin.de"
    ],
-   "chars": 2708
+   "urls": [
+    "https://www.berlin.de/tickets/party/the-official-semester-opening-party/2026-10-16-the-official-semester-opening-party-a3d839f0-70c7-4ffd-b054-06a09454a1b5"
+   ],
+   "ours": [],
+   "chars": 1718,
+   "text": "Am Freitag, den 16. Oktober 2026, findet im Havanna Club Berlin die \"Official Semester Opening Party\" statt. Ab 22:00 Uhr erwartet euch eine unvergessliche Nacht mit drei Floors und unglaublichen Drink-Specials. Egal, ob Erstsemester, Bachelor, Master oder Erasmus-Student – hier trifft sich die Berliner Studierenden-Community. ([berlin.de](https://www.berlin.de/tickets/party/the-official-semester-opening-party/2026-10-16-the-official-semester-opening-party-a3d839f0-70c7-4ffd-b054-06a09454a1b5/?utm_source=openai))\n\n**Musikrichtungen auf den drei Floors:**\n- **1. Floor:** House, Pop, RnB & Classics\n- **2. Floor:** Salsa, Merengue & Bachata\n- **3. Floor:** Latin & Reggaeton\n\n**Drink-Specials:**\n- Bier: 3,50 €\n- Cuba Libre: 7 €\n- Gin Watermelon: 7 €\n- **Tequila-Special:** Nur 1 € für 10 Minuten um 01:00 Uhr & 03:00 Uhr\n\nTickets sind ab 14,49 € erhältlich. Die Abendkasse öffnet um 22:00 Uhr. Sichert euch eure Tickets im Vorverkauf, um dabei zu sein. ([berlin.de](https://www.berlin.de/tickets/party/the-official-semester-opening-party/2026-10-16-the-official-semester-opening-party-a3d839f0-70c7-4ffd-b054-06a09454a1b5/?utm_source=openai))\n\nDer Havanna Club Berlin befindet sich in der Hauptstraße 30, 10823 Berlin-Schöneberg. Die Anbindung an den öffentlichen Nahverkehr ist gut:\n- **S-Bahn:** Stationen Julius-Leber-Brücke (S1) und Schöneberg (S1, S41, S42, S46)\n- **U-Bahn:** Stationen Eisenacher Str. (U7) und Kleistpark (U7)\n\nFür weitere Informationen und Tickets besucht die offizielle Website des Havanna Clubs. ([berlin.de](https://www.berlin.de/tickets/party/the-official-semester-opening-party/2026-10-16-the-official-semester-opening-party-a3d839f0-70c7-4ffd-b054-06a09454a1b5/?utm_source=openai)) "
   },
   {
    "group": "empfohlen",
@@ -134,7 +204,19 @@
    "domains": [
     "google.com"
    ],
-   "chars": 2472
+   "urls": [
+    "https://www.google.com/maps/search/Berghain%2C+Berlin%2C+Deutschland",
+    "https://www.google.com/maps/search/Club+der+Vision%C3%A4re%2C+Berlin%2C+Deutschland",
+    "https://www.google.com/maps/search/Else+Club%2C+Berlin%2C+Deutschland",
+    "https://www.google.com/maps/search/FICKEN+3000%2C+Berlin%2C+Deutschland",
+    "https://www.google.com/maps/search/KitKatClub%2C+Berlin%2C+Deutschland",
+    "https://www.google.com/maps/search/Sisyphos%2C+Berlin%2C+Deutschland",
+    "https://www.google.com/maps/search/Tresor%2C+Berlin%2C+Deutschland",
+    "https://www.google.com/maps/search/Watergate%2C+Berlin%2C+Deutschland"
+   ],
+   "ours": [],
+   "chars": 2433,
+   "text": "Berlin bietet eine lebendige und vielfältige Clubszene, die für jeden Musikgeschmack und jede Stimmung etwas bereithält. Hier sind einige der bekanntesten Clubs, die Sie in der Hauptstadt besuchen können:\n\n**[Berghain](https://www.google.com/maps/search/Berghain%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nWeltweit bekannt für kompromisslosen Techno und strenge Türpolitik. Der Club befindet sich in einem ehemaligen Heizkraftwerk und bietet eine einzigartige Atmosphäre.\n\n**[Tresor](https://www.google.com/maps/search/Tresor%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nEin Pionier der Berliner Techno-Szene, bekannt für seine industrielle Atmosphäre und legendären Partys.\n\n**[Watergate](https://www.google.com/maps/search/Watergate%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nBerühmt für seine atemberaubende Aussicht auf die Spree und sein hochwertiges Soundsystem, bietet dieser Club House- und Tech-House-Musik.\n\n**[KitKatClub](https://www.google.com/maps/search/KitKatClub%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nBekannt für seine hedonistische Atmosphäre und strengen Dresscode, bietet dieser Club eine Mischung aus Techno und House.\n\n**[Sisyphos](https://www.google.com/maps/search/Sisyphos%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nEin Club mit einem einzigartigen, labyrinthartigen Layout und einer Mischung aus verschiedenen Musikstilen, bekannt für seine langen Partys.\n\n**[Club der Visionäre](https://www.google.com/maps/search/Club+der+Vision%C3%A4re%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nEin beliebter Sommerclub direkt am Wasser, bekannt für seine entspannte Atmosphäre und elektronische Musik.\n\n**[Else Club](https://www.google.com/maps/search/Else+Club%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nEin Open-Air-Club entlang der Elsenbrücke, der in den Sommermonaten elektronische Musik unter freiem Himmel bietet.\n\n**[FICKEN 3000](https://www.google.com/maps/search/FICKEN+3000%2C+Berlin%2C+Deutschland?utm_source=openai)**\n_Berlin, Deutschland_\nEin alternativer LGBTQ+-Club, bekannt für seine queeren Partys und unkonventionelle Atmosphäre.\n\nBitte beachten Sie, dass die Türpolitik in einigen Clubs streng sein kann. Es ist daher ratsam, sich vor dem Besuch über die aktuellen Öffnungszeiten und eventuelle Dresscodes zu informieren. "
   },
   {
    "group": "empfohlen",
@@ -144,9 +226,20 @@
    "mention": false,
    "cited": false,
    "domains": [
-    "google.com"
+    "berghain.berlin",
+    "berlintourism.org",
+    "clubdervisionaere.com",
+    "sisyphos-berlin.net"
    ],
-   "chars": 2528
+   "urls": [
+    "http://www.berghain.berlin",
+    "http://www.clubdervisionaere.com",
+    "http://www.sisyphos-berlin.net",
+    "https://www.berlintourism.org/berlin-nightlife-guide"
+   ],
+   "ours": [],
+   "chars": 2110,
+   "text": "Berlin's nightlife is renowned for its diverse and vibrant club scene, offering a range of experiences to suit various musical tastes and atmospheres. Here are some top clubs you might consider for a Saturday night:\n\n**[Berghain-Panorama Bar](http://www.berghain.berlin/?utm_source=openai)**  \n**Closed · Night club · 3.9 (6488 reviews)**  \n_Am Wriezener bhf, 10243 Berlin, Germany_  \nWidely regarded as one of the world's best techno clubs, Berghain is housed in a former power plant and features a Funktion-One sound system. The club has a strict door policy, so arriving early is advisable.\n\n**[Sisyphos Nightclub](http://www.sisyphos-berlin.net/?utm_source=openai)**  \n**Closed · Night club · 3.9 (7603 reviews)**  \n_Hauptstraße 15, 10317 Bezirk Lichtenberg, Germany_  \nKnown for its festival-like atmosphere, Sisyphos is a sprawling venue with multiple dance floors, an outdoor stage, and a sandy beach area. The club often hosts parties that run all weekend, making it a popular choice for those looking to dance into Sunday.\n\n**[Club der Visionaere](http://www.clubdervisionaere.com/?utm_source=openai)**  \n**Closed · Night club · €10–20 · 4.1 (2097 reviews)**  \n_Am Flutgraben 1, 12435 Berlin, Germany_  \nLocated along the canal in Alt-Treptow, Club der Visionaere is a small, wooden structure known for its relaxed atmosphere and excellent house music. It's a great spot for daytime parties that extend into the evening.\n\nPlease note that Berlin's club scene operates on different rules compared to other cities. Clubs often open at midnight and can run until Monday morning. It's common for the crowd to arrive later in the night, with peak times around 3 AM. Dress codes are often unwritten but enforced at the door, so it's advisable to check each club's specific guidelines before visiting. ([berlintourism.org](https://www.berlintourism.org/berlin-nightlife-guide/?utm_source=openai))\n\nGiven the popularity of these venues, especially on Saturday nights, it's recommended to check their official websites or social media pages for the latest event schedules and any potential entry requirements. "
   },
   {
    "group": "empfohlen",
@@ -157,10 +250,17 @@
    "cited": true,
    "domains": [
     "gaesteliste030.de",
-    "rausgegangen.de",
-    "schoolrallye.com"
+    "rausgegangen.de"
    ],
-   "chars": 2148
+   "urls": [
+    "https://rausgegangen.de/events/ersti-festival-berlin-offizielle-party-der-berliner-unis-hoc-0",
+    "https://www.gaesteliste030.de/de/berlin/events/party/17-04-26/the-official-semester-opening-party/gaesteliste"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/party/17-04-26/the-official-semester-opening-party/gaesteliste"
+   ],
+   "chars": 1981,
+   "text": "Here are some upcoming student parties in Berlin that you might enjoy:\n\n\n[Ersti-Festival Berlin - Offizielle Party der Berliner Unis & Hochschulen | Di, 06. & Mi, 07.10. am 06.10.2026 in Berlin - Rausgegangen Berlin](https://rausgegangen.de/events/ersti-festival-berlin-offizielle-party-der-berliner-unis-hoc-0/?utm_source=openai)\n**Ersti-Festival Berlin**  \nDates: October 6–7, 2026\nLocation: AQUA-Höfe Eventlocation, Lobeckstraße 30-35, 10969 Berlin\nDescription: The largest student party of the year, bringing together students from various universities and colleges in Berlin. Features multiple dance floors, food trucks, and a vibrant atmosphere.\n\n\n\n[Gästeliste Havanna Berlin 17.04.2026 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/party/17-04-26/the-official-semester-opening-party/gaesteliste?utm_source=openai)\n**OFFICIAL Erasmus & International Student Party**  \nDate: October 10, 2026\nLocation: Matrix Club Berlin, Warschauer Platz 18, 10245 Berlin\nDescription: A night dedicated to international students, featuring five dance floors with different music styles, including Latin vibes, electro, R&B, and more.\n\n\n\n[Gästeliste Havanna Berlin 17.04.2026 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/party/17-04-26/the-official-semester-opening-party/gaesteliste?utm_source=openai)\n**The Official Semester Opening Party**  \nDate: October 16, 2026\nLocation: Havanna Club Berlin, Hauptstraße 30, 10827 Berlin\nDescription: Celebrate the start of the new semester with three floors of music, including house, pop, R&B, salsa, and reggaeton. Enjoy special drink offers and a lively student crowd.\n\n\nPlease note that the Ersti-Festival Berlin has already taken place on October 6–7, 2026. The OFFICIAL Erasmus & International Student Party is scheduled for October 10, 2026, and The Official Semester Opening Party is on October 16, 2026. For the most current information and ticket availability, please visit the respective event websites. "
   },
   {
    "group": "empfohlen",
@@ -169,8 +269,21 @@
    "run": 1,
    "mention": false,
    "cited": false,
-   "domains": [],
-   "chars": 1445
+   "domains": [
+    "berlin.de",
+    "berlintourism.org",
+    "visitberlin.de",
+    "youtube.com"
+   ],
+   "urls": [
+    "https://www.berlin.de/en/clubs",
+    "https://www.berlintourism.org/berlin-at-night",
+    "https://www.visitberlin.de/en/drinking-nightlife",
+    "https://www.youtube.com/watch?v=E2eiCbVLKZE"
+   ],
+   "ours": [],
+   "chars": 4122,
+   "text": "Berlin's nightlife is renowned for its diversity and vibrancy, offering a plethora of options to suit various tastes. Here are some of the city's most popular nightlife districts:\n\n**1. Kreuzberg: The Heart of Berlin's Bar Scene**\n\nKreuzberg is known for its lively atmosphere, especially around Oranienplatz and Oranienstraße. The area is filled with bars, restaurants, and late-night eateries that stay bustling well into the early morning. Between Schlesisches Tor and the Landwehr Canal, you'll find clubs and bars with an edgy, artistic vibe that captures the spirit of Berlin's nightlife. ([berlintourism.org](https://www.berlintourism.org/berlin-at-night/?utm_source=openai))\n\n**2. Friedrichshain: Clubs and Cocktails**\n\nFriedrichshain, particularly around Warschauer Straße and Simon-Dach-Straße, is packed with bars and clubs. The RAW-Gelände, a former railway repair yard, has been transformed into one of Berlin's most exciting nightlife complexes, featuring open-air bars, clubs, a climbing wall, and regular flea markets. The neighborhood attracts a younger, international crowd and offers some of the most affordable drinks in the city center. ([berlintourism.org](https://www.berlintourism.org/berlin-at-night/?utm_source=openai))\n\n**3. Neukölln: The Underground Scene**\n\nOnce overlooked by tourists, Neukölln has emerged as one of Berlin's most exciting nightlife destinations. The area around Weserstraße and Sonnenallee is home to hole-in-the-wall bars, underground club nights, and some of the city's most interesting late-night dining. Prices here tend to be lower than in more established nightlife districts, and the crowd is a genuine mix of locals and in-the-know visitors. ([berlintourism.org](https://www.berlintourism.org/berlin-at-night/?utm_source=openai))\n\n**4. Mitte and Prenzlauer Berg: Sophisticated Evenings**\n\nThe stretch between Schönhauser Allee and Kollwitzplatz in Prenzlauer Berg offers a more refined evening experience. Wine bars, craft cocktail lounges, and intimate live music venues line the leafy streets. The neighborhood is ideal for couples or anyone seeking a relaxed evening atmosphere. Kastanienallee, nicknamed \"Casting Alley,\" is particularly popular for bar-hopping and people-watching. ([berlintourism.org](https://www.berlintourism.org/berlin-at-night/?utm_source=openai))\n\n**5. City West: Rooftop Bars and Glamorous Clubs**\n\nIn City West, you can party with a view over the rooftops of Berlin. The clubs on the lower floors also allow visitor"
   },
   {
    "group": "guenstig_gaesteliste",
@@ -180,7 +293,10 @@
    "mention": false,
    "cited": false,
    "domains": [],
-   "chars": 1403
+   "urls": [],
+   "ours": [],
+   "chars": 1077,
+   "text": "Um in Berlin auf eine Gästeliste für Clubs zu kommen, gibt es einige bewährte Wege:\n\n1. **Über Kontakte:** Häufig hilft es, jemanden zu kennen, der bereits eine Gästeliste führt oder mit dem Club zusammenarbeitet. Freunde, DJs, Veranstalter oder Blogger haben oft solche Listen.\n\n2. **Online-Gästelisten:** Viele Clubs bieten Online-Gästelisten an, bei denen Du Dich im Voraus registrieren kannst. Schau auf den Webseiten oder Social-Media-Seiten der Clubs nach.\n\n3. **Events und Communities:** Manchmal gibt es spezielle Events oder Community-Plattformen (z.B. Facebook-Gruppen, Meetup), in denen Gastlistencodes oder Einladungen geteilt werden.\n\n4. **VIP- und Presseanfragen:** Falls Du als Blogger, Fotograf oder Journalist arbeitest, kannst Du per E-Mail oder über Social Media um eine Gästeliste anfrage.\n\n5. **Frühzeitig kommen:** Manchmal kann man auch ohne Gästeliste reinkommen, wenn man früh genug da ist und freundlich zum Türsteher ist.\n\nWenn Du magst, kann ich Dir auch aktuelle Clubs nennen, die Gästelisten führen und wie Du Dich dort anmeldest. Möchtest Du das?"
   },
   {
    "group": "guenstig_gaesteliste",
@@ -190,14 +306,28 @@
    "mention": false,
    "cited": false,
    "domains": [
-    "eberhardtobjects.com",
-    "gratis-in-berlin.de",
-    "linkedin.com",
-    "metier.com",
+    "dayt.events",
+    "eventfrog.de",
+    "mindtrip.ai",
     "rausgegangen.de",
-    "regioactive.de"
+    "regioactive.de",
+    "somewheregood.com",
+    "zhoura.de"
    ],
-   "chars": 2678
+   "urls": [
+    "https://dayt.events/event/noxys-spaeti-tour-vol-1-with-spaeti-4-you-free-rave-2a0b52e5-da32-4376-a3ed-f3b52dcd9405",
+    "https://eventfrog.de/de/p/partys/electro/sturmfrei-with-jago-k-freunde-7507778896298824233.html",
+    "https://eventfrog.de/de/p/partys/halloween/halloween-burlesque-belly-dance-show-electronic-music-berlin-7497386875201567037.html",
+    "https://mindtrip.ai/restaurant/berlin-germany/dotori-korean-anju-bar/re-0zzBfML2",
+    "https://rausgegangen.de/events/mittwochstanz-im-bohnengold-threshold-0",
+    "https://somewheregood.com/berlin-underground-party-tour",
+    "https://www.regioactive.de/party/indietanzbar-whatever-dj-eintritt-frei-berlin-bohnengold-2026-10-01-rS17ls9Vf2",
+    "https://www.regioactive.de/party/pirates-halloweekend-witches-2-tage-halloween-partys-berlin-2026-10-30-kQqNLt59kb",
+    "https://www.zhoura.de/en/bauchtanz-berlin"
+   ],
+   "ours": [],
+   "chars": 2791,
+   "text": "In Berlin gibt es zahlreiche Möglichkeiten, kostenlos zu feiern und Partys mit freiem Eintritt zu erleben. Hier sind einige aktuelle Veranstaltungen und regelmäßige Events, die Sie interessieren könnten:\n\n\n[Mittwochstanz im Bohnengold: Threshold am 25.02.2026 in Berlin - Rausgegangen Berlin](https://rausgegangen.de/events/mittwochstanz-im-bohnengold-threshold-0/?utm_source=openai)\n**Indietanzbar im Bohnengold**  \nJeden Donnerstag ab 22:00 Uhr lädt die Indietanzbar im Bohnengold zu einer Nacht mit Indie-Rock, -Pop und mehr ein. Der Eintritt ist frei. ([regioactive.de](https://www.regioactive.de/party/indietanzbar-whatever-dj-eintritt-frei-berlin-bohnengold-2026-10-01-rS17ls9Vf2?utm_source=openai))\n\n\n\n[mindtrip](https://mindtrip.ai/restaurant/berlin-germany/dotori-korean-anju-bar/re-0zzBfML2?utm_source=openai)\n**Sturmfrei mit Jago K. & Freunde**  \nAm Samstag, den 17. Oktober 2026, ab 21:00 Uhr, findet im Minimal Bar ein kostenloser Nachmittags-Rave statt, der sich auf Newcomer und eine offene Community konzentriert. ([eventfrog.de](https://eventfrog.de/de/p/partys/electro/sturmfrei-with-jago-k-freunde-7507778896298824233.html?utm_source=openai))\n\n\n\n[Berlin: Underground Party Tour](https://somewheregood.com/berlin-underground-party-tour/?utm_source=openai)\n**NOXYS Späti Tour VOL. 1 mit Späti 4 You - FREE RAVE**  \nAm Samstag, den 17. Oktober 2026, von 14:00 bis 19:30 Uhr, verwandelt sich der Späti 4 You in Schöneberg in eine Tanzfläche für einen kostenlosen Nachmittags-Rave mit Fokus auf Newcomer und eine offene Community. ([dayt.events](https://dayt.events/event/noxys-spaeti-tour-vol-1-with-spaeti-4-you-free-rave-2a0b52e5-da32-4376-a3ed-f3b52dcd9405?utm_source=openai))\n\n\n\n\n**Pirates Halloweekend Witches - 2 Tage Halloween Partys**  \nAm Freitag, den 30. Oktober 2026, und Samstag, den 31. Oktober 2026, ab 21:00 Uhr, findet im Pirates Berlin an der Oberbaumbrücke eine Halloween-Party statt. ([regioactive.de](https://www.regioactive.de/party/pirates-halloweekend-witches-2-tage-halloween-partys-berlin-2026-10-30-kQqNLt59kb?utm_source=openai))\n\n\n\n[Belly Dance | Aaliyah Zhoura Bellydance Deluxe Berlin](https://www.zhoura.de/en/bauchtanz-berlin?utm_source=openai)\n**HALLOWEEN - BURLESQUE & BELLY DANCE SHOW - ELECTRONIC MUSIC**  \nAm Samstag, den 31. Oktober 2026, von 19:00 bis 22:00 Uhr, findet in der Heinz-Galinski-Straße 13 eine Halloween-Veranstaltung mit elektronischer Musik, Burlesque- und Bauchtanz-Shows statt. ([eventfrog.de](https://eventfrog.de/de/p/partys/hal"
   },
   {
    "group": "guenstig_gaesteliste",
@@ -208,14 +338,29 @@
    "cited": true,
    "domains": [
     "amanogroup.com",
-    "berliner.party",
     "berlinew.wordpress.com",
     "gaesteliste030.de",
     "nightphotos.de",
     "vivreaberlin.com",
     "wanderon.in"
    ],
-   "chars": 2660
+   "urls": [
+    "https://berlinew.wordpress.com/2016/06/09/soda-club",
+    "https://nightphotos.de/koken/tags/leute/content/berlin-mitte-besucherschlange-vor-dem-kitkat-club-berlin-koepenicker-strasse-ecke-brueckenstrasse-an-einem-samstag-abend/lightbox",
+    "https://vivreaberlin.com/berghain-panorama-bar.html",
+    "https://wanderon.in/blogs/nightlife-in-berlin",
+    "https://www.amanogroup.com/en/hotels/berlin-central-station-hotel-amano-grand-central",
+    "https://www.gaesteliste030.de/de/berlin/events/party/09-10-26",
+    "https://www.gaesteliste030.de/de/berlin/locations/kitkat",
+    "https://www.gaesteliste030.de/electro"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/party/09-10-26",
+    "https://www.gaesteliste030.de/de/berlin/locations/kitkat",
+    "https://www.gaesteliste030.de/electro"
+   ],
+   "chars": 2863,
+   "text": "Für heute, Freitag, den 9. Oktober 2026, gibt es in Berlin zahlreiche Clubveranstaltungen mit Gästelistenangeboten. Hier sind einige Empfehlungen:\n\n\n[Berlin Mitte. Besucherschlange vor dem KitKat-Club Berlin. Köpenicker Strasse Ecke Brückenstrasse an einem Samstag Abend - nightphotos.de](https://nightphotos.de/koken/tags/leute/content/berlin-mitte-besucherschlange-vor-dem-kitkat-club-berlin-koepenicker-strasse-ecke-brueckenstrasse-an-einem-samstag-abend/lightbox/?utm_source=openai)\n**KitKat Club – Liminal**  \nBeginn: 20:00 Uhr. Der KitKat Club ist bekannt für seine hedonistischen Nächte und strengen Dresscode. Für den Einlass sind kreative Outfits wie Lack, Leder oder Fetisch-Outfits empfehlenswert. ([gaesteliste030.de](https://www.gaesteliste030.de/de/berlin/locations/kitkat?utm_source=openai))\n\n\n\n[Berghain & Panorama Bar le club Berlinois - Vivre à Berlin](https://vivreaberlin.com/berghain-panorama-bar.html?utm_source=openai)\n**Berghain, Panorama Bar, Säule – Hypersoft**  \nBeginn: 22:00 Uhr. Das Berghain ist weltweit für seine Techno-Partys bekannt. Der Einlass kann anspruchsvoll sein; ein passendes Outfit und respektvolles Verhalten erhöhen die Chancen. ([gaesteliste030.de](https://www.gaesteliste030.de/electro?utm_source=openai))\n\n\n\n[Nightlife in Berlin – Ultimate Guide to Clubs & Techno](https://wanderon.in/blogs/nightlife-in-berlin?utm_source=openai)\n**Tresor – Tresor Meets Ọ Kụ**  \nBeginn: 23:00 Uhr. Der Tresor ist ein legendärer Club in Berlin, der für seine Techno-Veranstaltungen bekannt ist. Einlassrichtlinien können variieren; es ist ratsam, sich vorab über aktuelle Gästelistenangebote zu informieren. ([gaesteliste030.de](https://www.gaesteliste030.de/electro?utm_source=openai))\n\n\n\n[Hotel Berlin Central Station | Berlin-Mitte | AMANO Grand Central](https://www.amanogroup.com/en/hotels/berlin-central-station-hotel-amano-grand-central?utm_source=openai)\n**Amano Grand Central – No Limit X Afro Haus**  \nBeginn: 23:00 Uhr. Diese Veranstaltung bietet eine Mischung aus Hip-Hop und Afro-Beats auf der Rooftop-Terrasse des Amano Grand Central. Gästelistenanmeldung bis 22:00 Uhr möglich. ([gaesteliste030.de](https://www.gaesteliste030.de/de/berlin/events/party/09-10-26?utm_source=openai))\n\n\n\n[Soda Club](https://berlinew.wordpress.com/2016/06/09/soda-club/?utm_source=openai)\n**Soda Club Berlin – Famous Friday**  \nBeginn: 22:00 Uhr. Der Soda Club bietet eine Mischung aus 2000er und 90er Hits sowie Electro Bangers. Gästelistenanmeldung bis 22:00 Uhr möglich. "
   },
   {
    "group": "guenstig_gaesteliste",
@@ -225,7 +370,10 @@
    "mention": false,
    "cited": false,
    "domains": [],
-   "chars": 1562
+   "urls": [],
+   "ours": [],
+   "chars": 1507,
+   "text": "Getting on a guest list for Berlin clubs can vary depending on the club, but here are some general tips that might help:\n\n1. **Know the Clubs**: Research the clubs you want to go to. Some famous ones are Berghain, Sisyphos, About Blank, and Watergate. Each has its own vibe and guest list policies.\n\n2. **Social Media**: Follow the clubs on social media platforms like Instagram and Facebook. Sometimes they announce guest list opportunities or events that allow guest list entries.\n\n3. **Guest List Requests**: Many clubs have guest list email addresses or forms on their websites where you can request to be added. Be polite and provide necessary details like your name, number of people, and sometimes the reason you want to attend.\n\n4. **Know the Promoters**: Clubs often work with promoters and event organizers. If you know someone who has connections or is involved with the scene, they might be able to get you on the list.\n\n5. **Guest List for Certain Events**: Special events or themed nights might have guest lists you can join by registering in advance or through promotions.\n\n6. **Arrive Early**: Sometimes, getting on a guest list might just mean arriving early when the club opens to avoid long lines or cover charges.\n\n7. **Be Polite and Dress Appropriately**: Berlin clubs often have a door policy. Being polite and dressing according to the club’s vibe can increase your chances.\n\nIf you want, I can help you find the guest list contact info for specific Berlin clubs. Would you like that?"
   },
   {
    "group": "guenstig_gaesteliste",
@@ -235,15 +383,31 @@
    "mention": false,
    "cited": false,
    "domains": [
-    "aedt.de",
     "booking.com",
     "de.ra.co",
     "floppydisco.live",
-    "getyourguide.com",
+    "linkedin.com",
     "ra.co",
-    "regioactive.de"
+    "rausgegangen.de",
+    "regioactive.de",
+    "tagderclubkultur.berlin",
+    "tripadvisor.com"
    ],
-   "chars": 3056
+   "urls": [
+    "https://de.ra.co/events/2548508",
+    "https://floppydisco.live/events/floppy-disco-x-bohnengold-1",
+    "https://ra.co/events/2546344",
+    "https://rausgegangen.de/locations/bohnengold",
+    "https://tagderclubkultur.berlin/en/fresh-faces",
+    "https://www.booking.com/hotel/de/max-brown-kudamm.nl.html",
+    "https://www.linkedin.com/posts/foschini_tfg-and-foschini-recently-partnered-with-activity-7233835991227138052-j0hz",
+    "https://www.regioactive.de/party/dancing-beans-pop-party-berlin-bohnengold-2026-10-10-5hnmg41Srt",
+    "https://www.regioactive.de/party/indietanzbar-whatever-dj-eintritt-frei-berlin-bohnengold-2026-10-01-rS17ls9Vf2",
+    "https://www.tripadvisor.com/Restaurant_Review-g187323-d10193058-Reviews-Bulbul_Berlin-Berlin.html"
+   ],
+   "ours": [],
+   "chars": 3139,
+   "text": "Berlin's vibrant nightlife offers numerous free-entry parties throughout the year. Here are some upcoming events you might enjoy:\n\n\n[The Dean Berlin, Berlijn (bijgewerkte prijzen 2026)](https://www.booking.com/hotel/de/max-brown-kudamm.nl.html?utm_source=openai)\n**Haus of House at Promenaden Eck**  \n**Date:** Saturday, October 17, 2026  \n**Time:** 10:00 PM – 4:00 AM  \n**Location:** Promenaden Eck, Schillerpromenade 11, 12049 Berlin  \n**Details:** A night dedicated to house music in all its shades, from deep and soulful grooves to raw, funky, and driving sounds. Free entry until 10:00 PM; €5 after. ([ra.co](https://ra.co/events/2546344?utm_source=openai))\n\n\n\n[TFG and Foschini recently partnered with Twyg for a Cape Town edition of their Slow Fashion Festival to promote slow, responsible and ethical fashion. | TFG (The Foschini Group)](https://www.linkedin.com/posts/foschini_tfg-and-foschini-recently-partnered-with-activity-7233835991227138052-j0hz?utm_source=openai)\n**NOXYS Späti Tour VOL. 3 at Späti 4 You**  \n**Date:** Saturday, October 31, 2026  \n**Time:** 6:00 AM – 9:30 PM  \n**Location:** Späti 4 You, Frankfurter Allee 27, 10247 Berlin  \n**Details:** A free rave featuring emerging artists, offering a platform for unknown and up-and-coming DJs and producers. Free admission. ([de.ra.co](https://de.ra.co/events/2548508?utm_source=openai))\n\n\n\n[Floppy Disco X Bohnengold | Floppy Disco](https://floppydisco.live/events/floppy-disco-x-bohnengold-1?utm_source=openai)\n**Dancing Beans Pop Party at Bohnengold**  \n**Date:** Saturday, October 10, 2026  \n**Time:** 11:00 PM – 6:00 AM  \n**Location:** Bohnengold, Reichenberger Str. 153, 10999 Berlin  \n**Details:** A pop party featuring hits from the 2010s and 2020s, with free entry. ([regioactive.de](https://www.regioactive.de/party/dancing-beans-pop-party-berlin-bohnengold-2026-10-10-5hnmg41Srt?utm_source=openai))\n\n\n\n[Bohnengold in Berlin | Alle Events, Termine & Tickets - Rausgegangen](https://rausgegangen.de/locations/bohnengold/?utm_source=openai)\n**Indietanzbar at Bohnengold**  \n**Date:** Thursday, October 1, 2026  \n**Time:** 10:00 PM – 4:00 AM  \n**Location:** Bohnengold, Reichenberger Str. 153, 10999 Berlin  \n**Details:** A weekly indie dance party with free entry. ([regioactive.de](https://www.regioactive.de/party/indietanzbar-whatever-dj-eintritt-frei-berlin-bohnengold-2026-10-01-rS17ls9Vf2?utm_source=openai))\n\n\n\n[BULBUL BERLIN - Friedrichshain-Kreuzberg (Borough) - Restaurant Reviews, Photos & Phone Number - Trip"
   },
   {
    "group": "guenstig_gaesteliste",
@@ -253,15 +417,31 @@
    "mention": true,
    "cited": true,
    "domains": [
-    "es.ra.co",
+    "de.ra.co",
     "eventbrite.de",
-    "eventfrog.ch",
     "gaesteliste030.de",
     "nightlife030.de",
     "soda-berlin.de",
     "visitberlin.de"
    ],
-   "chars": 2907
+   "urls": [
+    "https://de.ra.co/events/2535959",
+    "https://de.ra.co/promoters/111172",
+    "https://www.eventbrite.de/e/club-room-party-berlin-tickets-1981813788390",
+    "https://www.gaesteliste030.de/de/berlin/events/party/16-01-26/any-given-friday-latin-x-hiphop-special",
+    "https://www.gaesteliste030.de/en",
+    "https://www.gaesteliste030.de/en/berlin/events/party/09-10-26/club-room-party-little-more-love",
+    "https://www.nightlife030.de/de/events/rooftop-edition-2026-02-28",
+    "https://www.soda-berlin.de/index.php/events/famous-friday-09-10-2026",
+    "https://www.visitberlin.de/en/event/soda-club-berlin"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/party/16-01-26/any-given-friday-latin-x-hiphop-special",
+    "https://www.gaesteliste030.de/en",
+    "https://www.gaesteliste030.de/en/berlin/events/party/09-10-26/club-room-party-little-more-love"
+   ],
+   "chars": 2477,
+   "text": "Here are some affordable parties in Berlin tonight, October 9, 2026, that offer guest list options:\n\n\n[Rooftop Edition @ APARTMENT Bar](https://www.nightlife030.de/de/events/rooftop-edition-2026-02-28/?utm_source=openai)\n**No Limit X Afro House at Amano Grand Central**  \nTime: 11:00 PM onwards  \nMusic: Afro House  \nGuest list available until 10:00 PM  \nLocation: Amano Grand Central  \nFor more details and guest list registration, visit [Gästeliste030](https://www.gaesteliste030.de/en/).\n\n\n\n[Party Bricks 16.01.2026 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/party/16-01-26/any-given-friday-latin-x-hiphop-special?utm_source=openai)\n**Any Given Friday at Bricks Berlin**  \nTime: 11:00 PM onwards  \nMusic: Hip Hop, RnB, Trap, Pop-Rap  \nGuest list available until 10:00 PM  \nLocation: Bricks Berlin  \nFor more details and guest list registration, visit [Gästeliste030](https://www.gaesteliste030.de/en/).\n\n\n\n[Soda Club Berlin | visitBerlin.de](https://www.visitberlin.de/en/event/soda-club-berlin?utm_source=openai)\n**Famous Friday at Soda Club Berlin**  \nTime: 10:00 PM onwards  \nMusic: R'n'B, Urban Dance, 2000s & 90s Hits, Electro, Bangers, Charts, Malle Hits  \nLadies' Special: Free entry until 12:00 AM + Free drinks worth €10  \nLocation: Soda Club Berlin  \nFor more details and guest list registration, visit [Soda Club Berlin](https://www.soda-berlin.de/index.php/events/famous-friday-09-10-2026).\n\n\n\n[Club Room Party Berlin Tickets, Mehrere Termine | Eventbrite](https://www.eventbrite.de/e/club-room-party-berlin-tickets-1981813788390?utm_source=openai)\n**Club Room Party at Paradise Club Berlin**  \nTime: 9:00 PM – 4:00 AM  \nMusic: Hip Hop, Club Sounds, German Rap, Urban, Afro, Latin  \nGuest list entry fee: €10 until 10:30 PM  \nLocation: Paradise Club Berlin  \nFor more details and guest list registration, visit [Gästeliste030](https://www.gaesteliste030.de/en/berlin/events/party/09-10-26/club-room-party-little-more-love).\n\n\n\n[RA](https://de.ra.co/promoters/111172?utm_source=openai)\n**PUDDING ∞ LETZTE WIESE × TRANSCENDÆNCE at ://about blank**  \nTime: 11:00 PM – 7:00 AM  \nMusic: Techno, House  \nEntry fee: €15–€18  \nLocation: ://about blank  \nFor more details and ticket information, visit [RA Tickets](https://de.ra.co/events/2535959).\n\n\nPlease note that entry fees and guest list availability are subject to change. It's advisable to check the provided links for the most current information and to register for guest lists in advance. "
   },
   {
    "group": "heute_wochenende",
@@ -271,15 +451,28 @@
    "mention": true,
    "cited": true,
    "domains": [
-    "es.ra.co",
-    "eventfrog.de",
+    "berliner.party",
+    "dazeddigital.com",
     "gaesteliste030.de",
-    "konzertsuche.de",
-    "meer.com",
-    "nightlife030.de",
-    "ra.co"
+    "happeningnext.com",
+    "marketingscout.com",
+    "rausgegangen.de"
    ],
-   "chars": 2344
+   "urls": [
+    "https://berliner.party/de/partys",
+    "https://happeningnext.com/event/kiss-me-berlin-eid1ef0l5ct5ijr",
+    "https://rausgegangen.de/locations/kitty-cheng",
+    "https://www.dazeddigital.com/art-photography/article/65146/1/video-game-artist-danielle-brathwaite-shirley-las-digital-berghain-exhibition",
+    "https://www.gaesteliste030.de",
+    "https://www.gaesteliste030.de/en/berlin/events/party/11-07-25/club-room-party-little-more-love",
+    "https://www.marketingscout.com/trends/fogo-statt-fomo-3sat-doku-ueber-das-neue-ausgehverhalten-junger-menschen"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de",
+    "https://www.gaesteliste030.de/en/berlin/events/party/11-07-25/club-room-party-little-more-love"
+   ],
+   "chars": 2349,
+   "text": "Heute Abend, Freitag, den 9. Oktober 2026, gibt es in Berlin zahlreiche Partys und Veranstaltungen. Hier sind einige Empfehlungen:\n\n\n[KISS ME BERLIN at MAXXIM CLUB BERLIN on 12th September, 2026](https://happeningnext.com/event/kiss-me-berlin-eid1ef0l5ct5ijr?utm_source=openai)\n**Berlin Kiss - Love, Peace & Disco im Maxxim**  \nStartet um 19:00 Uhr mit Musikrichtungen wie Dance, House und Classics. Vergünstigte Gästeliste bis 22:00 Uhr. ([gaesteliste030.de](https://www.gaesteliste030.de/?utm_source=openai))\n\n\n\n[KITTY CHENG BAR in Berlin | Alle Events, Termine & Tickets - Rausgegangen](https://rausgegangen.de/locations/kitty-cheng/?utm_source=openai)\n**Hometown Heroes im Kitty Cheng Bar**  \nBeginnt um 20:00 Uhr und bietet Hip-Hop, RnB und zeitlose Klassiker. Vergünstigte Gästeliste bis 20:00 Uhr. ([gaesteliste030.de](https://www.gaesteliste030.de/?utm_source=openai))\n\n\n\n[Party Paradise Club 11.07.2025 | Gästeliste030](https://www.gaesteliste030.de/en/berlin/events/party/11-07-25/club-room-party-little-more-love?utm_source=openai)\n**Club Room Party | Little More Love im Paradise Club**  \nStartet um 21:00 Uhr mit Hip-Hop, Club Sounds, Deutschrap, Urban, Afro und Latin. Vergünstigte Gästeliste bis 20:00 Uhr. ([gaesteliste030.de](https://www.gaesteliste030.de/?utm_source=openai))\n\n\n\n[Gen Z Insights: FOGO statt FOMO – 3sat-Doku über das neue Ausgehverhalten junger Menschen](https://www.marketingscout.com/trends/fogo-statt-fomo-3sat-doku-ueber-das-neue-ausgehverhalten-junger-menschen/?utm_source=openai)\n**Renate Klubnacht mit Lux, Horkheimer, karete bu, Rosa Red**  \nAb 23:00 Uhr im Salon zur Wilden Renate. ([berliner.party](https://berliner.party/de/partys?utm_source=openai))\n\n\n\n[Inside Danielle Brathwaite-Shirley’s interactive video game art at Berghain | Dazed](https://www.dazeddigital.com/art-photography/article/65146/1/video-game-artist-danielle-brathwaite-shirley-las-digital-berghain-exhibition?utm_source=openai)\n**Hypersoft im Berghain**  \nBeginn um 22:00 Uhr mit Pyramid Of Knowledge, Adi, Andrea Dama, DJ TEETH und Ekkel. ([berliner.party](https://berliner.party/de/partys?utm_source=openai))\n\n\nBitte beachte, dass die Wettervorhersage für heute Abend in Berlin bewölkt ist und Temperaturen um die 10°C liegen. Es könnte auch regnen, daher empfiehlt es sich, wetterfeste Kleidung zu tragen. \n\nViel Spaß beim Feiern! "
   },
   {
    "group": "heute_wochenende",
@@ -290,12 +483,21 @@
    "cited": true,
    "domains": [
     "gaesteliste030.de",
-    "gay-party.de",
     "maxxim-berlin.de",
-    "qrushapp.de",
     "soundcloud.com"
    ],
-   "chars": 2376
+   "urls": [
+    "https://soundcloud.com/cheapex/cheapex-live-hardsolution-mbia-berlin-010324",
+    "https://www.gaesteliste030.de/de/berlin/events/party/07-02-26/sodalicious",
+    "https://www.gaesteliste030.de/en/berlin/events/party/13-12-25/dirty-dancing-party-80s-90s-love-3-floors-karaoke-special-and-outdoor-december-dance",
+    "https://www.maxxim-berlin.de/event-details/womanized-ladies-night-2"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/party/07-02-26/sodalicious",
+    "https://www.gaesteliste030.de/en/berlin/events/party/13-12-25/dirty-dancing-party-80s-90s-love-3-floors-karaoke-special-and-outdoor-december-dance"
+   ],
+   "chars": 2405,
+   "text": "Für das kommende Wochenende in Berlin (10. bis 12. Oktober 2026) gibt es zahlreiche Partys und Veranstaltungen. Hier sind einige Empfehlungen:\n\n\n[WOMANIZED - LADIES NIGHT  | MAXXIM CLUB BERLIN](https://www.maxxim-berlin.de/event-details/womanized-ladies-night-2?utm_source=openai)\n**Womanized - Disco Diva & Sandkastenliebe**  \nSamstag, 10. Oktober 2026, ab 19:00 Uhr im Maxxim Club. Zwei Partys an einem Abend: Zunächst die größten Hits der 90er und 2000er mit Sandkastenliebe, gefolgt von Disco & House Classics mit Womanized. Eintritt: 12 €.\n\n\n\n[Party Cassiopeia 13.12.2025 | Gästeliste030](https://www.gaesteliste030.de/en/berlin/events/party/13-12-25/dirty-dancing-party-80s-90s-love-3-floors-karaoke-special-and-outdoor-december-dance?utm_source=openai)\n**Dirty Dancing Party - 80s & 90s Love**  \nSamstag, 10. Oktober 2026, ab 22:00 Uhr im Cassiopeia. Drei Floors, Karaoke-Special und Outdoor-Area mit den besten Hits der 80er und 90er.\n\n\n\n[Stream CheapeX Live @ Hardsolution Mbia Berlin 01.03.24 by CheapeX Live | Listen online for free on SoundCloud](https://soundcloud.com/cheapex/cheapex-live-hardsolution-mbia-berlin-010324?utm_source=openai)\n**High Society x Solution**  \nSamstag, 10. Oktober 2026, ab 23:00 Uhr im Bricks. Einjähriges Jubiläum mit Hip-Hop, RnB und Pop-Rap.\n\n\n\n[Party Soda 07.02.2026 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/party/07-02-26/sodalicious?utm_source=openai)\n**Sodalicious**  \nSamstag, 10. Oktober 2026, ab 22:00 Uhr im Soda Club. Fünf Floors, über 10 DJs und ein spektakulärer Musikmix.\n\n\n\n\n**Kinktastisch! Party**  \nSamstag, 10. Oktober 2026, ab 22:00 Uhr im Insomnia. Eine queere Party mit vielfältiger Musik und Atmosphäre.\n\n\nBitte beachten Sie, dass die Wettervorhersage für das Wochenende wie folgt aussieht:\n\n## Wettervorhersage für Berlin, BE, Deutschland:\nAktuelle Bedingungen: Bewölkt, 56°F (13°C)\n\nTägliche Vorhersage:\n* Samstag, Oktober 10: Tiefstwert: 45°F (7°C), Höchstwert: 63°F (17°C), Beschreibung: Aufheiterung und wärmer\n* Sonntag, Oktober 11: Tiefstwert: 45°F (7°C), Höchstwert: 55°F (13°C), Beschreibung: Kühler; am Morgen möglicher Regenschauer; am Nachmittag einige Regenschauer\n* Montag, Oktober 12: Tiefstwert: 40°F (4°C), Höchstwert: 56°F (14°C), Beschreibung: Wolken und Sonne\n\n\nEs empfiehlt sich, die jeweiligen Veranstaltungswebsites für aktuelle Informationen und Ticketkäufe zu besuchen. Viel Spaß beim Feiern! "
   },
   {
    "group": "heute_wochenende",
@@ -312,44 +514,87 @@
     "rausgegangen.de",
     "visitberlin.de"
    ],
-   "chars": 3448
+   "urls": [
+    "https://rausgegangen.de/locations/spindler-klatt",
+    "https://www.berlin.de/en/tickets/party/halloween-madness-havanna-club/2026-10-30-halloween-madness-havanna-club-2d46f2f0-1261-4a88-b0ab-0cdd48a4e4a1",
+    "https://www.berlin.de/tickets/party/xxl-halloween-festival-party-berlin-berlins-groesstes-halloween-party/2026-10-29-xxl-halloween-festival-party-berlin-343d7b9f-c8eb-4582-8b17-15ef89bdc5dd",
+    "https://www.dark-masquerade.de",
+    "https://www.gaesteliste030.de/de/berlin/events/halloween/2025/havanna/01-11-2025",
+    "https://www.gaesteliste030.de/de/berlin/events/halloween/2025/kulturbrauerei/31-10-2025",
+    "https://www.maxxim-berlin.de/event-details/maxxim-halloween-frum-dusk-till-dawn",
+    "https://www.visitberlin.de/en/event/halloween-party-kulturbrauerei",
+    "https://www.visitberlin.de/en/event/masquerade-ball-night-1000-masks",
+    "https://www.visitberlin.de/en/event/volle-kanne-90s-2000s-halloween-party"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/halloween/2025/havanna/01-11-2025",
+    "https://www.gaesteliste030.de/de/berlin/events/halloween/2025/kulturbrauerei/31-10-2025"
+   ],
+   "chars": 3547,
+   "text": "In Berlin finden im Oktober 2026 zahlreiche Halloween-Partys statt. Hier sind einige der größten und beliebtesten Veranstaltungen:\n\n\n[MAXXIM HALLOWEEN - Frum Dusk Till Dawn | MAXXIM CLUB BERLIN](https://www.maxxim-berlin.de/event-details/maxxim-halloween-frum-dusk-till-dawn?utm_source=openai)\n**XXL Halloween Festival Party Berlin**  \nDatum: Donnerstag, 29. Oktober 2026, 21:00 Uhr\nOrt: Balcony Club, Alexanderstraße 7, 10178 Berlin-Mitte\nPreis: ab 15,00 €\nBeschreibung: Feiere mit über 1.200 Gästen auf einer Nacht voller Halloween-Vibes, mehreren Areas, Top-DJs, spektakulärer Deko und einzigartiger Atmosphäre. Einlass ab 18 Jahren. ([berlin.de](https://www.berlin.de/tickets/party/xxl-halloween-festival-party-berlin-berlins-groesstes-halloween-party/2026-10-29-xxl-halloween-festival-party-berlin-343d7b9f-c8eb-4582-8b17-15ef89bdc5dd/?utm_source=openai))\n\n\n\n[Halloween Havanna 01.11.2025 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/halloween/2025/havanna/01-11-2025?utm_source=openai)\n**HALLOWEEN MADNESS @ Havanna Club**  \nDatum: Freitag, 30. Oktober 2026, 22:00 Uhr\nOrt: Havanna Club Berlin, Hauptstraße 30, 10823 Berlin-Schöneberg\nPreis: ab 12,00 €\nBeschreibung: Die legendäre Halloween-Party mit drei Floors, drei Halloween-Areas, fünf Bars, mehreren DJs und einer gruseligen Atmosphäre. Einlass ab 18 Jahren. ([berlin.de](https://www.berlin.de/en/tickets/party/halloween-madness-havanna-club/2026-10-30-halloween-madness-havanna-club-2d46f2f0-1261-4a88-b0ab-0cdd48a4e4a1/?utm_source=openai))\n\n\n\n[Masquerade Ball: Night of 1000 Masks | visitBerlin.de](https://www.visitberlin.de/en/event/masquerade-ball-night-1000-masks?utm_source=openai)\n**Dark Masquerade – eine der größten Gothic Partys in Berlin**  \nDatum: Samstag, 31. Oktober 2026, 22:00 Uhr\nOrt: Heiligkreuz-Kirche\nPreis: 22,00 € im Vorverkauf, 25,00 € an der Abendkasse\nBeschreibung: Eine der größten Gothic-Partys in Berlin mit feinster Gothic- und EBM/Industrial-Musik auf dem Mainfloor und mittelalterlicher Atmosphäre auf der Terrasse. Einlass ab 22:00 Uhr. ([dark-masquerade.de](https://www.dark-masquerade.de/?utm_source=openai))\n\n\n\n[Halloween Kulturbrauerei 31.10.2025 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/halloween/2025/kulturbrauerei/31-10-2025?utm_source=openai)\n**Halloween Party in der Kulturbrauerei**  \nDatum: Donnerstag, 30. Oktober 2026, 22:00 Uhr\nOrt: KulturBrauerei, Schönhauser Allee 36, 10435 Berlin\nBeschreibung: Berlins größte Halloween-Party mit aufwendig dekor"
   },
   {
    "group": "heute_wochenende",
    "lang": "en",
    "prompt": "what's on tonight in Berlin, parties",
    "run": 1,
-   "mention": false,
-   "cited": false,
+   "mention": true,
+   "cited": true,
    "domains": [
-    "berghain.berlin",
-    "berliner.party",
+    "artrabbit.com",
+    "de.ra.co",
     "es.ra.co",
     "eventfrog.de",
-    "events.musicofourdesire.com",
-    "goabase.net",
+    "gaesteliste030.de",
     "happeningnext.com",
     "nightlife030.de",
-    "partynado.com",
-    "visitberlin.de"
+    "shotgun.live"
    ],
-   "chars": 2967
+   "urls": [
+    "https://de.ra.co/events/2085075",
+    "https://es.ra.co/events/1882186",
+    "https://eventfrog.de/en/p/parties/other-parties/psychedelic-cumbia-party-eclipse-de-cumbia-berlin-7503395518296388713.html",
+    "https://happeningnext.com/event/sequenced-minds-%C2%B7-dark-psychedelic-gathering-091026-%C2%B7-dstrkt-berlin-eid3a0e531e4v",
+    "https://shotgun.live/en/events/unity-x-feel-nature",
+    "https://www.artrabbit.com/events/clef-lute-tango-loud-photon-amnesia-scanner-feat-debit",
+    "https://www.gaesteliste030.de/de/berlin/events/party/09-10-26",
+    "https://www.gaesteliste030.de/electro",
+    "https://www.nightlife030.de/de/events/rooftop-edition-2026-02-28"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/party/09-10-26",
+    "https://www.gaesteliste030.de/electro"
+   ],
+   "chars": 2553,
+   "text": "Here are some parties happening in Berlin tonight, Friday, October 9, 2026:\n\n\n[Unity X Feel Nature, Berlin · Shotgun Tickets](https://shotgun.live/en/events/unity-x-feel-nature?utm_source=openai)\n**Liminal at KitKat Club**  \n**Time:** 8:00 PM – 9:00 AM  \n**Location:** KitKat Club  \n**Description:** An immersive techno experience at the renowned KitKat Club. ([gaesteliste030.de](https://www.gaesteliste030.de/electro?utm_source=openai))\n\n\n\n[CLEF LUTE TANGO LOUD PHOTON: Amnesia Scanner feat. Debit - Performance at Halle am Berghain in Berlin](https://www.artrabbit.com/events/clef-lute-tango-loud-photon-amnesia-scanner-feat-debit?utm_source=openai)\n**Hypersoft at Berghain, Panorama Bar, Säule**  \n**Time:** 10:00 PM – 10:00 AM  \n**Location:** Berghain, Panorama Bar, Säule  \n**Description:** A night of deep techno and house music in one of Berlin's most iconic venues. ([gaesteliste030.de](https://www.gaesteliste030.de/electro?utm_source=openai))\n\n\n\n[Psychedelic Cumbia Party en Privatclub, Berlín](https://es.ra.co/events/1882186?utm_source=openai)\n**Psychedelic Cumbia Party - Eclipse de Cumbia**  \n**Time:** 11:00 PM – 4:00 AM  \n**Location:** Privatclub, Skalitzer Straße 85-86, 10997 Berlin  \n**Description:** A vibrant night of cumbia, salsa, merengue, and tropical bass rhythms. ([eventfrog.de](https://eventfrog.de/en/p/parties/other-parties/psychedelic-cumbia-party-eclipse-de-cumbia-berlin-7503395518296388713.html?utm_source=openai))\n\n\n\n[HIVE pres. Odymel & Friends *ALL NIGHT LONG* bei DSTRKT Club Berlin, Berlin](https://de.ra.co/events/2085075?utm_source=openai)\n**SEQUENCED MINDS · Dark Psychedelic Gathering**  \n**Time:** 11:00 PM – 8:00 AM  \n**Location:** DSTRKT, Storkower Straße 123, 10407 Berlin  \n**Description:** A dark psychedelic gathering with hypnotic rhythms and collective energy. ([happeningnext.com](https://happeningnext.com/event/sequenced-minds-%C2%B7-dark-psychedelic-gathering-091026-%C2%B7-dstrkt-berlin-eid3a0e531e4v?utm_source=openai))\n\n\n\n[Rooftop Edition @ APARTMENT Bar](https://www.nightlife030.de/de/events/rooftop-edition-2026-02-28/?utm_source=openai)\n**No Limit X Afro Haus**  \n**Time:** 11:00 PM onwards  \n**Location:** Amano Grand Central  \n**Description:** Afro Haus Rooftop Edition featuring vibrant Afrobeat and house music. ([gaesteliste030.de](https://www.gaesteliste030.de/de/berlin/events/party/09-10-26?utm_source=openai))\n\n\nPlease check the respective event websites or contact the venues directly for the most up-to-date information and "
   },
   {
    "group": "heute_wochenende",
    "lang": "en",
    "prompt": "parties in Berlin this weekend",
    "run": 1,
-   "mention": true,
-   "cited": true,
+   "mention": false,
+   "cited": false,
    "domains": [
     "berliner.party",
-    "gaesteliste030.de",
-    "gretchen-club.de",
-    "parkettchannel.it",
-    "rheinische-anzeigenblaetter.de"
+    "berlinew.wordpress.com",
+    "bz-berlin.de",
+    "media.gettyimages.com",
+    "nightphotos.de"
    ],
-   "chars": 2209
+   "urls": [
+    "https://berliner.party/en/news/berlin-to-prague-the-easy-trip-to-an-epic-party-weekend",
+    "https://berliner.party/en/parties/kinky",
+    "https://berliner.party/en/parties/techno",
+    "https://berliner.party/en/parties/urban-dance",
+    "https://berlinew.wordpress.com/2016/06/09/soda-club",
+    "https://media.gettyimages.com/id/1387377081/photo/berlins-concert-event-venues-in-profile.jpg?b=1&c=ZK-tBkS5kDUvplbuhUO50k8G8dt1xyJPv6pR0gv8-Dk%3D&k=20&s=612x612&w=0",
+    "https://nightphotos.de/koken/tags/leute/content/berlin-mitte-besucherschlange-vor-dem-kitkat-club-berlin-koepenicker-strasse-ecke-brueckenstrasse-an-einem-samstag-abend/lightbox",
+    "https://www.bz-berlin.de/berlin/friedrichshain-kreuzberg/bz-erklaert-den-mythos-berghain"
+   ],
+   "ours": [],
+   "chars": 2699,
+   "text": "This weekend in Berlin (October 10–12, 2026) offers a variety of parties across different genres. Here's a selection to consider:\n\n\n[Warum das Berghain am Wochenende Tausende in seinen Bann zieht - B.Z. – Die Stimme Berlins](https://www.bz-berlin.de/berlin/friedrichshain-kreuzberg/bz-erklaert-den-mythos-berghain?utm_source=openai)\n**Club Night at Berghain**  \nSaturday, October 10, 23:59 at Berghain. Featuring Anika Kunst, Ben Klock, Dax J, DJ Nobu, Elisa Batti, and more. Genres include techno and house. ([berliner.party](https://berliner.party/en/parties/techno?utm_source=openai))\n\n\n\n[Berlin's Concert Event Venues In Profile](https://media.gettyimages.com/id/1387377081/photo/berlins-concert-event-venues-in-profile.jpg?b=1&c=ZK-tBkS5kDUvplbuhUO50k8G8dt1xyJPv6pR0gv8-Dk%3D&k=20&s=612x612&w=0&utm_source=openai)\n**15 Years Gretchen: 30 YEARS RECYCLE ft. CONGO NATTY + ALLEY CAT**  \nSaturday, October 10, 23:59 at Gretchen Club. Celebrating 15 years with performances by Congo Natty, Alley Cat, Bassface Sascha, Survey, N'Dee, and Mr. Williamz. Genres include reggae and dub. ([berliner.party](https://berliner.party/en/parties/techno?utm_source=openai))\n\n\n\n[Berlin Mitte. Besucherschlange vor dem KitKat-Club Berlin. Köpenicker Strasse Ecke Brückenstrasse an einem Samstag Abend - nightphotos.de](https://nightphotos.de/koken/tags/leute/content/berlin-mitte-besucherschlange-vor-dem-kitkat-club-berlin-koepenicker-strasse-ecke-brueckenstrasse-an-einem-samstag-abend/lightbox/?utm_source=openai)\n**WASTELAND Berlin at KitKat Club**  \nSaturday, October 10, 20:00 at KitKat Club. Featuring Lucien Foort (NL), DJ Charly, JB Buddha, The Shredder, Don, and more. Genres include techno and house. ([berliner.party](https://berliner.party/en/parties/techno?utm_source=openai))\n\n\n\n[Soda Club](https://berlinew.wordpress.com/2016/06/09/soda-club/?utm_source=openai)\n**Sodalicious at Soda Club Berlin**  \nSaturday, October 10, 22:00 at Soda Club Berlin. Featuring DJ Flipster, DJ R'n'P, MixMasta Pumi, DJ R2V, DJ Track, and DJ R'n'P. Genres include urban dance and hip-hop. ([berliner.party](https://berliner.party/en/parties/urban-dance?utm_source=openai))\n\n\n\n[Berlin to Prague: The Easy Trip to an Epic Party Weekend - Berliner.Party](https://berliner.party/en/news/berlin-to-prague-the-easy-trip-to-an-epic-party-weekend?utm_source=openai)\n**4 Elements Cuddle & Play at Insomnia**  \nSunday, October 11, 18:00 at Insomnia. A unique event combining music and interactive experiences. ([berliner.party](h"
   },
   {
    "group": "heute_wochenende",
@@ -360,11 +605,35 @@
    "cited": true,
    "domains": [
     "berlin.de",
-    "eventbrite.de",
+    "berlinab16.de",
     "gaesteliste030.de",
-    "visitberlin.de"
+    "halloween-in-berlin.com",
+    "ra.co",
+    "rausgegangen.de",
+    "visitberlin.de",
+    "weekendclub.berlin"
    ],
-   "chars": 3963
+   "urls": [
+    "https://ra.co/events/2376022",
+    "https://rausgegangen.de/en/events/halloween-nightmare-6",
+    "https://rausgegangen.de/locations/spindler-klatt",
+    "https://www.berlin.de/en/tickets/party/halloween-madness-havanna-club/2026-10-30-halloween-madness-havanna-club-2d46f2f0-1261-4a88-b0ab-0cdd48a4e4a1",
+    "https://www.berlin.de/en/tickets/party/halloween-xxl-havanna-club-4-floors-gruselarea-0c2e484e-eb23-4cc0-af83-59e14227e5b7",
+    "https://www.berlin.de/en/tickets/party/xxl-halloween-festival-party-berlin-berlins-groesstes-halloween-party/2026-10-29-xxl-halloween-festival-party-berlin-343d7b9f-c8eb-4582-8b17-15ef89bdc5dd",
+    "https://www.berlin.de/tickets/party/halloween-16-party-berlin-by-club-room-paradise-club-berlin/2026-10-30-halloween-party-berlin-by-club-room-f7b5bf2d-1db9-4a86-8703-2461e72daf8a",
+    "https://www.berlinab16.de/events/halloween-party-by-club-room",
+    "https://www.gaesteliste030.de/de/berlin/events/halloween",
+    "https://www.gaesteliste030.de/de/berlin/events/halloween/2025/havanna/01-11-2025",
+    "https://www.halloween-in-berlin.com",
+    "https://www.visitberlin.de/en/event/halloween-spindler-klatt",
+    "https://www.weekendclub.berlin/upcoming/2021/10/29/house-of-horror"
+   ],
+   "ours": [
+    "https://www.gaesteliste030.de/de/berlin/events/halloween",
+    "https://www.gaesteliste030.de/de/berlin/events/halloween/2025/havanna/01-11-2025"
+   ],
+   "chars": 5455,
+   "text": "Berlin offers a variety of exciting Halloween parties in 2026. Here are some notable events:\n\n\n[Halloween Party by Club Room | BERLINAB16.DE](https://www.berlinab16.de/events/halloween-party-by-club-room?utm_source=openai)\n**Halloween Party - Berlin by Club Room**  \n**Date & Time:** Friday, October 30, 2026, at 8:00 PM\n**Venue:** Paradise Club Berlin, Bismarckstraße 90, 10627 Berlin\n**Details:** A thrilling night for party-goers aged 16 and above, featuring hip-hop, German rap, club sounds, and Halloween classics. Costumes are encouraged, and there are special entry conditions for guests under 18. ([berlin.de](https://www.berlin.de/tickets/party/halloween-16-party-berlin-by-club-room-paradise-club-berlin/2026-10-30-halloween-party-berlin-by-club-room-f7b5bf2d-1db9-4a86-8703-2461e72daf8a/?utm_source=openai))\n\n\n\n[Halloween Havanna 01.11.2025 | Gästeliste030](https://www.gaesteliste030.de/de/berlin/events/halloween/2025/havanna/01-11-2025?utm_source=openai)\n**HALLOWEEN MADNESS @ Havanna Club**  \n**Date & Time:** Friday, October 30, 2026, at 10:00 PM\n**Venue:** Havanna Club Berlin, Hauptstraße 30, 10823 Berlin-Schöneberg\n**Details:** Experience Berlin's largest Halloween party across three floors with three Halloween areas, five bars, multiple DJs, Halloween decorations, horror atmosphere, photo spots, walking horror acts, and prizes for the best costumes. ([berlin.de](https://www.berlin.de/en/tickets/party/halloween-madness-havanna-club/2026-10-30-halloween-madness-havanna-club-2d46f2f0-1261-4a88-b0ab-0cdd48a4e4a1/?utm_source=openai))\n\n\n\n[Spindler & Klatt in Berlin | Alle Events, Termine & Tickets - Rausgegangen](https://rausgegangen.de/locations/spindler-klatt/?utm_source=openai)\n**Halloween at Spindler & Klatt**  \n**Dates & Times:** October 30 and 31, 2026, at 10:00 PM\n**Venue:** Spindler & Klatt, Köpenicker Straße 16-17, 10997 Berlin\n**Details:** Over two nights, Spindler & Klatt transforms into a spooky venue with elaborate Halloween decorations, atmospheric horror vibes, and a diverse mix of music. Enjoy hellish drinks, 250 free Halloween shots for the first guests, and a spacious Spree terrace with a stunning view of Berlin at night. ([visitberlin.de](https://www.visitberlin.de/en/event/halloween-spindler-klatt?utm_source=openai))\n\n\n\n\n**XXL Halloween Festival Party Berlin**  \n**Date & Time:** Thursday, October 29, 2026, at 9:00 PM\n**Venue:** Balcony Club, Alexanderstraße 7, 10178 Berlin-Mitte\n**Details:** An exciting Halloween festival featuring multipl"
   }
  ]
 }
