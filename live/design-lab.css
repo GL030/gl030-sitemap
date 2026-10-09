@@ -1,1 +1,4 @@
-/* GL030 Design-Lab: leer (Stand 08.10.2026 nach Release mit Halloween-Paket). Neue Iterationen hier anlegen. */
+/* 09.10.2026 D1/D2: weisse Schrift auf roten Aktionsflaechen (Halloween) */
+html.app-theme-halloween .btn.btn-brand, html.app-theme-halloween .btn.btn-brand *, html.app-theme-halloween .btn.btn-brand:hover, html.app-theme-halloween .btn.btn-brand:hover *, html.app-theme-halloween .badge.badge-brand { color: #ffffff !important; }
+/* D3: Veranstaltungstitel weiss (Uebersicht + Feed 30./31.10. = Seiten mit Kopf-Logo) */
+html.app-theme-halloween body:has(.gl-hero-logo) .event-item .title, html.app-theme-halloween body:has(.gl-hero-logo) .event-item .title a { color: #eef2f6 !important; }
