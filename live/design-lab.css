@@ -1,1 +1,2 @@
-/* GL030 Design-Lab: leer seit Release-560/561 (09.10.2026) */
+/* 10.10.2026 (Robert): aktive Pille auf Halloween-Seiten mit weisser Schrift (vorher #0B0408) */
+html.app-theme-halloween .tab-menu-component .nav .nav-item.active .nav-link, html.app-theme-halloween body:has(.gl-hero-logo) .tab-menu-component .nav .nav-item.active .nav-link { color: #ffffff !important; }
