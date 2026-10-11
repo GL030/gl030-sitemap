@@ -3,7 +3,7 @@
   <url><loc>https://www.gaesteliste030.de/</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/16</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/electro</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.gaesteliste030.de/de/berlin/events/halloween</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://www.gaesteliste030.de/de/berlin/events/halloween</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/open-air</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/silvester</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/locations</loc><lastmod>2026-09-24</lastmod></url>
@@ -129,7 +129,7 @@
   <url><loc>https://www.gaesteliste030.de/de/berlin/locations/king-karaoke-bar</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/locations/kino-international</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/locations/kino-union</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.gaesteliste030.de/de/berlin/locations/kitkat</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://www.gaesteliste030.de/de/berlin/locations/kitkat</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/locations/kitty-cheng-bar</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/locations/klunkerkranich</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/locations/knutschfleck</loc><lastmod>2026-09-24</lastmod></url>
@@ -260,7 +260,7 @@
   <url><loc>https://www.gaesteliste030.de/en/artists/charts</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/16</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/electro</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.gaesteliste030.de/en/berlin/events/halloween</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://www.gaesteliste030.de/en/berlin/events/halloween</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/open-air</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/silvester</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/locations</loc><lastmod>2026-09-24</lastmod></url>
@@ -633,7 +633,7 @@
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/aire-libre</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/todo-incluido</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/oktoberfest</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/halloween</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/halloween</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/nochevieja</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/latin</loc><lastmod>2026-10-11</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/latin</loc><lastmod>2026-10-11</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
@@ -765,9 +765,9 @@
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/day-party</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/day-party</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/day-party</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.gaesteliste030.de/de/berlin/events/halloween/31-10-26</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://www.gaesteliste030.de/en/berlin/events/halloween/31-10-26</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/halloween/31-10-26</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://www.gaesteliste030.de/de/berlin/events/halloween/31-10-26</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://www.gaesteliste030.de/en/berlin/events/halloween/31-10-26</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/halloween/31-10-26</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/de/berlin/events/silvester/31-12-26</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/en/berlin/events/silvester/31-12-26</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.gaesteliste030.de/es/berlin/eventos/nochevieja/31-12-26</loc><lastmod>2026-10-09</lastmod></url>
