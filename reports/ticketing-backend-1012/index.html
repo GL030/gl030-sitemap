@@ -1,0 +1,291 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Ticketing · Partnerbereich (Vorschau)</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121a24;--bg2:#162130;--card:#1b2735;--card2:#223042;--line:rgba(255,255,255,.08);--tx:#eef2f6;--mu:#93a4b5;--mu2:#6f8294;--t1:#00c193;--t2:#16bde0;--ok:#5ee0bf;--warn:#f0c46a;--bad:#ff8a8a}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:Roboto,system-ui,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2) 50%,#14262a);color:var(--tx);min-height:100vh;font-size:15px;line-height:1.45}
+a{color:var(--t2);text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+.note{background:#3a2f0f;color:#f0d080;font-size:12.5px;padding:8px 16px;text-align:center}
+.nav{display:flex;align-items:center;gap:26px;padding:12px 28px;background:#000;font-size:14px;color:#cfd8e0;overflow-x:auto;white-space:nowrap}
+.nav img{height:26px}.nav .on{color:#fff;border-bottom:2px solid #fff;padding-bottom:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+/* Kopf */
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:30px 0 18px;flex-wrap:wrap}
+.head h1{margin:0;font-size:28px;font-weight:500;letter-spacing:-.01em}
+.head .who{color:var(--mu);margin-top:4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(94,224,191,.12);color:var(--ok)}
+.pill i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.test{background:rgba(240,196,106,.14);color:var(--warn)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d}
+.btn.gh{background:transparent;color:var(--tx);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);font-weight:500}
+.btn.sm{padding:6px 12px;font-size:13px}
+.btn:focus-visible,.tab:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--t2);outline-offset:2px}
+/* Tabs */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:22px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 14px;color:var(--mu);font-weight:500;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.on{color:var(--tx);border-color:var(--t2)}
+.tab .c{margin-left:6px;font-size:11.5px;background:var(--card2);padding:1px 7px;border-radius:999px;color:var(--mu)}
+.view{display:none}.view.on{display:block}
+/* Übersicht */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:14px;overflow:hidden;margin-bottom:26px}
+.kpi{background:var(--card);padding:16px 18px}
+.kpi .v{font-size:24px;font-weight:500;letter-spacing:-.01em}
+.kpi .l{color:var(--mu);font-size:13px;margin-top:2px}
+.kpi .d{font-size:12.5px;color:var(--ok);margin-top:6px}
+.kpi .d.mu{color:var(--mu2)}
+.grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:22px}
+.sec{margin-bottom:26px}
+.sec h2{font-size:16px;font-weight:600;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between}
+.sec h2 a{font-size:13px;font-weight:500}
+/* Event-Zeilen: das Herzstück */
+.ev{background:var(--card);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.ev-top{display:grid;grid-template-columns:62px 1fr auto;gap:16px;align-items:center;padding:14px 16px}
+.date{text-align:center;border-radius:10px;background:var(--card2);padding:7px 0}
+.date b{display:block;font-size:20px;line-height:1.1}
+.date span{font-size:11.5px;color:var(--mu)}
+.ev h3{margin:0;font-size:16px;font-weight:600}
+.ev .meta{color:var(--mu);font-size:13px;margin-top:2px}
+.ev .nums{text-align:right}
+.ev .nums b{font-size:18px;font-weight:500}.ev .nums span{display:block;color:var(--mu);font-size:12.5px}
+.band{display:flex;height:8px;border-radius:999px;background:#0f1620;overflow:hidden;margin:0 16px 14px}
+.band i{display:block;height:100%}
+.legend{display:flex;gap:16px;flex-wrap:wrap;padding:0 16px 14px;font-size:12.5px;color:var(--mu)}
+.legend span{display:inline-flex;align-items:center;gap:6px}.legend em{width:9px;height:9px;border-radius:2px;display:inline-block;font-style:normal}
+.ev details summary{list-style:none;cursor:pointer;padding:10px 16px;border-top:1px solid var(--line);color:var(--mu);font-size:13.5px;display:flex;justify-content:space-between}
+.ev details summary::-webkit-details-marker{display:none}
+.ev details[open] summary{color:var(--tx)}
+.tt{width:100%;border-collapse:collapse;font-size:14px}
+.tt th{text-align:left;font-weight:500;color:var(--mu2);font-size:12.5px;padding:8px 16px;border-bottom:1px solid var(--line)}
+.tt td{padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tt tr:last-child td{border-bottom:0}
+.tt .r{text-align:right}
+.st{font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(94,224,191,.12);color:var(--ok);white-space:nowrap}
+.st.off{background:rgba(255,255,255,.06);color:var(--mu)}
+.st.soon{background:rgba(22,189,224,.12);color:var(--t2)}
+.st.bad{background:rgba(255,138,138,.12);color:var(--bad)}
+.st.warn{background:rgba(240,196,106,.14);color:var(--warn)}
+.mini{display:inline-block;width:70px;height:5px;border-radius:999px;background:#0f1620;vertical-align:middle;margin-right:8px;overflow:hidden}.mini i{display:block;height:100%;background:var(--t2)}
+.empty{border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:18px;color:var(--mu);display:flex;justify-content:space-between;align-items:center;gap:12px}
+/* Seitenspalte */
+.side{background:var(--card);border-radius:14px;padding:16px}
+.feed{list-style:none;margin:0;padding:0}
+.feed li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.feed li:last-child{border:0}.feed small{color:var(--mu);display:block;font-size:12.5px}
+.check{list-style:none;padding:0;margin:0}
+.check li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;font-size:14px}
+.check .o{flex:0 0 20px;height:20px;border-radius:50%;border:2px solid var(--mu2);margin-top:1px}
+.check .o.done{border:0;background:linear-gradient(90deg,var(--t1),var(--t2));position:relative}
+.check .o.done:after{content:"";position:absolute;left:6px;top:3px;width:5px;height:9px;border:solid #04231d;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check small{display:block;color:var(--mu);font-size:12.5px}
+/* Tabellen allgemein */
+.panel{background:var(--card);border-radius:14px;overflow:hidden}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.search{flex:1;min-width:200px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--tx)}
+.chip{background:var(--card);border:1px solid var(--line);color:var(--mu);border-radius:999px;padding:7px 13px;font-size:13px}
+.chip.on{color:var(--tx);border-color:var(--t2)}
+.scroll{overflow-x:auto}
+/* Geld */
+.money{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.money .box{background:var(--card);border-radius:14px;padding:16px 18px}
+.money .box b{font-size:22px;font-weight:500}.money .box span{display:block;color:var(--mu);font-size:13px}
+.calc{display:grid;grid-template-columns:1fr auto;gap:6px 18px;font-size:14px;padding:16px 18px}
+.calc .mu{color:var(--mu)}.calc .tot{border-top:1px solid var(--line);padding-top:8px;font-weight:600}
+/* Formulare */
+label{display:block;font-size:13px;color:var(--mu);margin:0 0 5px}
+input,select{width:100%;background:#0f1620;border:1px solid #2c3d52;border-radius:10px;padding:10px 12px;color:var(--tx);font:inherit}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.field{margin-bottom:14px}
+.hint{font-size:12.5px;color:var(--mu);margin-top:5px}
+.seg{display:flex;background:#0f1620;border:1px solid #2c3d52;border-radius:10px;padding:3px}
+.seg button{flex:1;background:none;border:0;border-radius:8px;padding:8px;color:var(--mu);font-size:13.5px}
+.seg button.on{background:var(--card2);color:var(--tx)}
+/* Drawer */
+.scrim{position:fixed;inset:0;background:rgba(5,9,14,.6);opacity:0;pointer-events:none;transition:opacity .2s}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--bg2);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column;z-index:5}
+body.dr .scrim{opacity:1;pointer-events:auto}body.dr .drawer{transform:none}
+.drawer header{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.drawer header h3{margin:0;font-size:17px}
+.drawer .body{padding:20px;overflow:auto;flex:1}
+.drawer footer{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end}
+.receipt{background:#0f1620;border-radius:12px;padding:14px;font-size:14px;margin-top:6px}
+.receipt div{display:flex;justify-content:space-between;padding:3px 0}.receipt .mu{color:var(--mu)}.receipt .tot{border-top:1px solid var(--line);margin-top:6px;padding-top:8px;font-weight:600}
+.x{background:none;border:0;font-size:22px;color:var(--mu);line-height:1}
+@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.money{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:0 14px 60px}.head h1{font-size:23px}.ev-top{grid-template-columns:54px 1fr}.ev .nums{grid-column:2;text-align:left}.f2,.f3{grid-template-columns:1fr}.tt .hm{display:none}}
+@media(prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
+</style></head><body>
+<div class="note">Vorschau 12.10.2026 · Neuer Ticketing-Bereich für Veranstalter, mit Beispieldaten. Noch nicht live.</div>
+<div class="nav"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><span>Event Übersicht</span><span>Event eintragen</span><span>QR-Check-in &amp; Tür-Zugänge</span><span>Promoter-Links</span><span class="on">Ticketing</span><span>GL030 Ticket-Test ▾</span></div>
+<div class="wrap">
+  <div class="head">
+    <div><h1>Ticketing</h1><div class="who">Amano Grand Central <span class="pill"><i></i>Verkauf aktiv</span><span class="pill test"><i></i>Testmodus</span></div></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn gh" onclick="go('geld')">Abrechnung</button><button class="btn" onclick="openDr()">+ Ticketart anlegen</button></div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab on" data-v="ueb">Übersicht</button>
+    <button class="tab" data-v="events">Events<span class="c">3</span></button>
+    <button class="tab" data-v="best">Bestellungen<span class="c">47</span></button>
+    <button class="tab" data-v="geld">Geld &amp; Rechnungen</button>
+    <button class="tab" data-v="einst">Einstellungen</button>
+  </nav>
+
+  <!-- ÜBERSICHT -->
+  <section class="view on" id="ueb">
+    <div class="kpis">
+      <div class="kpi"><div class="v">62</div><div class="l">Tickets verkauft</div><div class="d">+18 in den letzten 24 Std.</div></div>
+      <div class="kpi"><div class="v">1.070 €</div><div class="l">Ticketumsatz</div><div class="d mu">ohne Servicegebühr</div></div>
+      <div class="kpi"><div class="v">4 Tage</div><div class="l">bis No Limit x Halloween</div><div class="d mu">Fr 30.10., 23:00</div></div>
+      <div class="kpi"><div class="v">1.007 €</div><div class="l">Auszahlung erwartet</div><div class="d mu">nach Stripe-Gebühren</div></div>
+    </div>
+    <div class="grid2">
+      <div>
+        <div class="sec"><h2>Deine nächsten Events <a href="#" onclick="go('events');return false">Alle Events</a></h2>
+          <div id="evlist-short"></div>
+        </div>
+      </div>
+      <div>
+        <div class="sec"><h2>Einrichtung</h2>
+          <div class="side"><ul class="check">
+            <li><span class="o done"></span><div>Zahlungsempfang eingerichtet<small>Stripe-Konto verbunden, Auszahlungen aktiv</small></div></li>
+            <li><span class="o done"></span><div>Rechnungsdaten hinterlegt<small>Erscheinen auf dem Kaufbeleg der Gäste</small></div></li>
+            <li><span class="o done"></span><div>Erste Ticketart im Verkauf</div></li>
+            <li><span class="o"></span><div>Einlass vorbereiten<small><a href="#">Tür-Zugang anlegen</a>, Tickets und Gästeliste mit einem Scanner</small></div></li>
+          </ul></div>
+        </div>
+        <div class="sec"><h2>Letzte Bestellungen <a href="#" onclick="go('best');return false">Alle</a></h2>
+          <div class="side"><ul class="feed" id="feed"></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="view" id="events">
+    <div class="toolbar"><button class="chip on">Kommende</button><button class="chip">Vergangene</button><span style="flex:1"></span><button class="btn sm" onclick="openDr()">+ Ticketart anlegen</button></div>
+    <div id="evlist"></div>
+  </section>
+
+  <!-- BESTELLUNGEN -->
+  <section class="view" id="best">
+    <div class="toolbar"><input class="search" placeholder="Name, E-Mail oder Ticketcode suchen"><button class="chip on">Alle</button><button class="chip">Bezahlt</button><button class="chip">Erstattet</button><button class="btn gh sm">CSV exportieren</button></div>
+    <div class="panel scroll"><table class="tt"><thead><tr><th>Datum</th><th>Käufer</th><th class="hm">Event</th><th>Tickets</th><th class="r">Betrag</th><th>Status</th><th></th></tr></thead><tbody id="orders"></tbody></table></div>
+  </section>
+
+  <!-- GELD -->
+  <section class="view" id="geld">
+    <div class="money">
+      <div class="box"><span>Ticketumsatz gesamt</span><b>1.070,00 €</b></div>
+      <div class="box"><span>Stripe-Gebühren</span><b>−63,10 €</b></div>
+      <div class="box"><span>Auszahlung an dich</span><b>1.006,90 €</b></div>
+    </div>
+    <div class="sec"><h2>Abrechnung je Event</h2>
+      <div class="panel scroll"><table class="tt"><thead><tr><th>Event</th><th class="r">Tickets</th><th class="r">Umsatz</th><th class="r hm">Stripe</th><th class="r hm">Erstattet</th><th class="r">Auszahlung</th><th></th></tr></thead><tbody>
+        <tr><td><b>No Limit x Halloween</b><div class="meta" style="color:var(--mu);font-size:13px">Fr 30.10.2026</div></td><td class="r">47</td><td class="r">770,00 €</td><td class="r hm">−45,90 €</td><td class="r hm">1 · 21,39 €</td><td class="r"><b>724,10 €</b></td><td class="r"><button class="btn gh sm">CSV</button></td></tr>
+        <tr><td><b>No Limit x Purple Events</b><div style="color:var(--mu);font-size:13px">Fr 16.10.2026</div></td><td class="r">15</td><td class="r">300,00 €</td><td class="r hm">−17,20 €</td><td class="r hm">–</td><td class="r"><b>282,80 €</b></td><td class="r"><button class="btn gh sm">CSV</button></td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="grid2">
+      <div class="sec"><h2>So entsteht deine Auszahlung</h2>
+        <div class="panel"><div class="calc">
+          <span>Gast zahlt je Ticket (Beispiel 20 €)</span><span>21,39 €</span>
+          <span class="mu">Servicegebühr Gästeliste030</span><span class="mu">−1,39 €</span>
+          <span class="mu">Stripe-Kartengebühr (ca.)</span><span class="mu">−0,57 €</span>
+          <span class="tot">Bei dir kommt an</span><span class="tot">19,43 €</span>
+        </div></div>
+      </div>
+      <div class="sec"><h2>Gebührenrechnungen</h2>
+        <div class="side"><ul class="feed">
+          <li><div>GL030-T-2026-0011<small>Oktober 2026 · bereits per Stripe einbehalten</small></div><div style="text-align:right">104,52 €<small><a href="#">PDF</a></small></div></li>
+          <li><div>GL030-T-2026-0007<small>September 2026</small></div><div style="text-align:right">38,20 €<small><a href="#">PDF</a></small></div></li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EINSTELLUNGEN -->
+  <section class="view" id="einst">
+    <div class="grid2">
+      <div class="sec"><h2>Rechnungsdaten</h2>
+        <div class="side">
+          <div class="hint" style="margin:0 0 14px">Erscheinen als Verkäufer auf dem Kaufbeleg der Gäste und auf deinen Gebührenrechnungen.</div>
+          <div class="field"><label>Firma oder Name</label><input value="Pooya Soltani Marketing & Deals"></div>
+          <div class="field"><label>Anschrift</label><input value="Loschmidtstraße 16c, 10587 Berlin"></div>
+          <div class="f2"><div class="field"><label>USt-IdNr. (optional)</label><input placeholder="DE…"></div><div class="field"><label>Rechnungs-E-Mail</label><input value="booking@nolimit.berlin"></div></div>
+          <button class="btn sm">Speichern</button>
+        </div>
+      </div>
+      <div>
+        <div class="sec"><h2>Zahlungsempfang</h2>
+          <div class="side"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><b>Stripe-Konto verbunden</b><div class="hint">Auszahlungen aktiv · acct_…CQCCCO</div></div><span class="pill"><i></i>Aktiv</span></div>
+          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap"><button class="btn gh sm">Stripe-Dashboard öffnen</button><button class="btn gh sm">Status aktualisieren</button></div></div>
+        </div>
+        <div class="sec"><h2>Benachrichtigungen</h2>
+          <div class="side"><label style="display:flex;justify-content:space-between;align-items:center;color:var(--tx);font-size:14px;margin:0">Täglicher Verkaufsbericht per E-Mail <input type="checkbox" checked style="width:auto"></label><div class="hint">Jeden Morgen um 9 Uhr, nur an Tagen mit Verkäufen.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Drawer: Ticketart anlegen -->
+<div class="scrim" onclick="closeDr()"></div>
+<aside class="drawer" aria-label="Ticketart anlegen">
+  <header><h3>Ticketart anlegen</h3><button class="x" onclick="closeDr()" aria-label="Schließen">×</button></header>
+  <div class="body">
+    <div class="field"><label>Event</label><select><option>Fr 30.10. · No Limit x Halloween</option><option>Fr 16.10. · No Limit x Purple Events</option><option>Sa 31.10. · Only Us x Halloween</option></select></div>
+    <div class="field"><label>Name</label><input id="dn" value="Early Bird"><div class="hint">So sieht der Gast die Ticketart, z. B. Early Bird, Regular, VIP.</div></div>
+    <div class="f2"><div class="field"><label>Preis</label><input id="dp" type="number" step="0.5" value="15"></div><div class="field"><label>Anzahl Tickets</label><input type="number" value="100"></div></div>
+    <div class="field"><label>Servicegebühr zahlt</label><div class="seg" id="seg"><button class="on" data-b="guest">der Gast</button><button data-b="org">ich</button></div></div>
+    <div class="receipt" id="rc"></div>
+    <details style="margin-top:16px"><summary style="cursor:pointer;color:var(--mu);font-size:13.5px">Weitere Einstellungen</summary>
+      <div style="margin-top:12px">
+        <div class="f2"><div class="field"><label>Verkaufsstart</label><input type="datetime-local"></div><div class="field"><label>Verkaufsende</label><input type="datetime-local"><div class="hint">Leer lassen = bis Eventbeginn</div></div></div>
+        <div class="f2"><div class="field"><label>Max. pro Bestellung</label><input type="number" value="6"></div><div class="field"><label>USt-Satz</label><select><option>19 %</option><option>7 %</option></select></div></div>
+      </div>
+    </details>
+  </div>
+  <footer><button class="btn gh" onclick="closeDr()">Abbrechen</button><button class="btn" onclick="closeDr()">Ticketart anlegen</button></footer>
+</aside>
+
+<script>
+var EV=[
+ {d:'30',m:'Okt',wd:'Fr',name:'No Limit x Halloween',time:'23:00',loc:'Amano Grand Central',days:'in 4 Tagen',types:[
+   {n:'Early Bird',p:15,sold:40,q:40,st:'Ausverkauft',c:'#00c193'},{n:'Regular',p:20,sold:5,q:150,st:'Im Verkauf',c:'#16bde0'},{n:'VIP',p:35,sold:2,q:20,st:'Im Verkauf',c:'#8fd6ff'}]},
+ {d:'16',m:'Okt',wd:'Fr',name:'No Limit x Purple Events x Million Dollar Bae',time:'23:00',loc:'Amano Grand Central',days:'vorbei',types:[
+   {n:'Regular',p:20,sold:15,q:80,st:'Beendet',c:'#16bde0'}]},
+ {d:'31',m:'Okt',wd:'Sa',name:'Only Us x Halloween',time:'23:00',loc:'Amano Grand Central',days:'in 5 Tagen',types:[]}
+];
+function eur(x){return x.toLocaleString('de-DE',{style:'currency',currency:'EUR'})}
+function fee(p){return Math.round((p*0.05+0.39)*100)/100}
+function evHTML(e,open){
+  var sold=e.types.reduce((a,t)=>a+t.sold,0),q=e.types.reduce((a,t)=>a+t.q,0),rev=e.types.reduce((a,t)=>a+t.sold*t.p,0);
+  var h='<article class="ev"><div class="ev-top"><div class="date"><span>'+e.wd+'</span><b>'+e.d+'</b><span>'+e.m+'</span></div><div><h3>'+e.name+'</h3><div class="meta">'+e.time+' Uhr, '+e.loc+', '+e.days+'</div></div>';
+  if(!e.types.length) return h+'<div class="nums"><button class="btn gh sm" onclick="openDr()">Tickets anbieten</button></div></div><div style="padding:0 16px 16px;color:var(--mu);font-size:13.5px">Noch keine Ticketart. Gäste können sich weiter auf die Gästeliste setzen.</div></article>';
+  h+='<div class="nums"><b>'+sold+' / '+q+'</b><span>'+eur(rev)+' Umsatz</span></div></div><div class="band">';
+  e.types.forEach(t=>{h+='<i style="width:'+(100*t.sold/q)+'%;background:'+t.c+'"></i>'});
+  h+='</div><div class="legend">';e.types.forEach(t=>{h+='<span><em style="background:'+t.c+'"></em>'+t.n+' '+t.sold+'/'+t.q+'</span>'});
+  h+='</div><details'+(open?' open':'')+'><summary><span>Ticketarten verwalten</span><span>'+e.types.length+'</span></summary><div class="scroll"><table class="tt"><thead><tr><th>Ticketart</th><th class="r">Preis</th><th class="hm">Verkauf</th><th>Status</th><th></th></tr></thead><tbody>';
+  e.types.forEach(t=>{var cls=t.st=='Im Verkauf'?'':t.st=='Ausverkauft'?' warn':' off';
+    h+='<tr><td><b>'+t.n+'</b><div style="color:var(--mu);font-size:12.5px">Gast zahlt '+eur(t.p+fee(t.p))+'</div></td><td class="r">'+eur(t.p)+'</td><td class="hm"><span class="mini"><i style="width:'+(100*t.sold/t.q)+'%"></i></span>'+t.sold+' von '+t.q+'</td><td><span class="st'+cls+'">'+t.st+'</span></td><td class="r"><button class="btn gh sm">Bearbeiten</button></td></tr>'});
+  return h+'</tbody></table></div><div style="padding:10px 16px 14px"><button class="btn gh sm" onclick="openDr()">+ Weitere Ticketart</button></div></details></article>';
+}
+document.getElementById('evlist').innerHTML=EV.map((e,i)=>evHTML(e,i==0)).join('');
+document.getElementById('evlist-short').innerHTML=[EV[0],EV[2]].map(e=>evHTML(e,false)).join('');
+var OR=[['26.10. 14:02','Lena M.','lena.m@…','No Limit x Halloween','2 × Regular',42.78,'Bezahlt'],['26.10. 13:40','Kevin A.','k.a@…','No Limit x Halloween','1 × VIP',37.14,'Bezahlt'],['26.10. 11:15','Sara D.','sara@…','No Limit x Halloween','4 × Early Bird',63.84,'Bezahlt'],['25.10. 23:58','Tom B.','tom.b@…','No Limit x Halloween','1 × Regular',21.39,'Erstattet'],['25.10. 21:12','Mia K.','mia@…','No Limit x Halloween','2 × Early Bird',31.92,'Eingecheckt']];
+document.getElementById('orders').innerHTML=OR.map(o=>'<tr><td>'+o[0]+'</td><td><b>'+o[1]+'</b><div style="color:var(--mu);font-size:12.5px">'+o[2]+'</div></td><td class="hm">'+o[3]+'</td><td>'+o[4]+'</td><td class="r">'+eur(o[5])+'</td><td><span class="st'+(o[6]=='Erstattet'?' bad':o[6]=='Eingecheckt'?' soon':'')+'">'+o[6]+'</span></td><td class="r"><button class="btn gh sm">Details</button></td></tr>').join('');
+document.getElementById('feed').innerHTML=OR.slice(0,4).map(o=>'<li><div>'+o[1]+' · '+o[4]+'<small>'+o[0]+'</small></div><div>'+eur(o[5])+'</div></li>').join('');
+function go(v){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v==v));document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id==v));window.scrollTo({top:0})}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>go(t.dataset.v));
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.parentNode.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on')});
+var bearer='guest';
+function rc(){var p=+document.getElementById('dp').value||0,f=fee(p),n=document.getElementById('dn').value||'Ticket';
+  document.getElementById('rc').innerHTML=bearer=='guest'
+   ?'<div><span>Gast zahlt für 1 × '+n+'</span><b>'+eur(p+f)+'</b></div><div class="mu"><span>davon Servicegebühr</span><span>'+eur(f)+'</span></div><div class="mu"><span>Stripe-Kartengebühr (ca.)</span><span>−'+eur(Math.round(((p+f)*0.015+0.25)*100)/100)+'</span></div><div class="tot"><span>Bei dir kommt an</span><span>'+eur(Math.round((p-((p+f)*0.015+0.25))*100)/100)+'</span></div>'
+   :'<div><span>Gast zahlt für 1 × '+n+'</span><b>'+eur(p)+'</b></div><div class="mu"><span>Servicegebühr (trägst du)</span><span>−'+eur(f)+'</span></div><div class="mu"><span>Stripe-Kartengebühr (ca.)</span><span>−'+eur(Math.round((p*0.015+0.25)*100)/100)+'</span></div><div class="tot"><span>Bei dir kommt an</span><span>'+eur(Math.round((p-f-(p*0.015+0.25))*100)/100)+'</span></div>'}
+document.getElementById('dp').oninput=rc;document.getElementById('dn').oninput=rc;
+document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#seg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');bearer=b.dataset.b;rc()});rc();
+function openDr(){document.body.classList.add('dr')}function closeDr(){document.body.classList.remove('dr')}
+document.addEventListener('keydown',e=>{if(e.key=='Escape')closeDr()});
+</script></body></html>
