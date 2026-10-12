@@ -1,0 +1,17 @@
+name: Ticketing Tagesbericht an Veranstalter
+
+on:
+  schedule:
+    - cron: "0 7 * * *"   # 09:00 Berlin (Sommerzeit) / 08:00 Winterzeit
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tagesbericht ausloesen
+        env:
+          KEY: ${{ secrets.TICKETING_REPORT_KEY }}
+        run: |
+          test -n "$KEY" || { echo "TICKETING_REPORT_KEY fehlt"; exit 1; }
+          curl -fsS "https://www.gaesteliste030.de/tickets.ashx?daily=$KEY"
