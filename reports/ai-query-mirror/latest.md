@@ -1,4 +1,4 @@
-# AI-Query-Mirror 28.09.–04.10.2026
+# AI-Query-Mirror 05.10.–11.10.2026
 
 Quelle: Cloudflare GraphQL (adaptive Stichprobe), nur Status 200, nur On-Demand-Fetcher. Zahlen = Abrufe, nicht Nutzer.
 
@@ -6,116 +6,116 @@ Quelle: Cloudflare GraphQL (adaptive Stichprobe), nur Status 200, nur On-Demand-
 
 | Bot | Art | Abrufe | Seiten |
 |---|---|---:|---:|
-| Claude-SearchBot | Crawler | 96183 | 1940 |
-| PerplexityBot | Crawler | 5170 | 1943 |
-| ChatGPT-User | on-demand | 4427 | 1066 |
-| Claude-User | on-demand | 518 | 266 |
-| OAI-SearchBot | Crawler | 16 | 1 |
+| Claude-SearchBot | Crawler | 62460 | 1822 |
+| PerplexityBot | Crawler | 6955 | 1958 |
+| ChatGPT-User | on-demand | 3609 | 1051 |
+| Claude-User | on-demand | 492 | 282 |
+| OAI-SearchBot | Crawler | 15 | 1 |
 | Perplexity-User | on-demand | 0 | 0 |
 
 ## Seitenklassen (nur On-Demand)
 
 | Klasse | Abrufe | Anteil |
 |---|---:|---:|
-| Event-Detail | 1824 | 37 % |
-| Location-Profil | 1130 | 23 % |
-| Startseite | 821 | 17 % |
-| Sonstige | 512 | 10 % |
-| Datum | 331 | 7 % |
-| Kategorie/Tag | 327 | 7 % |
+| Event-Detail | 1586 | 39 % |
+| Startseite | 650 | 16 % |
+| Location-Profil | 588 | 14 % |
+| Datum | 521 | 13 % |
+| Sonstige | 436 | 11 % |
+| Kategorie/Tag | 320 | 8 % |
 
 ## Sprache
 
 | Sprache | Abrufe |
 |---|---:|
-| de | 3105 |
-| en | 997 |
-| - | 784 |
-| es | 59 |
+| de | 2152 |
+| en | 1294 |
+| - | 602 |
+| es | 53 |
 
 ## Top 60 Pfade (nur On-Demand)
 
 | # | Pfad | Abrufe | ChatGPT-User | Perplexity-User | Claude-User |
 |---:|---|---:|---:|---:|---:|
-| 1 | `/` | 765 | 749 | 0 | 16 |
-| 2 | `/de/berlin/locations/ritter-butzke` | 232 | 232 | 0 | 0 |
-| 3 | `/de/berlin/events/halloween` | 99 | 99 | 0 | 0 |
-| 4 | `/de/berlin/locations/spindler-klatt` | 70 | 68 | 0 | 2 |
-| 5 | `/en/` | 54 | 34 | 0 | 20 |
-| 6 | `/de/berlin/locations/metropol` | 49 | 49 | 0 | 0 |
-| 7 | `/de/berlin/events/silvester/2025/huxleys-neue-welt` | 46 | 46 | 0 | 0 |
-| 8 | `/de/berlin/events/open-air/03-12-25/winterwelt-und-weihnachtsmarkt-am-potsdamer-platz` | 45 | 45 | 0 | 0 |
-| 9 | `/en/berlin/events/electro/01-02-25/havelbeats-presents-holy-priest-many-more` | 36 | 36 | 0 | 0 |
-| 10 | `/de/berlin/locations/havanna` | 36 | 32 | 0 | 4 |
-| 11 | `/de/berlin/locations/tiffany` | 34 | 34 | 0 | 0 |
-| 12 | `/de/berlin/locations/the-cloud285` | 31 | 31 | 0 | 0 |
-| 13 | `/de/berlin/events/electro` | 28 | 26 | 0 | 2 |
-| 14 | `/en/berlin/events/silvester` | 28 | 25 | 0 | 3 |
-| 15 | `/de/berlin/events/silvester/spindler-klatt` | 27 | 27 | 0 | 0 |
-| 16 | `/de/berlin/events/halloween/2025/kulturbrauerei/31-10-2025` | 26 | 26 | 0 | 0 |
-| 17 | `/de/berlin/events/electro/27-02-26/indiskret-showcase-with-frankey-sandrino` | 26 | 26 | 0 | 0 |
-| 18 | `/de/berlin/locations/maxxim` | 26 | 26 | 0 | 0 |
-| 19 | `/de/berlin/events/electro/02-10-26/sisy-54-nichtgeburtstag` | 25 | 24 | 0 | 1 |
-| 20 | `/en/berlin/events/electro` | 25 | 16 | 0 | 9 |
-| 21 | `/de/berlin/events/party/15-02-25/afro-haus` | 24 | 24 | 0 | 0 |
-| 22 | `/de/berlin/events/electro/11-10-25/ritter-butzke-jubilaum-w-nto-julian-jeweil-einmusik` | 24 | 24 | 0 | 0 |
-| 23 | `/de/berlin/events/electro/15-11-25/stil-vor-talent-20-years` | 24 | 24 | 0 | 0 |
-| 24 | `/es/berlin/eventos/halloween/2025/tiffany/01-11-2025` | 22 | 22 | 0 | 0 |
-| 25 | `/de/berlin/locations/kitkat` | 22 | 18 | 0 | 4 |
-| 26 | `/de/berlin/events/electro/31-01-26/the-surreal-club-night-3026` | 21 | 21 | 0 | 0 |
-| 27 | `/de/berlin/locations/sisyphos` | 21 | 18 | 0 | 3 |
-| 28 | `/de/berlin/events/silvester/kulturbrauerei` | 20 | 20 | 0 | 0 |
-| 29 | `/de/berlin/locations/pirates` | 19 | 19 | 0 | 0 |
-| 30 | `/de/berlin/events/electro/09-08-25/open-air-indoor-w-monkey-safari-cristoph-thomas-schumacher-free-entry-until-8pm` | 18 | 18 | 0 | 0 |
-| 31 | `/de/berlin/events/halloween/2025/tiffany/30-10-2025` | 18 | 18 | 0 | 0 |
-| 32 | `/en/berlin/locations/kitkat` | 18 | 16 | 0 | 2 |
-| 33 | `/de/berlin/events/silvester` | 17 | 17 | 0 | 0 |
-| 34 | `/de/berlin/events/party/04-04-26/forever-young-u30` | 17 | 17 | 0 | 0 |
-| 35 | `/de/berlin/events/open-air/21-06-18/11freunde-wm-hauptquartier` | 17 | 17 | 0 | 0 |
-| 36 | `/de/berlin/events/silvester/2025/tiffany` | 17 | 17 | 0 | 0 |
-| 37 | `/de/berlin/locations/soda` | 17 | 16 | 0 | 1 |
-| 38 | `/de/berlin/events/electro/21-02-26/maddix-adana-twins-lovra-matthias-meyer` | 16 | 16 | 0 | 0 |
-| 39 | `/de/berlin/locations/spreewiesn` | 16 | 16 | 0 | 0 |
-| 40 | `/de/berlin/events/party/25-12-25/dominican-celebrations` | 16 | 16 | 0 | 0 |
-| 41 | `/de/berlin/events/party/23-11-19/epic-fail-die-konfetti-party-last-dance-2019` | 16 | 16 | 0 | 0 |
-| 42 | `/de/berlin/locations/bricks` | 16 | 14 | 0 | 2 |
-| 43 | `/en/berlin/locations/sisyphos` | 16 | 4 | 0 | 12 |
-| 44 | `/de/berlin/events/party/03-07-19/salsa-bachata-at-havanna` | 15 | 15 | 0 | 0 |
-| 45 | `/de/berlin/events/silvester/cocktailbar-zeitlos` | 15 | 15 | 0 | 0 |
-| 46 | `/de/berlin/locations/m-bia` | 15 | 15 | 0 | 0 |
-| 47 | `/de/berlin/events/electro/28-05-26/amsterdam-techno-records-and-oxi-on-thursdays-amsterdam-and-berlin` | 15 | 15 | 0 | 0 |
-| 48 | `/de/berlin/events/open-air/29-11-25/winterwelt-und-weihnachtsmarkt-am-potsdamer-platz` | 14 | 14 | 0 | 0 |
-| 49 | `/de/berlin/events/open-air/07-12-25/winterwelt-und-weihnachtsmarkt-am-potsdamer-platz` | 14 | 14 | 0 | 0 |
-| 50 | `/de/berlin/events/16` | 14 | 14 | 0 | 0 |
-| 51 | `/de/berlin/events/electro/04-06-26/amsterdam-techno-records-and-about-blank-on-thursdays-amsterdam-and-berlin` | 14 | 14 | 0 | 0 |
-| 52 | `/en/berlin/events/halloween` | 14 | 8 | 0 | 6 |
-| 53 | `/de/berlin/events/party/06-10-18/oktoberfest-berlin` | 13 | 13 | 0 | 0 |
-| 54 | `/de/berlin/events/electro/29-11-25/lexy-k-paul-mark-dekoda-robosonic-gunjah-bonq` | 13 | 13 | 0 | 0 |
-| 55 | `/de/berlin/events/party/08-10-22/kinder-der-90er-mit-star-dj-mola` | 13 | 13 | 0 | 0 |
-| 56 | `/de/berlin/events/party/12-10-22/berliner-erstiparty52` | 13 | 13 | 0 | 0 |
-| 57 | `/de/berlin/locations/alte-kantine` | 13 | 11 | 0 | 2 |
-| 58 | `/de/berlin/events/party/04-04-19/quatsch-comedy-club-menu-in-drei-gangen-kulinarischer-genuss-vor-der-show-im-ganymed` | 12 | 12 | 0 | 0 |
-| 59 | `/es/berlin/eventos/aire-libre/02-10-20/safari-de-monos-4h-set-extendido-jardin-cultural-al-aire-libre` | 12 | 12 | 0 | 0 |
-| 60 | `/en/berlin/events/16` | 12 | 12 | 0 | 0 |
+| 1 | `/` | 595 | 583 | 0 | 12 |
+| 2 | `/en/` | 55 | 53 | 0 | 2 |
+| 3 | `/de/berlin/events/halloween` | 48 | 46 | 0 | 2 |
+| 4 | `/de/berlin/events/electro` | 36 | 31 | 0 | 5 |
+| 5 | `/en/berlin/locations/kitkat` | 35 | 32 | 0 | 3 |
+| 6 | `/en/berlin/events/electro` | 35 | 26 | 0 | 9 |
+| 7 | `/de/berlin/locations/ritter-butzke` | 32 | 32 | 0 | 0 |
+| 8 | `/de/berlin/locations/kitkat` | 28 | 25 | 0 | 3 |
+| 9 | `/en/berlin/events/silvester` | 28 | 25 | 0 | 3 |
+| 10 | `/en/berlin/events/halloween/31-10-26` | 24 | 23 | 0 | 1 |
+| 11 | `/en/berlin/events/halloween` | 21 | 15 | 0 | 6 |
+| 12 | `/de/berlin/events/silvester` | 20 | 17 | 0 | 3 |
+| 13 | `/de/berlin/events/party/10-10-26/we-are-not-alone` | 19 | 19 | 0 | 0 |
+| 14 | `/en/berlin/locations/sisyphos` | 18 | 10 | 0 | 8 |
+| 15 | `/en/berlin/locations/havana` | 17 | 16 | 0 | 1 |
+| 16 | `/de/berlin/events/party/09-10-26/no-limit-x-afro-haus` | 16 | 14 | 0 | 2 |
+| 17 | `/de/berlin/events/halloween/31-10-26` | 16 | 13 | 0 | 3 |
+| 18 | `/de/berlin/events/halloween/napoleon-komplex/31-10-2026` | 15 | 14 | 0 | 1 |
+| 19 | `/de/berlin/locations/havanna` | 15 | 13 | 0 | 2 |
+| 20 | `/de/berlin/events/party/10-10-26` | 15 | 11 | 0 | 4 |
+| 21 | `/en/berlin/locations/rso` | 15 | 9 | 0 | 6 |
+| 22 | `/de/berlin/events/party/09-10-26/any-given-friday` | 14 | 14 | 0 | 0 |
+| 23 | `/de/event-eintragen` | 14 | 14 | 0 | 0 |
+| 24 | `/de/berlin/events/electro/28-05-26/amsterdam-techno-records-and-oxi-on-thursdays-amsterdam-and-berlin` | 14 | 14 | 0 | 0 |
+| 25 | `/de/berlin/locations/metropol` | 14 | 14 | 0 | 0 |
+| 26 | `/en/berlin/events/lgbtq` | 14 | 14 | 0 | 0 |
+| 27 | `/en/berlin/events/electro/10-10-26/generations` | 14 | 12 | 0 | 2 |
+| 28 | `/de/berlin/locations/soda` | 13 | 13 | 0 | 0 |
+| 29 | `/de/berlin/events/open-air/03-12-25/winterwelt-und-weihnachtsmarkt-am-potsdamer-platz` | 13 | 13 | 0 | 0 |
+| 30 | `/de/berlin/events/electro/23-10-26` | 13 | 11 | 0 | 2 |
+| 31 | `/de/berlin/events/hip-hop` | 12 | 12 | 0 | 0 |
+| 32 | `/de/berlin/locations/spindler-klatt` | 12 | 12 | 0 | 0 |
+| 33 | `/de/berlin/locations/pirates` | 12 | 11 | 0 | 1 |
+| 34 | `/en/berlin/events/halloween/insomnia-erotic-nightclub` | 12 | 11 | 0 | 1 |
+| 35 | `/de/berlin/events/electro/09-10-26/forever-25-curated-by-enorm-in-form` | 12 | 10 | 0 | 2 |
+| 36 | `/de/berlin/events/electro/17-10-26` | 12 | 10 | 0 | 2 |
+| 37 | `/en/berlin/events/16` | 12 | 9 | 0 | 3 |
+| 38 | `/en/berlin/events/hip-hop` | 12 | 3 | 0 | 9 |
+| 39 | `/de/berlin/events/party/12-10-26` | 11 | 11 | 0 | 0 |
+| 40 | `/de/berlin/events/party/09-10-26/famous-friday` | 11 | 11 | 0 | 0 |
+| 41 | `/en/berlin/locations/berghain-panorama-bar-saule` | 11 | 11 | 0 | 0 |
+| 42 | `/de/berlin/events/electro/10-10-26/generations` | 11 | 11 | 0 | 0 |
+| 43 | `/de/berlin/locations/kater-blau` | 11 | 9 | 0 | 2 |
+| 44 | `/de/berlin/events/hip-hop/10-10-26/no-scrubs-hip-hop-rnb-neo-soul-slow-jamz-im-cafe-wendel` | 10 | 9 | 0 | 1 |
+| 45 | `/de/berlin/events/party/10-10-26/respect-the-craft` | 10 | 9 | 0 | 1 |
+| 46 | `/de/berlin/events/electro/11-10-26/wieder-boiler-room-setup-plus-marketplace` | 10 | 9 | 0 | 1 |
+| 47 | `/de/berlin/events/party/09-10-26/friday-night` | 10 | 8 | 0 | 2 |
+| 48 | `/de/berlin/events/party/10-10-26/dirty-dancing-party-80s-90s-love-3-floors-karaoke-special` | 10 | 8 | 0 | 2 |
+| 49 | `/de/berlin/events/party/11-10-26` | 10 | 7 | 0 | 3 |
+| 50 | `/de/berlin/events/party/11-10-26/nachspiel` | 9 | 9 | 0 | 0 |
+| 51 | `/de/berlin/events/electro/06-07-19/anomalies-music-art-night-xxx-nxtou-showcase-free-open-air` | 9 | 9 | 0 | 0 |
+| 52 | `/en/berlin/events/party/09-10-26` | 9 | 9 | 0 | 0 |
+| 53 | `/de/berlin/events/electro/11-10-26/analog-meets-digital-reboot-records-x-djay-pro` | 9 | 8 | 0 | 1 |
+| 54 | `/en/berlin/locations/golden-gate` | 9 | 8 | 0 | 1 |
+| 55 | `/de/berlin/events/halloween/30-10-26` | 9 | 8 | 0 | 1 |
+| 56 | `/de/berlin/events/halloween/kulturbrauerei/31-10-2026` | 9 | 6 | 0 | 3 |
+| 57 | `/de/berlin/events/open-air/29-11-25/winterwelt-und-weihnachtsmarkt-am-potsdamer-platz` | 8 | 8 | 0 | 0 |
+| 58 | `/de/berlin/events/party/08-10-26/best-mistake-kitty-cheng` | 8 | 8 | 0 | 0 |
+| 59 | `/de/berlin/events/electro/10-10-26/ritter-butzke-jubilaum-with-nto` | 8 | 8 | 0 | 0 |
+| 60 | `/de/berlin/locations/cassiopeia` | 8 | 8 | 0 | 0 |
 
 ## Antwortblock-Test Profile (On-Demand-Abrufe, Start 15./16.09.2026)
 
 | Gruppe | de | en | es | Summe |
 |---|---:|---:|---:|---:|
-| Test | 27 | 20 | 0 | 47 |
-| Kontrolle | 22 | 25 | 2 | 49 |
+| Test | 7 | 15 | 0 | 22 |
+| Kontrolle | 30 | 38 | 0 | 68 |
 
 ## Betrieb (Cloudflare, Stichprobe)
 
 | Tag | 524 Origin-Timeout | 5xx ohne Early Hints | Banner-Klicks (302) |
 |---|---:|---:|---:|
-| 2026-09-28 | 0 | 25 | 10 |
-| 2026-09-29 | 0 | 7 | 9 |
-| 2026-09-30 | 0 | 25 | 10 |
-| 2026-10-01 | 0 | 69 | 10 |
-| 2026-10-02 | 0 | 118 | 16 |
-| 2026-10-03 | 0 | 33 | 22 |
-| 2026-10-04 | 0 | 11 | 1 |
-| **Summe** | **0** | **288** | **78** |
+| 2026-10-05 | 0 | 31 | 2 |
+| 2026-10-06 | 0 | 25 | 1 |
+| 2026-10-07 | 0 | 51 | 3 |
+| 2026-10-08 | 0 | 31 | 0 |
+| 2026-10-09 | 0 | 110 | 0 |
+| 2026-10-10 | 0 | 44 | 2 |
+| 2026-10-11 | 0 | 60 | 0 |
+| **Summe** | **0** | **352** | **8** |
 
 Lesehilfe: On-Demand-Abrufe spiegeln konkrete Nutzerfragen; Crawler-Summen zeigen nur, wie tief die Indizes gehen. Datumsseiten = heute/Wochenende-Fragen, Profile = Club-Fragen, EN = Touristen.
