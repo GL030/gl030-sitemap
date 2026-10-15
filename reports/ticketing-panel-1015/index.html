@@ -1,0 +1,347 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Ticketing · Partnerbereich v2 (Vorschau)</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121a24;--bg2:#162130;--card:#1b2735;--card2:#223042;--line:rgba(255,255,255,.08);--tx:#eef2f6;--mu:#93a4b5;--mu2:#6f8294;--t1:#00c193;--t2:#16bde0;--ok:#5ee0bf;--warn:#f0c46a;--bad:#ff8a8a}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}html{background:#14262a}
+body{font-family:Roboto,system-ui,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2) 50%,#14262a) fixed;color:var(--tx);min-height:100vh;font-size:15px;line-height:1.45}
+a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.note{background:#3a2f0f;color:#f0d080;font-size:12.5px;padding:8px 16px;text-align:center}
+.nav{display:flex;align-items:center;gap:26px;padding:12px 28px;background:#000;font-size:14px;color:#cfd8e0;overflow-x:auto;white-space:nowrap}
+.nav img{height:26px}.nav .on{color:#fff;border-bottom:2px solid #fff;padding-bottom:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+.wrap>*,.grid2>*{min-width:0}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0 18px;flex-wrap:wrap}
+.head h1{margin:0;font-size:28px;font-weight:500;letter-spacing:-.01em}
+.who{color:var(--mu);margin-top:4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(94,224,191,.12);color:var(--ok);white-space:nowrap}
+.pill i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.info{background:rgba(22,189,224,.12);color:var(--t2)}
+.pill.off{background:rgba(255,255,255,.06);color:var(--mu)}
+.pill.live i{box-shadow:0 0 0 0 rgba(94,224,191,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,224,191,.55)}70%{box-shadow:0 0 0 7px rgba(94,224,191,0)}100%{box-shadow:0 0 0 0 rgba(94,224,191,0)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d;white-space:nowrap}
+.btn.gh{background:transparent;color:var(--tx);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);font-weight:500}
+.btn.sm{padding:6px 13px;font-size:13px}
+.btn.design{background:transparent;color:var(--t2);box-shadow:inset 0 0 0 1.5px var(--t2);font-weight:600}
+.btn:focus-visible,.tab:focus-visible,input:focus-visible,select:focus-visible,.evc:focus-visible{outline:2px solid var(--t2);outline-offset:2px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:22px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 14px;color:var(--mu);font-weight:500;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.on{color:var(--tx);border-color:var(--t2)}
+.tab .c{margin-left:6px;font-size:11.5px;background:var(--card2);padding:1px 7px;border-radius:999px;color:var(--mu)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:14px;overflow:hidden;margin-bottom:26px}
+.kpi{background:var(--card);padding:16px 18px;min-width:0}
+.kpi .v{font-size:24px;font-weight:500;letter-spacing:-.01em}
+.kpi .l{color:var(--mu);font-size:13px;margin-top:2px}
+.kpi .d{font-size:12.5px;color:var(--ok);margin-top:6px}.kpi .d.mu{color:var(--mu2)}
+.grid2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:22px}
+.sec{margin-bottom:26px}
+.sec h2{font-size:16px;font-weight:600;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sec h2 small{font-size:13px;font-weight:400;color:var(--mu)}
+/* ---- Event-Karten Übersicht ---- */
+.evc{display:block;position:relative;background:var(--card);border-radius:14px;margin-bottom:14px;color:var(--tx);overflow:hidden}
+.evc.live{background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg,var(--t1),var(--t2)) border-box;border:2px solid transparent;box-shadow:0 0 0 1px rgba(22,189,224,.08),0 10px 30px -12px rgba(22,189,224,.35)}
+.evc.live:hover{box-shadow:0 0 0 1px rgba(22,189,224,.2),0 12px 34px -10px rgba(22,189,224,.5)}
+.evc .top{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 16px}
+.date{text-align:center;border-radius:10px;background:var(--card2);padding:7px 0}
+.date b{display:block;font-size:20px;line-height:1.1}.date span{font-size:11.5px;color:var(--mu)}
+.evc.live .date{background:rgba(22,189,224,.12)}
+.evc h3{margin:0;font-size:16px;font-weight:600;overflow-wrap:anywhere}
+.evc .meta{color:var(--mu);font-size:13px;margin-top:3px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.nums{text-align:right}.nums b{font-size:20px;font-weight:500}.nums b small{font-size:13px;color:var(--mu);font-weight:400}
+.nums span{display:block;color:var(--mu);font-size:12.5px}
+.band{display:flex;height:8px;border-radius:999px;background:#0f1620;overflow:hidden;margin:0 16px 10px}
+.band i{display:block;height:100%}
+.legend{display:flex;gap:16px;flex-wrap:wrap;padding:0 16px 14px;font-size:12.5px;color:var(--mu)}
+.legend span{display:inline-flex;align-items:center;gap:6px}.legend em{width:9px;height:9px;border-radius:2px;display:inline-block}
+.evc .foot{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding:10px 16px;font-size:13.5px;color:var(--mu);flex-wrap:wrap}
+.evc .foot .go{color:var(--t2);font-weight:500}
+.mini-link{display:flex;align-items:center;gap:8px;min-width:0}
+.mini-link code{font-family:inherit;color:var(--tx);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.icon-btn{background:var(--card2);border:0;border-radius:8px;padding:5px 9px;font-size:12.5px;color:var(--tx);flex:0 0 auto}
+.off-list{background:var(--card);border-radius:14px;overflow:hidden}
+.off-row{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+.off-row:last-child{border:0}
+.off-row .date{padding:5px 0;background:transparent;border:1px solid var(--line)}.off-row .date b{font-size:17px}
+.off-row h4{margin:0;font-size:14.5px;font-weight:500;color:#c9d4de;overflow-wrap:anywhere}.off-row p{margin:2px 0 0;font-size:12.5px;color:var(--mu2)}
+.side{background:var(--card);border-radius:14px;padding:16px;margin-bottom:22px}
+.feed{list-style:none;margin:0;padding:0}
+.feed li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.feed li:last-child{border:0}.feed small{color:var(--mu);display:block;font-size:12.5px}
+.check{list-style:none;padding:0;margin:0}
+.check li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;font-size:14px}
+.check .o{flex:0 0 20px;height:20px;border-radius:50%;border:2px solid var(--mu2);margin-top:1px}
+.check .o.done{border:0;background:linear-gradient(90deg,var(--t1),var(--t2));position:relative}
+.check .o.done:after{content:"";position:absolute;left:6px;top:3px;width:5px;height:9px;border:solid #04231d;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check small{display:block;color:var(--mu);font-size:12.5px}
+/* ---- Event-Seite ---- */
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--mu);font-size:14px;margin-top:22px}
+.back:hover{color:var(--tx)}
+.ehead{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:20px;align-items:center;padding:16px 0 20px}
+.flyer{width:92px;height:92px;border-radius:12px;background:linear-gradient(135deg,#5a0f1c,#1b0a12);display:flex;align-items:flex-end;padding:8px;font-size:11px;font-weight:700;letter-spacing:.02em;color:#ffb3b3;box-shadow:0 0 0 2px rgba(22,189,224,.5)}
+.ehead h1{margin:0;font-size:26px;font-weight:500;letter-spacing:-.01em;overflow-wrap:anywhere}
+.ehead .meta{color:var(--mu);margin-top:4px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.eact{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.share{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;background:linear-gradient(90deg,rgba(0,193,147,.10),rgba(22,189,224,.10));border:1px solid rgba(22,189,224,.28);border-radius:14px;padding:14px 16px;margin-bottom:22px}
+.share .lbl{font-size:13px;color:var(--mu);margin-bottom:6px}
+.share .url{display:flex;gap:8px;align-items:center;min-width:0}
+.share .url code{background:#0f1620;border:1px solid #2c3d52;border-radius:10px;padding:9px 12px;font-family:inherit;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
+.share .acts{display:flex;gap:8px;flex-wrap:wrap}
+.panel{background:var(--card);border-radius:14px;overflow:hidden;margin-bottom:22px}
+.panel .ph{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.panel .ph h3{margin:0;font-size:15px;font-weight:600}.panel .ph small{color:var(--mu);font-size:12.5px}
+.pb{padding:16px}
+.chart svg{display:block;width:100%;height:auto}
+.funnel .row{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr) 70px;gap:12px;align-items:center;padding:7px 0;font-size:14px}
+.funnel .bar{height:24px;border-radius:6px;background:#0f1620;overflow:hidden}
+.funnel .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--t1),var(--t2));border-radius:6px}
+.funnel .row .pct{text-align:right;color:var(--mu);font-size:13px}
+.funnel .row .pct b{color:var(--tx);font-weight:500;display:block;font-size:14px}
+.tt{width:100%;border-collapse:collapse;font-size:14px}
+.tt th{text-align:left;font-weight:500;color:var(--mu2);font-size:12.5px;padding:9px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tt td{padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tt tr:last-child td{border-bottom:0}.tt .r{text-align:right}
+.scroll{overflow-x:auto}
+.st{font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(94,224,191,.12);color:var(--ok);white-space:nowrap}
+.st.off{background:rgba(255,255,255,.06);color:var(--mu)}.st.sold{background:rgba(240,196,106,.14);color:var(--warn)}
+.mini{display:inline-block;width:70px;height:5px;border-radius:999px;background:#0f1620;vertical-align:middle;margin-right:8px;overflow:hidden}.mini i{display:block;height:100%;background:var(--t2)}
+.src{display:inline-flex;align-items:center;gap:8px}.src em{width:9px;height:9px;border-radius:2px;display:inline-block}
+.trk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.trk .tc{background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--line)}
+.trk .tc.on{border-color:rgba(94,224,191,.4)}
+.trk h4{margin:0 0 4px;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.trk p{margin:0 0 12px;color:var(--mu);font-size:13px}
+.trk .stat{background:#0f1620;border-radius:10px;padding:10px 12px;font-size:13px;color:var(--mu);margin-top:10px}
+.trk .stat b{color:var(--tx);font-weight:500}
+label{display:block;font-size:13px;color:var(--mu);margin:0 0 5px}
+input,select{width:100%;background:#0f1620;border:1px solid #2c3d52;border-radius:10px;padding:10px 12px;color:var(--tx);font:inherit}
+.field{margin-bottom:12px}.hint{font-size:12.5px;color:var(--mu);margin-top:5px}
+.f2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.seg{display:flex;background:#0f1620;border:1px solid #2c3d52;border-radius:10px;padding:3px}
+.seg button{flex:1;background:none;border:0;border-radius:8px;padding:8px;color:var(--mu);font-size:13.5px}
+.seg button.on{background:var(--card2);color:var(--tx)}
+.view{display:none}.view.on{display:block}
+.scrim{position:fixed;inset:0;background:rgba(5,9,14,.6);opacity:0;pointer-events:none;transition:opacity .2s;z-index:4}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--bg2);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column;z-index:5}
+body.dr .scrim{opacity:1;pointer-events:auto}body.dr .drawer{transform:none}
+.drawer header{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.drawer header h3{margin:0;font-size:17px}.drawer header small{display:block;color:var(--mu);font-size:13px;font-weight:400;margin-top:2px}
+.drawer .body{padding:20px;overflow:auto;flex:1}
+.drawer footer{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end}
+.receipt{background:#0f1620;border-radius:12px;padding:14px;font-size:14px;margin-top:6px}
+.receipt div{display:flex;justify-content:space-between;padding:3px 0}.receipt .mu{color:var(--mu)}.receipt .tot{border-top:1px solid var(--line);margin-top:6px;padding-top:8px;font-weight:600}
+.x{background:none;border:0;font-size:22px;color:var(--mu);line-height:1}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--card2);padding:10px 16px;border-radius:999px;font-size:14px;opacity:0;transition:.2s;z-index:9}
+.toast.on{opacity:1;transform:translateX(-50%)}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}.trk{grid-template-columns:minmax(0,1fr)}.ehead{grid-template-columns:72px minmax(0,1fr)}.ehead .eact{grid-column:1/-1;justify-content:flex-start}.flyer{width:72px;height:72px}}
+@media(max-width:560px){.wrap{padding:0 14px 60px}.head h1{font-size:23px}.ehead h1{font-size:21px}.evc .top{grid-template-columns:54px minmax(0,1fr)}.nums{grid-column:2;text-align:left}.share{grid-template-columns:minmax(0,1fr)}.f2{grid-template-columns:minmax(0,1fr)}.funnel .row{grid-template-columns:minmax(0,96px) minmax(0,1fr) 56px;font-size:13px}.tt .hm{display:none}.nav{padding:12px 14px;gap:18px}}
+@media(prefers-reduced-motion:reduce){.drawer,.scrim,.toast{transition:none}.pill.live i{animation:none}}
+</style></head><body>
+<div class="note">Vorschau 15.10.2026 · Ticketing-Partnerbereich v2 mit Event-Seiten. Verkaufszahlen und Analyse sind Beispieldaten.</div>
+<div class="nav"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><span>Event Übersicht</span><span>Event eintragen</span><span>QR-Check-in &amp; Tür-Zugänge</span><span>Promoter-Links</span><span class="on">Ticketing</span><span>Arwin Samani ▾</span></div>
+
+<div class="wrap">
+<!-- ===================== ÜBERSICHT ===================== -->
+<section class="view" id="v-home">
+  <div class="head">
+    <div><h1>Ticketing</h1><div class="who">Arwin Samani <span class="pill"><i></i>Verkauf aktiv</span><span class="pill info"><i></i>Einzug über Gästeliste030</span></div></div>
+    <div><button class="btn gh" onclick="toast('Öffnet „Geld & Rechnungen“')">Abrechnung</button></div>
+  </div>
+  <nav class="tabs"><button class="tab on">Übersicht</button><button class="tab">Events<span class="c">3</span></button><button class="tab">Bestellungen<span class="c">45</span></button><button class="tab">Geld &amp; Rechnungen</button><button class="tab">Einstellungen</button></nav>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">52</div><div class="l">Tickets verkauft</div><div class="d">+9 in den letzten 24 Std.</div></div>
+    <div class="kpi"><div class="v">890 €</div><div class="l">Ticketumsatz</div><div class="d mu">ohne Servicegebühr</div></div>
+    <div class="kpi"><div class="v">2</div><div class="l">Events im Verkauf</div><div class="d mu">nächstes: Fr 30.10., 23:00</div></div>
+    <div class="kpi"><div class="v">ca. 864 €</div><div class="l">Auszahlung gegen Rechnung</div><div class="d mu">nach Stripe-Gebühren</div></div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <div class="sec">
+        <h2><span>Im Verkauf <small>· 2 Events</small></span><a href="#">Alle Events</a></h2>
+        <div id="liveList"></div>
+      </div>
+      <div class="sec">
+        <h2><span>Ohne Ticketverkauf <small>· nächste 30 Tage</small></span></h2>
+        <div class="off-list">
+          <div class="off-row"><div class="date"><span>Fr</span><b>16</b></div><div><h4>No Limit x Purple Events x Million Dollar Bae · Ladies Night</h4><p>Amano Grand Central, morgen 23:00 · Gästeliste aktiv</p></div><button class="btn gh sm" onclick="openEvent('purple',true)">Tickets anbieten</button></div>
+          <div class="off-row"><div class="date"><span>Sa</span><b>24</b></div><div><h4>High Society</h4><p>Amano Grand Central, in 9 Tagen 23:00 · Gästeliste aktiv</p></div><button class="btn gh sm" onclick="openEvent('purple',true)">Tickets anbieten</button></div>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="side">
+        <h2 style="font-size:16px;margin:0 0 6px">Einrichtung</h2>
+        <ul class="check">
+          <li><span class="o done"></span><div>Zahlungsempfang eingerichtet<small>Einzug über Gästeliste030, kein eigenes Konto nötig</small></div></li>
+          <li><span class="o"></span><div><a href="#">Rechnungsdaten hinterlegen</a><small>Erscheinen auf Kaufbeleg und Abrechnung</small></div></li>
+          <li><span class="o done"></span><div>Erste Ticketart im Verkauf<small>Ticket-Button ist auf der Eventseite sichtbar</small></div></li>
+          <li><span class="o"></span><div><a href="#">Werbekonto verbinden</a><small>Käufe automatisch an Meta, TikTok und Google melden</small></div></li>
+          <li><span class="o done"></span><div>Erstes Ticket verkauft<small>Einlass: Tür-Zugang anlegen, Tickets und Gästeliste mit einem Scanner</small></div></li>
+        </ul>
+      </div>
+      <div class="side">
+        <h2 style="font-size:16px;margin:0 0 6px;display:flex;justify-content:space-between">Letzte Bestellungen <a href="#" style="font-size:13px;font-weight:500">Alle</a></h2>
+        <ul class="feed">
+          <li><div>Lena K. · 2 Tickets<small>vor 12 Min · No Limit x Halloween · Instagram</small></div><div style="text-align:right">42,78 €<small>bezahlt</small></div></li>
+          <li><div>Murat Y. · 1 Ticket<small>vor 48 Min · Only Us x Halloween · Meta Ads</small></div><div style="text-align:right">21,39 €<small>bezahlt</small></div></li>
+          <li><div>Sophie B. · 3 Tickets<small>vor 2 Std · No Limit x Halloween · Instagram</small></div><div style="text-align:right">64,17 €<small>bezahlt</small></div></li>
+          <li><div>Robert Constantin Wagner · 1 Ticket<small>13.10. 17:14 · No Limit x Halloween</small></div><div style="text-align:right">1,44 €<small>erstattet</small></div></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== EVENT-SEITE ===================== -->
+<section class="view" id="v-event">
+  <a class="back" href="#/">← Alle Events</a>
+  <div class="ehead">
+    <div class="flyer" id="eFlyer">HALLOWEEN</div>
+    <div><h1 id="eTitle"></h1><div class="meta" id="eMeta"></div></div>
+    <div class="eact"><button class="btn design" onclick="toast('Öffnet den Ticketseiten-Editor (Logo, Flyer, Farben, Texte)')">🎨 Ticketseite gestalten</button><button class="btn" onclick="openDr()">+ Ticketart anlegen</button></div>
+  </div>
+
+  <div class="panel" id="eEmpty" style="display:none"><div class="pb" style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap"><div><b style="font-weight:500">Noch keine Ticketart.</b><div class="hint" style="margin-top:3px">Lege die erste an, dann ist die Ticketseite sofort teilbar. Die Gästeliste läuft unabhängig weiter.</div></div><button class="btn" onclick="openDr()">+ Erste Ticketart anlegen</button></div></div>
+  <div id="eLiveOnly">
+  <div class="share">
+    <div style="min-width:0"><div class="lbl">Ticketseite zum Teilen · für Instagram-Bio, Story, Linktree und Anzeigen</div>
+      <div class="url"><code id="eUrl"></code></div></div>
+    <div class="acts"><button class="btn sm" onclick="toast('Link kopiert')">Kopieren</button><button class="btn gh sm" onclick="toast('Öffnet die Ticketseite')">Ansehen ↗</button><button class="btn gh sm" onclick="toast('QR-Code als PNG für Flyer')">QR-Code</button></div>
+  </div>
+  </div>
+
+  <nav class="tabs" id="eTabs">
+    <button class="tab on" data-t="ana">Analyse</button>
+    <button class="tab" data-t="types">Ticketarten<span class="c" id="cTypes">3</span></button>
+    <button class="tab" data-t="orders">Bestellungen<span class="c" id="cOrders">31</span></button>
+    <button class="tab" data-t="track">Tracking</button>
+    <button class="tab" data-t="door">Einlass</button>
+  </nav>
+
+  <!-- Analyse -->
+  <div class="view on" id="t-ana">
+    <div class="kpis" id="eKpis"></div>
+    <div class="grid2">
+      <div>
+        <div class="panel"><div class="ph"><h3>Verkäufe pro Tag</h3><small>letzte 14 Tage</small></div><div class="pb chart" id="eChart"></div></div>
+        <div class="panel"><div class="ph"><h3>Herkunft der Käufe</h3><small>erster Klick auf die Ticketseite</small></div>
+          <div class="scroll"><table class="tt"><thead><tr><th>Quelle</th><th class="r">Aufrufe</th><th class="r">Bestellungen</th><th class="r hm">Umsatz</th><th class="r">Quote</th></tr></thead><tbody id="eSrc"></tbody></table></div></div>
+      </div>
+      <div>
+        <div class="panel"><div class="ph"><h3>Weg zum Kauf</h3><small>ohne Cookies gezählt</small></div><div class="pb funnel" id="eFunnel"></div></div>
+        <div class="panel"><div class="ph"><h3>Ticketarten</h3></div><div class="pb" id="eTypeMini"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticketarten -->
+  <div class="view" id="t-types">
+    <div class="panel"><div class="scroll"><table class="tt"><thead><tr><th>Ticketart</th><th class="r">Gast zahlt</th><th>Verkauf</th><th class="hm">Zeitraum</th><th>Status</th><th></th></tr></thead><tbody id="eTypes"></tbody></table></div></div>
+    <p class="hint">Verborgene Ticketarten (z. B. „Test“) zählen nicht ins Kontingent.</p>
+  </div>
+
+  <!-- Bestellungen -->
+  <div class="view" id="t-orders">
+    <div class="panel"><div class="scroll"><table class="tt"><thead><tr><th>Name</th><th>Ticketart</th><th class="r">Betrag</th><th class="hm">Quelle</th><th class="hm">Zeit</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Lena K.</td><td>2 × Regulär</td><td class="r">42,78 €</td><td class="hm">Instagram</td><td class="hm">heute 09:26</td><td><span class="st">bezahlt</span></td></tr>
+      <tr><td>Sophie B.</td><td>3 × Regulär</td><td class="r">64,17 €</td><td class="hm">Instagram</td><td class="hm">heute 07:31</td><td><span class="st">bezahlt</span></td></tr>
+      <tr><td>Jonas P.</td><td>1 × Spooky Bird</td><td class="r">16,14 €</td><td class="hm">Meta Ads</td><td class="hm">gestern 22:04</td><td><span class="st">bezahlt</span></td></tr>
+      <tr><td>Robert Constantin Wagner</td><td>1 × Test</td><td class="r">1,44 €</td><td class="hm">Direkt</td><td class="hm">13.10. 17:14</td><td><span class="st off">erstattet</span></td></tr>
+    </tbody></table></div></div>
+  </div>
+
+  <!-- Tracking -->
+  <div class="view" id="t-track">
+    <p style="color:var(--mu);margin:0 0 16px;max-width:72ch">Jeder bezahlte Kauf wird direkt vom Server an deine Werbekonten gemeldet, auch wenn der Gast einen Werbeblocker nutzt. Deine Anzeigen lernen so, wer wirklich Tickets kauft, nicht nur wer klickt.</p>
+    <div class="trk">
+      <div class="tc on"><h4>Meta (Instagram, Facebook) <span class="pill"><i></i>verbunden</span></h4><p>Pixel und Conversions API</p>
+        <div class="field"><label>Pixel-ID</label><input value="1048835127705512"></div>
+        <div class="field"><label>Conversions-API-Token</label><input value="EAAG••••••••••••••••" type="text"></div>
+        <div class="stat"><b>31 Käufe</b> gemeldet · Match-Qualität <b>7,9 / 10</b><br>Letzte Meldung vor 12 Min</div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn gh sm" onclick="toast('Testkauf an Meta gesendet – im Events Manager unter „Test events“ prüfen')">Testkauf senden</button></div></div>
+      <div class="tc"><h4>TikTok <span class="pill off"><i></i>nicht verbunden</span></h4><p>Pixel und Events API</p>
+        <div class="field"><label>Pixel-ID</label><input placeholder="z. B. D9NMGK3C77U1C011NPE0"></div>
+        <div class="field"><label>Events-API-Token</label><input placeholder="aus dem TikTok Events Manager"></div>
+        <button class="btn gh sm" onclick="toast('Verbindung wird geprüft')">Verbinden</button></div>
+      <div class="tc"><h4>Google Analytics 4 <span class="pill off"><i></i>nicht verbunden</span></h4><p>Measurement Protocol</p>
+        <div class="field"><label>Mess-ID</label><input placeholder="G-XXXXXXXXXX"></div>
+        <div class="field"><label>API-Secret</label><input placeholder="aus Datenstreams → Measurement Protocol"></div>
+        <button class="btn gh sm" onclick="toast('Verbindung wird geprüft')">Verbinden</button></div>
+    </div>
+    <div class="panel" style="margin-top:18px"><div class="pb">
+      <div class="f2"><div><label>Gilt für</label><div class="seg"><button class="on">Alle meine Events</button><button>Nur dieses Event</button></div></div>
+      <div><label>Gemeldete Ereignisse</label><div style="font-size:14px;padding-top:6px;color:var(--mu)">Ticketseite aufgerufen · Kasse geöffnet · <span style="color:var(--tx)">Kauf (mit Wert und Anzahl)</span></div></div></div>
+      <p class="hint" style="margin-top:12px">Die Zuordnung über E-Mail und Telefon erfolgt nur bei Gästen, die an der Kasse der Werbemessung zugestimmt haben (aktuell 64 %). Ohne Zustimmung wird der Kauf ohne Personendaten gemeldet.</p>
+    </div></div>
+  </div>
+
+  <!-- Einlass -->
+  <div class="view" id="t-door">
+    <div class="kpis"><div class="kpi"><div class="v" id="dSold">38</div><div class="l">Tickets gültig</div></div><div class="kpi"><div class="v">0</div><div class="l">eingecheckt</div><div class="d mu">Check-in startet am Eventtag</div></div><div class="kpi"><div class="v">74</div><div class="l">auf der Gästeliste</div></div><div class="kpi"><div class="v">2</div><div class="l">Tür-Zugänge</div></div></div>
+    <div class="panel"><div class="pb" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div>Tickets und Gästeliste werden mit demselben Scanner geprüft.</div><button class="btn gh sm">Tür-Zugänge verwalten</button></div></div>
+  </div>
+</section>
+</div>
+
+<div class="scrim" onclick="closeDr()"></div>
+<aside class="drawer" aria-label="Ticketart anlegen">
+  <header><h3>Ticketart anlegen<small id="drEv"></small></h3><button class="x" onclick="closeDr()" aria-label="Schließen">×</button></header>
+  <div class="body">
+    <div class="field"><label>Name</label><input value="Last Minute"></div>
+    <div class="f2"><div class="field"><label>Ticketpreis</label><input value="25,00 €"></div><div class="field"><label>Kontingent</label><input value="50"></div></div>
+    <div class="f2"><div class="field"><label>Verkauf ab</label><input value="sofort"></div><div class="field"><label>Verkauf bis</label><input value="Fr 30.10., 22:00"></div></div>
+    <div class="receipt"><div><span class="mu">Gast zahlt</span><span>26,64 €</span></div><div><span class="mu">davon Servicegebühr</span><span>1,64 €</span></div><div><span class="mu">Stripe ca.</span><span>−0,65 €</span></div><div class="tot"><span>Bei dir kommt an</span><span>24,35 €</span></div></div>
+  </div>
+  <footer><button class="btn gh" onclick="closeDr()">Abbrechen</button><button class="btn" onclick="closeDr();toast('Ticketart angelegt und im Verkauf')">Ticketart anlegen</button></footer>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+var C={reg:'#16bde0',spooky:'#00c193',super:'#7fe3ff',test:'#3a4a5c'};
+var EV={
+ halloween:{title:'No Limit x Halloween',d:'Fr',n:'30',m:'Okt',meta:'Fr 30.10., 23:00 · Amano Grand Central · in 15 Tagen',url:'https://tickets.gl030.de/no-limit-x-halloween-30-10',
+  sold:38,cap:120,rev:660,orders:31,views:1240,flyer:'HALLOWEEN',
+  types:[['Spooky Bird',16.14,20,20,'spooky','bis 16.10.'],['Regulär',21.39,18,100,'reg','bis 30.10., 22:00'],['Test',1.44,0,1,'test','verborgen']],
+  daily:[0,0,9,6,4,2,1,3,0,2,1,4,3,3],
+  src:[['Instagram (Bio, Story)','#e1306c',520,14,312],['Meta Ads','#1877f2',410,9,195],['GL030 Eventseite','#16bde0',180,5,105],['WhatsApp / Direkt','#93a4b5',130,3,48]],
+  funnel:[['Ticketseite aufgerufen',1240],['Ticket gewählt',214],['Kasse geöffnet',96],['Bezahlt',31]]},
+ onlyus:{title:'Only Us x Halloween',d:'Sa',n:'31',m:'Okt',meta:'Sa 31.10., 23:00 · Amano Grand Central · in 16 Tagen',url:'https://tickets.gl030.de/only-us-x-halloween-31-10',
+  sold:14,cap:80,rev:230,orders:12,views:610,flyer:'ONLY US',
+  types:[['Super Spooky Bird',16.14,10,10,'spooky','bis 18.10.'],['Spooky Bird',21.39,4,10,'super','bis 25.10.'],['Regulär',26.64,0,60,'reg','bis 31.10., 22:00']],
+  daily:[0,0,0,0,3,2,1,0,1,2,0,2,1,2],
+  src:[['Instagram (Bio, Story)','#e1306c',340,8,150],['Meta Ads','#1877f2',150,2,40],['GL030 Eventseite','#16bde0',80,1,20],['WhatsApp / Direkt','#93a4b5',40,1,20]],
+  funnel:[['Ticketseite aufgerufen',610],['Ticket gewählt',88],['Kasse geöffnet',35],['Bezahlt',12]]},
+ purple:{title:'No Limit x Purple Events x Million Dollar Bae · Ladies Night',d:'Fr',n:'16',m:'Okt',meta:'Fr 16.10., 23:00 · Amano Grand Central · morgen',off:true,flyer:'LADIES NIGHT'}
+};
+function eur(v){return v.toLocaleString('de-DE',{minimumFractionDigits:0,maximumFractionDigits:2})+' €'}
+function band(e){return '<div class="band">'+e.types.filter(function(t){return t[4]!='test'}).map(function(t){return '<i style="width:'+(t[2]/e.cap*100)+'%;background:'+C[t[4]]+'"></i>'}).join('')+'</div>'}
+function legend(e){return '<div class="legend">'+e.types.filter(function(t){return t[4]!='test'}).map(function(t){return '<span><em style="background:'+C[t[4]]+'"></em>'+t[0]+' '+t[2]+'/'+t[3]+(t[2]>=t[3]?' · ausverkauft':'')+'</span>'}).join('')+'</div>'}
+function liveCard(k){var e=EV[k];return '<a class="evc live" href="#/event/'+k+'"><div class="top"><div class="date"><span>'+e.d+'</span><b>'+e.n+'</b><span>'+e.m+'</span></div><div style="min-width:0"><h3>'+e.title+'</h3><div class="meta"><span class="pill live"><i></i>Online</span><span>'+e.meta.split(' · ').slice(1).join(' · ')+'</span></div></div><div class="nums"><b>'+e.sold+' <small>/ '+e.cap+'</small></b><span>'+eur(e.rev)+' Umsatz</span></div></div>'+band(e)+legend(e)+'<div class="foot"><div class="mini-link"><code>'+e.url.replace('https://','')+'</code><button class="icon-btn" onclick="event.preventDefault();event.stopPropagation();toast(\'Link kopiert\')">Kopieren</button></div><span class="go">Event öffnen →</span></div></a>'}
+document.getElementById('liveList').innerHTML=liveCard('halloween')+liveCard('onlyus');
+function chart(a){var w=560,h=150,bw=w/a.length,mx=Math.max.apply(null,a)||1,s='<svg viewBox="0 0 '+w+' '+(h+22)+'" role="img" aria-label="Verkäufe pro Tag">';a.forEach(function(v,i){var bh=v/mx*(h-14);s+='<rect x="'+(i*bw+5)+'" y="'+(h-bh)+'" width="'+(bw-10)+'" height="'+Math.max(bh,2)+'" rx="4" fill="'+(v?'url(#g)':'#24344a')+'"/>';if(v)s+='<text x="'+(i*bw+bw/2)+'" y="'+(h-bh-4)+'" fill="#93a4b5" font-size="11" text-anchor="middle">'+v+'</text>';if(i%2==0){var d=new Date(2026,9,2+i);s+='<text x="'+(i*bw+bw/2)+'" y="'+(h+16)+'" fill="#6f8294" font-size="11" text-anchor="middle">'+d.getDate()+'.'+(d.getMonth()+1)+'.</text>'}});return s+'<defs><linearGradient id="g" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#00c193"/><stop offset="1" stop-color="#16bde0"/></linearGradient></defs></svg>'}
+function openEvent(k,draw){location.hash='#/event/'+k;if(draw)setTimeout(openDr,50)}
+function render(){var h=location.hash,m=h.match(/#\/event\/(\w+)/);document.getElementById('v-home').classList.toggle('on',!m);document.getElementById('v-event').classList.toggle('on',!!m);window.scrollTo(0,0);if(!m)return;var k=m[1],e=EV[k];if(!e)return;
+ document.getElementById('eTitle').textContent=e.title;document.getElementById('eFlyer').textContent=e.flyer;document.getElementById('drEv').textContent=e.title+' · '+e.d+' '+e.n+'.10.';
+ document.getElementById('eMeta').innerHTML=(e.off?'<span class="pill off"><i></i>Kein Ticketverkauf</span>':'<span class="pill live"><i></i>Online</span>')+'<span>'+e.meta+'</span>';
+ document.getElementById('eLiveOnly').style.display=e.off?'none':'';document.getElementById('eEmpty').style.display=e.off?'':'none';document.getElementById('eTabs').style.display=e.off?'none':'';
+ ['ana','types','orders','track','door'].forEach(function(t){document.getElementById('t-'+t).style.display=e.off?'none':''});
+ if(e.off){return}
+ document.getElementById('eUrl').textContent=e.url;document.getElementById('cOrders').textContent=e.orders;document.getElementById('cTypes').textContent=e.types.length;document.getElementById('dSold').textContent=e.sold;
+ var cr=(e.orders/e.views*100).toFixed(1).replace('.',',');
+ document.getElementById('eKpis').innerHTML='<div class="kpi"><div class="v">'+e.sold+' <span style="font-size:15px;color:var(--mu)">/ '+e.cap+'</span></div><div class="l">Tickets verkauft</div><div class="d">+'+e.daily[13]+' heute</div></div><div class="kpi"><div class="v">'+eur(e.rev)+'</div><div class="l">Ticketumsatz</div><div class="d mu">ohne Servicegebühr</div></div><div class="kpi"><div class="v">'+e.views.toLocaleString('de-DE')+'</div><div class="l">Aufrufe der Ticketseite</div><div class="d mu">ohne Cookies gezählt</div></div><div class="kpi"><div class="v">'+cr+' %</div><div class="l">Kaufquote</div><div class="d mu">Bestellungen je Aufruf</div></div>';
+ document.getElementById('eChart').innerHTML=chart(e.daily);
+ document.getElementById('eSrc').innerHTML=e.src.map(function(s){return '<tr><td><span class="src"><em style="background:'+s[1]+'"></em>'+s[0]+'</span></td><td class="r">'+s[2]+'</td><td class="r">'+s[3]+'</td><td class="r hm">'+eur(s[4])+'</td><td class="r">'+(s[3]/s[2]*100).toFixed(1).replace('.',',')+' %</td></tr>'}).join('');
+ var f0=e.funnel[0][1];document.getElementById('eFunnel').innerHTML=e.funnel.map(function(f){var p=f[1]/f0*100;return '<div class="row"><span>'+f[0]+'</span><div class="bar"><i style="width:'+Math.max(p,2)+'%"></i></div><span class="pct"><b>'+f[1].toLocaleString('de-DE')+'</b>'+(p<100?p.toFixed(1).replace('.',',')+' %':'')+'</span></div>'}).join('');
+ document.getElementById('eTypeMini').innerHTML=band(e).replace('margin:0 16px 10px','')+legend(e).replace('padding:0 16px 14px','');
+ document.getElementById('eTypes').innerHTML=e.types.map(function(t){var st=t[4]=='test'?'<span class="st off">verborgen</span>':(t[2]>=t[3]?'<span class="st sold">ausverkauft</span>':'<span class="st">im Verkauf</span>');return '<tr><td>'+t[0]+'</td><td class="r">'+eur(t[1])+'</td><td><span class="mini"><i style="width:'+(t[2]/t[3]*100)+'%"></i></span>'+t[2]+'/'+t[3]+'</td><td class="hm">'+t[5]+'</td><td>'+st+'</td><td class="r"><button class="icon-btn" onclick="openDr()">Bearbeiten</button></td></tr>'}).join('');
+ setTab('ana')}
+function setTab(t){document.querySelectorAll('#eTabs .tab').forEach(function(b){b.classList.toggle('on',b.dataset.t==t)});['ana','types','orders','track','door'].forEach(function(x){document.getElementById('t-'+x).classList.toggle('on',x==t)})}
+document.querySelectorAll('#eTabs .tab').forEach(function(b){b.onclick=function(){setTab(b.dataset.t)}});
+function openDr(){document.body.classList.add('dr')}function closeDr(){document.body.classList.remove('dr')}
+function toast(t){var el=document.getElementById('toast');el.textContent=t;el.classList.add('on');clearTimeout(window._t);window._t=setTimeout(function(){el.classList.remove('on')},2200)}
+document.addEventListener('keydown',function(e){if(e.key=='Escape')closeDr()});
+window.addEventListener('hashchange',render);render();
+</script>
+</body></html>
