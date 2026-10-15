@@ -1,0 +1,178 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Partnerbereich v3 (Vorschau)</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121a24;--bg2:#162130;--card:#1b2735;--card2:#223042;--line:rgba(255,255,255,.08);--tx:#eef2f6;--mu:#93a4b5;--mu2:#6f8294;--t1:#00c193;--t2:#16bde0;--ok:#5ee0bf;--warn:#f0c46a;--pr:#b59cff}
+*{box-sizing:border-box}html{background:#14262a}html,body{margin:0;overflow-x:hidden}
+body{font-family:Roboto,system-ui,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2) 50%,#14262a);color:var(--tx);min-height:100vh;font-size:15px;line-height:1.45}
+a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.note{background:#3a2f0f;color:#f0d080;font-size:12.5px;padding:7px 16px;text-align:center}
+/* ---------- Kopf: eine Leiste ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(10,14,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .in{max-width:1240px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:22px}
+.top img{height:28px;flex:0 0 auto}
+.nav{display:flex;gap:2px;flex:1;min-width:0;height:100%}
+.nav>div{position:relative;height:100%;display:flex;align-items:center}
+.nav .it{display:flex;align-items:center;gap:7px;height:100%;padding:0 13px;color:#c5d0da;font-size:14.5px;font-weight:500;border:0;background:none;border-bottom:2px solid transparent;white-space:nowrap}
+.nav .it svg{width:17px;height:17px;opacity:.75}
+.nav .it:hover{color:#fff}.nav .it.on{color:#fff;border-bottom-color:var(--t2)}.nav .it.on svg{opacity:1;color:var(--t2)}
+.nav .it .car{font-size:10px;opacity:.6}
+.nav .badge{font-size:11px;font-weight:700;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d;border-radius:999px;padding:1px 7px}
+.dd{position:absolute;top:56px;left:0;min-width:250px;background:#1b2735;border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 18px 40px rgba(0,0,0,.5);display:none}
+.nav>div:hover .dd,.nav>div:focus-within .dd{display:block}
+.dd a{display:block;padding:9px 12px;border-radius:8px;color:var(--tx);font-size:14px}.dd a small{display:block;color:var(--mu);font-size:12px}.dd a:hover{background:var(--card2)}
+.acc{display:flex;align-items:center;gap:10px;margin-left:auto;padding:6px 10px 6px 6px;border-radius:999px;border:1px solid var(--line);background:var(--card);white-space:nowrap}
+.acc .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--t1),var(--t2));color:#04231d;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.acc span{font-size:14px}.acc small{display:block;font-size:11.5px;color:var(--mu);line-height:1.1}
+/* ---------- Seitenkopf kompakt ---------- */
+.ph{max-width:1240px;margin:0 auto;padding:22px 20px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.ph .crumb{font-size:12.5px;color:var(--mu);margin-bottom:3px}.ph .crumb a{color:var(--mu)}.ph .crumb b{color:var(--tx);font-weight:500}
+.ph h1{margin:0;font-size:26px;font-weight:500;letter-spacing:-.01em}
+.ph .acts{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+.brands{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.br{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px 4px 4px;font-size:13px;color:#d6dee6}
+.br i{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:10.5px;font-weight:800;color:#fff}
+.br.loc i{border-radius:7px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d;white-space:nowrap}
+.btn.gh{background:transparent;color:var(--tx);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);font-weight:500}.btn.sm{padding:6px 13px;font-size:13px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px 80px}.wrap>*{min-width:0}
+.tip{background:rgba(22,189,224,.08);border:1px solid rgba(22,189,224,.25);border-radius:12px;padding:10px 14px;font-size:14px;color:#c9d6e2;margin-bottom:18px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.tip a{text-decoration:underline}.tip button{background:none;border:0;color:var(--mu);font-size:18px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:14px;overflow:hidden;margin-bottom:24px}
+.kpi{background:var(--card);padding:15px 18px;min-width:0;border-top:3px solid var(--c,transparent)}.kpi .v{font-size:24px;font-weight:500}.kpi .v small{font-size:14px;color:var(--mu);font-weight:400}.kpi .l{color:var(--mu);font-size:13px}.kpi .d{font-size:12.5px;color:var(--mu2);margin-top:5px}.kpi .d.g{color:var(--ok)}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 12px}.sh h2{margin:0;font-size:16px;font-weight:600}.sh h2 small{font-size:13px;color:var(--mu);font-weight:400}.sh .r{font-size:13px;color:var(--mu)}
+/* Event-Karten */
+.evs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:28px}
+.ev{background:var(--card);border-radius:16px;overflow:hidden;border:2px solid transparent}
+.ev.live{background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg,var(--t1),var(--t2)) border-box;box-shadow:0 10px 30px -14px rgba(22,189,224,.45)}
+.ev .hd{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px}
+.date{text-align:center;border-radius:10px;background:var(--card2);padding:6px 0}.date b{display:block;font-size:19px;line-height:1.1}.date span{font-size:11px;color:var(--mu)}.ev.live .date{background:rgba(22,189,224,.12)}
+.ev h3{margin:0;font-size:16px;font-weight:600;overflow-wrap:anywhere}.ev .meta{color:var(--mu);font-size:13px;margin-top:3px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:rgba(94,224,191,.12);color:var(--ok);white-space:nowrap}.pill i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.blue{background:rgba(22,189,224,.12);color:var(--t2)}.pill.grey{background:rgba(255,255,255,.07);color:var(--mu)}
+.ev .x{display:flex;gap:6px}
+.ib{background:var(--card2);border:0;border-radius:8px;padding:6px 10px;font-size:12.5px;color:var(--tx)}
+.ch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.ch>div{background:var(--card);padding:12px 16px;min-width:0}
+.ch .t{font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--c);display:flex;align-items:center;gap:6px;text-transform:uppercase}
+.ch .n{font-size:24px;font-weight:500;margin-top:4px}.ch .n small{font-size:13px;color:var(--mu);font-weight:400}
+.ch .s{font-size:12.5px;color:var(--mu)}.ch .bar{height:5px;border-radius:999px;background:#0f1620;margin-top:8px;overflow:hidden}.ch .bar i{display:block;height:100%;background:var(--c)}
+.ch .off{color:var(--mu2);font-size:13px;margin-top:8px}.ch .off a{font-size:13px}
+.ev .ft{display:flex;justify-content:space-between;gap:10px;padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--warn);flex-wrap:wrap}
+.ev .ft a{color:var(--t2);font-weight:500}
+/* Tabelle */
+.panel{background:var(--card);border-radius:14px;overflow:hidden}.scroll{overflow-x:auto}
+.tt{width:100%;border-collapse:collapse;font-size:14px}.tt th{text-align:left;font-weight:500;color:var(--mu2);font-size:12px;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap;text-transform:uppercase;letter-spacing:.03em}
+.tt td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:middle}.tt tr:last-child td{border:0}.tt .r{text-align:right}.tt small{display:block;color:var(--mu);font-size:12px}
+.tt .num{font-variant-numeric:tabular-nums}.dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;background:var(--c)}
+.view{display:none}.view.on{display:block}
+.ph2{background:var(--card);border-radius:14px;padding:26px;color:var(--mu);text-align:center}
+/* Mobil */
+@media(max-width:980px){.top .in{gap:12px}.nav .it span.lb{display:none}.nav .it{padding:0 11px}.acc span,.acc small{display:none}.acc{padding:4px}}
+@media(max-width:900px){.evs{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+ .top .in{height:54px;padding:0 14px}.nav{display:none}
+ .bnav{display:grid}.wrap{padding:0 14px 90px}.ph{padding:16px 14px 14px}.ph h1{font-size:22px}
+ .ch .n{font-size:20px}.ch>div{padding:10px 12px}.ev .hd{grid-template-columns:48px minmax(0,1fr)}.ev .x{grid-column:1/-1}
+ .tt .hm{display:none}}
+.bnav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(10,14,20,.96);border-top:1px solid var(--line);grid-template-columns:repeat(5,1fr);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+.bnav button{background:none;border:0;color:#a9b6c3;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 0}.bnav button svg{width:21px;height:21px}.bnav button.on{color:var(--t2)}
+</style></head><body>
+<div class="note">Vorschau 15.10.2026 · Partnerbereich v3: neue Menüleiste, kompakter Seitenkopf, Übersicht mit Tickets. Zahlen teils Beispieldaten.</div>
+
+<header class="top"><div class="in">
+ <img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030">
+ <nav class="nav" aria-label="Partnerbereich">
+  <div><button class="it on" data-v="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="lb">Übersicht</span></button></div>
+  <div><button class="it" data-v="events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="lb">Events</span><span class="car">▾</span></button>
+   <div class="dd"><a href="#" data-v="events">Alle Events<small>Kommende und vergangene, mit Gästeliste und Tickets</small></a><a href="#" data-v="events">+ Event eintragen<small>Neues Event für deine Reihen und Locations</small></a></div></div>
+  <div><button class="it" data-v="tickets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg><span class="lb">Ticketing</span><span class="badge">2</span><span class="car">▾</span></button>
+   <div class="dd"><a href="https://gl030.github.io/gl030-sitemap/reports/ticketing-panel-1015/">Übersicht &amp; Events<small>Ticketarten, Ticketseiten, Analyse</small></a><a href="#">Bestellungen<small>Suche, Belege, Erstattungen</small></a><a href="#">Geld &amp; Rechnungen<small>Abrechnung je Event</small></a></div></div>
+  <div><button class="it" data-v="door"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg><span class="lb">Einlass</span><span class="car">▾</span></button>
+   <div class="dd"><a href="#" data-v="door">Tür-Zugänge<small>Scanner-Links mit PIN, Erstattung erlauben</small></a><a href="#" data-v="door">Check-in-Auswertung<small>Gästeliste, Tickets, Promoter je Event</small></a></div></div>
+  <div><button class="it" data-v="promo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M17 8a5 5 0 0 1 0 8"/></svg><span class="lb">Promotion</span><span class="car">▾</span></button>
+   <div class="dd"><a href="#" data-v="promo">Promoter-Links<small>Eigene Gästelisten-Links je Promoter</small></a><a href="#" data-v="promo">Werbekonto &amp; Tracking<small>Meta-Pixel, Käufe an Anzeigen melden</small></a></div></div>
+ </nav>
+ <div class="acc"><div class="av">AS</div><div><span>Arwin Samani</span><small>3 Reihen · 1 Location</small></div><span style="color:var(--mu)">▾</span></div>
+</div></header>
+
+<!-- ======== Übersicht ======== -->
+<section class="view on" id="v-home">
+ <div class="ph">
+  <div>
+   <div class="crumb"><a href="#">Partnerbereich</a> / <b>Übersicht</b></div>
+   <h1>Guten Abend, Arwin</h1>
+   <div class="brands">
+    <span class="br"><i style="background:#8a5cf6">HS</i>High Society</span>
+    <span class="br"><i style="background:#e0465a">NL</i>No Limit</span>
+    <span class="br"><i style="background:#16a3c9">OU</i>Only Us</span>
+    <span class="br loc"><i style="background:#3a4a5c">AG</i>Amano Grand Central</span>
+   </div>
+  </div>
+  <div class="acts"><button class="btn gh">Tür-Scanner öffnen</button><button class="btn">+ Event eintragen</button></div>
+ </div>
+ <div class="wrap">
+  <div class="tip"><span>Tipp: <a href="#">Lege ein Passwort fest</a>, dann brauchst du keinen Anmeldelink mehr.</span><button aria-label="Ausblenden">×</button></div>
+
+  <div class="kpis">
+   <div class="kpi" style="--c:#5fe0bd"><div class="v">46</div><div class="l">Gästeliste-Anmeldungen</div><div class="d g">+12 heute</div></div>
+   <div class="kpi" style="--c:#16bde0"><div class="v">38 <small>/ 200</small></div><div class="l">Tickets verkauft</div><div class="d g">+5 heute · 660 € Umsatz</div></div>
+   <div class="kpi" style="--c:#b59cff"><div class="v">9</div><div class="l">über Promoter</div><div class="d">3 aktive Links</div></div>
+   <div class="kpi"><div class="v">3</div><div class="l">kommende Events</div><div class="d">nächstes: morgen 23:00</div></div>
+  </div>
+
+  <div class="sh"><h2>Nächste Events</h2><span class="r">Stand 21:37 · aktualisiert sich jede Minute</span></div>
+  <div class="evs">
+   <article class="ev">
+    <div class="hd"><div class="date"><span>Fr</span><b>16</b><span>Okt</span></div>
+     <div style="min-width:0"><h3>No Limit x Purple Events x Million Dollar Bae · Ladies Night</h3><div class="meta"><span class="pill"><i></i>Gästeliste live</span><span>Amano Grand Central · morgen</span></div></div>
+     <div class="x"><button class="ib">Bearbeiten</button></div></div>
+    <div class="ch">
+     <div style="--c:#5fe0bd"><div class="t">Gästeliste</div><div class="n">25 <small>Anm.</small></div><div class="s">0 eingecheckt</div><div class="bar"><i style="width:0"></i></div></div>
+     <div style="--c:#16bde0"><div class="t">Tickets</div><div class="off">Kein Ticketverkauf<br><a href="#">Tickets anbieten →</a></div></div>
+     <div style="--c:#b59cff"><div class="t">Promoter</div><div class="n">4 <small>Anm.</small></div><div class="s">2 Links</div></div>
+    </div>
+    <div class="ft"><span>Gästeliste offen bis Fr 23:00 · letzte Anmeldung 19:25</span><a href="#">Event öffnen →</a></div>
+   </article>
+   <article class="ev live">
+    <div class="hd"><div class="date"><span>Fr</span><b>30</b><span>Okt</span></div>
+     <div style="min-width:0"><h3>No Limit x Halloween</h3><div class="meta"><span class="pill"><i></i>Gästeliste live</span><span class="pill blue"><i></i>Tickets online</span><span>in 15 Tagen</span></div></div>
+     <div class="x"><button class="ib">Bearbeiten</button></div></div>
+    <div class="ch">
+     <div style="--c:#5fe0bd"><div class="t">Gästeliste</div><div class="n">21 <small>Anm.</small></div><div class="s">0 eingecheckt</div><div class="bar"><i style="width:0"></i></div></div>
+     <div style="--c:#16bde0"><div class="t">Tickets</div><div class="n">38 <small>/ 120</small></div><div class="s">660 € · 0 eingecheckt</div><div class="bar"><i style="width:32%"></i></div></div>
+     <div style="--c:#b59cff"><div class="t">Promoter</div><div class="n">5 <small>Anm.</small></div><div class="s">1 Link</div></div>
+    </div>
+    <div class="ft"><span>Gästeliste offen bis Fr 22:00 · letzte Anmeldung 19:02</span><a href="#">Event öffnen →</a></div>
+   </article>
+  </div>
+
+  <div class="sh"><h2>Kommende Events <small>· 3</small></h2><a href="#" class="r" style="color:var(--t2)">Vergangene</a></div>
+  <div class="panel scroll"><table class="tt">
+   <thead><tr><th>Datum</th><th>Event</th><th class="hm">Location</th><th>Status</th><th class="r">Gästeliste</th><th class="r">Tickets</th><th class="r hm">Promoter</th><th class="r hm">Check-ins</th><th></th></tr></thead>
+   <tbody>
+    <tr><td class="num">Fr 16.10.<small>23:00</small></td><td><b style="font-weight:500">No Limit x Purple Events · Ladies Night</b></td><td class="hm">Amano</td><td><span class="pill">live</span></td><td class="r num"><span class="dot" style="--c:#5fe0bd"></span>25</td><td class="r num" style="color:var(--mu2)">–</td><td class="r num hm">4</td><td class="r num hm">0</td><td class="r"><button class="ib">Öffnen</button></td></tr>
+    <tr><td class="num">Sa 24.10.<small>23:00</small></td><td><b style="font-weight:500">High Society</b></td><td class="hm">Amano</td><td><span class="pill">live</span></td><td class="r num"><span class="dot" style="--c:#5fe0bd"></span>3</td><td class="r num" style="color:var(--mu2)">–</td><td class="r num hm">0</td><td class="r num hm">0</td><td class="r"><button class="ib">Öffnen</button></td></tr>
+    <tr><td class="num">Fr 30.10.<small>23:00</small></td><td><b style="font-weight:500">No Limit x Halloween</b></td><td class="hm">Amano</td><td><span class="pill blue">Tickets online</span></td><td class="r num"><span class="dot" style="--c:#5fe0bd"></span>21</td><td class="r num"><span class="dot" style="--c:#16bde0"></span>38/120<small>660 €</small></td><td class="r num hm">5</td><td class="r num hm">0</td><td class="r"><button class="ib">Öffnen</button></td></tr>
+    <tr><td class="num">Sa 31.10.<small>23:00</small></td><td><b style="font-weight:500">Only Us x Halloween</b></td><td class="hm">Amano</td><td><span class="pill blue">Tickets online</span></td><td class="r num"><span class="dot" style="--c:#5fe0bd"></span>14</td><td class="r num"><span class="dot" style="--c:#16bde0"></span>14/80<small>230 €</small></td><td class="r num hm">0</td><td class="r num hm">0</td><td class="r"><button class="ib">Öffnen</button></td></tr>
+   </tbody></table></div>
+ </div>
+</section>
+
+<section class="view" id="v-events"><div class="ph"><div><div class="crumb"><a href="#">Partnerbereich</a> / <b>Events</b></div><h1>Events</h1></div><div class="acts"><button class="btn">+ Event eintragen</button></div></div><div class="wrap"><div class="ph2">Liste aller Events wie in der Übersicht-Tabelle, mit Filtern Kommende / Vergangene / Reihe / Location. „Event eintragen“ ist ein Knopf hier oben statt eigener Menüpunkt.</div></div></section>
+<section class="view" id="v-tickets"><div class="ph"><div><div class="crumb"><a href="#">Partnerbereich</a> / <b>Ticketing</b></div><h1>Ticketing</h1></div><div class="acts"><button class="btn gh">Abrechnung</button></div></div><div class="wrap"><div class="ph2">Bestehender Ticketing-Bereich, nur mit diesem kompakten Kopf statt des großen Banners. <a href="https://gl030.github.io/gl030-sitemap/reports/ticketing-panel-1015/">Inhalt ansehen</a></div></div></section>
+<section class="view" id="v-door"><div class="ph"><div><div class="crumb"><a href="#">Partnerbereich</a> / <b>Einlass</b></div><h1>Einlass</h1></div><div class="acts"><button class="btn">+ Tür-Zugang</button></div></div><div class="wrap"><div class="ph2">QR-Check-in &amp; Tür-Zugänge (unverändert im Inhalt): Zugänge mit PIN, „Erstattung erlaubt“, Check-in-Zahlen je Event.</div></div></section>
+<section class="view" id="v-promo"><div class="ph"><div><div class="crumb"><a href="#">Partnerbereich</a> / <b>Promotion</b></div><h1>Promotion</h1></div><div class="acts"><button class="btn">+ Promoter-Link</button></div></div><div class="wrap"><div class="ph2">Zwei Reiter: Promoter-Links | Werbekonto &amp; Tracking (Meta-Pixel, bisher in Ticketing → Einstellungen).</div></div></section>
+
+<nav class="bnav" aria-label="Partnerbereich mobil">
+ <button class="on" data-v="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Übersicht</button>
+ <button data-v="events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Events</button>
+ <button data-v="tickets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/></svg>Tickets</button>
+ <button data-v="door"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/></svg>Einlass</button>
+ <button data-v="promo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z"/></svg>Promotion</button>
+</nav>
+<script>
+document.addEventListener('click',function(e){var t=e.target.closest('[data-v]');if(!t)return;e.preventDefault();var v=t.getAttribute('data-v');
+document.querySelectorAll('.view').forEach(function(s){s.classList.toggle('on',s.id=='v-'+v)});
+document.querySelectorAll('.nav .it,.bnav button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-v')==v)});window.scrollTo(0,0);if(document.activeElement)document.activeElement.blur()});
+</script></body></html>
