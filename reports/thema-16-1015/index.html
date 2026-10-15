@@ -1,0 +1,155 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex">
+<title>16+ Partys Berlin – Vorschau Themen-Seite</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1218;--card:#161e28;--card2:#1e2834;--line:rgba(255,255,255,.08);--tx:#eef2f6;--mu:#93a4b5;--mu2:#6f8294;--t1:#00c193;--t2:#16bde0;--sc:#ff5500;--ig1:#f58529;--ig2:#dd2a7b;--ig3:#8134af}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:Roboto,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.note{background:#3a2f0f;color:#f0d080;font-size:12px;padding:7px 14px;text-align:center}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:#0a0e13;border-bottom:1px solid var(--line)}
+.nav img{height:24px}.nav span{font-size:13px;color:var(--mu)}
+/* Hero */
+.hero{position:relative;overflow:hidden}
+.hero .bg{position:absolute;inset:-30px;background:url(https://i1.sndcdn.com/avatars-000157230145-cppm43-t500x500.jpg) center/cover;filter:blur(40px) saturate(1.2);opacity:.45;transform:scale(1.2)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,18,24,.2),var(--bg) 95%)}
+.hin{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:28px 18px 8px;display:grid;grid-template-columns:1fr;gap:20px;align-items:end}
+.photo{width:168px;height:168px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px rgba(255,255,255,.08),0 24px 60px rgba(0,0,0,.6);margin:0 auto}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);font-weight:700;text-align:center}
+h1{font-size:44px;font-weight:900;line-height:1;margin:6px 0 10px;letter-spacing:-.02em;text-align:center}
+.tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.tag{font-size:12.5px;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.07);color:#cdd7e0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-radius:14px;overflow:hidden;margin-top:18px}
+.stats div{background:rgba(22,30,40,.85);padding:12px 10px;text-align:center}
+.stats b{display:block;font-size:20px;font-weight:700}.stats span{font-size:12px;color:var(--mu)}
+.social{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.sbtn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--card2);font-size:13.5px;font-weight:500;border:1px solid var(--line)}
+.sbtn svg{width:17px;height:17px}
+.sbtn.ig{background:linear-gradient(45deg,var(--ig1),var(--ig2),var(--ig3));border:0}
+.sbtn.sc{background:var(--sc);border:0}
+/* Layout */
+.wrap{max-width:1040px;margin:0 auto;padding:10px 18px 40px;display:grid;grid-template-columns:1fr;gap:26px}
+h2{font-size:18px;margin:0 0 12px;display:flex;justify-content:space-between;align-items:baseline}
+h2 small{font-size:13px;color:var(--mu);font-weight:400}
+/* Next gig */
+.next{background:linear-gradient(135deg,rgba(0,193,147,.16),rgba(22,189,224,.1));border:1px solid rgba(22,189,224,.35);border-radius:18px;padding:16px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.next img{width:74px;height:94px;object-fit:cover;border-radius:10px}
+.next .lbl{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);font-weight:700}
+.next b{display:block;font-size:18px;margin:2px 0}.next .m{color:#c8d3dd;font-size:14px}
+.next .acts{grid-column:1/-1;display:flex;gap:8px}
+.btn{flex:1;text-align:center;padding:12px 14px;border-radius:12px;font-weight:700;font-size:14.5px;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d}
+.btn.gh{background:rgba(255,255,255,.07);color:var(--tx);border:1px solid var(--line)}
+/* Events */
+.ev{display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;padding:12px;border-radius:14px;background:var(--card);border:1px solid var(--line);margin-bottom:10px}
+.date{text-align:center;background:var(--card2);border-radius:10px;padding:6px 0}.date b{display:block;font-size:19px;line-height:1.1}.date span{font-size:11px;color:var(--mu);text-transform:uppercase}
+.ev .t{font-weight:600}.ev .m{font-size:13px;color:var(--mu)}
+.pill{font-size:12px;padding:5px 10px;border-radius:999px;background:rgba(0,193,147,.14);color:#5ee0bf;white-space:nowrap}
+.pill.tk{background:rgba(22,189,224,.14);color:#6fd8f2}
+/* SoundCloud */
+.scbox{border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#2a1206,#160c08);border:1px solid rgba(255,85,0,.3)}
+.schead{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.schead img{width:46px;height:46px;border-radius:8px}
+.schead b{display:block}.schead span{font-size:13px;color:#d9b9a6}
+.schead .sbtn{margin-left:auto}
+.scload{display:flex;align-items:center;gap:12px;padding:0 16px 16px}
+.play{width:52px;height:52px;border-radius:50%;background:var(--sc);display:flex;align-items:center;justify-content:center;border:0;flex:0 0 52px}
+.play svg{width:20px;height:20px;fill:#fff;margin-left:3px}
+.wave{flex:1;height:44px;display:flex;align-items:center;gap:2px}
+.wave i{flex:1;background:rgba(255,140,80,.55);border-radius:2px}
+.consent{font-size:11.5px;color:#b9998a;padding:0 16px 14px}
+/* Instagram */
+.igbox{border-radius:18px;padding:16px;background:linear-gradient(135deg,rgba(245,133,41,.16),rgba(221,42,123,.16),rgba(129,52,175,.16));border:1px solid rgba(221,42,123,.3);display:flex;align-items:center;gap:14px}
+.igbox .ring{width:58px;height:58px;border-radius:50%;padding:3px;background:linear-gradient(45deg,var(--ig1),var(--ig2),var(--ig3));flex:0 0 58px}
+.igbox .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--bg)}
+.igbox b{display:block}.igbox span{font-size:13px;color:#d8c3d6}
+.igbox .sbtn{margin-left:auto}
+.more{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.more a{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:13px;color:#cdd7e0}
+/* Clubs */
+.clubs{display:flex;gap:10px;flex-wrap:wrap}
+.club{display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px}
+.club i{width:30px;height:30px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:700;color:var(--t2)}
+.about p{color:#c8d3dd;margin:0 0 10px}
+details.past summary{cursor:pointer;color:var(--mu);font-size:14px;list-style:none}
+details.past summary::-webkit-details-marker{display:none}
+/* sticky */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:10;background:rgba(10,14,19,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:12px;align-items:center}
+.bar .s{flex:1;min-width:0}.bar b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bar span{font-size:12px;color:var(--mu)}
+.bar .btn{flex:0 0 auto;padding:11px 16px}
+@media(min-width:900px){
+  .hin{grid-template-columns:220px 1fr;gap:34px;padding-top:44px}
+  .photo{width:220px;height:220px;margin:0}
+  .kicker,h1{text-align:left}h1{font-size:64px}.tags,.social{justify-content:flex-start}
+  .stats{max-width:520px}
+  .wrap{grid-template-columns:1.4fr 1fr;align-items:start}
+  .bar{display:none}body{padding-bottom:0}
+}
+button:focus-visible,a:focus-visible{outline:2px solid var(--t2);outline-offset:2px}
+
+.hero .bg{background-image:url(https://cdn.evntsvc.net/r/e/ev_UoitgmYhsUeihGA0lA1Mrg-101_s.jpg)}
+.tile{width:168px;height:168px;border-radius:32px;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:72px;font-weight:900;letter-spacing:-.04em;color:#04231d;background:linear-gradient(135deg,var(--t1),var(--t2));box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.mutti{border-radius:18px;padding:16px;background:linear-gradient(135deg,rgba(240,196,106,.16),rgba(255,140,80,.1));border:1px solid rgba(240,196,106,.4);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.mutti .ic{width:52px;height:52px;border-radius:14px;background:rgba(240,196,106,.2);display:flex;align-items:center;justify-content:center;font-size:26px}
+.mutti b{display:block;font-size:16px}.mutti span{font-size:13.5px;color:#e6d6b5}
+.mutti .acts{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+.btny{flex:1;text-align:center;padding:12px 14px;border-radius:12px;font-weight:700;font-size:14.5px;background:#f0c46a;color:#2a1d02}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips a{padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13.5px;color:#cdd7e0}
+.ev .gl{font-size:12px;padding:5px 10px;border-radius:999px;background:rgba(0,193,147,.14);color:#5ee0bf;white-space:nowrap}
+.ev img{width:54px;height:54px;border-radius:10px;object-fit:cover}
+.wrap{grid-template-columns:minmax(0,1fr)}@media(min-width:900px){.tile{width:220px;height:220px;font-size:92px;margin:0}.wrap{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}}
+</style></head><body>
+<div class="note">Vorschau 15.10.2026 · Themen-Seite „16+“ im neuen Design (wie DJ- und Eventreihen-Seiten). Echte Daten von heute, noch nicht live.</div>
+<div class="nav"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><span>Party-Themen · Berlin</span></div>
+<header class="hero"><div class="bg"></div><div class="hin">
+  <div class="tile" aria-hidden="true">16+</div>
+  <div>
+    <div class="kicker">Party-Thema · Berlin</div>
+    <h1>16+ Partys in Berlin</h1>
+    <div class="tags"><span class="tag">Hip Hop</span><span class="tag">Deutschrap</span><span class="tag">Charts</span><span class="tag">Afro</span></div>
+    <div class="stats"><div><b>10</b><span>kommende Events</span></div><div><b>8</b><span>mit Gästeliste</span></div><div><b>9</b><span>Clubs</span></div></div>
+  </div>
+</div></header>
+<div class="wrap">
+  <main>
+    <section style="margin-bottom:24px">
+      <div class="mutti">
+        <span class="ic">📝</span>
+        <div><b>Noch nicht 18? Mit Muttizettel länger feiern</b><span>Erziehungsbeauftragung ausfüllen, von Eltern unterschreiben lassen, mit Ausweis-Kopie mitbringen.</span></div>
+        <div class="acts"><a class="btny" href="#">Muttizettel herunterladen</a><a class="btn gh" href="#">Wie funktioniert das?</a></div>
+      </div>
+    </section>
+    <section style="margin-bottom:24px">
+      <div class="next">
+        <img src="https://cdn.evntsvc.net/r/e/ev_UoitgmYhsUeihGA0lA1Mrg-101_s.jpg" alt="">
+        <div><div class="lbl">Nächstes 16+ Event · morgen</div><b>Club Room Party | College Break Out</b><div class="m">Fr 16.10.2026 · 21:00 · Paradise Club</div></div>
+        <div class="acts"><a class="btn" href="#">Gästeliste bis 20:00</a><a class="btn gh" href="#">Tickets</a></div>
+      </div>
+    </section>
+    <section style="margin-bottom:24px">
+      <h2>Kommende 16+ Events <small>10 Termine · 8 mit Gästeliste</small></h2>
+      <a class="ev" href="#"><img src="https://cdn.evntsvc.net/r/e/ev_UoitgmYhsUeihGA0lA1Mrg-101_s.jpg" alt=""><div><div class="t">Club Room Party | College Break Out</div><div class="m">Fr 16.10. · 21:00 · Paradise Club</div></div><span class="gl">Gästeliste</span></a>
+      <a class="ev" href="#"><img src="https://cdn.evntsvc.net/r/e/ev_oGT9_-yWj0OiljagjELwYA-196_s.jpg" alt=""><div><div class="t">Party ab 16 Jahre in Berlin!</div><div class="m">So 18.10. · 21:00 · Surprise</div></div><span class="gl">Gästeliste</span></a>
+      <a class="ev" href="#"><img src="https://cdn.evntsvc.net/r/e/ev_UoitgmYhsUeihGA0lA1Mrg-101_s.jpg" alt=""><div><div class="t">Club Room 16+ Party | School Is Over</div><div class="m">Mo 19.10. · 21:00 · Paradise Club</div></div><span class="gl">Gästeliste</span></a>
+      <a class="ev" href="#"><div class="date"><span>Fr</span><b>30</b><span>Okt</span></div><div><div class="t">Halloween 16+ Party Berlin</div><div class="m">21:00 · Halloween-Special</div></div><span class="pill tk">Tickets</span></a>
+      <a class="ev" href="#"><div class="date"><span>Sa</span><b>31</b><span>Okt</span></div><div><div class="t">Halloween Obsession 16+ Party</div><div class="m">21:00 · Halloween-Special</div></div><span class="gl">Gästeliste</span></a>
+      <p style="margin:6px 0 0"><a href="#" style="color:var(--mu);font-size:14px">Alle 10 Events anzeigen →</a> &nbsp; <a href="#" style="color:var(--mu);font-size:14px">Vergangene Events →</a></p>
+    </section>
+    <section class="about" style="margin-bottom:24px">
+      <h2>Über 16+ Partys in Berlin</h2>
+      <p>16+ Partys sind die Möglichkeit, Berlins Nachtleben schon vor dem 18. Geburtstag zu erleben – mit Hip Hop, Deutschrap, Charts und Afro, in Clubs wie dem Paradise Club oder dem Surprise.</p>
+      <p style="font-size:12.5px;color:var(--mu)">Bestehender Seitentext wird übernommen und gekürzt; Jugendschutz-Hinweis (Einlass bis 24 Uhr ohne Muttizettel) bleibt prominent.</p>
+    </section>
+  </main>
+  <aside>
+    <section style="margin-bottom:24px">
+      <h2>Clubs mit 16+ Events</h2>
+      <div class="clubs"><a class="club" href="#"><i>P</i>Paradise Club</a><a class="club" href="#"><i>S</i>Surprise</a><a class="club" href="#"><i>E</i>Empire</a><a class="club" href="#"><i>S</i>Soda</a><a class="club" href="#"><i>M</i>M-Bia</a><a class="club" href="#"><i>X</i>Xara Beach</a><a class="club" href="#"><i>K</i>Kesselhaus</a><a class="club" href="#"><i>B</i>Bonjour Lounge</a><a class="club" href="#"><i>S</i>Sensorium</a></div>
+    </section>
+    <section style="margin-bottom:24px">
+      <h2>Weitere Party-Themen</h2>
+      <div class="chips"><a href="#">18+</a><a href="#">2000er</a><a href="#">80er</a><a href="#">90er</a><a href="#">Afterwork</a><a href="#">Ü30</a><a href="#">Ü40</a><a href="#">Studenten</a><a href="#">Latin</a><a href="#">Techno</a><a href="#">Halloween</a><a href="#">Silvester</a></div>
+    </section>
+  </aside>
+</div>
+<div class="bar"><div class="s"><b>Nächstes 16+ Event: Fr 16.10. · Paradise Club</b><span>Club Room Party · 21:00</span></div><a class="btn" href="#">Gästeliste</a></div>
+</body></html>
