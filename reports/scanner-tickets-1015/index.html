@@ -1,0 +1,118 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Tür-Scanner v2 (Vorschau)</title>
+<style>
+:root{--bg:#141a24;--card:#1b2735;--line:#2b3a4c;--tx:#e6edf3;--mu:#9fb0c0;--t1:#00aa82;--t2:#00b4dc;--tk:#16bde0;--gl:#5fe0bd;--pr:#b59cff;--red:#ff5a5f;--redbg:#2a0f14}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx)}
+.note{background:#3a2f0f;color:#f0d080;font-size:12px;padding:7px 14px;text-align:center}
+.demo{max-width:560px;margin:0 auto;padding:10px 14px 0;display:flex;gap:6px;flex-wrap:wrap}.demo b{width:100%;font-size:12px;color:var(--mu);font-weight:500}
+.demo button{background:#223042;border:1px solid var(--line);color:var(--tx);border-radius:999px;padding:6px 10px;font-size:12px}
+.wrap{max-width:560px;margin:0 auto;padding:12px 14px 40px;transition:background .2s}
+body.refund .wrap{background:var(--redbg)}body.refund{background:var(--redbg)}
+.head{display:flex;justify-content:space-between;align-items:center;margin:0 0 10px}.head img{height:26px}.head .door{font-size:.8rem;color:var(--mu);text-align:right}
+.mode{display:grid;grid-template-columns:1fr 1fr;background:#0f141c;border:1px solid var(--line);border-radius:14px;padding:4px;margin:0 0 12px}
+.mode button{border:0;border-radius:11px;padding:12px 8px;font-size:15px;font-weight:700;background:none;color:var(--mu)}
+.mode .in.on{background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d}
+.mode .rf.on{background:var(--red);color:#fff}
+.rfbar{display:none;border:2px solid var(--red);border-radius:12px;padding:10px 12px;margin:0 0 12px;color:#ffd0d2;font-size:.9rem}
+body.refund .rfbar{display:block}.rfbar b{color:#fff}
+.ev{width:100%;padding:11px 12px;border-radius:9px;border:1px solid #33465c;background:#0f141c;color:var(--tx);font-size:16px;margin:0 0 10px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.kpis div{background:var(--card);border-radius:12px;padding:10px 12px;border-top:3px solid var(--c)}
+.kpis b{display:block;font-size:1.6rem;line-height:1.05}.kpis b small{font-size:.8rem;color:var(--mu);font-weight:500}.kpis span{color:var(--mu);font-size:.72rem}
+.scan{width:100%;border:0;border-radius:999px;padding:15px;font-size:17px;font-weight:800;margin:12px 0;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d}
+body.refund .scan{background:var(--red);color:#fff}
+.cam{height:170px;border-radius:12px;background:repeating-linear-gradient(45deg,#0b0f15 0 12px,#10161f 12px 24px);display:flex;align-items:center;justify-content:center;color:#5b6b7b;font-size:.85rem;margin:0 0 12px;border:2px solid transparent}
+body.refund .cam{border-color:var(--red)}
+input.q{width:100%;padding:11px 12px;border-radius:9px;border:1px solid #33465c;background:#0f141c;color:var(--tx);font-size:16px}
+h3{font-size:.95rem;margin:16px 0 6px}.filt{display:flex;gap:6px;margin:8px 0 0}.filt button{background:var(--card);border:1px solid var(--line);color:var(--mu);border-radius:999px;padding:6px 11px;font-size:12.5px}.filt .on{color:var(--tx);border-color:var(--t2)}
+.g{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--line);font-size:.95rem}.g .n{min-width:0;overflow-wrap:anywhere}
+.tag{display:inline-block;border-radius:999px;padding:2px 8px;font-size:.7rem;font-weight:800;margin-left:4px;vertical-align:1px}
+.tag.tk{background:rgba(22,189,224,.16);color:var(--tk)}.tag.gl{background:rgba(95,224,189,.14);color:var(--gl)}.tag.pr{background:#3a2a55;color:#d7c6ff}.tag.rf{background:rgba(255,90,95,.18);color:#ffb3b5}
+.st{border-radius:999px;padding:5px 10px;font-size:.78rem;font-weight:700;white-space:nowrap}.st.ok{background:#0f3a2f;color:var(--gl)}.st.no{background:var(--line);color:var(--mu)}.st.x{background:#4a1f24;color:#ffb3b5}
+/* Ergebnis-Vollbild */
+#res{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;padding:26px;text-align:center;z-index:9}
+#res.tk{background:#06506a}#res.gl{background:#0b5e48}#res.y{background:#7a5a07}#res.r{background:#7a1f28}#res.rf{background:#4d0d12;box-shadow:inset 0 0 0 6px var(--red)}#res.done{background:#2b1a1d}
+.kind{font-size:2.6rem;font-weight:900;letter-spacing:.04em;margin:0}.kind small{display:block;font-size:1rem;font-weight:600;letter-spacing:0;opacity:.85;margin-top:4px}
+#res h2{font-size:1.5rem;margin:14px 0 4px}#res p{margin:4px 0;font-size:1.05rem}
+.big{border:0;border-radius:999px;padding:16px 28px;font-size:18px;font-weight:800;margin-top:18px;min-width:240px}
+.big.go{background:#fff;color:#0b3a2e}.big.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);font-size:15px;padding:11px 20px;margin-top:10px}
+.big.red{background:var(--red);color:#fff;position:relative;overflow:hidden}.big.red i{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(255,255,255,.28)}
+.reasons{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}.reasons button{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:8px 13px;font-size:14px}
+.reasons .on{background:#fff;color:#4d0d12;border-color:#fff}
+.stepper{display:flex;gap:12px;align-items:center;justify-content:center;margin:12px 0}.stepper button{width:52px;height:52px;border-radius:50%;border:0;font-size:1.6rem;font-weight:700}
+.countdown{font-size:3rem;font-weight:900;margin:8px 0}
+.pend{background:#3a1418;border:1px solid var(--red);border-radius:12px;padding:10px 12px;margin:0 0 12px;display:none;justify-content:space-between;align-items:center;gap:10px;font-size:.9rem}
+.pend button{background:#fff;color:#4d0d12;border:0;border-radius:999px;padding:8px 14px;font-weight:800}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:flex-end;justify-content:center;z-index:8}.sheet>div{background:#1b2735;border-radius:20px 20px 0 0;padding:20px;max-width:560px;width:100%;border-top:4px solid var(--red)}
+.sheet h2{margin:0 0 8px}.sheet p{color:var(--mu);margin:0 0 14px}
+</style></head><body>
+<div class="note">Vorschau 15.10.2026 · Tür-Scanner v2: Einlass (Gästeliste + Ticket in einem Scan) und getrennter Erstattungs-Modus. Beispieldaten, nichts wird gespeichert.</div>
+<div class="demo"><b>Zum Ausprobieren: Scan simulieren</b>
+<button onclick="sim('tk')">Ticket</button><button onclick="sim('gl')">Gästeliste (3 P.)</button><button onclick="sim('pr')">Promoter</button><button onclick="sim('dup')">Schon drin</button><button onclick="sim('ref')">Erstattetes Ticket</button><button onclick="sim('oth')">Anderes Event</button></div>
+<div class="wrap">
+ <div class="head"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><div class="door">Tür Amano<br>Arwin Samani</div></div>
+ <div class="mode"><button class="in on" onclick="setMode('in')">Einlass</button><button class="rf" onclick="askRefund()">Erstattung</button></div>
+ <div class="rfbar"><b>Erstattungs-Modus.</b> Ein Scan erstattet das Ticket, niemand wird eingelassen. Nach jeder Erstattung und nach 2 Minuten ohne Scan geht der Scanner automatisch zurück auf Einlass.</div>
+ <div class="pend" id="pend"><span id="pendt">Erstattung Jonas P. in 2:47</span><button onclick="undo()">Rückgängig</button></div>
+ <select class="ev"><option>Fr 30.10., 23:00 · No Limit x Halloween</option></select>
+ <div class="kpis">
+  <div style="--c:var(--gl)"><b>48 <small>/ 112</small></b><span>Gästeliste GL030</span></div>
+  <div style="--c:var(--tk)"><b>31 <small>/ 96</small></b><span>Tickets</span></div>
+  <div style="--c:var(--pr)"><b>9 <small>/ 20</small></b><span>Promoter</span></div>
+ </div>
+ <button class="scan" id="scanb" onclick="toast()">QR scannen</button>
+ <div class="cam" id="cam">Kamera</div>
+ <input class="q" placeholder="Name suchen …">
+ <div class="filt"><button class="on">Alle</button><button>Gästeliste</button><button>Tickets</button><button>Promoter</button></div>
+ <div id="list">
+  <div class="g"><span class="n">Lena Krüger <span class="tag tk">TICKET · Regulär</span></span><span class="st no">offen</span></div>
+  <div class="g"><span class="n">Murat Yilmaz · 3 P. <span class="tag gl">GÄSTELISTE</span></span><span class="st ok">2/3 drin</span></div>
+  <div class="g"><span class="n">Sophie Bauer <span class="tag tk">TICKET · Spooky Bird</span></span><span class="st ok">drin 23:41</span></div>
+  <div class="g"><span class="n">Kevin S. · 2 P. <span class="tag pr">PROMOTER · Deniz</span></span><span class="st no">offen</span></div>
+  <div class="g"><span class="n">Jonas P. <span class="tag rf">TICKET erstattet</span></span><span class="st x">kein Einlass</span></div>
+ </div>
+ <h3>Zuletzt</h3>
+ <div class="g"><span>23:52 · Sophie Bauer · Ticket</span><button class="big ghost" style="margin:0;min-width:0;padding:6px 12px;font-size:13px">Rückgängig</button></div>
+ <div class="g"><span>23:50 · Murat Yilmaz · Gästeliste · 2 P.</span><button class="big ghost" style="margin:0;min-width:0;padding:6px 12px;font-size:13px">Rückgängig</button></div>
+</div>
+
+<div class="sheet" id="sheet"><div><h2>In den Erstattungs-Modus wechseln?</h2><p>Im Erstattungs-Modus wird bei jedem Scan das Ticket erstattet und ungültig. Nur nutzen, wenn ein Ticketgast nicht reinkommt.</p>
+<button class="big red" style="width:100%;margin:0" onclick="setMode('rf');closeSheet()">Ja, Erstattung</button><button class="big ghost" style="width:100%" onclick="closeSheet()">Abbrechen</button></div></div>
+<div id="res"><div id="rbody"></div></div>
+
+<script>
+var mode='in',timer=null,pendT=null,left=0;
+function setMode(m){mode=m;document.body.classList.toggle('refund',m=='rf');document.querySelector('.mode .in').classList.toggle('on',m=='in');document.querySelector('.mode .rf').classList.toggle('on',m=='rf');
+ document.getElementById('scanb').textContent=m=='rf'?'Ticket zum Erstatten scannen':'QR scannen';clearTimeout(timer);if(m=='rf')timer=setTimeout(function(){setMode('in')},120000)}
+function askRefund(){if(mode!='rf')document.getElementById('sheet').style.display='flex'}
+function closeSheet(){document.getElementById('sheet').style.display='none'}
+function res(cls,html){var r=document.getElementById('res');r.className=cls;r.style.display='flex';document.getElementById('rbody').innerHTML=html;if(navigator.vibrate)navigator.vibrate(cls=='gl'||cls=='tk'?60:[80,60,80])}
+function close1(){document.getElementById('res').style.display='none'}
+function toast(){sim('tk')}
+function sim(k){
+ if(mode=='rf'){
+  if(k=='tk'||k=='pr'||k=='gl'&&false){return refundScreen()}
+  if(k=='gl'||k=='pr')return res('r','<p class=kind>GÄSTELISTE<small>kein Ticket</small></p><h2>Murat Yilmaz</h2><p>Gästeliste kann nicht erstattet werden.</p><button class="big ghost" onclick="close1()">Schließen</button>');
+  if(k=='dup')return res('r','<p class=kind>EINGECHECKT</p><h2>Sophie Bauer</h2><p>Ticket ist schon drin (23:41). Erstattung an der Tür nicht möglich – bitte über den Veranstalter.</p><button class="big ghost" onclick="close1()">Schließen</button>');
+  if(k=='ref')return res('r','<p class=kind>SCHON ERSTATTET</p><h2>Jonas P.</h2><button class="big ghost" onclick="close1()">Schließen</button>');
+  return res('r','<h2>Anderes Event</h2><button class="big ghost" onclick="close1()">Schließen</button>');
+ }
+ if(k=='tk')res('tk','<p class=kind>TICKET<small>Regulär · 1 Person</small></p><h2>Lena Krüger</h2><p>Bezahlt 21,39 € · GL030-7HK2M9</p><button class="big go" onclick="close1()">Einchecken</button><br><button class="big ghost" onclick="close1()">Abbrechen</button>');
+ if(k=='gl')res('gl','<p class=kind>GÄSTELISTE<small>vergünstigt bis 0:30</small></p><h2>Murat Yilmaz</h2><p>3 Personen angemeldet · 0 drin</p><div class=stepper><button>–</button><b style="font-size:2.2rem">3</b><button>+</button></div><button class="big go" onclick="close1()">Einchecken</button>');
+ if(k=='pr')res('gl','<p class=kind>GÄSTELISTE<small style="color:#e6dbff">über Promoter Deniz</small></p><h2>Kevin S.</h2><p>2 Personen angemeldet</p><div class=stepper><button>–</button><b style="font-size:2.2rem">2</b><button>+</button></div><button class="big go" onclick="close1()">Einchecken</button>');
+ if(k=='dup')res('y','<p class=kind>SCHON DRIN</p><h2>Sophie Bauer</h2><p>Ticket · eingecheckt 23:41 an Tür Amano</p><button class="big ghost" onclick="close1()">Schließen</button>');
+ if(k=='ref')res('r','<p class=kind>KEIN EINLASS</p><h2>Jonas P.</h2><p>Ticket wurde erstattet (23:12) und ist ungültig.</p><button class="big ghost" onclick="close1()">Schließen</button>');
+ if(k=='oth')res('r','<p class=kind>ANDERES EVENT</p><h2>Ali R.</h2><p>Ticket für Only Us x Halloween · Sa 31.10.</p><button class="big ghost" onclick="close1()">Schließen</button>');
+}
+function refundScreen(){
+ res('rf','<p class=kind style="color:#ffb3b5">ERSTATTEN?<small>Ticket wird ungültig</small></p><h2>Lena Krüger</h2><p>Regulär · 21,39 € gehen zurück aufs Konto</p><p style="opacity:.8;font-size:.9rem;margin-top:12px">Grund</p><div class=reasons><button onclick="pick(this)">Dresscode</button><button onclick="pick(this)">Alter / Ausweis</button><button onclick="pick(this)">Kapazität voll</button><button onclick="pick(this)">Verhalten</button><button onclick="pick(this)">Sonstiges</button></div>'
+ +'<button class="big red" id="hold" disabled style="opacity:.5">Gedrückt halten zum Erstatten<i></i></button><br><button class="big ghost" onclick="close1();setMode(\'in\')">Abbrechen</button>');
+ var h=document.getElementById('hold'),t0=0,raf;function down(e){if(h.disabled)return;e.preventDefault();t0=Date.now();(function f(){var p=Math.min(1,(Date.now()-t0)/1500);h.querySelector('i').style.width=p*100+'%';if(p>=1)return done();raf=requestAnimationFrame(f)})()}
+ function up(){cancelAnimationFrame(raf);if(h.querySelector('i'))h.querySelector('i').style.width='0'}
+ h.addEventListener('pointerdown',down);h.addEventListener('pointerup',up);h.addEventListener('pointerleave',up)}
+function pick(b){[].forEach.call(document.querySelectorAll('.reasons button'),function(x){x.classList.remove('on')});b.classList.add('on');var h=document.getElementById('hold');h.disabled=false;h.style.opacity=1}
+function done(){res('done','<p class=kind style="font-size:1.8rem">ERSTATTUNG VORGEMERKT</p><h2>Lena Krüger · 21,39 €</h2><p>Wird in</p><div class=countdown id=cd>3:00</div><p>an Stripe übergeben. Bis dahin rückgängig machbar.</p><button class="big go" onclick="undo()">Rückgängig</button><br><button class="big ghost" onclick="close1();setMode(\'in\')">Fertig, zurück zum Einlass</button>');
+ left=180;document.getElementById('pend').style.display='flex';clearInterval(pendT);pendT=setInterval(tick,1000);tick()}
+function tick(){left--;var t=Math.floor(left/60)+':'+('0'+left%60).slice(-2);var cd=document.getElementById('cd');if(cd)cd.textContent=t;document.getElementById('pendt').textContent='Erstattung Lena Krüger in '+t;
+ if(left<=0){clearInterval(pendT);document.getElementById('pend').style.display='none'}}
+function undo(){clearInterval(pendT);document.getElementById('pend').style.display='none';close1();setMode('in');res('tk','<p class=kind style="font-size:1.8rem">RÜCKGÄNGIG</p><h2>Lena Krüger</h2><p>Ticket ist wieder gültig.</p><button class="big ghost" onclick="close1()">Schließen</button>')}
+</script></body></html>
