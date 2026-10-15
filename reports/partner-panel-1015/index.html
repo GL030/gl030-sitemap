@@ -70,18 +70,48 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
 /* Mobil */
 @media(max-width:980px){.top .in{gap:12px}.nav .it span.lb{display:none}.nav .it{padding:0 11px}.acc span,.acc small{display:none}.acc{padding:4px}}
 @media(max-width:900px){.evs{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.mtitle{display:none;font-weight:600;font-size:16px}
+.mlist{display:none}
+.sheet{position:fixed;inset:0;z-index:40;display:none}.sheet.on{display:block}
+.sheet .bg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.sheet .pn{position:absolute;left:0;right:0;bottom:0;background:#1b2735;border-radius:20px 20px 0 0;padding:8px 14px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -10px 40px rgba(0,0,0,.5)}
+.sheet .grab{width:40px;height:4px;border-radius:2px;background:#3a4a5c;margin:4px auto 12px}
+.sheet h3{margin:0 4px 8px;font-size:13px;color:var(--mu);font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.sheet a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:56px;padding:10px 12px;border-radius:12px;color:var(--tx);font-size:16px;border-bottom:1px solid var(--line)}
+.sheet a:last-child{border:0}.sheet a small{display:block;color:var(--mu);font-size:12.5px}.sheet a:active{background:var(--card2)}
 @media(max-width:620px){
- .top .in{height:54px;padding:0 14px}.nav{display:none}
- .bnav{display:grid}.wrap{padding:0 14px 90px}.ph{padding:16px 14px 14px}.ph h1{font-size:22px}
- .ch .n{font-size:20px}.ch>div{padding:10px 12px}.ev .hd{grid-template-columns:48px minmax(0,1fr)}.ev .x{grid-column:1/-1}
- .tt .hm{display:none}}
+ .top .in{height:54px;padding:0 14px;gap:10px}.nav{display:none}.top img{height:24px}.mtitle{display:block;flex:1;text-align:center}
+ .bnav{display:grid}.wrap{padding:0 14px calc(92px + env(safe-area-inset-bottom))}
+ .ph{padding:14px 14px 12px;gap:12px}.ph>div:first-child{width:100%;min-width:0}.ph .crumb{display:none}.ph h1{font-size:21px}
+ .brands{flex-wrap:nowrap;overflow-x:auto;margin:10px -14px 0;padding:0 14px 2px;scrollbar-width:none}.brands::-webkit-scrollbar{display:none}.br{flex:0 0 auto}
+ .ph .acts{width:100%;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}.ph .acts .btn{justify-content:center;min-height:46px;padding:10px 12px}
+ .tip{font-size:13.5px;padding:9px 12px}
+ .kpi{padding:12px 14px}.kpi .v{font-size:21px}.kpi .d{font-size:12px}
+ .sh .r{font-size:12px}
+ .ev .hd{grid-template-columns:48px minmax(0,1fr) auto;gap:12px;padding:12px 14px;align-items:start}
+ .ev h3{font-size:15.5px}.ev .x .ib{min-height:36px;padding:6px 10px}
+ .ch{grid-template-columns:minmax(0,1fr)}
+ .ch>div{display:grid;grid-template-columns:96px minmax(0,1fr) auto;align-items:center;gap:4px 10px;padding:11px 14px;min-height:52px}
+ .ch .t{font-size:11px}.ch .n{margin:0;font-size:18px;text-align:right;grid-column:3;grid-row:1}.ch .s{grid-column:2;grid-row:1;font-size:12.5px}
+ .ch .bar{grid-column:1/-1;margin-top:2px}.ch .bar.z{display:none}
+ .ch .off{grid-column:2/-1;margin:0;display:flex;justify-content:space-between;gap:8px;align-items:center}.ch .off br{display:none}
+ .ev .ft{padding:0;flex-direction:column;gap:0}.ev .ft span{padding:10px 14px;font-size:12.5px}.ev .ft a{display:flex;justify-content:center;align-items:center;min-height:48px;border-top:1px solid var(--line);font-size:15px}
+ .tblwrap{display:none}.mlist{display:block}
+}
+.mrow{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--card);border-radius:12px;padding:11px 12px;margin-bottom:8px;color:var(--tx);min-height:64px}
+.mrow .date{padding:4px 0}.mrow .date b{font-size:16px}.mrow h4{margin:0;font-size:14.5px;font-weight:500;overflow-wrap:anywhere}
+.mrow .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}.mrow .chips span{font-size:12px;border-radius:999px;padding:2px 8px;background:#0f1620;color:#c9d4de}.mrow .chips span b{color:var(--c);font-weight:600}
+.mrow .go{color:var(--mu);font-size:20px}
 .bnav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(10,14,20,.96);border-top:1px solid var(--line);grid-template-columns:repeat(5,1fr);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
 .bnav button{background:none;border:0;color:#a9b6c3;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 0}.bnav button svg{width:21px;height:21px}.bnav button.on{color:var(--t2)}
+@media(max-width:620px){.bnav{display:grid}}
 </style></head><body>
 <div class="note">Vorschau 15.10.2026 · Partnerbereich v3: neue Menüleiste, kompakter Seitenkopf, Übersicht mit Tickets. Zahlen teils Beispieldaten.</div>
 
 <header class="top"><div class="in">
  <img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030">
+ <span class="mtitle" id="mtitle">Übersicht</span>
  <nav class="nav" aria-label="Partnerbereich">
   <div><button class="it on" data-v="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="lb">Übersicht</span></button></div>
   <div><button class="it" data-v="events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="lb">Events</span><span class="car">▾</span></button>
@@ -93,7 +123,7 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
   <div><button class="it" data-v="promo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M17 8a5 5 0 0 1 0 8"/></svg><span class="lb">Promotion</span><span class="car">▾</span></button>
    <div class="dd"><a href="#" data-v="promo">Promoter-Links<small>Eigene Gästelisten-Links je Promoter</small></a><a href="#" data-v="promo">Werbekonto &amp; Tracking<small>Meta-Pixel, Käufe an Anzeigen melden</small></a></div></div>
  </nav>
- <div class="acc"><div class="av">AS</div><div><span>Arwin Samani</span><small>3 Reihen · 1 Location</small></div><span style="color:var(--mu)">▾</span></div>
+ <div class="acc" onclick="sheet('acc')" role="button" tabindex="0"><div class="av">AS</div><div><span>Arwin Samani</span><small>3 Reihen · 1 Location</small></div><span style="color:var(--mu)">▾</span></div>
 </div></header>
 
 <!-- ======== Übersicht ======== -->
@@ -128,7 +158,7 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
      <div style="min-width:0"><h3>No Limit x Purple Events x Million Dollar Bae · Ladies Night</h3><div class="meta"><span class="pill"><i></i>Gästeliste live</span><span>Amano Grand Central · morgen</span></div></div>
      <div class="x"><button class="ib">Bearbeiten</button></div></div>
     <div class="ch">
-     <div style="--c:#5fe0bd"><div class="t">Gästeliste</div><div class="n">25 <small>Anm.</small></div><div class="s">0 eingecheckt</div><div class="bar"><i style="width:0"></i></div></div>
+     <div style="--c:#5fe0bd"><div class="t">Gästeliste</div><div class="n">25 <small>Anm.</small></div><div class="s">0 eingecheckt</div><div class="bar z"><i style="width:0"></i></div></div>
      <div style="--c:#16bde0"><div class="t">Tickets</div><div class="off">Kein Ticketverkauf<br><a href="#">Tickets anbieten →</a></div></div>
      <div style="--c:#b59cff"><div class="t">Promoter</div><div class="n">4 <small>Anm.</small></div><div class="s">2 Links</div></div>
     </div>
@@ -139,7 +169,7 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
      <div style="min-width:0"><h3>No Limit x Halloween</h3><div class="meta"><span class="pill"><i></i>Gästeliste live</span><span class="pill blue"><i></i>Tickets online</span><span>in 15 Tagen</span></div></div>
      <div class="x"><button class="ib">Bearbeiten</button></div></div>
     <div class="ch">
-     <div style="--c:#5fe0bd"><div class="t">Gästeliste</div><div class="n">21 <small>Anm.</small></div><div class="s">0 eingecheckt</div><div class="bar"><i style="width:0"></i></div></div>
+     <div style="--c:#5fe0bd"><div class="t">Gästeliste</div><div class="n">21 <small>Anm.</small></div><div class="s">0 eingecheckt</div><div class="bar z"><i style="width:0"></i></div></div>
      <div style="--c:#16bde0"><div class="t">Tickets</div><div class="n">38 <small>/ 120</small></div><div class="s">660 € · 0 eingecheckt</div><div class="bar"><i style="width:32%"></i></div></div>
      <div style="--c:#b59cff"><div class="t">Promoter</div><div class="n">5 <small>Anm.</small></div><div class="s">1 Link</div></div>
     </div>
@@ -148,7 +178,13 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
   </div>
 
   <div class="sh"><h2>Kommende Events <small>· 3</small></h2><a href="#" class="r" style="color:var(--t2)">Vergangene</a></div>
-  <div class="panel scroll"><table class="tt">
+  <div class="mlist">
+   <a class="mrow" href="#"><div class="date"><span>Fr</span><b>16</b></div><div style="min-width:0"><h4>No Limit x Purple Events · Ladies Night</h4><div class="chips"><span style="--c:#5fe0bd">GL <b>25</b></span><span style="--c:#b59cff">Promo <b>4</b></span></div></div><span class="go">›</span></a>
+   <a class="mrow" href="#"><div class="date"><span>Sa</span><b>24</b></div><div style="min-width:0"><h4>High Society</h4><div class="chips"><span style="--c:#5fe0bd">GL <b>3</b></span></div></div><span class="go">›</span></a>
+   <a class="mrow" href="#"><div class="date"><span>Fr</span><b>30</b></div><div style="min-width:0"><h4>No Limit x Halloween</h4><div class="chips"><span style="--c:#5fe0bd">GL <b>21</b></span><span style="--c:#16bde0">Tickets <b>38/120</b> · 660 €</span><span style="--c:#b59cff">Promo <b>5</b></span></div></div><span class="go">›</span></a>
+   <a class="mrow" href="#"><div class="date"><span>Sa</span><b>31</b></div><div style="min-width:0"><h4>Only Us x Halloween</h4><div class="chips"><span style="--c:#5fe0bd">GL <b>14</b></span><span style="--c:#16bde0">Tickets <b>14/80</b> · 230 €</span></div></div><span class="go">›</span></a>
+  </div>
+  <div class="panel scroll tblwrap"><table class="tt">
    <thead><tr><th>Datum</th><th>Event</th><th class="hm">Location</th><th>Status</th><th class="r">Gästeliste</th><th class="r">Tickets</th><th class="r hm">Promoter</th><th class="r hm">Check-ins</th><th></th></tr></thead>
    <tbody>
     <tr><td class="num">Fr 16.10.<small>23:00</small></td><td><b style="font-weight:500">No Limit x Purple Events · Ladies Night</b></td><td class="hm">Amano</td><td><span class="pill">live</span></td><td class="r num"><span class="dot" style="--c:#5fe0bd"></span>25</td><td class="r num" style="color:var(--mu2)">–</td><td class="r num hm">4</td><td class="r num hm">0</td><td class="r"><button class="ib">Öffnen</button></td></tr>
@@ -171,8 +207,17 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
  <button data-v="door"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/></svg>Einlass</button>
  <button data-v="promo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z"/></svg>Promotion</button>
 </nav>
+<div class="sheet" id="sh"><div class="bg" onclick="sheet()"></div><div class="pn"><div class="grab"></div><div id="shc"></div></div></div>
 <script>
+var SUB={events:['Events',[['events','Alle Events','Kommende und vergangene'],['events','+ Event eintragen','Neues Event anlegen']]],
+tickets:['Ticketing',[['tickets','Übersicht & Events','Ticketarten, Ticketseiten, Analyse'],['tickets','Bestellungen','Suche, Belege, Erstattungen'],['tickets','Geld & Rechnungen','Abrechnung je Event']]],
+door:['Einlass',[['door','Tür-Scanner öffnen','Direkt zum Scannen'],['door','Tür-Zugänge','Links mit PIN, Erstattung erlauben'],['door','Check-in-Auswertung','Je Event']]],
+promo:['Promotion',[['promo','Promoter-Links','Gästelisten-Links je Promoter'],['promo','Werbekonto & Tracking','Meta-Pixel verbinden']]],
+acc:['Arwin Samani',[['home','Zugang wechseln','High Society · No Limit · Only Us'],['home','Rechnungsdaten',''],['home','Passwort festlegen',''],['home','Abmelden','']]]};
+function sheet(k){var el=document.getElementById('sh');if(!k){el.classList.remove('on');return}var d=SUB[k];document.getElementById('shc').innerHTML='<h3>'+d[0]+'</h3>'+d[1].map(function(x){return '<a href="#" data-v="'+x[0]+'"><span>'+x[1]+(x[2]?'<small>'+x[2]+'</small>':'')+'</span><span style="color:var(--mu)">›</span></a>'}).join('');el.classList.add('on')}
+var TITLES={home:'Übersicht',events:'Events',tickets:'Ticketing',door:'Einlass',promo:'Promotion'};
 document.addEventListener('click',function(e){var t=e.target.closest('[data-v]');if(!t)return;e.preventDefault();var v=t.getAttribute('data-v');
+if(t.closest('.bnav')&&SUB[v]&&document.getElementById('v-'+v).classList.contains('on')){sheet(v);return}sheet();document.getElementById('mtitle').textContent=TITLES[v]||'';
 document.querySelectorAll('.view').forEach(function(s){s.classList.toggle('on',s.id=='v-'+v)});
 document.querySelectorAll('.nav .it,.bnav button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-v')==v)});window.scrollTo(0,0);if(document.activeElement)document.activeElement.blur()});
 </script></body></html>
