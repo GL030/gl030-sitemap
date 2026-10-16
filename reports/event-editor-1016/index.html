@@ -1,0 +1,255 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex">
+<title>Event eintragen v2 (Vorschau)</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121a24;--card:#1b2735;--card2:#223042;--line:rgba(255,255,255,.08);--tx:#eef2f6;--mu:#93a4b5;--mu2:#6f8294;--t1:#00c193;--t2:#16bde0;--ok:#5ee0bf;--warn:#f0c46a;--ed:rgba(22,189,224,.55)}
+*{box-sizing:border-box}html{background:#14262a}html,body{margin:0;overflow-x:hidden}
+body{font-family:Roboto,system-ui,sans-serif;background:linear-gradient(180deg,#121a24,#162130 50%,#14262a);color:var(--tx);min-height:100vh;font-size:15px;line-height:1.45}
+a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.note{background:#3a2f0f;color:#f0d080;font-size:12.5px;padding:7px 16px;text-align:center}
+.top{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .in{max-width:1240px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:16px}
+.top img{height:26px}.top .t{font-weight:600}.top .sv{margin-left:auto;font-size:13px;color:var(--mu);display:flex;align-items:center;gap:8px}.top .sv i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d;white-space:nowrap}
+.btn.gh{background:transparent;color:var(--tx);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);font-weight:500}.btn.sm{padding:6px 13px;font-size:13px}
+/* Schritte */
+.steps{max-width:1240px;margin:0 auto;padding:16px 20px 8px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.steps::-webkit-scrollbar{display:none}
+.st{flex:1 1 0;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:center;text-align:left;color:var(--mu)}
+.st b{width:26px;height:26px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:13px;flex:0 0 auto;color:var(--tx)}
+.st span{font-size:13.5px;line-height:1.2}.st small{display:block;font-size:11.5px;color:var(--mu2)}
+.st.on{border-color:rgba(22,189,224,.6);color:var(--tx);box-shadow:0 0 0 1px rgba(22,189,224,.25)}.st.on b{background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d}
+.st.done b{background:rgba(94,224,191,.18);color:var(--ok)}
+.wrap{max-width:1240px;margin:0 auto;padding:10px 20px 110px}.wrap>*{min-width:0}
+.view{display:none}.view.on{display:block}
+.g2{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}.g2>*{min-width:0}
+.hint{background:rgba(22,189,224,.08);border:1px solid rgba(22,189,224,.25);border-radius:12px;padding:10px 14px;font-size:13.5px;color:#c9d6e2;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;background:#0f1620;border:1px solid #2c3d52;border-radius:999px;padding:3px}.seg button{background:none;border:0;border-radius:999px;padding:6px 12px;font-size:13px;color:var(--mu)}.seg button.on{background:var(--card2);color:var(--tx)}
+/* ====== Eventseite zum Bearbeiten ====== */
+.page{background:#141d28;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:300px minmax(0,1fr);gap:26px;padding:24px}
+.fly{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#4a0f1c,#170910 70%);display:flex;align-items:flex-end;justify-content:center}
+.fly .art{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;letter-spacing:.06em;color:#ffb3b3;text-align:center;font-size:30px;line-height:1.05}
+.fly .art small{font-size:13px;letter-spacing:.2em;color:#ff8a8a;margin-top:8px}
+.fly .over{position:absolute;inset:auto 12px 12px 12px;display:flex;gap:8px;justify-content:center}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(10,14,20,.75);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:7px 12px;font-size:13px;color:#fff}
+.info h1{margin:4px 0 10px;font-size:34px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.fact{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:14px}
+.fact svg{width:16px;height:16px;color:var(--t2);flex:0 0 auto}.fact small{display:block;color:var(--mu);font-size:11.5px;line-height:1}
+.brandrow{display:flex;align-items:center;gap:10px;margin:0 0 16px;color:var(--mu);font-size:13.5px}.brandrow i{width:30px;height:30px;border-radius:50%;background:#e0465a;display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-weight:800;font-size:11px}
+.boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px;color:var(--mu)}.box b{display:block;color:var(--tx);font-size:14px;margin-bottom:2px}
+.box.tk{border-color:rgba(22,189,224,.4)}.box.off{opacity:.45;border-style:dashed}
+.sec{padding:0 24px 22px}.sec h2{font-size:17px;margin:6px 0 10px}
+.txt{font-size:15px;line-height:1.6;color:#d3dce5;white-space:pre-wrap}
+.djs{display:flex;flex-wrap:wrap;gap:10px}
+.dj{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 14px 5px 5px;font-size:14px}
+.dj i{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#3a4a5c,#223042);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:700}
+.dj .x{background:none;border:0;color:var(--mu);font-size:16px;padding:0 0 0 4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{background:var(--card2);border-radius:999px;padding:4px 10px;font-size:12.5px;color:#c9d4de}
+/* Bearbeiten-Optik */
+.edit [data-ed]{position:relative;outline:1.5px dashed transparent;outline-offset:4px;border-radius:8px;cursor:text;transition:outline-color .15s}
+.edit [data-ed]:hover{outline-color:var(--ed)}
+.edit [data-ed]:focus{outline:2px solid var(--t2);outline-offset:4px}
+.edit [data-ed]::after{content:'✎';position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:50%;background:var(--t2);color:#04231d;font-size:12px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s;pointer-events:none}
+.edit [data-ed]:hover::after{opacity:1}
+.edit [data-ph]:empty::before{content:attr(data-ph);color:var(--mu2);font-style:italic}
+.edit .addable{border:1.5px dashed rgba(22,189,224,.5);background:rgba(22,189,224,.06);color:var(--t2);border-radius:999px;padding:8px 14px;font-size:14px}
+.edit .fly{outline:2px dashed rgba(255,255,255,.18);outline-offset:-10px}
+.preview .addable,.preview .fly .over,.preview .x,.preview .box.off,.preview .edonly{display:none}
+.preview [data-ph]:empty{display:none}
+.missing{outline:2px solid rgba(240,196,106,.7)!important;outline-offset:4px}
+/* Seitenleiste */
+.side{position:sticky;top:76px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--line)}
+.card h3{margin:0 0 10px;font-size:15px}
+.chk{list-style:none;margin:0;padding:0}.chk li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:14px;cursor:pointer}
+.chk .o{flex:0 0 20px;height:20px;border-radius:50%;border:2px solid var(--mu2);margin-top:1px}
+.chk .o.done{border:0;background:linear-gradient(90deg,var(--t1),var(--t2));position:relative}
+.chk .o.done:after{content:'';position:absolute;left:6px;top:3px;width:5px;height:9px;border:solid #04231d;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.chk small{display:block;color:var(--mu);font-size:12px}
+.prog{height:6px;border-radius:999px;background:#0f1620;overflow:hidden;margin:4px 0 12px}.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--t1),var(--t2))}
+/* Schritte 2-4 */
+.panel{background:var(--card);border-radius:14px;padding:18px;border:1px solid var(--line);margin-bottom:16px}
+.panel h2{margin:0 0 4px;font-size:17px}.panel>p{margin:0 0 14px;color:var(--mu);font-size:13.5px}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick button{background:#0f1620;border:1px solid #2c3d52;border-radius:999px;padding:9px 14px;font-size:14px;color:#c9d4de;min-height:42px}
+.pick button.on{background:rgba(22,189,224,.14);border-color:var(--t2);color:#fff}
+.offer{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.offer .ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;background:var(--card2)}
+.offer b{display:block;font-size:15px}.offer small{color:var(--mu);font-size:13px}
+.offer.on{border-color:rgba(94,224,191,.45)}.offer.req{border-color:rgba(22,189,224,.5)}
+.offer .more{grid-column:1/-1;display:none;border-top:1px solid var(--line);padding-top:12px;margin-top:2px}
+.offer.on .more{display:block}
+.sw{width:50px;height:30px;border-radius:999px;background:#2c3d52;border:0;position:relative;flex:0 0 auto}.sw i{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:left .15s}
+.sw.on{background:linear-gradient(90deg,var(--t1),var(--t2))}.sw.on i{left:23px}
+.badge{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;background:rgba(22,189,224,.14);color:var(--t2);margin-left:6px;vertical-align:2px}
+label{display:block;font-size:13px;color:var(--mu);margin:0 0 5px}
+input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;border-radius:10px;padding:11px 12px;color:var(--tx);font:inherit;font-size:16px}
+.f2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.fld{margin-bottom:12px}
+.sum{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 14px;font-size:14px}.sum dt{color:var(--mu)}.sum dd{margin:0}
+.warn{background:rgba(240,196,106,.1);border:1px solid rgba(240,196,106,.35);color:#f3d79a;border-radius:12px;padding:10px 14px;font-size:13.5px;margin-bottom:14px}
+/* untere Aktionsleiste */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(10,14,20,.96);border-top:1px solid var(--line);padding:10px 20px calc(10px + env(safe-area-inset-bottom,0px))}
+.bar .in{max-width:1240px;margin:0 auto;display:flex;gap:10px;align-items:center}
+.bar .in .lft{color:var(--mu);font-size:13px}.bar .in .rt{margin-left:auto;display:flex;gap:10px}
+/* Dialog DJ */
+.sheet{position:fixed;inset:0;z-index:60;display:none}.sheet.on{display:block}.sheet .bg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.sheet .pn{position:absolute;left:50%;top:12vh;transform:translateX(-50%);width:min(520px,94vw);background:#1b2735;border-radius:16px;padding:16px;border:1px solid var(--line)}
+.res{max-height:260px;overflow:auto;margin-top:10px}.res button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:10px 4px;text-align:left;font-size:15px;min-height:52px}
+.res button i{width:34px;height:34px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:700}
+.res small{color:var(--mu);font-size:12px;display:block}
+@media(max-width:980px){.g2{grid-template-columns:minmax(0,1fr)}.side{position:static}.hero{grid-template-columns:220px minmax(0,1fr)}.boxes{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){
+ .top .in{height:54px;padding:0 14px}.top img{height:22px}.top .t{display:none}
+ .steps{padding:12px 14px 6px}.st{min-width:0;padding:8px 10px;flex:0 0 auto}.st span small{display:none}.st:not(.on) span{display:none}
+ .wrap{padding:8px 14px calc(100px + env(safe-area-inset-bottom,0px))}
+ .hero{grid-template-columns:minmax(0,1fr);padding:14px;gap:16px}.fly{max-width:280px;margin:0 auto;width:100%}
+ .info h1{font-size:26px;text-align:center}.facts,.brandrow{justify-content:center}
+ .sec{padding:0 14px 18px}.f2{grid-template-columns:minmax(0,1fr)}
+ .offer{grid-template-columns:40px minmax(0,1fr) auto;padding:12px}.offer .ic{width:40px;height:40px}
+ .sum{grid-template-columns:minmax(0,1fr)}.sum dt{margin-top:6px}
+ .bar{padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px))}.bar .in .lft{display:none}.bar .in .rt{margin:0;width:100%;display:grid;grid-template-columns:auto 1fr}
+ .sheet .pn{top:auto;bottom:0;left:0;right:0;transform:none;width:auto;border-radius:20px 20px 0 0;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+ .edit [data-ed]::after{opacity:1;top:-8px;right:-6px;width:20px;height:20px}
+}
+</style></head><body>
+<div class="note">Vorschau 16.10.2026 · „Event eintragen“ v2: direkt auf der Eventseite bearbeiten, danach Einordnung, Angebote, Prüfen. Beispieldaten, nichts wird gespeichert.</div>
+<header class="top"><div class="in"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><span class="t">Event eintragen</span><span class="sv"><i></i><span id="saved">Entwurf gespeichert · 09:41</span></span></div></header>
+
+<nav class="steps" id="steps">
+ <button class="st on" data-s="1"><b>1</b><span>Eventseite<small>Flyer, Titel, Text, DJs</small></span></button>
+ <button class="st" data-s="2"><b>2</b><span>Einordnung<small>Kategorien, Themen</small></span></button>
+ <button class="st" data-s="3"><b>3</b><span>Angebote<small>Gästeliste, Tickets, Pakete</small></span></button>
+ <button class="st" data-s="4"><b>4</b><span>Prüfen<small>und veröffentlichen</small></span></button>
+</nav>
+
+<div class="wrap">
+<!-- ===== 1 Eventseite ===== -->
+<section class="view on" id="s1">
+ <div class="hint"><span>So sieht dein Event auf Gästeliste030 aus. Tippe auf ein Feld, um es zu ändern.</span>
+  <div class="seg"><button class="on" data-mode="edit">Bearbeiten</button><button data-mode="preview">Vorschau</button></div></div>
+ <div class="g2">
+  <div class="page edit" id="page">
+   <div class="hero">
+    <div class="fly" data-ed id="fly" title="Flyer austauschen"><div class="art">NO LIMIT<br>HALLOWEEN<small>AMANO GRAND CENTRAL</small></div>
+     <div class="over"><span class="chip">⇪ Flyer austauschen</span><span class="chip">Zuschneiden</span></div></div>
+    <div class="info">
+     <div class="brandrow"><i>NL</i><span data-ed>No Limit</span><span class="edonly" style="font-size:12px">· Eventreihe</span></div>
+     <h1 contenteditable="true" data-ed data-ph="Name deines Events" id="title">No Limit x Halloween</h1>
+     <div class="facts">
+      <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><small>Datum</small>Fr 30.10.2026</span></button>
+      <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Uhrzeit</small>23:00 – 06:00</span></button>
+      <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Location</small>Amano Grand Central</span></button>
+      <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><span><small>Musik</small>Hip-Hop, R&amp;B, Afrobeats</span></button>
+     </div>
+     <div class="boxes">
+      <div class="box tk"><b>Tickets</b>ab 16,14 € · über GL030</div>
+      <div class="box"><b>Gästeliste</b>bis Fr 22:00 · vergünstigt</div>
+      <div class="box off"><b>+ Tischreservierung</b>in Schritt 3 anbieten</div>
+     </div>
+    </div>
+   </div>
+   <div class="sec"><h2>Über das Event</h2>
+    <div class="txt" contenteditable="true" data-ed data-ph="Erzähl in 2–4 Sätzen, was die Gäste erwartet: Stimmung, Highlights, für wen die Nacht ist." id="desc">Berlins größte Halloween-Nacht im Amano Grand Central. Zwei Floors, Kostümpflicht ist keine, aber die besten Outfits gewinnen Flaschen-Packages. Einlass ab 18.</div></div>
+   <div class="sec"><h2>Line-up</h2>
+    <div class="djs" id="djs">
+     <span class="dj"><i>DK</i>DJ Kane<button class="x" aria-label="Entfernen">×</button></span>
+     <span class="dj"><i>MV</i>Mavi<button class="x" aria-label="Entfernen">×</button></span>
+     <button class="addable" id="adddj">+ DJ oder Act hinzufügen</button>
+    </div></div>
+   <div class="sec"><h2>Specials</h2>
+    <div class="txt" contenteditable="true" data-ed data-ph="z. B. Free Shots bis 00:30, Kostümwettbewerb, Fotograf vor Ort" id="spec"></div></div>
+   <div class="sec"><h2>Einlass</h2>
+    <div class="txt" contenteditable="true" data-ed data-ph="z. B. ab 18 Jahren, Ausweis mitbringen, Abendkasse 25 €" id="entry">Ab 18 · Ausweis mitbringen · Abendkasse 25 €</div></div>
+  </div>
+  <aside class="side">
+   <div class="card"><h3>Was noch fehlt</h3><div class="prog"><i id="pg" style="width:80%"></i></div>
+    <ul class="chk" id="chk">
+     <li data-go="fly"><span class="o done"></span><div>Flyer<small>Hochformat 4:5, mind. 1080 px breit</small></div></li>
+     <li data-go="title"><span class="o done"></span><div>Titel</div></li>
+     <li><span class="o done"></span><div>Datum, Uhrzeit, Location</div></li>
+     <li data-go="desc"><span class="o done"></span><div>Beschreibung<small>2–4 Sätze reichen</small></div></li>
+     <li data-go="adddj"><span class="o done"></span><div>Line-up</div></li>
+     <li data-go="spec"><span class="o"></span><div>Specials<small>optional, steigert die Anmeldungen</small></div></li>
+    </ul></div>
+   <div class="card"><h3>Tipp</h3><p style="margin:0;color:var(--mu);font-size:13.5px">Events mit Line-up und Specials bekommen auf Gästeliste030 deutlich mehr Anmeldungen. Der Text wird automatisch auf Englisch und Spanisch übersetzt.</p></div>
+  </aside>
+ </div>
+</section>
+
+<!-- ===== 2 Einordnung ===== -->
+<section class="view" id="s2">
+ <div class="panel"><h2>Kategorie</h2><p>Bestimmt, in welchen Listen dein Event erscheint. Mehrfachauswahl möglich.</p>
+  <div class="pick" data-multi><button class="on">Party</button><button>Clubnacht</button><button>Konzert</button><button>Festival</button><button>Afterwork</button><button>Brunch</button></div></div>
+ <div class="panel"><h2>Themen &amp; Anlass</h2><p>Hilft Gästen, die nach genau so einer Nacht suchen.</p>
+  <div class="pick" data-multi><button class="on">Halloween</button><button>Ladies Night</button><button class="on">Hip-Hop</button><button class="on">R&amp;B</button><button>Afrobeats</button><button>16+</button><button class="on">18+</button><button>Studentenparty</button><button>Silvester</button></div></div>
+ <div class="panel"><h2>Eventreihe</h2><p>Erscheint mit Logo auf der Eventseite und auf der Seite der Reihe.</p>
+  <div class="pick"><button class="on">No Limit</button><button>Only Us</button><button>High Society</button><button>keine</button></div></div>
+ <div class="warn">Am Fr 30.10. gibt es in dieser Location schon ein Event: „No Limit x Halloween“ (Entwurf). Prüfe, dass es kein Duplikat ist.</div>
+</section>
+
+<!-- ===== 3 Angebote ===== -->
+<section class="view" id="s3">
+ <div class="offer on" data-off><div class="ic">📋</div><div><b>Gästeliste</b><small>Gäste melden sich kostenlos an, du siehst alle Anmeldungen live.</small></div><button class="sw on" aria-label="Gästeliste"><i></i></button>
+  <div class="more"><div class="fld"><label>Bedingung für Gäste</label><input value="Vergünstigter Eintritt bis 00:30"></div>
+   <div class="f2"><div class="fld"><label>Anmeldung ab</label><input value="sofort"></div><div class="fld"><label>Anmeldung bis</label><input value="Fr 30.10., 22:00"></div></div>
+   <div class="fld"><label>Liste per E-Mail an</label><input value="tuer@nolimit-events.de"></div></div></div>
+ <div class="offer req" data-off><div class="ic">🎟️</div><div><b>Tickets über Gästeliste030 <span class="badge">auf Anfrage</span></b><small>Eigene Ticketseite, Zahlung per Karte, Apple Pay, PayPal. Wir melden uns innerhalb eines Werktags und richten den Verkauf ein.</small></div><button class="sw" aria-label="Tickets anfragen"><i></i></button>
+  <div class="more"><div class="f2"><div class="fld"><label>Geplanter Preis (ca.)</label><input placeholder="z. B. 15–25 €"></div><div class="fld"><label>Kontingent (ca.)</label><input placeholder="z. B. 300"></div></div>
+   <div class="fld"><label>Hinweis an uns (optional)</label><input placeholder="z. B. Early-Bird bis 20.10."></div>
+   <p style="margin:0;color:var(--mu);font-size:13px">Oder du verkaufst schon woanders: <a href="#">eigenen Ticket-Link eintragen</a></p></div></div>
+ <div class="offer" data-off><div class="ic">🎁</div><div><b>Verlosung</b><small>Gäste nehmen teil, du bestimmst die Gewinner – bringt Reichweite vor dem Event.</small></div><button class="sw" aria-label="Verlosung"><i></i></button>
+  <div class="more"><div class="fld"><label>Was gibt es zu gewinnen?</label><input placeholder="z. B. 2× Gästeliste plus Begleitung"></div></div></div>
+ <div class="offer" data-off><div class="ic">🍾</div><div><b>Tischreservierung</b><small>Anfragen für Tische und Flaschen-Packages landen bei dir.</small></div><button class="sw" aria-label="Tischreservierung"><i></i></button></div>
+ <div class="panel" style="margin-top:18px"><h2>Mehr Sichtbarkeit</h2><p>Optional. Wir schicken dir vorab ein Angebot, gebucht wird nichts automatisch.</p>
+  <div class="pick" data-multi><button>Top-Event (Startseite)</button><button>Premium-Event</button><button>Newsletter</button><button>Instagram-Promotion</button><button>Banner</button><button>Fotograf</button></div></div>
+</section>
+
+<!-- ===== 4 Prüfen ===== -->
+<section class="view" id="s4">
+ <div class="g2">
+  <div>
+   <div class="panel"><h2>Zusammenfassung</h2><p>Nach dem Absenden prüft Gästeliste030 das Event, meist innerhalb weniger Stunden.</p>
+    <dl class="sum"><dt>Event</dt><dd>No Limit x Halloween · Fr 30.10.2026, 23:00</dd><dt>Location</dt><dd>Amano Grand Central</dd><dt>Line-up</dt><dd>DJ Kane, Mavi</dd><dt>Kategorie</dt><dd>Party · Halloween, Hip-Hop, R&amp;B, 18+</dd><dt>Angebote</dt><dd>Gästeliste · Tickets angefragt</dd><dt>Sichtbarkeit</dt><dd>keine Pakete gewählt</dd></dl></div>
+   <div class="panel"><h2>Kontakt für Rückfragen</h2>
+    <div class="f2"><div class="fld"><label>Name</label><input value="Arwin Samani"></div><div class="fld"><label>Telefon</label><input value="+49 …"></div></div>
+    <label style="display:flex;gap:10px;align-items:flex-start;color:var(--tx);font-size:14px"><input type="checkbox" checked style="width:20px;height:20px;margin-top:2px;flex:0 0 auto"> Ich akzeptiere die AGB und die Datenschutzhinweise.</label></div>
+  </div>
+  <aside class="side"><div class="card"><h3>So erscheint es</h3><div style="border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#4a0f1c,#170910);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:#ffb3b3;font-weight:900;text-align:center">NO LIMIT<br>HALLOWEEN</div><p style="margin:10px 0 0;font-size:14px"><b>No Limit x Halloween</b><br><span style="color:var(--mu)">Fr 30.10. · Amano Grand Central</span></p></div></aside>
+ </div>
+</section>
+</div>
+
+<div class="bar"><div class="in"><span class="lft" id="barl">Schritt 1 von 4 · Änderungen werden automatisch gespeichert</span><div class="rt"><button class="btn gh" id="back">Zurück</button><button class="btn" id="next">Weiter: Einordnung</button></div></div></div>
+
+<div class="sheet" id="sheet"><div class="bg" data-close></div><div class="pn"><h3 style="margin:0 0 10px">DJ oder Act hinzufügen</h3><input id="q" placeholder="Name suchen …" autocomplete="off">
+ <div class="res" id="res"></div></div></div>
+
+<script>
+var cur=1,labels={1:'Weiter: Einordnung',2:'Weiter: Angebote',3:'Weiter: Prüfen',4:'Zur Prüfung senden'};
+function go(n){cur=Math.max(1,Math.min(4,n));document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('on',v.id=='s'+cur)});
+document.querySelectorAll('.st').forEach(function(b){var s=+b.dataset.s;b.classList.toggle('on',s==cur);b.classList.toggle('done',s<cur);b.querySelector('b').textContent=s<cur?'✓':s});
+document.getElementById('next').textContent=labels[cur];document.getElementById('back').style.visibility=cur==1?'hidden':'visible';document.getElementById('barl').textContent='Schritt '+cur+' von 4 · Änderungen werden automatisch gespeichert';window.scrollTo(0,0)}
+document.getElementById('next').onclick=function(){if(cur==4){alert('Vorschau: Das Event würde jetzt zur Prüfung an Gästeliste030 gehen.');return}go(cur+1)};
+document.getElementById('back').onclick=function(){go(cur-1)};
+document.querySelectorAll('.st').forEach(function(b){b.onclick=function(){go(+b.dataset.s)}});
+document.querySelectorAll('[data-mode]').forEach(function(b){b.onclick=function(){document.querySelectorAll('[data-mode]').forEach(function(x){x.classList.toggle('on',x===b)});var p=document.getElementById('page');var ed=b.dataset.mode=='edit';p.classList.toggle('edit',ed);p.classList.toggle('preview',!ed);p.querySelectorAll('[contenteditable]').forEach(function(e){e.contentEditable=ed})}});
+document.querySelectorAll('.pick button').forEach(function(b){b.onclick=function(){var multi=b.parentNode.hasAttribute('data-multi');if(!multi)b.parentNode.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.toggle('on',multi?!b.classList.contains('on'):true)}});
+document.querySelectorAll('[data-off] .sw').forEach(function(s){s.onclick=function(){s.classList.toggle('on');s.closest('[data-off]').classList.toggle('on',s.classList.contains('on'))}});
+function saved(){var d=new Date();document.getElementById('saved').textContent='Entwurf gespeichert · '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);check()}
+document.querySelectorAll('[contenteditable]').forEach(function(e){e.addEventListener('input',function(){clearTimeout(window._s);window._s=setTimeout(saved,700)})});
+function check(){var ok=0,items=document.querySelectorAll('#chk li');items.forEach(function(li){var id=li.dataset.go,el=id&&document.getElementById(id),done=true;if(el&&el.isContentEditable)done=el.textContent.trim().length>0;if(id=='adddj')done=document.querySelectorAll('#djs .dj').length>0;li.querySelector('.o').classList.toggle('done',done);if(done)ok++});document.getElementById('pg').style.width=Math.round(ok/items.length*100)+'%'}
+document.querySelectorAll('#chk li[data-go]').forEach(function(li){li.onclick=function(){var el=document.getElementById(li.dataset.go);if(!el)return;el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('missing');setTimeout(function(){el.classList.remove('missing')},1400);if(el.isContentEditable)el.focus();if(li.dataset.go=='adddj')openDj()}});
+document.getElementById('fly').onclick=function(){alert('Vorschau: Hier öffnet sich die Dateiauswahl (Foto oder Datei), danach Zuschneiden auf 4:5.')};
+document.querySelectorAll('.fact').forEach(function(f){f.onclick=function(){alert('Vorschau: Auswahl öffnet sich direkt hier (Kalender, Uhrzeit oder Location-Suche).')}});
+var ART=['DJ Kane','Mavi','Kaan K','DJ Luna','Afro Nation Soundsystem','Melo','Rico Berlin','Nina Fresh'];
+function openDj(){document.getElementById('sheet').classList.add('on');var q=document.getElementById('q');q.value='';list('');setTimeout(function(){q.focus()},50)}
+function list(v){var r=ART.filter(function(a){return a.toLowerCase().indexOf(v.toLowerCase())>=0}).slice(0,6).map(function(a){return '<button data-a="'+a+'"><i>'+a.split(' ').map(function(w){return w[0]}).join('').slice(0,2)+'</i><span>'+a+'<small>Künstler auf Gästeliste030</small></span></button>'}).join('');
+if(v&&!ART.some(function(a){return a.toLowerCase()==v.toLowerCase()}))r+='<button data-a="'+v.replace(/"/g,'')+'"><i>+</i><span>„'+v.replace(/</g,'')+'“ neu anlegen<small>wird von uns kurz geprüft</small></span></button>';document.getElementById('res').innerHTML=r}
+document.getElementById('adddj').onclick=openDj;document.getElementById('q').oninput=function(){list(this.value)};
+document.getElementById('res').onclick=function(e){var b=e.target.closest('button');if(!b)return;var a=b.dataset.a,s=document.createElement('span');s.className='dj';s.innerHTML='<i>'+a.split(' ').map(function(w){return w[0]}).join('').slice(0,2)+'</i>'+a.replace(/</g,'')+'<button class="x" aria-label="Entfernen">×</button>';document.getElementById('djs').insertBefore(s,document.getElementById('adddj'));document.getElementById('sheet').classList.remove('on');saved()};
+document.getElementById('djs').onclick=function(e){if(e.target.classList.contains('x')){e.target.parentNode.remove();saved()}};
+document.querySelector('#sheet [data-close]').onclick=function(){document.getElementById('sheet').classList.remove('on')};
+go(1);check();
+</script></body></html>
