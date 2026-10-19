@@ -9,10 +9,6 @@ jobs:
   report:
     runs-on: ubuntu-latest
     steps:
-      - name: Origin-Zertifikat (Pin ermitteln)
-        run: |
-          echo | openssl s_client -connect 162.55.199.33:443 -servername www.gaesteliste030.de 2>/dev/null | openssl x509 -noout -subject -issuer -dates
-          echo | openssl s_client -connect 162.55.199.33:443 -servername www.gaesteliste030.de 2>/dev/null | openssl x509 -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
       - name: Tagesbericht ausloesen
         env:
           KEY: ${{ secrets.TICKETING_REPORT_KEY }}
@@ -21,8 +17,9 @@ jobs:
           test -n "$KEY" || { echo "TICKETING_REPORT_KEY fehlt"; exit 1; }
           # 19.10.2026: Cloudflare blockt den GitHub-Runner auf tickets.ashx auch mit Bypass-Header (403).
           # Deshalb direkt zum Origin (AX102, wie DNS-only "import.gaesteliste030.de"), SNI/Host bleiben www.
+          # Origin-Zertifikat ist selbstsigniert (WMSvc, gueltig bis 06/2034) -> per Public-Key-Pin geprueft statt CA.
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
-          OUT=$(curl -sS -A "$UA" -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" --resolve www.gaesteliste030.de:443:162.55.199.33 --max-time 120 -w "\n__CODE__%{http_code}" "https://www.gaesteliste030.de/tickets.ashx?daily=$KEY")
+          OUT=$(curl -sS -A "$UA" -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" --resolve www.gaesteliste030.de:443:162.55.199.33 --insecure --pinnedpubkey "sha256//kkyyi4ZDFrhsty23IvgWR+qYz0EhdbyqXPPZ4bplknY=" --max-time 120 -w "\n__CODE__%{http_code}" "https://www.gaesteliste030.de/tickets.ashx?daily=$KEY")
           CODE=${OUT##*__CODE__}; BODY=${OUT%__CODE__*}
           echo "HTTP $CODE"; echo "$BODY" | head -c 2000; echo
           [ "$CODE" = "200" ] || { echo "Tagesbericht fehlgeschlagen (HTTP $CODE)"; exit 1; }
