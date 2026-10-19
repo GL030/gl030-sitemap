@@ -12,6 +12,12 @@ jobs:
       - name: Tagesbericht ausloesen
         env:
           KEY: ${{ secrets.TICKETING_REPORT_KEY }}
+          GL030_BYPASS_TOKEN: ${{ secrets.GL030_BYPASS_TOKEN }}
         run: |
           test -n "$KEY" || { echo "TICKETING_REPORT_KEY fehlt"; exit 1; }
-          curl -fsS "https://www.gaesteliste030.de/tickets.ashx?daily=$KEY"
+          # 19.10.2026: ohne Browser-UA und Bypass-Header blockt Cloudflare den Runner (403 "Just a moment")
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126"
+          OUT=$(curl -sS -A "$UA" -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" --max-time 120 -w "\n__CODE__%{http_code}" "https://www.gaesteliste030.de/tickets.ashx?daily=$KEY")
+          CODE=${OUT##*__CODE__}; BODY=${OUT%__CODE__*}
+          echo "HTTP $CODE"; echo "$BODY" | head -c 2000; echo
+          [ "$CODE" = "200" ] || { echo "Tagesbericht fehlgeschlagen (HTTP $CODE)"; exit 1; }

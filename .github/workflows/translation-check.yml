@@ -6,6 +6,10 @@ on:
     - cron: '45 5 * * *'
   workflow_dispatch:
 
+# 19.10.2026: Push des Berichts braucht Schreibrecht (sonst 403 beim git push)
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
