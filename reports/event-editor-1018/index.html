@@ -84,6 +84,19 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
 .sw{width:50px;height:30px;border-radius:999px;background:#2c3d52;border:0;position:relative;flex:0 0 auto}.sw i{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:left .15s}
 .sw.on{background:linear-gradient(90deg,var(--t1),var(--t2))}.sw.on i{left:23px}
 .badge{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;background:rgba(22,189,224,.14);color:var(--t2);margin-left:6px;vertical-align:2px}
+.badge.gold{background:rgba(240,196,106,.16);color:var(--warn)}
+.price{display:flex;flex-direction:column;align-items:flex-end;gap:2px;white-space:nowrap}.price b{font-size:17px}.price small{font-size:11px;color:var(--mu)}
+.offer .meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:6px;font-size:12.5px;color:#b8c4cf}.offer .meta span::before{content:'✓ ';color:var(--ok)}
+.offer .prog{display:inline-block;height:auto;overflow:visible;margin:6px 0 0;font-size:12px;color:var(--ok);background:rgba(94,224,191,.1);border-radius:999px;padding:2px 9px}
+.grp{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mu);margin:16px 2px 8px}
+.special{background:rgba(240,196,106,.08);border:1px solid rgba(240,196,106,.35);border-radius:12px;padding:10px 14px;font-size:13.5px;color:#f3d79a;margin-bottom:12px}
+.special b{color:#fff}
+.pick.small button{padding:6px 11px;font-size:12.5px;min-height:34px;opacity:.85}
+.more-link{background:none;border:0;color:var(--t2);font-size:13px;padding:6px 0}
+.sum .tot{border-top:1px solid var(--line);padding-top:8px;margin-top:4px;font-weight:700}
+.offer .prog{white-space:nowrap}
+.offer.pr{grid-template-columns:44px minmax(0,1fr) auto auto}.offer.pr .price{margin-right:6px}
+@media(max-width:640px){.offer.pr{grid-template-columns:40px minmax(0,1fr) auto;grid-template-areas:"ic txt sw" "ic price price";align-items:start}.offer.pr .ic{grid-area:ic}.offer.pr>div:nth-child(2){grid-area:txt}.offer.pr .price{grid-area:price;flex-direction:row;align-items:baseline;gap:8px;margin-top:4px;justify-content:flex-start}.offer.pr .sw{grid-area:sw;margin-top:2px}}
 label{display:block;font-size:13px;color:var(--mu);margin:0 0 5px}
 input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;border-radius:10px;padding:11px 12px;color:var(--tx);font:inherit;font-size:16px}
 .f2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.fld{margin-bottom:12px}
@@ -114,7 +127,7 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
  .edit [data-ed]::after{opacity:1;top:-8px;right:-6px;width:20px;height:20px}
 }
 </style></head><body>
-<div class="note">Vorschau 18.10.2026 · „Event eintragen“ v2 in fünf Schritten: Eventseite, Einordnung, Angebote, Sichtbarkeit (bezahlt), Prüfen. Beispieldaten, nichts wird gespeichert.</div>
+<div class="note">Vorschau 20.10.2026 · „Event eintragen“ v2: fünf Schritte, echte Preise (netto), Sondertermin-Logik für Halloween/Silvester (Schritt 2 → Schritt 4). Beispieldaten, nichts wird gespeichert.</div>
 <header class="top"><div class="in"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><span class="t">Event eintragen</span><span class="sv"><i></i><span id="saved">Entwurf gespeichert · 09:41</span></span></div></header>
 
 <nav class="steps" id="steps">
@@ -139,7 +152,7 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
      <div class="brandrow"><i>NL</i><span data-ed>No Limit</span><span class="edonly" style="font-size:12px">· Eventreihe</span></div>
      <h1 contenteditable="true" data-ed data-ph="Name deines Events" id="title">No Limit x Halloween</h1>
      <div class="facts">
-      <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><small>Datum</small>Fr 30.10.2026</span></button>
+      <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><small>Datum</small><span id="datelbl">Fr 30.10.2026</span></span></button>
       <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Uhrzeit</small>23:00 – 06:00</span></button>
       <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Location</small>Amano Grand Central</span></button>
       <button class="fact" data-ed><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><span><small>Musik</small>Hip-Hop, R&amp;B, Afrobeats</span></button>
@@ -184,7 +197,9 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
  <div class="panel"><h2>Kategorie</h2><p>Bestimmt, in welchen Listen dein Event erscheint. Mehrfachauswahl möglich.</p>
   <div class="pick" data-multi><button class="on">Party</button><button>Clubnacht</button><button>Konzert</button><button>Festival</button><button>Afterwork</button><button>Brunch</button></div></div>
  <div class="panel"><h2>Themen &amp; Anlass</h2><p>Hilft Gästen, die nach genau so einer Nacht suchen.</p>
-  <div class="pick" data-multi><button class="on">Halloween</button><button>Ladies Night</button><button class="on">Hip-Hop</button><button class="on">R&amp;B</button><button>Afrobeats</button><button>16+</button><button class="on">18+</button><button>Studentenparty</button><button>Silvester</button></div></div>
+  <div class="special" id="spbox" hidden>🎃 <b>Sondertermin erkannt:</b> <span id="sptext">Dein Event liegt am Halloween-Wochenende. Es erscheint zusätzlich in der Halloween-Übersicht, der meistbesuchten Seite im Oktober.</span></div>
+  <div class="pick" data-multi id="themes"><button>Ladies Night</button><button class="on">Hip-Hop</button><button class="on">R&amp;B</button><button>Afrobeats</button><button>16+</button><button class="on">18+</button><button>Studentenparty</button></div>
+  <div id="spchips" style="margin-top:10px"><div class="pick small" data-multi id="sp"><button data-sp="halloween">🎃 Halloween</button><button data-sp="silvester">🎆 Silvester</button></div><div class="mu" style="font-size:12px;margin-top:6px;color:var(--mu)">Sondertermine: nur für Events rund um den 31.10. bzw. 31.12. · <button class="more-link" id="demoDate">Demo: Datum auf 14.11. stellen</button></div></div></div>
  <div class="panel"><h2>Eventreihe</h2><p>Erscheint mit Logo auf der Eventseite und auf der Seite der Reihe.</p>
   <div class="pick"><button class="on">No Limit</button><button>Only Us</button><button>High Society</button><button>keine</button></div></div>
  <div class="warn">Am Fr 30.10. gibt es in dieser Location schon ein Event: „No Limit x Halloween“ (Entwurf). Prüfe, dass es kein Duplikat ist.</div>
@@ -207,14 +222,22 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
 
 <!-- ===== 4 Sichtbarkeit (bezahlt) ===== -->
 <section class="view" id="s4">
- <div class="hint"><span>Optional. Wir schicken dir vorab ein Angebot mit Preis, gebucht wird nichts automatisch.</span></div>
- <div class="offer" data-off><div class="ic">⭐</div><div><b>Top-Event</b><small>Dein Event auf der Startseite und ganz oben in den Listen des Wochenendes.</small></div><button class="sw" aria-label="Top-Event"><i></i></button></div>
- <div class="offer" data-off><div class="ic">💎</div><div><b>Premium-Event</b><small>Hervorgehobene Eventseite, größere Kachel, Logo deiner Reihe in allen Listen.</small></div><button class="sw" aria-label="Premium-Event"><i></i></button></div>
- <div class="offer" data-off><div class="ic">✉️</div><div><b>Newsletter</b><small>Platz im Wochenend-Newsletter an die GL030-Gäste.</small></div><button class="sw" aria-label="Newsletter"><i></i></button></div>
- <div class="offer" data-off><div class="ic">📸</div><div><b>Instagram-Promotion</b><small>Story und Feed auf @gaesteliste030, optional mit Reel.</small></div><button class="sw" aria-label="Instagram-Promotion"><i></i></button></div>
- <div class="offer" data-off><div class="ic">🖼️</div><div><b>Banner</b><small>Dein Banner auf Start- und Listenseiten im gewünschten Zeitraum.</small></div><button class="sw" aria-label="Banner"><i></i></button></div>
- <div class="offer" data-off><div class="ic">📷</div><div><b>Fotograf</b><small>Partyfotos durch GL030, am Tag danach online mit deinem Branding.</small></div><button class="sw" aria-label="Fotograf"><i></i></button></div>
+ <div class="hint"><span>Optional. Preise netto zzgl. USt. Nichts wird automatisch gebucht: Wir bestätigen per Mail, bezahlt wird erst nach dem Event.</span></div>
+ <div class="special" id="sp4" hidden>🎃 <b>Sondertermin-Konditionen:</b> <span id="sp4text"></span></div>
+
+ <div class="grp">Platzierung im Kalender</div>
+ <div class="offer pr" data-off data-grp="place" data-k="top"><div class="ic">⬆️</div><div><b>Top-Event</b><small>Über allen Standard-Events, größeres Bild, hervorgehobene Stecknadel.</small><div class="meta"><span>Platz über Standard</span><span>Größere Karte</span></div><span class="prog">Prognose 15–60 Gästelisten-Einträge</span></div><div class="price"><b data-price="top">50 €</b><small>je Event</small></div><button class="sw" aria-label="Top-Event"><i></i></button></div>
+ <div class="offer pr" data-off data-grp="place" data-k="premium"><div class="ic">💎</div><div><b>Premium-Event <span class="badge">Empfehlung</span></b><small>Ganz oben, farbig hervorgehoben mit „Empfehlung“, Flyer als Startseiten-Banner (Fr/Sa).</small><div class="meta"><span>Alle Top-Features</span><span>Platz ganz oben</span><span>Startseiten-Banner</span></div><span class="prog">Prognose 25–100 Gästelisten-Einträge</span></div><div class="price"><b data-price="premium">100 €</b><small>je Event</small></div><button class="sw" aria-label="Premium-Event"><i></i></button></div>
+
+ <div class="grp">Pakete mit Kampagne</div>
+ <div class="offer pr" data-off data-grp="pack" data-k="toppack"><div class="ic">🚀</div><div><b>Top-Paket</b><small>Platzierung plus Meta-Kampagne: ein Ansprechpartner, ein Preis.</small><div class="meta"><span>Top-Event</span><span>Gästeliste</span><span>Meta-Kampagne</span><span>Startseiten-Banner</span></div><span class="prog">Prognose 55–90 Gästelisten-Einträge</span></div><div class="price"><b>ab 200 €</b><small>je Event</small></div><button class="sw" aria-label="Top-Paket"><i></i></button></div>
+ <div class="offer pr" data-off data-grp="pack" data-k="prempack"><div class="ic">🏆</div><div><b>Premium-Paket <span class="badge gold">Meistgebucht</span></b><small>Maximale Sichtbarkeit: oberste Platzierung plus Kampagne.</small><div class="meta"><span>Premium-Event</span><span>Gästeliste</span><span>Meta-Kampagne</span><span>Startseiten-Banner Fr/Sa</span></div><span class="prog">Prognose 90–180 Gästelisten-Einträge</span></div><div class="price"><b>ab 250 €</b><small>je Event</small></div><button class="sw" aria-label="Premium-Paket"><i></i></button></div>
+
+ <div class="grp">Display</div>
+ <div class="offer pr" data-off data-grp="banner" data-k="banner"><div class="ic">🖼️</div><div><b>Banner</b><small>Dein Motiv sitewide in der Fußleiste, für alle, die gerade entscheiden, wo sie heute feiern.</small><div class="meta"><span>Alle Seiten</span><span>Buchbar pro Woche</span></div></div><div class="price"><b>125 €</b><small>je Woche</small></div><button class="sw" aria-label="Banner"><i></i></button></div>
+
  <div class="panel" style="margin-top:18px"><h2>Nachricht an uns</h2><p>Optional: Budget, Zeitraum, Wünsche.</p><div class="fld"><input placeholder="z. B. Banner nur in der Eventwoche"></div></div>
+ <div class="card"><h3>Deine Auswahl</h3><dl class="sum" id="sel"><dt>Gewählt</dt><dd>nichts – kostenloser Standardeintrag</dd></dl></div>
 </section>
 
 <!-- ===== 5 Prüfen ===== -->
@@ -222,7 +245,7 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
  <div class="g2">
   <div>
    <div class="panel"><h2>Zusammenfassung</h2><p>Nach dem Absenden prüft Gästeliste030 das Event, meist innerhalb weniger Stunden.</p>
-    <dl class="sum"><dt>Event</dt><dd>No Limit x Halloween · Fr 30.10.2026, 23:00</dd><dt>Location</dt><dd>Amano Grand Central</dd><dt>Line-up</dt><dd>DJ Kane, Mavi</dd><dt>Kategorie</dt><dd>Party · Halloween, Hip-Hop, R&amp;B, 18+</dd><dt>Angebote</dt><dd>Gästeliste · Tickets angefragt</dd><dt>Sichtbarkeit</dt><dd>keine Pakete gewählt</dd></dl></div>
+    <dl class="sum"><dt>Event</dt><dd>No Limit x Halloween · Fr 30.10.2026, 23:00</dd><dt>Location</dt><dd>Amano Grand Central</dd><dt>Line-up</dt><dd>DJ Kane, Mavi</dd><dt>Kategorie</dt><dd>Party · Halloween, Hip-Hop, R&amp;B, 18+</dd><dt>Angebote</dt><dd>Gästeliste · Tickets angefragt</dd><dt>Sichtbarkeit</dt><dd id="sumvis">keine Pakete gewählt</dd></dl></div>
    <div class="panel"><h2>Kontakt für Rückfragen</h2>
     <div class="f2"><div class="fld"><label>Name</label><input value="Arwin Samani"></div><div class="fld"><label>Telefon</label><input value="+49 …"></div></div>
     <label style="display:flex;gap:10px;align-items:flex-start;color:var(--tx);font-size:14px"><input type="checkbox" checked style="width:20px;height:20px;margin-top:2px;flex:0 0 auto"> Ich akzeptiere die AGB und die Datenschutzhinweise.</label></div>
@@ -247,7 +270,28 @@ document.getElementById('back').onclick=function(){go(cur-1)};
 document.querySelectorAll('.st').forEach(function(b){b.onclick=function(){go(+b.dataset.s)}});
 document.querySelectorAll('[data-mode]').forEach(function(b){b.onclick=function(){document.querySelectorAll('[data-mode]').forEach(function(x){x.classList.toggle('on',x===b)});var p=document.getElementById('page');var ed=b.dataset.mode=='edit';p.classList.toggle('edit',ed);p.classList.toggle('preview',!ed);p.querySelectorAll('[contenteditable]').forEach(function(e){e.contentEditable=ed})}});
 document.querySelectorAll('.pick button').forEach(function(b){b.onclick=function(){var multi=b.parentNode.hasAttribute('data-multi');if(!multi)b.parentNode.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.toggle('on',multi?!b.classList.contains('on'):true)}});
-document.querySelectorAll('[data-off] .sw').forEach(function(s){s.onclick=function(){s.classList.toggle('on');s.closest('[data-off]').classList.toggle('on',s.classList.contains('on'))}});
+document.querySelectorAll('[data-off] .sw').forEach(function(s){s.onclick=function(){var o=s.closest('[data-off]'),grp=o.dataset.grp,turnOn=!s.classList.contains('on');
+ if(turnOn&&grp&&grp!='banner'){document.querySelectorAll('[data-off][data-grp]').forEach(function(x){if(x!==o&&x.dataset.grp!='banner'){x.classList.remove('on');x.querySelector('.sw').classList.remove('on')}})}
+ s.classList.toggle('on',turnOn);o.classList.toggle('on',turnOn);updSel()}});
+/* ---- Sondertermine: Datum -> Halloween/Silvester ---- */
+var EV={date:new Date(2026,9,30)};
+function special(){var m=EV.date.getMonth(),d=EV.date.getDate();if(m==9&&d>=24||m==10&&d<=1)return 'halloween';if(m==11&&d>=28||m==0&&d<=1)return 'silvester';return null}
+var PR={normal:{top:'50 €',premium:'100 €'},halloween:{top:'75 €',premium:'300 €'},silvester:{top:'300 €',premium:'750 €'}};
+function applySpecial(){var sp=special();var chips=document.getElementById('sp');
+ chips.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.sp===sp)});
+ var box=document.getElementById('spbox');box.hidden=!sp;
+ if(sp)document.getElementById('sptext').textContent=sp=='halloween'?'Dein Event liegt am Halloween-Wochenende. Es erscheint zusätzlich in der Halloween-Übersicht, der meistbesuchten Seite im Oktober. Abwählen, falls es keine Halloween-Party ist.':'Dein Event liegt an Silvester. Es erscheint zusätzlich in der Silvester-Übersicht. Abwählen, falls es keine Silvester-Party ist.';
+ updPrices()}
+function activeSpecial(){var on=document.querySelector('#sp button.on');return on?on.dataset.sp:null}
+function updPrices(){var sp=activeSpecial()||'normal',p=PR[sp];document.querySelector('[data-price=top]').textContent=p.top;document.querySelector('[data-price=premium]').textContent=p.premium;
+ var b=document.getElementById('sp4');b.hidden=sp=='normal';
+ if(sp!='normal')document.getElementById('sp4text').textContent=(sp=='halloween'?'Halloween':'Silvester')+'-Events laufen in einer eigenen Kategorie mit eigener Nachfrage. Top-Event '+p.top+', Premium-Event '+p.premium+'. Pakete: Platzierung zu Sondertermin-Konditionen plus Kampagne, Preis auf Anfrage.';
+ document.querySelectorAll('[data-grp=pack] .price b').forEach(function(x){x.textContent=sp=='normal'?(x.closest('[data-k]').dataset.k=='toppack'?'ab 200 €':'ab 250 €'):'auf Anfrage'});updSel()}
+function updSel(){var on=[...document.querySelectorAll('#s4 [data-off].on')].map(function(o){return o.querySelector('b').childNodes[0].textContent.trim()+' ('+o.querySelector('.price b').textContent+')'});
+ var t=on.length?on.join(' · '):'nichts – kostenloser Standardeintrag';document.querySelector('#sel dd').textContent=t;document.getElementById('sumvis').textContent=on.length?on.join(' · '):'keine Pakete gewählt'}
+document.querySelectorAll('#sp button').forEach(function(b){b.addEventListener('click',function(){setTimeout(updPrices,0)})});
+document.getElementById('demoDate').onclick=function(){var b=this;if(EV.date.getMonth()==9){EV.date=new Date(2026,10,14);document.getElementById('datelbl').textContent='Sa 14.11.2026';b.textContent='Demo: Datum auf 30.10. stellen'}else{EV.date=new Date(2026,9,30);document.getElementById('datelbl').textContent='Fr 30.10.2026';b.textContent='Demo: Datum auf 14.11. stellen'}applySpecial()};
+applySpecial();
 function saved(){var d=new Date();document.getElementById('saved').textContent='Entwurf gespeichert · '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);check()}
 document.querySelectorAll('[contenteditable]').forEach(function(e){e.addEventListener('input',function(){clearTimeout(window._s);window._s=setTimeout(saved,700)})});
 function check(){var ok=0,items=document.querySelectorAll('#chk li');items.forEach(function(li){var id=li.dataset.go,el=id&&document.getElementById(id),done=true;if(el&&el.isContentEditable)done=el.textContent.trim().length>0;if(id=='adddj')done=document.querySelectorAll('#djs .dj').length>0;li.querySelector('.o').classList.toggle('done',done);if(done)ok++});document.getElementById('pg').style.width=Math.round(ok/items.length*100)+'%'}
