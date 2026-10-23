@@ -200,12 +200,13 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
 <!-- ===== 2 Einordnung ===== -->
 <section class="view" id="s2">
  <div class="panel"><h2>Kategorie</h2><p>Bestimmt, in welchen Listen dein Event erscheint. Mehrfachauswahl möglich.</p>
-  <div class="pick" data-multi id="cats"><button class="on" data-fixed title="Immer dabei">Party</button><button class="on">Hip-Hop</button><button>Techno</button><button>House</button><button>Electro</button><button>Latin</button><button>Day Party</button><button>Afterwork</button><button>Konzert</button><button>Festival</button><button>Open-Air</button><button>Dinner</button></div>
-  <p class="mu" style="font-size:12px;margin:8px 0 0;color:var(--mu)">„Party“ ist die Hauptkategorie und immer gesetzt; die Musikrichtungen bestimmen die weiteren Listen.</p></div>
+  <div class="pick" data-multi id="cats"><button class="on" data-fixed title="Immer dabei">Party</button><button>Day Party</button><button>Electro</button><button class="on">Hip Hop</button><button>Open Air</button></div>
+  <p class="mu" style="font-size:12px;margin:8px 0 0;color:var(--mu)">„Party“ ist immer gesetzt (reguläre Clubveranstaltung). Day Party: Start zwischen 10 und 16 Uhr · Electro: Electro-Musik-Charakter · Hip Hop: Hip Hop, RnB, Black Music · Open Air: Open-Air- und Groß-Events.</p></div>
  <div class="panel"><h2>Themen &amp; Anlass</h2><p>Hilft Gästen, die nach genau so einer Nacht suchen.</p>
   <div class="special" id="spbox" hidden>🎃 <b>Sondertermin erkannt:</b> <span id="sptext">Dein Event liegt am Halloween-Wochenende. Es erscheint zusätzlich in der Halloween-Übersicht, der meistbesuchten Seite im Oktober.</span></div>
-  <div class="pick" data-multi id="themes"><button>16+</button><button class="on">18+</button><button>Ü30</button><button>Ladies Night</button><button>Studenten</button><button>Singles</button><button>LGBTQ</button><button>All-inclusive</button><button>80er</button><button>90er</button><button>2000er</button></div>
-  <div id="spchips" style="margin-top:10px"><div class="pick small" data-multi id="sp"><button data-sp="halloween">🎃 Halloween</button><button data-sp="silvester">🎆 Silvester</button><button data-sp="karneval">🎭 Karneval</button><button data-sp="oktoberfest">🍺 Oktoberfest</button><button data-sp="csd">🏳️‍🌈 CSD</button></div><div class="mu" style="font-size:12px;margin-top:6px;color:var(--mu)">Sondertermine werden am Datum und am Eventnamen erkannt und dann automatisch gesetzt; von Hand nur in Ausnahmefällen. · <button class="more-link" id="demoDate">Demo: Datum auf 14.11. stellen</button></div></div></div>
+  <div class="pick" data-multi id="themes"><button>Techno</button><button>House</button><button>Latin</button><button>Afterwork</button><button>Konzert</button><button>Festival</button><button>Dinner</button><button>16+</button><button class="on">18+</button><button>Ü30</button><button>Ladies Night</button><button>Studenten</button><button>Singles</button><button>LGBTQ</button><button>All-inclusive</button><button>80er</button><button>90er</button><button>2000er</button></div>
+  <p class="mu" style="font-size:12px;margin:8px 0 0;color:var(--mu)">Liste kommt aus den gepflegten Tags; hier beispielhaft.</p>
+  <div id="spchips" style="margin-top:10px"><div class="pick small" data-multi id="sp"><button data-sp="halloween">🎃 Halloween</button><button data-sp="silvester">🎆 Silvester</button></div><div class="mu" style="font-size:12px;margin-top:6px;color:var(--mu)">Sondertermine werden am Datum und am Eventnamen erkannt und dann automatisch gesetzt; von Hand nur in Ausnahmefällen. · <button class="more-link" id="demoDate">Demo: Datum auf 14.11. stellen</button></div></div></div>
  <div class="panel"><h2>Eventreihe</h2><p>Erscheint mit Logo auf der Eventseite und auf der Seite der Reihe. Deine Reihen zuerst.</p>
   <div class="pick" id="brands"><button class="on" data-b="No Limit">No Limit</button><button data-b="Only Us">Only Us</button><button data-b="High Society">High Society</button><button data-b="">keine</button></div>
   <div class="fld" style="margin-top:10px"><input id="brandq" placeholder="Andere Reihe suchen oder neu anlegen …"></div>
@@ -284,18 +285,15 @@ document.querySelectorAll('[data-off] .sw').forEach(function(s){s.onclick=functi
  s.classList.toggle('on',turnOn);o.classList.toggle('on',turnOn);updSel()}});
 /* ---- Sondertermine: Datum und Eventname -> Halloween/Silvester/Karneval/Oktoberfest/CSD ---- */
 var EV={date:new Date(2026,9,30),title:'No Limit x Halloween'};
-var KW={halloween:/hallow|spooky|horror|grusel|nightmare|zombie|monster|fright/i,silvester:/silvester|nye|new ?year|neujahr/i,karneval:/karneval|fasching|carnival|rosenmontag/i,oktoberfest:/oktoberfest|wiesn|dirndl|lederhosen/i,csd:/\bcsd\b|pride/i};
+var KW={halloween:/hallow|spooky|horror|grusel|nightmare|zombie|monster|fright/i,silvester:/silvester|nye|new ?year|neujahr/i};
 function inWin(d,m0,d0,days){var t=new Date(d.getFullYear(),m0,d0);var diff=(d-t)/864e5;return diff>=-days&&diff<=days}
 function special(){var d=EV.date,t=EV.title||'';
  for(var k in KW)if(KW[k].test(t))return k;              // Name schlaegt Datum
  if(inWin(d,9,31,5))return 'halloween';                   // 26.10.–05.11.
  if(inWin(d,11,31,2)||inWin(d,0,1,1))return 'silvester';  // 29.12.–01.01.
- if(d.getMonth()==1&&d.getDate()>=10&&d.getDate()<=20)return 'karneval';   // Demo: Rosenmontags-Woche (echt: aus Kalender)
- if(d.getMonth()==8&&d.getDate()>=15||d.getMonth()==9&&d.getDate()<=5)return 'oktoberfest';
- if(d.getMonth()==6&&d.getDate()>=20&&d.getDate()<=31)return 'csd';
  return null}
-var PR={normal:{top:'50 €',premium:'100 €'},halloween:{top:'75 €',premium:'300 €'},silvester:{top:'300 €',premium:'750 €'},karneval:{top:'50 €',premium:'100 €'},oktoberfest:{top:'50 €',premium:'100 €'},csd:{top:'50 €',premium:'100 €'}};
-var SPNAME={halloween:'Halloween',silvester:'Silvester',karneval:'Karneval',oktoberfest:'Oktoberfest',csd:'CSD'};
+var PR={normal:{top:'50 €',premium:'100 €'},halloween:{top:'75 €',premium:'300 €'},silvester:{top:'300 €',premium:'750 €'}};
+var SPNAME={halloween:'Halloween',silvester:'Silvester'};
 function applySpecial(){var sp=special();var chips=document.getElementById('sp');
  chips.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.sp===sp)});
  var box=document.getElementById('spbox');box.hidden=!sp;
@@ -330,7 +328,7 @@ function demo(mode){var copy=mode=='copy';document.querySelectorAll('[data-demo]
  document.getElementById('entry').textContent=copy?'Ab 18 · Ausweis mitbringen · Abendkasse 25 €':'';document.getElementById('spec').textContent='';
  document.querySelectorAll('#djs .dj').forEach(function(x){x.remove()});if(copy)['DJ Kane','Mavi'].forEach(function(a){var s=document.createElement('span');s.className='dj';s.innerHTML='<i>'+a.split(' ').map(function(w){return w[0]}).join('').slice(0,2)+'</i>'+a+'<button class="x" aria-label="Entfernen">×</button>';document.getElementById('djs').insertBefore(s,document.getElementById('adddj'))});
  setBrand(copy?'No Limit':'');
- document.querySelectorAll('#cats button:not([data-fixed])').forEach(function(b){b.classList.toggle('on',copy&&b.textContent=='Hip-Hop')});
+ document.querySelectorAll('#cats button:not([data-fixed])').forEach(function(b){b.classList.toggle('on',copy&&b.textContent=='Hip Hop')});
  document.querySelectorAll('#themes button').forEach(function(b){b.classList.toggle('on',copy&&b.textContent=='18+')});
  document.getElementById('tkstate').textContent=copy?'aktiv seit 16.10.':'auf Anfrage';
  if(copy){var dl=document.querySelector('.fact');dl.classList.add('missing');setTimeout(function(){dl.classList.remove('missing')},2500)}
