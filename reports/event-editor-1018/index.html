@@ -9,7 +9,7 @@ a{color:var(--t2);text-decoration:none}button{font:inherit;color:inherit;cursor:
 .note{background:#3a2f0f;color:#f0d080;font-size:12.5px;padding:7px 16px;text-align:center}
 .top{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .in{max-width:1240px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:16px}
-.top img{height:26px}.top .t{font-weight:600}.top .sv{margin-left:auto;font-size:13px;color:var(--mu);display:flex;align-items:center;gap:8px}.top .sv i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.top img{height:26px}.top .t{font-weight:600}.top .btn.sm{padding:6px 12px;font-size:12.5px}.top .sv{margin-left:auto;font-size:13px;color:var(--mu);display:flex;align-items:center;gap:8px}.top .sv i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;background:linear-gradient(90deg,var(--t1),var(--t2));color:#04231d;white-space:nowrap}
 .btn.gh{background:transparent;color:var(--tx);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);font-weight:500}.btn.sm{padding:6px 13px;font-size:13px}
 /* Schritte */
@@ -117,7 +117,7 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
 .res small{color:var(--mu);font-size:12px;display:block}
 @media(max-width:980px){.g2{grid-template-columns:minmax(0,1fr)}.side{position:static}.hero{grid-template-columns:220px minmax(0,1fr)}.boxes{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:640px){
- .top .in{height:54px;padding:0 14px}.top img{height:22px}.top .t{display:none}
+ .top .in{height:54px;padding:0 14px}.top img{height:22px}.top .t{display:none}.top .sv span{display:none}.top .btn.sm{margin-left:8px!important}
  .steps{padding:12px 14px 6px}.st{min-width:0;padding:8px 10px;flex:0 0 auto}.st span small{display:none}.st:not(.on) span{display:none}
  .wrap{padding:8px 14px calc(100px + env(safe-area-inset-bottom,0px))}
  .hero{grid-template-columns:minmax(0,1fr);padding:14px;gap:16px}.fly{max-width:280px;margin:0 auto;width:100%}
@@ -131,7 +131,7 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
 }
 </style></head><body>
 <div class="note">Vorschau 23.10.2026 · Demo: <span class="seg" style="vertical-align:middle;margin-left:4px"><button class="on" data-demo="new">Neues Event</button><button data-demo="copy">Event kopieren</button></span></div>
-<header class="top"><div class="in"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><span class="t">Event eintragen</span><span class="sv"><i></i><span id="saved">Entwurf gespeichert · 09:41</span></span></div></header>
+<header class="top"><div class="in"><img src="https://assets.evntsvc.net/region/berlin/images/db8b71df1c6f80a1ab9d.svg" alt="GL030"><span class="t">Event eintragen</span><span class="sv"><i></i><span id="saved">Entwurf gespeichert · 09:41</span></span><a class="btn gh sm" id="pv" href="#" target="_blank" rel="noopener" style="margin-left:12px">Vorschau ↗</a></div></header>
 
 <nav class="steps" id="steps">
  <button class="st on" data-s="1"><b>1</b><span>Eventseite<small>Flyer, Titel, Text, DJs</small></span></button>
@@ -146,7 +146,7 @@ input,select,textarea{width:100%;background:#0f1620;border:1px solid #2c3d52;bor
 <section class="view on" id="s1">
  <div class="hint" id="copyhint" hidden><span>📋 <b>Kopie von „No Limit x Halloween“ (Fr 30.10.)</b> – Datum, Texte und Flyer sind übernommen. Bitte Datum setzen und Flyer tauschen, der Rest bleibt, wenn du nichts änderst.</span></div>
  <div class="hint"><span>So sieht dein Event auf Gästeliste030 aus. Tippe auf ein Feld, um es zu ändern.</span>
-  <div class="seg"><button class="on" data-mode="edit">Bearbeiten</button><button data-mode="preview">Vorschau</button></div></div>
+  <div class="seg"><button class="on" data-mode="edit">Bearbeiten</button><button data-mode="preview">Vorschau ↗</button></div></div>
  <div class="g2">
   <div class="page edit" id="page">
    <div class="hero">
@@ -279,7 +279,11 @@ document.getElementById('next').textContent=labels[cur];document.getElementById(
 document.getElementById('next').onclick=function(){if(cur==5){alert('Vorschau: Das Event würde jetzt zur Prüfung an Gästeliste030 gehen.');return}go(cur+1)};
 document.getElementById('back').onclick=function(){go(cur-1)};
 document.querySelectorAll('.st').forEach(function(b){b.onclick=function(){go(+b.dataset.s)}});
-document.querySelectorAll('[data-mode]').forEach(function(b){b.onclick=function(){document.querySelectorAll('[data-mode]').forEach(function(x){x.classList.toggle('on',x===b)});var p=document.getElementById('page');var ed=b.dataset.mode=='edit';p.classList.toggle('edit',ed);p.classList.toggle('preview',!ed);p.querySelectorAll('[contenteditable]').forEach(function(e){e.contentEditable=ed})}});
+/* Vorschau = echte Eventseite (Entwurf) in neuem Tab, auf jedem Schritt erreichbar */
+function previewUrl(){return document.querySelector('[data-demo].on').dataset.demo=='copy'?'https://www.gaesteliste030.de/de/berlin/events/halloween/amano-grand-central/30-10-2026':''}
+function openPreview(){var u=previewUrl();if(u)window.open(u,'_blank');else alert('Vorschau: öffnet die Eventseite deines Entwurfs in einem neuen Tab (z. B. gaesteliste030.de/vorschau/<Entwurfs-ID>), genau so, wie Gäste sie nach der Freigabe sehen – mit allem, was du bis hierhin eingetragen hast.')}
+document.getElementById('pv').onclick=function(e){e.preventDefault();openPreview()};
+document.querySelectorAll('[data-mode]').forEach(function(b){b.onclick=function(){if(b.dataset.mode=='preview'){openPreview();return}}});
 document.querySelectorAll('.pick button').forEach(function(b){b.onclick=function(){var multi=b.parentNode.hasAttribute('data-multi');if(!multi)b.parentNode.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.toggle('on',multi?!b.classList.contains('on'):true)}});
 document.querySelectorAll('[data-off] .sw').forEach(function(s){s.onclick=function(){var o=s.closest('[data-off]'),grp=o.dataset.grp,turnOn=!s.classList.contains('on');
  if(turnOn&&grp&&grp!='banner'){document.querySelectorAll('[data-off][data-grp]').forEach(function(x){if(x!==o&&x.dataset.grp!='banner'){x.classList.remove('on');x.querySelector('.sw').classList.remove('on')}})}
