@@ -30,9 +30,11 @@ jobs:
             URL="$1"; NAME="$2"
             for i in 1 2; do
               CB=$RANDOM$RANDOM
-              OUT=$(curl -s -o /dev/null -A "$UA" -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" \
+              OUT=$(curl -s -o /tmp/body -A "$UA" -H "X-GL030-Auth: $GL030_BYPASS_TOKEN" \
                     --max-time 25 -w "%{http_code} %{time_starttransfer}" "$URL?cb=$CB")
               CODE=${OUT%% *}; TTFB=${OUT##* }
+              # 25.10.2026: liegengebliebene Wartungsseite von Web Deploy (app_offline.htm) zaehlt als Ausfall
+              if grep -qi "Site Under Construction\|msdeploy:" /tmp/body; then CODE="OFFLINE"; fi
               echo "$NAME Versuch $i: HTTP $CODE, TTFB ${TTFB}s"
               if [ "$CODE" = "200" ] || [ "$CODE" = "403" ]; then
                 echo "| $NAME | $CODE | ${TTFB}s | ok |" >> $GITHUB_STEP_SUMMARY
@@ -47,8 +49,15 @@ jobs:
           echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
           check "https://www.gaesteliste030.de/" "Startseite" || FAIL=1
           check "https://www.gaesteliste030.de/de/berlin/locations/kitkat" "Profil kitkat" || FAIL=1
+          # 25.10.2026: Cloudflare ignoriert ?cb= im Cache-Schluessel und liefert bei Origin-Ausfall stale aus.
+          # Diese beiden Pfade werden nie gecacht und zeigen einen Origin-Ausfall sofort.
+          check "https://www.gaesteliste030.de/account/register" "Partner-Login (ungecacht)" || FAIL=1
+          check "https://tickets.gl030.de/the-grand-nightmare-31-10" "Ticketseite (ungecacht)" || FAIL=1
           if [ $FAIL = 1 ]; then
             {
+              echo ""
+              echo "## Runbook Deploy (Vorfall 25.10.2026): Status OFFLINE = app_offline.htm liegt im Webroot"
+              echo "Sofortmassnahme: letztes erfolgreiches Release (MASTER Frontend) erneut deployen OHNE Take App Offline - Web Deploy loescht app_offline.htm."
               echo ""
               echo "## Runbook (Vorfall-Muster 14.09.2026)"
               echo "1. RDP auf AX102, dann: sqlcmd -S . -E -Q \"SELECT COUNT(*) AS wartend FROM sys.dm_exec_query_memory_grants WHERE granted_memory_kb IS NULL\""
