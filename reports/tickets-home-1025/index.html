@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GL030 Tickets – Tickets verkaufen im Design eures Events. Made in Berlin.</title>
+<meta name="description" content="Verkauft Tickets in Minuten: eigene Ticketseite im Look eures Flyers, Apple Pay &amp; Google Pay, QR-Einlass, Erstattung an der Tür, Analyse ohne Cookies. 5 % + 0,39 € je Ticket, zahlt der Gast. Keine Grundgebühr. Made in Berlin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a0a;--card:#151313;--card2:#1e1a1a;--line:rgba(255,255,255,.09);--tx:#f3eeee;--mu:#a59c9b;--mu2:#7d7372;--gl:#16bde0;--gl2:#4fc3e6;--acc:#c4161c;--note:#3a2f0f;--notetx:#f0d080}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{font-family:Roboto,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;-webkit-font-smoothing:antialiased;font-size:16px}
+a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}img{max-width:100%;display:block}
+h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.08}
+h1{font-size:clamp(36px,7.4vw,66px);font-weight:900}
+h2{font-size:clamp(27px,4.6vw,40px);font-weight:900}
+h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+p{margin:0}.mu{color:var(--mu)}.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.note{background:var(--note);color:var(--notetx);font-size:12.5px;padding:7px 14px;text-align:center}
+.note a{color:inherit}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,10,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:17px;letter-spacing:-.01em;white-space:nowrap}
+.brand i{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--gl),var(--gl2));color:#06252b;font-style:normal;font-weight:900;font-size:12px}
+.brand small{color:var(--mu);font-weight:500;font-size:13px}
+.nav nav{display:none;gap:22px;font-size:14.5px;color:var(--mu)}.nav nav a{text-decoration:none}.nav nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:700;font-size:15px;text-decoration:none;border:0;white-space:nowrap;transition:transform .12s ease}
+.btn:active{transform:scale(.98)}
+.btn-gl{background:linear-gradient(135deg,var(--gl),var(--gl2));color:#06252b}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff}
+.btn-wa{background:#25d366;color:#07321a}
+.btn svg{width:18px;height:18px;flex:0 0 18px}
+.nav .btn{padding:9px 16px;font-size:14px}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:48px 0 30px}
+.hero-glow{position:absolute;inset:-60px;background:center/cover no-repeat;filter:blur(70px) saturate(1.3);opacity:.32;transform:scale(1.2);transition:background-image .5s ease;pointer-events:none}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,10,.35),var(--bg) 94%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:34px}
+.kicker{display:block;font-size:13.5px;color:var(--mu);margin-bottom:18px}.kicker i{display:inline-block;vertical-align:middle;margin-right:8px}
+.kicker b{color:#fff;font-weight:700}.kicker i{width:8px;height:8px;border-radius:50%;background:var(--gl);box-shadow:0 0 0 0 rgba(22,189,224,.6);animation:pulse 1.8s infinite;font-style:normal}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(22,189,224,.55)}70%{box-shadow:0 0 0 7px rgba(22,189,224,0)}100%{box-shadow:0 0 0 0 rgba(22,189,224,0)}}
+.hero p.lead{font-size:clamp(17px,2.2vw,20px);color:var(--mu);max-width:560px;margin:18px 0 26px}
+.hero p.lead b{color:#fff;font-weight:500}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.fine{font-size:13px;color:var(--mu2);margin-top:14px}
+/* demo phone */
+.demo{display:grid;gap:14px;justify-items:center}
+.phone{width:min(300px,86vw);aspect-ratio:300/600;border-radius:38px;background:#000;padding:10px;box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.14) inset;position:relative}
+.screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--bg);font-size:9px;line-height:1.35}
+.s-glow{position:absolute;inset:-20px;height:260px;background:center/cover no-repeat;filter:blur(26px) saturate(1.3);opacity:.5;transform:scale(1.15);transition:background-image .4s ease}
+.s-top{position:relative;display:flex;align-items:center;justify-content:space-between;padding:22px 12px 6px}
+.s-org{display:flex;align-items:center;gap:6px}.s-org img{width:18px;height:18px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.2)}
+.s-org b{display:block;font-size:8px;line-height:1.1}.s-org span{font-size:6.5px;color:var(--mu)}
+.s-lng{display:flex;gap:1px;background:rgba(255,255,255,.08);border-radius:99px;padding:2px;font-size:5.5px;font-weight:700;color:var(--mu)}.s-lng span{padding:2px 4px;border-radius:99px}.s-lng .on{background:rgba(255,255,255,.16);color:#fff}
+.s-flyer{position:relative;margin:4px 14px 0;border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 14px 30px rgba(0,0,0,.6);background:#222 center/cover no-repeat;transition:background-image .4s ease}
+.s-body{position:relative;padding:8px 12px 0}
+.s-tags{display:flex;gap:3px;margin-bottom:4px}.s-tags span{font-size:5.5px;padding:2px 5px;border-radius:99px;background:var(--card2);color:var(--mu)}
+.s-title{font-size:13px;font-weight:900;letter-spacing:-.02em;line-height:1.05;margin-bottom:5px}
+.s-fact{display:flex;gap:5px;align-items:center;font-size:7.5px;margin-bottom:3px}.s-fact i{width:7px;height:7px;border-radius:2px;background:var(--pacc,var(--acc));flex:0 0 7px}
+.s-box{margin-top:7px;background:var(--card);border:1px solid var(--line);border-radius:9px}
+.s-box h4{margin:0;font-size:8.5px;padding:6px 8px 3px}
+.s-tk{display:flex;justify-content:space-between;align-items:center;padding:5px 8px;border-top:1px solid var(--line)}
+.s-tk b{display:block;font-size:7.5px}.s-tk small{display:block;font-size:6px;color:var(--mu)}
+.s-step{display:flex;align-items:center;gap:2px;background:var(--card2);border-radius:99px;padding:2px}.s-step span{width:12px;height:12px;border-radius:50%;display:grid;place-items:center;font-size:8px}.s-step .p{background:var(--pacc,var(--acc));color:#fff;font-weight:700}
+.s-bar{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:8px 12px 12px;background:linear-gradient(180deg,rgba(11,10,10,0),var(--bg) 40%)}
+.s-bar b{font-size:10px}.s-bar small{display:block;font-size:6px;color:var(--mu)}
+.s-bar .go{background:var(--pacc,var(--acc));color:#fff;border-radius:99px;padding:5px 11px;font-size:7.5px;font-weight:700}
+.s-foot{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:5.5px;color:var(--mu2)}
+.flyers{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.flyers button{width:54px;height:68px;border-radius:9px;border:2px solid transparent;background:#222 center/cover no-repeat;padding:0;opacity:.6;transition:opacity .15s,border-color .15s,transform .15s}
+.flyers button.on{opacity:1;border-color:#fff;transform:translateY(-2px)}
+.flyers button:focus-visible{outline:2px solid var(--gl);outline-offset:2px}
+.demo-cap{font-size:13px;color:var(--mu);text-align:center;max-width:300px}
+.demo-cap b{color:#fff;font-weight:500}
+/* strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:10px}
+.strip .wrap{display:flex;gap:18px 28px;flex-wrap:wrap;justify-content:center;padding:16px 18px;font-size:13.5px;color:var(--mu)}
+.strip span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.strip svg{width:16px;height:16px;stroke:var(--gl);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* sections */
+.sec{padding:64px 0}.sec-h{max-width:620px;margin-bottom:34px}.sec-h p{color:var(--mu);font-size:17px;margin-top:12px}
+.grid{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.f{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 20px 22px;min-width:0}
+.f .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:rgba(22,189,224,.12);margin-bottom:14px}
+.f .ic svg{width:20px;height:20px;stroke:var(--gl);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.f h3{margin-bottom:8px}.f p{color:var(--mu);font-size:15px}
+.f.big{grid-column:1/-1;display:grid;gap:18px}
+.f .tagline{color:#fff;font-size:15px;margin-top:10px}
+/* how */
+.how{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+.how .st{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.how .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:17px;background:linear-gradient(135deg,var(--gl),var(--gl2));color:#06252b}
+.how p{color:var(--mu);font-size:15px;margin-top:4px}
+.how .t{color:#fff;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.08);border-radius:999px;padding:3px 9px;display:inline-block;margin-top:9px}
+/* pricing */
+.price{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 22px;display:grid;gap:22px;position:relative;overflow:hidden}
+.price:before{content:'';position:absolute;inset:0;background:radial-gradient(60% 50% at 20% 0%,rgba(22,189,224,.16),transparent 70%);pointer-events:none}
+.price>*{position:relative}
+.bigfee{font-size:clamp(48px,11vw,84px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.bigfee small{font-size:.32em;color:var(--mu);font-weight:500;letter-spacing:0;display:block;margin-top:6px}
+.zeros{display:grid;gap:8px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.zeros div{background:rgba(255,255,255,.05);border-radius:14px;padding:12px 10px;text-align:center}
+.zeros b{display:block;font-size:22px;font-weight:900}.zeros span{font-size:12.5px;color:var(--mu);display:block;line-height:1.3}
+.ex{display:grid;gap:6px;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px}
+.ex div{display:flex;justify-content:space-between;gap:12px}.ex div>*:last-child{white-space:nowrap;flex:0 0 auto}.ex .tot{border-top:1px solid var(--line);padding-top:8px;margin-top:4px;font-weight:700}.ex .mu{color:var(--mu)}
+.models{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+.m{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}
+.m .pill{display:inline-block;font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(22,189,224,.14);color:var(--gl2);margin-bottom:12px}
+.m h3{margin-bottom:8px}.m p{color:var(--mu);font-size:15px}.m ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:14.5px}
+.m li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:9px}.m li svg{width:18px;height:18px;stroke:var(--gl);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+/* calc */
+.calc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 20px;display:grid;gap:18px}
+.calc label{display:grid;gap:6px;font-size:13.5px;color:var(--mu)}
+.calc input{width:100%;font:inherit;font-size:17px;font-weight:700;color:#fff;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.calc input:focus{outline:2px solid var(--gl);outline-offset:1px;border-color:transparent}
+.calc .in{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.calc .cmp{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.calc .out{display:grid;gap:10px}
+.calc .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:15px;padding:10px 0;border-top:1px solid var(--line)}
+.calc .row b{font-size:18px;font-variant-numeric:tabular-nums}
+.calc .save{background:linear-gradient(135deg,rgba(22,189,224,.18),rgba(79,195,230,.06));border:1px solid rgba(22,189,224,.35);border-radius:16px;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.calc .save b{font-size:clamp(26px,6vw,34px);font-weight:900;letter-spacing:-.02em;color:var(--gl2);font-variant-numeric:tabular-nums}
+.calc .save span{font-size:13.5px;color:var(--mu);max-width:220px}.calc .save>span{white-space:nowrap}
+.calc .fn{font-size:12.5px;color:var(--mu2)}
+.presets{display:flex;gap:8px;flex-wrap:wrap}.presets button{font-size:12.5px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mu)}.presets button.on{background:rgba(255,255,255,.1);color:#fff;border-color:transparent}
+/* reach */
+.reach{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.reach .r{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}
+.reach .r b{display:block;font-size:clamp(28px,6vw,38px);font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:8px}
+.reach .r b.gl{color:var(--gl2)}.reach .r p{color:var(--mu);font-size:14.5px}
+/* examples */
+.exs{display:grid;gap:12px;grid-auto-flow:column;grid-auto-columns:minmax(150px,46%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;margin:0 -18px;padding-left:18px;padding-right:18px}.exs::-webkit-scrollbar{display:none}.exs .ex-c{scroll-snap-align:start}
+.ex-c{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#222 center/cover no-repeat;text-decoration:none;display:block;min-width:0}
+.ex-c:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85))}
+.ex-c div{position:absolute;left:0;right:0;bottom:0;padding:14px;z-index:1}
+.ex-c b{display:block;font-size:15px;line-height:1.15}.ex-c span{font-size:12.5px;color:var(--mu)}
+.ex-c:focus-visible{outline:2px solid var(--gl)}
+/* faq */
+.faq{display:grid;gap:8px;max-width:760px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 18px}
+summary{cursor:pointer;padding:16px 0;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}summary:after{content:'+';font-size:22px;color:var(--mu);font-weight:400;flex:0 0 auto}
+details[open] summary:after{content:'–'}
+details p{color:var(--mu);font-size:15px;padding:0 0 18px}
+/* final cta */
+.final{background:linear-gradient(135deg,rgba(22,189,224,.14),rgba(79,195,230,.03));border:1px solid rgba(22,189,224,.3);border-radius:24px;padding:36px 22px;text-align:center;display:grid;gap:16px;justify-items:center}
+.final p{color:var(--mu);max-width:520px;font-size:16px}
+/* footer */
+footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:13px;color:var(--mu2)}
+footer .wrap{display:grid;gap:14px}footer a{color:var(--mu);text-decoration:none}footer nav{display:flex;gap:16px;flex-wrap:wrap}
+.berlin{display:inline-flex;align-items:center;gap:7px;color:var(--mu)}.berlin i{width:18px;height:12px;border-radius:2px;background:linear-gradient(180deg,#d00 0 50%,#fff 50%);display:inline-block;font-style:normal;position:relative}
+.berlin i:after{content:'';position:absolute;left:5px;top:2px;width:8px;height:8px;background:#000;border-radius:50% 50% 50% 0}
+/* mobile sticky */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,10,10,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;gap:10px}
+.mcta .btn{flex:1}
+body{padding-bottom:84px}
+@media(min-width:760px){
+  .nav nav{display:flex}
+  .hero{padding:72px 0 40px}.hero .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:40px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.f.big{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+  .f.last{grid-column:1/-1;display:grid;grid-template-columns:38px minmax(0,1fr);gap:18px;align-items:center}.f.last .ic{margin:0}.f.last h3{margin-bottom:4px}
+  .how{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .price{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);padding:36px}
+  .models{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reach{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .exs{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;margin:0;padding:0}
+  .mcta{display:none}body{padding-bottom:0}
+  .sec{padding:84px 0}
+}
+@media(min-width:1000px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}.f.big{grid-column:span 3}
+  .how{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .calc{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding:32px}
+}
+@media(prefers-reduced-motion:reduce){.kicker i{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="note">Vorschau 25.10.2026 für tickets.gl030.de · Texte, Zahlen und Design zur Abstimmung · <a href="#offen">offene Punkte unten</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#"><i>GL</i>GL030 Tickets <small>· Berlin</small></a>
+    <nav>
+      <a href="#design">Design</a><a href="#funktionen">Funktionen</a><a href="#preise">Preise</a><a href="#rechner">Rechner</a><a href="#start">So geht’s</a>
+    </nav>
+    <a class="btn btn-gl" href="https://wa.me/491777615441?text=Hi%2C%20ich%20m%C3%B6chte%20Tickets%20%C3%BCber%20GL030%20verkaufen.">Loslegen</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-glow" id="heroGlow"></div>
+  <div class="wrap">
+    <div>
+      <div class="kicker"><i></i><b>Live seit Oktober 2026</b> – erste Berliner Veranstalter verkaufen bereits</div>
+      <h1>Eure Tickets.<br>Euer Design.<br>Unsere Technik.</h1>
+      <p class="lead">Eine Ticketseite, die aussieht wie euer Event und nicht wie ein Ticketshop. Flyer hochladen, Preis eintragen, Link teilen – <b>in Minuten im Verkauf.</b> Mit Apple Pay, QR-Einlass und einer Gebühr, die der Gast zahlt.</p>
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://wa.me/491777615441?text=Hi%2C%20ich%20m%C3%B6chte%20Tickets%20%C3%BCber%20GL030%20verkaufen."><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Per WhatsApp starten</a>
+        <a class="btn btn-ghost" href="#beispiele">Live-Beispiele ansehen</a>
+      </div>
+      <p class="fine">Keine Grundgebühr, keine Laufzeit. 5 % + 0,39 € je verkauftem Ticket, inkl. USt, standardmäßig vom Gast getragen.</p>
+    </div>
+    <div class="demo" id="design">
+      <div class="phone" aria-label="Vorschau der Ticketseite im Eventdesign">
+        <div class="screen" id="screen">
+          <div class="s-glow" id="sGlow"></div>
+          <div class="s-top">
+            <div class="s-org"><img id="sLogo" alt=""><div><b id="sOrg">Purple Events</b><span>präsentiert</span></div></div>
+            <div class="s-lng"><span class="on">DE</span><span>EN</span><span>ES</span></div>
+          </div>
+          <div class="s-flyer" id="sFlyer"></div>
+          <div class="s-body">
+            <div class="s-tags" id="sTags"><span>Party</span><span>Hip Hop</span><span>Halloween</span><span>18+</span></div>
+            <div class="s-title" id="sTitle">THE GRAND NIGHTMARE</div>
+            <div class="s-fact"><i></i><span id="sDate">Sa, 31. Oktober 2026 · 22:00 Uhr</span></div>
+            <div class="s-fact"><i></i><span id="sVenue">Roll26, Berlin</span></div>
+            <div class="s-box">
+              <h4>Tickets</h4>
+              <div class="s-tk"><div><b id="sT1">Early Bird</b><small id="sP1">16,14 € inkl. Servicegebühr · nur noch 8</small></div><div class="s-step"><span>−</span><span>0</span><span class="p">+</span></div></div>
+              <div class="s-tk"><div><b id="sT2">Regulär</b><small id="sP2">21,39 € inkl. Servicegebühr</small></div><div class="s-step"><span>−</span><span>1</span><span class="p">+</span></div></div>
+            </div>
+          </div>
+          <div class="s-foot">Tickets über Gästeliste030</div>
+          <div class="s-bar"><div><b id="sSum">21,39 €</b><small>1 Ticket</small></div><span class="go">Weiter</span></div>
+        </div>
+      </div>
+      <div class="flyers" role="tablist" aria-label="Flyer wählen">
+        <button role="tab" data-i="0" class="on" aria-label="The Grand Nightmare"></button>
+        <button role="tab" data-i="1" aria-label="No Limit x Halloween"></button>
+        <button role="tab" data-i="2" aria-label="Only Us x Halloween"></button>
+      </div>
+      <p class="demo-cap">Tippt einen Flyer an: <b>Farbstimmung, Logo und Name</b> kommen von euch – nur die Adresse bleibt tickets.gl030.de.</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap">
+  <span><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>Made in Berlin</span>
+  <span><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Apple Pay, Google Pay, Karte</span>
+  <span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3z"/></svg>QR-Einlass mit Scanner</span>
+  <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>DE · EN · ES automatisch</span>
+  <span><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Zahlung über Stripe</span>
+</div></div>
+
+<section class="sec" id="funktionen">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Alles drin, was eine Clubnacht braucht</h2>
+      <p>Gebaut für Berliner Veranstalter – mit dem Team, das seit 2010 Gästelisten für Berliner Clubs betreibt.</p>
+    </div>
+    <div class="grid">
+      <div class="f big">
+        <div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></div>
+          <h3>Die Seite passt sich eurem Flyer an</h3>
+          <p>Flyer hochladen – fertig. Farbschein, Bühne und Stimmung entstehen aus eurem Motiv, oben steht euer Logo und euer Name. Gästeliste030 taucht nur im Footer auf. Die Seite ist fürs Handy gebaut, weil Links aus Instagram und WhatsApp genau dort landen.</p>
+          <p class="tagline">Ein Link für Bio, Story, WhatsApp-Gruppe und Promoter – außer der Adresse sieht alles nach euch aus.</p>
+        </div>
+        <div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M20 12V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7"/><path d="M4 9h16"/><path d="M17 16l2 2 4-4"/></svg></div>
+          <h3>Kasse in 30 Sekunden</h3>
+          <p>Ticket wählen, E-Mail, Apple Pay oder Google Pay – ohne Konto, ohne App. Zahlung über Stripe, in der Sprache des Gastes (DE/EN/ES nach Handy-Einstellung). Das Ticket kommt sofort per E-Mail mit eigenem QR-Code je Ticket.</p>
+        </div>
+      </div>
+
+      <div class="f">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3z"/></svg></div>
+        <h3>Ein Scanner für Ticket und Gästeliste</h3>
+        <p>Der Einlass scannt Tickets, Gästeliste und Promoter-Gäste mit demselben Handy – klar unterscheidbar, mit Live-Zählern. Funktioniert auch bei schlechtem Netz.</p>
+      </div>
+      <div class="f">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Erstattung direkt an der Tür</h3>
+        <p>Kein Einlass wegen Dresscode, Alter oder Kapazität? Ticket scannen, Grund wählen, Geld geht automatisch zurück – mit 3 Minuten Rückgängig-Fenster. Keine Diskussion, keine Mail am Montag.</p>
+      </div>
+      <div class="f">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Early Bird mit Countdown</h3>
+        <p>Mehrere Ticketarten mit Preis, Kontingent und Verkaufsende. „Nur noch 8“ und ein laufender Countdown stehen auf der Ticketseite und auf allen GL030-Listen – das verkauft.</p>
+      </div>
+      <div class="f">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 16V9M11 16V5M16 16v-7M21 16V11"/></svg></div>
+        <h3>Analyse, die ehrlich ist</h3>
+        <p>Je Bestellung seht ihr die Herkunft: Instagram, Promoter-Link, Google, GL030, Meta Ads. Verkäufe pro Tag, Kaufweg von Aufruf bis Zahlung – ohne Cookies. Auf Wunsch Meta Conversions API, damit eure Ads auf Käufe lernen.</p>
+      </div>
+      <div class="f">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <h3>Reichweite inklusive</h3>
+        <p>Jedes Ticket-Event bekommt einen Tickets-Button in allen Listen auf gaesteliste030.de, auf den Themenseiten (Halloween, Silvester, Hip Hop, Electro) und in den Antworten von ChatGPT &amp; Co., die GL030 als Quelle nutzen.</p>
+      </div>
+      <div class="f">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+        <h3>Abrechnung ohne Nachrechnen</h3>
+        <p>Je Event eine Abrechnung mit allen Verkäufen, Erstattungen und Gebühren, CSV-Export, täglicher Verkaufsbericht per Mail. Eure Käufer gehören euch: Newsletter-Opt-in direkt in der Kasse.</p>
+      </div>
+      <div class="f last">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div><h3>Ein Mensch am Telefon</h3>
+        <p>Freischaltung, Fragen, Samstagnacht um eins: ihr erreicht uns per WhatsApp. Wir kennen die Clubs, die Promoter und die Tür – keine Hotline, kein Ticketsystem im Ticketsystem.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="preise" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Eine Gebühr. Zahlt der Gast.</h2>
+      <p>Keine Grundgebühr, keine Einrichtung, kein Vertrag mit Laufzeit. Ihr zahlt nichts, wenn ihr nichts verkauft.</p>
+    </div>
+    <div class="price">
+      <div>
+        <div class="bigfee">5 % + 0,39 €<small>je verkauftem Ticket, inkl. USt – als Servicegebühr vom Gast getragen</small></div>
+        <div class="zeros" style="margin-top:22px">
+          <div><b>0 €</b><span>Grundgebühr pro Monat</span></div>
+          <div><b>0 €</b><span>Einrichtung &amp; Designseite</span></div>
+          <div><b>0 €</b><span>Scanner &amp; Türzugänge</span></div>
+        </div>
+      </div>
+      <div class="ex">
+        <div><span>Euer Ticketpreis</span><b>20,00 €</b></div>
+        <div><span class="mu">Servicegebühr GL030 (5 % + 0,39 €)</span><span class="mu">+ 1,39 €</span></div>
+        <div class="tot"><span>Der Gast zahlt</span><b>21,39 €</b></div>
+        <div><span class="mu">Zahlungsabwicklung Stripe (ca. 1,5 % + 0,25 € bei EU-Karten)</span><span class="mu">− 0,57 €</span></div>
+        <div class="tot"><span>Bei euch kommen an</span><b>≈ 19,43 €</b></div>
+        <p class="mu" style="font-size:12.5px;margin-top:6px">Stripe-Gebühren hängen von der Zahlungsart ab (Apple Pay und EU-Karten sind am günstigsten). Ihr könnt die Servicegebühr auch selbst tragen und einen glatten Preis zeigen.</p>
+      </div>
+    </div>
+
+    <div class="models" style="margin-top:14px">
+      <div class="m">
+        <span class="pill">Für die meisten Veranstalter</span>
+        <h3>Wir verkaufen für euch</h3>
+        <p>Ihr braucht kein Stripe-Konto und keine Technik. GL030 verkauft die Tickets in eurem Auftrag, ihr stellt nach dem Event eine Rechnung über die Einnahmen.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Start am selben Tag – nur ein kurzer Vertrag</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Vorschuss bis 25 % vor dem Event möglich</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Abrechnung 7 Tage nach dem Event</li>
+        </ul>
+      </div>
+      <div class="m">
+        <span class="pill">Für Clubs &amp; große Reihen</span>
+        <h3>Euer eigenes Stripe-Konto</h3>
+        <p>Das Geld landet direkt bei euch, GL030 behält nur die Servicegebühr. Stripe-Anmeldung in 10 Minuten im Partnerbereich, ihr seid rechtlich selbst Verkäufer.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Auszahlung laut eurem Stripe-Rhythmus</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Monatliche Gebührenrechnung automatisch</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Kein Geld läuft über GL030</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rechner" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Was ihr pro Event spart</h2>
+      <p>Tragt ein, was euer aktuelles Ticketing dem Gast oder euch berechnet. Zahlungsabwicklung ist auf beiden Seiten enthalten, damit der Vergleich fair ist.</p>
+    </div>
+    <div class="calc">
+      <div style="display:grid;gap:14px">
+        <div class="in">
+          <label>Ticketpreis in €<input id="cPrice" type="number" inputmode="decimal" min="1" step="0.5" value="20"></label>
+          <label>Verkaufte Tickets<input id="cQty" type="number" inputmode="numeric" min="1" step="10" value="200"></label>
+        </div>
+        <div>
+          <p class="mu" style="font-size:13.5px;margin-bottom:8px">Euer bisheriges Ticketing – Gebühr je Ticket inkl. Zahlung</p>
+          <div class="presets" id="presets">
+            <button data-p="6.5" data-f="0.99">Großer Anbieter A</button>
+            <button data-p="8" data-f="0.6">Großer Anbieter B</button>
+            <button data-p="10" data-f="0">Marktplatz mit 10 %</button>
+            <button data-p="" data-f="" class="on">Selbst eintragen</button>
+          </div>
+          <div class="cmp" style="margin-top:10px">
+            <label>Prozent<input id="cPct" type="number" inputmode="decimal" min="0" step="0.1" value="7.5"></label>
+            <label>Fix je Ticket in €<input id="cFix" type="number" inputmode="decimal" min="0" step="0.05" value="0.99"></label>
+          </div>
+        </div>
+      </div>
+      <div class="out">
+        <div class="save"><div><b id="oSave">0 €</b><br><span>weniger Gebühren pro Event mit GL030 Tickets</span></div><span id="oPct" style="text-align:right;font-weight:700;color:#fff"></span></div>
+        <div class="row"><span>Gebühren gesamt mit GL030 (inkl. Stripe)</span><b id="oGl">0 €</b></div>
+        <div class="row"><span>Gebühren gesamt bisher</span><b id="oCmp">0 €</b></div>
+        <div class="row"><span>Je Ticket: GL030 / bisher</span><b id="oPer">0 € / 0 €</b></div>
+        <p class="fn">GL030: 5 % + 0,39 € Servicegebühr plus Stripe ca. 1,5 % + 0,25 € (EU-Karte). Voreinstellungen sind Beispiele – entscheidend ist, was auf eurer letzten Abrechnung steht.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reichweite" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Andere verkaufen Tickets. Wir bringen auch die Gäste.</h2>
+      <p>Gästeliste030 ist seit 2010 die Adresse, an der Berlin seine Partynacht sucht – auf Deutsch, Englisch und Spanisch. Jedes Ticket-Event steht automatisch dort.</p>
+    </div>
+    <div class="reach">
+      <div class="r"><b class="gl">[Zahl]</b><p>Besucher im Monat auf gaesteliste030.de – <span style="color:var(--notetx)">Robert: GA4-Wert der letzten 30 Tage einsetzen</span></p></div>
+      <div class="r"><b>Tickets-Button</b><p>in jeder Eventliste, auf der Startseite, in den Genre- und Themenseiten (Halloween, Silvester) – mit Countdown und Restkontingent.</p></div>
+      <div class="r"><b>KI-Suche</b><p>ChatGPT, Perplexity und Google AI nutzen GL030 als Quelle für „heute in Berlin“ – euer Event mit Ticketlink inklusive.</p></div>
+    </div>
+    <p class="mu" style="margin-top:18px;font-size:14.5px;max-width:720px">Dazu auf Wunsch: Empfehlungs-Platz im Feed, Newsletter, Social – oder gleich Meta- und TikTok-Kampagnen mit Erfolgsmessung bis zum verkauften Ticket. Preise sagen wir euch im Gespräch, abhängig von Reihe und Laufzeit.</p>
+  </div>
+</section>
+
+<section class="sec" id="beispiele" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>So sieht es live aus</h2>
+      <p>Echte Ticketseiten Berliner Veranstalter – drei Flyer, drei Looks, eine Technik.</p>
+    </div>
+    <div class="exs" id="exs"></div>
+  </div>
+</section>
+
+<section class="sec" id="start" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Heute anfragen, morgen verkaufen</h2>
+      <p>Der ganze Start passiert am Handy.</p>
+    </div>
+    <div class="how">
+      <div class="st"><div class="n">1</div><div><h3>Kurz schreiben</h3><p>WhatsApp an 0177 7615441 mit Veranstalter und erstem Event. Wir schalten euch frei und schicken den kurzen Vertrag.</p><span class="t">10 Minuten</span></div></div>
+      <div class="st"><div class="n">2</div><div><h3>Event &amp; Ticketart anlegen</h3><p>Im Partnerbereich: Flyer, Preis, Kontingent, Verkaufsende. Die Rechnung „Gast zahlt / bei euch kommt an“ steht live daneben.</p><span class="t">5 Minuten</span></div></div>
+      <div class="st"><div class="n">3</div><div><h3>Link teilen</h3><p>tickets.gl030.de/euer-event – in die Bio, in Stories, an Promoter. Jeder Link zählt für sich, ihr seht, wer verkauft.</p><span class="t">sofort</span></div></div>
+      <div class="st"><div class="n">4</div><div><h3>Scannen &amp; abrechnen</h3><p>Türzugänge für die Crew, Live-Zähler am Abend, Abrechnung und Auszahlung nach dem Event.</p><span class="t">automatisch</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h"><h2>Gut zu wissen</h2></div>
+    <div class="faq">
+      <details><summary>Brauche ich ein Gewerbe oder ein Stripe-Konto?</summary><p>Für den Start nicht. Im Modell „Wir verkaufen für euch“ läuft die Zahlung über GL030, ihr stellt nach dem Event eine Rechnung über eure Einnahmen. Ein eigenes Stripe-Konto lohnt sich ab regelmäßigen Events – dann landet das Geld direkt bei euch.</p></details>
+      <details><summary>Kann ich die Gebühr selbst übernehmen?</summary><p>Ja. Ihr entscheidet je Ticketart, ob der Gast die Servicegebühr sieht oder ihr sie im Preis versteckt und einen glatten Betrag zeigt.</p></details>
+      <details><summary>Was passiert bei einer Absage?</summary><p>Alle Käufer bekommen den vollen Betrag inklusive Servicegebühr zurück – wir erstatten alle Bestellungen für euch, mit E-Mail im Design eures Events. Einzelne Tickets könnt ihr jederzeit im Partnerbereich erstatten.</p></details>
+      <details><summary>Wie funktioniert der Einlass?</summary><p>Ihr legt Türzugänge an, die Crew öffnet den Scanner im Browser – keine App-Installation. Jeder QR-Code gilt einmal, Gästeliste und Ticket werden im selben Scan erkannt. Erstattungen an der Tür sind pro Zugang abschaltbar.</p></details>
+      <details><summary>Muss mein Event auf Gästeliste030 stehen?</summary><p>Ja, das ist der Reichweitenvorteil: Die Ticketseite hängt an eurem GL030-Event und erscheint damit in allen Listen und Themenseiten. Der Ticketlink funktioniert natürlich auch komplett ohne GL030-Traffic, zum Beispiel aus Instagram.</p></details>
+      <details><summary>Wem gehören die Käuferdaten?</summary><p>Euch, sobald der Gast dem Newsletter-Opt-in für euch zustimmt – das Häkchen steht direkt in der Kasse. Ohne Zustimmung seht ihr Name, Ticketart und Status, aber keine E-Mail. DSGVO-konform, Hosting in Deutschland, Stripe als Zahlungsdienstleister.</p></details>
+      <details><summary>Ist das wirklich günstiger als mein aktueller Anbieter?</summary><p>Rechnet es oben mit euren Zahlen. 5 % + 0,39 € inklusive Umsatzsteuer liegt unter den üblichen Gebühren großer Plattformen, und Grund-, Einrichtungs- oder Listungsgebühren gibt es bei uns nicht.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="final">
+      <h2>Euer nächstes Event mit Tickets?</h2>
+      <p>Eine Nachricht reicht. Wir schalten euch frei, ihr legt die Ticketart an, der Link geht raus – meistens noch am selben Tag.</p>
+      <a class="btn btn-wa" href="https://wa.me/491777615441?text=Hi%2C%20ich%20m%C3%B6chte%20Tickets%20%C3%BCber%20GL030%20verkaufen."><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp: 0177 7615441</a>
+      <p style="font-size:13.5px">Oder per Mail an <a href="mailto:info@gaesteliste030.de">info@gaesteliste030.de</a> – Antwort meist innerhalb weniger Stunden, auch am Wochenende.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="offen" style="padding-top:0">
+  <div class="wrap">
+    <div class="note" style="border-radius:14px;text-align:left;padding:14px 16px;line-height:1.55">
+      <b>Offene Punkte für Robert (nicht Teil der Seite):</b> (1) Besucherzahl im Block „Reichweite“ – echter GA4-Wert. (2) Rechner-Voreinstellungen „Anbieter A/B“ sind bewusst anonym; namentliche Vergleiche nur mit belegten, aktuellen Preislisten (UWG § 6). (3) „Vorschuss bis 25 %“ und „Abrechnung 7 Tage“ stammen aus dem Arwin-Vertrag – gilt das als Standard? (4) Anrede „ihr/euch“ laut Regel vom 24.10.; Alternative „du“ wie auf ads030.de. (5) Stripe-Satz 1,5 % + 0,25 € = EU-Standardkarten; bei Revolut Pay/Nicht-EU höher.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="berlin"><i></i>Gästeliste030 · Eventpage Solutions UG (haftungsbeschränkt), Torstraße 225, 10115 Berlin</span>
+    <nav><a href="https://www.gaesteliste030.de/tickets-kaufbedingungen">Kaufbedingungen</a><a href="https://www.gaesteliste030.de/de/about/privacy">Datenschutz</a><a href="https://www.gaesteliste030.de/de/about/legal">Impressum</a><a href="https://www.gaesteliste030.de/">gaesteliste030.de</a></nav>
+    <p>Zahlungen über Stripe Payments Europe Ltd. Im Modell „Wir verkaufen für euch“ ist Eventpage Solutions UG Verkäufer im Auftrag des Veranstalters; im Modell „eigenes Stripe-Konto“ ist der Veranstalter Verkäufer und GL030 erhält eine Servicegebühr. Alle Gebühren inkl. USt.</p>
+  </div>
+</footer>
+
+<div class="mcta">
+  <a class="btn btn-wa" href="https://wa.me/491777615441?text=Hi%2C%20ich%20m%C3%B6chte%20Tickets%20%C3%BCber%20GL030%20verkaufen.">Per WhatsApp starten</a>
+  <a class="btn btn-ghost" href="#preise">Preise</a>
+</div>
+
+<script>
+(function(){
+  var EX=[
+    {org:'Purple Events',title:'THE GRAND NIGHTMARE',date:'Sa, 31. Oktober 2026 · 22:00 Uhr',venue:'Roll26, Berlin',tags:['Party','Hip Hop','Halloween','18+'],t1:'Early Bird',p1:'16,14 € inkl. Servicegebühr · nur noch 8',t2:'Regulär',p2:'21,39 € inkl. Servicegebühr',sum:'21,39 €',acc:'#c4161c',
+     flyer:'https://cdn.evntsvc.net/r/e/ev_bmYeUYugO0SMU2c_z97YEg-836_lg.jpg',logo:'https://cdn.evntsvc.net/r/f/image/Yg3QJ9-NG0-NQXOGn0ZxDQ/eventbrand/vbJotIkiGkO9Ez0869Aaeg/logo/mGgW86eJG0ylxRCpvli4WQ.jpg',url:'https://tickets.gl030.de/the-grand-nightmare-31-10'},
+    {org:'No Limit',title:'No Limit x Halloween',date:'Fr, 30. Oktober 2026 · 23:00 Uhr',venue:'Amano Grand Central, Berlin',tags:['Party','Halloween','Hip Hop','ab 18'],t1:'Spooky Bird',p1:'16,14 € inkl. Servicegebühr · nur noch 14',t2:'Regulär',p2:'21,39 € inkl. Servicegebühr',sum:'21,39 €',acc:'#e6821e',
+     flyer:'https://cdn.evntsvc.net/r/e/ev_drwUDPRMc0SzLnNPTxn_TA-717_lg.jpg',logo:'https://cdn.evntsvc.net/r/f/image/7vVDDwjF90-RhneFWBVouw/eventbrand/D2N5XFI8ikiL3U1-tX-l4g/logo/84MGFkHRn0K_kkVXmZjo_Q.jpg',url:'https://tickets.gl030.de/no-limit-x-halloween-30-10'},
+    {org:'Only Us',title:'Only Us x Halloween',date:'Sa, 31. Oktober 2026 · 23:00 Uhr',venue:'Amano Grand Central, Berlin',tags:['Party','Hip Hop','Halloween'],t1:'Super Spooky Bird',p1:'16,14 € inkl. Servicegebühr · nur noch 4',t2:'Spooky Bird',p2:'21,39 € inkl. Servicegebühr · nur noch 10',sum:'21,39 €',acc:'#7a3fe0',
+     flyer:'https://cdn.evntsvc.net/r/e/ev_junrMEkBfUyc3j7LQ3nscQ-791_lg.jpg',logo:'https://cdn.evntsvc.net/r/f/image/9JMQK0rVNUe4zX_psYUtdw/eventbrand/RqdkzM3ZHkWaMiw1Wb_ODg/logo/a4nwQ55uWkic3vZidEi1vw.jpg',url:'https://tickets.gl030.de/only-us-x-halloween-31-10'}
+  ];
+  var $=function(id){return document.getElementById(id)};
+  var btns=document.querySelectorAll('.flyers button');
+  function show(i){
+    var e=EX[i];
+    $('sGlow').style.backgroundImage='url('+e.flyer+')';
+    $('heroGlow').style.backgroundImage='url('+e.flyer+')';
+    $('sFlyer').style.backgroundImage='url('+e.flyer+')';
+    $('sLogo').src=e.logo;$('sOrg').textContent=e.org;$('sTitle').textContent=e.title;$('sDate').textContent=e.date;$('sVenue').textContent=e.venue;
+    $('sTags').innerHTML=e.tags.map(function(t){return '<span>'+t+'</span>'}).join('');
+    $('sT1').textContent=e.t1;$('sP1').textContent=e.p1;$('sT2').textContent=e.t2;$('sP2').textContent=e.p2;$('sSum').textContent=e.sum;
+    $('screen').style.setProperty('--pacc',e.acc);
+    for(var k=0;k<btns.length;k++){btns[k].classList.toggle('on',k===i);btns[k].setAttribute('aria-selected',k===i)}
+  }
+  for(var k=0;k<btns.length;k++){btns[k].style.backgroundImage='url('+EX[k].flyer+')';btns[k].addEventListener('click',function(){show(+this.getAttribute('data-i'))})}
+  show(0);
+  // auto-rotate until the first interaction
+  var auto=setInterval(function(){var cur=document.querySelector('.flyers .on');var n=(+cur.getAttribute('data-i')+1)%EX.length;show(n)},4200);
+  for(var k=0;k<btns.length;k++){btns[k].addEventListener('click',function(){clearInterval(auto)})}
+  // examples
+  $('exs').innerHTML=EX.map(function(e){return '<a class="ex-c" href="'+e.url+'" target="_blank" rel="noopener" style="background-image:url('+e.flyer+')"><div><b>'+e.title+'</b><span>'+e.org+' · '+e.venue.split(',')[0]+'</span></div></a>'}).join('');
+  // calculator
+  function eur(v){return v.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'}
+  function calc(){
+    var p=+$('cPrice').value||0,q=+$('cQty').value||0,cp=+$('cPct').value||0,cf=+$('cFix').value||0;
+    var gl=(p*0.05+0.39)+(p*0.015+0.25); var cmp=p*cp/100+cf;
+    var tg=gl*q,tc=cmp*q,sv=tc-tg;
+    $('oGl').textContent=eur(tg);$('oCmp').textContent=eur(tc);$('oPer').textContent=eur(gl)+' / '+eur(cmp);
+    $('oSave').textContent=(sv>=0?'':'−')+eur(Math.abs(sv));
+    $('oPct').textContent=tc>0?(sv>=0?'−':'+')+Math.round(Math.abs(sv)/tc*100)+' %':'';
+  }
+  ['cPrice','cQty','cPct','cFix'].forEach(function(id){$(id).addEventListener('input',calc)});
+  var ps=document.querySelectorAll('#presets button');
+  for(var k=0;k<ps.length;k++){ps[k].addEventListener('click',function(){
+    for(var j=0;j<ps.length;j++)ps[j].classList.remove('on');this.classList.add('on');
+    if(this.getAttribute('data-p')!==''){$('cPct').value=this.getAttribute('data-p');$('cFix').value=this.getAttribute('data-f')}
+    calc();
+  })}
+  calc();
+})();
+</script>
+</body>
+</html>
