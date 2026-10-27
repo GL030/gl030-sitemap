@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GL030 Tickets – Tickets verkaufen im Design eures Events. Made in Berlin.</title>
 <meta name="description" content="Verkauft Tickets in Minuten: eigene Ticketseite im Look eures Flyers, Apple Pay &amp; Google Pay, QR-Einlass, Erstattung an der Tür, Analyse ohne Cookies. 5 % + 0,39 € je Ticket, zahlt der Gast. Keine Grundgebühr. Made in Berlin.">
+<link rel="icon" type="image/png" href="icon-180.png">
+<link rel="apple-touch-icon" href="icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b0a0a;--card:#151313;--card2:#1e1a1a;--line:rgba(255,255,255,.09);--tx:#f3eeee;--mu:#a59c9b;--mu2:#7d7372;--gl:#16bde0;--gl2:#4fc3e6;--acc:#c4161c;--note:#3a2f0f;--notetx:#f0d080}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}html,body{margin:0;max-width:100%;overflow-x:hidden}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}html,body{margin:0;max-width:100%;overflow-x:hidden}
 body{font-family:Roboto,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;-webkit-font-smoothing:antialiased;font-size:16px}
 a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}img{max-width:100%;display:block}
 h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.08}
@@ -21,10 +23,11 @@ p{margin:0}.mu{color:var(--mu)}.wrap{max-width:1120px;margin:0 auto;padding:0 18
 .note a{color:inherit}
 /* nav */
 .nav{position:sticky;top:0;z-index:20;background:rgba(11,10,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:17px;letter-spacing:-.01em;white-space:nowrap}
-.brand i{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--gl),var(--gl2));color:#06252b;font-style:normal;font-weight:900;font-size:12px}
-.brand small{color:var(--mu);font-weight:500;font-size:13px}
+.brand img{height:50px;width:auto;display:block;filter:drop-shadow(0 4px 14px rgba(22,189,224,.25))}
+.final .logo{height:92px;width:auto;filter:drop-shadow(0 10px 30px rgba(22,189,224,.3))}
+footer .flogo{height:44px;width:auto}
 .nav nav{display:none;gap:22px;font-size:14.5px;color:var(--mu)}.nav nav a{text-decoration:none}.nav nav a:hover{color:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:700;font-size:15px;text-decoration:none;border:0;white-space:nowrap;transition:transform .12s ease}
 .btn:active{transform:scale(.98)}
@@ -181,7 +184,7 @@ body{padding-bottom:84px}
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#"><i>GL</i>GL030 Tickets <small>· Berlin</small></a>
+    <a class="brand" href="#" aria-label="GL030 Tickets"><img src="logo-192.webp" srcset="logo-96.webp 1x, logo-192.webp 2x, logo-360.webp 3x" width="104" height="50" alt="GL030 Tickets"></a>
     <nav>
       <a href="#design">Design</a><a href="#funktionen">Funktionen</a><a href="#preise">Preise</a><a href="#rechner">Rechner</a><a href="#start">So geht’s</a>
     </nav>
@@ -449,6 +452,7 @@ body{padding-bottom:84px}
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <div class="final">
+      <img class="logo" src="logo-360.webp" width="190" height="92" alt="GL030 Tickets">
       <h2>Euer nächstes Event mit Tickets?</h2>
       <p>Eine Nachricht reicht. Wir schalten euch frei, ihr legt die Ticketart an, der Link geht raus – meistens noch am selben Tag.</p>
       <a class="btn btn-wa" href="https://wa.me/491777615441?text=Hi%2C%20ich%20m%C3%B6chte%20Tickets%20%C3%BCber%20GL030%20verkaufen."><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp: 0177 7615441</a>
@@ -467,6 +471,7 @@ body{padding-bottom:84px}
 
 <footer>
   <div class="wrap">
+    <img class="flogo" src="logo-192.webp" width="91" height="44" alt="GL030 Tickets">
     <span class="berlin"><i></i>Gästeliste030 · Eventpage Solutions UG (haftungsbeschränkt), Torstraße 225, 10115 Berlin</span>
     <nav><a href="https://www.gaesteliste030.de/tickets-kaufbedingungen">Kaufbedingungen</a><a href="https://www.gaesteliste030.de/de/about/privacy">Datenschutz</a><a href="https://www.gaesteliste030.de/de/about/legal">Impressum</a><a href="https://www.gaesteliste030.de/">gaesteliste030.de</a></nav>
     <p>Zahlungen über Stripe Payments Europe Ltd. Im Modell „Wir verkaufen für euch“ ist Eventpage Solutions UG Verkäufer im Auftrag des Veranstalters; im Modell „eigenes Stripe-Konto“ ist der Veranstalter Verkäufer und GL030 erhält eine Servicegebühr. Alle Gebühren inkl. USt.</p>
