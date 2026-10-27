@@ -1,4 +1,10 @@
 {
+"/de/berlin/events/electro/01-11-26/klubkneipe-x-sunset-grooves": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T22:00:00Z",
+"g_last": "2026-10-26T22:00:00Z"
+},
 "/de/berlin/events/electro/03-11-26/klubkneipe-x-tuesday-ritual-shibari-workshop": {
 "b_first": "2026-10-25T17:00:00Z",
 "b_last": "2026-10-25T17:00:00Z",
@@ -8,6 +14,16 @@
 "/de/berlin/events/electro/03-11-26/open-decks-tischtennis-open-air-indoors": {
 "g_first": "2026-10-13T00:00:00Z",
 "g_last": "2026-10-13T00:00:00Z"
+},
+"/de/berlin/events/electro/05-11-26/sssmile-afterhour-flinta-special": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T20:00:00Z",
+"g_last": "2026-10-26T20:00:00Z"
+},
+"/de/berlin/events/electro/06-11-26/dionys-hardtechno-x-trancebounce-rave-2-floors": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/de/berlin/events/electro/06-11-26/lauter-unsinn": {
 "b_first": "2026-10-16T12:00:00Z",
@@ -25,6 +41,14 @@
 "g_first": "2026-10-19T10:00:00Z",
 "g_last": "2026-10-19T10:00:00Z"
 },
+"/de/berlin/events/electro/08-11-26/klubkneipe-x-housecats": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
+"/de/berlin/events/electro/10-11-26/klubkneipe-x-tuesday-ritual-vulva-workshop": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
 "/de/berlin/events/electro/12-11-26/house-education-09": {
 "b_first": "2026-10-23T13:00:00Z",
 "b_last": "2026-10-23T13:00:00Z"
@@ -37,7 +61,7 @@
 },
 "/de/berlin/events/electro/14-11-26/inception-w-luminatix-2-floors-goa-techno": {
 "b_first": "2026-10-19T15:00:00Z",
-"b_last": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-19T16:00:00Z",
 "g_last": "2026-10-24T19:00:00Z"
 },
@@ -46,6 +70,14 @@
 "b_last": "2026-10-22T19:00:00Z",
 "g_first": "2026-10-16T10:00:00Z",
 "g_last": "2026-10-24T13:00:00Z"
+},
+"/de/berlin/events/electro/15-11-26/klubkneipe-x-housecats": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
+"/de/berlin/events/electro/17-11-26/klubkneipe-x-tuesday-ritual": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/de/berlin/events/electro/17-11-26/open-decks-tischtennis-open-air-indoors": {
 "g_first": "2026-10-22T02:00:00Z",
@@ -67,17 +99,9 @@
 "g_first": "2026-10-21T22:00:00Z",
 "g_last": "2026-10-21T22:00:00Z"
 },
-"/de/berlin/events/electro/24-10-26/heisss-i-30-hours": {
-"b_first": "2026-10-20T13:00:00Z",
-"b_last": "2026-10-26T01:00:00Z",
-"g_first": "2026-10-21T10:00:00Z",
-"g_last": "2026-10-26T00:00:00Z"
-},
-"/de/berlin/events/electro/26-10-26/electric-monday-kitkat": {
-"b_first": "2026-10-20T13:00:00Z",
-"b_last": "2026-10-26T08:00:00Z",
-"g_first": "2026-10-20T12:00:00Z",
-"g_last": "2026-10-20T12:00:00Z"
+"/de/berlin/events/electro/22-11-26/klubkneipe-x-dance-salon": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/de/berlin/events/electro/27-10-26/klubkneipe-x-tuesday-ritual-tattoo-flash-day": {
 "b_first": "2026-10-07T23:00:00Z",
@@ -107,13 +131,27 @@
 "g_first": "2026-10-20T12:00:00Z",
 "g_last": "2026-10-22T15:00:00Z"
 },
+"/de/berlin/events/electro/28-10-26/tresor-new-faces-hosted-by-scheimukke": {
+"b_first": "2026-10-27T09:00:00Z",
+"b_last": "2026-10-27T09:00:00Z"
+},
 "/de/berlin/events/electro/28-11-26/unleashed-by-under": {
 "b_first": "2026-10-21T13:00:00Z",
-"b_last": "2026-10-25T03:00:00Z"
+"b_last": "2026-10-26T13:00:00Z"
 },
 "/de/berlin/events/electro/29-10-26/chantals-house-of-shame": {
 "g_first": "2026-10-21T09:00:00Z",
 "g_last": "2026-10-21T09:00:00Z"
+},
+"/de/berlin/events/electro/29-11-26/klubkneipe-x-resonance": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
+"/de/berlin/events/electro/29-11-26/rebon-japanese-music-festival-": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-27T05:00:00Z",
+"g_last": "2026-10-27T05:00:00Z"
 },
 "/de/berlin/events/electro/30-10-26/5-years-of-gabber-industries-berlin": {
 "b_first": "2026-10-24T17:00:00Z",
@@ -121,15 +159,15 @@
 },
 "/de/berlin/events/halloween/30-10-26": {
 "b_first": "2026-10-07T16:00:00Z",
-"b_last": "2026-10-26T09:00:00Z",
+"b_last": "2026-10-27T08:00:00Z",
 "g_first": "2026-10-14T12:00:00Z",
-"g_last": "2026-10-26T09:00:00Z"
+"g_last": "2026-10-26T19:00:00Z"
 },
 "/de/berlin/events/halloween/31-10-26": {
 "b_first": "2026-10-07T10:00:00Z",
-"b_last": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-14T19:00:00Z",
-"g_last": "2026-10-25T18:00:00Z"
+"g_last": "2026-10-27T07:00:00Z"
 },
 "/de/berlin/events/halloween/808/30-10-2026": {
 "b_first": "2026-10-08T11:00:00Z",
@@ -141,7 +179,7 @@
 "b_first": "2026-10-08T19:00:00Z",
 "b_last": "2026-10-08T19:00:00Z",
 "g_first": "2026-10-20T11:00:00Z",
-"g_last": "2026-10-20T14:00:00Z"
+"g_last": "2026-10-26T12:00:00Z"
 },
 "/de/berlin/events/halloween/900yard": {
 "b_first": "2026-10-20T13:00:00Z",
@@ -151,7 +189,7 @@
 },
 "/de/berlin/events/halloween/900yard/30-10-2026": {
 "b_first": "2026-10-20T12:00:00Z",
-"b_last": "2026-10-25T15:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-20T13:00:00Z",
 "g_last": "2026-10-20T14:00:00Z"
 },
@@ -167,7 +205,7 @@
 },
 "/de/berlin/events/halloween/amano-eastside": {
 "b_first": "2026-10-18T21:00:00Z",
-"b_last": "2026-10-25T02:00:00Z"
+"b_last": "2026-10-26T21:00:00Z"
 },
 "/de/berlin/events/halloween/amano-eastside/30-10-2026": {
 "b_first": "2026-10-07T19:00:00Z",
@@ -207,25 +245,25 @@
 },
 "/de/berlin/events/halloween/aqua-hofe": {
 "b_first": "2026-10-10T10:00:00Z",
-"b_last": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-12T15:00:00Z",
-"g_last": "2026-10-26T02:00:00Z"
+"g_last": "2026-10-27T00:00:00Z"
 },
 "/de/berlin/events/halloween/artisma-eventstudio": {
 "b_first": "2026-10-21T11:00:00Z",
 "b_last": "2026-10-24T12:00:00Z",
 "g_first": "2026-10-21T13:00:00Z",
-"g_last": "2026-10-24T08:00:00Z"
+"g_last": "2026-10-26T11:00:00Z"
 },
 "/de/berlin/events/halloween/badehaus": {
 "b_first": "2026-10-11T17:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-26T22:00:00Z",
 "g_first": "2026-10-16T02:00:00Z",
 "g_last": "2026-10-19T06:00:00Z"
 },
 "/de/berlin/events/halloween/badehaus/30-10-2026": {
 "b_first": "2026-10-09T11:00:00Z",
-"b_last": "2026-10-26T08:00:00Z",
+"b_last": "2026-10-26T20:00:00Z",
 "g_first": "2026-10-09T12:00:00Z",
 "g_last": "2026-10-23T18:00:00Z"
 },
@@ -239,17 +277,17 @@
 "b_first": "2026-10-14T07:00:00Z",
 "b_last": "2026-10-24T07:00:00Z",
 "g_first": "2026-10-14T12:00:00Z",
-"g_last": "2026-10-26T06:00:00Z"
+"g_last": "2026-10-26T18:00:00Z"
 },
 "/de/berlin/events/halloween/bricks": {
 "b_first": "2026-10-07T23:00:00Z",
-"b_last": "2026-10-25T10:00:00Z",
+"b_last": "2026-10-27T00:00:00Z",
 "g_first": "2026-10-07T10:00:00Z",
 "g_last": "2026-10-07T10:00:00Z"
 },
 "/de/berlin/events/halloween/bricks/30-10-2026": {
 "b_first": "2026-10-19T07:00:00Z",
-"b_last": "2026-10-26T05:00:00Z",
+"b_last": "2026-10-26T13:00:00Z",
 "g_first": "2026-10-13T02:00:00Z",
 "g_last": "2026-10-26T10:00:00Z"
 },
@@ -263,7 +301,7 @@
 "b_first": "2026-10-10T12:00:00Z",
 "b_last": "2026-10-11T03:00:00Z",
 "g_first": "2026-10-09T20:00:00Z",
-"g_last": "2026-10-24T08:00:00Z"
+"g_last": "2026-10-26T11:00:00Z"
 },
 "/de/berlin/events/halloween/cassiopeia": {
 "b_first": "2026-10-07T18:00:00Z",
@@ -279,7 +317,7 @@
 },
 "/de/berlin/events/halloween/club-weekend": {
 "b_first": "2026-10-09T02:00:00Z",
-"b_last": "2026-10-26T01:00:00Z",
+"b_last": "2026-10-27T03:00:00Z",
 "g_first": "2026-10-09T13:00:00Z",
 "g_last": "2026-10-22T06:00:00Z"
 },
@@ -294,6 +332,10 @@
 "b_last": "2026-10-17T01:00:00Z",
 "g_first": "2026-10-09T13:00:00Z",
 "g_last": "2026-10-25T03:00:00Z"
+},
+"/de/berlin/events/halloween/dersim-kultur-gemeinde": {
+"b_first": "2026-10-27T08:00:00Z",
+"b_last": "2026-10-27T08:00:00Z"
 },
 "/de/berlin/events/halloween/greifswalder-str.-23a163": {
 "b_first": "2026-10-26T01:00:00Z",
@@ -311,15 +353,15 @@
 },
 "/de/berlin/events/halloween/gretchen": {
 "b_first": "2026-10-12T11:00:00Z",
-"b_last": "2026-10-26T05:00:00Z",
+"b_last": "2026-10-26T21:00:00Z",
 "g_first": "2026-10-08T03:00:00Z",
 "g_last": "2026-10-08T03:00:00Z"
 },
 "/de/berlin/events/halloween/havanna": {
 "b_first": "2026-10-18T09:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-27T08:00:00Z",
 "g_first": "2026-10-09T10:00:00Z",
-"g_last": "2026-10-25T12:00:00Z"
+"g_last": "2026-10-27T04:00:00Z"
 },
 "/de/berlin/events/halloween/insomnia-erotic-nightclub": {
 "b_first": "2026-10-15T07:00:00Z",
@@ -335,25 +377,25 @@
 },
 "/de/berlin/events/halloween/kino-union": {
 "b_first": "2026-10-18T14:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-27T03:00:00Z",
 "g_first": "2026-10-16T01:00:00Z",
 "g_last": "2026-10-23T03:00:00Z"
 },
 "/de/berlin/events/halloween/kulturbrauerei": {
 "b_first": "2026-10-13T13:00:00Z",
-"b_last": "2026-10-20T12:00:00Z",
+"b_last": "2026-10-27T00:00:00Z",
 "g_first": "2026-10-08T02:00:00Z",
-"g_last": "2026-10-26T03:00:00Z"
+"g_last": "2026-10-27T06:00:00Z"
 },
 "/de/berlin/events/halloween/kulturbrauerei/30-10-2026": {
 "b_first": "2026-10-10T11:00:00Z",
-"b_last": "2026-10-24T12:00:00Z"
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/de/berlin/events/halloween/loci-loft": {
 "b_first": "2026-10-07T22:00:00Z",
-"b_last": "2026-10-26T08:00:00Z",
+"b_last": "2026-10-26T21:00:00Z",
 "g_first": "2026-10-19T16:00:00Z",
-"g_last": "2026-10-22T12:00:00Z"
+"g_last": "2026-10-27T09:00:00Z"
 },
 "/de/berlin/events/halloween/loretta-am-wannsee": {
 "b_first": "2026-10-13T12:00:00Z",
@@ -363,7 +405,7 @@
 },
 "/de/berlin/events/halloween/m01": {
 "b_first": "2026-10-20T12:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-27T07:00:00Z",
 "g_first": "2026-10-20T13:00:00Z",
 "g_last": "2026-10-20T13:00:00Z"
 },
@@ -371,7 +413,7 @@
 "b_first": "2026-10-22T09:00:00Z",
 "b_last": "2026-10-26T09:00:00Z",
 "g_first": "2026-10-24T04:00:00Z",
-"g_last": "2026-10-25T20:00:00Z"
+"g_last": "2026-10-27T03:00:00Z"
 },
 "/de/berlin/events/halloween/maaya/30-10-2026": {
 "b_first": "2026-10-17T21:00:00Z",
@@ -386,22 +428,28 @@
 "g_last": "2026-10-24T12:00:00Z"
 },
 "/de/berlin/events/halloween/maxxim": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
 "g_first": "2026-10-10T07:00:00Z",
 "g_last": "2026-10-24T14:00:00Z"
 },
 "/de/berlin/events/halloween/maxxim/30-10-2026": {
 "b_first": "2026-10-25T12:00:00Z",
-"b_last": "2026-10-25T12:00:00Z"
+"b_last": "2026-10-27T07:00:00Z"
+},
+"/de/berlin/events/halloween/maxxim/31-10-2026": {
+"b_first": "2026-10-26T11:00:00Z",
+"b_last": "2026-10-26T11:00:00Z"
 },
 "/de/berlin/events/halloween/metropol": {
 "b_first": "2026-10-20T21:00:00Z",
 "b_last": "2026-10-26T04:00:00Z",
 "g_first": "2026-10-17T23:00:00Z",
-"g_last": "2026-10-23T03:00:00Z"
+"g_last": "2026-10-27T04:00:00Z"
 },
 "/de/berlin/events/halloween/mio": {
 "b_first": "2026-10-10T22:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-27T00:00:00Z",
 "g_first": "2026-10-09T20:00:00Z",
 "g_last": "2026-10-20T04:00:00Z"
 },
@@ -413,7 +461,7 @@
 },
 "/de/berlin/events/halloween/napoleon-komplex": {
 "b_first": "2026-10-10T00:00:00Z",
-"b_last": "2026-10-26T04:00:00Z",
+"b_last": "2026-10-27T06:00:00Z",
 "g_first": "2026-10-19T05:00:00Z",
 "g_last": "2026-10-24T00:00:00Z"
 },
@@ -431,13 +479,13 @@
 },
 "/de/berlin/events/halloween/narva-lounge": {
 "b_first": "2026-10-18T05:00:00Z",
-"b_last": "2026-10-18T05:00:00Z",
+"b_last": "2026-10-26T11:00:00Z",
 "g_first": "2026-10-21T01:00:00Z",
 "g_last": "2026-10-26T02:00:00Z"
 },
 "/de/berlin/events/halloween/paradise-club": {
 "b_first": "2026-10-07T20:00:00Z",
-"b_last": "2026-10-25T06:00:00Z",
+"b_last": "2026-10-27T06:00:00Z",
 "g_first": "2026-10-24T08:00:00Z",
 "g_last": "2026-10-24T08:00:00Z"
 },
@@ -449,19 +497,19 @@
 },
 "/de/berlin/events/halloween/paradise-club/31-10-2026": {
 "b_first": "2026-10-07T19:00:00Z",
-"b_last": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-20T02:00:00Z",
-"g_last": "2026-10-25T00:00:00Z"
+"g_last": "2026-10-26T13:00:00Z"
 },
 "/de/berlin/events/halloween/pirates": {
 "b_first": "2026-10-16T12:00:00Z",
-"b_last": "2026-10-16T12:00:00Z",
+"b_last": "2026-10-26T13:00:00Z",
 "g_first": "2026-10-11T11:00:00Z",
 "g_last": "2026-10-14T18:00:00Z"
 },
 "/de/berlin/events/halloween/pirates/30-10-2026": {
 "b_first": "2026-10-13T09:00:00Z",
-"b_last": "2026-10-25T22:00:00Z",
+"b_last": "2026-10-26T21:00:00Z",
 "g_first": "2026-10-11T11:00:00Z",
 "g_last": "2026-10-25T08:00:00Z"
 },
@@ -479,9 +527,9 @@
 },
 "/de/berlin/events/halloween/sisyphos": {
 "b_first": "2026-10-16T12:00:00Z",
-"b_last": "2026-10-26T08:00:00Z",
+"b_last": "2026-10-27T08:00:00Z",
 "g_first": "2026-10-16T16:00:00Z",
-"g_last": "2026-10-26T02:00:00Z"
+"g_last": "2026-10-27T03:00:00Z"
 },
 "/de/berlin/events/halloween/slaughterhouse": {
 "b_first": "2026-10-15T13:00:00Z",
@@ -493,15 +541,15 @@
 "b_first": "2026-10-08T07:00:00Z",
 "b_last": "2026-10-25T10:00:00Z",
 "g_first": "2026-10-10T02:00:00Z",
-"g_last": "2026-10-26T09:00:00Z"
+"g_last": "2026-10-26T12:00:00Z"
 },
 "/de/berlin/events/halloween/spindler-klatt/30-10-2026": {
 "b_first": "2026-10-08T06:00:00Z",
-"b_last": "2026-10-22T13:00:00Z"
+"b_last": "2026-10-26T13:00:00Z"
 },
 "/de/berlin/events/halloween/spindler-klatt/31-10-2026": {
 "b_first": "2026-10-07T15:00:00Z",
-"b_last": "2026-10-22T13:00:00Z"
+"b_last": "2026-10-26T13:00:00Z"
 },
 "/de/berlin/events/halloween/suss-war-gestern": {
 "g_first": "2026-10-19T07:00:00Z",
@@ -519,7 +567,7 @@
 "b_first": "2026-10-08T14:00:00Z",
 "b_last": "2026-10-25T05:00:00Z",
 "g_first": "2026-10-12T14:00:00Z",
-"g_last": "2026-10-25T20:00:00Z"
+"g_last": "2026-10-26T19:00:00Z"
 },
 "/de/berlin/events/halloween/the-door": {
 "b_first": "2026-10-13T12:00:00Z",
@@ -541,7 +589,7 @@
 },
 "/de/berlin/events/halloween/top-disco": {
 "b_first": "2026-10-13T10:00:00Z",
-"b_last": "2026-10-26T09:00:00Z",
+"b_last": "2026-10-27T01:00:00Z",
 "g_first": "2026-10-15T04:00:00Z",
 "g_last": "2026-10-23T00:00:00Z"
 },
@@ -549,11 +597,11 @@
 "b_first": "2026-10-21T10:00:00Z",
 "b_last": "2026-10-25T17:00:00Z",
 "g_first": "2026-10-21T13:00:00Z",
-"g_last": "2026-10-21T22:00:00Z"
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/de/berlin/events/halloween/void": {
 "b_first": "2026-10-24T06:00:00Z",
-"b_last": "2026-10-25T04:00:00Z",
+"b_last": "2026-10-26T13:00:00Z",
 "g_first": "2026-10-22T13:00:00Z",
 "g_last": "2026-10-23T09:00:00Z"
 },
@@ -591,13 +639,17 @@
 "g_first": "2026-10-15T11:00:00Z",
 "g_last": "2026-10-15T11:00:00Z"
 },
+"/de/berlin/events/hip-hop/27-11-26/polish-pleasure-impreza-andrzejkowa-2026": {
+"b_first": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-26T10:00:00Z"
+},
 "/de/berlin/events/open-air/20-11-26/plage-noire-2026": {
 "b_first": "2026-10-13T18:00:00Z",
 "b_last": "2026-10-13T18:00:00Z"
 },
 "/de/berlin/events/party/01-11-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
 "g_first": "2026-10-24T04:00:00Z",
-"g_last": "2026-10-24T16:00:00Z"
+"g_last": "2026-10-27T02:00:00Z"
 },
 "/de/berlin/events/party/01-11-26/cool-drinks-nice-people-good-music": {
 "b_first": "2026-10-11T17:00:00Z",
@@ -617,9 +669,9 @@
 },
 "/de/berlin/events/party/02-11-26/nitrous-tour-afterparty-w-don-tolivers-official-dj": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-25T20:00:00Z",
+"b_last": "2026-10-26T11:00:00Z",
 "g_first": "2026-10-22T20:00:00Z",
-"g_last": "2026-10-25T16:00:00Z"
+"g_last": "2026-10-26T15:00:00Z"
 },
 "/de/berlin/events/party/02-11-26/singularity": {
 "b_first": "2026-10-19T21:00:00Z",
@@ -655,7 +707,7 @@
 "b_first": "2026-10-22T13:00:00Z",
 "b_last": "2026-10-26T09:00:00Z",
 "g_first": "2026-10-22T10:00:00Z",
-"g_last": "2026-10-25T23:00:00Z"
+"g_last": "2026-10-26T19:00:00Z"
 },
 "/de/berlin/events/party/04-12-26/club-room-party-nights-in-neon": {
 "g_first": "2026-10-24T03:00:00Z",
@@ -663,7 +715,7 @@
 },
 "/de/berlin/events/party/04-12-26/friday-night-party-on-3-floors": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-26T15:00:00Z",
 "g_first": "2026-10-23T16:00:00Z",
 "g_last": "2026-10-24T11:00:00Z"
 },
@@ -676,6 +728,10 @@
 "b_last": "2026-10-25T07:00:00Z",
 "g_first": "2026-10-21T10:00:00Z",
 "g_last": "2026-10-21T10:00:00Z"
+},
+"/de/berlin/events/party/05-11-26/mirror-zone": {
+"b_first": "2026-10-27T09:00:00Z",
+"b_last": "2026-10-27T09:00:00Z"
 },
 "/de/berlin/events/party/05-11-26/soda-social-club": {
 "b_first": "2026-10-19T21:00:00Z",
@@ -759,7 +815,7 @@
 "b_first": "2026-10-22T18:00:00Z",
 "b_last": "2026-10-22T18:00:00Z",
 "g_first": "2026-10-22T19:00:00Z",
-"g_last": "2026-10-23T08:00:00Z"
+"g_last": "2026-10-26T16:00:00Z"
 },
 "/de/berlin/events/party/07-11-26/80er-fete": {
 "b_first": "2026-10-15T13:00:00Z",
@@ -781,9 +837,27 @@
 "g_first": "2026-10-17T03:00:00Z",
 "g_last": "2026-10-23T04:00:00Z"
 },
+"/de/berlin/events/party/07-11-26/ma-baker-party": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T14:00:00Z",
+"g_last": "2026-10-26T14:00:00Z"
+},
+"/de/berlin/events/party/07-11-26/out-of-mind": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-27T06:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
+},
 "/de/berlin/events/party/07-11-26/pirates-schlager-samstag": {
 "g_first": "2026-10-14T11:00:00Z",
 "g_last": "2026-10-14T11:00:00Z"
+},
+"/de/berlin/events/party/07-11-26/salsa-on2-introduction-to-new-york-style-workshop": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T19:00:00Z",
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/de/berlin/events/party/07-11-26/saturdays-havanna": {
 "b_first": "2026-10-22T13:00:00Z",
@@ -793,7 +867,7 @@
 },
 "/de/berlin/events/party/07-11-26/sodalicious": {
 "b_first": "2026-10-19T21:00:00Z",
-"b_last": "2026-10-24T15:00:00Z",
+"b_last": "2026-10-26T22:00:00Z",
 "g_first": "2026-10-19T21:00:00Z",
 "g_last": "2026-10-19T21:00:00Z"
 },
@@ -807,9 +881,15 @@
 "g_first": "2026-10-22T04:00:00Z",
 "g_last": "2026-10-22T04:00:00Z"
 },
+"/de/berlin/events/party/08-11-26/salsa-on2-introduction-to-new-york-style-workshop": {
+"b_first": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-26T10:00:00Z",
+"g_first": "2026-10-26T19:00:00Z",
+"g_last": "2026-10-27T01:00:00Z"
+},
 "/de/berlin/events/party/08-11-26/soda-social-club": {
 "b_first": "2026-10-19T21:00:00Z",
-"b_last": "2026-10-23T10:00:00Z",
+"b_last": "2026-10-27T01:00:00Z",
 "g_first": "2026-10-19T19:00:00Z",
 "g_last": "2026-10-19T19:00:00Z"
 },
@@ -869,6 +949,10 @@
 "g_first": "2026-10-20T11:00:00Z",
 "g_last": "2026-10-20T11:00:00Z"
 },
+"/de/berlin/events/party/12-11-26/sssmile-afterhour": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
 "/de/berlin/events/party/12-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
 "b_first": "2026-10-14T22:00:00Z",
 "b_last": "2026-10-14T22:00:00Z"
@@ -923,7 +1007,7 @@
 },
 "/de/berlin/events/party/13-11-26/friday-night-party-on-3-floors": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T01:00:00Z",
+"b_last": "2026-10-26T16:00:00Z",
 "g_first": "2026-10-24T12:00:00Z",
 "g_last": "2026-10-24T12:00:00Z"
 },
@@ -945,7 +1029,7 @@
 },
 "/de/berlin/events/party/14-11-26/latin-affair-berlin-001": {
 "b_first": "2026-10-20T13:00:00Z",
-"b_last": "2026-10-24T04:00:00Z",
+"b_last": "2026-10-26T23:00:00Z",
 "g_first": "2026-10-20T18:00:00Z",
 "g_last": "2026-10-20T18:00:00Z"
 },
@@ -995,7 +1079,7 @@
 },
 "/de/berlin/events/party/16-12-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-26T15:00:00Z",
 "g_first": "2026-10-23T08:00:00Z",
 "g_last": "2026-10-23T11:00:00Z"
 },
@@ -1035,6 +1119,10 @@
 "g_first": "2026-10-21T08:00:00Z",
 "g_last": "2026-10-23T03:00:00Z"
 },
+"/de/berlin/events/party/19-11-26/sssmile-afterhour": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
 "/de/berlin/events/party/19-11-26/u10247-with-maniacme-flandez": {
 "b_first": "2026-10-10T08:00:00Z",
 "b_last": "2026-10-11T03:00:00Z",
@@ -1051,7 +1139,7 @@
 },
 "/de/berlin/events/party/19-12-26/saturdays-havanna": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-25T23:00:00Z"
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/de/berlin/events/party/19-12-26/sturmfrei-with-gaamer-tba": {
 "b_first": "2026-10-22T04:00:00Z",
@@ -1071,7 +1159,7 @@
 },
 "/de/berlin/events/party/20-11-26/friday-night-party-on-3-floors": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-25T22:00:00Z",
+"b_last": "2026-10-26T13:00:00Z",
 "g_first": "2026-10-23T14:00:00Z",
 "g_last": "2026-10-23T14:00:00Z"
 },
@@ -1133,7 +1221,11 @@
 "b_first": "2026-10-19T21:00:00Z",
 "b_last": "2026-10-26T04:00:00Z",
 "g_first": "2026-10-19T16:00:00Z",
-"g_last": "2026-10-25T00:00:00Z"
+"g_last": "2026-10-27T00:00:00Z"
+},
+"/de/berlin/events/party/23-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
+"b_first": "2026-10-26T22:00:00Z",
+"b_last": "2026-10-26T22:00:00Z"
 },
 "/de/berlin/events/party/23-12-26/club-room-16plus-party-chaos-x-mas-special": {
 "b_first": "2026-10-25T19:00:00Z",
@@ -1145,6 +1237,10 @@
 "g_first": "2026-10-24T14:00:00Z",
 "g_last": "2026-10-24T15:00:00Z"
 },
+"/de/berlin/events/party/24-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
+"g_first": "2026-10-26T21:00:00Z",
+"g_last": "2026-10-26T21:00:00Z"
+},
 "/de/berlin/events/party/25-11-26/mittendrin-with-clarence": {
 "b_first": "2026-10-10T09:00:00Z",
 "b_last": "2026-10-10T20:00:00Z",
@@ -1153,39 +1249,27 @@
 },
 "/de/berlin/events/party/25-11-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-25T21:00:00Z",
+"b_last": "2026-10-26T11:00:00Z",
 "g_first": "2026-10-23T08:00:00Z",
 "g_last": "2026-10-23T08:00:00Z"
 },
 "/de/berlin/events/party/25-12-26/friday-night-party-on-3-floors": {
 "b_first": "2026-10-26T00:00:00Z",
-"b_last": "2026-10-26T00:00:00Z"
-},
-"/de/berlin/events/party/26-10-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
-"g_first": "2026-10-25T06:00:00Z",
-"g_last": "2026-10-25T06:00:00Z"
-},
-"/de/berlin/events/party/26-10-26/cool-drinks-nice-people-good-music": {
-"g_first": "2026-10-25T06:00:00Z",
-"g_last": "2026-10-25T06:00:00Z"
-},
-"/de/berlin/events/party/26-10-26/monday-nite-club": {
-"g_first": "2026-10-20T07:00:00Z",
-"g_last": "2026-10-20T07:00:00Z"
-},
-"/de/berlin/events/party/26-10-26/singularity": {
-"g_first": "2026-10-19T16:00:00Z",
-"g_last": "2026-10-19T16:00:00Z"
-},
-"/de/berlin/events/party/26-10-26/sunny-terrace-fizzy-spritzes": {
-"g_first": "2026-10-25T06:00:00Z",
-"g_last": "2026-10-25T11:00:00Z"
+"b_last": "2026-10-27T00:00:00Z"
 },
 "/de/berlin/events/party/26-11-26/soda-social-club": {
 "b_first": "2026-10-20T13:00:00Z",
 "b_last": "2026-10-25T00:00:00Z",
 "g_first": "2026-10-26T03:00:00Z",
 "g_last": "2026-10-26T03:00:00Z"
+},
+"/de/berlin/events/party/26-11-26/sssmile-afterhour": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
+"/de/berlin/events/party/26-12-26/saturdays-havanna": {
+"b_first": "2026-10-27T01:00:00Z",
+"b_last": "2026-10-27T01:00:00Z"
 },
 "/de/berlin/events/party/27-10-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
 "g_first": "2026-10-26T06:00:00Z",
@@ -1207,7 +1291,7 @@
 },
 "/de/berlin/events/party/27-10-26/super-tuesday-80s-disco-hits-hip-hop-party": {
 "g_first": "2026-10-14T21:00:00Z",
-"g_last": "2026-10-26T06:00:00Z"
+"g_last": "2026-10-26T22:00:00Z"
 },
 "/de/berlin/events/party/27-11-26/club-room-party-birthday-club": {
 "g_first": "2026-10-19T19:00:00Z",
@@ -1229,7 +1313,7 @@
 },
 "/de/berlin/events/party/27-11-26/mega-90er-rave-dj-quicksilver": {
 "g_first": "2026-10-22T02:00:00Z",
-"g_last": "2026-10-22T02:00:00Z"
+"g_last": "2026-10-26T15:00:00Z"
 },
 "/de/berlin/events/party/28-10-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
 "b_first": "2026-10-10T22:00:00Z",
@@ -1241,7 +1325,13 @@
 "b_first": "2026-10-22T13:00:00Z",
 "b_last": "2026-10-22T13:00:00Z",
 "g_first": "2026-10-22T14:00:00Z",
-"g_last": "2026-10-24T23:00:00Z"
+"g_last": "2026-10-27T02:00:00Z"
+},
+"/de/berlin/events/party/28-10-26/bmc-salsa-on2-workshop-und-salsa-dura-party": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T14:00:00Z",
+"g_last": "2026-10-26T14:00:00Z"
 },
 "/de/berlin/events/party/28-10-26/cool-drinks-nice-people-good-music": {
 "b_first": "2026-10-18T05:00:00Z",
@@ -1263,13 +1353,17 @@
 },
 "/de/berlin/events/party/28-10-26/queens-night-west-side-vibes": {
 "g_first": "2026-10-21T02:00:00Z",
-"g_last": "2026-10-21T02:00:00Z"
+"g_last": "2026-10-26T18:00:00Z"
 },
 "/de/berlin/events/party/28-10-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-26T15:00:00Z",
 "g_first": "2026-10-22T10:00:00Z",
-"g_last": "2026-10-26T10:00:00Z"
+"g_last": "2026-10-27T08:00:00Z"
+},
+"/de/berlin/events/party/28-10-26/sunny-terrace-fizzy-spritzes": {
+"g_first": "2026-10-27T08:00:00Z",
+"g_last": "2026-10-27T08:00:00Z"
 },
 "/de/berlin/events/party/28-10-26/tausend-live-frankie-balou-band": {
 "b_first": "2026-10-20T13:00:00Z",
@@ -1289,11 +1383,19 @@
 "g_first": "2026-10-25T09:00:00Z",
 "g_last": "2026-10-25T09:00:00Z"
 },
+"/de/berlin/events/party/28-11-26/polska-impreza-andrzjeki-2026": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
 "/de/berlin/events/party/28-11-26/saturdays-havanna": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T08:00:00Z",
+"b_last": "2026-10-26T11:00:00Z",
 "g_first": "2026-10-22T19:00:00Z",
 "g_last": "2026-10-22T19:00:00Z"
+},
+"/de/berlin/events/party/28-11-26/school-of-hip-hop-winter-season-opening": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/de/berlin/events/party/28-11-26/sodalicious": {
 "b_first": "2026-10-20T13:00:00Z",
@@ -1303,7 +1405,15 @@
 "b_first": "2026-10-22T13:00:00Z",
 "b_last": "2026-10-26T06:00:00Z",
 "g_first": "2026-10-22T14:00:00Z",
-"g_last": "2026-10-25T08:00:00Z"
+"g_last": "2026-10-27T08:00:00Z"
+},
+"/de/berlin/events/party/29-10-26/sound-metaphors-festival-part-1": {
+"b_first": "2026-10-27T09:00:00Z",
+"b_last": "2026-10-27T09:00:00Z"
+},
+"/de/berlin/events/party/29-10-26/sssmile-afterhour": {
+"g_first": "2026-10-27T05:00:00Z",
+"g_last": "2026-10-27T05:00:00Z"
 },
 "/de/berlin/events/party/29-10-26/tausend-house-shveba": {
 "b_first": "2026-10-20T13:00:00Z",
@@ -1345,17 +1455,29 @@
 },
 "/de/berlin/events/party/30-11-26/singularity": {
 "b_first": "2026-10-19T21:00:00Z",
-"b_last": "2026-10-24T11:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-24T16:00:00Z",
 "g_last": "2026-10-24T16:00:00Z"
 },
+"/de/berlin/events/party/31-10-26/klubnacht": {
+"b_first": "2026-10-27T09:00:00Z",
+"b_last": "2026-10-27T09:00:00Z"
+},
 "/de/berlin/events/party/31-10-26/ma-baker-party": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T10:00:00Z"
+"b_last": "2026-10-26T21:00:00Z"
 },
 "/de/berlin/events/party/31-10-26/maniacme-freunde": {
 "g_first": "2026-10-25T19:00:00Z",
 "g_last": "2026-10-25T19:00:00Z"
+},
+"/de/berlin/events/party/31-10-26/nimbo-x-kranich": {
+"b_first": "2026-10-27T09:00:00Z",
+"b_last": "2026-10-27T09:00:00Z"
+},
+"/de/berlin/events/party/31-10-26/sunny-terrace-fizzy-spritzes": {
+"b_first": "2026-10-26T12:00:00Z",
+"b_last": "2026-10-26T12:00:00Z"
 },
 "/de/berlin/events/party/31-10-26/vinyl-thursday-special-edition": {
 "b_first": "2026-10-09T11:00:00Z",
@@ -1363,7 +1485,7 @@
 },
 "/de/berlin/events/silvester/31-12-26": {
 "b_first": "2026-10-13T22:00:00Z",
-"b_last": "2026-10-26T07:00:00Z"
+"b_last": "2026-10-27T09:00:00Z"
 },
 "/de/berlin/events/silvester/amano-eastside": {
 "b_first": "2026-10-18T14:00:00Z",
@@ -1381,7 +1503,7 @@
 "b_first": "2026-10-07T19:00:00Z",
 "b_last": "2026-10-25T12:00:00Z",
 "g_first": "2026-10-12T02:00:00Z",
-"g_last": "2026-10-22T07:00:00Z"
+"g_last": "2026-10-26T18:00:00Z"
 },
 "/de/berlin/events/silvester/greifswalder-str.-23a163": {
 "b_first": "2026-10-07T20:00:00Z",
@@ -1391,7 +1513,7 @@
 },
 "/de/berlin/events/silvester/haus-ungarn": {
 "b_first": "2026-10-07T17:00:00Z",
-"b_last": "2026-10-25T14:00:00Z",
+"b_last": "2026-10-27T08:00:00Z",
 "g_first": "2026-10-09T13:00:00Z",
 "g_last": "2026-10-24T02:00:00Z"
 },
@@ -1415,7 +1537,7 @@
 },
 "/de/berlin/events/silvester/paul-gerhardt-saal": {
 "b_first": "2026-10-07T15:00:00Z",
-"b_last": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-22T15:00:00Z",
 "g_last": "2026-10-22T15:00:00Z"
 },
@@ -1423,7 +1545,7 @@
 "b_first": "2026-10-08T09:00:00Z",
 "b_last": "2026-10-24T13:00:00Z",
 "g_first": "2026-10-12T15:00:00Z",
-"g_last": "2026-10-14T19:00:00Z"
+"g_last": "2026-10-26T11:00:00Z"
 },
 "/de/berlin/events/silvester/spindler-klatt": {
 "b_first": "2026-10-08T00:00:00Z",
@@ -1443,15 +1565,37 @@
 "g_first": "2026-10-10T11:00:00Z",
 "g_last": "2026-10-22T06:00:00Z"
 },
+"/de/berlin/events/silvester/the-door": {
+"b_first": "2026-10-26T13:00:00Z",
+"b_last": "2026-10-26T13:00:00Z"
+},
 "/de/berlin/events/silvester/uber-arena": {
 "g_first": "2026-10-12T13:00:00Z",
 "g_last": "2026-10-25T22:00:00Z"
+},
+"/en/berlin/events/electro/01-11-26/club-pub-x-sunset-grooves": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/en/berlin/events/electro/03-11-26/open-decks-tischtennis-open-air-indoors": {
 "b_first": "2026-10-14T09:00:00Z",
 "b_last": "2026-10-14T09:00:00Z",
 "g_first": "2026-10-24T08:00:00Z",
-"g_last": "2026-10-24T08:00:00Z"
+"g_last": "2026-10-26T11:00:00Z"
+},
+"/en/berlin/events/electro/04-12-26/lowkey-stars": {
+"g_first": "2026-10-27T08:00:00Z",
+"g_last": "2026-10-27T08:00:00Z"
+},
+"/en/berlin/events/electro/05-11-26/sssmile-afterhour-flinta-special": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T23:00:00Z",
+"g_last": "2026-10-26T23:00:00Z"
+},
+"/en/berlin/events/electro/06-11-26/dionys-hardtechno-x-trancebounce-rave-2-floors": {
+"g_first": "2026-10-26T12:00:00Z",
+"g_last": "2026-10-26T12:00:00Z"
 },
 "/en/berlin/events/electro/06-11-26/pure-nonsense": {
 "b_first": "2026-10-16T12:00:00Z",
@@ -1462,6 +1606,10 @@
 "/en/berlin/events/electro/07-11-26/heaven-17-electronically-yours-tour-2026": {
 "g_first": "2026-10-19T07:00:00Z",
 "g_last": "2026-10-19T07:00:00Z"
+},
+"/en/berlin/events/electro/10-11-26/klubkneipe-x-tuesday-ritual-vulva-workshop": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/en/berlin/events/electro/10-11-26/open-decks-tischtennis-open-air-indoors": {
 "g_first": "2026-10-24T05:00:00Z",
@@ -1489,6 +1637,16 @@
 "g_first": "2026-10-19T13:00:00Z",
 "g_last": "2026-10-19T17:00:00Z"
 },
+"/en/berlin/events/electro/15-11-26/club-pub-x-housecats": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-27T04:00:00Z",
+"g_last": "2026-10-27T04:00:00Z"
+},
+"/en/berlin/events/electro/17-11-26/klubkneipe-x-tuesday-ritual": {
+"g_first": "2026-10-27T04:00:00Z",
+"g_last": "2026-10-27T04:00:00Z"
+},
 "/en/berlin/events/electro/17-11-26/open-decks-tischtennis-open-air-indoors": {
 "g_first": "2026-10-20T19:00:00Z",
 "g_last": "2026-10-20T19:00:00Z"
@@ -1506,16 +1664,6 @@
 "b_last": "2026-10-23T04:00:00Z",
 "g_first": "2026-10-21T09:00:00Z",
 "g_last": "2026-10-21T09:00:00Z"
-},
-"/en/berlin/events/electro/24-10-26/hot-i-30-hours": {
-"g_first": "2026-10-21T06:00:00Z",
-"g_last": "2026-10-25T04:00:00Z"
-},
-"/en/berlin/events/electro/26-10-26/electric-monday-kitkat": {
-"b_first": "2026-10-22T02:00:00Z",
-"b_last": "2026-10-22T02:00:00Z",
-"g_first": "2026-10-20T20:00:00Z",
-"g_last": "2026-10-20T20:00:00Z"
 },
 "/en/berlin/events/electro/27-10-26/club-pub-x-tuesday-ritual-tattoo-flash-day": {
 "b_first": "2026-10-07T19:00:00Z",
@@ -1557,7 +1705,7 @@
 },
 "/en/berlin/events/halloween/31-10-26": {
 "b_first": "2026-10-07T09:00:00Z",
-"b_last": "2026-10-26T10:00:00Z",
+"b_last": "2026-10-27T08:00:00Z",
 "g_first": "2026-10-09T21:00:00Z",
 "g_last": "2026-10-25T00:00:00Z"
 },
@@ -1589,7 +1737,7 @@
 },
 "/en/berlin/events/halloween/amano-eastside/30-10-2026": {
 "g_first": "2026-10-07T19:00:00Z",
-"g_last": "2026-10-25T22:00:00Z"
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/en/berlin/events/halloween/amano-eastside/31-10-2026": {
 "b_first": "2026-10-07T18:00:00Z",
@@ -1599,13 +1747,15 @@
 },
 "/en/berlin/events/halloween/amano-grand-central": {
 "b_first": "2026-10-18T22:00:00Z",
-"b_last": "2026-10-18T22:00:00Z",
+"b_last": "2026-10-27T07:00:00Z",
 "g_first": "2026-10-19T05:00:00Z",
 "g_last": "2026-10-19T05:00:00Z"
 },
 "/en/berlin/events/halloween/amano-grand-central/30-10-2026": {
+"b_first": "2026-10-27T03:00:00Z",
+"b_last": "2026-10-27T03:00:00Z",
 "g_first": "2026-10-11T20:00:00Z",
-"g_last": "2026-10-25T16:00:00Z"
+"g_last": "2026-10-26T17:00:00Z"
 },
 "/en/berlin/events/halloween/amano-grand-central/31-10-2026": {
 "b_first": "2026-10-11T20:00:00Z",
@@ -1649,11 +1799,11 @@
 "b_first": "2026-10-14T07:00:00Z",
 "b_last": "2026-10-14T07:00:00Z",
 "g_first": "2026-10-14T12:00:00Z",
-"g_last": "2026-10-26T06:00:00Z"
+"g_last": "2026-10-27T04:00:00Z"
 },
 "/en/berlin/events/halloween/bricks/30-10-2026": {
 "g_first": "2026-10-08T09:00:00Z",
-"g_last": "2026-10-26T09:00:00Z"
+"g_last": "2026-10-27T08:00:00Z"
 },
 "/en/berlin/events/halloween/bricks/31-10-2026": {
 "g_first": "2026-10-14T11:00:00Z",
@@ -1665,7 +1815,7 @@
 },
 "/en/berlin/events/halloween/cassiopeia": {
 "g_first": "2026-10-12T10:00:00Z",
-"g_last": "2026-10-21T09:00:00Z"
+"g_last": "2026-10-26T19:00:00Z"
 },
 "/en/berlin/events/halloween/cherry-on-top-im-kalle-neukolln-rooftop": {
 "g_first": "2026-10-07T11:00:00Z",
@@ -1677,7 +1827,7 @@
 },
 "/en/berlin/events/halloween/greifswalder-str.-23a163": {
 "g_first": "2026-10-10T08:00:00Z",
-"g_last": "2026-10-14T00:00:00Z"
+"g_last": "2026-10-26T14:00:00Z"
 },
 "/en/berlin/events/halloween/gretchen": {
 "b_first": "2026-10-17T19:00:00Z",
@@ -1687,9 +1837,9 @@
 },
 "/en/berlin/events/halloween/havana": {
 "b_first": "2026-10-18T09:00:00Z",
-"b_last": "2026-10-18T09:00:00Z",
+"b_last": "2026-10-26T17:00:00Z",
 "g_first": "2026-10-12T12:00:00Z",
-"g_last": "2026-10-24T13:00:00Z"
+"g_last": "2026-10-26T13:00:00Z"
 },
 "/en/berlin/events/halloween/insomnia-erotic-nightclub": {
 "b_first": "2026-10-08T07:00:00Z",
@@ -1714,6 +1864,10 @@
 "/en/berlin/events/halloween/kulturbrauerei/30-10-2026": {
 "g_first": "2026-10-15T14:00:00Z",
 "g_last": "2026-10-15T14:00:00Z"
+},
+"/en/berlin/events/halloween/loci-loft": {
+"g_first": "2026-10-27T01:00:00Z",
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/en/berlin/events/halloween/loretta-am-wannsee": {
 "b_first": "2026-10-13T09:00:00Z",
@@ -1763,7 +1917,7 @@
 "b_first": "2026-10-22T07:00:00Z",
 "b_last": "2026-10-24T14:00:00Z",
 "g_first": "2026-10-18T00:00:00Z",
-"g_last": "2026-10-25T08:00:00Z"
+"g_last": "2026-10-27T08:00:00Z"
 },
 "/en/berlin/events/halloween/mio": {
 "g_first": "2026-10-09T19:00:00Z",
@@ -1789,13 +1943,13 @@
 "b_first": "2026-10-18T03:00:00Z",
 "b_last": "2026-10-18T03:00:00Z",
 "g_first": "2026-10-08T09:00:00Z",
-"g_last": "2026-10-25T16:00:00Z"
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/en/berlin/events/halloween/paradise-club": {
 "b_first": "2026-10-08T05:00:00Z",
 "b_last": "2026-10-25T11:00:00Z",
 "g_first": "2026-10-21T21:00:00Z",
-"g_last": "2026-10-24T17:00:00Z"
+"g_last": "2026-10-27T00:00:00Z"
 },
 "/en/berlin/events/halloween/paradise-club/30-10-2026": {
 "b_first": "2026-10-24T20:00:00Z",
@@ -1805,7 +1959,7 @@
 },
 "/en/berlin/events/halloween/paradise-club/31-10-2026": {
 "g_first": "2026-10-24T21:00:00Z",
-"g_last": "2026-10-24T21:00:00Z"
+"g_last": "2026-10-26T19:00:00Z"
 },
 "/en/berlin/events/halloween/pirates": {
 "g_first": "2026-10-19T09:00:00Z",
@@ -1833,7 +1987,7 @@
 },
 "/en/berlin/events/halloween/sisyphos": {
 "b_first": "2026-10-18T08:00:00Z",
-"b_last": "2026-10-26T09:00:00Z",
+"b_last": "2026-10-27T07:00:00Z",
 "g_first": "2026-10-16T12:00:00Z",
 "g_last": "2026-10-26T09:00:00Z"
 },
@@ -1849,7 +2003,7 @@
 },
 "/en/berlin/events/halloween/spindler-klatt/30-10-2026": {
 "b_first": "2026-10-24T18:00:00Z",
-"b_last": "2026-10-25T21:00:00Z"
+"b_last": "2026-10-26T18:00:00Z"
 },
 "/en/berlin/events/halloween/spindler-klatt/31-10-2026": {
 "b_first": "2026-10-18T01:00:00Z",
@@ -1859,7 +2013,7 @@
 "b_first": "2026-10-18T08:00:00Z",
 "b_last": "2026-10-25T06:00:00Z",
 "g_first": "2026-10-19T05:00:00Z",
-"g_last": "2026-10-25T17:00:00Z"
+"g_last": "2026-10-27T08:00:00Z"
 },
 "/en/berlin/events/halloween/the-door": {
 "b_first": "2026-10-13T09:00:00Z",
@@ -1891,7 +2045,7 @@
 },
 "/en/berlin/events/halloween/void": {
 "b_first": "2026-10-24T01:00:00Z",
-"b_last": "2026-10-25T20:00:00Z",
+"b_last": "2026-10-26T21:00:00Z",
 "g_first": "2026-10-22T16:00:00Z",
 "g_last": "2026-10-22T16:00:00Z"
 },
@@ -1915,7 +2069,7 @@
 },
 "/en/berlin/events/hip-hop/10-12-26/a-night-of-beatbox-with-marvelin": {
 "g_first": "2026-10-19T07:00:00Z",
-"g_last": "2026-10-25T08:00:00Z"
+"g_last": "2026-10-27T08:00:00Z"
 },
 "/en/berlin/events/hip-hop/14-11-26/no-scrubs-soulfull-hip-hop-rnb-neo-soul-slow-jamz-im-cafe-wendel": {
 "b_first": "2026-10-19T15:00:00Z",
@@ -1945,6 +2099,10 @@
 "g_first": "2026-10-19T20:00:00Z",
 "g_last": "2026-10-20T02:00:00Z"
 },
+"/en/berlin/events/party/02-12-26/100-grams-lounge-fancy-drinks-and-lovlely-people": {
+"b_first": "2026-10-26T18:00:00Z",
+"b_last": "2026-10-26T18:00:00Z"
+},
 "/en/berlin/events/party/02-12-26/salsa-bachata-after-work": {
 "b_first": "2026-10-24T18:00:00Z",
 "b_last": "2026-10-24T18:00:00Z",
@@ -1963,7 +2121,7 @@
 },
 "/en/berlin/events/party/04-11-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T11:00:00Z",
-"b_last": "2026-10-25T22:00:00Z",
+"b_last": "2026-10-26T13:00:00Z",
 "g_first": "2026-10-22T22:00:00Z",
 "g_last": "2026-10-23T06:00:00Z"
 },
@@ -1987,7 +2145,7 @@
 },
 "/en/berlin/events/party/05-11-26/soda-social-club": {
 "g_first": "2026-10-19T16:00:00Z",
-"g_last": "2026-10-24T08:00:00Z"
+"g_last": "2026-10-26T11:00:00Z"
 },
 "/en/berlin/events/party/05-12-26/local-love-service": {
 "g_first": "2026-10-19T08:00:00Z",
@@ -2053,9 +2211,21 @@
 "g_first": "2026-10-17T04:00:00Z",
 "g_last": "2026-10-17T04:00:00Z"
 },
+"/en/berlin/events/party/07-11-26/ma-baker-party": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
+"/en/berlin/events/party/07-11-26/out-of-mind": {
+"g_first": "2026-10-26T12:00:00Z",
+"g_last": "2026-10-26T12:00:00Z"
+},
 "/en/berlin/events/party/07-11-26/pirates-schlager-saturday": {
 "g_first": "2026-10-14T13:00:00Z",
-"g_last": "2026-10-14T13:00:00Z"
+"g_last": "2026-10-26T21:00:00Z"
+},
+"/en/berlin/events/party/07-11-26/salsa-on2-introduction-to-new-york-style-workshop": {
+"g_first": "2026-10-26T23:00:00Z",
+"g_last": "2026-10-26T23:00:00Z"
 },
 "/en/berlin/events/party/07-11-26/saturdays-havana": {
 "g_first": "2026-10-23T03:00:00Z",
@@ -2070,6 +2240,10 @@
 "b_last": "2026-10-20T06:00:00Z",
 "g_first": "2026-10-12T16:00:00Z",
 "g_last": "2026-10-18T21:00:00Z"
+},
+"/en/berlin/events/party/08-11-26/salsa-on2-introduction-to-new-york-style-workshop": {
+"g_first": "2026-10-27T06:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
 },
 "/en/berlin/events/party/08-11-26/soda-social-club": {
 "g_first": "2026-10-20T01:00:00Z",
@@ -2093,7 +2267,9 @@
 },
 "/en/berlin/events/party/10-12-26/best-mistake-kitty-cheng": {
 "b_first": "2026-10-13T01:00:00Z",
-"b_last": "2026-10-13T01:00:00Z"
+"b_last": "2026-10-13T01:00:00Z",
+"g_first": "2026-10-27T07:00:00Z",
+"g_last": "2026-10-27T07:00:00Z"
 },
 "/en/berlin/events/party/11-11-26/carnival-in-berlin-sessions-opening-with-the-hit-pirates-live-in-the-loci-loft": {
 "b_first": "2026-10-15T22:00:00Z",
@@ -2105,7 +2281,7 @@
 },
 "/en/berlin/events/party/11-11-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T01:00:00Z",
+"b_last": "2026-10-26T16:00:00Z",
 "g_first": "2026-10-25T13:00:00Z",
 "g_last": "2026-10-25T13:00:00Z"
 },
@@ -2359,9 +2535,17 @@
 "b_first": "2026-10-26T04:00:00Z",
 "b_last": "2026-10-26T04:00:00Z"
 },
+"/en/berlin/events/party/23-12-26/100-grams-lounge-fancy-drinks-and-lovlely-people": {
+"b_first": "2026-10-26T15:00:00Z",
+"b_last": "2026-10-26T15:00:00Z"
+},
+"/en/berlin/events/party/23-12-26/club-room-16plus-party-chaos-x-mas-special": {
+"b_first": "2026-10-26T19:00:00Z",
+"b_last": "2026-10-26T19:00:00Z"
+},
 "/en/berlin/events/party/23-12-26/salsa-bachata-after-work": {
 "b_first": "2026-10-24T06:00:00Z",
-"b_last": "2026-10-25T22:00:00Z"
+"b_last": "2026-10-27T09:00:00Z"
 },
 "/en/berlin/events/party/25-11-26/mittendrin-with-clarence": {
 "g_first": "2026-10-08T05:00:00Z",
@@ -2373,10 +2557,6 @@
 "g_first": "2026-10-23T08:00:00Z",
 "g_last": "2026-10-23T08:00:00Z"
 },
-"/en/berlin/events/party/26-10-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
-"g_first": "2026-10-25T09:00:00Z",
-"g_last": "2026-10-25T09:00:00Z"
-},
 "/en/berlin/events/party/26-11-26/soda-social-club": {
 "b_first": "2026-10-20T13:00:00Z",
 "b_last": "2026-10-24T13:00:00Z",
@@ -2386,6 +2566,10 @@
 "/en/berlin/events/party/27-10-26/cool-drinks-nice-people-good-music": {
 "b_first": "2026-10-18T10:00:00Z",
 "b_last": "2026-10-18T10:00:00Z"
+},
+"/en/berlin/events/party/27-10-26/sunny-terrace-fizzy-spritzes": {
+"g_first": "2026-10-26T18:00:00Z",
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/en/berlin/events/party/27-10-26/super-tuesday-80s-disco-hits-hip-hop-party": {
 "g_first": "2026-10-11T05:00:00Z",
@@ -2409,6 +2593,14 @@
 "b_first": "2026-10-24T17:00:00Z",
 "b_last": "2026-10-24T17:00:00Z"
 },
+"/en/berlin/events/party/28-10-26/afterwork-100-gramm-vino": {
+"b_first": "2026-10-27T04:00:00Z",
+"b_last": "2026-10-27T04:00:00Z"
+},
+"/en/berlin/events/party/28-10-26/bmc-salsa-on-2-workshop-und-salsa-dura-party": {
+"g_first": "2026-10-27T00:00:00Z",
+"g_last": "2026-10-27T00:00:00Z"
+},
 "/en/berlin/events/party/28-10-26/mittendrin-with-ian-fog96": {
 "b_first": "2026-10-13T23:00:00Z",
 "b_last": "2026-10-13T23:00:00Z"
@@ -2423,7 +2615,7 @@
 },
 "/en/berlin/events/party/28-10-26/salsa-bachata-after-work": {
 "g_first": "2026-10-22T20:00:00Z",
-"g_last": "2026-10-23T05:00:00Z"
+"g_last": "2026-10-26T18:00:00Z"
 },
 "/en/berlin/events/party/28-10-26/sunny-terrace-fizzy-spritzes": {
 "b_first": "2026-10-11T04:00:00Z",
@@ -2473,7 +2665,7 @@
 },
 "/en/berlin/events/party/29-10-26/thousand-house-shveba": {
 "g_first": "2026-10-23T05:00:00Z",
-"g_last": "2026-10-24T16:00:00Z"
+"g_last": "2026-10-27T02:00:00Z"
 },
 "/en/berlin/events/party/29-11-26/soda-social-club": {
 "g_first": "2026-10-21T22:00:00Z",
@@ -2563,7 +2755,7 @@
 },
 "/en/berlin/events/silvester/pirates": {
 "b_first": "2026-10-08T10:00:00Z",
-"b_last": "2026-10-08T10:00:00Z"
+"b_last": "2026-10-26T12:00:00Z"
 },
 "/en/berlin/events/silvester/spindler-klatt": {
 "b_first": "2026-10-12T12:00:00Z",
@@ -2579,6 +2771,10 @@
 "b_first": "2026-10-09T17:00:00Z",
 "b_last": "2026-10-10T20:00:00Z"
 },
+"/en/berlin/events/silvester/the-door": {
+"b_first": "2026-10-26T11:00:00Z",
+"b_last": "2026-10-26T11:00:00Z"
+},
 "/en/berlin/events/silvester/uber-arena": {
 "g_first": "2026-10-23T02:00:00Z",
 "g_last": "2026-10-25T16:00:00Z"
@@ -2587,17 +2783,35 @@
 "g_first": "2026-10-19T05:00:00Z",
 "g_last": "2026-10-19T05:00:00Z"
 },
+"/es/berlin/eventos/electro/01-11-26/club-pub-x-sunset-grooves": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T21:00:00Z",
+"g_last": "2026-10-27T07:00:00Z"
+},
 "/es/berlin/eventos/electro/03-11-26/open-decks-tischtennis-open-air-indoors": {
 "g_first": "2026-10-21T07:00:00Z",
 "g_last": "2026-10-21T07:00:00Z"
 },
 "/es/berlin/eventos/electro/03-11-26/taller-de-ritual-shibari-del-martes-de-klubkneipe-x": {
+"b_first": "2026-10-27T04:00:00Z",
+"b_last": "2026-10-27T04:00:00Z",
 "g_first": "2026-10-25T20:00:00Z",
 "g_last": "2026-10-25T23:00:00Z"
 },
 "/es/berlin/eventos/electro/04-12-26/estrellas-discretas": {
 "g_first": "2026-10-25T14:00:00Z",
 "g_last": "2026-10-25T14:00:00Z"
+},
+"/es/berlin/eventos/electro/05-11-26/sssmile-afterhour-flinta-especial": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T20:00:00Z",
+"g_last": "2026-10-27T03:00:00Z"
+},
+"/es/berlin/eventos/electro/06-11-26/dionys-hardtechno-x-trancebounce-rave-2-floors": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/es/berlin/eventos/electro/06-11-26/puras-tonterias": {
 "b_first": "2026-10-16T12:00:00Z",
@@ -2609,13 +2823,17 @@
 "g_first": "2026-10-22T04:00:00Z",
 "g_last": "2026-10-22T04:00:00Z"
 },
+"/es/berlin/eventos/electro/10-11-26/taller-de-rituales-de-vulva-del-martes-de-klubkneipe-x": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
 "/es/berlin/eventos/electro/11-12-26/fin-de-semana-x-usha-berlin": {
 "b_first": "2026-10-12T23:00:00Z",
 "b_last": "2026-10-12T23:00:00Z"
 },
 "/es/berlin/eventos/electro/12-11-26/educacion-en-el-hogar-09": {
 "b_first": "2026-10-23T13:00:00Z",
-"b_last": "2026-10-26T08:00:00Z"
+"b_last": "2026-10-27T08:00:00Z"
 },
 "/es/berlin/eventos/electro/14-11-26/brainfire-25th-inferno-": {
 "g_first": "2026-10-22T00:00:00Z",
@@ -2628,6 +2846,10 @@
 "/es/berlin/eventos/electro/14-11-26/lechuga-colectiva": {
 "g_first": "2026-10-16T17:00:00Z",
 "g_last": "2026-10-22T03:00:00Z"
+},
+"/es/berlin/eventos/electro/15-11-26/club-pub-x-gatos-domesticos": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/es/berlin/eventos/electro/17-11-26/open-decks-tischtennis-open-air-indoors": {
 "g_first": "2026-10-11T10:00:00Z",
@@ -2645,19 +2867,9 @@
 "b_first": "2026-10-21T13:00:00Z",
 "b_last": "2026-10-25T11:00:00Z"
 },
-"/es/berlin/eventos/electro/24-10-26/caliente-i-30-horas": {
-"g_first": "2026-10-22T03:00:00Z",
-"g_last": "2026-10-23T05:00:00Z"
-},
 "/es/berlin/eventos/electro/24-11-26/open-decks-tischtennis-open-air-indoors": {
 "g_first": "2026-10-24T11:00:00Z",
 "g_last": "2026-10-24T11:00:00Z"
-},
-"/es/berlin/eventos/electro/26-10-26/kitkat-del-lunes-electrico": {
-"b_first": "2026-10-22T07:00:00Z",
-"b_last": "2026-10-22T07:00:00Z",
-"g_first": "2026-10-20T18:00:00Z",
-"g_last": "2026-10-25T06:00:00Z"
 },
 "/es/berlin/eventos/electro/27-10-26/club-pub-x-martes-ritual-tatuaje-flash-day": {
 "g_first": "2026-10-26T06:00:00Z",
@@ -2677,11 +2889,15 @@
 "b_first": "2026-10-18T00:00:00Z",
 "b_last": "2026-10-18T00:00:00Z"
 },
+"/es/berlin/eventos/electro/28-10-26/signals-5-tickets-with-bobaz-lobster-shake-daddy-onlywithyou": {
+"g_first": "2026-10-27T09:00:00Z",
+"g_last": "2026-10-27T09:00:00Z"
+},
 "/es/berlin/eventos/electro/28-10-26/symbiotikka-halloween-psy-techno-special-en-kitkat-club": {
 "b_first": "2026-10-20T13:00:00Z",
 "b_last": "2026-10-24T14:00:00Z",
 "g_first": "2026-10-22T03:00:00Z",
-"g_last": "2026-10-24T23:00:00Z"
+"g_last": "2026-10-27T06:00:00Z"
 },
 "/es/berlin/eventos/electro/28-11-26/desatado-por-bajo": {
 "b_first": "2026-10-23T13:00:00Z",
@@ -2690,6 +2906,14 @@
 "/es/berlin/eventos/electro/29-10-26/chantals-house-of-shame": {
 "b_first": "2026-10-25T12:00:00Z",
 "b_last": "2026-10-25T12:00:00Z"
+},
+"/es/berlin/eventos/electro/29-11-26/club-pub-x-resonancia": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
+"/es/berlin/eventos/electro/29-11-26/festival-de-musica-japonesa-de-rebon": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/es/berlin/eventos/electro/30-10-26/5-anos-de-gabber-industries-berlin": {
 "g_first": "2026-10-24T14:00:00Z",
@@ -2707,13 +2931,13 @@
 },
 "/es/berlin/eventos/fiesta/02-11-26/fiesta-posterior-a-la-gira-de-nitrous-con-don-tolivers-dj-oficial": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-25T21:00:00Z",
+"b_last": "2026-10-26T12:00:00Z",
 "g_first": "2026-10-22T14:00:00Z",
 "g_last": "2026-10-24T05:00:00Z"
 },
 "/es/berlin/eventos/fiesta/02-12-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T02:00:00Z",
+"b_last": "2026-10-26T17:00:00Z",
 "g_first": "2026-10-23T10:00:00Z",
 "g_last": "2026-10-23T10:00:00Z"
 },
@@ -2769,6 +2993,10 @@
 "g_first": "2026-10-18T05:00:00Z",
 "g_last": "2026-10-18T05:00:00Z"
 },
+"/es/berlin/eventos/fiesta/05-12-26/100-gramos-lounge-bebidas-elegantes-y-gente-encantadora": {
+"b_first": "2026-10-26T22:00:00Z",
+"b_last": "2026-10-26T22:00:00Z"
+},
 "/es/berlin/eventos/fiesta/05-12-26/nos-encanta-la-fiesta-de-los-80": {
 "g_first": "2026-10-22T09:00:00Z",
 "g_last": "2026-10-22T09:00:00Z"
@@ -2823,9 +3051,21 @@
 "g_first": "2026-10-16T06:00:00Z",
 "g_last": "2026-10-16T06:00:00Z"
 },
+"/es/berlin/eventos/fiesta/07-11-26/fuera-de-la-mente": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
+},
+"/es/berlin/eventos/fiesta/07-11-26/ma-baker-party": {
+"g_first": "2026-10-26T09:00:00Z",
+"g_last": "2026-10-26T09:00:00Z"
+},
 "/es/berlin/eventos/fiesta/07-11-26/nos-encanta-la-fiesta-de-los-80": {
 "g_first": "2026-10-14T09:00:00Z",
 "g_last": "2026-10-14T09:00:00Z"
+},
+"/es/berlin/eventos/fiesta/07-11-26/pequena-gran-casa-edicion-noviembre967": {
+"g_first": "2026-10-27T09:00:00Z",
+"g_last": "2026-10-27T09:00:00Z"
 },
 "/es/berlin/eventos/fiesta/07-11-26/piratas-schlager-sabado": {
 "g_first": "2026-10-13T21:00:00Z",
@@ -2835,9 +3075,19 @@
 "g_first": "2026-10-22T23:00:00Z",
 "g_last": "2026-10-24T09:00:00Z"
 },
+"/es/berlin/eventos/fiesta/07-11-26/salsa-on2-introduction-to-new-york-style-workshop": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
+"g_first": "2026-10-26T23:00:00Z",
+"g_last": "2026-10-26T23:00:00Z"
+},
 "/es/berlin/eventos/fiesta/07-11-26/vibe-nation-6-una-experiencia-sonora-global": {
 "g_first": "2026-10-12T19:00:00Z",
 "g_last": "2026-10-12T21:00:00Z"
+},
+"/es/berlin/eventos/fiesta/08-11-26/salsa-on2-introduction-to-new-york-style-workshop": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/es/berlin/eventos/fiesta/08-11-26/soda-social-club": {
 "b_first": "2026-10-19T21:00:00Z",
@@ -2887,7 +3137,7 @@
 },
 "/es/berlin/eventos/fiesta/11-11-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-25T23:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
 "g_first": "2026-10-25T09:00:00Z",
 "g_last": "2026-10-25T09:00:00Z"
 },
@@ -2908,6 +3158,10 @@
 "/es/berlin/eventos/fiesta/12-11-26/el-mejor-error-de-kitty-cheng": {
 "g_first": "2026-10-15T09:00:00Z",
 "g_last": "2026-10-15T10:00:00Z"
+},
+"/es/berlin/eventos/fiesta/12-11-26/sssmile-afterhour": {
+"b_first": "2026-10-26T14:00:00Z",
+"b_last": "2026-10-26T14:00:00Z"
 },
 "/es/berlin/eventos/fiesta/12-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
 "g_first": "2026-10-24T15:00:00Z",
@@ -3013,7 +3267,7 @@
 },
 "/es/berlin/eventos/fiesta/18-11-26/salsa-bachata-after-work": {
 "b_first": "2026-10-22T13:00:00Z",
-"b_last": "2026-10-26T01:00:00Z",
+"b_last": "2026-10-26T16:00:00Z",
 "g_first": "2026-10-22T21:00:00Z",
 "g_last": "2026-10-22T21:00:00Z"
 },
@@ -3105,9 +3359,13 @@
 "g_first": "2026-10-19T10:00:00Z",
 "g_last": "2026-10-23T04:00:00Z"
 },
+"/es/berlin/eventos/fiesta/23-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
+"b_first": "2026-10-26T18:00:00Z",
+"b_last": "2026-10-26T18:00:00Z"
+},
 "/es/berlin/eventos/fiesta/23-12-26/salsa-bachata-after-work": {
 "b_first": "2026-10-24T06:00:00Z",
-"b_last": "2026-10-26T00:00:00Z",
+"b_last": "2026-10-27T08:00:00Z",
 "g_first": "2026-10-24T15:00:00Z",
 "g_last": "2026-10-24T15:00:00Z"
 },
@@ -3116,10 +3374,14 @@
 "g_last": "2026-10-25T00:00:00Z"
 },
 "/es/berlin/eventos/fiesta/24-12-26/100-gramos-lounge-bebidas-elegantes-y-gente-encantadora": {
+"b_first": "2026-10-27T09:00:00Z",
+"b_last": "2026-10-27T09:00:00Z",
 "g_first": "2026-10-25T00:00:00Z",
 "g_last": "2026-10-25T00:00:00Z"
 },
 "/es/berlin/eventos/fiesta/24-12-26/el-mejor-error-de-kitty-cheng": {
+"b_first": "2026-10-27T00:00:00Z",
+"b_last": "2026-10-27T00:00:00Z",
 "g_first": "2026-10-25T00:00:00Z",
 "g_last": "2026-10-25T00:00:00Z"
 },
@@ -3136,30 +3398,6 @@
 "/es/berlin/eventos/fiesta/25-12-26/viernes-por-la-noche-fiesta-en-3-plantas": {
 "g_first": "2026-10-24T11:00:00Z",
 "g_last": "2026-10-24T11:00:00Z"
-},
-"/es/berlin/eventos/fiesta/26-10-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
-"g_first": "2026-10-25T06:00:00Z",
-"g_last": "2026-10-25T12:00:00Z"
-},
-"/es/berlin/eventos/fiesta/26-10-26/cool-drinks-nice-people-good-music": {
-"g_first": "2026-10-25T06:00:00Z",
-"g_last": "2026-10-25T06:00:00Z"
-},
-"/es/berlin/eventos/fiesta/26-10-26/monday-nite-club": {
-"b_first": "2026-10-22T04:00:00Z",
-"b_last": "2026-10-22T04:00:00Z",
-"g_first": "2026-10-20T05:00:00Z",
-"g_last": "2026-10-20T05:00:00Z"
-},
-"/es/berlin/eventos/fiesta/26-10-26/singularidad": {
-"g_first": "2026-10-25T06:00:00Z",
-"g_last": "2026-10-25T06:00:00Z"
-},
-"/es/berlin/eventos/fiesta/26-10-26/terraza-soleada-spritzes-efervescentes": {
-"b_first": "2026-10-10T16:00:00Z",
-"b_last": "2026-10-10T16:00:00Z",
-"g_first": "2026-10-25T06:00:00Z",
-"g_last": "2026-10-26T09:00:00Z"
 },
 "/es/berlin/eventos/fiesta/26-11-26/soda-social-club": {
 "b_first": "2026-10-20T13:00:00Z",
@@ -3191,11 +3429,11 @@
 },
 "/es/berlin/eventos/fiesta/27-11-26/heroes-locales": {
 "g_first": "2026-10-19T09:00:00Z",
-"g_last": "2026-10-25T00:00:00Z"
+"g_last": "2026-10-27T00:00:00Z"
 },
 "/es/berlin/eventos/fiesta/27-11-26/hola-viernes": {
 "g_first": "2026-10-22T05:00:00Z",
-"g_last": "2026-10-24T23:00:00Z"
+"g_last": "2026-10-27T02:00:00Z"
 },
 "/es/berlin/eventos/fiesta/27-11-26/mega-90s-rave-dj-quicksilver": {
 "g_first": "2026-10-24T20:00:00Z",
@@ -3211,19 +3449,43 @@
 "g_first": "2026-10-22T20:00:00Z",
 "g_last": "2026-10-22T20:00:00Z"
 },
+"/es/berlin/eventos/fiesta/28-10-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini": {
+"g_first": "2026-10-27T01:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
+},
+"/es/berlin/eventos/fiesta/28-10-26/100-gramos-lounge-bebidas-elegantes-y-gente-encantadora": {
+"g_first": "2026-10-27T06:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
+},
 "/es/berlin/eventos/fiesta/28-10-26/afterparty-with-dj-harney-nemzzz-official-dj": {
 "b_first": "2026-10-24T20:00:00Z",
 "b_last": "2026-10-24T20:00:00Z",
 "g_first": "2026-10-22T13:00:00Z",
 "g_last": "2026-10-22T14:00:00Z"
 },
+"/es/berlin/eventos/fiesta/28-10-26/afterwork-100-gramm-vino": {
+"g_first": "2026-10-27T06:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
+},
 "/es/berlin/eventos/fiesta/28-10-26/banda-thousand-live-frankie-balou": {
 "g_first": "2026-10-21T00:00:00Z",
-"g_last": "2026-10-21T00:00:00Z"
+"g_last": "2026-10-27T06:00:00Z"
+},
+"/es/berlin/eventos/fiesta/28-10-26/bmc-taller-de-salsa-on-2-y-fiesta-de-salsa-dura": {
+"g_first": "2026-10-27T03:00:00Z",
+"g_last": "2026-10-27T03:00:00Z"
+},
+"/es/berlin/eventos/fiesta/28-10-26/cool-drinks-nice-people-good-music": {
+"g_first": "2026-10-27T06:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
 },
 "/es/berlin/eventos/fiesta/28-10-26/escaparate-de-ocultistas": {
 "g_first": "2026-10-20T21:00:00Z",
-"g_last": "2026-10-20T21:00:00Z"
+"g_last": "2026-10-27T06:00:00Z"
+},
+"/es/berlin/eventos/fiesta/28-10-26/fleur-de-spritz": {
+"g_first": "2026-10-27T06:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
 },
 "/es/berlin/eventos/fiesta/28-10-26/mittendrin-con-ian-fog96": {
 "b_first": "2026-10-19T23:00:00Z",
@@ -3239,13 +3501,17 @@
 },
 "/es/berlin/eventos/fiesta/28-10-26/noche-de-reinas-ambiente-del-lado-oeste": {
 "g_first": "2026-10-22T05:00:00Z",
-"g_last": "2026-10-22T05:00:00Z"
+"g_last": "2026-10-27T02:00:00Z"
 },
 "/es/berlin/eventos/fiesta/28-10-26/salsa-bachata-despuesdeltrabajo": {
 "b_first": "2026-10-24T01:00:00Z",
 "b_last": "2026-10-24T01:00:00Z",
 "g_first": "2026-10-22T17:00:00Z",
 "g_last": "2026-10-24T13:00:00Z"
+},
+"/es/berlin/eventos/fiesta/28-10-26/terraza-soleada-spritzes-efervescentes": {
+"g_first": "2026-10-27T06:00:00Z",
+"g_last": "2026-10-27T06:00:00Z"
 },
 "/es/berlin/eventos/fiesta/28-11-26/cirque-de-lafrique-x-afro-life-and-heaven-sam": {
 "g_first": "2026-10-24T05:00:00Z",
@@ -3299,7 +3565,7 @@
 },
 "/es/berlin/eventos/fiesta/30-10-26/swadinger-con-sven-swade-y-amigos": {
 "g_first": "2026-10-24T08:00:00Z",
-"g_last": "2026-10-24T08:00:00Z"
+"g_last": "2026-10-26T22:00:00Z"
 },
 "/es/berlin/eventos/fiesta/30-10-26/viernes-por-la-noche-fiesta-en-3-plantas": {
 "g_first": "2026-10-11T08:00:00Z",
@@ -3310,6 +3576,8 @@
 "g_last": "2026-10-12T07:00:00Z"
 },
 "/es/berlin/eventos/fiesta/31-10-26/maniaco-y-yo-y-amigos": {
+"b_first": "2026-10-26T17:00:00Z",
+"b_last": "2026-10-26T17:00:00Z",
 "g_first": "2026-10-25T08:00:00Z",
 "g_last": "2026-10-25T08:00:00Z"
 },
@@ -3323,7 +3591,7 @@
 },
 "/es/berlin/eventos/halloween/31-10-26": {
 "g_first": "2026-10-13T21:00:00Z",
-"g_last": "2026-10-18T04:00:00Z"
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/es/berlin/eventos/halloween/808/30-10-2026": {
 "g_first": "2026-10-11T12:00:00Z",
@@ -3361,9 +3629,9 @@
 },
 "/es/berlin/eventos/halloween/amano-eastside/30-10-2026": {
 "b_first": "2026-10-18T05:00:00Z",
-"b_last": "2026-10-18T05:00:00Z",
+"b_last": "2026-10-26T21:00:00Z",
 "g_first": "2026-10-26T09:00:00Z",
-"g_last": "2026-10-26T09:00:00Z"
+"g_last": "2026-10-26T23:00:00Z"
 },
 "/es/berlin/eventos/halloween/amano-eastside/31-10-2026": {
 "g_first": "2026-10-10T14:00:00Z",
@@ -3420,12 +3688,14 @@
 "g_last": "2026-10-21T22:00:00Z"
 },
 "/es/berlin/eventos/halloween/bricks/30-10-2026": {
+"b_first": "2026-10-26T19:00:00Z",
+"b_last": "2026-10-26T19:00:00Z",
 "g_first": "2026-10-24T22:00:00Z",
-"g_last": "2026-10-24T22:00:00Z"
+"g_last": "2026-10-26T14:00:00Z"
 },
 "/es/berlin/eventos/halloween/bricks/31-10-2026": {
 "g_first": "2026-10-08T17:00:00Z",
-"g_last": "2026-10-24T10:00:00Z"
+"g_last": "2026-10-26T18:00:00Z"
 },
 "/es/berlin/eventos/halloween/carambar": {
 "g_first": "2026-10-19T05:00:00Z",
@@ -3454,6 +3724,10 @@
 "/es/berlin/eventos/halloween/club-weekend/31-10-2026": {
 "b_first": "2026-10-20T01:00:00Z",
 "b_last": "2026-10-23T19:00:00Z"
+},
+"/es/berlin/eventos/halloween/dersim-kultur-gemeinde": {
+"b_first": "2026-10-27T09:00:00Z",
+"b_last": "2026-10-27T09:00:00Z"
 },
 "/es/berlin/eventos/halloween/greifswalder-str.-23a163": {
 "g_first": "2026-10-25T22:00:00Z",
@@ -3484,6 +3758,8 @@
 "g_last": "2026-10-23T03:00:00Z"
 },
 "/es/berlin/eventos/halloween/kulturbrauerei": {
+"b_first": "2026-10-27T05:00:00Z",
+"b_last": "2026-10-27T05:00:00Z",
 "g_first": "2026-10-25T17:00:00Z",
 "g_last": "2026-10-26T06:00:00Z"
 },
@@ -3495,13 +3771,13 @@
 "b_first": "2026-10-18T09:00:00Z",
 "b_last": "2026-10-18T09:00:00Z",
 "g_first": "2026-10-12T22:00:00Z",
-"g_last": "2026-10-25T04:00:00Z"
+"g_last": "2026-10-26T18:00:00Z"
 },
 "/es/berlin/eventos/halloween/loci-loft": {
 "b_first": "2026-10-24T13:00:00Z",
-"b_last": "2026-10-24T13:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
 "g_first": "2026-10-19T06:00:00Z",
-"g_last": "2026-10-19T06:00:00Z"
+"g_last": "2026-10-27T06:00:00Z"
 },
 "/es/berlin/eventos/halloween/loretta-am-wannsee": {
 "b_first": "2026-10-13T12:00:00Z",
@@ -3523,11 +3799,13 @@
 },
 "/es/berlin/eventos/halloween/maaya/31-10-2026": {
 "b_first": "2026-10-08T08:00:00Z",
-"b_last": "2026-10-25T06:00:00Z"
+"b_last": "2026-10-25T06:00:00Z",
+"g_first": "2026-10-27T07:00:00Z",
+"g_last": "2026-10-27T07:00:00Z"
 },
 "/es/berlin/eventos/halloween/maxxim/30-10-2026": {
 "g_first": "2026-10-14T14:00:00Z",
-"g_last": "2026-10-24T17:00:00Z"
+"g_last": "2026-10-27T08:00:00Z"
 },
 "/es/berlin/eventos/halloween/maxxim/31-10-2026": {
 "g_first": "2026-10-25T06:00:00Z",
@@ -3605,7 +3883,7 @@
 },
 "/es/berlin/eventos/halloween/spindler-klatt/31-10-2026": {
 "b_first": "2026-10-24T12:00:00Z",
-"b_last": "2026-10-26T03:00:00Z"
+"b_last": "2026-10-26T15:00:00Z"
 },
 "/es/berlin/eventos/halloween/suss-war-gestern/31-10-2026": {
 "g_first": "2026-10-19T05:00:00Z",
@@ -3615,7 +3893,7 @@
 "b_first": "2026-10-18T02:00:00Z",
 "b_last": "2026-10-18T02:00:00Z",
 "g_first": "2026-10-12T20:00:00Z",
-"g_last": "2026-10-22T00:00:00Z"
+"g_last": "2026-10-26T21:00:00Z"
 },
 "/es/berlin/eventos/halloween/the-door": {
 "b_first": "2026-10-13T12:00:00Z",
@@ -3639,7 +3917,7 @@
 },
 "/es/berlin/eventos/halloween/treehouse": {
 "b_first": "2026-10-21T13:00:00Z",
-"b_last": "2026-10-26T07:00:00Z",
+"b_last": "2026-10-26T14:00:00Z",
 "g_first": "2026-10-21T15:00:00Z",
 "g_last": "2026-10-21T15:00:00Z"
 },
@@ -3673,6 +3951,10 @@
 "g_first": "2026-10-15T09:00:00Z",
 "g_last": "2026-10-15T09:00:00Z"
 },
+"/es/berlin/eventos/hip-hop/27-11-26/placer-polaco-impreza-andrzejkowa-2026": {
+"b_first": "2026-10-26T11:00:00Z",
+"b_last": "2026-10-26T11:00:00Z"
+},
 "/es/berlin/eventos/nochevieja/31-12-26": {
 "g_first": "2026-10-13T19:00:00Z",
 "g_last": "2026-10-13T19:00:00Z"
@@ -3687,7 +3969,7 @@
 "b_first": "2026-10-25T07:00:00Z",
 "b_last": "2026-10-25T07:00:00Z",
 "g_first": "2026-10-11T15:00:00Z",
-"g_last": "2026-10-11T15:00:00Z"
+"g_last": "2026-10-27T01:00:00Z"
 },
 "/es/berlin/eventos/nochevieja/palais-am-tegeler-see": {
 "g_first": "2026-10-21T22:00:00Z",
