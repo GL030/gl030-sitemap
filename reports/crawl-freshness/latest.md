@@ -1,4 +1,4 @@
-# Crawl-Freshness Events – Stand 30.10.2026 11:00 UTC
+# Crawl-Freshness Events – Stand 31.10.2026 10:00 UTC
 
 Basis: Event-URLs der Sitemap mit Eintrag ab 2026-10-09. Stundenraster, nur HTTP 200.
 
@@ -6,23 +6,23 @@ Basis: Event-URLs der Sitemap mit Eintrag ab 2026-10-09. Stundenraster, nur HTTP
 
 | Vorlauf | URLs | erster Abruf erfolgt | Median Std. bis Abruf | 75 %-Wert |
 |---|---|---|---|---|
-| < 7 Tage | 133 | 118 (89 %) | -23 | 12 |
-| 7–20 Tage | 138 | 107 (78 %) | 20 | 30 |
-| ≥ 21 Tage | 510 | 258 (51 %) | 32 | 59 |
+| < 7 Tage | 168 | 149 (89 %) | -13 | 9 |
+| 7–20 Tage | 173 | 132 (76 %) | 20 | 28 |
+| ≥ 21 Tage | 513 | 271 (53 %) | 32 | 79 |
 
-Events mit Termin bis heute: 106, davon vor dem Termin abgerufen: 96 (91 %).
+Events mit Termin bis heute: 132, davon vor dem Termin abgerufen: 123 (93 %).
 
 ## Bingbot
 
 | Vorlauf | URLs | erster Abruf erfolgt | Median Std. bis Abruf | 75 %-Wert |
 |---|---|---|---|---|
-| < 7 Tage | 133 | 91 (68 %) | -56 | 13 |
-| 7–20 Tage | 138 | 117 (85 %) | 14 | 52 |
-| ≥ 21 Tage | 510 | 342 (67 %) | 22 | 57 |
+| < 7 Tage | 168 | 112 (67 %) | -12 | 14 |
+| 7–20 Tage | 173 | 148 (86 %) | 17 | 43 |
+| ≥ 21 Tage | 513 | 340 (66 %) | 22 | 57 |
 
-Events mit Termin bis heute: 106, davon vor dem Termin abgerufen: 74 (70 %).
+Events mit Termin bis heute: 132, davon vor dem Termin abgerufen: 91 (69 %).
 
 ## Reaktion auf lastmod-Aenderungen (Googlebot)
 
-Geänderte URLs: 84, danach erneut abgerufen: 57, Median 257 Std.
+Geänderte URLs: 123, danach erneut abgerufen: 70, Median 251 Std.
 
