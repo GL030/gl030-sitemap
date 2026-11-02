@@ -1,4 +1,4 @@
-# AI-Query-Mirror 19.10.–25.10.2026
+# AI-Query-Mirror 26.10.–01.11.2026
 
 Quelle: Cloudflare GraphQL (adaptive Stichprobe), nur Status 200, nur On-Demand-Fetcher. Zahlen = Abrufe, nicht Nutzer.
 
@@ -6,116 +6,116 @@ Quelle: Cloudflare GraphQL (adaptive Stichprobe), nur Status 200, nur On-Demand-
 
 | Bot | Art | Abrufe | Seiten |
 |---|---|---:|---:|
-| Claude-SearchBot | Crawler | 20628 | 1752 |
-| PerplexityBot | Crawler | 9914 | 1956 |
-| ChatGPT-User | on-demand | 5233 | 1215 |
-| Claude-User | on-demand | 510 | 205 |
+| PerplexityBot | Crawler | 7623 | 1956 |
+| ChatGPT-User | on-demand | 5709 | 1030 |
+| Claude-User | on-demand | 189 | 94 |
 | Perplexity-User | on-demand | 0 | 0 |
 | OAI-SearchBot | Crawler | 0 | 0 |
+| Claude-SearchBot | Crawler | 0 | 0 |
 
 ## Seitenklassen (nur On-Demand)
 
 | Klasse | Abrufe | Anteil |
 |---|---:|---:|
-| Event-Detail | 1686 | 29 % |
-| Sonstige | 914 | 16 % |
-| Datum | 873 | 15 % |
-| Location-Profil | 871 | 15 % |
-| Startseite | 867 | 15 % |
-| Kategorie/Tag | 532 | 9 % |
+| Sonstige | 2083 | 35 % |
+| Event-Detail | 1166 | 20 % |
+| Startseite | 1055 | 18 % |
+| Datum | 731 | 12 % |
+| Location-Profil | 548 | 9 % |
+| Kategorie/Tag | 315 | 5 % |
 
 ## Sprache
 
 | Sprache | Abrufe |
 |---|---:|
-| de | 2767 |
-| en | 2122 |
-| - | 787 |
-| es | 67 |
+| de | 2927 |
+| en | 1828 |
+| - | 1073 |
+| es | 70 |
 
 ## Top 60 Pfade (nur On-Demand)
 
 | # | Pfad | Abrufe | ChatGPT-User | Perplexity-User | Claude-User |
 |---:|---|---:|---:|---:|---:|
-| 1 | `/` | 750 | 729 | 0 | 21 |
-| 2 | `/en/` | 115 | 101 | 0 | 14 |
-| 3 | `/en/berlin/events/halloween` | 73 | 69 | 0 | 4 |
-| 4 | `/de/berlin/events/halloween/31-10-26` | 67 | 65 | 0 | 2 |
-| 5 | `/de/berlin/events/halloween` | 64 | 64 | 0 | 0 |
-| 6 | `/de/berlin/events/electro` | 56 | 56 | 0 | 0 |
+| 1 | `/` | 1002 | 1000 | 0 | 2 |
+| 2 | `/de/berlin/events/halloween/napoleon-komplex/31-10-2026` | 86 | 86 | 0 | 0 |
+| 3 | `/de/berlin/events/halloween/31-10-26` | 82 | 80 | 0 | 2 |
+| 4 | `/de/berlin/events/halloween` | 68 | 68 | 0 | 0 |
+| 5 | `/en/berlin/events/halloween` | 67 | 65 | 0 | 2 |
+| 6 | `/de/berlin/events/halloween/havanna` | 58 | 58 | 0 | 0 |
 | 7 | `/en/berlin/events/halloween/31-10-26` | 55 | 55 | 0 | 0 |
-| 8 | `/de/berlin/locations/kitkat` | 55 | 53 | 0 | 2 |
-| 9 | `/de/berlin/events/silvester` | 54 | 49 | 0 | 5 |
-| 10 | `/en/berlin/locations/sisyphos` | 54 | 48 | 0 | 6 |
-| 11 | `/en/berlin/events/electro` | 53 | 39 | 0 | 14 |
-| 12 | `/de/berlin/events/party/31-10-26` | 52 | 48 | 0 | 4 |
-| 13 | `/en/berlin/locations/kitkat` | 48 | 47 | 0 | 1 |
-| 14 | `/en/berlin/events/silvester` | 45 | 41 | 0 | 4 |
-| 15 | `/de/berlin/events/halloween/30-10-26` | 43 | 41 | 0 | 2 |
-| 16 | `/en/berlin/locations/insomnia-erotic-nightclub` | 39 | 35 | 0 | 4 |
-| 17 | `/de/berlin/events/electro/23-10-26` | 38 | 38 | 0 | 0 |
-| 18 | `/de/berlin/events/party/23-10-26` | 26 | 22 | 0 | 4 |
-| 19 | `/de/berlin/events/halloween/napoleon-komplex/31-10-2026` | 25 | 25 | 0 | 0 |
-| 20 | `/en/berlin/events/halloween/30-10-26` | 24 | 24 | 0 | 0 |
-| 21 | `/de/berlin/events/halloween/aqua-hofe` | 24 | 22 | 0 | 2 |
-| 22 | `/de/berlin/events/hip-hop` | 23 | 21 | 0 | 2 |
-| 23 | `/de/berlin/events/electro/23-10-26/power-butt-club` | 18 | 18 | 0 | 0 |
-| 24 | `/en/berlin/events/halloween/sisyphos` | 18 | 18 | 0 | 0 |
-| 25 | `/de/berlin/locations/sisyphos` | 18 | 16 | 0 | 2 |
-| 26 | `/de/berlin/locations/rso` | 17 | 17 | 0 | 0 |
-| 27 | `/de/berlin/events/party/05-12-26/pirates-schlager-samstag` | 15 | 15 | 0 | 0 |
-| 28 | `/de/berlin/events/hip-hop/24-10-26/gold-school-rnb-afrobeats` | 15 | 15 | 0 | 0 |
-| 29 | `/en/berlin/events/halloween/kitkat` | 15 | 15 | 0 | 0 |
-| 30 | `/de/berlin/events/party/23-10-26/innervisions` | 15 | 15 | 0 | 0 |
-| 31 | `/de/berlin/events/halloween/club-weekend/31-10-2026` | 14 | 14 | 0 | 0 |
-| 32 | `/de/berlin/events/party/20-10-26/super-tuesday-80s-disco-hits-hip-hop-party` | 14 | 14 | 0 | 0 |
-| 33 | `/de/berlin/events/16` | 14 | 14 | 0 | 0 |
-| 34 | `/en/berlin/locations/sisyphos/past-events` | 14 | 14 | 0 | 0 |
-| 35 | `/en/berlin/events/halloween/napoleon-komplex/31-10-2026` | 14 | 12 | 0 | 2 |
-| 36 | `/de/berlin/events/party/24-10-26` | 14 | 10 | 0 | 4 |
-| 37 | `/en/berlin/locations/about-blank` | 14 | 8 | 0 | 6 |
-| 38 | `/de/berlin/events/electro/06-11-26` | 13 | 13 | 0 | 0 |
-| 39 | `/de/berlin/events/techno` | 13 | 11 | 0 | 2 |
-| 40 | `/de/berlin/events/halloween/mio` | 12 | 12 | 0 | 0 |
-| 41 | `/de/berlin/events/day-party/24-10-26/flashbacks-mit-liebe-80er-90er-2000er-plus-karaoke-special-3-floors-herbstgarten` | 12 | 12 | 0 | 0 |
-| 42 | `/de/berlin/events/halloween/roll26` | 12 | 12 | 0 | 0 |
-| 43 | `/de/berlin/events/electro/24-10-26/ost-klubnacht` | 12 | 12 | 0 | 0 |
-| 44 | `/en/berlin/locations/rso` | 12 | 12 | 0 | 0 |
-| 45 | `/de/berlin/events/party/22-10-26/salsa-bachata-after-work` | 12 | 12 | 0 | 0 |
-| 46 | `/en/berlin/events/hip-hop/24-10-26/gold-school-rnb-afrobeats` | 12 | 10 | 0 | 2 |
-| 47 | `/en/berlin/events/halloween/gretchen` | 12 | 8 | 0 | 4 |
-| 48 | `/de/berlin/events/open-air/23-09-21` | 11 | 11 | 0 | 0 |
-| 49 | `/de/berlin/events/halloween/sisyphos` | 11 | 11 | 0 | 0 |
-| 50 | `/de/berlin/events/halloween/pirates/31-10-2026` | 11 | 11 | 0 | 0 |
-| 51 | `/en/berlin/events/halloween/paradise-club/31-10-2026` | 11 | 11 | 0 | 0 |
-| 52 | `/en/berlin/locations/tresor/past-events` | 11 | 11 | 0 | 0 |
-| 53 | `/en/berlin/events/singles` | 11 | 9 | 0 | 2 |
-| 54 | `/en/berlin/locations/minimal-bar` | 11 | 9 | 0 | 2 |
-| 55 | `/de/berlin/events/silvester/31-12-26` | 10 | 10 | 0 | 0 |
-| 56 | `/de/berlin/events/electro/25-10-26/wieder-boiler-room-setup-plus-marketplace` | 10 | 10 | 0 | 0 |
-| 57 | `/en/berlin/events/halloween/napoleon-komplex/30-10-2026` | 10 | 10 | 0 | 0 |
-| 58 | `/en/berlin/events/techno` | 10 | 10 | 0 | 0 |
-| 59 | `/de/berlin/events/halloween/cassiopeia` | 10 | 10 | 0 | 0 |
-| 60 | `/de/berlin/events/party/25-10-26/the-sunday-club` | 10 | 10 | 0 | 0 |
+| 8 | `/en/` | 51 | 48 | 0 | 3 |
+| 9 | `/de/berlin/events/electro` | 46 | 46 | 0 | 0 |
+| 10 | `/de/berlin/events/halloween/club-weekend/31-10-2026` | 43 | 43 | 0 | 0 |
+| 11 | `/de/berlin/events/halloween/roll26` | 42 | 42 | 0 | 0 |
+| 12 | `/de/berlin/events/halloween/gretchen` | 42 | 42 | 0 | 0 |
+| 13 | `/de/berlin/events/halloween/cassiopeia` | 41 | 41 | 0 | 0 |
+| 14 | `/de/berlin/events/party/31-10-26` | 40 | 38 | 0 | 2 |
+| 15 | `/en/berlin/events/halloween/30-10-26` | 37 | 37 | 0 | 0 |
+| 16 | `/en/berlin/events/halloween/napoleon-komplex/31-10-2026` | 37 | 37 | 0 | 0 |
+| 17 | `/de/berlin/events/halloween/greifswalder-str.-23a163/31-10-2026` | 35 | 35 | 0 | 0 |
+| 18 | `/de/berlin/events/halloween/kulturbrauerei/31-10-2026` | 34 | 34 | 0 | 0 |
+| 19 | `/de/berlin/events/halloween/30-10-26` | 34 | 34 | 0 | 0 |
+| 20 | `/en/berlin/events/halloween/gretchen` | 32 | 32 | 0 | 0 |
+| 21 | `/de/berlin/events/halloween/metropol` | 32 | 30 | 0 | 2 |
+| 22 | `/de/berlin/events/halloween/spindler-klatt/31-10-2026` | 31 | 31 | 0 | 0 |
+| 23 | `/de/berlin/events/electro/23-10-26` | 30 | 30 | 0 | 0 |
+| 24 | `/de/berlin/events/halloween/aqua-hofe` | 29 | 29 | 0 | 0 |
+| 25 | `/en/berlin/events/halloween/havana` | 27 | 27 | 0 | 0 |
+| 26 | `/de/berlin/events/halloween/mokka-mitte-bar` | 26 | 26 | 0 | 0 |
+| 27 | `/en/berlin/events/halloween/club-weekend/31-10-2026` | 26 | 26 | 0 | 0 |
+| 28 | `/de/berlin/events/halloween/napoleon-komplex/30-10-2026` | 25 | 25 | 0 | 0 |
+| 29 | `/en/berlin/events/electro` | 25 | 23 | 0 | 2 |
+| 30 | `/de/berlin/events/halloween/maaya/31-10-2026` | 24 | 24 | 0 | 0 |
+| 31 | `/de/berlin/events/halloween/kulturbrauerei/30-10-2026` | 23 | 23 | 0 | 0 |
+| 32 | `/de/berlin/events/halloween/amano-grand-central/31-10-2026` | 23 | 23 | 0 | 0 |
+| 33 | `/de/berlin/events/halloween/sisyphos` | 22 | 22 | 0 | 0 |
+| 34 | `/en/berlin/events/halloween/kulturbrauerei/31-10-2026` | 22 | 22 | 0 | 0 |
+| 35 | `/en/berlin/locations/kitkat` | 22 | 22 | 0 | 0 |
+| 36 | `/de/berlin/events/party/31-10-26/halloween-carambar/gaesteliste` | 22 | 22 | 0 | 0 |
+| 37 | `/en/berlin/events/silvester` | 22 | 22 | 0 | 0 |
+| 38 | `/en/berlin/events/halloween/cassiopeia` | 21 | 21 | 0 | 0 |
+| 39 | `/de/berlin/events/halloween/paradise-club/31-10-2026` | 21 | 21 | 0 | 0 |
+| 40 | `/en/berlin/events/halloween/soda` | 21 | 21 | 0 | 0 |
+| 41 | `/de/berlin/events/halloween/cherry-on-top-im-kalle-neukolln-rooftop` | 21 | 21 | 0 | 0 |
+| 42 | `/en/berlin/events/halloween/greifswalder-str.-23a163/31-10-2026` | 20 | 20 | 0 | 0 |
+| 43 | `/en/berlin/events/halloween/the-cloud285` | 19 | 19 | 0 | 0 |
+| 44 | `/de/berlin/locations/gretchen` | 19 | 19 | 0 | 0 |
+| 45 | `/de/berlin/events/halloween/zita-club456` | 18 | 18 | 0 | 0 |
+| 46 | `/de/berlin/events/halloween/club-weekend/30-10-2026` | 18 | 18 | 0 | 0 |
+| 47 | `/de/berlin/events/halloween/carambar` | 18 | 18 | 0 | 0 |
+| 48 | `/de/berlin/events/party/28-10-26/beer-pong-night` | 17 | 17 | 0 | 0 |
+| 49 | `/de/berlin/events/halloween/bricks/31-10-2026` | 17 | 17 | 0 | 0 |
+| 50 | `/en/berlin/events/halloween/metropol` | 17 | 17 | 0 | 0 |
+| 51 | `/de/berlin/events/party/31-10-26/halloween-mio/gaesteliste` | 16 | 16 | 0 | 0 |
+| 52 | `/de/berlin/events/halloween/maxxim/31-10-2026` | 16 | 16 | 0 | 0 |
+| 53 | `/en/berlin/events/halloween/paradise-club/31-10-2026` | 16 | 16 | 0 | 0 |
+| 54 | `/de/berlin/events/halloween/loci-loft` | 15 | 15 | 0 | 0 |
+| 55 | `/en/berlin/events/electro/29-10-26` | 15 | 15 | 0 | 0 |
+| 56 | `/en/berlin/locations/spindler-klatt` | 14 | 14 | 0 | 0 |
+| 57 | `/de/berlin/events/party/05-12-26/pirates-schlager-samstag` | 14 | 14 | 0 | 0 |
+| 58 | `/en/berlin/events/halloween/900yard` | 14 | 14 | 0 | 0 |
+| 59 | `/de/berlin/events/halloween/amano-eastside/30-10-2026` | 14 | 14 | 0 | 0 |
+| 60 | `/de/berlin/locations/paradise-club` | 14 | 14 | 0 | 0 |
 
 ## Antwortblock-Test Profile (On-Demand-Abrufe, Start 15./16.09.2026)
 
 | Gruppe | de | en | es | Summe |
 |---|---:|---:|---:|---:|
-| Test | 24 | 55 | 0 | 79 |
-| Kontrolle | 42 | 46 | 0 | 88 |
+| Test | 21 | 8 | 0 | 29 |
+| Kontrolle | 44 | 37 | 0 | 81 |
 
 ## Betrieb (Cloudflare, Stichprobe)
 
 | Tag | 524 Origin-Timeout | 5xx ohne Early Hints | Banner-Klicks (302) |
 |---|---:|---:|---:|
-| 2026-10-19 | 0 | 292 | 2 |
-| 2026-10-20 | 0 | 159 | 0 |
-| 2026-10-21 | 0 | 1151 | 0 |
-| 2026-10-22 | 0 | 35 | 1 |
-| 2026-10-23 | 0 | 11755 | 0 |
-| 2026-10-24 | 0 | 53 | 0 |
-| 2026-10-25 | 0 | 1081 | 0 |
-| **Summe** | **0** | **14526** | **3** |
+| 2026-10-26 | 0 | 25 | 1 |
+| 2026-10-27 | 704 | 798 | 7 |
+| 2026-10-28 | 2168 | 2844 | 25 |
+| 2026-10-29 | 0 | 40 | 27 |
+| 2026-10-30 | 0 | 132 | 48 |
+| 2026-10-31 | 0 | 77 | 63 |
+| 2026-11-01 | 0 | 151 | 1 |
+| **Summe** | **2872** | **4067** | **172** |
 
 Lesehilfe: On-Demand-Abrufe spiegeln konkrete Nutzerfragen; Crawler-Summen zeigen nur, wie tief die Indizes gehen. Datumsseiten = heute/Wochenende-Fragen, Profile = Club-Fragen, EN = Touristen.
