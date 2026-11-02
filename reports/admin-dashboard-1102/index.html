@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GL030 Admin – Dashboard (Vorschau 02.11.2026)</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f7;--card:#fff;--line:#e4e8ee;--tx:#1d2733;--mu:#6b7684;--mu2:#98a2ae;--s1:#2a78d6;--s2:#98a2ae;--ok:#1baf7a;--warn:#eda100;--bad:#e34948;--chip:#eef3fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 Roboto,system-ui,sans-serif}
+.shell{display:flex;min-height:100vh}
+.nav{width:220px;background:#1f2a37;color:#c9d1dc;padding:16px 0;flex:none}
+.nav .brand{padding:6px 18px 18px;font-weight:700;color:#fff;font-size:18px}
+.nav .g{padding:9px 18px;display:flex;align-items:center;gap:10px;font-size:13.5px}
+.nav .g .material-icons{font-size:18px;color:#8e9bab}.nav .g.on{background:#2a3847;color:#fff}.nav .g.on .material-icons{color:#fff}
+.nav .sub{padding:5px 18px 5px 46px;font-size:13px;color:#aab4c0}
+.nav .sec{padding:14px 18px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#6d7a89}
+.main{flex:1;min-width:0;padding:22px 28px 60px}
+.hd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+h1{font-size:22px;margin:0;font-weight:500}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;padding:6px 14px;border-radius:999px;font:inherit;font-size:13px;color:var(--mu);cursor:pointer}
+.seg button.on{background:#1f2a37;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c4{grid-column:span 4}.c3{grid-column:span 3}
+@media(max-width:1100px){.c8,.c6,.c4,.c3{grid-column:span 12}.c3{grid-column:span 6}}
+.card h2{font-size:15px;font-weight:500;margin:0 0 2px;display:flex;align-items:center;gap:8px}.card h2 .material-icons{font-size:18px;color:var(--mu2)}
+.card .sub{color:var(--mu);font-size:12.5px;margin:0 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:4px 0 14px}
+.kpi b{display:block;font-size:26px;font-weight:500;line-height:1.1}.kpi span{color:var(--mu);font-size:12.5px}
+.kpi .d{font-size:12px;margin-left:6px;font-weight:500}.d.up{color:var(--ok)}.d.dn{color:var(--bad)}.d.eq{color:var(--mu2)}
+.chart{width:100%;height:150px;display:block}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--mu);margin-top:6px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;color:var(--mu);font-weight:500;font-size:12px;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:8px 8px;border-bottom:1px solid #eef1f5;vertical-align:middle}td.r,th.r{text-align:right}tr:last-child td{border-bottom:0}
+td b{font-weight:500}td small{display:block;color:var(--mu);font-size:11.5px}
+.bar{display:inline-block;height:6px;border-radius:3px;background:#e4e8ee;width:70px;vertical-align:middle;margin-right:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--s1);border-radius:3px}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;background:var(--chip);color:#2a5aa0;white-space:nowrap}
+.pill.ok{background:#e6f6ef;color:#117a53}.pill.warn{background:#fff4dc;color:#9a6600}.pill.bad{background:#fde8e8;color:#b32626}.pill.off{background:#f0f2f5;color:var(--mu)}
+.alerts{margin:0;padding:0;list-style:none}.alerts li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #eef1f5;align-items:flex-start}.alerts li:last-child{border-bottom:0}
+.alerts .material-icons{font-size:19px;margin-top:1px}.alerts .w{color:var(--warn)}.alerts .b{color:var(--bad)}.alerts .i{color:var(--s1)}
+.alerts b{font-weight:500}.alerts small{display:block;color:var(--mu)}
+details summary{cursor:pointer;color:var(--mu);font-size:13px;padding:8px 0}
+.fin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.fin div{padding:12px 14px;border:1px solid var(--line);border-radius:10px}.fin b{display:block;font-size:20px;font-weight:500}.fin span{color:var(--mu);font-size:12px}
+.fin .sum{background:#1f2a37;color:#fff;border-color:#1f2a37}.fin .sum span{color:#aab4c0}
+@media(max-width:800px){.fin{grid-template-columns:1fr 1fr}.main{padding:16px}.nav{display:none}}
+.tip{position:fixed;pointer-events:none;background:#1f2a37;color:#fff;font-size:12px;padding:5px 9px;border-radius:6px;display:none;z-index:9}
+.note{background:#fff8e1;border:1px solid #f1dc9a;border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="nav">
+  <div class="brand">GL030 Admin</div>
+  <div class="g on"><span class="material-icons">dashboard</span>Dashboard</div>
+  <div class="g"><span class="material-icons">star_border</span>Events</div>
+  <div class="g"><span class="material-icons">place</span>Clubs</div>
+  <div class="g"><span class="material-icons">headset</span>Künstler</div>
+  <div class="g"><span class="material-icons">list</span>Listen</div>
+  <div class="g"><span class="material-icons">euro_symbol</span>Finanzen</div>
+  <div class="g"><span class="material-icons">chrome_reader_mode</span>Anzeigen</div>
+  <div class="g"><span class="material-icons">supervisor_account</span>Accounts</div>
+  <div class="sub">Partner-Zugänge</div><div class="sub">Benutzer &amp; Rollen</div>
+  <div class="sec">unten</div>
+  <div class="g"><span class="material-icons">inventory_2</span>Archiv</div>
+  <div class="sub">Top Listen · Bilder · Kundenvorlagen</div><div class="sub">Account-Archiv · Pfade · Regionen</div><div class="sub">Aufträge · Url Shortener · Lizenzgeber</div><div class="sub">DSGVO Tools · Email Templates · Einstellungen · Intranet</div>
+</nav>
+<main class="main">
+  <div class="note"><b>Vorschau</b> – Aufbau und Logik zum Freigeben. Zahlen sind Beispielwerte in realistischer Größenordnung; die echte Seite liest live aus der Datenbank (Gästelisten, Tickets, Abrechnung) und GA4.</div>
+  <div class="hd"><h1>Dashboard <span style="color:var(--mu);font-size:14px;margin-left:8px" id="asof">Stand Mo 02.11.2026, 16:40</span></h1>
+    <div class="seg" id="seg"><button data-r="we">Dieses Wochenende</button><button data-r="7" class="on">7 Tage</button><button data-r="14">14 Tage</button><button data-r="30">30 Tage</button></div></div>
+
+  <div class="grid">
+    <section class="card c8">
+      <h2><span class="material-icons">list</span>Gästelisten</h2><p class="sub" id="gl-sub">Anmeldungen der nächsten 7 Tage (Events ab heute), Vergleich: gleicher Zeitraum Vorwoche</p>
+      <div class="kpis"><div class="kpi"><b id="gl-p">1.284<span class="d up">+18 %</span></b><span>Personen angemeldet</span></div><div class="kpi"><b id="gl-e">842<span class="d up">+14 %</span></b><span>Einträge</span></div><div class="kpi"><b id="gl-ev">37</b><span>Events mit Gästeliste</span></div><div class="kpi"><b id="gl-ci">41 %</b><span>Check-in-Quote (vergangene)</span></div></div>
+      <svg class="chart" id="gl-chart"></svg><div class="legend"><span><i style="background:var(--s1)"></i>Personen je Eventtag</span><span><i style="background:var(--s2)"></i>Vorwoche</span></div>
+      <table style="margin-top:12px"><thead><tr><th>Event</th><th>Club</th><th>Datum</th><th class="r">Einträge</th><th class="r">Personen</th><th>vs. Schnitt der Reihe</th></tr></thead><tbody id="gl-rows"></tbody></table>
+    </section>
+
+    <section class="card c4">
+      <h2><span class="material-icons">notifications_active</span>Auffälligkeiten</h2><p class="sub">Was vom Normalen abweicht – nur Hinweise, nichts wird automatisch geändert</p>
+      <ul class="alerts">
+        <li><span class="material-icons b">error_outline</span><div><b>Erinnerungsmails Sa 31.10. nur teilweise versendet</b><small>SendGrid: 412 von 1.930 zurückgewiesen (Kontingent) · 05 Mailversand</small></div></li>
+        <li><span class="material-icons w">trending_down</span><div><b>Havanna – Salsa Night Sa 07.11.: 9 Einträge, Schnitt der Reihe 48</b><small>−81 % · 5 Tage vor Event</small></div></li>
+        <li><span class="material-icons w">schedule</span><div><b>Gästeliste „Matrix Fr 06.11." endet erst 06:00 – nach Eventbeginn</b><small>Frist 06.11. 06:00, Event ab 23:00 · bitte prüfen</small></div></li>
+        <li><span class="material-icons w">confirmation_number</span><div><b>Ü30 Party Berlin Sa 14.11.: 3 Ticketarten, 0 Verkäufe seit 3 Tagen</b><small>Ticketseite 212 Aufrufe, 0 Käufe · Preis/Knappheit prüfen</small></div></li>
+        <li><span class="material-icons w">timelapse</span><div><b>Event „Afterhour Sunday" dauert 19 h</b><small>So 08.11. 06:00 – Mo 01:00 · ungewöhnlich lang</small></div></li>
+        <li><span class="material-icons i">qr_code</span><div><b>Only Us 14.11. verkauft Tickets, hat aber keinen Tür-Zugang</b><small>Scanner einrichten lassen · 01 Gästeliste</small></div></li>
+        <li><span class="material-icons i">cloud_download</span><div><b>RA-Import Mo 02.11. 09:00 gelaufen: 23 neue, 4 Dubletten</b><small>unter „Claude Events" prüfen</small></div></li>
+      </ul>
+    </section>
+
+    <section class="card c8">
+      <h2><span class="material-icons">confirmation_number</span>Tickets</h2><p class="sub">Verkäufe im Zeitraum (Kaufdatum), aktive Events zuerst</p>
+      <div class="kpis"><div class="kpi"><b id="tk-n">96<span class="d up">+31 %</span></b><span>Tickets verkauft</span></div><div class="kpi"><b id="tk-u">1.934 €</b><span>Umsatz (Ticketpreis)</span></div><div class="kpi"><b id="tk-f">147 €</b><span>GL030-Servicegebühr</span></div><div class="kpi"><b>5</b><span>Events im Verkauf</span></div></div>
+      <svg class="chart" id="tk-chart"></svg><div class="legend"><span><i style="background:var(--s1)"></i>Tickets je Tag</span></div>
+      <table style="margin-top:12px"><thead><tr><th>Event</th><th>Datum</th><th class="r">Verkauft / Kontingent</th><th class="r">Umsatz</th><th>Letzte Bestellung</th><th>Status</th></tr></thead><tbody>
+        <tr><td><b>Ü30 Party Berlin</b><small>Spindler &amp; Klatt · Partner-Test</small></td><td>Sa 14.11.</td><td class="r"><span class="bar"><i style="width:0%"></i></span>0 / 251</td><td class="r">0 €</td><td>–</td><td><span class="pill ok">Online</span></td></tr>
+        <tr><td><b>Only Us – Black Friday</b><small>Amano Grand Central</small></td><td>Fr 27.11.</td><td class="r"><span class="bar"><i style="width:22%"></i></span>31 / 140</td><td class="r">620 €</td><td>heute 11:02</td><td><span class="pill ok">Online</span></td></tr>
+        <tr><td><b>Purple – The Cloud</b><small>Purple Events</small></td><td>Fr 20.11.</td><td class="r"><span class="bar"><i style="width:58%"></i></span>87 / 150</td><td class="r">1.305 €</td><td>gestern 23:48</td><td><span class="pill warn">bald ausverkauft</span></td></tr>
+        <tr><td><b>Havanna Silvester</b><small>Havanna Club</small></td><td>Do 31.12.</td><td class="r"><span class="bar"><i style="width:4%"></i></span>12 / 300</td><td class="r">420 €</td><td>Sa 11:17</td><td><span class="pill ok">Online</span></td></tr>
+      </tbody></table>
+      <details><summary>Abgeschlossene Events (letzte 30 Tage) – 4 Events, 213 Tickets, 4.106 €</summary>
+      <table><thead><tr><th>Event</th><th>Datum</th><th class="r">Verkauft</th><th class="r">Umsatz</th><th class="r">Eingecheckt</th><th class="r">Erstattet</th></tr></thead><tbody>
+        <tr><td><b>Only Us x Halloween</b><small>Amano Grand Central</small></td><td>Sa 31.10.</td><td class="r">43</td><td class="r">985 €</td><td class="r">39 (92 %)</td><td class="r">4</td></tr>
+        <tr><td><b>No Limit x Halloween</b><small>Amano Grand Central</small></td><td>Fr 30.10.</td><td class="r">37</td><td class="r">595 €</td><td class="r">31 (84 %)</td><td class="r">2</td></tr>
+        <tr><td><b>The Grand Nightmare</b><small>Roll26</small></td><td>Sa 31.10.</td><td class="r">88</td><td class="r">2.106 €</td><td class="r">80 (91 %)</td><td class="r">1</td></tr>
+        <tr><td><b>The Cloud</b><small>Purple Events</small></td><td>Fr 30.10.</td><td class="r">45</td><td class="r">420 €</td><td class="r">38 (84 %)</td><td class="r">0</td></tr>
+      </tbody></table></details>
+    </section>
+
+    <section class="card c4">
+      <h2><span class="material-icons">language</span>Website</h2><p class="sub">GA4 · Besucher je Tag, letzte 7 Tage vs. Vorwoche</p>
+      <div class="kpis"><div class="kpi"><b>31.480<span class="d up">+42 %</span></b><span>Besucher 7 Tage</span></div><div class="kpi"><b>2.914<span class="d up">+37 %</span></b><span>Gästelisten-Anmeldungen (GA4-Ereignis)</span></div></div>
+      <svg class="chart" id="ga-chart"></svg><div class="legend"><span><i style="background:var(--s1)"></i>diese Woche</span><span><i style="background:var(--s2)"></i>Vorwoche</span></div>
+      <p class="sub" style="margin:10px 0 0">Halloween-Spitze Fr/Sa. Quelle: GA4 Data API (Service-Konto), 15-Min-Cache.</p>
+    </section>
+
+    <section class="card c12">
+      <h2><span class="material-icons">euro_symbol</span>Finanzen November 2026 <span class="pill off" style="margin-left:6px">grob · Details unter Finanzen</span></h2><p class="sub">Umsatz nach Event-Datum im Monat, netto vor Rabatt; Vergleich Oktober (voller Monat)</p>
+      <div class="fin">
+        <div><b>1.250 €</b><span>Platzierungen Top/Premium · 11 Buchungen</span></div>
+        <div><b>375 €</b><span>Banner · 3 Wochen</span></div>
+        <div><b>850 €</b><span>Ads-Betreuung · Weekend, Mio/Carambar, Food Studio</span></div>
+        <div><b>147 €</b><span>Ticketing-Servicegebühren · 96 Tickets</span></div>
+        <div class="sum"><b>2.622 €</b><span>Summe November bisher · Oktober gesamt 4.980 €</span></div>
+        <div><b>3 offen</b><span>Rechnungen aus Oktober noch nicht in sevdesk</span></div>
+        <div><b>1.529,70 €</b><span>Auszahlung an Veranstalter fällig (Halloween-Schlussabrechnung)</span></div>
+        <div><b>+12 %</b><span>Hochrechnung November vs. Oktober (wochentagsnormalisiert)</span></div>
+      </div>
+    </section>
+  </div>
+</main>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+// Daten je Zeitraum (in der echten Seite liefert der Server dieses Objekt)
+var D={
+ "7":{gl:{p:1284,e:842,dp:"+18 %",de:"+14 %",ev:37,days:["Mo 02.","Di 03.","Mi 04.","Do 05.","Fr 06.","Sa 07.","So 08."],cur:[12,38,61,94,412,598,69],prev:[9,30,52,80,361,502,55]},tk:{n:96,u:"1.934 €",f:"147 €",dn:"+31 %",days:["Di 27.","Mi 28.","Do 29.","Fr 30.","Sa 31.","So 01.","Mo 02."],cur:[9,14,11,21,27,8,6]}},
+ "we":{gl:{p:1010,e:663,dp:"+21 %",de:"+16 %",ev:19,days:["Fr 06.","Sa 07.","So 08."],cur:[412,598,69],prev:[361,502,55]},tk:{n:96,u:"1.934 €",f:"147 €",dn:"+31 %",days:["Di 27.","Mi 28.","Do 29.","Fr 30.","Sa 31.","So 01.","Mo 02."],cur:[9,14,11,21,27,8,6]}},
+ "14":{gl:{p:2390,e:1570,dp:"+9 %",de:"+7 %",ev:71,days:["Mo 02.","Di","Mi","Do","Fr 06.","Sa 07.","So","Mo 09.","Di","Mi","Do","Fr 13.","Sa 14.","So"],cur:[12,38,61,94,412,598,69,15,41,58,88,380,540,60],prev:[9,30,52,80,361,502,55,12,36,50,80,350,498,52]},tk:{n:171,u:"3.510 €",f:"262 €",dn:"+24 %",days:["20.","21.","22.","23.","24.","25.","26.","27.","28.","29.","30.","31.","01.","02."],cur:[5,7,6,9,12,14,7,9,14,11,21,27,8,6]}},
+ "30":{gl:{p:5120,e:3360,dp:"+6 %",de:"+5 %",ev:148,days:["KW45","KW46","KW47","KW48"],cur:[1284,1182,1310,1344],prev:[1210,1140,1250,1290]},tk:{n:320,u:"6.410 €",f:"486 €",dn:"+19 %",days:["KW41","KW42","KW43","KW44"],cur:[42,61,88,129]}}
+};
+var ROWS=[["Only Us – Black Friday","Amano Grand Central","Fr 27.11.",94,141,"+22 %","ok"],["Matrix – Friday","Matrix Club","Fr 06.11.",131,214,"+4 %","ok"],["Havanna – Salsa Night","Havanna","Sa 07.11.",9,13,"−81 %","bad"],["Maaya Saturdays","Maaya","Sa 07.11.",118,196,"−2 %","ok"],["808 – Hip Hop Weekend","808 Berlin","Sa 07.11.",102,163,"+35 %","ok"],["Weekend Club – Rooftop","Weekend","Fr 06.11.",87,140,"+9 %","ok"],["Bricks – Saturday","Bricks","Sa 07.11.",64,110,"−41 %","warn"]];
+function fmt(n){return n.toLocaleString('de-DE')}
+function bars(svg,labels,cur,prev){var W=svg.clientWidth||600,H=150,p={l:4,r:4,t:16,b:22},n=labels.length,max=Math.max.apply(null,cur.concat(prev||[]))||1,gw=(W-p.l-p.r)/n,s='';
+ for(var i=0;i<n;i++){var x=p.l+i*gw,bw=prev?(gw-8)/2:gw*0.6,x0=prev?x+2:x+gw*0.2;
+  if(prev){var hp=(H-p.t-p.b)*prev[i]/max;s+='<rect x="'+(x0+bw+2)+'" y="'+(H-p.b-hp)+'" width="'+bw+'" height="'+hp+'" rx="3" fill="#98a2ae" opacity=".55" data-t="Vorwoche '+labels[i]+': '+fmt(prev[i])+'"/>'}
+  var h=(H-p.t-p.b)*cur[i]/max;s+='<rect x="'+x0+'" y="'+(H-p.b-h)+'" width="'+bw+'" height="'+h+'" rx="3" fill="#2a78d6" data-t="'+labels[i]+': '+fmt(cur[i])+'"/>';
+  if(cur[i]==max||n<=7)s+='<text x="'+(x0+bw/2)+'" y="'+(H-p.b-h-4)+'" font-size="11" text-anchor="middle" fill="#52514e">'+fmt(cur[i])+'</text>';
+  s+='<text x="'+(x+gw/2)+'" y="'+(H-6)+'" font-size="11" text-anchor="middle" fill="#6b7684">'+labels[i]+'</text>'}
+ svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML='<line x1="0" x2="'+W+'" y1="'+(H-p.b)+'" y2="'+(H-p.b)+'" stroke="#e4e8ee"/>'+s}
+function render(r){var d=D[r];document.getElementById('gl-p').innerHTML=fmt(d.gl.p)+'<span class="d up">'+d.gl.dp+'</span>';document.getElementById('gl-e').innerHTML=fmt(d.gl.e)+'<span class="d up">'+d.gl.de+'</span>';document.getElementById('gl-ev').textContent=d.gl.ev;
+ document.getElementById('gl-sub').textContent=(r=='we'?'Anmeldungen für Fr–So dieses Wochenende':'Anmeldungen der nächsten '+r+' Tage (Events ab heute)')+', Vergleich: gleicher Zeitraum Vorwoche';
+ document.getElementById('tk-n').innerHTML=fmt(d.tk.n)+'<span class="d up">'+d.tk.dn+'</span>';document.getElementById('tk-u').textContent=d.tk.u;document.getElementById('tk-f').textContent=d.tk.f;
+ bars(document.getElementById('gl-chart'),d.gl.days,d.gl.cur,d.gl.prev);bars(document.getElementById('tk-chart'),d.tk.days,d.tk.cur,null);
+ bars(document.getElementById('ga-chart'),["Di","Mi","Do","Fr","Sa","So","Mo"],[3100,3420,4010,7980,8120,2880,1970],[2410,2600,2950,4800,5100,2400,1890]);
+ var tb=document.getElementById('gl-rows');tb.innerHTML='';ROWS.forEach(function(x){tb.innerHTML+='<tr><td><b>'+x[0]+'</b></td><td>'+x[1]+'</td><td>'+x[2]+'</td><td class="r">'+x[3]+'</td><td class="r">'+x[4]+'</td><td><span class="pill '+x[6]+'">'+x[5]+'</span></td></tr>'})}
+document.querySelectorAll('#seg button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#seg button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');render(b.getAttribute('data-r'))})});
+var tip=document.getElementById('tip');document.addEventListener('mousemove',function(e){var t=e.target.getAttribute&&e.target.getAttribute('data-t');if(t){tip.textContent=t;tip.style.display='block';tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY-28)+'px'}else tip.style.display='none'});
+render('7');window.addEventListener('resize',function(){render(document.querySelector('#seg button.on').getAttribute('data-r'))});
+</script>
+</body>
+</html>
