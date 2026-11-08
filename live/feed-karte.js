@@ -3,9 +3,10 @@
 (function () {
   'use strict';
   var BASE = 'https://gl030.github.io/gl030-sitemap/live/';
-  var m = location.pathname.match(/^\/(de|en|es)\/berlin\/events\/([^\/]+)\/(\d\d)-(\d\d)-(\d\d)\/?$/);
+  var m = location.pathname.match(/^\/(de|en|es)\/berlin\/(events|eventos)\/([^\/]+)\/(\d\d)-(\d\d)-(\d\d)\/?$/);
   if (!m) return;
-  var LANG = m[1], DAYKEY = m[3] + m[4] + m[5], DAY = '20' + m[5] + '-' + m[4] + '-' + m[3];
+  var LANG = m[1], EVSEG = m[2], DSTR = m[4] + '-' + m[5] + '-' + m[6], DAYKEY = m[4] + m[5] + m[6], DAY = '20' + m[6] + '-' + m[5] + '-' + m[4];
+  var CATMAP = { es: { party: 'fiesta' } };
 
   var T = {
     de: { list: 'Liste', map: 'Karte', all: 'Alle', open: 'Jetzt offen', gl: 'Gästeliste', tk: 'Tickets', tb: 'Tisch',
@@ -98,11 +99,12 @@
   function glI(e, t) { if (!e.gl) return null; var d = dt(e.gl), left = d - t; if (left <= 0) return { x: 1, txt: T.glClosed }; return { warn: left < 3 * 36e5, txt: T.glTill + hm(d) }; }
   function evUrl(e) {
     var sl = e.s[LANG];
-    var a = document.querySelector('a[href$="/' + m[3] + '-' + m[4] + '-' + m[5] + '/' + sl + '"]');
+    var a = document.querySelector('a[href$="/' + DSTR + '/' + sl + '"]');
     if (a) return a.href;
-    return '/' + LANG + '/berlin/events/' + e.c + '/' + m[3] + '-' + m[4] + '-' + m[5] + '/' + sl;
+    var cat = (CATMAP[LANG] && CATMAP[LANG][e.c]) || e.c;
+    return '/' + LANG + '/berlin/' + EVSEG + '/' + cat + '/' + DSTR + '/' + sl;
   }
-  function locUrl(c) { return '/' + LANG + '/berlin/locations/' + c.ls[LANG]; }
+  function locUrl(c) { return '/' + LANG + '/berlin/' + 'locations' + '/' + c.ls[LANG]; }
   function dist(c) { if (!state.me) return null; var R = 6371, r = function (x) { return x * Math.PI / 180; }, dLa = r(c.lat - state.me[0]), dLo = r(c.lng - state.me[1]);
     var a = Math.sin(dLa / 2) * Math.sin(dLa / 2) + Math.cos(r(state.me[0])) * Math.cos(r(c.lat)) * Math.sin(dLo / 2) * Math.sin(dLo / 2); return 2 * R * Math.asin(Math.sqrt(a)); }
   function enrich() { var t = nowT(); return DATA.clubs.map(function (c) {
