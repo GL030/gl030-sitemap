@@ -49,15 +49,15 @@
     '.glk-dark{filter:invert(1) hue-rotate(180deg) brightness(.82) contrast(.92) saturate(.6)}' +
     '.glk-leg{position:absolute;z-index:500;left:10px;bottom:10px;background:rgba(18,22,34,.86);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:6px 9px;font:.7rem Roboto,sans-serif;color:#9aa6b6;display:flex;gap:9px;flex-wrap:wrap;max-width:calc(100% - 20px)}' +
     '.glk-leg span{display:inline-flex;align-items:center;gap:4px}.glk-leg i{width:9px;height:9px;border-radius:50%;display:inline-block}' +
-    '.glk-near{position:absolute;z-index:500;left:10px;top:10px;border:1px solid rgba(255,255,255,.14);background:rgba(18,22,34,.86);color:#eef1f5;border-radius:999px;padding:7px 12px;font:500 .78rem Roboto,sans-serif;cursor:pointer}' +
+    '.glk-near{position:absolute;z-index:500;right:10px;top:10px;border:1px solid rgba(255,255,255,.14);background:rgba(18,22,34,.86);color:#eef1f5;border-radius:999px;padding:7px 12px;font:500 .78rem Roboto,sans-serif;cursor:pointer}' +
     '.glk-pin{position:relative;width:40px;height:40px;border-radius:50%;background:#1b2735 center/cover no-repeat;border:3px solid #6b7585;box-shadow:0 3px 10px rgba(0,0,0,.55)}' +
     '.glk-pin.pr{width:50px;height:50px}.glk-pin.open{border-color:#2ee59d}.glk-pin.soon{border-color:#ffc24b}.glk-pin.off{opacity:.7;filter:grayscale(.6)}' +
     '.glk-pin .ini{position:absolute;inset:0;display:grid;place-items:center;color:#cfd6e2;font:700 12px Roboto,sans-serif}' +
     '.glk-pin .tg{position:absolute;right:-10px;top:-7px;font:700 9px Roboto,sans-serif;border-radius:5px;padding:2px 4px;color:#06222a;background:#00b4dc;box-shadow:0 1px 4px rgba(0,0,0,.5)}' +
     '.glk-pin .tg.t{right:auto;left:-10px;background:#ff6b6b;color:#fff}' +
     '.glk-pin .lb{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:3px;font:700 10px Roboto,sans-serif;color:#fff;white-space:nowrap;text-shadow:0 1px 3px #000,0 0 2px #000;pointer-events:none}' +
-    '.glk-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}@media(min-width:768px){.glk-list{grid-template-columns:1fr 1fr}}' +
-    '.glk-card{background:rgba(20,24,36,.72);border:1px solid rgba(255,255,255,.10);border-radius:1rem;padding:13px;color:#eef1f5;font-family:Roboto,sans-serif}' +
+    '.glk-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}@media(min-width:768px){.glk-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}' +
+    '.glk-card{min-width:0;background:rgba(20,24,36,.72);border:1px solid rgba(255,255,255,.10);border-radius:1rem;padding:13px;color:#eef1f5;font-family:Roboto,sans-serif}' +
     '.glk-card.pr{border-color:rgba(0,180,220,.55)}.glk-card.hl{outline:2px solid #00b4dc}' +
     '.glk-ch{display:flex;gap:11px;align-items:center}.glk-logo{flex:none;width:46px;height:46px;border-radius:12px;background:#232a3b center/cover no-repeat;position:relative;display:grid;place-items:center;font-weight:700;color:#cfd6e2}' +
     '.glk-logo::after{content:"";position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;border:2px solid #141824;background:#6b7585}' +
@@ -74,7 +74,7 @@
     '.glk-btn.p{background:linear-gradient(90deg,#00aa82,#00b4dc);border:0;color:#06222a!important;font-weight:700}.glk-btn.t{background:linear-gradient(90deg,#16bde0,#4fc3e6);border:0;color:#06222a!important;font-weight:700}.glk-btn.r{flex:0 0 auto;padding:8px 11px}' +
     '.glk-empty,.glk-note{color:#9aa6b6;font-size:.78rem;line-height:1.5}.glk-empty{text-align:center;padding:30px 0}.glk-note{margin-top:12px}' +
     '#glk-map .leaflet-popup-content-wrapper{background:#141824;color:#eef1f5;border-radius:14px;border:1px solid rgba(255,255,255,.12)}#glk-map .leaflet-popup-tip{background:#141824}' +
-    '#glk-map .leaflet-popup-content{margin:10px 12px;width:250px!important}#glk-map .leaflet-popup-content .glk-card{background:none;border:0;padding:0}' +
+    '#glk-map .leaflet-popup-content{margin:10px 12px;width:250px!important}#glk-map .leaflet-popup-content .glk-card{min-width:0;background:none;border:0;padding:0}' +
     '#glk-map .leaflet-control-attribution{background:rgba(18,22,34,.7);color:#7b8696}#glk-map .leaflet-control-attribution a{color:#9aa6b6}';
 
   var ICON_LIST = '<svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>';
@@ -170,7 +170,7 @@
     map = L.map('glk-map', { zoomControl: true, scrollWheelZoom: false }).setView([52.512, 13.41], 12);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, className: 'glk-dark', attribution: '© OpenStreetMap' }).addTo(map);
     layer = L.layerGroup().addTo(map); render();
-    try { var b = L.latLngBounds(DATA.clubs.map(function (c) { return [c.lat, c.lng]; })); map.fitBounds(b, { padding: [30, 30], maxZoom: 13 }); } catch (e) {}
+    map.setView([52.515, 13.405], window.innerWidth < 600 ? 12 : 13);
   }
   function loadLeaflet(cb) {
     if (window.L) return cb();
