@@ -34,7 +34,7 @@
     '.glt-c small{display:block;font-size:.72rem;color:rgba(255,255,255,.65);margin-top:2px;line-height:1.25}' +
     '@media(max-width:400px){.glt-a{font-size:.84rem}.glt-c b{font-size:1.08rem}.glt-c small{font-size:.66rem}.glt-c > div{padding:0 6px}}' +
     /* Ecke links oben: Etikett über türkiser 2010 */
-    '.glt-k{position:absolute;left:var(--glt-k,16px);top:var(--glt-k,16px);z-index:5;display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 9px 8px;border-radius:14px;'+
+    '.glt-k{position:absolute!important;left:var(--glt-k,16px)!important;top:var(--glt-k,16px)!important;right:auto!important;bottom:auto!important;width:auto!important;height:auto!important;margin:0!important;z-index:5;display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 9px 8px;border-radius:14px;'+
       'background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-align:center}' +
     '.glt-k .lb{font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);line-height:1.15;white-space:nowrap}' +
     '.glt-k.long .lb{max-width:64px;white-space:normal}' +
