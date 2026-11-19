@@ -38,41 +38,36 @@
     '.glk-seg button{display:inline-flex;align-items:center;gap:7px;border:0;background:none;color:#cfd6e2;font:500 .9rem Roboto,sans-serif;padding:8px 18px;border-radius:999px;cursor:pointer}' +
     '.glk-seg button svg{width:16px;height:16px;fill:currentColor}' +
     '.glk-seg button[aria-pressed=true]{background:linear-gradient(90deg,#00aa82,#00b4dc);color:#06222a;font-weight:700}' +
-    'html.glk-on #event-scroll-container,html.glk-on #today-reco{display:none!important}' +
-    '#glk{display:none;margin-bottom:24px}html.glk-on #glk{display:block}' +
+        '#glk{display:none;margin-bottom:28px}html.glk-on #glk{display:block}' +
     '.glk-sum{font-size:.88rem;color:#9aa6b6;margin:2px 0 10px}.glk-sum b{color:#eef1f5;font-weight:500}' +
     '.glk-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.glk-chips::-webkit-scrollbar{display:none}' +
     '.glk-chip{flex:none;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#eef1f5;border-radius:999px;padding:6px 12px;font:500 .8rem Roboto,sans-serif;cursor:pointer;white-space:nowrap}' +
     '.glk-chip[aria-pressed=true]{background:#fff;color:#141824;border-color:#fff}.glk-chip .n{opacity:.65;font-weight:400;margin-left:4px}' +
-    '.glk-time{margin-top:8px;align-items:center}.glk-time .lab{flex:none;font-size:.72rem;color:#9aa6b6}.glk-time .glk-chip{padding:4px 10px;font-size:.74rem}' +
     '.glk-mapbox{position:relative;margin-top:12px;border-radius:1rem;overflow:hidden;border:1px solid rgba(255,255,255,.12)}' +
     '#glk-map{height:62vh;min-height:380px;max-height:640px;background:#0f1320}' +
     '.glk-dark{filter:invert(1) hue-rotate(180deg) brightness(.82) contrast(.92) saturate(.6)}' +
     '.glk-leg{position:absolute;z-index:500;left:10px;bottom:10px;background:rgba(18,22,34,.86);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:6px 9px;font:.7rem Roboto,sans-serif;color:#9aa6b6;display:flex;gap:9px;flex-wrap:wrap;max-width:calc(100% - 20px)}' +
     '.glk-leg span{display:inline-flex;align-items:center;gap:4px}.glk-leg i{width:9px;height:9px;border-radius:50%;display:inline-block}' +
     '.glk-near{position:absolute;z-index:500;right:10px;top:10px;border:1px solid rgba(255,255,255,.14);background:rgba(18,22,34,.86);color:#eef1f5;border-radius:999px;padding:7px 12px;font:500 .78rem Roboto,sans-serif;cursor:pointer}' +
-    '.glk-pin{position:relative;width:40px;height:40px;border-radius:50%;background:#1b2735 center/cover no-repeat;border:3px solid #6b7585;box-shadow:0 3px 10px rgba(0,0,0,.55)}' +
-    '.glk-pin.pr{width:50px;height:50px}.glk-pin.open{border-color:#2ee59d}.glk-pin.soon{border-color:#ffc24b}.glk-pin.off{opacity:.7;filter:grayscale(.6)}' +
+    '.glk-pin{position:relative;width:40px;height:40px;border-radius:50%;background:#1b2735 center/cover no-repeat;border:2px solid rgba(255,255,255,.85);box-shadow:0 3px 10px rgba(0,0,0,.55)}' +
+    '.glk-pin.pr{width:50px;height:50px}' +
     '.glk-pin .ini{position:absolute;inset:0;display:grid;place-items:center;color:#cfd6e2;font:700 12px Roboto,sans-serif}' +
     '.glk-pin .tg{position:absolute;right:-10px;top:-7px;font:700 9px Roboto,sans-serif;border-radius:5px;padding:2px 4px;color:#06222a;background:#00b4dc;box-shadow:0 1px 4px rgba(0,0,0,.5)}' +
-    '.glk-pin .tg.t{right:auto;left:-10px;background:#ff6b6b;color:#fff}' +
+    '.glk-pin .tg.t{right:auto;left:-10px;background:#3d7bff;color:#fff}' +
     '.glk-pin .lb{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:3px;font:700 10px Roboto,sans-serif;color:#fff;white-space:nowrap;text-shadow:0 1px 3px #000,0 0 2px #000;pointer-events:none}' +
     '.glk-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}@media(min-width:768px){.glk-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}' +
     '.glk-card{min-width:0;background:rgba(20,24,36,.72);border:1px solid rgba(255,255,255,.10);border-radius:1rem;padding:13px;color:#eef1f5;font-family:Roboto,sans-serif}' +
     '.glk-card.pr{border-color:rgba(0,180,220,.55)}.glk-card.hl{outline:2px solid #00b4dc}' +
     '.glk-ch{display:flex;gap:11px;align-items:center}.glk-logo{flex:none;width:46px;height:46px;border-radius:12px;background:#232a3b center/cover no-repeat;position:relative;display:grid;place-items:center;font-weight:700;color:#cfd6e2}' +
-    '.glk-logo::after{content:"";position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;border:2px solid #141824;background:#6b7585}' +
-    '.s-open .glk-logo::after{background:#2ee59d}.s-soon .glk-logo::after{background:#ffc24b}' +
     '.glk-cn{flex:1;min-width:0}.glk-cn a{color:#eef1f5;text-decoration:none;font-weight:700;font-size:1rem}.glk-st{font-size:.8rem;font-weight:500;color:#9aa6b6}' +
-    '.s-open .glk-st{color:#2ee59d}.s-soon .glk-st{color:#ffc24b}' +
     '.glk-pt{flex:none;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#00b4dc;border:1px solid rgba(0,180,220,.5);border-radius:6px;padding:2px 6px}' +
     '.glk-ev{margin-top:9px;padding-top:9px;border-top:1px solid rgba(255,255,255,.10)}' +
     '.glk-en{color:#eef1f5;font-weight:500;font-size:.9rem;text-decoration:none;display:block;line-height:1.3}.glk-em{font-size:.76rem;color:#9aa6b6;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}' +
     '.glk-bd{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.glk-b{font-size:.7rem;font-weight:500;border-radius:6px;padding:3px 7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#cfd6e2}' +
     '.glk-b.gl{background:rgba(0,180,220,.16);border-color:rgba(0,180,220,.55);color:#7fe3ff}.glk-b.gl.warn{background:rgba(255,194,75,.14);border-color:rgba(255,194,75,.55);color:#ffd789}.glk-b.gl.x{opacity:.55;text-decoration:line-through}' +
-    '.glk-b.own{background:rgba(255,107,107,.16);border-color:rgba(255,107,107,.55);color:#ffb0b0}' +
+    '.glk-b.own{background:rgba(61,123,255,.18);border-color:rgba(61,123,255,.6);color:#a9c4ff}' +
     '.glk-act{display:flex;gap:7px;margin-top:9px}.glk-btn{flex:1;text-align:center;text-decoration:none!important;font:500 .82rem Roboto,sans-serif;border-radius:.5rem;padding:8px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#eef1f5!important}' +
-    '.glk-btn.p{background:linear-gradient(90deg,#00aa82,#00b4dc);border:0;color:#06222a!important;font-weight:700}.glk-btn.t{background:linear-gradient(90deg,#16bde0,#4fc3e6);border:0;color:#06222a!important;font-weight:700}.glk-btn.r{flex:0 0 auto;padding:8px 11px}' +
+    '.glk-btn.p{background:linear-gradient(90deg,#00aa82,#00b4dc);border:0;color:#06222a!important;font-weight:700}.glk-btn.t{background:#3d7bff;border:0;color:#fff!important;font-weight:700}.glk-btn.r{flex:0 0 auto;padding:8px 11px}' +
     '.glk-empty,.glk-note{color:#9aa6b6;font-size:.78rem;line-height:1.5}.glk-empty{text-align:center;padding:30px 0}.glk-note{margin-top:12px}' +
     '#glk-map .leaflet-popup-content-wrapper{background:#141824;color:#eef1f5;border-radius:14px;border:1px solid rgba(255,255,255,.12)}#glk-map .leaflet-popup-tip{background:#141824}' +
     '#glk-map .leaflet-popup-content{margin:10px 12px;width:250px!important}#glk-map .leaflet-popup-content .glk-card{min-width:0;background:none;border:0;padding:0}' +
@@ -89,9 +84,8 @@
   function hm(d) { return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function isToday() { var n = new Date(), s = dt(DAY + 'T12:00'), e = new Date(s.getTime() + 864e5); return n >= s && n < e; }
-  var TIMES = isToday() ? ['now', '22:00', '00:00', '02:00', '05:00'] : ['20:00', '21:00', '22:00', '23:00', '00:00', '02:00', '05:00'];
-  state.t = isToday() ? 'now' : '21:00';
-  function nowT() { if (state.t === 'now') return new Date(); var d = dt(DAY + 'T' + state.t); if (+state.t.slice(0, 2) < 12) d.setDate(d.getDate() + 1); return d; }
+  var TODAY = isToday(); state.t = TODAY ? 'now' : '00:00';
+  function nowT() { if (state.t === 'now') return new Date(); var d = dt(DAY + 'T' + state.t); return d; }
   function evSt(e, t) { var b = dt(e.b), en = e.e ? dt(e.e) : new Date(b.getTime() + 6 * 36e5);
     if (t >= b && t < en) return { k: 'open', en: en }; if (t < b) return { k: (b - t) <= 3 * 36e5 ? 'soon' : 'later', b: b }; return { k: 'past' }; }
   function clubSt(c, t) { var best = null, R = { open: 0, soon: 1, later: 2, past: 3 };
@@ -147,21 +141,17 @@
     var cnt = { all: 0, open: 0, gl: 0, tk: 0, tb: 0 };
     all.forEach(function (x) { ['all', 'open', 'gl', 'tk', 'tb'].forEach(function (k) { if (pass(x, k)) cnt[k]++; }); });
     var vis = all.filter(function (x) { return pass(x, state.f); });
-    vis.sort(function (a, b) { if (state.me) return a.d - b.d; return (R[a.s.k] - R[b.s.k]) || ((b.gl ? 1 : 0) - (a.gl ? 1 : 0)) || ((b.c.pr ? 1 : 0) - (a.c.pr ? 1 : 0)) || (dt(a.s.e.b) - dt(b.s.e.b)); });
-    root.querySelector('.glk-sum').innerHTML = T.sum(cnt.open, cnt.gl, cnt.tk);
-    root.querySelector('.glk-f').innerHTML = [['all', T.all], ['open', T.open], ['gl', T.gl], ['tk', T.tk], ['tb', T.tb]].map(function (a) {
+    var sum = T.sum(cnt.open, cnt.gl, cnt.tk); root.querySelector('.glk-sum').innerHTML = TODAY ? sum : sum.replace(/^.*? · /, '');
+    root.querySelector('.glk-f').innerHTML = [['all', T.all], ['open', T.open], ['gl', T.gl], ['tk', T.tk], ['tb', T.tb]].filter(function (a) { return TODAY || a[0] !== 'open'; }).map(function (a) {
       return '<button class="glk-chip" data-f="' + a[0] + '" aria-pressed="' + (state.f === a[0]) + '">' + a[1] + '<span class="n">' + cnt[a[0]] + '</span></button>'; }).join('');
-    root.querySelector('.glk-time').innerHTML = '<span class="lab">' + T.time + ':</span>' + TIMES.map(function (k) {
-      return '<button class="glk-chip" data-t="' + k + '" aria-pressed="' + (state.t === k) + '">' + (k === 'now' ? T.now : k) + '</button>'; }).join('');
-    root.querySelector('.glk-list').innerHTML = vis.length ? vis.map(function (x) { return card(x, t); }).join('') : '<div class="glk-empty">' + T.none + '</div>';
     if (!map) return;
     layer.clearLayers();
     vis.forEach(function (x) {
-      var c = x.c, k = x.s.k === 'open' ? 'open' : x.s.k === 'soon' ? 'soon' : 'off', sz = c.pr ? 50 : 40;
-      var html = '<div class="glk-pin ' + k + (c.pr ? ' pr' : '') + '" style="' + (c.logo ? 'background-image:url(' + c.logo + ')' : '') + '">' +
+      var c = x.c, sz = c.pr ? 50 : 40;
+      var html = '<div class="glk-pin' + (c.pr ? ' pr' : '') + '" style="' + (c.logo ? 'background-image:url(' + c.logo + ')' : '') + '">' +
         (c.logo ? '' : '<span class="ini">' + esc(ini(c.n)) + '</span>') + (x.gl ? '<span class="tg">GL</span>' : '') +
         (x.tk ? '<span class="tg t">T</span>' : '') + ((c.pr || x.gl) ? '<span class="lb">' + esc(c.n) + '</span>' : '') + '</div>';
-      var z = (x.s.k === 'open' ? 3000 : x.s.k === 'soon' ? 2000 : 0) + (x.gl ? 800 : 0) + (c.pr ? 400 : 0);
+      var z = (x.gl ? 800 : 0) + (c.pr ? 400 : 0);
       L.marker([c.lat, c.lng], { icon: L.divIcon({ html: html, className: '', iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2], popupAnchor: [0, -sz / 2] }), zIndexOffset: z, title: c.n })
         .bindPopup(function () { return card(x, t, true); }, { maxWidth: 280 }).addTo(layer);
     });
@@ -197,11 +187,11 @@
     if (dp && dp.parentNode) dp.parentNode.insertBefore(tg, dp.nextSibling);
     var feed = document.getElementById('event-scroll-container'); if (!feed) return;
     var box = document.createElement('section'); box.id = 'glk';
-    box.innerHTML = '<div class="glk-sum"></div><div class="glk-chips glk-f"></div><div class="glk-chips glk-time"></div>' +
+    box.innerHTML = '<div class="glk-sum"></div><div class="glk-chips glk-f"></div>' +
       '<div class="glk-mapbox"><div id="glk-map"></div><button class="glk-near">◎ ' + T.near + '</button>' +
-      '<div class="glk-leg"><span><i style="background:#2ee59d"></i>' + T.legOpen + '</span><span><i style="background:#ffc24b"></i>' + T.legSoon + '</span><span><i style="background:#6b7585"></i>' + T.legOff + '</span>' +
-      '<span><b style="font-size:9px;background:#00b4dc;color:#06222a;border-radius:4px;padding:1px 3px">GL</b>' + T.gl + '</span><span><b style="font-size:9px;background:#ff6b6b;color:#fff;border-radius:4px;padding:1px 3px">T</b>' + T.tk + '</span></div></div>' +
-      '<div class="glk-list"></div><p class="glk-note"></p>';
+      '<div class="glk-leg">' +
+      '<span><b style="font-size:9px;background:#00b4dc;color:#06222a;border-radius:4px;padding:1px 3px">GL</b>' + T.gl + '</span><span><b style="font-size:9px;background:#3d7bff;color:#fff;border-radius:4px;padding:1px 3px">T</b>' + T.tk + '</span></div></div>' +
+      '<p class="glk-note"></p>';
     var ans = document.getElementById('today-answer');
     feed.parentNode.insertBefore(box, feed);
     document.addEventListener('click', function (ev) {
