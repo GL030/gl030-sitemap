@@ -34,6 +34,10 @@
 
   var CSS = '' +
     '.glk-toggle{display:flex;justify-content:center;margin:14px auto 4px}' +
+    /* Kopfbild mobil: kleiner und unten verankert, damit die Personen im Vordergrund sichtbar bleiben, obwohl der Schalter den Kopf höher macht */
+    '@media(max-width:767px){html body .page-header.glk-hero{background-color:#0a0e12!important;background-repeat:no-repeat!important;background-size:100% 100%,118% auto!important;background-position:0 0,50% 100%!important;' +
+      'background-image:linear-gradient(#0a0e12 0,#0a0e12 calc(100% - 78.67vw),rgba(10,14,18,0) calc(100% - 78.67vw + 80px)),var(--glk-hero)!important}' +
+    'html body .page-header.glk-hero::after{background-image:linear-gradient(rgba(8,12,16,.62) 0%,rgba(8,12,16,.40) 34%,rgba(10,16,22,.26) 62%,rgba(12,20,28,.34) 82%,rgba(21,24,31,.9) 95%,rgb(21,24,31) 100%)!important}}' +
     '.glk-seg{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px;gap:2px;backdrop-filter:blur(8px)}' +
     '.glk-seg button{display:inline-flex;align-items:center;gap:7px;border:0;background:none;color:#cfd6e2;font:500 .9rem Roboto,sans-serif;padding:8px 18px;border-radius:999px;cursor:pointer}' +
     '.glk-seg button svg{width:16px;height:16px;fill:currentColor}' +
@@ -185,6 +189,8 @@
     var tg = document.createElement('div'); tg.className = 'glk-toggle';
     tg.innerHTML = '<div class="glk-seg" role="group"><button data-v="list" aria-pressed="true">' + ICON_LIST + T.list + '</button><button data-v="map" aria-pressed="false">' + ICON_MAP + T.map + '</button></div>';
     if (dp && dp.parentNode) dp.parentNode.insertBefore(tg, dp.nextSibling);
+    var ph = document.querySelector('.page-header'), hb = ph && getComputedStyle(ph).backgroundImage.match(/url\([^)]+\)/);
+    if (hb) { ph.style.setProperty('--glk-hero', hb[0]); ph.classList.add('glk-hero'); }
     var feed = document.getElementById('event-scroll-container'); if (!feed) return;
     var box = document.createElement('section'); box.id = 'glk';
     box.innerHTML = '<div class="glk-sum"></div><div class="glk-chips glk-f"></div>' +
