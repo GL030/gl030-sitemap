@@ -14,21 +14,21 @@
       ownTk: 'Tickets über GL030', extTk: 'Tickets', table: 'Tisch', toGl: 'Auf die Gästeliste', buy: 'Tickets kaufen', toEv: 'Zum Event', route: 'Route',
       sum: function (o, g, t) { return '<b>' + o + '</b> offen · <b>' + g + '</b> mit Gästeliste · <b>' + t + '</b> mit Tickets'; },
       time: 'Uhrzeit', now: 'Jetzt', near: 'In meiner Nähe', partner: 'Partner', legOpen: 'offen', legSoon: 'öffnet bald', legOff: 'später / vorbei',
-      none: 'Keine Clubs für diesen Filter.', nodata: 'Für dieses Datum gibt es in der Vorschau noch keine Kartendaten (Vorschau: 14.11.2026).',
+      none: 'Keine Clubs für diesen Filter.', nodata: 'Für dieses Datum gibt es in der Vorschau noch keine Kartendaten (Vorschau: 20.11. bis 06.12.2026).',
       note: 'Vorschau mit echten GL030-Daten, Stand ' },
     en: { list: 'List', map: 'Map', all: 'All', open: 'Open now', gl: 'Guest list', tk: 'Tickets', tb: 'Table',
       openTill: 'Open · until ', opens: 'Opens ', over: 'Over', glTill: 'Guest list until ', glClosed: 'Guest list closed',
       ownTk: 'Tickets via GL030', extTk: 'Tickets', table: 'Table', toGl: 'Join the guest list', buy: 'Buy tickets', toEv: 'View event', route: 'Route',
       sum: function (o, g, t) { return '<b>' + o + '</b> open · <b>' + g + '</b> with guest list · <b>' + t + '</b> with tickets'; },
       time: 'Time', now: 'Now', near: 'Near me', partner: 'Partner', legOpen: 'open', legSoon: 'opens soon', legOff: 'later / over',
-      none: 'No clubs for this filter.', nodata: 'No map data for this date in the preview yet (preview: 14 Nov 2026).',
+      none: 'No clubs for this filter.', nodata: 'No map data for this date in the preview yet (preview: 20 Nov to 6 Dec 2026).',
       note: 'Preview with real GL030 data, as of ' },
     es: { list: 'Lista', map: 'Mapa', all: 'Todos', open: 'Abierto ahora', gl: 'Lista de invitados', tk: 'Entradas', tb: 'Mesa',
       openTill: 'Abierto · hasta las ', opens: 'Abre a las ', over: 'Terminado', glTill: 'Lista hasta las ', glClosed: 'Lista cerrada',
       ownTk: 'Entradas en GL030', extTk: 'Entradas', table: 'Mesa', toGl: 'Apuntarse a la lista', buy: 'Comprar entradas', toEv: 'Ver evento', route: 'Ruta',
       sum: function (o, g, t) { return '<b>' + o + '</b> abiertos · <b>' + g + '</b> con lista · <b>' + t + '</b> con entradas'; },
       time: 'Hora', now: 'Ahora', near: 'Cerca de mí', partner: 'Partner', legOpen: 'abierto', legSoon: 'abre pronto', legOff: 'más tarde / terminado',
-      none: 'No hay clubs para este filtro.', nodata: 'Aún no hay datos de mapa para esta fecha en la vista previa (vista previa: 14/11/2026).',
+      none: 'No hay clubs para este filtro.', nodata: 'Aún no hay datos de mapa para esta fecha en la vista previa (vista previa: del 20.11. al 06.12.2026).',
       note: 'Vista previa con datos reales de GL030, a fecha de ' }
   }[LANG];
 
@@ -189,6 +189,7 @@
   }
 
   function mount() {
+    if (document.getElementById('glk') || document.querySelector('.glk-toggle')) return;
     var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
     var dp = document.querySelector('.page-header .date-picker') || document.querySelector('.page-header h1');
     var tg = document.createElement('div'); tg.className = 'glk-toggle';
