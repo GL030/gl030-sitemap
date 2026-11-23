@@ -1,4 +1,4 @@
-# EN/ES-Qualitaets-Check – 2026-11-22 13:38
+# EN/ES-Qualitaets-Check – 2026-11-23 16:31
 
 Gepruefte Seiten: 150
 
@@ -7,16 +7,14 @@ Gepruefte Seiten: 150
 | R1 | 0 | 0.0 % |
 | R2 | 1 | 0.7 % |
 | R3 | 0 | 0.0 % |
-| R4 | 53 | 35.3 % |
+| R4 | 54 | 36.0 % |
 | R5 | 0 | 0.0 % |
 | GATE | 6 | 4.0 % |
 | HTTP | 0 | 0.0 % |
 
 ## Seiten mit Befund
 
-- https://www.gaesteliste030.de/en/berlin/events/electro/22-11-26/club-pub-x-dance-salon – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/electro/27-11-26/wknd-x-nika-herero – R4 dublette x2
-- https://www.gaesteliste030.de/en/berlin/events/electro/29-11-26/club-pub-x-resonance – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/01-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/01-12-26/far-out-after-work – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/01-12-26/international-sex-affairs – R4 dublette x2
@@ -30,7 +28,7 @@ Gepruefte Seiten: 150
 - https://www.gaesteliste030.de/en/berlin/events/party/03-12-26/best-mistake-kitty-cheng – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/03-12-26/kinky-bdsm-playparty – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/03-12-26/pineapple-thursday – R4 dublette x2
-- https://www.gaesteliste030.de/en/berlin/events/party/03-12-26/soda-social-club – R4 dublette x4
+- https://www.gaesteliste030.de/en/berlin/events/party/03-12-26/soda-social-club – R4 dublette x3
 - https://www.gaesteliste030.de/en/berlin/events/party/03-12-26/thursdate819 – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/04-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/04-12-26/100-grams-lounge-fancy-drinks-and-lovlely-people – R4 dublette x8
@@ -40,13 +38,14 @@ Gepruefte Seiten: 150
 - https://www.gaesteliste030.de/en/berlin/events/party/04-12-26/i-cant-stop-dancing-christmas-party-edition – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/100-grams-lounge-fancy-drinks-and-lovlely-people – R4 dublette x8
+- https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/local-love-service – R4 dublette x2
+- https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/pirates-schlager-saturday – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/06-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
-- https://www.gaesteliste030.de/en/berlin/events/party/06-12-26/soda-social-club – R4 dublette x4
-- https://www.gaesteliste030.de/en/berlin/events/party/06-12-26/the-sunday-club – R4 dublette x2
-- https://www.gaesteliste030.de/en/berlin/events/party/22-11-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
-- https://www.gaesteliste030.de/en/berlin/events/party/22-11-26/soda-social-club – R4 dublette x4
-- https://www.gaesteliste030.de/en/berlin/events/party/22-11-26/the-sunday-club – R4 dublette x2
+- https://www.gaesteliste030.de/en/berlin/events/party/06-12-26/soda-social-club – R4 dublette x3
+- https://www.gaesteliste030.de/en/berlin/events/party/07-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
+- https://www.gaesteliste030.de/en/berlin/events/party/07-12-26/monday-nite-club – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/23-11-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
+- https://www.gaesteliste030.de/en/berlin/events/party/23-11-26/monday-nite-club – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/24-11-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/24-11-26/far-out-after-work – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/24-11-26/international-sex-affairs – R4 dublette x2
@@ -61,7 +60,7 @@ Gepruefte Seiten: 150
 - https://www.gaesteliste030.de/en/berlin/events/party/26-11-26/best-mistake-kitty-cheng – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/26-11-26/kinky-bdsm-playparty – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/26-11-26/pineapple-thursday – R4 dublette x2
-- https://www.gaesteliste030.de/en/berlin/events/party/26-11-26/soda-social-club – R4 dublette x4
+- https://www.gaesteliste030.de/en/berlin/events/party/26-11-26/soda-social-club – R4 dublette x3
 - https://www.gaesteliste030.de/en/berlin/events/party/26-11-26/thursdate894 – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/27-11-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/27-11-26/100-grams-lounge-fancy-drinks-and-lovlely-people – R4 dublette x8
@@ -74,3 +73,5 @@ Gepruefte Seiten: 150
 - https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/100-grams-lounge-fancy-drinks-and-lovlely-people – R4 dublette x8
 - https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/abraxasparty-mit-dj-frederic – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/behind-the-barricades-1312-soliparty-fur-den-kalteschutz-im-mehringhof – GATE aktiv
+- https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/local-love-service – R4 dublette x2
+- https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/pirates-schlager-saturday – R4 dublette x2
