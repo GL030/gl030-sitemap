@@ -1,4 +1,4 @@
-# EN/ES-Qualitaets-Check – 2026-11-23 16:31
+# EN/ES-Qualitaets-Check – 2026-11-24 16:28
 
 Gepruefte Seiten: 150
 
@@ -7,16 +7,18 @@ Gepruefte Seiten: 150
 | R1 | 0 | 0.0 % |
 | R2 | 1 | 0.7 % |
 | R3 | 0 | 0.0 % |
-| R4 | 54 | 36.0 % |
+| R4 | 52 | 34.7 % |
 | R5 | 0 | 0.0 % |
-| GATE | 6 | 4.0 % |
+| GATE | 9 | 6.0 % |
 | HTTP | 0 | 0.0 % |
 
 ## Seiten mit Befund
 
+- https://www.gaesteliste030.de/en/berlin/events/electro/01-12-26/smash-hart-tuesday-rave-garden – R4 dublette x2
+- https://www.gaesteliste030.de/en/berlin/events/electro/08-12-26/smash-hart-tuesday-rave-garden – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/electro/27-11-26/wknd-x-nika-herero – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/01-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
-- https://www.gaesteliste030.de/en/berlin/events/party/01-12-26/far-out-after-work – GATE aktiv
+- https://www.gaesteliste030.de/en/berlin/events/party/01-12-26/far-out-after-work – GATE aktiv; R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/01-12-26/international-sex-affairs – R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/02-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/02-12-26/100-grams-lounge-fancy-drinks-and-lovlely-people – R4 dublette x8
@@ -38,14 +40,13 @@ Gepruefte Seiten: 150
 - https://www.gaesteliste030.de/en/berlin/events/party/04-12-26/i-cant-stop-dancing-christmas-party-edition – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/100-grams-lounge-fancy-drinks-and-lovlely-people – R4 dublette x8
-- https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/local-love-service – R4 dublette x2
-- https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/pirates-schlager-saturday – R4 dublette x2
+- https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/barnoa-dj-beqbeatz – GATE aktiv
+- https://www.gaesteliste030.de/en/berlin/events/party/05-12-26/coconut-2-years-anniversary-plus-makar-live – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/06-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/06-12-26/soda-social-club – R4 dublette x3
 - https://www.gaesteliste030.de/en/berlin/events/party/07-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
-- https://www.gaesteliste030.de/en/berlin/events/party/07-12-26/monday-nite-club – R4 dublette x2
-- https://www.gaesteliste030.de/en/berlin/events/party/23-11-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
-- https://www.gaesteliste030.de/en/berlin/events/party/23-11-26/monday-nite-club – R4 dublette x2
+- https://www.gaesteliste030.de/en/berlin/events/party/08-12-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
+- https://www.gaesteliste030.de/en/berlin/events/party/08-12-26/far-out-after-work – GATE aktiv; R4 dublette x2
 - https://www.gaesteliste030.de/en/berlin/events/party/24-11-26/100-gramm-bar-martini-hour-afterwork-pornstar-matcha-martini – R4 dublette x13
 - https://www.gaesteliste030.de/en/berlin/events/party/24-11-26/far-out-after-work – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/24-11-26/international-sex-affairs – R4 dublette x2
@@ -73,5 +74,3 @@ Gepruefte Seiten: 150
 - https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/100-grams-lounge-fancy-drinks-and-lovlely-people – R4 dublette x8
 - https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/abraxasparty-mit-dj-frederic – GATE aktiv
 - https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/behind-the-barricades-1312-soliparty-fur-den-kalteschutz-im-mehringhof – GATE aktiv
-- https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/local-love-service – R4 dublette x2
-- https://www.gaesteliste030.de/en/berlin/events/party/28-11-26/pirates-schlager-saturday – R4 dublette x2
